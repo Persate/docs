@@ -1,0 +1,49 @@
+---
+title: Uploading files
+description: Adding documents to the Repository, with control over access scope.
+---
+
+To upload files, select **Upload** at the top of the sidebar. A side panel opens on the right, providing controls for file selection, access scope, and submission.
+
+## Selecting files
+
+Two methods are supported:
+
+- **Drag and drop** — files may be dragged from the operating system onto the upload panel.
+- **File picker** — selecting the drop zone opens the operating system's file-selection dialogue.
+
+Multiple files may be selected in a single batch. Each selected file is presented as a row in the upload list, identified by its file-type icon and filename, and accompanied by a control to remove it from the batch.
+
+Only **PDF** files are currently accepted, with an upper limit of **20 MB per file**. Files in other formats are rejected by the upload panel.
+
+## Specifying access scope
+
+The upload panel includes an access-scope control with two settings:
+
+- **Private** (default) — the files are visible only to the uploading user.
+- **Group** — the files are additionally visible to members of selected groups. Selecting **Group** reveals a multi-select control for choosing the relevant groups.
+
+The setting applies to the entire batch. Mixing private and group-visible files in a single upload is therefore not supported; two separate uploads are required.
+
+<Callout title="Permissions are file-level, not folder-level">
+The Repository does not employ folders in the conventional sense. Access scope is associated with each file individually (or with each upload batch). The scope of an existing file may be modified subsequently via the **Sharing** section of its detail panel.
+</Callout>
+
+## Submitting the upload
+
+Selecting **Upload** at the foot of the panel transmits the files to the account. Larger files and larger batches may take noticeable time; a progress indicator is shown.
+
+After upload, each file is processed by several background services:
+
+- **Indexing** — required for full-text search.
+- **Semantic embedding** — required for use as a reference by the AI advisor.
+- **Summary generation** — an automatically generated synopsis, displayed in the file's detail panel.
+- **Language detection** — identifies the document language (Polish, English, and others).
+
+Files become available for browsing as soon as they appear in the file list; subsequent processing enriches the summary and search results without affecting basic access.
+
+## Importing from cloud storage
+
+Integrations for **Google Drive** and **Microsoft OneDrive** are under development. The corresponding **Sources** entry under **KNOWLEDGE BASE** in the sidebar is currently disabled and will be enabled in a subsequent release.
+
+→ Next: [viewing and organising files](/repository/view-and-organize)

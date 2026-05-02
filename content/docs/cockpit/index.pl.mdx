@@ -1,0 +1,59 @@
+---
+title: Cockpit
+description: Domyślny ekran startowy. Skonsolidowany widok bieżącej aktywności i ostatnich zmian.
+---
+
+**Cockpit** to domyślny ekran startowy wyświetlany po uwierzytelnieniu. Agreguje najistotniejsze sygnały — bieżącą aktywność parlamentarną, ostatnie zdarzenia z alertów, działania interesariuszy oraz statystyki repozytorium — w jeden ekran do szybkiego przeglądu.
+
+Ponowne otwarcie Cockpitu jest możliwe w każdej chwili poprzez wybranie pozycji **Cockpit** w pasku bocznym.
+
+## Komponenty Cockpitu
+
+Skład ekranu odzwierciedla konfigurację konta; pełny zestaw dostępnych komponentów opisano poniżej.
+
+### Pasek wiadomości
+
+Przewijająca się belka umieszczona u góry ekranu. Cyklicznie prezentuje komunikaty aplikacji oraz informacje operacyjne. Bieżąca uwaga nie jest wymagana.
+
+### Kafelek posiedzeń na żywo
+
+Wskazuje stan obrad Sejmu. W trakcie trwającej sesji wyświetla pulsujący czerwony znacznik oraz tytuł sesji. Poza godzinami obrad prezentuje informację o najbliższej zaplanowanej sesji. Wybranie kafelka otwiera **Posiedzenia na żywo** w widoku transmisji.
+
+### Karty alertów i ryzyk
+
+Siatka ostatnich zdarzeń odpowiadających skonfigurowanym regułom alertów. Każda karta reprezentuje pojedyncze zdarzenie; jej wybranie otwiera szczegóły zdarzenia.
+
+W przypadku braku skonfigurowanych reguł panel wyświetla komunikat "No alerts triggered yet". Konfigurację reguł alertów opisuje sekcja **Alerty i ryzyka** (w przygotowaniu).
+
+### Karuzela aktywnych interesariuszy
+
+Do pięciu pozycji z listy interesariuszy użytkownika, uszeregowanych według ostatniej aktywności. Domyślnym oknem czasowym są **ostatnie dwadzieścia cztery godziny**; w przypadku braku aktywności w tym oknie panel automatycznie korzysta z **ostatnich siedmiu dni** i odpowiednio aktualizuje opis.
+
+Aktywność obejmuje publikacje w mediach społecznościowych oraz trafienia w alerty. Wybranie awatara otwiera odpowiedni profil.
+
+### Kafelek repozytorium
+
+Wyświetla całkowitą liczbę dokumentów przypisanych do konta wraz z odnośnikiem do **Repozytorium** umożliwiającym pełne przeglądanie.
+
+### Kafelek rejestru
+
+Wyświetla najnowsze głosowanie parlamentarne, w tym jego tytuł, czas rozstrzygnięcia oraz odnośnik do pełnego zapisu w **Rejestrze**.
+
+### Daily report (w przygotowaniu)
+
+Oznaczony jako **SOON**. W docelowej formie komponent zapewni jednostronicowe podsumowanie głosowań, alertów oraz aktywności interesariuszy z ostatniej doby.
+
+### Smart search (w przygotowaniu)
+
+Oznaczony jako **Disabled**. W docelowej formie komponent obsłuży zapytania w języku naturalnym, korzystając zarówno z repozytorium użytkownika, jak i ze strumieni danych live.
+
+## Wskaźnik synchronizacji
+
+W prawym górnym narożniku ekranu prezentowany jest moment ostatniego odświeżenia danych w postaci **Updated: [godzina]**.
+
+- **Niebieski wskaźnik** oznacza, że prezentowane dane są aktualne.
+- **Bursztynowy wskaźnik** oznacza dostępność nowszych danych; odświeżenie strony aktualizuje widok.
+
+## Zalecany sposób pracy
+
+Cockpit zaprojektowano z myślą o sekwencyjnym przeglądzie od góry do dołu. Po około tygodniu regularnego korzystania użytkownik samodzielnie identyfikuje kafelki najistotniejsze dla swojej pracy. Najczęściej obserwowane ścieżki nawigacji z Cockpitu prowadzą do **Posiedzeń na żywo**, **Alertów** oraz **Repozytorium**.

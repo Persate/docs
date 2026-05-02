@@ -1,0 +1,77 @@
+---
+title: Interesariusze i Public Pulse
+description: "Dwa komplementarne widoki osób monitorowanych przez platformę: katalog interesariuszy obejmujący poszczególnych posłów oraz Public Pulse — zagregowany strumień ich aktywności w serwisie X (Twitter)."
+---
+
+Platforma śledzi dwa powiązane strumienie skoncentrowane na wybranych osobach.
+
+- **Interesariusze** — katalog wszystkich posłów Sejmu aktualnie pobranych z usługi legislacyjnej. Każdy wpis łączy materiał biograficzny, klub poselski i okręg, frekwencję w głosowaniach, identyfikatory mediów społecznościowych oraz zidentyfikowane wystąpienia w nagraniach sesji.
+- **Public Pulse** — zagregowany strumień aktywności na X (Twitter) z udziałem wszystkich interesariuszy z katalogu. Wpisy są strumieniowane w sposób ciągły i mogą być przeglądane jako chronologiczna lista lub jako wielotorowa oś czasu.
+
+Oba widoki dostępne są z grupy **INTELLIGENCE** w pasku bocznym, kolejno pod pozycjami **Stakeholders** oraz **Public Pulse**.
+
+## Wzajemna relacja widoków
+
+Katalog interesariuszy jest źródłem tożsamości. Public Pulse jest strumieniem aktywności obracającym się wokół tych tożsamości.
+
+- Każdy wpis w Public Pulse jest przypisany do konkretnego interesariusza; wybranie profilu otwiera ten sam rekord widoczny w katalogu.
+- Filtry Public Pulse (po klubie lub po wskazanej osobie) korzystają z tych samych metadanych, które zasilają katalog.
+- Zakładka **X** w profilu każdego interesariusza prezentuje te same wpisy co Public Pulse, lecz ograniczone do wybranego posła.
+
+Strony poświęcone poszczególnym interesariuszom opisuje sekcja [Wgląd w profil interesariusza](/pl/stakeholders/profile). Widok Public Pulse opisuje sekcja [Public Pulse](/pl/stakeholders/public-pulse).
+
+## Lista interesariuszy
+
+Katalog prezentowany jest jako siatka kart — od czterech do sześciu w wierszu, w zależności od szerokości ekranu. Kolejne karty doczytywane są w trakcie przewijania; kontrolki stronicowania nie są stosowane.
+
+### Karta interesariusza
+
+Każda karta zawiera:
+
+- **Banner partyjny** — proceduralnie generowany gradient zaszczepiony przynależnością posła, z logiem partii nałożonym w prawym górnym rogu. Posłowie niezrzeszeni prezentowani są na neutralnym popielatym gradiencie z godłem Sejmu w miejscu loga partii.
+- **Okrągły awatar** rozdzielający banner i sekcję tekstową.
+- **Imię i nazwisko** posła w roli nagłówka.
+- **Zawód**, jeśli odnotowany (lub *No profession listed*).
+- **Adres e-mail**, jeśli opublikowany.
+- **Województwo** okręgu wyborczego.
+- Numer **District** oraz **Votes** — liczbę głosów uzyskanych w ostatnich wyborach, prezentowane jako dwa wskaźniki w stopce karty.
+
+Wybranie karty otwiera **profil interesariusza** danego posła.
+
+## Filtry w pasku bocznym
+
+W prawym panelu bocznym dostępne są cztery kontrolki.
+
+### Wyszukiwanie
+
+Dopasowanie tekstowe w obrębie imion i nazwisk. Wyniki aktualizują się w trakcie wpisywania zapytania, gdy ma ono co najmniej dwa znaki; dopasowanie ignoruje wielkość liter.
+
+### Klub
+
+Pole wielokrotnego wyboru obejmujące każdy klub aktualnie reprezentowany w izbie. Wybranie jednego lub większej liczby klubów ogranicza widoczne karty do posłów posiadających przynależność do wskazanych klubów. Brak zaznaczenia jest równoznaczny z zaznaczeniem wszystkich.
+
+### Województwo
+
+Pole wielokrotnego wyboru obejmujące województwa reprezentowane w dotąd załadowanych rekordach. Działa identycznie jak filtr klubów.
+
+### Sortowanie
+
+Cztery opcje porządkowania stosowane do aktualnie załadowanych interesariuszy:
+
+- **Last Name (A-Z)** — domyślne.
+- **Last Name (Z-A)**.
+- **Votes (Highest)** — liczba głosów uzyskanych w ostatnich wyborach, malejąco.
+- **Votes (Lowest)**.
+
+Sortowanie obowiązuje w obrębie rekordów już pobranych. W miarę przewijania i doczytywania kolejnych stron, nowe rekordy są scalane z istniejącym porządkiem.
+
+## Stany pustego widoku i błędu
+
+- **No stakeholders match your filters** — aktywne filtry nie zwracają wyników. Usunięcie filtra, rozszerzenie zapytania lub wyczyszczenie wszystkich filtrów zazwyczaj rozwiązuje problem.
+- **No stakeholders available** — usługa legislacyjna nie zwróciła rekordów. Sytuacja niespotykana poza okresem wyborczym.
+- **Couldn't load stakeholders** — komunikacja z feature service'em nie powiodła się. Opis błędu rozróżnia przypadek braku uprawnień (*"You don't have permission to view stakeholders yet"*) od przejściowego problemu z łącznością.
+
+## Strony w tej sekcji
+
+- **[Wgląd w profil interesariusza](/pl/stakeholders/profile)** — widok szczegółowy pojedynczego posła, w tym biografia, aktywność w głosowaniach, dane kontaktowe oraz zakładki X i Recordings.
+- **[Public Pulse](/pl/stakeholders/public-pulse)** — zagregowany strumień X obejmujący wszystkich monitorowanych interesariuszy, z trybami widoku Feed i Timeline, filtrami oraz panelem Trending Topics.

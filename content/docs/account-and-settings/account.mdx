@@ -1,0 +1,78 @@
+---
+title: Account
+description: Managing the profile photo, display name, sign-in email address, role, and group memberships.
+---
+
+The **Account** panel manages the user's identity across Persate — the elements that appear on shared briefings, comments, collaborator lists, and any other surface where the user is seen by colleagues.
+
+It is the default panel when the **Settings modal** is opened.
+
+## Profile photo
+
+A square avatar shown alongside the user across the platform. Constraints:
+
+- **Formats:** JPG, PNG, or WebP.
+- **Maximum size:** 2MB.
+
+To change the photo, select the avatar (or the **Upload photo** button beside it) — the operating system's file-selection dialog opens. The new image takes effect immediately on save and propagates to other surfaces (sidebar avatar, message timelines, shared-document attribution) without a refresh.
+
+For users who have uploaded a custom photo, a **Remove custom photo** link appears beneath the upload control. Removing reverts to the platform's auto-generated avatar (initials on a coloured tile).
+
+For users who signed up via Google or Microsoft SSO, the avatar from the identity provider is used as the default. Uploading a custom photo overrides the provider's image; removing it restores the provider's image.
+
+## Display name
+
+The name shown in comments, shared reports, and user listings. Optional — when blank, the platform falls back to the name supplied by the identity provider, then to the email address.
+
+The text field accepts any UTF-8 input, including diacritics. Selecting **Save** persists the change immediately; the **Save** button is disabled until the field differs from the stored value.
+
+## Email
+
+The address used for sign-in and for system notifications. Displayed inline in the panel for reference.
+
+To change the sign-in email, select **Change email**. A modal opens requesting:
+
+- **Current password** — for re-authentication.
+- **New email** — the address to switch to.
+- **Repeat new email** — entered a second time to guard against typos.
+
+Submitting the form sends a **confirmation link** to **both** the old and the new email addresses. The change takes effect only after both links are followed; until then the old address remains the sign-in address.
+
+For users authenticated via Google or Microsoft SSO, the **Change email** action is unavailable from this panel — the email address is governed by the identity provider and must be changed there.
+
+## Role
+
+The user's permission level across the workspace. Displayed as a pill in the panel; it is read-only here.
+
+Roles in use:
+
+- **Administrator** — workspace administration, including user and group management.
+- **Member** — full access to the platform features within the user's group memberships.
+- **Banned** — sign-in is blocked; the account is retained but cannot access the workspace.
+
+Role changes are made by a workspace administrator from the **Admin Panel** (when enabled for the deployment) — not by the user themselves.
+
+## Groups
+
+The set of groups the user belongs to. Groups control which documents, alerts, analyses, and other shared resources the user can see.
+
+The panel shows:
+
+- The total count of group memberships.
+- A pill for each group, with the group's name and the user's role within it.
+
+Where the user is not a member of any groups, the panel reads *"You're not currently a member of any groups. Workspace admins can add you to shared groups for collaboration."*. As with role, group membership is changed by a workspace administrator, not by the user.
+
+## What changes are permitted from this panel
+
+The Account panel intentionally limits what the user can change about themselves:
+
+- **Profile photo** — yes.
+- **Display name** — yes.
+- **Email** — yes (with the dual-confirmation flow above).
+- **Password** — no, see [Security and Privacy](/account-and-settings/security).
+- **Role** — no, an administrator must change this.
+- **Group membership** — no, an administrator must change this.
+- **Tenant / workspace** — no, the user's tenant assignment is fixed for the lifetime of the account.
+
+These boundaries reflect a separation of concerns: identity attributes the user owns are editable here; permission attributes the workspace owns are managed in the **Admin Panel**.

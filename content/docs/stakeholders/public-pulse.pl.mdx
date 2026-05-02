@@ -1,0 +1,97 @@
+---
+title: Public Pulse
+description: Zagregowany strumień X (Twitter) obejmujący wszystkich monitorowanych interesariuszy, prezentowany jako chronologiczna lista lub wielotorowa oś czasu, z filtrowaniem oraz odkrywaniem trendów tematycznych.
+---
+
+**Public Pulse** to ponadinteresariuszowy strumień aktywności na X (Twitter). Każdy oryginalny wpis, odpowiedź, retweet i cytat opublikowany przez monitorowanego posła trafia w jedno miejsce, gdzie może zostać przefiltrowany, przeszukany oraz zwizualizowany na osi czasu. Wpisy są strumieniowane w sposób ciągły; nowa zawartość pojawia się bez konieczności przeładowywania strony.
+
+Dostęp do widoku zapewnia pozycja **INTELLIGENCE → Public Pulse** w pasku bocznym.
+
+## Dwa tryby widoku
+
+Przełącznik segmentowy w górnej części ekranu pozwala przełączać się pomiędzy dwiema prezentacjami tego samego strumienia danych:
+
+- **Timeline** *(domyślny)* — pionowa oś czasu, na której każdy wpis renderowany jest jako kapsułka rozmieszczana naprzemiennie po lewej i prawej stronie linii środkowej. Po zaznaczeniu dwóch lub większej liczby klubów układ przechodzi w tryb porównawczy z jednym panelem dla każdego wybranego klubu, dostosowany do porównywania, jak różne ugrupowania zareagowały na wspólny moment.
+- **Feed** — pionowa lista kart wpisów, uporządkowana od najnowszych. Najlepiej sprawdza się przy szybkim przeglądzie najnowszej aktywności.
+
+Feed i Timeline korzystają z tych samych danych i respektują te same filtry; przełączanie pomiędzy nimi nie powoduje utraty kontekstu.
+
+## Karta wpisu (tryb Feed)
+
+Każda karta wpisu odtwarza wpis X w jego natywnej prezentacji, opatrzony jedną z czterech etykiet:
+
+- **Original** — wpis pierwotnie autorstwa posła.
+- **Reply** — odpowiedź na inne konto.
+- **Retweet** — retweet bez komentarza.
+- **Quote** — retweet z komentarzem.
+
+Wpisy, które zostały następnie usunięte z X, lecz wcześniej zostały przechwycone przez platformę, są nadal eksponowane: oznaczone jako **Archived**, gdy chodzi o własny wpis posła, **Deleted**, gdy jest to oryginał wpisu retweetowanego, lub **Preview unavailable**, gdy nie udało się załadować osadzonego wpisu, a snapshot nie jest dostępny.
+
+Wpisy ładowane są przyrostowo — kolejne strony doklejane są w trakcie przewijania. Komunikat *"That's everything so far"* sygnalizuje koniec dostępnego strumienia.
+
+## Oś czasu (tryb Timeline)
+
+Oś czasu rozmieszcza wpisy na pionowej osi czasu. Przy zerowym lub jednym wybranym klubie wpisy renderowane są jako kapsułki naprzemiennie po lewej i prawej stronie pojedynczej linii środkowej, uporządkowane według czasu publikacji. Po zaznaczeniu dwóch lub większej liczby klubów oś przechodzi w układ porównawczy z jednym panelem dla każdego wybranego klubu, w którym pokazywane są wpisy danego klubu na własnej osi obok wskaźników wolumenu i topowych hashtagów dla tego klubu.
+
+Najechanie na kapsułkę ładuje pełną treść wpisu w przyklejony panel podglądu po lewej; kliknięcie przypina ten podgląd do czasu zamknięcia.
+
+Selektor **Timeline window** w pasku bocznym (widoczny wyłącznie w trybie Timeline) przełącza oś pomiędzy dwoma poziomami zoomu:
+
+- **60m** — ostatnie 60 minut, dostosowane do śledzenia bieżącej dyskusji w trakcie jej trwania.
+- **24h** — ostatnie 24 godziny, dostosowane do retrospektywnego przeglądu pełnej doby aktywności.
+
+Po zaznaczeniu dwóch lub większej liczby klubów dostępny staje się dodatkowy przełącznik **Differences only**, ukrywający tory, których grupy topowych hashtagów są wspólne dla wszystkich wybranych klubów — konfiguracji najbardziej użytecznej do dostrzegania, w czym wybrane kluby się rozchodzą.
+
+## Filtry w pasku bocznym
+
+W pasku bocznym dostępne są cztery główne kontrolki (a w trybie Timeline dodatkowo opisane wyżej kontrolki Timeline window i Differences only) oraz wskaźnik synchronizacji. Filtry działają łącznie (logiczne ORAZ) i obowiązują w obu trybach widoku jednocześnie.
+
+### Wyszukiwanie
+
+Dopasowanie tekstowe w obrębie treści wpisu. Wyniki aktualizują się w trakcie wpisywania zapytania.
+
+### Klub
+
+Pole wielokrotnego wyboru obejmujące każdy klub reprezentowany w bieżącym strumieniu. Działa identycznie jak filtr klubów w katalogu.
+
+### Interesariusz
+
+Pole wielokrotnego wyboru obejmujące wskazanych interesariuszy. Po zaznaczeniu jednego lub większej liczby interesariuszy strumień zostaje ograniczony do ich wpisów. Połączenie filtru osoby z filtrem klubu zawęża wynik dalej.
+
+### Zakres dat
+
+Para selektorów daty ograniczających strumień do wybranego przedziału. Pozostawienie któregokolwiek z pól pustym oznacza brak ograniczenia w danym kierunku.
+
+### Clear all filters
+
+Przycisk pojawia się w stopce zestawu filtrów, gdy aktywny jest jakikolwiek filtr. Przywraca strumień do domyślnego stanu nieprzefiltrowanego.
+
+## Trendy tematyczne
+
+Pod zestawem filtrów znajduje się panel **Trending · last 24h**. Wymienionych zostaje dziesięć najpopularniejszych tematów — hashtagów lub @-wzmianek — z ostatnich 24 godzin, uszeregowanych według liczby wzmianek. Wybranie dowolnego tematu wstawia go do pola **Search**, ograniczając strumień do wpisów wymieniających dany temat.
+
+W przypadku braku dostępnych trendów panel wyświetla komunikat *"No trends yet — come back after the next sync"*.
+
+## Status synchronizacji
+
+Dyskretny wskaźnik w stopce paska bocznego raportuje czas ostatniej synchronizacji platformy z API serwisu X:
+
+- **Niebieska kropka** oznacza, że strumień odzwierciedla najnowszą synchronizację.
+- **Bursztynowa kropka** oznacza, że nowsza zawartość jest przetwarzana i pojawi się wkrótce.
+- Towarzyszący tekst informuje *"Last synced N minut/godzin temu"*.
+
+Public Pulse odpytuje API X w trybie cyklicznym, nie strumieniowym; nowe wpisy mogą pojawić się z kilkuminutowym opóźnieniem względem chwili publikacji.
+
+## Stany pustego widoku i błędu
+
+- **No tweets match your filters** — aktywne filtry nie zwracają wyników. Usunięcie filtra, rozszerzenie zapytania lub poszerzenie zakresu dat zazwyczaj rozwiązuje problem.
+- **No tweets yet** — w bieżącym widoku nie ma załadowanych wpisów. Wpisy monitorowanych interesariuszy pojawią się tutaj w miarę napływu.
+- **Couldn't load Public Pulse** — komunikacja z feature service'em nie powiodła się. Przycisk **Retry** ponawia żądanie. Jak w innych miejscach, błąd uprawnień jest odróżniany od przejściowego problemu z łącznością.
+
+## Zalecany sposób pracy
+
+1. Otwarcie **Public Pulse** w trybie **Feed** w celu szybkiego przeglądu najnowszej aktywności.
+2. Zastosowanie filtru **Klub** lub **Interesariusz** w celu zawężenia uwagi do interesujących aktorów.
+3. Przełączenie do trybu **Timeline** przy zoomie **60m**, gdy temat dopiero się rozwija, lub przy **24h** dla retrospektywy z dnia.
+4. Wykorzystanie panelu **Trending · last 24h** do odkrywania tematów zyskujących popularność wśród interesariuszy.
+5. Otwarcie pojedynczej karty wpisu lub kropki na osi czasu w celu zapoznania się z oryginałem w X, a następnie (gdy autor jest monitorowanym interesariuszem) przejście do jego **profilu** po dodatkowy kontekst.

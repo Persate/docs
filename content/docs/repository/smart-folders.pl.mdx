@@ -1,0 +1,37 @@
+---
+title: Smart folders
+description: Trwałe zapisane zapytania działające jako foldery wirtualne. Pasujące pliki pojawiają się automatycznie.
+---
+
+**Smart folder** to trwałe zapisane zapytanie. Po jego zdefiniowaniu system automatycznie aktualizuje zawartość foldera: każdy plik spełniający skonfigurowane kryteria — zapytanie tekstowe, typy plików, daty, źródła lub tagi — pojawia się w folderze, w tym pliki nowo wgrane.
+
+Smart folder nie jest folderem w klasycznym znaczeniu; pliki nie są do niego przenoszone. Przynależność wyznaczana jest w momencie zapytania na podstawie kryteriów foldera.
+
+## Reprezentatywne zastosowania
+
+- Folder zawierający wszystkie dokumenty, w których występuje fraza "**legislacja 2025**", uszeregowane według daty modyfikacji w taki sposób, by najnowsze dokumenty znajdowały się na początku listy.
+- Folder przeznaczony do triażu, prezentujący wszystkie dokumenty PDF dłuższe niż pięćdziesiąt stron, którym nie nadano jeszcze tagów.
+- Folder konsolidujący dokumenty pochodzące z Google Drive odnoszące się do wskazanego interesariusza.
+
+## Konfiguracja
+
+Smart folders prezentowane są obok Repozytorium. Otwarcie Smart foldera pokazuje — i pozwala modyfikować — jego bieżącą konfigurację w panelu po prawej stronie:
+
+- **Content search** — zapytanie tekstowe (na przykład "podatek węglowy").
+- **Filtry** — ograniczenia według wzorca nazwy pliku, daty ostatniej modyfikacji, rozmiaru, statusu przetwarzania, typu pliku oraz źródła (Persate, Google Drive, OneDrive).
+- **Sortowanie** — według daty, alfabetycznie, według rozmiaru pliku lub innych dostępnych kryteriów.
+
+Modyfikacje są zapisywane przez wybranie opcji **Save**, po czym zawartość foldera podlega ponownemu wyznaczeniu.
+
+## Dostępne widoki
+
+Każdy Smart folder oferuje dwa tryby widoku, dostępne poprzez karty akcji u góry strony:
+
+- **Storage view** — prezentuje pasujące pliki w standardowym układzie listy lub kafelków. Odpowiedni do lektury lub pobierania pojedynczych dokumentów.
+- **Timeline view** — prezentuje te same pliki uszeregowane według daty. Odpowiedni do identyfikacji wzorców w czasie, na przykład tego, czy dokumenty dotyczące określonego tematu kumulują się w narastającym tempie.
+
+## Zalecenia
+
+- **Definiowanie należy rozpoczynać od kryteriów ogólnych, a następnie je zawężać.** Pierwsze definicje Smart folderów są zwykle albo zbyt wąskie (brak wyników), albo zbyt szerokie (wyniki obejmujące całe Repozytorium). Zapisanie foldera i obserwacja wyników stanowi podstawę iteracyjnego dopracowywania.
+- **Należy łączyć zapytanie tekstowe z filtrami.** Samo zapytanie tekstowe zwykle dopasowuje większą liczbę dokumentów niż było to zamierzone. Dodanie jednego lub dwóch filtrów (na przykład `typ pliku = PDF`) zawęża wyniki, jednocześnie zachowując odporność foldera na drobne zmiany w metadanych dokumentów.
+- **Tagi sprawdzają się przy powtarzających się tematach.** Tematy trudne do wyrażenia jako zapytanie tekstowe wygodnie jest oznaczać tagami ręcznie, a Smart folder konfigurować w taki sposób, by filtrował po tym tagu. Powstaje w ten sposób widok napędzany tagiem, łatwy do utrzymania.

@@ -1,0 +1,68 @@
+---
+title: Alerts and risks
+description: "Standing watches over the legislative stream: define a topic, the platform monitors every Sejm speech, public-pulse post, recording, and uploaded file for matches, and surfaces them as trigger events."
+---
+
+**Alerts and risks** is the platform's standing-watch facility. Each alert defines a topic — typically a description in natural language and a set of keywords — and the platform monitors every incoming legislative signal for matches. When a match is found, a **trigger event** is recorded against the alert and surfaced in the user's view.
+
+Alerts are accessed via the sidebar entry **CORE → Alerts & Risks**.
+
+## What an alert watches
+
+An alert is matched against four content channels, each surfacing a distinct kind of event:
+
+- **Sejm speech** — transcribed speeches from analysed Sejm recordings.
+- **Public pulse** — posts captured from the X (Twitter) accounts of tracked stakeholders.
+- **File** — documents uploaded to the user's **Repository**.
+- **Live** — segments of currently broadcasting sessions, captured by the Record Analysis pipeline.
+
+The same alert may match across all four channels simultaneously; each match is logged independently.
+
+## The alerts list
+
+The view opens to a grid of alert cards. Cards are presented as a two-column grid on desktop viewports and a single column on narrow ones.
+
+### The alert card
+
+Each card displays:
+
+- A **banner image** — an AI-generated thematic illustration produced when the alert is created. While the illustration is being generated the banner falls back to a neutral gradient.
+- A **status chip** in the lower-left of the banner — **ACTIVE** or **PAUSED**.
+- The alert's **name** as the heading.
+- A short **description** beneath the name.
+- A footer row showing **Last trigger** followed by the most recent date on which a matching event was recorded. Where no events have ever been recorded the value reads *N/A*.
+- An optional **attribution popover** in the footer reproducing the source attribution for the banner image.
+
+Selecting a card opens its **detail view**, described in [Inspecting an alert](/alerts/alert-detail).
+
+## Sidebar
+
+The right sidebar provides two controls.
+
+### Create alert
+
+A prominent **Create alert** button at the top of the sidebar opens the alert-creation form. The full form is described in [Creating and editing alerts](/alerts/creating-alerts).
+
+### Search
+
+A free-text field that filters the loaded alerts by name, description, or keyword. Matching is case-insensitive and updates as the query is typed.
+
+## Alert lifecycle
+
+An alert moves through three states:
+
+- **Active** — the alert is matched against incoming events. New matches accrue as trigger events.
+- **Paused** — the alert is retained but no new matching is performed. Trigger events accumulated before the pause remain visible.
+- **Deleted** — the alert and its trigger history are removed permanently. Deletion requires confirmation and is irreversible.
+
+State transitions are performed from the alert's detail view via the **Pause** / **Resume** controls and the **Delete** action.
+
+## Empty and error states
+
+- **No alerts found** — no alerts have been created on the account yet, or the active search excludes every loaded alert. The **Create alert** button in the sidebar is the entry point for the first.
+- A **red error banner** appears at the top of the list when communication with the feature service fails. The page may be reloaded; persistent failures are reported to the operations team automatically.
+
+## Pages in this section
+
+- **[Creating and editing alerts](/alerts/creating-alerts)** — the alert form: name, description, keywords, visibility, AI enhancement, and the duplicate-alert warning.
+- **[Inspecting an alert](/alerts/alert-detail)** — the detail view: hero banner, action controls, trigger history, and the sharing panel.

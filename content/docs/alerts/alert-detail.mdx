@@ -1,0 +1,81 @@
+---
+title: Inspecting an alert
+description: The alert detail view — hero banner, action controls, the trigger-history log, and (for shared alerts) the group-permissions panel.
+---
+
+Selecting any card on the **Alerts and risks** list opens the **detail view** for that alert. The screen is composed of a **hero banner**, a row of **action controls**, the **trigger-history log**, and — for shared alerts — a **permissions panel**. The right column carries a sticky reference card showing the alert's description and keyword set.
+
+A breadcrumb at the top of the screen reads **Alert Details**. A **Back to alerts** link returns to the directory.
+
+## Hero banner
+
+The banner spans the full width of the page.
+
+- **Banner image** — the AI-generated thematic illustration produced when the alert was created. While the illustration is being generated, or where generation has failed, the banner falls back to a neutral gradient.
+- **Status badge** — **Active** or **Paused**, with a coloured dot.
+- **Visibility badge** — **Private** (lock icon) or **Shared** (globe icon).
+- **Alert name** — rendered as the heading.
+- **Created** — the alert's creation timestamp, shown beneath the name with a clock icon.
+- **Image attribution popover** — a small information icon in the top-right of the banner reveals the source attribution for the illustration when one is recorded.
+
+## Action controls
+
+A row of buttons sits beneath the banner.
+
+### Pause / Resume
+
+Toggles the alert's matching state. While paused, no new trigger events are recorded; existing events remain visible. Resuming re-engages the alert without backfilling the period of pause.
+
+### Make Shared / Make Private
+
+Toggles the alert's visibility.
+
+- **Make Shared** opens an inline dialog containing a **group multi-select**. At least one group must be selected to confirm. On confirmation the alert becomes visible to members of the selected groups in addition to the creator.
+- **Make Private** removes all group access. A confirmation prompt is required: *"Moving to private will remove all group access. Continue?"*. On confirmation, the alert is no longer visible to any groups; existing trigger events and the alert itself are preserved.
+
+### Edit
+
+Opens the alert form pre-populated with the current values. The form behaviour is described in [Creating and editing alerts](/alerts/creating-alerts).
+
+### Delete
+
+Removes the alert and its entire trigger history. A native confirmation prompt is required, naming the alert and stating *"This cannot be undone"*. Deletion is irreversible; on success the user is returned to the alerts list.
+
+## Trigger history
+
+The main content area is occupied by **Trigger History** — the chronological log of every event matched against the alert.
+
+Each entry presents:
+
+- A **source-type chip** — one of **Sejm speech**, **Public pulse**, **File**, or **Live**, identifying the channel from which the match originated.
+- A **detection timestamp** in the user's local timezone.
+- A **context snippet** — the surrounding text from the matched content. Snippets longer than approximately 240 characters are collapsed by default with a fade-out gradient and a **Show more / Show less** control.
+
+Events are loaded incrementally; a **Load more** control fetches additional pages when available.
+
+If no matches have ever been recorded for the alert, the section displays *"No trigger events yet — matches against this alert's keywords and description will appear here"*.
+
+## Permissions panel
+
+For alerts whose visibility is **Shared**, a second section beneath Trigger History is titled **Shared with**. It enumerates every group with read access and provides controls for adjusting membership.
+
+- An **Add group** button reveals a multi-select listing groups not yet granted access. Selecting one or more groups and confirming adds them.
+- An **X** button beside each listed group removes it. The change takes effect immediately; no confirmation prompt is shown.
+
+Where the alert is shared but no groups are presently in the access list, the panel displays *"Not shared with any groups"*. This state typically arises briefly during permission changes; restoring access requires re-adding at least one group.
+
+The permissions panel is hidden entirely for **Private** alerts.
+
+## Reference sidebar
+
+The right column carries a sticky reference card with two sub-sections:
+
+- **Description** — the alert's full description text. Where empty, the card displays *"No description"* in italics.
+- **Keywords** — the keyword set, rendered as a wrap of pills. Where empty, the card displays *"No keywords"* in italics.
+
+The sidebar is intended for at-a-glance reference while reviewing trigger events; the editable values are reached via the **Edit** button.
+
+## Errors
+
+- **Alert not found** — the URL refers to an alert identifier that does not match any record (most commonly because the alert has been deleted, or the user lacks access). A **Back to alerts** button returns to the directory.
+- **Loading skeleton** — while the alert is being fetched, the screen presents placeholder shapes for the banner, action row, and content sections.

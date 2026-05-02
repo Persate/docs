@@ -1,0 +1,75 @@
+---
+title: Creating and editing alerts
+description: The alert form — name, description, keywords, visibility, AI enhancement, and the duplicate-alert protection.
+---
+
+A new alert is created from the **Alerts and risks** sidebar by selecting **Create alert**. The same form is used in edit mode when modifying an existing alert. The form lives at its own route (`/alerts/new` for creation, `/alerts/{id}/edit` for editing) and is composed of five sections.
+
+## Name
+
+A short, identifying label for the alert. Required. The name appears as the heading on the alert card and at the top of the detail view.
+
+## Description
+
+A natural-language description of the topic the alert is to track. Required. The description does two things:
+
+- It is the primary input to the platform's semantic matching against incoming Sejm speeches, public-pulse posts, and other content.
+- It is shown beneath the alert's name on the card, providing context for users browsing the list.
+
+The description is capped at 2,000 characters, but a focused description (one or two sentences) typically produces the most precise matching.
+
+## Keywords
+
+A list of literal terms that must appear in matched content. Optional, but recommended for topics that have a well-defined vocabulary.
+
+The keyword input supports two delimiters, switchable via a control above the input:
+
+- **Comma (,)** *(default)* — keywords are separated by commas, allowing multi-word phrases (e.g. `green deal, energy transition`).
+- **Space** — keywords are separated by whitespace, restricting each entry to a single token.
+
+Pressing **Enter**, selecting **Add**, or losing focus on the input commits the typed keywords to the keyword pill list. **Backspace** on an empty input removes the most recently added keyword.
+
+Each committed keyword is presented as a removable pill above the input. Duplicate keywords are silently dropped.
+
+## Visibility
+
+Two options determine who may see and use the alert:
+
+- **Private** *(default)* — visible only to the user who created it.
+- **Shared** — visible to selected user groups in addition to the creator.
+
+Selecting **Shared** in create mode reveals a **Share with groups** picker — a multi-select listing every group the user may share with. At least one group must be selected for a shared alert.
+
+In edit mode, the visibility may be switched between Private and Shared from the alert's detail view; the form itself does not surface the group picker.
+
+## AI enhancement
+
+An **Enhance with AI** toggle is present in create mode (omitted in edit mode). When enabled — the default — the platform's AI rewrites the description for clarity and expands the keyword set with semantically related terms before saving the alert. The user's original input is preserved alongside the enhancement.
+
+Disabling the toggle saves the description and keywords exactly as entered. This is the appropriate setting when the user has carefully calibrated the matching parameters and does not want them altered.
+
+## Duplicate detection
+
+When **Create Alert** is selected, the platform checks the user's existing alerts for any whose subject matter overlaps substantively with the new one. If matches are found, a yellow warning panel is displayed listing the similar alerts (each with its name and description) and offering two options:
+
+- **Cancel** — abandon the submission. The user typically reviews the existing alerts to decide whether to extend one of them rather than creating a new one.
+- **Create Anyway** — proceed with the creation despite the overlap. The new alert is created independently of the existing ones; trigger events are not deduplicated across alerts.
+
+Duplicate detection is performed only on creation; editing an existing alert does not re-run the check.
+
+## Submitting
+
+Three states govern the submit control:
+
+- **Disabled** — until both **Name** and **Description** contain non-whitespace text.
+- **Active** — labelled **Create Alert** in create mode and **Save Changes** in edit mode.
+- **Busy** — labelled **Creating...** or **Saving...** while the request is in flight; both submit and cancel are disabled.
+
+On success:
+
+- In **create mode**, the user is returned to the alerts list. The new alert appears immediately, with banner illustration generation in progress.
+- In **edit mode**, the user is returned to the alert's detail view with the updated values shown.
+
+## Cancelling
+
+A **Cancel** button alongside the submit control returns to the previous screen without persisting changes. While in the middle of a submission the cancel control is disabled.

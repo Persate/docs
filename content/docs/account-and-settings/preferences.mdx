@@ -1,0 +1,85 @@
+---
+title: Preferences, notifications, and analysis
+description: Appearance and language preferences, email notification toggles, and the Analysis-panel controls — the three smaller panels under Settings consolidated for reference.
+---
+
+This page covers the three smaller panels in the **Settings modal**: **Preferences**, **Notifications**, and **Analysis**. Several of the controls in these panels are presently labelled **coming-soon** and are surfaced for visibility — they will become active in subsequent releases.
+
+The fourth platform-feature panel — **Advisor** — is documented in the Advisor section's [Best practices](/advisor/best-practices) page.
+
+## Preferences
+
+Settings governing how the platform looks and behaves.
+
+### Appearance
+
+A theme selector with three options:
+
+- **Moonlit night** *(default)* — the dark theme.
+- **Sunny mode** — the light theme.
+- **Follow system** — the platform respects the user's operating-system theme preference, switching automatically when it changes.
+
+The change takes effect immediately and persists across sessions and devices.
+
+### Feature banners
+
+Each major feature page (Cockpit, Live proceedings, Voting ledger, Stakeholders, Public Pulse, Alerts, AI advisor) carries a dismissible introductory banner explaining what the feature is. Once dismissed, a banner does not reappear automatically.
+
+The **Feature banners** control reports the count of currently dismissed banners and exposes a single **Reset** button. Resetting restores every previously dismissed banner; banners then dismiss again only on explicit user action.
+
+Where no banners have been dismissed, the control reads *"No banners hidden"* and the action is unavailable.
+
+### Language *(coming soon)*
+
+The platform's interface is presently English-only. Additional locales are planned for a future release.
+
+The current locale is displayed for reference (*English*); the selector will become active once additional locales are translated.
+
+### Timezone *(coming soon)*
+
+Timestamps across the platform — proceedings, digests, scheduled briefings — currently render in the user's browser timezone. A future server-stored timezone preference will allow the same account to render times consistently across devices and shared content.
+
+The current default is *(GMT +2:00) Warsaw*.
+
+## Notifications
+
+Email notification preferences. The platform does not currently offer in-app notifications or push notifications; both are planned and surfaced as **coming-soon** entries here.
+
+### Product updates
+
+Email about new features, improvements, and release notes. Sent no more than once a week.
+
+This is the **only currently active toggle** in the panel. The default is **on**; it may be toggled off at any time. Changes are persisted immediately to the user's account metadata.
+
+### Security alerts *(coming soon)*
+
+Email for sign-in attempts, password changes, and MFA events. The toggle is presently disabled — when this ships it will be **on by default** and will not require manual enrolment.
+
+### Weekly digest *(coming soon)*
+
+A Monday-morning email summarising what has changed across the user's watched documents, tracked stakeholders, and active alerts. The toggle is presently disabled.
+
+### In-app and push *(coming soon)*
+
+The platform's roadmap includes both in-app notifications (a notification centre accessible from the top navbar) and push notifications (delivered to the user's mobile device). Neither is exposed as a toggle yet — the row is included for visibility.
+
+## Analysis
+
+The **Analysis** panel governs how the platform indexes and links files. Both controls in this panel are presently **coming-soon**.
+
+### Synchronization interval *(coming soon)*
+
+The frequency at which the platform pulls new files from connected third-party sources. The selector exposes four intervals — *Every hour*, *Every three hours*, *Every twelve hours*, *Once a day* — and will take effect once the **Sources** integrations (Google Drive, Microsoft OneDrive) are enabled. Until then the selector is informational.
+
+### Smart suggestions *(coming soon)*
+
+A toggle that, when enabled, will cause the platform to proactively surface related proceedings, amendments, and cross-references in the user's workflow. The default will be **off**; users who want a more actively recommending experience will opt in here.
+
+## Why so many "coming soon" controls
+
+The settings modal is intentionally forward-looking. Each *coming-soon* row reserves the place where the setting will appear when its backing feature ships, so users who learn the layout once do not need to re-learn it every release.
+
+In practical terms today:
+
+- **Account, Security & Privacy, Advisor, Preferences (Appearance and Feature banners), and Notifications (Product updates)** are fully active.
+- **Preferences (Language and Timezone), Notifications (Security alerts, Weekly digest, In-app & push), Analysis (both controls), and Security & Privacy (Data & export)** are visible but not yet operational.

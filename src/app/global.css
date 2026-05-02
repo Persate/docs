@@ -1,0 +1,184 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* ---------------------------------------------------------------------------
+ * Persate FE design tokens
+ * Source: Persate/FE/src/app/globals.css — kept in sync with the main app
+ * so the docs site shares colours, typography, and tile styling.
+ * ------------------------------------------------------------------------- */
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(100% 0.00011 271.152);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #0b70c3;
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: #005092;
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  --bg: #ffffff;
+  --dashboard: #f9f9f9;
+  --navbar: #f0f0f0;
+  --separator: #d0d0d0;
+  --secsep: #c7c7c7;
+  --lighterbg: #f8f8f8;
+  --lighter: #0062b3;
+  --separatorBlur: #e6f2f7;
+  --radiant: #007ae0;
+  --contentSidebar: #f2f2f2;
+  --tiledarker: #e1e1e1;
+  --tile-icon-bg: #e0e0e0;
+  --tile-icon-border: #d0d0d0;
+
+  --text-color-primary: #111111;
+  --text-color-secondary: #555555;
+  --text-color-tertiary: #6b7280;
+  --success: #16a34a;
+  --warning: #d97706;
+}
+
+.dark {
+  --background: oklch(0% 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #0b70c3;
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: #005092;
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+
+  --bg: #020202;
+  --dashboard: #060606;
+  --navbar: #000000;
+  --separator: #272727;
+  --secsep: #424242;
+  --lighterbg: #0f0f0f;
+  --lighter: #6dbdff;
+  --separatorBlur: #000a0d;
+  --radiant: #0062b3;
+  --contentSidebar: #080808;
+  --tiledarker: #1a1a1a;
+  --tile-icon-bg: #111111;
+  --tile-icon-border: rgba(255, 255, 255, 0.05);
+
+  --text-color-primary: #ffffff;
+  --text-color-secondary: #bababa;
+  --text-color-tertiary: #9aa3af;
+  --success: #22c55e;
+  --warning: #f59e0b;
+}
+
+@theme inline {
+  --font-sans: var(--font-montserrat), 'Montserrat', ui-sans-serif, system-ui,
+    sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-bg: var(--bg);
+  --color-dashboard: var(--dashboard);
+  --color-navbar: var(--navbar);
+  --color-separator: var(--separator);
+  --color-secsep: var(--secsep);
+  --color-lighterbg: var(--lighterbg);
+  --color-lighter: var(--lighter);
+  --color-separatorBlur: var(--separatorBlur);
+  --color-radiant: var(--radiant);
+  --color-contentSidebar: var(--contentSidebar);
+  --color-tiledarker: var(--tiledarker);
+
+  --color-primarytxt: var(--text-color-primary);
+  --color-secondarytxt: var(--text-color-secondary);
+  --color-tertiarytxt: var(--text-color-tertiary);
+  --color-tileIconBg: var(--tile-icon-bg);
+  --color-tileIconBorder: var(--tile-icon-border);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+}
+
+/* ---------------------------------------------------------------------------
+ * Map Persate tokens onto the Fumadocs UI palette, so the docs chrome
+ * (sidebar, callouts, code blocks) inherits the FE look.
+ * ------------------------------------------------------------------------- */
+
+:root,
+.dark {
+  --color-fd-background: var(--bg);
+  --color-fd-foreground: var(--text-color-primary);
+  --color-fd-card: var(--lighterbg);
+  --color-fd-card-foreground: var(--text-color-primary);
+  --color-fd-popover: var(--lighterbg);
+  --color-fd-popover-foreground: var(--text-color-primary);
+  --color-fd-primary: var(--primary);
+  --color-fd-primary-foreground: oklch(0.985 0 0);
+  --color-fd-secondary: var(--lighterbg);
+  --color-fd-secondary-foreground: var(--text-color-primary);
+  --color-fd-muted: var(--contentSidebar);
+  --color-fd-muted-foreground: var(--text-color-secondary);
+  --color-fd-accent: var(--contentSidebar);
+  --color-fd-accent-foreground: var(--text-color-primary);
+  --color-fd-border: var(--separator);
+  --color-fd-ring: var(--primary);
+}
+
+html {
+  scrollbar-gutter: stable;
+  background-color: var(--bg);
+}
+
+html > body[data-scroll-locked] {
+  margin-right: 0px !important;
+  --removed-body-scroll-bar-size: 0px !important;
+}
+
+body {
+  font-family: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-color-primary);
+}

@@ -1,0 +1,75 @@
+---
+title: Tworzenie i edycja alertów
+description: Formularz alertu — nazwa, opis, słowa kluczowe, widoczność, ulepszenie AI oraz zabezpieczenie przed tworzeniem duplikatów.
+---
+
+Nowy alert tworzy się z paska bocznego sekcji **Alerty i ryzyka** poprzez wybranie opcji **Create alert**. Ten sam formularz wykorzystywany jest w trybie edycji przy modyfikacji istniejącego alertu. Formularz zajmuje własną trasę (`/alerts/new` dla tworzenia, `/alerts/[id]/edit` dla edycji) i zorganizowany jest w pięć sekcji.
+
+## Nazwa
+
+Krótka, identyfikująca etykieta alertu. Wymagana. Nazwa pojawia się jako nagłówek na karcie alertu oraz w górnej części widoku szczegółowego.
+
+## Opis
+
+Opis tematu, który alert ma śledzić, w języku naturalnym. Wymagany. Opis pełni dwie funkcje:
+
+- Stanowi podstawowy materiał wejściowy dla semantycznego dopasowywania platformy do napływających wystąpień sejmowych, wpisów Public Pulse oraz innych treści.
+- Prezentowany jest pod nazwą alertu na karcie, dostarczając kontekstu użytkownikom przeglądającym listę.
+
+Opis jest ograniczony do 2000 znaków, lecz zawężony opis (jedno lub dwa zdania) zazwyczaj zapewnia najprecyzyjniejsze dopasowanie.
+
+## Słowa kluczowe
+
+Lista dosłownych terminów, które muszą wystąpić w dopasowanej treści. Opcjonalne, lecz zalecane dla tematów posiadających wyraźnie określone słownictwo.
+
+Pole słów kluczowych obsługuje dwa separatory, przełączane kontrolką nad polem:
+
+- **Comma (,)** *(domyślny)* — słowa kluczowe rozdzielane są przecinkami, co umożliwia stosowanie wyrażeń wielowyrazowych (np. `green deal, energy transition`).
+- **Space** — słowa kluczowe rozdzielane są białymi znakami, ograniczając każdą pozycję do pojedynczego tokenu.
+
+Wciśnięcie **Enter**, wybranie opcji **Add** lub utrata fokusa na polu zatwierdza wpisane słowa do listy plakietek. **Backspace** w pustym polu usuwa ostatnio dodaną pozycję.
+
+Każde zatwierdzone słowo kluczowe prezentowane jest jako usuwalna plakietka nad polem. Duplikaty są w cichy sposób pomijane.
+
+## Widoczność
+
+Dwie opcje określają, kto może widzieć i wykorzystywać alert:
+
+- **Private** *(domyślna)* — widoczny wyłącznie dla użytkownika, który go utworzył.
+- **Shared** — widoczny dla wskazanych grup użytkowników poza twórcą.
+
+Wybranie **Shared** w trybie tworzenia ujawnia pole **Share with groups** — wielokrotnego wyboru obejmujące każdą grupę, z którą użytkownik może dzielić zasoby. Dla alertu współdzielonego musi zostać zaznaczona przynajmniej jedna grupa.
+
+W trybie edycji widoczność można przełączać pomiędzy Private a Shared z poziomu widoku szczegółowego alertu; sam formularz nie udostępnia pola wyboru grup.
+
+## Ulepszenie AI
+
+Przełącznik **Enhance with AI** obecny jest w trybie tworzenia (pominięty w trybie edycji). Po włączeniu — domyślnie — AI platformy przepisuje opis dla zwiększenia jasności oraz rozszerza zestaw słów kluczowych o terminy semantycznie powiązane jeszcze przed zapisem alertu. Pierwotny zapis użytkownika zostaje zachowany obok ulepszenia.
+
+Wyłączenie przełącznika zapisuje opis i słowa kluczowe dokładnie tak, jak zostały wprowadzone. Jest to ustawienie właściwe, gdy użytkownik starannie wykalibrował parametry dopasowania i nie chce, by zostały zmienione.
+
+## Wykrywanie duplikatów
+
+Po wybraniu opcji **Create Alert** platforma sprawdza istniejące alerty użytkownika pod kątem tych, których przedmiot pokrywa się merytorycznie z nowym. W przypadku znalezienia dopasowań wyświetlany jest żółty panel ostrzegawczy wymieniający podobne alerty (każdy wraz z nazwą i opisem) oraz oferujący dwie opcje:
+
+- **Cancel** — porzucenie zgłoszenia. Użytkownik zazwyczaj przegląda istniejące alerty, by zdecydować, czy nie rozszerzyć któregoś z nich zamiast tworzyć nowy.
+- **Create Anyway** — kontynuacja tworzenia mimo nakładania się. Nowy alert powstaje niezależnie od istniejących; zdarzenia wyzwalające nie są deduplikowane między alertami.
+
+Wykrywanie duplikatów wykonywane jest wyłącznie podczas tworzenia; edycja istniejącego alertu nie ponawia sprawdzenia.
+
+## Zatwierdzenie
+
+Trzy stany sterują kontrolką zatwierdzenia:
+
+- **Disabled** — dopóki **Nazwa** i **Opis** nie zawierają tekstu nieskładającego się wyłącznie z białych znaków.
+- **Active** — etykieta **Create Alert** w trybie tworzenia oraz **Save Changes** w trybie edycji.
+- **Busy** — etykieta **Creating...** lub **Saving...** w trakcie przetwarzania żądania; zarówno zatwierdzenie, jak i anulowanie są nieaktywne.
+
+Po sukcesie:
+
+- W **trybie tworzenia** użytkownik wraca do listy alertów. Nowy alert pojawia się natychmiast, z generowaniem ilustracji banneru w toku.
+- W **trybie edycji** użytkownik wraca do widoku szczegółowego alertu z zaktualizowanymi wartościami.
+
+## Anulowanie
+
+Przycisk **Cancel** obok kontrolki zatwierdzenia powoduje powrót do poprzedniego ekranu bez utrwalenia zmian. W trakcie zatwierdzania kontrolka anulowania jest nieaktywna.

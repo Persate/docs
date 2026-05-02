@@ -1,0 +1,81 @@
+---
+title: Wgląd w alert
+description: Widok szczegółowy alertu — banner tytułowy, kontrolki akcji, dziennik historii wyzwoleń oraz (dla alertów współdzielonych) panel uprawnień grupowych.
+---
+
+Wybranie dowolnej karty na liście **Alertów i ryzyk** otwiera **widok szczegółowy** danego alertu. Ekran zorganizowany jest w **banner tytułowy**, wiersz **kontrolek akcji**, **dziennik historii wyzwoleń** oraz — w przypadku alertów współdzielonych — **panel uprawnień**. Prawa kolumna prezentuje przyklejoną kartę referencyjną zawierającą opis alertu i zestaw słów kluczowych.
+
+Pasek nawigacyjny u góry ekranu wskazuje **Alert Details**. Odsyłacz **Back to alerts** powoduje powrót do katalogu.
+
+## Banner tytułowy
+
+Banner rozciąga się na pełną szerokość strony.
+
+- **Banner** — ilustracja tematyczna generowana przez AI w momencie utworzenia alertu. W trakcie generowania ilustracji oraz w przypadku niepowodzenia generowania banner zastępowany jest neutralnym gradientem.
+- **Plakietka statusu** — **Active** lub **Paused**, opatrzona kolorową kropką.
+- **Plakietka widoczności** — **Private** (ikona kłódki) lub **Shared** (ikona globusa).
+- **Nazwa alertu** — renderowana jako nagłówek.
+- **Created** — znacznik czasu utworzenia, prezentowany pod nazwą obok ikony zegara.
+- **Popover atrybucji obrazu** — niewielka ikona informacji w prawym górnym rogu banneru ujawnia źródło atrybucji ilustracji, gdy zostało zarejestrowane.
+
+## Kontrolki akcji
+
+Pod bannerem znajduje się wiersz przycisków.
+
+### Pause / Resume
+
+Przełącza stan dopasowywania alertu. W trakcie wstrzymania nie są rejestrowane nowe zdarzenia wyzwalające; istniejące pozostają widoczne. Wznowienie ponownie aktywuje alert bez uzupełniania okresu wstrzymania.
+
+### Make Shared / Make Private
+
+Przełącza widoczność alertu.
+
+- **Make Shared** otwiera dialog osadzony w widoku, zawierający **wielokrotny wybór grup**. Do potwierdzenia wymagane jest zaznaczenie przynajmniej jednej grupy. Po potwierdzeniu alert staje się widoczny dla członków wskazanych grup obok twórcy.
+- **Make Private** odbiera wszystkim grupom dostęp. Wymagane jest potwierdzenie: *"Moving to private will remove all group access. Continue?"*. Po potwierdzeniu alert nie jest już widoczny dla żadnej grupy; istniejące zdarzenia wyzwalające oraz sam alert pozostają zachowane.
+
+### Edit
+
+Otwiera formularz alertu wypełniony bieżącymi wartościami. Zachowanie formularza opisuje sekcja [Tworzenie i edycja alertów](/pl/alerts/creating-alerts).
+
+### Delete
+
+Usuwa alert wraz z całą historią wyzwoleń. Wymagane jest natywne potwierdzenie systemowe wymieniające nazwę alertu i informujące *"This cannot be undone"*. Usunięcie jest nieodwracalne; po sukcesie użytkownik wraca do listy alertów.
+
+## Historia wyzwoleń
+
+Główny obszar treści zajmuje **Trigger History** — chronologiczny dziennik każdego zdarzenia dopasowanego do alertu.
+
+Każda pozycja prezentuje:
+
+- **Plakietkę typu źródła** — jedną z **Sejm speech**, **Public pulse**, **File** lub **Live**, identyfikującą kanał, z którego pochodzi dopasowanie.
+- **Znacznik czasu wykrycia** w lokalnej strefie czasowej użytkownika.
+- **Fragment kontekstowy** — otaczający tekst dopasowanej treści. Fragmenty dłuższe niż około 240 znaków są domyślnie zwijane gradientem zanikającym oraz kontrolką **Show more / Show less**.
+
+Zdarzenia ładowane są przyrostowo; przycisk **Load more** pobiera kolejne strony, gdy są dostępne.
+
+W przypadku braku jakichkolwiek dopasowań sekcja prezentuje komunikat *"No trigger events yet — matches against this alert's keywords and description will appear here"*.
+
+## Panel uprawnień
+
+Dla alertów o widoczności **Shared** pod sekcją Trigger History pojawia się druga sekcja zatytułowana **Shared with**. Wymienia każdą grupę z dostępem do odczytu oraz udostępnia kontrolki regulacji członkostwa.
+
+- Przycisk **Add group** ujawnia wielokrotny wybór wymieniający grupy, którym dotąd nie nadano dostępu. Zaznaczenie jednej lub większej liczby grup i potwierdzenie dodaje je.
+- Przycisk **X** obok każdej wymienionej grupy odbiera jej dostęp. Zmiana wprowadzana jest natychmiast; potwierdzenie nie jest wymagane.
+
+W przypadku alertu współdzielonego, lecz bez aktualnie uprawnionych grup, panel prezentuje komunikat *"Not shared with any groups"*. Stan ten występuje zazwyczaj krótko podczas zmian uprawnień; przywrócenie dostępu wymaga ponownego dodania przynajmniej jednej grupy.
+
+Panel uprawnień jest całkowicie ukryty dla alertów typu **Private**.
+
+## Pasek referencyjny
+
+Prawa kolumna prezentuje przyklejoną kartę referencyjną z dwiema podsekcjami:
+
+- **Description** — pełen tekst opisu alertu. W przypadku braku karta wyświetla *"No description"* kursywą.
+- **Keywords** — zestaw słów kluczowych renderowany jako zawijany rząd plakietek. W przypadku braku karta wyświetla *"No keywords"* kursywą.
+
+Pasek przeznaczony jest do podręcznej referencji w trakcie przeglądania zdarzeń wyzwalających; edycja wartości odbywa się za pośrednictwem przycisku **Edit**.
+
+## Błędy
+
+- **Alert not found** — adres URL odsyła do identyfikatora alertu, który nie odpowiada żadnemu rekordowi (najczęściej dlatego, że alert został usunięty lub użytkownik nie ma dostępu). Przycisk **Back to alerts** powoduje powrót do katalogu.
+- **Szkielet ładowania** — w trakcie pobierania alertu ekran prezentuje placeholdery banneru, wiersza akcji oraz sekcji treści.

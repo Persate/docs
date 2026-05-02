@@ -1,0 +1,88 @@
+---
+title: Voting ledger
+description: "The full record of parliamentary votes: browsing recent ballots, reading individual results, and inspecting how each member voted."
+---
+
+The **Voting ledger** is the catalogue of recorded ballots in the Sejm. Each entry corresponds to a single voting event — typically a motion put to the chamber during a sitting — and is enriched with the official tally, the result, the underlying documents, and a seat-by-seat record of how every member voted.
+
+It is accessed via the sidebar entry **INTELLIGENCE → Ledger**.
+
+## The ballot list
+
+Votes are presented as a grid of cards, grouped by **proceeding** (the parliamentary sitting in which they took place). Proceedings are listed in descending order — the most recent at the top — and within each proceeding, votes are presented as published by the Chancellery of the Sejm.
+
+The number of cards visible at one time is controlled by a **page-size selector** at the foot of the screen. Older votes are reached by paginating back rather than by scrolling indefinitely; the **Voting ledger** is intended for targeted retrieval rather than open-ended browsing.
+
+## The voting card
+
+Each card carries the following information.
+
+### Identifiers and outcome
+
+Three short badges in the upper-left:
+
+- **Proceeding N** — the number of the parliamentary sitting.
+- **Vote N** — the vote's sequence number within that sitting.
+- **Result badge** — the outcome of the vote. Possible values:
+  - **Passed** (green) — the motion reached the required threshold.
+  - **Rejected** (red) — the motion did not reach the required threshold.
+  - **Quorum present** (green) — for presence checks, sufficient members were recorded.
+  - **Quorum missing** (red) — for presence checks, insufficient members were recorded.
+  - For **On list** votes (votes selecting between several named options), no result badge is shown; the option tally is presented instead.
+
+### Title and description
+
+The motion's title (or topic, when distinct) is shown as the card heading. A secondary description is shown beneath it where supplied. Both fields are taken verbatim from the parliamentary record.
+
+### Date
+
+The vote's casting time, displayed in the user's local timezone, prefixed with a clock icon.
+
+### Tally visualisation
+
+The lower portion of the card shows the distribution of votes. Two visual styles are used depending on the vote's type:
+
+- **Standard ballots** (Yes/No/Abstain) — a horizontal bar segmented by colour: blue for Yes, red for No, amber for Abstain, slate for Present (where applicable), and grey for Absent. A textual legend reproduces each tally with its label.
+- **List ballots** (selecting between named options) — up to three options are displayed as labelled progress bars proportional to the vote share they received.
+
+### Footer
+
+The footer reports either **Votes cast** or, for presence checks, **Members present** — the count of members whose vote (or presence) was recorded.
+
+Selecting any card opens its **Voting detail view**, described in [Inspecting a voting](/voting-ledger/voting-detail).
+
+## Search
+
+The right sidebar provides a single **Search** field. Matching is performed against the title, topic, and voting number of the votings currently fetched from the legislation service — that is, against the current page only. Refining a query that is to operate over a wider range of historical ballots is supported by switching pages and re-running the search.
+
+The matching is case-insensitive. Results update as the query is typed.
+
+## Voting kinds
+
+The Sejm employs three vote-recording mechanisms; the **Voting ledger** preserves the distinction:
+
+- **Electronic** — vote cast via the chamber's electronic voting system.
+- **Traditional** — vote cast by show of hands, division, or other manual mechanism.
+- **On list** — a vote selecting between a discrete set of named options (for example, candidates in an election); the tally is per-option rather than yes/no.
+
+The vote kind is displayed prominently on the detail view and is referenced in the result-determination logic.
+
+## Majority types
+
+Votes are decided according to one of three majority rules, recorded with each ballot:
+
+- **Simple** — more votes for than against.
+- **Absolute** — more than half of the statutory number of members.
+- **Qualified** — a constitutionally specified higher threshold (typically two-thirds or three-fifths).
+
+The applicable majority is reported in the detail view and informs whether the **Passed** or **Rejected** label is assigned.
+
+## Empty and error states
+
+- **No votings match your search** — the current query returns no results on the present page. Clearing the query, or moving to a different page, typically resolves the issue.
+- **No votings available** — the legislation service returned no votings for the current range. This is unusual outside long parliamentary recesses.
+- **Couldn't load votings** — communication with the legislation service was unsuccessful. A **Try again** control reissues the request. Where the failure is a permission error, the message is replaced with *"You don't have permission to view legislative votings yet"*.
+
+## Pages in this section
+
+- **[Inspecting a voting](/voting-ledger/voting-detail)** — the detail view for a single ballot, including the voting overview, related documents, the voting-options breakdown, and the seat-by-seat chamber map with club filtering.

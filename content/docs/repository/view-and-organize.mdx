@@ -1,0 +1,65 @@
+---
+title: Viewing and organising files
+description: The document viewer, side-panel metadata, search, sharing, and deletion.
+---
+
+Files in the Repository may be opened, searched, shared, and removed via the standard document viewer.
+
+## Opening a file
+
+Selecting a file's name (in list view) or its card (in tile view) opens the file in the document viewer. The viewer arranges the document on the left and a metadata panel on the right.
+
+Files are rendered using the browser's built-in PDF viewer, with zoom controls, page navigation, and the browser-native text search.
+
+## The metadata panel
+
+The right-hand panel contains the principal file metadata, organised into expandable sections.
+
+### Summary
+
+An automatically generated synopsis of the document, suitable for triage prior to a full read. The summary appears after document analysis completes — typically within a few seconds for short files, longer for larger documents.
+
+### Information
+
+The factual properties of the file:
+
+- File extension and size
+- Date of last modification
+- Processing status (indexed, embedded, and similar)
+- Detected language
+
+### Tags
+
+User-applied labels for grouping files. Tags are displayed in the file's detail panel; their use is recommended for accounts with substantial document holdings.
+
+### Sharing
+
+The access scope of the file. The control toggles between **Private** (visible only to the uploading user) and **Group** (visible to specified groups, selected via a multi-select). Modifications take effect immediately and do not relocate the file; only the visibility is adjusted.
+
+### Actions
+
+Two controls are provided at the foot of the panel: **Download** and **Delete**.
+
+## Searching the Repository
+
+The **search field** at the top of the Repository performs full-text search across all files visible to the user. The query is matched against document content, not solely against filenames.
+
+Search may be combined with **filters** — filename, modification date, file size, and processing status — alongside separate selectors for file type and source, to construct precise queries.
+
+A query intended for repeated use should be saved as a [Smart folder](/repository/smart-folders).
+
+## Multi-file selection (list view)
+
+In **list view**, a checkbox precedes each row. Selecting two or more rows reveals an action bar at the foot of the screen, indicating the count of selected items and the available bulk operations. At present, **Delete** is the only supported bulk action.
+
+Multi-file selection is not yet available in tile view.
+
+## Deletion
+
+Files may be deleted individually via the **Delete** control in the file's metadata panel, or in bulk via the multi-file selection mechanism in list view. Deletion takes effect immediately; the platform does not provide a recycle bin or staging area for deleted items.
+
+<Callout type="warn" title="Deletion is permanent">
+The operation is irreversible. If a file may subsequently be required, it should be downloaded prior to deletion.
+</Callout>
+
+→ Next: [Smart folders](/repository/smart-folders)

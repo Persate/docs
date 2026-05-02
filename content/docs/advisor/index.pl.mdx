@@ -1,0 +1,79 @@
+---
+title: Asystent AI
+description: "Wewnątrzaplikacyjny asystent inteligencji legislacyjnej Persate: agent, który przeszukuje korpus sejmowy, wykonuje zapytania do danych strukturalnych platformy i pisze ugruntowane, opatrzone cytowaniami odpowiedzi w języku potocznym."
+---
+
+**Asystent AI** to wewnątrzaplikacyjny asystent Persate przeznaczony do pracy eksploracyjnej w obrębie korpusu legislacyjnego. Nie jest to swobodny chatbot — to agent z trwałym, wąsko ukierunkowanym zestawem zdolności, ograniczony do polskiego parlamentu oraz dokumentów na koncie użytkownika. Każde twierdzenie, jakie formułuje, zakotwiczone jest w faktycznym wyszukiwaniu, a każde odniesienie stanowi klikalne cytowanie prowadzące do źródła.
+
+Dostęp do asystenta zapewnia pozycja **INTELLIGENCE → Advisor** w pasku bocznym.
+
+## Do czego służy asystent
+
+Asystent wpasowuje się pomiędzy dwa zadania, które użytkownik w przeciwnym razie wykonywałby ręcznie:
+
+- **Ukierunkowane wyszukiwanie**, które niezupełnie pasuje do wyszukiwania strukturalnego. *"Która komisja rozpatrywała ostatnią ustawę o cenach energii i kto głosował przeciw?"* w przeciwnym razie wymagałoby ręcznego nawigowania po **Rejestrze głosowań** oraz wzajemnego krzyżowania z transkryptami komisji. Asystent wykonuje to porównanie i cytuje oba źródła w jednej odpowiedzi.
+- **Synteza wielu źródeł**. *"Porównaj, co Koalicja Klimatyczna mówiła publicznie o odejściu od węgla z tym, jak jej członkowie faktycznie głosowali w ostatnim półroczu."* czerpie z Public Pulse w zakresie wypowiedzi publicznych oraz z Rejestru głosowań w zakresie rozstrzygnięć. Asystent pobiera obie warstwy, dopasowuje je i prezentuje porównanie.
+
+Zadania, do których asystent **nie** jest przeznaczony: dowolne pisanie, generowanie kodu, rozumowanie matematyczne oderwane od korpusu czy ogólnodostępna konwersacja.
+
+## Czym różni się od ogólnego chatu
+
+Trzy różnice kształtują doświadczenie pracy.
+
+- **Ugruntowane odpowiedzi.** Asystent nie może odpowiadać na pytania o Sejm z pamięci. By sformułować jakiekolwiek twierdzenie faktyczne, wykonuje wyszukiwanie wśród danych platformy — rekordów głosowań, profili posłów, nagrań wystąpień, wgranych dokumentów — a plakietki widoczne nad każdą odpowiedzią to właśnie te wyszukiwania.
+- **Wieloźródłowe cytowania jako plakietki w treści.** Każde odniesienie asystenta pojawia się w odpowiedzi jako klikalna odznaka otwierająca odpowiadający rekord w platformie. Cytowania nie są opcjonalne; asystent ograniczony jest do cytowania co najwyżej jednego źródła na atomowe twierdzenie.
+- **Ograniczone tury.** Każda wiadomość użytkownika produkuje jedną *turę*, a każda tura jest ograniczona, by nie wymknąć się spod kontroli. Gdy asystent zbliża się do granic tego, co może wykonać w jednej turze, elegancko zamyka pracę — odpowiedź dociera, czasem oznaczona jako niekompletna w trudniejszych podpytaniach, zamiast zapętlać się w nieskończoność.
+
+## Co asystent potrafi
+
+Możliwości asystenta podzielone są na sześć **rodzin umiejętności** (skill families) eksponowanych poprzez warstwę MCP platformy:
+
+| Rodzina | Co obejmuje |
+| --- | --- |
+| **legislation** | Rekordy głosowań sejmowych, metadane wniosków, wyniki rozstrzygnięć; historia głosowań poszczególnych posłów. |
+| **stakeholders** | Katalog posłów — biografia, klub, dane kontaktowe, identyfikatory społecznościowe, statystyki frekwencji. |
+| **public_pulse** | Aktywność z Public Pulse (X/Twitter) monitorowanych interesariuszy. |
+| **alerts** | Istniejące alerty użytkownika oraz tworzenie nowych. |
+| **documents** | Wyszukiwanie hybrydowe, po nazwie pliku i sekwencyjne po wgranych plikach oraz po publicznym korpusie Persate, a także metadane plików, ich enumeracja, liczniki i podsumowania. |
+| **chat_context** | Wcześniejsze konwersacje użytkownika z asystentem wykorzystywane do utrzymania kontekstu. |
+
+Rodziny te opisuje szczegółowo sekcja [Możliwości asystenta](/pl/advisor/skills).
+
+## Głębokość myślenia
+
+Niewielka tarcza po lewej stronie pola wprowadzania steruje *głębokością myślenia* (thinking depth) zastosowaną do następnej wiadomości:
+
+- **Surface** — szybko i bezpośrednio; wybierana dla pytań uzupełniających i wyszukiwań o oczywistej pojedynczej odpowiedzi.
+- **Balanced** *(domyślna)* — codzienne ustawienie; asystent gruntuje odpowiedź i podąża za oczywistymi lukami, lecz bez wyczerpywania każdego tropu.
+- **Deep** — wyczerpująco; asystent eksploruje powiązany materiał, wykonuje cross-reference oraz podąża za drugorzędnymi tropami. Wolniejsze na wiadomość.
+
+Głębokość ustawiana jest dla pojedynczej wiadomości; domyślne ustawienie dla nowych wiadomości konfiguruje się w **Settings → Advisor**. Zmiana tarczy dla pojedynczej wiadomości nie modyfikuje ustawienia domyślnego. Pełną mechanikę opisują sekcje [Konwersacje](/pl/advisor/conversations) oraz [Dobre praktyki](/pl/advisor/best-practices).
+
+## Historia konwersacji
+
+Prawa kolumna ekranu wymienia każdą konwersację na koncie użytkownika, najnowsze u góry. Każda pozycja oznaczona jest tematem, który platforma wyprowadziła z pierwszych wiadomości.
+
+- **New conversation** czyści przestrzeń roboczą i rozpoczyna świeżą sesję.
+- Wybranie wcześniejszej konwersacji ponownie ją otwiera — pełen transkrypt jest rekonstruowany wraz z oryginalnymi wyszukiwaniami i cytowaniami.
+- Przycisk kosza przy każdej pozycji trwale usuwa konwersację wraz z jej transkryptem.
+
+Historia jest per-użytkownik.
+
+## Odświeżenie i wznowienie
+
+Tura w toku, gdy użytkownik opuszcza widok lub odświeża przeglądarkę, **nie jest tracona**. Ponowne otwarcie konwersacji ponownie podłącza do trwającej odpowiedzi i odtwarza to, co dotąd się wydarzyło, zanim odpowiedź wznowi strumieniowanie.
+
+W praktyce oznacza to, że bezpiecznie można:
+
+- Wysłać głębokie zapytanie i przejść do **Posiedzeń na żywo** w celu zajęcia się czymś innym, podczas gdy asystent pracuje.
+- Świadomie odświeżyć przeglądarkę w trakcie strumienia — odpowiedź będzie składana dalej.
+- Otworzyć konwersację w drugiej karcie — obie karty widzą ten sam strumień.
+
+Jedynym scenariuszem, który przerywa turę, jest jawne usunięcie konwersacji przez użytkownika w trakcie jej trwania.
+
+## Strony w tej sekcji
+
+- **[Konwersacje](/pl/advisor/conversations)** — komponowanie wiadomości, oznaczanie plików, podręczny selektor głębokości, oś czasu wiadomości, cytowania, kopiowanie i regeneracja oraz historia.
+- **[Możliwości asystenta](/pl/advisor/skills)** — co asystent potrafi wraz z przykładami pytań, które kierowane są do każdego obszaru.
+- **[Przykłady robocze](/pl/advisor/examples)** — istotne treściowo zapytania oraz oczekiwane zachowanie, zaczerpnięte z powtarzających się przypadków pracy zespołów public-affairs i prawnych.
+- **[Dobre praktyki](/pl/advisor/best-practices)** — wybór głębokości, kiedy załączać pliki a kiedy pozwolić asystentowi szukać, obsługa cytowań oraz pułapki ogólnikowych zapytań.

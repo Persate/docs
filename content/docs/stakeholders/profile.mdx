@@ -1,0 +1,106 @@
+---
+title: Inspecting a stakeholder profile
+description: The detail view for a single member of parliament — hero card, quick stats, and the Overview, X, Recordings, and Personal details tabs.
+---
+
+Selecting a card on the **Stakeholders** list opens the **profile** for that MP. The screen is organised into three regions: a **hero card** with photograph and party banner, a row of **quick-stat tiles**, and a **tabbed content area** below.
+
+A breadcrumb at the top of the screen reads **Intelligence → Stakeholders → MP name**. A **Back to list** button below the breadcrumb returns to the directory with the previous scroll position restored.
+
+## Hero card
+
+The hero card spans the full width of the page.
+
+- **Party banner** — a procedurally generated gradient seeded by the MP's affiliation, with the party logo overlaid on the right. Unaffiliated MPs are shown against a neutral slate gradient with the Sejm crest.
+- **Avatar** — a circular photograph straddling the lower edge of the banner.
+- **Full name** — rendered in large type beside the avatar.
+- **Membership line** — *"Member of the Sejm · "* followed by the MP's affiliation. For unaffiliated members the affiliation is replaced with *"No club"*.
+- **Action buttons** — **Share** and **Download** are reserved for a forthcoming release; both are visibly disabled.
+
+## Quick stats
+
+A four-column row of stat tiles sits beneath the hero card. The values shown are static for the MP's current term:
+
+- **Votes received** — the absolute number of preference votes cast for the MP in the most recent election.
+- **District** — the constituency name, optionally followed by the district number.
+- **Voivodeship** — the region of the constituency.
+- **Attendance** — the proportion of plenary votes for which the MP was recorded as present, as a percentage. A dash is shown when no attendance figure is available.
+
+## Tabs
+
+Six tabs are provided, two of which are presently disabled:
+
+- **Overview** (default) — biography, contact details, and voting activity.
+- **X** — the MP's posts on the X (Twitter) platform.
+- **Recordings** — every analysed recording in which the MP has been identified as a speaker.
+- **Promises** *(disabled)* — campaign promises and policy positions; surfaced in a forthcoming release.
+- **Financials** *(disabled)* — the MP's filed financial disclosures; surfaced in a forthcoming release.
+- **Personal details** — the personal-data subset of the Overview tab, isolated for printing or for users who only need the contact card.
+
+The active tab is reflected in the URL via the `?tab=` query parameter, allowing direct linking to a specific tab.
+
+## Overview tab
+
+The Overview tab combines three sections in a two-column layout (single column on narrow viewports).
+
+### Profile
+
+A structured biography assembled from official parliamentary records, public reference databases, and editorial input. Each section — *Early life*, *Education*, *Political career*, and so on — is composed from segments drawn across these sources.
+
+Below the structured biography, a **Show raw sources** disclosure exposes the underlying segments individually. Each segment is colour-coded by its origin and links back to the source where one is available. Segments that have been edited by the platform's editorial team carry an **Edited** badge.
+
+### Contact and details
+
+A summary card on the right showing date and place of birth, education, profession, and email address. Where any field is unrecorded, *None* is displayed in italics.
+
+A second region beneath the details lists **online presence** — clickable icons for the MP's verified social-media accounts and external profiles. Only handles that have been verified are shown.
+
+### Voting activity
+
+An attendance ring rendered as a circular progress indicator (0–100%), accompanied by:
+
+- **Votes cast / total votings** — the absolute counts.
+- **Absences** — the number of votings on which no vote was recorded.
+
+This card is hidden where no voting figures have been published for the MP.
+
+## X tab
+
+The **X** tab shows posts made by the MP on the X platform. Posts are loaded incrementally — additional pages are fetched as the user scrolls.
+
+If the MP has no X account on file, the tab displays *"No X account on file — this MP doesn't have an X (Twitter) account linked"*.
+
+Errors during loading are reported with a retry option. Each post is rendered using the official X embedded-tweet component, preserving the original styling.
+
+## Recordings tab
+
+The **Recordings** tab lists every analysed Sejm recording in which the MP has been identified as a speaker. Each entry shows:
+
+- The session title.
+- The session date.
+- A summary of the MP's contribution: *"spoke X minutes · Y segments"*.
+
+Selecting an entry opens **Live proceedings**, where the recording may be played and the MP's segments reviewed in context.
+
+If no identifications have yet been made for the MP, the panel reads *"No recordings yet — this MP hasn't been identified in any analyzed recordings yet. The analysis pipeline is still catching up — recordings will appear here as they're processed."*
+
+## Personal details tab
+
+A two-column layout containing:
+
+- **Personal details** — the same fields as the Overview's contact card (date of birth, place of birth, education, profession, email).
+- **Media and links** — the same external-profile icons shown on the Overview, isolated here for users who need only the directory information.
+
+This tab is intended primarily for printing and for direct linking from external systems.
+
+## Forthcoming tabs
+
+The **Promises** and **Financials** tabs are presently disabled, but their backing data has been collected and is visible in the underlying data model. On release:
+
+- **Promises** will surface campaign and policy positions sourced from public statements, attributed to their original announcement.
+- **Financials** will surface the MP's annual financial-disclosure filings, with date selection and per-section breakdowns covering cash, real estate, shares, stocks, income, movable assets, and liabilities.
+
+## Errors
+
+- **Not found** — the URL refers to an MP identifier that does not match any record. A **Back to list** button returns to the directory.
+- **Loading skeletons** — while the profile is being fetched the screen presents placeholder shapes corresponding to the hero card, stat tiles, and content area.

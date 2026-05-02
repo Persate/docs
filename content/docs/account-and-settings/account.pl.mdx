@@ -1,0 +1,78 @@
+---
+title: Konto
+description: Zarządzanie zdjęciem profilowym, nazwą wyświetlaną, adresem e-mail logowania, rolą oraz członkostwem w grupach.
+---
+
+Panel **Account** zarządza tożsamością użytkownika w obrębie Persate — elementami pojawiającymi się na współdzielonych briefingach, w komentarzach, na listach współpracowników oraz w każdym innym miejscu, w którym użytkownik widoczny jest dla współpracowników.
+
+Jest to domyślny panel po otwarciu **Modala ustawień**.
+
+## Zdjęcie profilowe
+
+Kwadratowy awatar prezentowany przy użytkowniku w obrębie platformy. Ograniczenia:
+
+- **Formaty:** JPG, PNG lub WebP.
+- **Maksymalny rozmiar:** 2 MB.
+
+W celu zmiany zdjęcia należy wybrać awatar (lub przycisk **Upload photo** obok niego) — otwiera się systemowe okno wyboru pliku. Nowe zdjęcie wchodzi w życie natychmiast po zapisie i propaguje na inne powierzchnie (awatar w pasku bocznym, oś czasu wiadomości, atrybucja w dokumentach współdzielonych) bez konieczności odświeżenia.
+
+Dla użytkowników, którzy wgrali własne zdjęcie, pod kontrolką wgrywania pojawia się odsyłacz **Remove custom photo**. Usunięcie przywraca awatar generowany automatycznie przez platformę (inicjały na kolorowym kafelku).
+
+Dla użytkowników zarejestrowanych przez SSO Google lub Microsoft jako domyślny wykorzystywany jest awatar dostarczony przez dostawcę tożsamości. Wgranie własnego zdjęcia nadpisuje obraz dostawcy; usunięcie przywraca obraz dostawcy.
+
+## Nazwa wyświetlana
+
+Nazwa prezentowana w komentarzach, współdzielonych raportach oraz na listach użytkowników. Opcjonalna — gdy puste, platforma korzysta z nazwy dostarczonej przez dostawcę tożsamości, a w dalszej kolejności z adresu e-mail.
+
+Pole tekstowe akceptuje dowolne dane wejściowe w UTF-8, w tym znaki diakrytyczne. Wybranie **Save** trwale zapisuje zmianę natychmiast; przycisk **Save** pozostaje nieaktywny, dopóki pole nie różni się od wartości zapisanej.
+
+## E-mail
+
+Adres wykorzystywany do logowania oraz do powiadomień systemowych. Prezentowany w panelu w celu odniesienia.
+
+W celu zmiany adresu logowania należy wybrać **Change email**. Otwiera się modal proszący o:
+
+- **Bieżące hasło** — w celu ponownego uwierzytelnienia.
+- **Nowy adres e-mail** — adres docelowy.
+- **Powtórzenie nowego e-maila** — wprowadzony powtórnie w celu zabezpieczenia przed literówkami.
+
+Zatwierdzenie formularza wysyła **link potwierdzający** zarówno na **stary**, jak i na **nowy** adres e-mail. Zmiana wchodzi w życie dopiero po przejściu obu odsyłaczy; do tego czasu starym adresem pozostaje adres logowania.
+
+Dla użytkowników uwierzytelnionych przez SSO Google lub Microsoft akcja **Change email** jest niedostępna z poziomu tego panelu — adres e-mail zarządzany jest przez dostawcę tożsamości i musi zostać zmieniony tam.
+
+## Rola
+
+Poziom uprawnień użytkownika w obrębie przestrzeni roboczej. Prezentowany jako pigułka w panelu; w tym miejscu wyłącznie do odczytu.
+
+Stosowane role:
+
+- **Administrator** — administracja przestrzenią roboczą, w tym zarządzanie użytkownikami i grupami.
+- **Member** — pełen dostęp do funkcji platformy w obrębie członkostwa w grupach.
+- **Banned** — logowanie zablokowane; konto pozostaje w systemie, lecz nie ma dostępu do przestrzeni roboczej.
+
+Zmiany roli wprowadzane są przez administratora przestrzeni roboczej z poziomu **Admin Panel** (gdy włączony dla wdrożenia) — nie przez samego użytkownika.
+
+## Grupy
+
+Zbiór grup, do których należy użytkownik. Grupy sterują tym, jakie dokumenty, alerty, analizy oraz inne współdzielone zasoby użytkownik może widzieć.
+
+Panel prezentuje:
+
+- Łączną liczbę członkostw w grupach.
+- Pigułkę dla każdej grupy z jej nazwą oraz rolą użytkownika w obrębie tej grupy.
+
+W przypadku braku członkostwa w jakiejkolwiek grupie panel wyświetla *"You're not currently a member of any groups. Workspace admins can add you to shared groups for collaboration."*. Podobnie jak w przypadku roli, członkostwo w grupie zmieniane jest przez administratora przestrzeni roboczej, nie przez użytkownika.
+
+## Co można zmienić z poziomu tego panelu
+
+Panel Account z założenia ogranicza zakres tego, co użytkownik może zmienić w sobie samym:
+
+- **Zdjęcie profilowe** — tak.
+- **Nazwa wyświetlana** — tak.
+- **E-mail** — tak (wraz z opisanym powyżej przepływem podwójnego potwierdzenia).
+- **Hasło** — nie, patrz [Bezpieczeństwo i prywatność](/pl/account-and-settings/security).
+- **Rola** — nie, zmiana wymaga administratora.
+- **Członkostwo w grupach** — nie, zmiana wymaga administratora.
+- **Tenant / przestrzeń robocza** — nie, przypisanie użytkownika do tenanta jest stałe przez cały okres istnienia konta.
+
+Granice te odzwierciedlają rozdział kompetencji: atrybuty tożsamości, których właścicielem jest użytkownik, są edytowalne tutaj; atrybuty uprawnień, których właścicielem jest przestrzeń robocza, zarządzane są w **Admin Panel**.

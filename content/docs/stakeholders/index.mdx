@@ -1,0 +1,77 @@
+---
+title: Stakeholders and Public Pulse
+description: "Two complementary views of the people the platform tracks: the Stakeholders directory of individual MPs, and Public Pulse — the aggregated stream of their X (Twitter) activity."
+---
+
+The platform tracks two related streams centred on individual figures.
+
+- **Stakeholders** — the directory of every member of the Sejm currently loaded from the legislation service. Each entry combines biographical material, the MP's club and constituency, voting attendance, social-media handles, and identified appearances in recorded sessions.
+- **Public Pulse** — the aggregated feed of X (Twitter) activity from every stakeholder in the directory. Posts are streamed continuously and may be browsed as a chronological list or as a multi-lane timeline.
+
+Both views are accessed from the **INTELLIGENCE** group in the sidebar, under **Stakeholders** and **Public Pulse** respectively.
+
+## How the two views relate
+
+The Stakeholders directory is the source of identity. Public Pulse is the activity stream that pivots on those identities.
+
+- Each tweet in Public Pulse is attributed to a specific stakeholder; selecting that stakeholder's profile opens the same record visible in the Stakeholders directory.
+- Filters in Public Pulse (by club or by named stakeholder) draw on the same metadata that drives the directory.
+- The Stakeholders directory's per-MP **X** tab shows the same posts that appear in Public Pulse, restricted to the selected MP.
+
+Pages on individual stakeholders are described in [Inspecting a stakeholder profile](/stakeholders/profile). The Public Pulse view is described in [Public Pulse](/stakeholders/public-pulse).
+
+## The Stakeholders list
+
+The directory is presented as a grid of cards, four to six per row depending on viewport width. New cards are appended as the user scrolls; pagination controls are not used.
+
+### The stakeholder card
+
+Each card displays:
+
+- A **party banner** — a procedurally generated gradient seeded by the MP's affiliation, with the party's logo overlaid in the upper-right. Members not associated with a club are shown against a neutral slate gradient with the Sejm crest in place of a party logo.
+- A **circular avatar** straddling the banner.
+- The MP's **first and last name** as the heading.
+- Their **profession**, where recorded (or *No profession listed*).
+- An **email address**, where published.
+- The **voivodeship** (region) of their constituency.
+- A **District** number and **Votes** received in the most recent election, presented as two stat boxes at the foot of the card.
+
+Selecting a card opens the **Stakeholder profile** for that MP.
+
+## Sidebar filters
+
+The right sidebar provides four controls.
+
+### Search
+
+Free-text matching against first and last name. Results update as the query is typed once it is at least two characters long; matching is case-insensitive.
+
+### Club
+
+A multi-select picker covering every club currently represented in the chamber. Selecting one or more clubs restricts the visible cards to MPs holding affiliation with those clubs. Selecting no clubs is equivalent to selecting all.
+
+### Voivodeship
+
+A multi-select picker over the voivodeships represented in the records loaded so far. Behaves identically to the club picker.
+
+### Sort
+
+A four-option ordering applied to the currently loaded stakeholders:
+
+- **Last Name (A-Z)** — default.
+- **Last Name (Z-A)**.
+- **Votes (Highest)** — most votes received in the most recent election, descending.
+- **Votes (Lowest)**.
+
+Note that the sort applies to records already fetched. As the user scrolls and additional pages load, those records are merged into the existing ordering.
+
+## Empty and error states
+
+- **No stakeholders match your filters** — the active filters return no results. Removing a filter, broadening the search, or clearing all filters typically resolves the issue.
+- **No stakeholders available** — the legislation service returned no records. This is unusual outside an election period.
+- **Couldn't load stakeholders** — communication with the feature service was unsuccessful. The error description distinguishes a missing-permission case (*"You don't have permission to view stakeholders yet"*) from a transient connectivity failure.
+
+## Pages in this section
+
+- **[Inspecting a stakeholder profile](/stakeholders/profile)** — the detail view for a single MP, including biography, voting activity, contact details, and the per-MP X and Recordings tabs.
+- **[Public Pulse](/stakeholders/public-pulse)** — the aggregated X feed across all tracked stakeholders, with the Feed and Timeline view modes, filters, and the Trending Topics panel.

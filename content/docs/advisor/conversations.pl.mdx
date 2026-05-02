@@ -1,0 +1,133 @@
+---
+title: Konwersacje
+description: Komponowanie wiadomości, oznaczanie plików, podręczna tarcza głębokości, oś czasu wiadomości na żywo (rozumowanie + plakietki narzędzi + formularze elicytacji), cytowania, kopiowanie i regeneracja oraz historia konwersacji.
+---
+
+Niniejsza strona omawia mechanikę pracy z **Asystentem AI** — co znajduje się na ekranie, do czego służy każda kontrolka i jak wygląda odpowiedź w trakcie strumieniowania.
+
+## Strefa kompozycji
+
+Pole tekstowe zakotwiczone jest w dolnej części ekranu i składa się z trzech kontrolek:
+
+- **Tarcza głębokości** — niewielka ikona po lewej przełącza popover z trzema opcjami głębokości myślenia (**Surface**, **Balanced**, **Deep**). Ikona odzwierciedla aktualnie wybraną głębokość. Wybór dotyczy wyłącznie następnej wiadomości; wartość domyślna jest przywracana po wysyłce.
+- **Pole tekstowe** — obsługuje wprowadzanie wielu linii za pomocą **Shift + Enter**. Sam **Enter** wysyła wiadomość.
+- **Przycisk wysyłki** — nieaktywny, gdy wiadomość jest pusta lub poprzednia tura jest jeszcze w trakcie strumieniowania.
+
+Nad polem wprowadzania znajduje się drobna stopka *"AI can make mistakes. Check important info."* — standardowe przypomnienie obowiązujące w pracy opartej na LLM.
+
+## Stan początkowy
+
+Zanim otwarta zostanie jakakolwiek konwersacja, przestrzeń robocza prezentuje wycentrowane powitanie (*"Good morning, "* uzupełnione nazwą wyświetlaną użytkownika) oraz monit *"Can I help you with anything?"*. Strefa kompozycji znajduje się pod powitaniem i pozycjonowana jest na środku ekranu do momentu wysłania pierwszej wiadomości. Po pierwszej wysyłce układ przechodzi w przejście: obszar wiadomości rozwija się ku górze, a strefa kompozycji dokuje na dole.
+
+## Oznaczanie plików
+
+Naciśnięcie **`@`** w polu wprowadzania otwiera **selektor plików** — dialog wyszukiwania w obrębie **Repozytorium** użytkownika oraz publicznego korpusu.
+
+- Dialog domyślnie korzysta z **wyszukiwania po nazwie pliku** — szybkiego, dokładnego, dostosowanego do sytuacji *"wiem, jak nazywa się plik"*.
+- Przełącznik w prawym górnym rogu pola wyszukiwania zmienia tryb na **wyszukiwanie hybrydowe** — wolniejsze, semantyczne, dostosowane do sytuacji *"chcę plików o X"*, nawet gdy nazwa pliku nie zawiera X.
+- Wybranie wyniku dołącza go do wiadomości jako **plakietkę pliku** nad polem wprowadzania. Plakietkę można usunąć.
+- Wiadomość może załączać wiele plików. Asystent traktuje załączony plik jako pierwszorzędne odniesienie i z większym prawdopodobieństwem czerpie z niego jako podstawowego źródła.
+
+Załączenie pliku różni się od proszenia asystenta o przeszukanie — wstępnie ładuje plik do kontekstu agenta, eliminując krok wyszukiwania. Załączaj plik, gdy wiesz, że odpowiedź się w nim znajduje; pozwól asystentowi szukać, gdy nie wiesz.
+
+## Oś czasu wiadomości
+
+Każda tura produkuje **oś czasu wiadomości** strumieniowaną od góry odpowiedzi, przed treścią właściwą. Oś czasu jest widocznym zapisem tego, co asystent zrobił, by wytworzyć odpowiedź.
+
+### Bloki rozumowania
+
+Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *"Thinking…"* (w trakcie pracy) lub *"Working through the request"* (po jej zakończeniu). Pozostają otwarte, gdy agent jest w trakcie rozumowania, i zwijane są automatycznie po zakończeniu tury — użytkownik może ponownie otworzyć dowolny blok w celu inspekcji rozumowania.
+
+Bloki rozumowania nie są ostateczną odpowiedzią; są roboczymi notatkami modelu. Są przydatne dla zrozumienia *dlaczego* agent doszedł do danego wniosku, szczególnie gdy wniosek jest zaskakujący.
+
+### Plakietki wywołań narzędzi
+
+Każde zewnętrzne wyszukiwanie wykonywane przez agenta staje się **plakietką** w osi czasu. Plakietka zawiera:
+
+- **Ikonę** identyfikującą **rodzinę umiejętności** (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
+- **Humanizowaną nazwę narzędzia** — `legislation.list_votings` staje się *List votings*, `documents.hybrid_search` staje się *Hybrid search*.
+- **Glif stanu**: spinner dla *running*, `…` dla *pending*, wykrzyknik dla *error*. Pomyślne wywołania prezentują **czas zegarowy** wykonania (np. `1.2s`).
+
+Sąsiednie wywołania narzędzi są składane w **zwijaną grupę** (*"Using N tools…"* w trakcie pracy, *"N tools used"* po jej zakończeniu), tak by tura wywołująca osiem wyszukiwań po kolei nie produkowała domyślnie ośmiowierszowego bloku.
+
+### Formularze elicytacji
+
+Niektóre narzędzia wymagają od użytkownika strukturalnego wkładu w trakcie tury — wyboru jednej z kilku kadencji Sejmu, wskazania właściwego posła w sytuacji kolizji nazwisk, potwierdzenia akcji destrukcyjnej. Wówczas narzędzie emituje **żądanie elicytacji**: plakietka pozostaje w stanie *running*, a pod nią pojawia się osadzony formularz.
+
+- Pola tekstowe renderują się jako pola wprowadzania.
+- Wartości jednokrotnego wyboru renderują się jako listy rozwijane.
+- Potwierdzenia logiczne renderują się jako pola wyboru.
+- Żądania o strukturze obiektu renderują się jako stos pól nazwanych.
+
+Użytkownik zatwierdza lub pomija. Zatwierdzona wartość jest zapisywana w treści (*"You answered: ..."*); pominięte żądania korzystają z domyślnej wartości narzędzia. Po rozstrzygnięciu wywołanie narzędzia wznawia się i produkuje swój ostateczny wynik.
+
+Asystent nie powiela tego zachowania w swojej własnej treści — gdy narzędzie potrafi rozstrzygnąć poprzez elicytację, model wywołuje je zamiast zadawać użytkownikowi to samo pytanie tekstowo.
+
+## Cytowania
+
+Treść odpowiedzi asystenta wykorzystuje dwa odrębne style cytowań, oba renderowane w specjalny sposób.
+
+### Plakietki zasobów
+
+Wbudowane tokeny postaci `[scheme://...]` (np. `[legislation://voting/12/47]`, `[feature://stakeholder/abc-123]`) renderowane są jako plakietki opatrzone ikoną źródła, etykietą oraz celem kliknięcia otwierającym odpowiadający rekord w platformie. Użytkownik nie widzi samego URI — widzi wyłącznie plakietkę — lecz URI to dokładnie to, co model wyemitował, i pozostaje stabilne pomiędzy regeneracjami.
+
+Obsługiwane schematy URI:
+
+| Schemat | Otwiera |
+| --- | --- |
+| `legislation://voting/{proceeding}/{voting_number}` | Szczegóły głosowania w **Rejestrze głosowań**. |
+| `feature://stakeholder/{stakeholder_id}` | Profil interesariusza. |
+| `feature://public_pulse/tweet/{tweet_id}` | Oryginalny wpis w X. |
+| `feature://alert/{alert_id}` | Szczegóły alertu. |
+| `documents://file/{file_id}` | Plik w **Repozytorium**. |
+| `documents://chunk/{file_id}/{chunk_id}` | Plik przewinięty do konkretnego fragmentu. |
+
+### Cytowania plików
+
+Odniesienia postaci `[filename, citation-id]` w treści modelu renderowane są jako niewielkie numerowane plakietki w indeksie górnym wbudowane w tekst. Najechanie ujawnia źródłową nazwę pliku z ikoną formatu pliku; kliknięcie pobiera plik.
+
+Ten styl jest zarezerwowany dla wyników wyszukiwania hybrydowego asystenta po wgranych plikach — gdy odpowiedź jest ugruntowana we fragmencie, który użytkownik sam wgrał, cytowanie eksponuje oryginalny dokument bezpośrednio.
+
+## Kontrolki per wiadomość
+
+Pod każdą ukończoną wiadomością asystenta:
+
+- **Copy** — kopiuje treść właściwą do schowka. Znaczniki cytowań zastępowane są ich tekstową reprezentacją.
+- **Regenerate** — ponownie wysyła poprzednią wiadomość użytkownika i produkuje nową odpowiedź. Oryginalna odpowiedź zostaje zastąpiona; wcześniejsze tury powyżej nie są naruszane.
+
+Edycja i ponowne wysłanie wiadomości użytkownika nie jest dziś dostępne.
+
+## Historia konwersacji
+
+Prawa kolumna wymienia każdą konwersację na koncie użytkownika.
+
+- **Advisor History** to tytuł kolumny.
+- **New conversation** w górnej części czyści przestrzeń roboczą.
+- Wcześniejsze konwersacje wymienione są pod tematem wyprowadzonym przez platformę z ich pierwszych wiadomości. *New conversation* to wartość zastępcza, dopóki temat nie zostanie ustalony.
+- Wybranie konwersacji ponownie ją otwiera. Transkrypt zostaje załadowany z pełną wiernością — bloki rozumowania, plakietki narzędzi, plakietki cytowań i wszelkie nierozstrzygnięte formularze elicytacji są rekonstruowane.
+- Przycisk kosza obok każdej pozycji trwale usuwa konwersację wraz z jej transkryptem. Kontrolka pojawia się przy najechaniu dla nieaktywnych konwersacji i zawsze widoczna jest dla aktywnej.
+
+Na wąskich ekranach kolumna historii ukryta jest za przyciskiem **History** w prawym górnym rogu przestrzeni roboczej; jego wybranie wysuwa szufladę dolną z tą samą zawartością.
+
+## Odświeżenie i wznowienie
+
+Tura w toku, gdy użytkownik opuszcza konwersację, odświeża przeglądarkę lub na chwilę traci łączność, **nie jest tracona**. Backend asystenta wykonuje turę jako odłączone zadanie tła i transmituje swoje zdarzenia do klientów podłączonych w chwili ich wyzwolenia. Ponowne otwarcie konwersacji ponownie podłącza do strumienia na żywo i odtwarza to, co dotąd się wydarzyło, zanim nowe zdarzenia zaczną napływać dalej.
+
+W praktyce oznacza to, że bezpiecznie można:
+
+- Wysłać zapytanie **Deep** i przejść do **Posiedzeń na żywo** w celu zajęcia się czymś innym, podczas gdy asystent pracuje.
+- Świadomie odświeżyć przeglądarkę w trakcie strumienia — odpowiedź będzie składana dalej.
+- Otworzyć konwersację w drugiej karcie — obie karty widzą ten sam strumień.
+
+Jedynym scenariuszem, który przerywa turę, jest jawne usunięcie konwersacji przez użytkownika w trakcie jej trwania.
+
+## Błędy
+
+Gdy w trakcie tury coś pójdzie źle, pod częściową odpowiedzią pojawia się blok błędu. Blok zawiera:
+
+- **Kod błędu** identyfikujący kategorię awarii (np. `turn_budget_exhausted`, `tool_unavailable`, `model_refusal`).
+- **Komunikat** opisujący konkretną awarię.
+
+Najczęstsze przyczyny to wyczerpanie budżetu (tura legalnie zabrakło zasobów na pytanie), niedostępność usługi nadrzędnej (jedna z usług zaplecza chwilowo nie odpowiada) oraz odmowy zakresu korpusu (pytanie wykracza poza zakres, do którego asystent jest zbudowany).
+
+Ponowne uruchomienie nieudanej tury jest rozsądną pierwszą reakcją. W przypadku utrzymującego się błędu pomocne może być zawężenie pytania lub jego rozbicie na części.

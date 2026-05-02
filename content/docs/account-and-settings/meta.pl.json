@@ -1,0 +1,4 @@
+{
+  "title": "Konto i ustawienia",
+  "pages": ["account", "security", "preferences"]
+}

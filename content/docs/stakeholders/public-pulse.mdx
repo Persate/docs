@@ -1,0 +1,97 @@
+---
+title: Public Pulse
+description: The aggregated X (Twitter) feed across all tracked stakeholders, presented as a chronological list or as a multi-lane timeline, with filtering and trending-topic discovery.
+---
+
+**Public Pulse** is the cross-stakeholder feed of X (Twitter) activity. Every original post, reply, retweet, and quote published by a tracked MP is surfaced in a single place and may be filtered, searched, and visualised on a time axis. Posts are streamed continuously; new content arrives without page reloads.
+
+The view is accessed via the sidebar entry **INTELLIGENCE → Public Pulse**.
+
+## The two view modes
+
+A segmented control at the top of the screen switches between two presentations of the same underlying feed:
+
+- **Timeline** *(default)* — a vertical time axis with each post rendered as a pill alternating left and right of the centre line. When two or more clubs are selected the layout splits into one panel per selected club, suited to comparing how different parties responded to a shared moment.
+- **Feed** — a vertical list of post cards, ordered most-recent first. Best suited to scanning the latest activity.
+
+The feed and timeline draw from the same data and respect the same filters; switching between them does not lose context.
+
+## The post card (Feed mode)
+
+Each post card reproduces the X post in its native presentation, with one of four kind labels:
+
+- **Original** — a first-party post by the MP.
+- **Reply** — a reply to another account.
+- **Retweet** — a retweet without comment.
+- **Quote** — a retweet with comment.
+
+Posts that have subsequently been deleted from X but were captured by the platform are still surfaced, marked as **Archived** when the post was the MP's own, **Deleted** when it is the original tweet referenced by a retweet, or **Preview unavailable** when the live embed could not be rendered and no snapshot is on file.
+
+Posts are loaded incrementally — additional pages are appended as the user scrolls. A *"That's everything so far"* line marks the end of the available feed.
+
+## The timeline (Timeline mode)
+
+The timeline arranges posts on a vertical time axis. With zero or one club selected, posts are rendered as pills alternating left and right of a single centre line, ordered by publication time. With two or more clubs selected, the timeline switches to a head-to-head layout with one panel per selected club, each panel showing that club's posts on its own axis alongside per-club volume and top-hashtag stats.
+
+Hovering over a pill loads the full post into a sticky preview pane on the left; clicking pins that preview until dismissed.
+
+A **Timeline window** selector in the sidebar (visible only in Timeline mode) toggles the axis between two zoom levels:
+
+- **60m** — the most recent 60 minutes, suited to following a live discussion as it unfolds.
+- **24h** — the most recent 24 hours, suited to reviewing a full day of activity.
+
+When two or more clubs are selected, an additional toggle **Differences only** hides the lanes whose top-hashtag groups are shared by every selected club — the configuration most useful for spotting where the selected clubs diverge.
+
+## Sidebar filters
+
+The sidebar provides four primary controls (plus the Timeline window and Differences only controls described above when Timeline mode is active) and a sync indicator. Filters compound (logical AND) and apply to both view modes simultaneously.
+
+### Search
+
+Free-text matching against post content. Results update as the query is typed.
+
+### Club
+
+A multi-select picker covering every club represented in the current feed. Identical in behaviour to the directory's club picker.
+
+### Stakeholder
+
+A multi-select picker over named stakeholders. When one or more stakeholders are selected, the feed is restricted to their posts. Combining stakeholder selection with a club selection narrows further.
+
+### Date range
+
+A pair of date pickers restricting the feed to a chosen interval. Leaving either field empty treats the corresponding endpoint as unbounded.
+
+### Clear all filters
+
+A button appears at the foot of the filter set whenever any filter is active. It returns the feed to its default unfiltered state.
+
+## Trending topics
+
+A **Trending · last 24h** panel sits beneath the filter set. The top ten topics — hashtags or @-mentions — from the past 24 hours are listed, ranked by mention count. Selecting any topic injects it into the **Search** field, restricting the feed to posts mentioning that topic.
+
+Where no trends are available yet, the panel reads *"No trends yet — come back after the next sync"*.
+
+## Sync status
+
+A discreet indicator at the foot of the sidebar reports the time of the most recent platform sync with the X API:
+
+- A **blue dot** signifies that the feed reflects the most recent sync.
+- An **amber dot** signifies that newer content is being processed and will appear shortly.
+- The accompanying text reads *"Last synced N minutes/hours ago"*.
+
+Public Pulse polls the X API on a schedule rather than streaming in real time; new posts may take up to a few minutes to appear after publication.
+
+## Empty and error states
+
+- **No tweets match your filters** — the active filters return no results. Removing a filter, broadening the search, or expanding the date range typically resolves the issue.
+- **No tweets yet** — no posts are currently loaded for the default view. Posts from tracked stakeholders will appear here as they stream in.
+- **Couldn't load Public Pulse** — communication with the feature service failed. A **Retry** button reissues the request. As elsewhere, a permission error is distinguished from a transient failure.
+
+## Recommended workflow
+
+1. Open **Public Pulse** in **Feed** mode for a quick scan of recent activity.
+2. Apply a **Club** or **Stakeholder** filter to focus on the actors of interest.
+3. Switch to **Timeline** mode at the **60m** zoom when a story is breaking, or at **24h** for a retrospective on the day.
+4. Use the **Trending · last 24h** panel to discover topics that have gained traction across stakeholders.
+5. Open an individual post card or timeline dot to review the original on X, then (where the author is a tracked stakeholder) navigate to their **profile** for additional context.

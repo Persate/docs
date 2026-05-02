@@ -1,0 +1,127 @@
+---
+title: Conversations
+description: Composing messages, mentioning files, the inline depth dial, the live message timeline, citations, copy and regenerate, and conversation history.
+---
+
+This page covers the mechanics of working with the **AI advisor** — what is on the screen, what each control does, and what the response looks like as it streams in.
+
+## The composition area
+
+The text input is anchored at the bottom of the screen and is composed of three controls:
+
+- **Depth dial** — a small icon at the left toggles a popover with the three thinking-depth options (**Surface**, **Balanced**, **Deep**). The icon reflects the currently selected depth. The selection applies to the next message only; the default is restored after sending.
+- **Text area** — supports multi-line input via **Shift + Enter**. **Enter** alone sends the message.
+- **Send button** — disabled while a message is empty or a previous turn is still streaming.
+
+Above the input, a small footer reads *"AI can make mistakes. Check important info."* — a standard reminder applicable to any AI-driven workflow.
+
+## The empty state
+
+Before any conversation has been opened, the workspace shows a centred greeting (*"Good morning, "* followed by the user's display name) and the prompt *"Can I help you with anything?"*. The composition area sits beneath the greeting and is positioned to mid-screen until the first message is sent. After the first send, the layout transitions: the messages area expands upward and the composition area docks at the bottom.
+
+## Mentioning files
+
+Pressing **`@`** in the input opens the **file picker**, a search dialog over the user's **Repository** and the public corpus.
+
+- The dialog defaults to **filename search** — fast, exact, suited to *"I know what the file is called"*.
+- A toggle in the upper-right of the search box switches to **content search** — slower, semantic, suited to *"I want files that are about X"* even when the filename does not contain X.
+- Selecting a result attaches it to the message as a **file chip** above the input. The chip is removable.
+- A message may attach multiple files. The advisor sees the file as a first-class reference and is more likely to draw on it as a primary source.
+
+Attaching a file is different from asking the advisor to search — it pre-loads the file directly, removing the search step. Attach a file when you know the answer is in it; let the advisor search when you don't.
+
+## The message timeline
+
+Each turn produces a **message timeline** that streams in from the top of the response, before the prose. The timeline is the visible record of what the advisor did to produce its answer.
+
+### Reasoning blocks
+
+Pieces of the advisor's working notes appear as collapsible rows headed *"Thinking…"* (while in progress) or *"Working through the request"* (once complete). They are open while the advisor is mid-thought and collapse automatically when the turn ends — the user can re-open any block to inspect the reasoning.
+
+Reasoning blocks are not the final answer; they are the advisor's working notes. They are useful for understanding *why* a conclusion was reached, particularly when the conclusion is surprising.
+
+### Lookup chips
+
+Every external lookup the advisor performs becomes a **chip** in the timeline. A chip carries:
+
+- An **icon** identifying the area of the platform the lookup is against (voting records, MP profiles, public statements, alerts, documents, conversation continuity).
+- A **short label** describing what the lookup did (e.g. *List votings*, *Search documents*).
+- A **state glyph**: a spinner for *running*, a `…` for *pending*, an exclamation for *error*. Successful calls show their **wall-clock duration** (e.g. `1.2s`).
+
+Adjacent lookups are folded into a **collapsible group** (*"Using N tools…"* while running, *"N tools used"* afterwards) so a turn that performs eight lookups in sequence does not produce an eight-row block by default.
+
+### Elicitation forms
+
+Some lookups require structured input from the user mid-turn — choosing one of several Sejm terms, picking the right MP from a name-collision, confirming a destructive action. When this happens, the lookup pauses and an inline form appears beneath the chip.
+
+- Free-text inputs render as text fields.
+- Single-choice values render as dropdowns.
+- Boolean confirmations render as checkboxes.
+- Object-shaped requests render as a stack of named fields.
+
+The user submits or skips. The submitted value is recorded inline (*"You answered: ..."*); skipped requests fall back to a sensible default. Once resolved, the lookup resumes and produces its final result.
+
+The advisor does not duplicate this behaviour in its own prose — when a lookup can disambiguate via its own form, the advisor uses it rather than asking the user the same question in text.
+
+## Citations
+
+The body of an advisor response uses two distinct citation styles, both rendered specially.
+
+### Resource chips
+
+References to records on the platform are rendered as inline chips with the source's icon, a label, and a click target. Selecting a chip opens the corresponding record:
+
+- A **voting** chip opens the voting detail in **Voting ledger**.
+- An **MP** chip opens the stakeholder profile.
+- A **post** chip opens the original post on X.
+- An **alert** chip opens the alert detail.
+- A **file** chip opens the file in **Repository** (where applicable, scrolled to the cited passage).
+
+The chips are stable across regenerations — re-running a question that produced a particular set of citations will normally produce the same chips again.
+
+### File citations
+
+Numbered superscript chips inline with the prose are file citations. Hovering reveals the source filename with its file-format icon; clicking downloads the file.
+
+This style is reserved for content search results over uploaded files — when the answer is grounded in a passage the user themselves uploaded, the citation surfaces the original document directly.
+
+## Per-message controls
+
+Beneath each completed assistant message:
+
+- **Copy** — copies the prose body to the clipboard. Citation markup is replaced with the underlying text representation.
+- **Regenerate** — reissues the user's previous message and produces a new response. The original response is replaced; previous turns above are unaffected.
+
+There is no edit-and-resend on user messages today.
+
+## Conversation history
+
+The right column lists every conversation on the user's account.
+
+- **Advisor History** is the column heading.
+- **New conversation** at the top clears the workspace.
+- Past conversations are listed by the topic the platform inferred from their first messages. *New conversation* is the placeholder before a topic is determined.
+- Selecting a conversation reopens it. The transcript is reloaded with full fidelity — reasoning blocks, lookup chips, citation chips, and any unresolved elicitation forms are all reconstructed.
+- The trash control beside each entry deletes the conversation and its transcript permanently. The control reveals on hover for inactive conversations and is always visible for the active one.
+
+On narrow viewports, the history column is hidden behind a **History** button in the top-right of the workspace; selecting it slides up a bottom drawer with the same content.
+
+## Refresh and resume
+
+A turn that is in progress when the user navigates away from the conversation, refreshes the browser, or loses connectivity for a moment is **not lost**. Reopening the conversation reattaches to the live response and replays whatever has happened so far before it resumes streaming.
+
+In practice this means it is safe to:
+
+- Send a **Deep** query and switch to **Live proceedings** to do something else while the advisor works.
+- Refresh the browser deliberately mid-stream — the response continues to assemble.
+- Open the conversation in a second tab — both tabs see the same stream.
+
+The only failure mode that interrupts a turn is the user explicitly deleting the conversation while it is still streaming.
+
+## Errors
+
+When something goes wrong during a turn, an error block is displayed beneath the partial response with a short description of what failed.
+
+The most common causes are: the turn legitimately ran out of capacity for the question, a backing data source was temporarily unavailable, or the question is outside the scope the advisor is built to answer.
+
+Regenerating a failed turn is a reasonable first response. If the failure persists, the question may benefit from being narrowed or split into parts.

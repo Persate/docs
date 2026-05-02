@@ -1,0 +1,59 @@
+---
+title: Cockpit
+description: The default landing screen. A consolidated view of current activity and recent changes.
+---
+
+The **Cockpit** is the default landing screen following authentication. It aggregates the most relevant signals — current parliamentary activity, recent alert events, stakeholder updates, and repository statistics — onto a single page for at-a-glance review.
+
+It may be reopened at any time via the **Cockpit** entry in the sidebar.
+
+## Cockpit components
+
+The composition of the screen reflects the account's configuration; the full set of available components is described below.
+
+### News ticker
+
+A scrolling band positioned at the top of the screen. It cycles through application announcements and operational notices automatically. Routine attention is not required.
+
+### Live proceedings tile
+
+Indicates the current state of Sejm sessions. When a session is in progress, a pulsing red indicator and the session title are displayed. When no session is in progress, the next scheduled session is shown instead. Selecting the tile opens **Live proceedings** for direct viewing.
+
+### Alerts and risks cards
+
+A grid of recent alert events corresponding to the user's configured rules. Each card represents a single event; selecting it opens the event detail.
+
+When no alert rules have been configured, the panel displays "No alerts triggered yet". Configuration of alert rules is covered in the **Alerts and risks** section (forthcoming).
+
+### Active stakeholders carousel
+
+Up to five entries from the user's stakeholder list, ranked by recent activity. The default time window is **the last twenty-four hours**; if no activity is recorded in that window, the panel automatically falls back to **the last seven days** and labels the change accordingly.
+
+Activity comprises social-media posts and alert hits. Selecting an avatar opens the corresponding profile.
+
+### Repository tile
+
+Displays the total number of documents associated with the account, with a link to the **Repository** for full browsing.
+
+### Ledger tile
+
+Displays the most recent parliamentary vote, including its title, time of occurrence, and a link to the **Ledger** for the full record.
+
+### Daily report (forthcoming)
+
+Annotated **SOON**. The component will, on release, provide a one-page summary of votes, alerts, and stakeholder activity since the previous day.
+
+### Smart search (forthcoming)
+
+Annotated **Disabled**. The component will, on release, support natural-language queries that draw on both the user's repository and live data feeds.
+
+## Synchronisation indicator
+
+The top corner of the screen displays the timestamp of the most recent data refresh, in the form **Updated: [time]**.
+
+- A **blue indicator** signifies that the displayed data is current.
+- An **amber indicator** signifies that newer data is available; reloading the page refreshes the view.
+
+## Recommended workflow
+
+The Cockpit is designed for sequential top-to-bottom review. After approximately a week of regular consultation, individual users typically identify which tiles are most relevant to their work. From the Cockpit, the most frequent navigation paths lead to **Live proceedings**, **Alerts**, and the **Repository**.

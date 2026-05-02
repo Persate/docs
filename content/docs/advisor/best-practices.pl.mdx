@@ -1,0 +1,91 @@
+---
+title: Dobre praktyki
+description: Praktyczne wskazówki, by jak najwięcej wynieść z Asystenta AI — wybór głębokości, formułowanie pytań pod korpus, kiedy załączać pliki, jak korzystać z cytowań oraz jakie tryby awaryjne rozpoznawać.
+---
+
+**Asystent AI** nagradza określony styl pytania, a inne karze. Niniejsza strona destyluje wzorce powtarzające się wśród intensywnych użytkowników w operacyjne wskazówki.
+
+## Dobierz głębokość do pytania
+
+Tarcza głębokości jest pojedynczą najistotniejszą kontrolką. Trafna decyzja sprawi, że asystent będzie zwracać adekwatnie — szybko dla wyszukiwań, wyczerpująco dla analizy. Pomyłka w którąkolwiek stronę degraduje doświadczenie pracy.
+
+| Głębokość | Wybierz, gdy... | Unikaj, gdy... |
+| --- | --- | --- |
+| **Surface** | Odpowiedź to pojedynczy fakt lub niewielka lista, źródło jest oczywiste i przyjmiesz pierwszy wiarygodny wynik bądź zmodyfikujesz pytanie. *"Jaki był wynik ostatniego głosowania energetycznego?"* | Pytanie wymaga syntezy z wielu źródeł lub porównania. Surface będzie niedostatecznie szukać. |
+| **Balanced** | Codzienne ustawienie. Pytanie wymaga, by asystent ugruntował odpowiedź kilkoma wyszukiwaniami, a oczekujesz pełnej odpowiedzi w rozsądnie krótkim czasie. | Wystarczyłaby odpowiedź Surface (płacisz za zbędne wyszukiwania). |
+| **Deep** | Pytanie jest faktycznie wieloźródłowe — porównanie, briefing, opozycja, lub *"wyeksponuj cokolwiek istotnego"*. Jesteś gotowy/a poczekać dłużej i otrzymać znacząco bogatszą odpowiedź. | Pytanie jest wąskie. Deep zbyt mocno przeszuka i może zwrócić więcej, niż chciałeś/aś. |
+
+Przydatna heurystyka: jeśli odpowiedź mieści się w jednym krótkim akapicie, **Surface** wystarczy. Jeśli wymaga nagłówków sekcji, **Deep** jest uzasadnione. **Balanced** pokrywa wszystko pomiędzy.
+
+## Sformułuj pytanie w terminach korpusu
+
+Asystent zakotwiczony jest w konkretnych encjach — postępowaniach sejmowych, posłach, klubach parlamentarnych, numerach głosowań, nazwach plików. Pytania sformułowane w tych terminach produkują ostrzejsze odpowiedzi niż pytania sformułowane abstrakcyjnie.
+
+- **Mniej skuteczne:** *"Co się dzieje z polityką energetyczną?"* — model musi wywnioskować zakres.
+- **Bardziej skuteczne:** *"Streszcz najnowszą aktywność w sali nad ustawą o energetyce odnawialnej, włącznie z najnowszym głosowaniem oraz działaniami komisji w ostatnim tygodniu."* — model wie, czego szukać.
+
+Nie oznacza to, że każde pytanie musi mieć dziesięć linijek. Oznacza **zakotwiczenie przynajmniej jednej konkretnej encji** — nazwa ustawy, poseł, klub, zakres dat, komisja, plik. Narzędzia asystenta zorganizowane są wokół tych encji, a wymienienie jednej z nich kieruje pytanie do właściwej rodziny umiejętności natychmiast.
+
+## Załącz plik zamiast go opisywać
+
+Gdy odpowiedź znajduje się w dokumencie, który użytkownik już posiada, załączenie go jest szybsze, tańsze i dokładniejsze niż proszenie asystenta o znalezienie.
+
+- Naciśnij **`@`** w polu wprowadzania, by otworzyć selektor plików.
+- Szukaj po nazwie pliku, gdy znasz nazwę; przełącz na hybrydowe wyszukiwanie, gdy pamiętasz tylko, czego dokument dotyczył.
+- Załącz tyle plików, ile istotne; asystent obsługuje kontekst wieloplikowy.
+
+Asystent traktuje załączony plik jako pierwszorzędne odniesienie — pomija krok wyszukiwania i przechodzi wprost do wydobywania z pliku. Ma to większe znaczenie, niż brzmi: wyszukiwanie hybrydowe po całym korpusie jest pojedynczo najdroższym wywołaniem, jakie wykonuje asystent.
+
+Kiedy **nie** załączać: gdy chcesz, by asystent *znalazł* właściwy plik. *"Który z naszych briefingów omawia zmiany w prawie zamówień publicznych?"* powinno być zadane bez załącznika, by uruchomić wyszukiwanie hybrydowe asystenta.
+
+## Czytaj cytowania, nie ufaj tylko treści
+
+Każdy URI eksponowany przez asystenta jest weryfikowalny. Plakietki nie pełnią funkcji dekoracyjnej.
+
+- Klikaj plakietki **`legislation://voting/...`** w celu zweryfikowania liczby głosów oraz rozstrzygnięcia per klub.
+- Klikaj plakietki **`feature://stakeholder/...`** w celu zweryfikowania, czy poseł jest tym, którego wymienił asystent.
+- Klikaj plakietki **`feature://public_pulse/tweet/...`** w celu potwierdzenia, że wpis mówi to, co sparafrazował asystent.
+- Klikaj indeksy górne **cytowań plików**, by pobrać plik źródłowy w cytowanym fragmencie.
+
+Gdy plakietka wydaje się błędna — niewłaściwy poseł, niewłaściwe głosowanie, niewłaściwy plik — wykonaj regenerację odpowiedzi. Stochastyczna natura asystenta sprawia, że drugi przebieg często produkuje poprawnie ugruntowane cytowania nawet w pytaniu, które właśnie wykonał błędnie.
+
+## Wykorzystuj ciągłość konwersacji
+
+Asystent zachowuje pełną konwersację jako kontekst dla pytań uzupełniających. Trzy wzorce sprawdzają się dobrze:
+
+- **Doprecyzowanie w toku.** *"Teraz rozbij to samo porównanie według województwa zamiast po klubie."* — asystent ponownie wykorzystuje wcześniejszy wynik i ponownie wykonuje wyłącznie to, co się zmieniło.
+- **Pogłębienie w konkretne ustalenie.** *"Powiedz więcej o rozbieżności w poprawce 14."* — asystent wraca do odpowiednich narzędzi.
+- **Przejście do działania.** *"Skonfiguruj alert obejmujący ustawy, które właśnie zbriefingowałeś."* — asystent wyciąga identyfikatory ustaw z wcześniejszej odpowiedzi i tworzy alert bez ponownego pytania.
+
+Unikaj **przeskakiwania pomiędzy wątkami** — pojedyncza konwersacja, która przeskakuje od polityki energetycznej do reformy zamówień, a następnie do pytania kadrowego, traci ostrość. Otwórz nową konwersację dla niezwiązanych tematów; historia czatu sprawia, że jest to tanie.
+
+## Rozpoznaj sygnał wyczerpania budżetu
+
+Gdy pytanie faktycznie przekracza budżet per-tura — zazwyczaj zapytanie Deep ze zbyt szerokim zakresem — odpowiedź kończy się krótką notą o tym, co nie zostało ukończone.
+
+> *"...Spośród jedenastu ustaw, o które pytałeś, omówiłem dziewięć szczegółowo; dla ustaw 10 i 11 zabrakło budżetu tury. Powtórz pytanie zawężone do tych dwóch konkretnie, a omówię je w następnej turze."*
+
+Jest to poprawny wynik — lepszy niż twarda awaria w trakcie strumienia. Środkiem zaradczym jest:
+
+1. Przyjąć częściową odpowiedź jako pełnoprawną (jest ugruntowana).
+2. Ponownie wysłać niedokończoną część jako pytanie uzupełniające, węższe.
+
+Jeśli regularnie spotykasz się z wyczerpaniem budżetu na tym samym typie pytania, pytanie jest prawdopodobnie zbyt szerokie. Rozdzielenie pytania na dwie lub trzy tury Balanced wytworzy lepszy łączny wynik niż pojedyncza tura Deep.
+
+## Nie powielaj elicytacji w swojej treści
+
+Gdy narzędzie potrzebuje rozstrzygnięcia, asystent eksponuje osadzony formularz (*"Która kadencja Sejmu?"*, *"Który z dwóch posłów o nazwisku Kowalski?"*). Odpowiedz na formularz, zamiast ponownie pytać w czacie.
+
+- **Mniej skuteczne:** zobaczenie formularza rozstrzygającego, zignorowanie go i wpisanie *"Chodziło mi o obecny Sejm, kadencję 10"* w pole czatu. Formularz pozostaje nierozstrzygnięty; asystent widzi nową turę zamiast kontynuacji.
+- **Bardziej skuteczne:** odpowiedzenie na formularz. Oryginalne narzędzie wznawia działanie, a odpowiedź kontynuuje od miejsca, w którym się zatrzymała.
+
+## Kiedy asystent jest niewłaściwym narzędziem
+
+Asystent nie jest zbudowany dla — i odsuwa od — kilku klas pytań:
+
+- **Ogólnodostępna konwersacja.** *"Co sądzisz o polskim systemie wyborczym?"* Asystent jest ograniczony do faktycznych, opatrzonych źródłami odpowiedzi o konkretnej aktywności sejmowej; nie wygłasza opinii.
+- **Analiza polityczna spoza korpusu.** Pytania wymagające kontekstu spoza korpusu legislacyjnego — stosunki międzynarodowe, prognozy rynkowe, sondaże wyborcze — nie są tym, co obejmuje zestaw narzędzi. Asystent odnotuje ograniczenie i odpowie na to, co potrafi z korpusu, zamiast zmyślać materiał.
+- **Pisanie.** Asystent streści, zbriefinguje i porówna, lecz nie napisze komunikatu prasowego, pisma prawnego ani dokumentu pozycyjnego. Wykorzystaj zestreszczany materiał jako wkład do własnego pisania.
+- **Operacje masowe.** *"Wyślij maila do każdego posła Komisji Energetyki."* Asystent wykonuje zapytania, nie akcje. Tam, gdzie istnieją akcje na platformie — tworzenie alertu, wgrywanie plików — są one jawne i potwierdzane; nie istnieje powierzchnia masowych akcji.
+
+W tych przypadkach asystent wytworzy krótką odpowiedź wyjaśniającą ograniczenie i (gdy możliwe) wskaże część platformy, która pasuje.

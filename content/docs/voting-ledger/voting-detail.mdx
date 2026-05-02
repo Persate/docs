@@ -1,0 +1,101 @@
+---
+title: Inspecting a voting
+description: The voting detail view — the overview card, related documents, the option tally, and the seat-by-seat chamber map with club-level filtering.
+---
+
+Selecting any card on the **Voting ledger** opens the **Detail view** for that ballot. The screen presents four regions, all derived from a single backend payload: the **voting overview**, **related documents**, **voting options** (where applicable), and the **seat-by-seat chamber map**.
+
+A breadcrumb at the top of the screen reads **Recent Votes → Proceeding N → Voting N**, and selecting **Recent Votes** returns to the ballot list with the previous page restored.
+
+## Voting overview
+
+The left column opens with a card summarising the ballot itself.
+
+### Identifiers and kind
+
+Three short badges across the top:
+
+- **Proceeding N** — the parliamentary sitting in which the vote took place.
+- **Voting N** — the vote's sequence number within that sitting.
+- **Vote kind** — Electronic, Traditional, or On list.
+
+### Topic and description
+
+The motion's topic is rendered as the heading. A secondary description, where supplied, is shown beneath. Both fields reproduce the parliamentary record verbatim.
+
+### Resolution status
+
+A coloured panel below the description summarises the outcome.
+
+- For standard motions (Yes/No/Abstain): **Passed** or **Rejected**, accompanied by an explanation — *"The motion reached the required threshold"* or *"The motion did not reach the required threshold"*.
+- For presence checks: **Quorum present** or **Quorum missing**.
+- For **On list** votes: the vote kind itself is displayed in place of a pass/fail label, accompanied by *"This vote is decided by the option tally"*.
+
+A counter on the right of the panel shows the **yes-vote count over the required majority** (for example, `230 / 231`) where the required threshold is known. This makes it immediately apparent how close to the threshold the result fell.
+
+### Summary metrics
+
+On wide displays four additional metrics are shown beneath the resolution status:
+
+- **Voted at** — the precise time of the vote.
+- **Members present** — the number of members recorded as in the chamber.
+- **Majority** — the applicable rule (Simple, Absolute, or Qualified) and, where defined, the numerical threshold.
+- **Turnout** — the proportion of seats from which a vote was cast, expressed as a percentage and an absolute count.
+
+## Related documents
+
+A second card on the left lists every external document the legislation service has linked to the vote. Each entry shows:
+
+- A **document name** — taken from the document's official title where available, falling back to a humanised version of the link's relation type.
+- A **support label** — a secondary descriptor where the document carries one (e.g. the long-form title of a Sejm print).
+- A **source** — typically the publishing domain (e.g. `sejm.gov.pl`, `eli.sejm.gov.pl`) and a Sejm print number where one is recorded.
+- An **action button** opening the document in a new tab.
+
+Documents are sorted by relevance to the ballot, not chronologically. The most informative document — typically the **proposed changes** to the bill — is shown first and tagged **Priority**. Sejm prints, ELI acts, committee reports, and ancillary source links follow.
+
+If no documents are linked, the card displays *"No linked documents were found for this vote yet"*.
+
+## Voting options
+
+For **On list** votes, an additional card on the left presents the per-option tally.
+
+Each option is rendered as a labelled progress bar, ordered from highest to lowest vote count. The bar width is proportional to the share of votes cast (not of the chamber). Where supplied, an option-level description appears beneath the option name.
+
+This card is hidden for standard Yes/No/Abstain ballots.
+
+## The chamber map
+
+The right column is dominated by a **seat-by-seat chamber map** rendering the actual seating layout of the Sejm chamber for the day of the vote. Each seat is shown as a circle coloured by the vote cast by its occupant:
+
+| Colour | Vote |
+| --- | --- |
+| Blue | Yes |
+| Red | No |
+| Amber | Abstain |
+| Slate | Present (presence checks only) |
+| Grey | Absent |
+
+The colour scheme matches the tally bar on the corresponding ballot card.
+
+### The vote-distribution chips
+
+A grid of chips above the map summarises the chamber-level totals: each chip shows a count, a label (Yes/No/Abstain/Absent and, where applicable, Present), and the share of the chamber it represents. The dominant tally — the option with the highest count — is highlighted with its colour.
+
+### The club filter
+
+A horizontal strip of chips beneath the chip grid lists every parliamentary club represented in the vote, along with the number of members it placed in the chamber for the ballot. The chip's colour reflects the **majority vote** of the club — the choice that most of its members made.
+
+- Selecting **All seats** displays the entire chamber.
+- Selecting one or more **club chips** restricts the map to seats occupied by members of those clubs. Selections are additive; selecting a chip a second time deselects it.
+
+Filtering the map by club is the most direct way to see whether voting was cohesive within a parliamentary group, or whether it cut across club lines.
+
+### Hovering on a seat
+
+Hovering over a seat reveals the member occupying it together with the vote they cast. The seating layout reflects the **official daily map** published by the Chancellery; if no map is available for the date in question, the system falls back to a generated layout that preserves the count of seats per club.
+
+## Errors and missing data
+
+- **Couldn't load voting details** — the legislation service did not respond. A **Try again** control reissues the request. Where the failure is a permission error, the message is replaced with *"You don't have permission to view this voting"*.
+- **No linked documents** — see the Related documents section above. This is common for procedural motions.
+- **No daily seating map** — the chamber map renders with the fallback layout. The vote distribution and per-member identification remain accurate; only the geometric arrangement is approximate.

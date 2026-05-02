@@ -1,0 +1,37 @@
+---
+title: Smart folders
+description: Persistent saved queries that operate as virtual folders. Matching files appear automatically.
+---
+
+A **Smart folder** is a persistent saved query. Once defined, the system maintains the folder's contents automatically: any file matching the configured criteria — a search query, file types, dates, sources, or tags — appears within the folder, including newly uploaded items.
+
+A Smart folder is not a folder in the conventional sense; files are not relocated into it. Membership is computed at query time on the basis of the folder's criteria.
+
+## Representative use cases
+
+- A folder containing all documents in which the term "**legislation 2025**" appears, sorted by modification date so that the most recent documents are surfaced first.
+- A folder for triage purposes, listing all PDF documents longer than fifty pages that have not yet been tagged.
+- A folder consolidating documents originating from Google Drive that pertain to a specific stakeholder.
+
+## Configuration
+
+Smart folders are presented alongside the Repository. Opening a Smart folder displays — and permits modification of — its current configuration in the right-hand panel:
+
+- **Content search** — the textual query (for example, "carbon tax").
+- **Filters** — restrictions by filename pattern, last-modified date, file size, processing status, file type, and source (Persate, Google Drive, OneDrive).
+- **Sort order** — by date, alphabetical order, file size, or other supported criteria.
+
+Modifications are persisted by selecting **Save**, after which the folder's contents are recomputed.
+
+## Available views
+
+Two view modes are offered for each Smart folder, accessed via action cards at the top of the page:
+
+- **Storage view** — presents the matching files in the standard list or tile layout. Suited to reading or downloading individual documents.
+- **Timeline view** — presents the same files arranged by date. Suited to identifying patterns over time, for example whether documents on a given topic are accumulating at an increasing rate.
+
+## Recommendations
+
+- **Begin with broad criteria, then refine.** Initial Smart-folder definitions tend to be either too narrow (yielding no matches) or too broad (yielding the entire Repository). Saving the folder and observing the results provides the basis for iterative refinement.
+- **Combine the search query with filters.** A textual query in isolation typically matches more documents than intended. Adding one or two filters (such as `file type = PDF`) sharpens the result without making the folder fragile to small changes in document metadata.
+- **Use tags for recurring themes.** Where a topic is difficult to express as a search query, tagging matching files manually and configuring the Smart folder to filter by that tag produces a tag-driven view that is straightforward to maintain.

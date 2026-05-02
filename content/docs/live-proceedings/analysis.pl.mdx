@@ -1,0 +1,84 @@
+---
+title: Otwieranie posiedzenia
+description: Widok szczegółowy pojedynczej sesji — odtwarzacz wideo, transkrypcje, identyfikacja mówców oraz wybór pomiędzy pipeline'ami Record Analysis i Enhanced Record.
+---
+
+Wybranie karty na liście **Posiedzeń na żywo** otwiera **widok szczegółowy** danego posiedzenia. Ekran dzieli się na dwie strefy: **odtwarzacz wideo** w górnej części oraz **panel analizy** poniżej. Obie strefy współdzielą stan — przewinięcie wideo przesuwa kursor analizy, a wybranie linii transkryptu przeskakuje wideo do odpowiadającego momentu.
+
+Pasek nawigacyjny u góry ekranu odzwierciedla widok źródłowy (**Ongoing**, **Previous** lub **Scheduled**), po którym wyświetlany jest tytuł sesji.
+
+## Odtwarzacz wideo
+
+Odtwarzacz znajduje się w górnej części ekranu.
+
+- **W przypadku sesji bieżących** transmisja na żywo jest pobierana z oficjalnego kanału Sejmu. Odtwarzanie rozpoczyna się automatycznie po udostępnieniu strumienia.
+- **W przypadku sesji minionych** nagranie jest serwowane z archiwum Sejmu. Odtwarzanie rozpoczyna się automatycznie po otwarciu strony.
+- **W przypadku sesji zaplanowanych** strumień nie jest dostępny do momentu rozpoczęcia sesji. Odtwarzacz zastępowany jest komunikatem "Scheduled — analysis will be available once the session begins". W odniesieniu do sesji rozpoczynających się w ciągu najbliższych trzydziestu minut system podejmuje próbę nawiązania połączenia z wyprzedzeniem, by odtwarzanie mogło rozpocząć się niezwłocznie po wejściu transmisji na żywo.
+
+Przełącznik w kontrolkach odtwarzacza pozwala wyświetlić lub ukryć **nakładki twarzy** — kolorowe prostokąty wskazujące mówców rozpoznanych w bieżącej klatce. Ustawienie jest zachowywane pomiędzy sesjami konta.
+
+Jeśli strumienia nie można przygotować do odtwarzania, odtwarzacz zastępowany jest komunikatem **Playback unavailable** opisującym przyczynę błędu. Przycisk ponowienia podejmuje kolejną próbę zestawienia strumienia.
+
+## Dwie zakładki analizy
+
+Dla sesji minionych panel analizy poprzedzony jest paskiem zakładek z dwiema pozycjami:
+
+- **Record Analysis** — pipeline pracy w czasie rzeczywistym. Dostępny zarówno dla transmisji bieżących, jak i nagrań.
+- **Enhanced Record** — pipeline komprehensywny. Dostępny wyłącznie dla nagrań.
+
+W przypadku sesji bieżących prezentowany jest wyłącznie widok **Record Analysis**; pipeline Enhanced Record operuje na zakończonych nagraniach. Dla sesji zaplanowanych obie zakładki pozostają ukryte do czasu rozpoczęcia transmisji.
+
+Kropka statusu obok etykiety zakładki odzwierciedla bieżący stan:
+
+| Wskaźnik | Znaczenie |
+| --- | --- |
+| Pusty pierścień | Pipeline nie został jeszcze uruchomiony. |
+| Wirujący okrąg | Pipeline jest uruchamiany, buforuje lub jest w toku. |
+| Pulsująca cyjanowa kropka | Trwa sesja w czasie rzeczywistym (wyłącznie Record Analysis). |
+| Wypełniona kropka | Wynik jest dostępny. |
+| Ikona alertu | Pipeline zakończył się niepowodzeniem. Pełny komunikat błędu znajduje się w treści panelu. |
+
+## Record Analysis
+
+Zakładka **Record Analysis** prezentuje wynik pipeline'u w czasie rzeczywistym. Pipeline pracuje w dwóch trybach w zależności od stanu posiedzenia:
+
+- **Live Session** — tryb pracy w czasie rzeczywistym wykorzystywany podczas bieżącej transmisji. Transkrypcja, detekcja mówców oraz rozpoznawanie twarzy są generowane na bieżąco. Najnowsze fragmenty pojawiają się u dołu panelu; kursor podąża za pozycją transmisji na żywo.
+- **Priority Review** — tryb pracy w czasie rzeczywistym zastosowany retroaktywnie do zarchiwizowanego nagrania. Ten sam pipeline jest uruchamiany na archiwalnym materiale, dostarczając transkrypcji z etykietami mówców oraz identyfikacji twarzy w ciągu kilku minut, zamiast dłuższego czasu obróbki pipeline'u komprehensywnego.
+
+Jeżeli dla posiedzenia nie wytworzono dotąd analizy Record Analysis, panel udostępnia kontrolkę **Start Record Analysis**. Jej wybór uruchamia tryb Live Session dla bieżącej transmisji lub Priority Review dla zarchiwizowanego nagrania, zależnie od stanu posiedzenia.
+
+Po rozpoczęciu analizy panel wyświetla wskaźnik kolejki (gdy dotyczy), a następnie fragmenty transkryptu w miarę ich pozyskiwania.
+
+### Fragmenty transkryptu
+
+Każdy fragment prezentuje mówcę (jeśli rozpoznany), wypowiedziany tekst oraz znacznik czasu. Wybranie fragmentu przewija wideo do odpowiadającego momentu. Podczas odtwarzania na żywo aktywny fragment jest podświetlony; wybranie wcześniejszego fragmentu chwilowo odłącza kursor od bieżącej pozycji transmisji.
+
+### Profile mówców
+
+W przypadku dopasowania twarzy do znanej postaci parlamentarnej przy fragmencie wyświetlana jest jej nazwa. Mówcy nierozpoznani są oznaczani identyfikatorem generowanym automatycznie (np. **Speaker 3**) i będą mogli zostać zharmonizowani ze znanymi profilami w kolejnym wydaniu.
+
+## Enhanced Record
+
+Zakładka **Enhanced Record** prezentuje wynik pipeline'u komprehensywnego. Pipeline ten jest wolniejszy od Record Analysis, lecz dostarcza wyniku o wyższej wierności — dopracowanego transkryptu, wykrycia tematów, ustrukturyzowanej osi czasu sesji oraz pełnego rozpoznawania twarzy w całości nagrania.
+
+Dla nagrań, dla których pipeline nie został uruchomiony, panel udostępnia kontrolkę **Start Enhanced Record**. Po zainicjowaniu postęp raportowany jest jako wartość procentowa wraz z etykietą etapu (np. **Detecting faces**, **Recognizing faces**, **Transcription & diarization**, **Active speaker analysis**). Operacja może zostać przerwana w trakcie wykonywania; przerwanie odrzuca wynik częściowy.
+
+Po ukończeniu panel wyświetla pełen zestaw wytworzonych artefaktów. Wybranie pozycji posiadającej znacznik czasu przewija wideo do odpowiadającego momentu.
+
+## Wybór pomiędzy pipeline'ami
+
+Oba pipeline'y mają charakter komplementarny, nie alternatywny.
+
+- **Record Analysis** sprawdza się tam, gdzie istotny jest czas — podczas transmisji na żywo lub gdy świeżo zakończona sesja musi zostać przejrzana w ciągu minut.
+- **Enhanced Record** sprawdza się tam, gdzie istotne są dokładność i struktura — gdy sesja ma być cytowana, podsumowywana lub wykorzystana jako materiał referencyjny.
+
+Uruchomienie jednego pipeline'u nie wyklucza drugiego. Oba mogą zostać uruchomione dla tego samego posiedzenia; odpowiadające im zakładki prezentują wyniki niezależnie.
+
+## Zalecany sposób pracy
+
+Dla większości użytkowników typowy schemat postępowania jest następujący:
+
+1. Otwarcie **Live Proceedings** rano, przełączenie na **Ongoing** w celu sprawdzenia bieżących transmisji oraz na **Scheduled** w celu zaplanowania reszty dnia.
+2. Dla sesji w toku otwarcie posiedzenia i uruchomienie **Live Session** — transkrypt budowany jest w czasie rzeczywistym i może być wykorzystywany jeszcze przed zakończeniem sesji.
+3. Dla sesji o szczególnym znaczeniu zlecenie **Enhanced Record** po zakończeniu w celu uzyskania artefaktów strukturalnych; wynik jest zazwyczaj dostępny w ciągu godziny dla sesji o przeciętnej długości.
+4. Wykorzystywanie funkcji przeskoku z transkryptu do wideo w celu ponownego odtworzenia konkretnych momentów bez przewijania pełnej transmisji.

@@ -1,0 +1,173 @@
+---
+title: Worked examples
+description: Substantive prompts and the expected advisor behaviour, drawn from the recurring use cases of public-affairs and legal teams. Each example shows the question, the skills the advisor would call, and the kind of answer to expect.
+---
+
+This page walks through six representative interactions with the **AI advisor**, chosen to cover the workflows that recur most often in public-affairs and legal practice. Each example is structured the same way:
+
+- **Prompt** — what the user types.
+- **Suggested depth** — Surface, Balanced, or Deep.
+- **What the advisor does** — the skill chips that appear in the message timeline, in roughly the order they fire.
+- **What the answer looks like** — the structure of the response, including the citation chips the user can expect to see inline.
+
+The actual prose of any given response will vary — the advisor is non-deterministic — but the *shape* of the response and the tools used are stable.
+
+## Example 1 — Vote attribution
+
+A common starting question: *who voted which way on a specific bill, and what did the breakdown look like?*
+
+> **Prompt.** Which MPs from the Civic Coalition voted against the proposed amendment to the energy law in the most recent Sejm sitting? Show the division result and link to the vote.
+
+**Suggested depth:** Balanced.
+
+**What the advisor does:**
+
+1. **legislation** — `list_votings` to enumerate recent votings; filters to ones whose title or topic mentions the energy law and an amendment.
+2. **legislation** — `get_voting` on the matching vote to obtain the per-member tally and the official metadata.
+3. **stakeholders** — `get_legislator` for each Civic Coalition member who voted *No*, to attach names to the IDs.
+
+**What the answer looks like:**
+
+> The amendment was **rejected** in vote *Voting 47 of Proceeding 12* on 28 March 2026, with 198 yes / 232 no / 8 abstain — see [legislation://voting/12/47]. The following Civic Coalition members voted against: [feature://stakeholder/abc-123], [feature://stakeholder/def-456], [feature://stakeholder/ghi-789] (3 of 134 members of the club; the remaining 131 voted in favour).
+
+The two chips at the start are the vote and the linked seat-by-seat map; the three name chips link straight to the MPs' profiles.
+
+## Example 2 — Public position vs voting record
+
+A staple question for opposition research: *does an actor's public stance line up with how they actually vote?*
+
+> **Prompt.** The Climate Coalition has been very vocal on coal phase-out in public statements over the past month. How have its members actually voted in plenary on coal-related divisions in the same period? Are there any divergences between what they say and how they vote?
+
+**Suggested depth:** Deep.
+
+**What the advisor does:**
+
+1. **stakeholders** — `search_legislators` filtered to the Climate Coalition affiliation.
+2. **public_pulse** — `search_tweets` over those stakeholder IDs with a date range of the past month and search terms covering coal phase-out vocabulary.
+3. **legislation** — `list_votings` filtered to the same date range with topic terms covering energy and coal.
+4. **legislation** — `get_voting` on each candidate vote.
+5. **legislation** — `votes_by_legislator` for cross-checking.
+
+**What the answer looks like:**
+
+> Of nine plenary votes on coal-related amendments in the past 30 days, Climate Coalition members were unified on six (full vote-yes alignment with their public statements). Three notable divergences:
+>
+> - **MP Kowalska** ([feature://stakeholder/...]) tweeted in support of the proposed regional just-transition fund ([feature://public_pulse/tweet/...]) but voted **abstain** on the funding amendment ([legislation://voting/12/52]).
+> - The Coalition was split 7–2 on the coal-mine closure timeline amendment ([legislation://voting/12/61]) despite a unified leadership statement ([feature://public_pulse/tweet/...]).
+> - **MP Nowak** ([feature://stakeholder/...]) was absent from three of the nine divisions, including the headline phase-out vote.
+
+The advisor surfaces the *interesting* findings rather than reciting every vote — the depth setting permits it to invest in the comparison.
+
+## Example 3 — Document deep-dive with attached file
+
+When the answer is in a specific document the user already has, attaching the file beats letting the advisor search.
+
+> **Prompt.** *(with `Q1-2026-renewables-briefing.pdf` attached)*  
+> Summarise the regulatory recommendations in this briefing, and check whether any of them have been adopted in the most recent Sejm sittings.
+
+**Suggested depth:** Balanced.
+
+**What the advisor does:**
+
+1. **documents** — `get_file_summary` and `read_file` to extract the recommendations from the attached file directly (no search step — the file ID is provided).
+2. **legislation** — `list_votings` filtered by topics covering each named recommendation.
+3. **legislation** — `get_voting` for the candidate matches.
+
+**What the answer looks like:**
+
+> The briefing makes five regulatory recommendations [Q1-2026-renewables-briefing.pdf, c1]. Of these:
+>
+> - **Recommendation 2** (streamlining the connection-permit process) corresponds to amendment 14 in the energy law, *passed* on 22 March — see [legislation://voting/12/41].
+> - **Recommendation 4** (extending the contracts-for-difference cap) was tabled but *withdrawn* before the vote; see the procedural note in [Q1-2026-renewables-briefing.pdf, c4].
+> - The remaining three recommendations have not yet appeared in tabled legislation.
+
+The numbered superscripts (e.g. *c1*, *c4*) hover-reveal the source filename; clicking downloads the file.
+
+## Example 4 — Setting up an alert with elicitation
+
+Setting up a forward-looking watch is one of the cases where the advisor will pause for confirmation.
+
+> **Prompt.** Set up an alert that watches for any reference to the new pharmaceuticals reform in plenary speeches and uploaded documents.
+
+**Suggested depth:** Surface.
+
+**What the advisor does:**
+
+1. **legislation** — `list_votings` to find the bill the user is referring to.
+2. The matching pulls back two candidate bills (one current pharmaceuticals reform and an older one). The tool emits an **elicitation** asking the user to choose which.
+3. *(user picks the current bill from the inline form)*
+4. **alerts** — `create_alert` with the chosen bill's bill number, an AI-enhanced description, and tight, topic-specific keywords (the bill's name, the rapporteur, the principal policy term — not the generic term *"reform"*).
+5. The new alert is returned, surfacing as a chip the user can open.
+
+**What the answer looks like:**
+
+> Created the alert **Pharmaceuticals Reform 2026** ([feature://alert/...]). It watches for plenary speeches and uploaded documents mentioning the bill number, the rapporteur's name, and the principal policy keywords. It is set to **Active** and **Private**; you can change visibility from the alert detail view if you want to share it with your group.
+
+The advisor explains the keyword choice in the answer so the user can correct it — *"if `pharmaceuticals` alone is too noisy, narrow it to the bill number"* is a typical follow-up.
+
+## Example 5 — Targeted document passage retrieval
+
+Pulling a specific passage out of an uploaded transcript or document.
+
+> **Prompt.** Find the passage in our most recent Justice Committee transcript where the chairman announced the timeline for the procurement-law amendment.
+
+**Suggested depth:** Balanced.
+
+**What the advisor does:**
+
+1. **documents** — `hybrid_search` filtered to recent committee transcripts with search terms covering procurement law and timeline announcements.
+2. **documents** — emits a `documents://chunk/...` URI for the matching transcript passage.
+
+**What the answer looks like:**
+
+> The chairman announced the schedule in the meeting transcript dated 30 March 2026 ([documents://chunk/.../...]). Quoted from the passage:
+>
+> > *"The procurement-law amendment will be considered in second reading at the next sitting on 5 April, with committee report due by 3 April."*
+>
+> The chip above opens the file at the cited passage.
+
+## Example 6 — Multi-source legislative briefing
+
+The showcase: a request that pulls from every relevant source and produces a synthesised brief.
+
+> **Prompt.** I need a one-page brief on the state of the renewable-energy bill: where it is in the legislative process, the most recent committee actions, the public positioning of the major parties, the projected vote outcome, and any stakeholder concerns to be aware of going into next week's sitting.
+
+**Suggested depth:** Deep.
+
+**What the advisor does:**
+
+1. **legislation** — `list_votings`, `get_voting` to assemble the bill's legislative trajectory and most recent floor actions.
+2. **documents** — `hybrid_search` for committee discussion of the bill in the past three weeks across uploaded transcripts and public corpus.
+3. **public_pulse** — `search_tweets` over each major club's stakeholders, with date range of the past two weeks and topic terms covering the bill.
+4. **legislation** — `votes_by_legislator` aggregated by club, to project the likely vote outcome based on prior energy-policy alignments.
+5. **documents** — `hybrid_search` over the public corpus and the user's tenant files for any briefing notes the user has already received on the topic.
+6. **alerts** — `list_alerts` to check whether the user already has an alert covering this bill (and offers to create one if not).
+
+**What the answer looks like:**
+
+> **Renewable Energy Bill — Brief**
+>
+> *Status.* The bill is at second reading. The Energy Committee reported favourably on 28 March ([legislation://voting/12/38]); a substantive amendment from the Climate Coalition was rejected ([legislation://voting/12/47]).
+>
+> *Recent committee actions.* The chairman of the Energy Committee announced 5 April as the floor date ([documents://chunk/.../...]). A technical hearing on grid-connection capacity was held on 1 April; document excerpts available.
+>
+> *Public positioning.*
+> - **Civic Coalition** has been broadly supportive but pushing for transition-fund add-ons ([feature://public_pulse/tweet/...]).
+> - **Law and Justice** is opposed in current form, citing industrial-cost concerns ([feature://public_pulse/tweet/...]).
+> - **Polish People's Party** has signalled conditional support contingent on rural-grid funding ([feature://public_pulse/tweet/...]).
+>
+> *Projected outcome.* Based on prior club-level alignment on comparable energy-policy votes, the bill is likely to pass on a margin of 30–45 votes if the current coalition holds. Two Polish People's Party MPs have recent voting records suggesting they may break ranks ([feature://stakeholder/...], [feature://stakeholder/...]).
+>
+> *Stakeholder concerns.* Your firm's internal briefing from Q1 ([Q1-2026-renewables-briefing.pdf, c1]) flagged grid-connection delay as the principal industry risk. The technical hearing transcript supports this concern.
+>
+> No existing alert covers this bill — would you like me to create one?
+
+This is the kind of multi-source synthesis the advisor is built for. At **Deep** depth the user sees the timeline assembling in real time as the advisor works through the question.
+
+## Patterns that recur across examples
+
+Across the six examples above, three patterns repeat:
+
+- **The advisor begins with structured lookups.** Voting records, committee membership, stakeholder identity — the structured tools fire first to anchor the question. Free-text search comes after, scoped by what the structured lookups found.
+- **Multi-source citations are the norm, not the exception.** Even simple questions tend to produce two or three URI chips. The user can audit any claim by clicking through.
+- **The advisor wraps up gracefully when it approaches its limits.** A Deep query that reaches the per-turn limit returns a complete answer for the parts it covered and a one-line note about what was deferred — never a hard failure on a question that was partially answerable.

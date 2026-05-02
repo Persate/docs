@@ -1,0 +1,74 @@
+---
+title: Live proceedings
+description: "Watching, browsing, and queuing parliamentary sessions: ongoing broadcasts, the archive of recorded sittings, and the schedule of upcoming meetings."
+---
+
+**Live proceedings** is the entry point for parliamentary broadcasts — Sejm sessions, committee meetings, subcommittee meetings, conferences, and other gatherings carried on the official Sejm video channel. The same screen serves three purposes: tuning into a session that is currently in progress, reviewing the recording of a past session, and inspecting the schedule of sessions yet to take place.
+
+It is accessed via the sidebar entry **CORE → Live Proceedings**.
+
+## The three sub-views
+
+A view selector at the top of the screen switches between three lists. The default is **Previous**.
+
+- **Ongoing** — sessions broadcast live at the present moment. The list is empty outside session hours.
+- **Previous** — sessions that have already ended. Recordings are retained indefinitely and remain available for analysis.
+- **Scheduled** — sessions announced in the parliamentary calendar but not yet started. Sorted in ascending date order, oldest first.
+
+Selecting a session card opens its **Detail view**, described in [Opening a proceeding](/live-proceedings/analysis).
+
+## The proceedings list
+
+Sessions are grouped by month. Within each month, items are ordered by start time — most recent first for **Previous** and **Ongoing**, earliest first for **Scheduled**.
+
+Each card displays:
+
+- The Sejm RP emblem.
+- The session title, as published by the Chancellery of the Sejm.
+- The start time, in the user's local timezone, prefixed with a clock icon.
+- A **type badge** indicating whether the gathering is a Session, Commission, Subcommittee, Conference, or Other.
+- One or more **status icons** indicating the state of automatic analysis (described below).
+
+Selecting a card navigates to the proceeding's detail view.
+
+## Sidebar filters
+
+The right sidebar provides three controls. Filters apply within the currently selected sub-view; switching sub-views preserves their state.
+
+### Search
+
+Free-text search across session titles. Results update as the query is typed. Matching is case-insensitive.
+
+### Date range
+
+A pair of date pickers restricting the visible sessions to a chosen interval. Leaving either field blank treats that endpoint as unbounded.
+
+### Proceeding type
+
+A multi-select field with the five gathering types listed above. Sessions whose type is not selected are hidden. Selecting no types is equivalent to selecting all types.
+
+## Status icons on the card
+
+The icons in the upper-right of each card communicate the state of the two analysis pipelines without requiring the card to be opened.
+
+| Icon | Pipeline | Meaning |
+| --- | --- | --- |
+| Pulsing **Live** indicator (primary) | Record Analysis | A real-time transcription session is currently running for this proceeding. |
+| **Live** indicator (primary, static) | Record Analysis | A real-time analysis has been recorded and is available for review. |
+| **Lightning** indicator (secondary) | Record Analysis | A fast retroactive analysis (Priority Review) of an archived recording has been produced. |
+| **Lightning** indicator (amber) | Record Analysis | A Priority Review request has been queued and will start when capacity is available. |
+| **Lightning** indicator (red) | Record Analysis | A Priority Review attempt failed. |
+| **Processed** indicator (primary) | Enhanced Record | The full comprehensive analysis is complete. |
+| **Processed** indicator (amber, with percentage) | Enhanced Record | The comprehensive analysis is in progress. |
+| **Processed** indicator (red) | Enhanced Record | The comprehensive analysis failed. |
+
+A card with no status icons indicates that no analysis has yet been requested for the proceeding. Both pipelines may be initiated from the detail view.
+
+## Empty states
+
+- **No proceedings found** — the active filters return no matches. Adjusting the search query, date range, or proceeding-type selection typically resolves the issue.
+- **Failed to load proceedings** — communication with the backend was unsuccessful. The page may be reloaded; if the condition persists, the operations team is notified automatically.
+
+## Pages in this section
+
+- **[Opening a proceeding](/live-proceedings/analysis)** — the detail view, the video player, and the two analysis tabs (Record Analysis and Enhanced Record).

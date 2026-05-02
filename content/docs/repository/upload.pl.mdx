@@ -1,0 +1,49 @@
+---
+title: Wgrywanie plików
+description: Dodawanie dokumentów do Repozytorium z określeniem zakresu dostępu.
+---
+
+W celu wgrania plików należy wybrać opcję **Upload** w górnej części paska bocznego. Po prawej stronie ekranu otwiera się panel zawierający kontrolki wyboru plików, ustawienia zakresu dostępu oraz przycisk wysyłki.
+
+## Wybór plików
+
+Obsługiwane są dwie metody:
+
+- **Przeciągnij i upuść** — pliki można przeciągnąć z poziomu systemu operacyjnego na panel wysyłki.
+- **Wybór z dysku** — wybranie strefy upuszczania otwiera systemowe okno wyboru plików.
+
+W ramach jednej operacji możliwe jest dodanie wielu plików. Każdy wybrany plik prezentowany jest jako wiersz listy, opisany ikoną typu i nazwą, oraz wyposażony w kontrolkę usunięcia z paczki.
+
+Aktualnie przyjmowane są wyłącznie pliki **PDF**, z górnym limitem **20 MB na plik**. Pliki w innych formatach są odrzucane przez panel wysyłki.
+
+## Określenie zakresu dostępu
+
+W panelu wysyłki znajduje się przełącznik zakresu dostępu z dwoma ustawieniami:
+
+- **Private** (domyślnie) — pliki widoczne wyłącznie dla użytkownika wgrywającego.
+- **Group** — pliki dodatkowo widoczne dla członków wskazanych grup. Wybranie opcji **Group** udostępnia kontrolkę wielokrotnego wyboru pozwalającą wskazać odpowiednie grupy.
+
+Ustawienie to obowiązuje dla całej paczki. Łączenie plików prywatnych oraz widocznych grupowo w obrębie jednej operacji nie jest możliwe; wymagane są dwie odrębne wysyłki.
+
+<Callout title="Uprawnienia są przypisywane na poziomie pliku, nie folderu">
+Repozytorium nie korzysta z folderów w klasycznym znaczeniu. Zakres dostępu jest powiązany z pojedynczym plikiem (lub paczką wysyłki). Zakres istniejącego pliku można zmodyfikować w późniejszym czasie poprzez sekcję **Sharing** w panelu szczegółów pliku.
+</Callout>
+
+## Wysyłka
+
+Wybranie opcji **Upload** w dolnej części panelu inicjuje przesyłanie plików na konto. Większe pliki oraz liczniejsze paczki mogą wymagać zauważalnego czasu; postęp prezentowany jest na pasku.
+
+Po zakończeniu wysyłki każdy plik przechodzi szereg procesów wykonywanych w tle:
+
+- **Indeksowanie** — niezbędne dla wyszukiwania pełnotekstowego.
+- **Osadzenie semantyczne (embedding)** — niezbędne, by plik mógł posłużyć jako materiał źródłowy dla asystenta AI.
+- **Generowanie podsumowania** — automatyczne streszczenie wyświetlane w panelu szczegółów pliku.
+- **Wykrycie języka** — identyfikacja języka dokumentu (polskiego, angielskiego oraz innych).
+
+Pliki stają się dostępne do przeglądania natychmiast po pojawieniu się na liście; dalsze przetwarzanie wzbogaca podsumowanie oraz wyniki wyszukiwania, nie wpływając na podstawowy dostęp.
+
+## Import plików ze źródeł chmurowych
+
+Integracje z **Google Drive** oraz **Microsoft OneDrive** są w trakcie przygotowania. Odpowiadająca im pozycja **Sources** w pasku bocznym (sekcja **KNOWLEDGE BASE**) jest obecnie wyłączona i zostanie udostępniona w kolejnym wydaniu.
+
+→ Dalej: [przeglądanie i porządkowanie plików](/pl/repository/view-and-organize)
