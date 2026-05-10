@@ -3,7 +3,7 @@ title: Konfiguracja uwierzytelniania dwuskładnikowego
 description: Sparowanie aplikacji autoryzacyjnej, dzięki któremu kolejne logowania wymagają zarówno hasła, jak i sześciocyfrowego kodu weryfikacyjnego.
 ---
 
-Uwierzytelnianie dwuskładnikowe (2FA) jest obowiązkowe dla każdego konta Persate. Mechanizm ten zapewnia ochronę konta nawet w przypadku ujawnienia hasła: każde logowanie wymaga dodatkowo aktualnego kodu czasowego generowanego przez sparowaną aplikację autoryzacyjną.
+Uwierzytelnianie dwuskładnikowe (2FA) jest obowiązkowe dla każdego konta Persate. Mechanizm ten zapewnia ochronę konta nawet w przypadku ujawnienia hasła, każde logowanie wymaga dodatkowo aktualnego kodu tymczasowego generowanego przez sparowaną aplikację autoryzacyjną.
 
 Ekran **Set Up Authenticator** wyświetlany jest automatycznie podczas pierwszego logowania po założeniu konta.
 
@@ -16,14 +16,14 @@ Aplikacja autoryzacyjna zgodna ze standardem TOTP, zainstalowana na urządzeniu 
 - 1Password
 - Microsoft Authenticator
 
-## Procedura
+## Procedura konfiguracji uwierzytelniania dwuskładnikowego
 
 1. **Uruchomienie aplikacji autoryzacyjnej** oraz wybranie opcji "Dodaj konto" (lub przycisku **+**).
 2. **Zeskanowanie kodu QR** wyświetlonego na ekranie Persate przy użyciu aparatu urządzenia, dostępnego z poziomu aplikacji autoryzacyjnej. Jeżeli urządzenie nie umożliwia skanowania kodu QR (na przykład w przypadku rejestracji z komputera stacjonarnego bez kamery), należy skopiować **klucz konfiguracyjny** wyświetlony pod kodem QR i wprowadzić go ręcznie do aplikacji autoryzacyjnej.
 3. **Wprowadzenie sześciocyfrowego kodu**, który aplikacja prezentuje dla wpisu Persate, w odpowiednie pole na stronie.
 4. Wybranie opcji **Verify and finish setup**.
 
-Konfiguracja jest tym samym zakończona. Kod prezentowany przez aplikację autoryzacyjną generowany jest na nowo co trzydzieści sekund; obowiązuje wartość aktualna w momencie logowania.
+Konfiguracja jest tym samym zakończona. Kod prezentowany przez aplikację autoryzacyjną generowany jest na nowo co trzydzieści sekund, obowiązuje wartość aktualna w momencie logowania.
 
 <Callout title="Kopia bezpieczeństwa aplikacji autoryzacyjnej">
 Utrata dostępu do aplikacji autoryzacyjnej — w wyniku zmiany urządzenia lub przypadkowego usunięcia — wymaga interwencji wsparcia technicznego. Aplikacje synchronizujące dane w chmurze, takie jak Authy oraz 1Password, znacząco upraszczają migrację na nowe urządzenie w porównaniu z aplikacjami przechowującymi dane wyłącznie lokalnie (jak Google Authenticator w konfiguracji domyślnej).
@@ -31,10 +31,10 @@ Utrata dostępu do aplikacji autoryzacyjnej — w wyniku zmiany urządzenia lub 
 
 ## Kolejne logowania
 
-Przy każdym logowaniu, po uwierzytelnieniu hasłem (lub po zatwierdzeniu okna dostawcy SSO), aplikacja prosi o sześciocyfrowy kod z aplikacji autoryzacyjnej.
+Przy każdym kolejnym logowaniu, aplikacja Persate wymaga podania sześciocyfrowego kodu z aplikacji autoryzacyjnej.
 
-Pole kodu składa się z sześciu odrębnych okienek; wprowadzenie cyfry w pierwszym z nich powoduje automatyczne przesunięcie kursora. Możliwe jest również wklejenie pełnego sześciocyfrowego kodu do pierwszego okienka — pozostałe wypełnią się samoczynnie.
+Pole kodu składa się z sześciu odrębnych okienek, wprowadzenie cyfry w pierwszym z nich powoduje automatyczne przesunięcie kursora. Możliwe jest również wklejenie pełnego sześciocyfrowego kodu do pierwszego okienka — pozostałe wypełnią się samoczynnie.
 
-Odrzucenie kodu najczęściej wskazuje, że wartość wygasła pomiędzy momentem wygenerowania a wprowadzenia. W większości przypadków odczekanie na kolejny kod rozwiązuje problem.
+Odrzucenie kodu najczęściej wskazuje, że wartość wygasła pomiędzy momentem wygenerowania a wprowadzenia. W większości przypadków odczekanie i wprowadzenie nowo wygenerowanego kodu rozwiązuje problem.
 
 → [Dalej: pierwsze logowanie](/pl/getting-started/first-login)

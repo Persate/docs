@@ -14,25 +14,25 @@ Oba widoki dostępne są z grupy **INTELLIGENCE** w pasku bocznym, kolejno pod p
 
 Katalog interesariuszy jest źródłem tożsamości. Public Pulse jest strumieniem aktywności obracającym się wokół tych tożsamości.
 
-- Każdy wpis w Public Pulse jest przypisany do konkretnego interesariusza; wybranie profilu otwiera ten sam rekord widoczny w katalogu.
+- Każdy wpis w Public Pulse jest przypisany do konkretnego interesariusza. Wybranie profilu otwiera ten sam rekord widoczny w katalogu.
 - Filtry Public Pulse (po klubie lub po wskazanej osobie) korzystają z tych samych metadanych, które zasilają katalog.
-- Zakładka **X** w profilu każdego interesariusza prezentuje te same wpisy co Public Pulse, lecz ograniczone do wybranego posła.
+- Zakładka **X** w profilu każdego interesariusza prezentuje te same wpisy co Public Pulse, lecz ograniczone do wybranego interesariusza.
 
 Strony poświęcone poszczególnym interesariuszom opisuje sekcja [Wgląd w profil interesariusza](/pl/stakeholders/profile). Widok Public Pulse opisuje sekcja [Public Pulse](/pl/stakeholders/public-pulse).
 
 ## Lista interesariuszy
 
-Katalog prezentowany jest jako siatka kart — od czterech do sześciu w wierszu, w zależności od szerokości ekranu. Kolejne karty doczytywane są w trakcie przewijania; kontrolki stronicowania nie są stosowane.
+Katalog prezentowany jest jako siatka kart — od czterech do sześciu w wierszu, w zależności od szerokości ekranu. Kolejne karty wyświetlane są w trakcie przewijania.
 
 ### Karta interesariusza
 
 Każda karta zawiera:
 
-- **Banner partyjny** — proceduralnie generowany gradient zaszczepiony przynależnością posła, z logiem partii nałożonym w prawym górnym rogu. Posłowie niezrzeszeni prezentowani są na neutralnym popielatym gradiencie z godłem Sejmu w miejscu loga partii.
-- **Okrągły awatar** rozdzielający banner i sekcję tekstową.
-- **Imię i nazwisko** posła w roli nagłówka.
-- **Zawód**, jeśli odnotowany (lub *No profession listed*).
-- **Adres e-mail**, jeśli opublikowany.
+- **Banner partyjny** — proceduralnie generowane tło zaszczepione przynależnością posła, z logiem partii nałożonym w prawym górnym rogu. Posłowie niezrzeszeni prezentowani są z neutralną grafiką z godłem Sejmu w miejscu loga partii.
+- **Okrągły awatar**.
+- **Imię i nazwisko**.
+- **Zawód**.
+- **Adres e-mail**.
 - **Województwo** okręgu wyborczego.
 - Numer **District** oraz **Votes** — liczbę głosów uzyskanych w ostatnich wyborach, prezentowane jako dwa wskaźniki w stopce karty.
 
@@ -40,11 +40,9 @@ Wybranie karty otwiera **profil interesariusza** danego posła.
 
 ## Filtry w pasku bocznym
 
-W prawym panelu bocznym dostępne są cztery kontrolki.
-
 ### Wyszukiwanie
 
-Dopasowanie tekstowe w obrębie imion i nazwisk. Wyniki aktualizują się w trakcie wpisywania zapytania, gdy ma ono co najmniej dwa znaki; dopasowanie ignoruje wielkość liter.
+Dopasowanie tekstowe w obrębie imion i nazwisk. Wyniki aktualizują się w trakcie wpisywania zapytania, gdy ma ono co najmniej dwa znaki, dopasowanie ignoruje wielkość liter.
 
 ### Klub
 
@@ -56,9 +54,9 @@ Pole wielokrotnego wyboru obejmujące województwa reprezentowane w dotąd zała
 
 ### Sortowanie
 
-Cztery opcje porządkowania stosowane do aktualnie załadowanych interesariuszy:
+Cztery opcje sortowania stosowane do aktualnie załadowanych interesariuszy:
 
-- **Last Name (A-Z)** — domyślne.
+- **Last Name (A-Z)** — nazwiska alfabetycznie - domyślne.
 - **Last Name (Z-A)**.
 - **Votes (Highest)** — liczba głosów uzyskanych w ostatnich wyborach, malejąco.
 - **Votes (Lowest)**.
@@ -67,9 +65,9 @@ Sortowanie obowiązuje w obrębie rekordów już pobranych. W miarę przewijania
 
 ## Stany pustego widoku i błędu
 
-- **No stakeholders match your filters** — aktywne filtry nie zwracają wyników. Usunięcie filtra, rozszerzenie zapytania lub wyczyszczenie wszystkich filtrów zazwyczaj rozwiązuje problem.
+- **No stakeholders match your filters** — aktywne filtry nie zwracają wyników. Usunięcie filtra, rozszerzenie zapytania lub wyczyszczenie wszystkich filtrów rozwiązuje problem.
 - **No stakeholders available** — usługa legislacyjna nie zwróciła rekordów. Sytuacja niespotykana poza okresem wyborczym.
-- **Couldn't load stakeholders** — komunikacja z feature service'em nie powiodła się. Opis błędu rozróżnia przypadek braku uprawnień (*"You don't have permission to view stakeholders yet"*) od przejściowego problemu z łącznością.
+- **Couldn't load stakeholders** — komunikacja z feature serwerem nie powiodła się. Opis błędu rozróżnia przypadek braku uprawnień (*"You don't have permission to view stakeholders yet"*) od przejściowego problemu z łącznością. Należy odświeżyć stronę. 
 
 ## Strony w tej sekcji
 

@@ -1,34 +1,31 @@
 ---
-title: Konwersacje
-description: Komponowanie wiadomości, oznaczanie plików, podręczna tarcza głębokości, oś czasu wiadomości na żywo (rozumowanie + plakietki narzędzi + formularze elicytacji), cytowania, kopiowanie i regeneracja oraz historia konwersacji.
+title: Interfejs i praca z Asystentem
+description: Komponowanie wiadomości, zarządzanie plikami, poziomy głębokości analizy oraz praca z historią i cytowaniami.
 ---
 
-Niniejsza strona omawia mechanikę pracy z **Asystentem AI** — co znajduje się na ekranie, do czego służy każda kontrolka i jak wygląda odpowiedź w trakcie strumieniowania.
+## Strefa kompozycji zapytania
 
-## Strefa kompozycji
+Panel wprowadzania wiadomości znajduje się w dolnej części ekranu i zawiera trzy kluczowe elementy:
 
-Pole tekstowe zakotwiczone jest w dolnej części ekranu i składa się z trzech kontrolek:
+*   **Selektor głębokości:** Ikona po lewej stronie pozwala wybrać intensywność analizy dla **następnej wiadomości** (**Surface**, **Balanced**, **Deep**). Wybór dotyczy tylko bieżącego pytania — po wysyłaniu wiadomości system wraca do ustawienia domyślnego.
+*   **Pole tekstowe:** Obsługuje wprowadzanie wielu linii tekstu (**Shift + Enter**). Sam klawisz **Enter** wysyła zapytanie do analizy.
+*   **Przycisk wysyłania wiadomości:** Jest nieaktywny, gdy pole jest puste lub gdy Asystent wciąż generuje odpowiedź na poprzednie pytanie.
 
-- **Tarcza głębokości** — niewielka ikona po lewej przełącza popover z trzema opcjami głębokości myślenia (**Surface**, **Balanced**, **Deep**). Ikona odzwierciedla aktualnie wybraną głębokość. Wybór dotyczy wyłącznie następnej wiadomości; wartość domyślna jest przywracana po wysyłce.
-- **Pole tekstowe** — obsługuje wprowadzanie wielu linii za pomocą **Shift + Enter**. Sam **Enter** wysyła wiadomość.
-- **Przycisk wysyłki** — nieaktywny, gdy wiadomość jest pusta lub poprzednia tura jest jeszcze w trakcie strumieniowania.
-
-Nad polem wprowadzania znajduje się drobna stopka *"AI can make mistakes. Check important info."* — standardowe przypomnienie obowiązujące w pracy opartej na LLM.
+**Uwaga:** Pod polem tekstowym znajduje się przypomnienie o konieczności weryfikacji kluczowych informacji – Asystent pracuje na faktach, ale zawsze warto sprawdzić najważniejsze dane u źródła.
 
 ## Stan początkowy
 
 Zanim otwarta zostanie jakakolwiek konwersacja, przestrzeń robocza prezentuje wycentrowane powitanie (*"Good morning, "* uzupełnione nazwą wyświetlaną użytkownika) oraz monit *"Can I help you with anything?"*. Strefa kompozycji znajduje się pod powitaniem i pozycjonowana jest na środku ekranu do momentu wysłania pierwszej wiadomości. Po pierwszej wysyłce układ przechodzi w przejście: obszar wiadomości rozwija się ku górze, a strefa kompozycji dokuje na dole.
 
-## Oznaczanie plików
+## Oznaczanie plików (`@`)
 
-Naciśnięcie **`@`** w polu wprowadzania otwiera **selektor plików** — dialog wyszukiwania w obrębie **Repozytorium** użytkownika oraz publicznego korpusu.
+Możesz precyzyjnie wskazać dokumenty, na których ma skupić się Asystent. Wpisanie symbolu **`@`** w polu tekstowym otwiera wyszukiwarkę plików z Twojego **Repozytorium** oraz korpusu publicznego.
 
-- Dialog domyślnie korzysta z **wyszukiwania po nazwie pliku** — szybkiego, dokładnego, dostosowanego do sytuacji *"wiem, jak nazywa się plik"*.
-- Przełącznik w prawym górnym rogu pola wyszukiwania zmienia tryb na **wyszukiwanie hybrydowe** — wolniejsze, semantyczne, dostosowane do sytuacji *"chcę plików o X"*, nawet gdy nazwa pliku nie zawiera X.
-- Wybranie wyniku dołącza go do wiadomości jako **plakietkę pliku** nad polem wprowadzania. Plakietkę można usunąć.
-- Wiadomość może załączać wiele plików. Asystent traktuje załączony plik jako pierwszorzędne odniesienie i z większym prawdopodobieństwem czerpie z niego jako podstawowego źródła.
+*   **Wyszukiwanie po nazwie:** Szybki tryb, gdy znasz konkretny tytuł dokumentu.
+*   **Wyszukiwanie hybrydowe (treściowe):** Przełącznik w prawej części pola wyszukiwania pozwala szukać dokumentów na podstawie ich zawartości, nawet jeśli nazwa pliku nie zawiera szukanej frazy.
+*   **Znaczniki plików:** Wybrane dokumenty pojawiają się jako znaczniki nad polem tekstowym. Możesz załączyć wiele plików jednocześnie.
 
-Załączenie pliku różni się od proszenia asystenta o przeszukanie — wstępnie ładuje plik do kontekstu agenta, eliminując krok wyszukiwania. Załączaj plik, gdy wiesz, że odpowiedź się w nim znajduje; pozwól asystentowi szukać, gdy nie wiesz.
+**Kiedy załączać pliki?** Załączaj plik bezpośrednio, gdy wiesz, że zawiera on odpowiedź. Jeśli nie masz pewności, gdzie znajduje się informacja, pozwól Asystentowi samodzielnie przeszukać zasoby.
 
 ## Oś czasu wiadomości
 

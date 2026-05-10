@@ -3,7 +3,7 @@ title: Rejestr głosowań
 description: "Pełen zapis głosowań parlamentarnych: przeglądanie ostatnich rozstrzygnięć, odczytywanie pojedynczych wyników oraz wgląd w sposób głosowania każdego posła."
 ---
 
-**Rejestr głosowań** to katalog rejestrowanych rozstrzygnięć Sejmu. Każda pozycja odpowiada pojedynczemu głosowaniu — najczęściej wnioskowi poddanemu pod głosowanie podczas posiedzenia — i jest wzbogacona o oficjalny wynik liczbowy, rozstrzygnięcie, dokumenty źródłowe oraz mandatowy zapis sposobu głosowania każdego posła.
+**Rejestr głosowań** to katalog rejestrowanych głosowań Sejmu. Każda pozycja odpowiada pojedynczemu głosowaniu — najczęściej wnioskowi poddanemu pod głosowanie podczas posiedzenia — i jest wzbogacona o oficjalny wynik liczbowy, rozstrzygnięcie, dokumenty źródłowe oraz mandatowy zapis sposobu głosowania każdego posła.
 
 Dostęp do widoku zapewnia pozycja **INTELLIGENCE → Ledger** w pasku bocznym.
 
@@ -11,11 +11,9 @@ Dostęp do widoku zapewnia pozycja **INTELLIGENCE → Ledger** w pasku bocznym.
 
 Głosowania prezentowane są jako siatka kart, pogrupowanych według **posiedzenia** (sejmowej sesji, w trakcie której się odbyły). Posiedzenia są wymienione w porządku malejącym — najnowsze u góry — a w obrębie posiedzenia głosowania są prezentowane w kolejności opublikowanej przez Kancelarię Sejmu.
 
-Liczba kart prezentowanych jednocześnie jest sterowana **selektorem rozmiaru strony** w dolnej części ekranu. Starsze głosowania osiąga się przez stronicowanie wstecz, nie zaś przez nieograniczone przewijanie; **Rejestr głosowań** jest przeznaczony do ukierunkowanego wyszukiwania, nie do swobodnego przeglądania.
+Liczba kart prezentowanych jednocześnie jest sterowana **selektorem rozmiaru strony** w dolnej części ekranu. Starsze głosowania osiąga się przez stronicowanie wstecz, nie zaś przez nieograniczone przewijanie. **Rejestr głosowań** jest przeznaczony do ukierunkowanego wyszukiwania, nie do swobodnego przeglądania.
 
 ## Karta głosowania
-
-Każda karta zawiera następujące informacje.
 
 ### Identyfikatory i wynik
 
@@ -28,11 +26,11 @@ Trzy zwięzłe plakietki w lewym górnym rogu:
   - **Rejected** (czerwona) — wniosek nie osiągnął wymaganego progu.
   - **Quorum present** (zielona) — w głosowaniach sprawdzających obecność, odnotowano wystarczającą liczbę posłów.
   - **Quorum missing** (czerwona) — w głosowaniach sprawdzających obecność, odnotowano niewystarczającą liczbę posłów.
-  - W głosowaniach typu **On list** (wybór spomiędzy kilku nazwanych opcji) plakietka wyniku nie jest wyświetlana; w jej miejscu prezentowany jest rozkład głosów na opcje.
+  - W głosowaniach typu **On list** (wybór spomiędzy kilku nazwanych opcji) plakietka wyniku nie jest wyświetlana, w jej miejscu prezentowany jest rozkład głosów na opcje.
 
 ### Tytuł i opis
 
-Tytuł wniosku (lub temat, gdy odrębny) prezentowany jest jako nagłówek karty. Drugorzędny opis pokazywany jest poniżej, jeśli został dostarczony. Oba pola pochodzą wprost z zapisu parlamentarnego.
+Tytuł wniosku prezentowany jest jako nagłówek karty. Drugorzędny opis pokazywany jest poniżej, jeśli został zarejestrowany. Oba pola pochodzą wprost z zapisu parlamentarnego.
 
 ### Data
 
@@ -59,11 +57,11 @@ Dopasowanie ignoruje wielkość liter. Wyniki aktualizują się w trakcie wpisyw
 
 ## Rodzaje głosowań
 
-Sejm stosuje trzy mechanizmy rejestracji głosów; **Rejestr głosowań** zachowuje to rozróżnienie:
+Sejm stosuje trzy mechanizmy rejestracji głosów, **Rejestr głosowań** zachowuje to rozróżnienie:
 
 - **Electronic** — głos oddany za pośrednictwem elektronicznego systemu głosowania.
 - **Traditional** — głos oddany przez podniesienie ręki, podział lub inny mechanizm manualny.
-- **On list** — głosowanie wybierające spomiędzy dyskretnego zbioru nazwanych opcji (na przykład kandydatów w wyborach); wynik wyrażany jest per opcja, nie jako za/przeciw.
+- **On list** — głosowanie wybierające spomiędzy dyskretnego zbioru nazwanych opcji (na przykład kandydatów w wyborach), wynik wyrażany jest per opcja, nie jako za/przeciw.
 
 Rodzaj głosowania jest eksponowany w widoku szczegółowym i uwzględniany w logice ustalania wyniku.
 

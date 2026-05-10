@@ -1,15 +1,13 @@
 ---
 title: Wgląd w głosowanie
-description: Widok szczegółowy głosowania — karta przeglądowa, dokumenty powiązane, rozkład opcji oraz mandatowa mapa sali z filtrowaniem na poziomie klubu.
+description: Widok szczegółowy głosowania — karta przeglądowa, dokumenty powiązane, rozkład opcji oraz mandatowa mapa sali.
 ---
 
-Wybranie dowolnej karty w **Rejestrze głosowań** otwiera **widok szczegółowy** danego głosowania. Ekran prezentuje cztery strefy, wyprowadzone z pojedynczego pakietu danych z backendu: **przegląd głosowania**, **dokumenty powiązane**, **opcje głosowania** (gdy mają zastosowanie) oraz **mandatową mapę sali**.
+Wybranie dowolnej karty w **Rejestrze głosowań** otwiera **widok szczegółowy** danego głosowania. Ekran prezentuje cztery strefy: **przegląd głosowania**, **dokumenty powiązane**, **opcje głosowania** (gdy mają zastosowanie) oraz **mandatową mapę sali**.
 
-Pasek nawigacyjny u góry ekranu zawiera ścieżkę **Recent Votes → Proceeding N → Voting N**; wybranie pozycji **Recent Votes** powoduje powrót do listy głosowań z zachowaniem poprzedniej strony.
+Pasek nawigacyjny u góry ekranu zawiera ścieżkę **Recent Votes → Proceeding N → Voting N**. Wybranie pozycji **Recent Votes** powoduje powrót do listy głosowań z zachowaniem poprzedniej strony.
 
 ## Przegląd głosowania
-
-Lewa kolumna otwiera się kartą podsumowującą samo głosowanie.
 
 ### Identyfikatory i rodzaj
 
@@ -21,7 +19,7 @@ Trzy zwięzłe plakietki w górnej części:
 
 ### Temat i opis
 
-Temat wniosku renderowany jest jako nagłówek. Drugorzędny opis, jeśli został dostarczony, prezentowany jest poniżej. Oba pola odtwarzają zapis parlamentarny w brzmieniu oryginalnym.
+Temat wniosku wyświetlany jest jako nagłówek. Drugorzędny opis, jeśli został zarejestrowany, prezentowany jest poniżej. Oba pola odtwarzają zapis parlamentarny w brzmieniu oryginalnym.
 
 ### Status rozstrzygnięcia
 
@@ -46,8 +44,8 @@ Na szerokich ekranach pod statusem rozstrzygnięcia prezentowane są cztery doda
 
 Druga karta po lewej stronie wymienia każdy zewnętrzny dokument, który usługa legislacyjna powiązała z głosowaniem. Każda pozycja prezentuje:
 
-- **Nazwę dokumentu** — pochodzącą z oficjalnego tytułu, jeśli dostępny, w przeciwnym razie z humanizowanej wersji typu relacji odnośnika.
-- **Etykietę pomocniczą** — drugorzędny opisownik, gdy dokument go niesie (np. pełny tytuł druku sejmowego).
+- **Nazwę dokumentu** — pochodzącą z oficjalnego tytułu, jeśli dostępny, w przeciwnym razie z odnośnika.
+- **Etykietę pomocniczą** — drugorzędny opis, gdy dokument go zawiera (np. pełny tytuł druku sejmowego).
 - **Źródło** — zazwyczaj domena publikującą (np. `sejm.gov.pl`, `eli.sejm.gov.pl`) oraz numer druku sejmowego, gdy odnotowany.
 - **Przycisk akcji** otwierający dokument w nowej karcie.
 
@@ -59,21 +57,21 @@ W przypadku braku powiązanych dokumentów karta wyświetla *"No linked document
 
 Dla głosowań typu **On list** po lewej stronie prezentowana jest dodatkowa karta z rozkładem głosów na poszczególne opcje.
 
-Każda opcja renderowana jest jako etykietowany pasek postępu, uporządkowana od najwyższej do najniższej liczby głosów. Szerokość paska jest proporcjonalna do udziału w oddanych głosach (nie w pełnym składzie izby). Gdy dostarczony, opis poszczególnej opcji pojawia się pod jej nazwą.
+Każda opcja wyświetlana jest jako etykietowany pasek postępu, uporządkowana od najwyższej do najniższej liczby głosów. Szerokość paska jest proporcjonalna do udziału w oddanych głosach (nie w pełnym składzie izby). Gdy dostarczony, opis poszczególnej opcji pojawia się pod jej nazwą.
 
 Karta jest ukrywana dla głosowań standardowych typu Yes/No/Abstain.
 
 ## Mapa sali
 
-Prawa kolumna jest zdominowana przez **mandatową mapę sali** odwzorowującą faktyczny układ miejsc Sejmu z dnia głosowania. Każde miejsce jest przedstawione jako kółko zabarwione zgodnie z głosem oddanym przez jego zajmującego:
+Prawa kolumna zawiera **mandatową mapę sali** odwzorowującą faktyczny układ miejsc Sejmu z dnia głosowania. Każde miejsce jest przedstawione jako punkt zabarwiony zgodnie z głosem oddanym przez jego zajmującego:
 
 | Kolor | Głos |
 | --- | --- |
-| Niebieski | Yes |
-| Czerwony | No |
-| Bursztyn | Abstain |
-| Popielaty | Present (wyłącznie głosowania sprawdzające obecność) |
-| Szary | Absent |
+| Niebieski | Yes - Za|
+| Czerwony | No - Przeciw|
+| Bursztyn | Abstain - Wstrzymuje się|
+| Popielaty | Present - Obecny (wyłącznie głosowania sprawdzające obecność) |
+| Szary | Absent - Nieobecny |
 
 Schemat kolorystyczny odpowiada belce wyniku na karcie głosowania.
 
@@ -86,16 +84,15 @@ Powyżej mapy znajduje się siatka wskaźników podsumowujących sumy całoizbow
 Pozioma listwa wskaźników pod siatką wymienia każdy klub parlamentarny reprezentowany w głosowaniu wraz z liczbą posłów, których ulokował w sali. Kolor wskaźnika odzwierciedla **głos większościowy** klubu — wybór, który podjęła większość jego członków.
 
 - Wybranie **All seats** prezentuje pełną izbę.
-- Wybranie jednego lub większej liczby **wskaźników klubowych** ogranicza mapę do miejsc zajmowanych przez członków wskazanych klubów. Zaznaczenia są addytywne; ponowne wybranie wskaźnika cofa zaznaczenie.
+- Wybranie jednego lub większej liczby **wskaźników klubowych** ogranicza mapę do miejsc zajmowanych przez członków wskazanych klubów. Zaznaczenia są addytywne, a ponowne wybranie konkretnego wskaźnika cofa jego zaznaczenie.
 
 Filtrowanie mapy klubami stanowi najprostszy sposób, by stwierdzić, czy głosowanie było spójne wewnątrz danego ugrupowania, czy też przebiegało wbrew linii klubowej.
 
 ### Wskazanie miejsca
 
-Najechanie kursorem na miejsce ujawnia posła je zajmującego oraz oddany przez niego głos. Układ miejsc odzwierciedla **oficjalną mapę dzienną** publikowaną przez Kancelarię Sejmu; jeżeli mapa dla danej daty nie jest dostępna, system stosuje układ wygenerowany, zachowujący liczbę miejsc na klub.
+Najechanie kursorem na miejsce ujawnia posła je zajmującego oraz oddany przez niego głos. Układ miejsc odzwierciedla **oficjalną mapę dzienną** publikowaną przez Kancelarię Sejmu. Jeżeli mapa dla danej daty nie jest dostępna, system stosuje układ wygenerowany, zachowujący liczbę miejsc na klub.
 
 ## Błędy i braki danych
 
 - **Couldn't load voting details** — usługa legislacyjna nie odpowiedziała. Przycisk **Try again** ponawia żądanie. Gdy błąd wynika z braku uprawnień, komunikat zostaje zastąpiony tekstem *"You don't have permission to view this voting"*.
-- **Brak powiązanych dokumentów** — patrz sekcja Dokumenty powiązane powyżej. Sytuacja typowa dla wniosków proceduralnych.
-- **Brak dziennej mapy sali** — mapa sali renderuje się z wykorzystaniem układu zastępczego. Rozkład głosów oraz identyfikacja per poseł pozostają dokładne; przybliżone jest wyłącznie geometryczne rozmieszczenie.
+- **No linked documents were found for this vote yet.** — patrz sekcja **Dokumenty powiązane** powyżej. Sytuacja typowa dla wniosków proceduralnych.

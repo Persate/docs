@@ -1,6 +1,6 @@
 ---
 title: Cockpit
-description: Domyślny ekran startowy. Skonsolidowany widok bieżącej aktywności i ostatnich zmian.
+description: Ekran startowy agregujący kluczowe parametry aktywności oraz zestawienie najnowszych aktualizacji danych w jednym panelu.
 ---
 
 **Cockpit** to domyślny ekran startowy wyświetlany po uwierzytelnieniu. Agreguje najistotniejsze sygnały — bieżącą aktywność parlamentarną, ostatnie zdarzenia z alertów, działania interesariuszy oraz statystyki repozytorium — w jeden ekran do szybkiego przeglądu.
@@ -9,47 +9,41 @@ Ponowne otwarcie Cockpitu jest możliwe w każdej chwili poprzez wybranie pozycj
 
 ## Komponenty Cockpitu
 
-Skład ekranu odzwierciedla konfigurację konta; pełny zestaw dostępnych komponentów opisano poniżej.
-
 ### Pasek wiadomości
 
-Przewijająca się belka umieszczona u góry ekranu. Cyklicznie prezentuje komunikaty aplikacji oraz informacje operacyjne. Bieżąca uwaga nie jest wymagana.
+Przewijająca się belka umieszczona u góry ekranu. Cyklicznie prezentuje komunikaty aplikacji oraz informacje operacyjne. 
 
 ### Kafelek posiedzeń na żywo
 
-Wskazuje stan obrad Sejmu. W trakcie trwającej sesji wyświetla pulsujący czerwony znacznik oraz tytuł sesji. Poza godzinami obrad prezentuje informację o najbliższej zaplanowanej sesji. Wybranie kafelka otwiera **Posiedzenia na żywo** w widoku transmisji.
+Wskazuje stan obrad Sejmu. W trakcie trwającej sesji wyświetla pulsujący czerwony znacznik oraz tytuł sesji. Poza godzinami obrad prezentuje informację o najbliższej zaplanowanej sesji. Wybranie kafelka otwiera **[Posiedzenia na żywo](/pl/live-proceedings)** w widoku transmisji.
 
 ### Karty alertów i ryzyk
 
 Siatka ostatnich zdarzeń odpowiadających skonfigurowanym regułom alertów. Każda karta reprezentuje pojedyncze zdarzenie; jej wybranie otwiera szczegóły zdarzenia.
 
-W przypadku braku skonfigurowanych reguł panel wyświetla komunikat "No alerts triggered yet". Konfigurację reguł alertów opisuje sekcja **Alerty i ryzyka** (w przygotowaniu).
+W przypadku braku skonfigurowanych reguł panel wyświetla komunikat "No alerts triggered yet". Konfigurację reguł alertów opisuje sekcja **[Alerty i ryzyka](/pl/alerts)**.
 
 ### Karuzela aktywnych interesariuszy
 
-Do pięciu pozycji z listy interesariuszy użytkownika, uszeregowanych według ostatniej aktywności. Domyślnym oknem czasowym są **ostatnie dwadzieścia cztery godziny**; w przypadku braku aktywności w tym oknie panel automatycznie korzysta z **ostatnich siedmiu dni** i odpowiednio aktualizuje opis.
+Wyświetlane jest do pięciu pozycji z listy interesariuszy użytkownika, uszeregowanych według ostatniej aktywności. Domyślnym oknem czasowym są **ostatnie dwadzieścia cztery godziny**. W przypadku braku aktywności w tym oknie panel automatycznie korzysta z **ostatnich siedmiu dni** i odpowiednio aktualizuje opis.
 
 Aktywność obejmuje publikacje w mediach społecznościowych oraz trafienia w alerty. Wybranie awatara otwiera odpowiedni profil.
 
 ### Kafelek repozytorium
 
-Wyświetla całkowitą liczbę dokumentów przypisanych do konta wraz z odnośnikiem do **Repozytorium** umożliwiającym pełne przeglądanie.
+Wyświetla całkowitą liczbę dokumentów przypisanych do konta wraz z odnośnikiem do **[Repozytorium](/pl/repository)** umożliwiającym pełne ich przeglądanie.
 
 ### Kafelek rejestru
 
-Wyświetla najnowsze głosowanie parlamentarne, w tym jego tytuł, czas rozstrzygnięcia oraz odnośnik do pełnego zapisu w **Rejestrze**.
+Wyświetla najnowsze głosowanie parlamentarne, w tym jego tytuł, czas rozstrzygnięcia oraz odnośnik do pełnego zapisu w **[Rejestrze głosowań](/pl/voting-ledger)**.
 
-### Daily report (w przygotowaniu)
+### Kafelek "Daily report"
 
-Oznaczony jako **SOON**. W docelowej formie komponent zapewni jednostronicowe podsumowanie głosowań, alertów oraz aktywności interesariuszy z ostatniej doby.
-
-### Smart search (w przygotowaniu)
-
-Oznaczony jako **Disabled**. W docelowej formie komponent obsłuży zapytania w języku naturalnym, korzystając zarówno z repozytorium użytkownika, jak i ze strumieni danych live.
+Oznaczony jako **SOON**. Komponent w przyszłości zapewni jednostronicowe podsumowanie głosowań, alertów oraz aktywności interesariuszy z ostatniej doby. 
 
 ## Wskaźnik synchronizacji
 
-W prawym górnym narożniku ekranu prezentowany jest moment ostatniego odświeżenia danych w postaci **Updated: [godzina]**.
+W lewym górnym narożniku ekranu prezentowany jest moment ostatniego odświeżenia danych w postaci **Updated: [godzina]**.
 
 - **Niebieski wskaźnik** oznacza, że prezentowane dane są aktualne.
 - **Bursztynowy wskaźnik** oznacza dostępność nowszych danych; odświeżenie strony aktualizuje widok.
