@@ -31,9 +31,6 @@ export default async function Layout({ children, params }: LayoutProps<'/[lang]'
     <RootProvider
       i18n={{ locale: lang, locales, translations: translations[lang] }}
       search={{
-        // basePath '/docs' is set in next.config.mjs, so the API route
-        // lives at /docs/api/search. Fumadocs' default fetchClient hits
-        // /api/search (no basePath), which on prod 307s to /login.
         options: { api: '/docs/api/search' },
       }}
       theme={{

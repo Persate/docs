@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     'User guide for Persate, the public-affairs intelligence platform for monitoring the Polish parliament.',
 };
 
-// The root layout must include <html> and <body> tags.
 export default function RootLayout({
   children,
   params,
