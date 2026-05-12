@@ -1,54 +1,35 @@
 ---
 title: Account and settings
-description: "The settings modal: how to open it, the panels it contains, and what each panel covers."
+description: Managing the profile, security, notifications, and platform preferences from the settings view.
 ---
 
-The **Settings modal** is the single point for managing the account, security, notifications, appearance, and platform-feature defaults. It is a modal rather than a dedicated page so it stays accessible from anywhere in the application without losing the user's place.
+The **Settings window** is the central point for managing the profile and operating parameters on the platform. It is designed as an overlay accessible from anywhere in the application, which allows changing settings without losing the current work state.
 
-## How to open it
+Access the settings by selecting the profile icon in the top navigation bar, followed by the **Settings** button with the gear icon.
 
-Three entry points lead to the same modal.
+## Settings structure
 
-- **Sidebar** — selecting the gear icon at the foot of the sidebar (or the **Settings** entry, in the expanded layout).
-- **Top navbar** — selecting the gear icon in the dashboard's top-right cluster.
-- **Mobile dock** — the **Profile** entry on the bottom dock opens the modal in its mobile full-screen layout.
+Settings are divided into two categories:
 
-The modal opens to the **Account** panel by default. Some links elsewhere in the platform (e.g. the per-message depth dial in the Advisor) deep-link directly to a specific panel — the modal opens to that panel instead.
+### GENERAL category
 
-## Layout
+* **Account** — platform identity: profile picture, display name, email address, and roles.
+* **Security & Privacy** — access protection: password change, two-factor authentication, and a list of active and past sessions.
+* **Notifications** — configuration of system notifications and email alerts.
+* **Preferences** — interface personalization: color themes, language, and time zone.
 
-The modal occupies the centre of the screen (up to 1160 × 860 px on desktop) over a darkened backdrop. It is composed of:
+### PLATFORM category
 
-- **Header** — the modal's title (*Settings*) and a subtitle reflecting the active panel.
-- **Sidebar** *(left)* — the panel switcher, organised into two groups (**GENERAL** and **PLATFORM**).
-- **Content area** *(right)* — the active panel.
+* **Advisor** — AI Advisor operating parameters (e.g., analysis depth).
+* **Analysis** — document synchronization and smart suggestion settings.
 
-On mobile the sidebar collapses behind a back button; selecting a panel transitions to its full-screen content with a breadcrumb at the top.
+## Empty view and error states
 
-## The panels
-
-Six panels are presented across two groups.
-
-### GENERAL
-
-| Panel | Covers |
-| --- | --- |
-| **Account** | Profile photo, display name, sign-in email, role, and group memberships. See [Account](/account-and-settings/account). |
-| **Security & Privacy** | Password, two-step verification, active sessions, login history, and data export. See [Security and Privacy](/account-and-settings/security). |
-| **Notifications** | Email notification preferences. See [Preferences, notifications, and analysis](/account-and-settings/preferences). |
-| **Preferences** | Appearance/theme, dismissed-banner reset, language, timezone. See [Preferences, notifications, and analysis](/account-and-settings/preferences). |
-
-### PLATFORM
-
-| Panel | Covers |
-| --- | --- |
-| **Advisor** | Default thinking depth for new conversations. Documented in the Advisor section's [Best practices](/advisor/best-practices) page. |
-| **Analysis** | File-synchronisation interval and smart suggestions. See [Preferences, notifications, and analysis](/account-and-settings/preferences). |
+* *„Settings unavailable”* — error loading account parameters. Refreshing the page is recommended.
+* *„Feature locked”* — certain settings (e.g., changing the email for SSO accounts) are managed by external providers and remain locked in the Persate interface.
 
 ## Pages in this section
 
-- **[Account](/account-and-settings/account)** — managing the profile photo, display name, email address, role, and group memberships.
-- **[Security and Privacy](/account-and-settings/security)** — password change, two-step verification setup and replacement, active sessions and login history, and the forthcoming data-export controls.
-- **[Preferences, notifications, and analysis](/account-and-settings/preferences)** — appearance and language, email notification toggles, and the Analysis-panel controls (most of which are forthcoming).
-
-The **Advisor** panel — default thinking depth — is documented in the Advisor section's [Best practices](/advisor/best-practices) page, since it is best understood alongside the per-message depth dial.
+* **[Account](/account-and-settings/account)** — managing the profile picture, display name, and group membership.
+* **[Security and privacy](/account-and-settings/security)** — changing the password, managing the authenticator application, and login history.
+* **[Preferences and notifications](/account-and-settings/preferences)** — configuring appearance, notifications, and upcoming features.

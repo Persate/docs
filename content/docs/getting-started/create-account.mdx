@@ -1,33 +1,30 @@
 ---
-title: Creating an account
-description: Registration via email and password, or single sign-on with Google or Microsoft.
+title: Account creation
+description: Registration methods on the platform — traditional form and single sign-on (SSO).
 ---
 
-Account registration is available through two methods. To begin, navigate to [persate.com](https://persate.com) and select **Sign up**.
+Initiate registration on the [persate.com](https://persate.com) homepage by selecting **Sign up**. Two registration paths are available.
 
-## Method A — email and password
+## Email and password form
 
-The registration form requires the following information:
+Traditional registration requires completing the following fields:
 
-- **Email address.** A verification link is sent to this address; it must therefore be accessible at the time of registration.
-- **Password.** A minimum of eight characters, including at least one digit and at least one special character (such as `!`, `@`, `#`, or `?`). The form indicates in real time which requirements have not yet been satisfied.
-- **Password confirmation.** The same password, entered a second time.
-- **Acknowledgements.** The Privacy Policy and Terms of Service checkboxes must both be selected.
+* **Email address** — where the verification link message is sent.
+* **Password** — a minimum of eight characters, including one digit and one special character.
+* **Password confirmation** — to ensure it is entered without typos.
+* **Acknowledgements** — acceptance of the Privacy Policy and Terms of Service.
 
-Once the form is submitted, the application displays a confirmation that, if verification is required, a link will arrive shortly, with a reminder to sign in or reset the password if an account already exists. The verification email contains a link that, when opened, completes the registration.
+Once the form is submitted, a message is delivered to the provided address. Open the link contained within it to activate the account.
 
-<Callout title="Verification email not received">
-The message may have been delivered to a spam folder. If it is still absent after several minutes, the address has likely been mistyped — the registration form deliberately does not disclose whether an address is already in use, in order to protect existing accounts.
-</Callout>
+**Note:** The verification message may be delivered to the spam folder. If the link does not arrive within a few minutes, verify the correctness of the entered address.
 
-## Method B — single sign-on (Google or Microsoft)
+## Single sign-on (SSO)
 
-In place of completing the registration form, select **Continue using Google Account** or **Continue using Microsoft Account**. After choosing the relevant account in the provider's dialogue and approving the requested permissions, the registration is complete.
+An account can also be created by selecting **Continue using Google Account** or **Continue using Microsoft Account**. After signing in, the account is created automatically. This method bypasses the email address verification step.
 
-Single sign-on combines registration and sign-in into a single action; no separate "sign up" step is required for subsequent visits. An account is created automatically on first use.
+## Empty view and error states
 
-## Subsequent step
-
-Once the email address has been verified (or, in the case of single sign-on, once the provider's dialogue has been confirmed), the account is active. The next sign-in will prompt for two-factor authentication setup.
-
-→ [Next: configure two-factor authentication](/getting-started/set-up-two-factor)
+* *„Password too weak”* — the entered password does not meet security requirements.
+* *„Passwords do not match”* — the values in the password and confirmation fields differ.
+* *„Email already taken”* — the platform does not allow creating a second account with the same address.
+* *„Invalid email format”* — the entered text is not a valid email address.

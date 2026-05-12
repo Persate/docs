@@ -1,19 +1,30 @@
 ---
 title: Getting started
-description: "Account creation, two-factor authentication, and first sign-in. Approximate time to complete: five minutes."
+description: Account creation, two-factor authentication setup, and the first sign-in procedure.
 ---
 
-Three steps are required before working with Persate:
-
-1. **[Create an account](/getting-started/create-account)** — registration is available via email and password, or through single sign-on with Google or Microsoft.
-2. **[Configure two-factor authentication](/getting-started/set-up-two-factor)** — pairing an authenticator application is mandatory for every user.
-3. **[Sign in for the first time](/getting-started/first-login)** — followed by an orientation to the Cockpit.
-
-The full process takes approximately five minutes. Only the two-factor step requires a mobile device.
+To begin working with the Persate platform, complete three steps: create an account, secure it, and sign in for the first time. The entire procedure takes approximately five minutes and requires access to a mobile device to configure security.
 
 ## Prerequisites
 
-- An accessible email address. A verification link is dispatched during registration.
-- An authenticator application installed on a mobile device. Google Authenticator, Authy, 1Password, Microsoft Authenticator, or any other TOTP-compliant application is suitable.
+* An active email address (used for verification and communication).
+* A mobile device with an installed authenticator application supporting the TOTP standard (e.g., Google Authenticator, Authy, Microsoft Authenticator).
 
-No invitation code or payment information is required.
+Access to the platform does not require an invitation code or payment information during registration.
+
+## Implementation stages
+
+1. **[Account creation](/getting-started/create-account)** — choose an authentication method (email or SSO).
+2. **[Two-factor authentication](/getting-started/set-up-two-factor)** — pair an authenticator application to secure the profile.
+3. **[First sign-in](/getting-started/first-login)** — introduction to the main dashboard (Cockpit).
+
+## Empty view and error states
+
+* *„Verification link expired”* — the link sent in the email is no longer valid. Repeat the registration process or use the password reset option.
+* *„Account already exists”* — attempt to register with an email address already in the database. In this case, use the sign-in screen.
+
+## Pages in this section
+
+* **[Account creation](/getting-started/create-account)** — email registration and single sign-on (Google/Microsoft).
+* **[Two-factor authentication](/getting-started/set-up-two-factor)** — procedure for scanning the QR code and verifying the TOTP key.
+* **[First sign-in](/getting-started/first-login)** — navigating the Cockpit, global search, and file upload.

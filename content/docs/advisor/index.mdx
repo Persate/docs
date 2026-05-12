@@ -1,73 +1,69 @@
 ---
-title: AI advisor
-description: "Persate's in-app legislative-intelligence assistant: an agent that searches the Sejm corpus, queries the platform's structured data, and writes grounded, cited answers in plain language."
+title: AI Advisor
+description: Persate's specialized analytical assistant for working with the legislative corpus and proprietary documents.
 ---
 
-The **AI advisor** is Persate's in-app assistant for exploratory work over the legislative corpus. It is not a free-form chatbot — it is an agent with a fixed-purpose toolkit, scoped to the Polish parliament and the documents in the user's account. Every claim it makes is anchored to a real lookup, and every reference is a clickable citation back to the source.
+The **AI Advisor** is a specialized analytical tool designed for exploratory work within the legislative corpus and proprietary documents. It is not a free-form chatbot — every response is anchored in actual searches, and every reference constitutes a citation with a link to the source.
 
-It is accessed via the sidebar entry **INTELLIGENCE → Advisor**.
+Access to the advisor is provided by the **INTELLIGENCE → Advisor** entry in the sidebar.
 
-## What the advisor is for
+## Scope of applications
 
-The advisor fits between two tasks the user would otherwise do manually:
+The advisor automates research processes that require manual searching across multiple sources, including:
 
-- **Targeted retrieval** that doesn't quite fit a structured search. *"Which committee considered the latest energy-pricing bill, and who voted against?"* would otherwise require navigating the **Voting ledger** by hand and cross-referencing committee transcripts. The advisor performs the cross-reference and cites both sources in a single response.
-- **Synthesis across sources**. *"Compare what the Climate Coalition has said publicly on coal phase-out with how its members actually voted in the last six months."* draws on Public Pulse for the public statements and the Voting ledger for the divisions. The advisor pulls both, aligns them, and presents the comparison.
+* **Complex correlational search** — linking data from various sources. Example: *„Which committee reviewed the latest energy prices bill and who voted against it?"*
+* **Multi-source data synthesis** — comparing declarations with facts. Example: *„Compile the parliamentary club's public statements on phasing out coal with their voting records from the last six months."*
 
-Tasks the advisor is **not** built for: open-ended drafting, code generation, mathematical reasoning detached from the corpus, or general-purpose conversation.
+**Note:** The advisor is not intended for generating creative content, writing code, or conducting conversations unrelated to the legislative corpus.
 
-## How it differs from a generic chat
+## Key system features
 
-Three differences shape the experience.
+* **Grounded responses** — every piece of information is preceded by an analysis of platform data: voting records, stakeholder profiles, transcripts, and uploaded documents.
+* **Interactive citations** — every claim features a footnote in the form of a clickable badge that opens the source record directly in the platform interface.
+* **Turn-based structure** — communication occurs within closed working turns, which guarantees response precision.
 
-- **Grounded answers.** The advisor cannot answer questions about the Sejm from memory. To produce any factual claim it performs a lookup against the platform's data — voting records, MP profiles, recorded speeches, uploaded documents — and the chips visible above each answer are those lookups.
-- **Multi-source citations as inline chips.** Every reference the advisor makes appears in the response as a clickable badge that opens the corresponding record in the platform. Citations are not optional; the advisor is constrained to cite at most one source per atomic claim.
-- **Bounded turns.** Each user message produces one *turn*, and every turn is bounded so it cannot run away. When the advisor approaches the limits of what it can do in one turn, it wraps up gracefully — the answer arrives, sometimes flagged as incomplete on the difficult sub-questions, rather than spinning indefinitely.
+## Areas of competence
 
-## What the advisor can do
+The advisor operates within six specialized data modules:
 
-The advisor's capabilities are partitioned into six **skill families**, exposed via the platform's MCP layer:
+| Module | Analysis scope |
+| :--- | :--- |
+| **Legislation** | Voting results, motion metadata, stakeholder legislative activity history. |
+| **Stakeholders** | Stakeholder database: biographies, parliamentary club affiliations, attendance. |
+| **Public Pulse** | Monitoring social media activity of tracked stakeholders. |
+| **Alerts** | Managing existing alerts and creating new rules. |
+| **Documents** | Searching uploaded files and the public Persate corpus. |
+| **Context** | Utilizing the current conversation history to refine the analysis. |
 
-| Family | What it covers |
-| --- | --- |
-| **legislation** | Sejm voting records, motion metadata, division outcomes; per-MP voting history. |
-| **stakeholders** | The directory of MPs — biography, club, contact details, social handles, attendance stats. |
-| **public_pulse** | Public-pulse activity (X/Twitter) from tracked stakeholders. |
-| **alerts** | The user's existing alerts, plus creating new ones. |
-| **documents** | Hybrid, filename, and sequence search over uploaded files and the platform's public corpus, plus per-file metadata, listings, counts, and summaries. |
-| **chat_context** | The user's prior conversations with the advisor, used to maintain context. |
+These competencies are detailed in the [Advisor skills](/advisor/skills) section.
 
-These areas are described in more detail in [Advisor capabilities](/advisor/skills).
+## Analysis depth
 
-## Thinking depth
+Use the scope icon on the left side of the input field to specify the analysis detail level for a given message:
 
-A small dial at the left of the input controls the *thinking depth* applied to the next message:
+* **Surface** — quick answers to simple questions.
+* **Balanced** — default setting, providing an optimal balance between speed and detail.
+* **Deep** — comprehensive multi-source analysis. The advisor investigates secondary threads and broad connections.
 
-- **Surface** — fast and direct; favoured for follow-up questions and lookups with an obvious single answer.
-- **Balanced** *(default)* — the everyday setting; the advisor grounds its answer and follows up on obvious gaps without exhausting every lead.
-- **Deep** — thorough; the advisor explores related material, cross-references, and pursues lateral leads. Slower per message.
-
-The depth is set per-message; the default for new messages is configured in **Settings → Advisor**. Changing the per-message dial does not change the default. The full mechanics are described in [Conversations](/advisor/conversations) and [Best practices](/advisor/best-practices).
+Depth is configured for a single message and does not modify the default account setting. Configure the default value in **Settings → Advisor**. Details are provided in the [Best practices](/advisor/best-practices) section.
 
 ## Conversation history
 
-The right column of the screen lists every conversation on the user's account, most recent first. Each entry is identified by the topic the platform inferred from its first messages.
+The right interface panel contains a chronologically ordered list of sessions assigned to the account. Every conversation is automatically titled based on the subject of the first message.
 
-- **New conversation** clears the workspace and begins a fresh session.
-- Selecting a past conversation reopens it — the full transcript is reconstructed including the original lookups and citations.
-- The trash control on each entry deletes that conversation and its transcript permanently.
+* **New conversation** — select **New conversation** to reset the workspace.
+* **Resuming sessions** — select any entry from the history list to restore the full conversation record.
+* **Deleting data** — select the trash icon next to the session title to permanently delete the conversation.
 
-History is per-user.
+Conversation history is tied to the individual account and is not shared within the organization.
 
-## Refresh-and-resume
+## Workflow continuity
 
-A turn that is in progress when the user navigates away or refreshes the browser is not lost. Reopening the conversation reattaches to the in-flight response and replays whatever has happened so far before it resumes streaming.
-
-In practice this means it is safe to send a deep query, switch to **Repository** to attend to something else, and return — the answer will be waiting (or still streaming) when the conversation is reopened.
+Active analysis is not interrupted upon leaving the view or refreshing the browser — the advisor continues working in the background. Upon reopening the conversation, the system automatically restores progress. The same conversation can be opened in multiple browser tabs — all display the same progress in real time.
 
 ## Pages in this section
 
-- **[Conversations](/advisor/conversations)** — composing messages, mentioning files, the inline depth selector, the message timeline, citations, copy and regenerate, and history.
-- **[Advisor capabilities](/advisor/skills)** — what the advisor can do, with examples of the kinds of question that route to each area.
-- **[Worked examples](/advisor/examples)** — substantive prompts and the expected behaviour, drawn from the recurring use cases of public-affairs and legal teams.
-- **[Best practices](/advisor/best-practices)** — choosing a depth, when to attach files versus letting the advisor search, citation handling, and the pitfalls of generic queries.
+* **[Interface and advisor workflow](/advisor/conversations)** — message composition, file tagging, depth selector, message timeline, citations, copying, and history.
+* **[Advisor skills](/advisor/skills)** — description of competencies and example queries.
+* **[Working examples](/advisor/examples)** — ready-made queries with a description of the expected advisor behavior.
+* **[Best practices](/advisor/best-practices)** — depth selection, file attachment, citation handling, and pitfalls of overly general questions.

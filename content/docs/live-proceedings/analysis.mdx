@@ -1,84 +1,46 @@
 ---
 title: Opening a proceeding
-description: The detail view for a single session — the video player, transcripts, speaker identification, and the choice between the Record Analysis and Enhanced Record pipelines.
+description: Detailed session view — video player, real-time transcription, and comprehensive analysis.
 ---
 
-Selecting a card on the **Live proceedings** list opens the **Detail view** for that proceeding. The screen is split into two regions: the **video player** at the top, and the **analysis panel** below. The two regions share state — seeking the video repositions the analysis cursor, and selecting a transcript line jumps the video to the corresponding moment.
+The **Detailed view** integrates the video player with content analysis panels. Selecting a card from the main list opens the detailed view. Scrolling the recording synchronizes the currently spoken transcript fragment, and selecting text jumps the video to the corresponding moment.
 
-A breadcrumb at the top of the screen reflects the originating sub-view (**Ongoing**, **Previous**, or **Scheduled**), followed by the session title.
+## Video player
 
-## The video player
+The interface automatically adapts to the session state:
 
-The player is positioned in the upper portion of the screen.
+* **Ongoing sessions** — a live stream sourced from the official Sejm channel.
+* **Past sessions** — an archival recording with free scrolling capability.
+* **Scheduled sessions** — the broadcast will begin once it starts on the official Sejm channel; the message *„Scheduled — analysis will be available once the session begins"* is displayed.
 
-- **For ongoing sessions** the live stream is loaded from the official Sejm broadcast channel. Playback begins automatically once the stream is available.
-- **For previous sessions** the recording is served from the Sejm archive. Playback begins automatically when the page is opened.
-- **For scheduled sessions** no stream is available until the session begins. The player is replaced with a placeholder reading "Scheduled — analysis will be available once the session begins". For sessions starting within the next thirty minutes, the player attempts to connect in advance so playback may begin promptly when the broadcast goes live.
+In the top left corner of the player, a button enables **face overlays**, which label speakers recognized in the frame.
 
-A toggle in the player controls displays or hides the **face overlays** — coloured rectangles indicating speakers detected in the current frame. The setting is preserved across sessions for the user's account.
+## Analysis modes
 
-If the stream cannot be prepared for playback, the player is replaced with a **Playback unavailable** notice describing the failure mode. A retry control re-attempts the stream resolution.
+Tabs on the right side represent two approaches to content processing:
 
-## The two analysis tabs
+### Record Analysis
 
-For previous sessions the analysis panel is preceded by a tab strip with two entries:
+A speed-oriented mode, available for live broadcasts (**Live Session**) and as an accelerated archival review (**Priority Review**).
 
-- **Record Analysis** — the realtime pipeline. Available for both live and recorded broadcasts.
-- **Enhanced Record** — the comprehensive pipeline. Available only for recorded broadcasts.
+* **Transcription** — text appears in the lower part of the panel as words are spoken.
+* **Speaker profiles** — the system recognizes faces known from the stakeholder catalog. Unrecognized speakers receive temporary identifiers (e.g., **Speaker 3**).
 
-For ongoing sessions only the **Record Analysis** view is shown; the Enhanced Record pipeline operates on completed recordings. For scheduled sessions both views are hidden until the broadcast begins.
+If analysis is not active, the **Start Record Analysis** button is available.
 
-A status dot beside each tab label reflects the current state:
+### Enhanced Record
 
-| Indicator | Meaning |
-| --- | --- |
-| Hollow ring | Not started. The pipeline has not yet been requested. |
-| Spinning circle | The pipeline is starting, buffering, or in progress. |
-| Pulsing cyan dot | A real-time session is currently running (Record Analysis only). |
-| Filled dot | Results are available. |
-| Alert icon | The pipeline failed. The full error is shown in the panel body. |
-
-## Record Analysis
-
-The **Record Analysis** tab presents the output of the realtime pipeline. The pipeline runs in two modes depending on the proceeding's state:
-
-- **Live Session** — the realtime mode used during an ongoing broadcast. Transcription, speaker detection, and face recognition are produced as the session unfolds. The most recent segments appear at the foot of the panel; the cursor follows the live broadcast position.
-- **Priority Review** — the realtime mode applied retroactively to an archived recording. The same realtime pipeline is run against the historical broadcast, producing transcription with speaker labels and face identification within minutes rather than the longer turnaround of the comprehensive pipeline.
-
-Where no Record Analysis has yet been produced for the proceeding, the panel offers a **Start Record Analysis** control. Selecting it begins a Live Session for an ongoing broadcast or a Priority Review for an archived recording, depending on the proceeding's state.
-
-Once analysis is in progress, the panel displays a queue indicator (when applicable), followed by transcript segments as they become available.
-
-### Transcript segments
-
-Each segment shows the speaker (where identified), the spoken text, and a timestamp. Selecting a segment seeks the video to the corresponding moment. During live playback the active segment is highlighted; selecting an earlier segment temporarily detaches the cursor from the live position.
-
-### Speaker profiles
-
-Where the system has matched a face to a known parliamentary figure, the speaker name is shown alongside the segment. Unidentified speakers are labelled by a generated identifier (e.g. **Speaker 3**) and may be reconciled with known profiles in a later release.
-
-## Enhanced Record
-
-The **Enhanced Record** tab presents the output of the comprehensive pipeline. This pipeline is slower than Record Analysis but produces a higher-fidelity result — a polished transcript, topic discovery, a structured timeline of the session, and complete facial recognition across the recording.
-
-For recordings on which the pipeline has not yet been run, the panel offers a **Start Enhanced Record** control. Once initiated, progress is reported as a percentage and a stage label (e.g. **Detecting faces**, **Recognizing faces**, **Transcription & diarization**, **Active speaker analysis**). The operation may be cancelled in-flight; cancellation discards the partial result.
-
-When complete, the panel displays the full set of derived artefacts. Selecting any item with an associated timestamp seeks the video to the corresponding moment.
-
-## Choosing between the two pipelines
-
-The two pipelines are complementary rather than alternatives.
-
-- **Record Analysis** is appropriate when timeliness matters — during a live broadcast, or when a recently concluded session must be reviewed within minutes.
-- **Enhanced Record** is appropriate when accuracy and structure matter — when the session is to be quoted, summarised, or used as a reference document.
-
-Initiating one pipeline does not preclude the other. Both may be run for the same proceeding; the corresponding tabs surface their results independently.
+A comprehensive mode, delivering the highest-fidelity transcription, topic segmentation, and a structured timeline. Processing in this mode takes longer and is available exclusively for completed recordings. The process is initiated using the **Start Enhanced Record** button, and progress is reported in stages (e.g., **Transcription & diarization**, **Detecting faces**).
 
 ## Recommended workflow
 
-For most users, the typical sequence is as follows:
+1. Check ongoing broadcasts in the **Ongoing** view and upcoming ones in **Scheduled**.
+2. Launch **Live Session** for sessions in progress to gain immediate insight into speeches.
+3. Initiate **Enhanced Record** for key proceedings after their completion to obtain reference material.
+4. Use the transcript-to-video jump function to precisely locate specific statements.
 
-1. Open **Live Proceedings** in the morning, switch to **Ongoing** to see what is currently broadcasting and to **Scheduled** to plan the rest of the day.
-2. For sessions in progress, open the proceeding and start a **Live Session** — the transcript builds in real time and may be referenced before the session concludes.
-3. For sessions of higher importance, request **Enhanced Record** afterwards to obtain the structured artefacts; the result is typically available within an hour for a session of average length.
-4. Use the transcript-to-video seek to revisit specific moments without scrubbing through the full broadcast.
+## Empty view and error states
+
+* *„Playback unavailable"* — error establishing the video stream. Refreshing the page is recommended.
+* *„Scheduled — analysis will be available..."* — an attempt to open a session before its start.
+* *„Analysis failed"* — server error.

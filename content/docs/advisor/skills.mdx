@@ -1,115 +1,90 @@
 ---
 title: Advisor skills
-description: A reference for the six skill families the advisor draws on — what each covers, the kinds of question that route to each, and the resources each can return.
+description: Description of the advisor's skills, scope of operation, typical questions, and returned resources.
 ---
 
-The **AI advisor**'s capabilities are partitioned into six **skill families**, each of which exposes a small set of tools. Every tool call appears in the message timeline as a **skill chip** identifying which family it came from and what it did.
+The **AI Advisor's** capabilities are divided into six **skill families**, each exposing a set of analytical tools. Every tool call appears in the message timeline, identifying the executed action.
 
-This page is a reference for what each family is for, the typical phrasings that route to it, and the resource URIs each can return as citations. It is not an exhaustive enumeration of every tool — that surface evolves and is best inspected via the chips themselves.
+## Legislation
 
-## legislation
-
-The structured record of Sejm activity: votings, motions, sponsors, divisions, and the metadata around them.
+Analysis of the parliamentary activity register: votes, motions, resolutions, and related data.
 
 **Typical questions:**
-- *"What was the result of the most recent vote on the energy law?"*
-- *"How did the budget committee divide on amendment 17?"*
-- *"List the votes from the last Sejm sitting that passed by fewer than five votes."*
+* *„What was the result of the last vote on the energy bill?"*
+* *„How did the budget committee resolve amendment no. 17?"*
+* *„List the votes from the last Sejm session that passed with a margin of less than five votes."*
 
-**Returns resources of the form:**
-- `legislation://voting/{proceeding}/{voting_number}` — a single vote, opening in **Voting ledger**.
+**Returned resources:**
+* A link to the vote, opening in the **Voting ledger**.
 
-When the advisor cites a `legislation://voting/...` URI, the chip in the prose links directly to the seat-by-seat chamber map for that division.
+## Stakeholders
 
-## stakeholders
-
-The MP directory: biography, club, constituency, voting attendance, social handles, identified speech segments.
+Searching the stakeholder catalog: biographies, clubs, districts, voting attendance, social media handles, and identified speech fragments.
 
 **Typical questions:**
-- *"Who is the chair of the Public Finance Committee, and what is their voting record on tax legislation?"*
-- *"Find every MP from the Wielkopolska voivodeship who voted against the climate bill."*
-- *"What did MP Nowak say in plenary about the housing reform?"*
+* *„Who chairs the Public Finances Committee and what is their voting record on tax matters?"*
+* *„Find every stakeholder from the Greater Poland voivodeship who voted against the climate bill."*
+* *„What did MP Nowak say in the plenum about the housing reform?"*
 
-**Returns resources of the form:**
-- `feature://stakeholder/{stakeholder_id}` — opens the stakeholder profile.
+**Returned resources:**
+* A link to the stakeholder profile.
 
-The skill family overlaps with **legislation** — questions about how an MP voted route through `legislation`, while biographical, contact, and analytical-section questions route through `stakeholders`. The advisor combines results from both into a single answer when needed.
+## Public pulse
 
-## public_pulse
-
-The aggregated X (Twitter) feed across every tracked stakeholder, with the same filters as the **Public Pulse** view in the platform.
+Searching the aggregated X (Twitter) stream covering all monitored stakeholders.
 
 **Typical questions:**
-- *"What has the opposition said publicly about the latest amendment to the labour code?"*
-- *"Has any minister tweeted about the budget vote since it passed?"*
-- *"Surface the trending hashtags from MPs in the past 48 hours."*
+* *„What has the opposition said publicly about the latest amendment to the labor code?"*
+* *„Has any minister posted about the budget vote since it passed?"*
+* *„Highlight the trending hashtags from stakeholder posts in the last 48 hours."*
 
-**Returns resources of the form:**
-- `feature://public_pulse/tweet/{tweet_id}` — opens the original post on X.
+**Returned resources:**
+* A link to the original post on X.
 
-This family is the only one that touches off-platform data. The advisor uses it to ground claims about *public positioning* — what political actors are saying in public — as opposed to what they have voted for or written in committee.
+## Alerts
 
-## alerts
-
-The user's existing standing watches and the creation of new ones.
+Managing existing alerts and creating new rules.
 
 **Typical questions:**
-- *"Which alerts have triggered most often this week?"*
-- *"Set up an alert for any mention of the new pharmaceuticals bill."*
-- *"Pause my alert about Brexit-related references — that's no longer relevant."*
+* *„Which alerts triggered most frequently this week?"*
+* *„Configure an alert for any mention of the new pharmaceutical bill."*
+* *„Pause my alert regarding Brexit references — the topic is no longer relevant."*
 
-**Returns resources of the form:**
-- `feature://alert/{alert_id}` — opens the alert detail.
+**Returned resources:**
+* A link to the detailed alert view.
 
-When the advisor creates an alert in response to a request, it picks **tight, topic-specific keywords** rather than generic terms. A request for *"alert me on energy policy"* is interpreted as a starting point — the advisor proposes specific keywords and reports them back so the user can correct the choice if too narrow or too broad.
+## Documents
 
-Alerts created by the advisor are forward-looking: they fire on documents and transcripts ingested *after* creation, not retroactively.
-
-## documents
-
-Search and metadata operations over the user's uploaded **Repository** files plus the Persate public corpus (politician profiles, party programmes, public documents the platform manages centrally). This family covers both content search (hybrid, filename, sequence) and file-level metadata (enumeration, counts, summaries, metadata reads, full-file reads).
+Searching and performing operations on files from the **Repository**.
 
 **Typical questions:**
-- *"What does our internal briefing say about the gas-pricing mechanism?"*
-- *"Search every government white paper for references to industrial subsidies."*
-- *"Find the passage where the procurement law defines 'critical infrastructure'."*
-- *"How many documents have we uploaded since the start of the year?"*
-- *"Give me a one-paragraph summary of the file we discussed last week."*
+* *„What does our internal briefing say about the gas pricing mechanism?"*
+* *„Search every government white paper for references to industrial subsidies."*
+* *„Find the fragment where the public procurement bill defines 'critical infrastructure'."*
+* *„How many documents have we uploaded since the beginning of the year?"*
 
-**Returns resources of the form:**
-- `documents://file/{file_id}` — opens the file.
-- `documents://chunk/{file_id}/{chunk_id}` — opens the file scrolled to a specific passage.
+**Returned resources:**
+* A link to the specific file or its fragment.
 
-The advisor selects between three search scopes:
+## Chat context
 
-- **Tenant + public** *(default for most questions)* — the user's files plus Persate's public corpus.
-- **Public only** — when the question is about general legislative material, not the user's own documents.
-- **Tenant only** — when the user's question is explicitly about their own files (*"in our internal briefings, ..."*).
-
-Where a file is mentioned by name, the advisor falls back to filename or sequence search rather than the heavier hybrid pipeline.
-
-## chat_context
-
-Lookup against the user's prior conversations with the advisor.
+Searching within previous conversations with the advisor.
 
 **Typical questions:**
-- *"Earlier today we were discussing the energy bill — pick that thread back up."*
-- *"What did you tell me last week about the procurement reform?"*
+* *„We discussed the energy bill earlier today — return to that thread."*
+* *„What did you tell me last week about the public procurement reform?"*
 
-**Returns resources of the form:**
-- `chatcontext://session/{session_id}` — opens a past conversation.
-- `chatcontext://message/{message_id}` — opens a past message in context.
+**Returned resources:**
+* A link to the archived message or conversation.
 
-This family enables continuity across sessions without the user having to manually re-paste prior context. It is read-only from the advisor's perspective: it cannot delete, edit, or annotate prior conversations.
+## How the advisor selects tools
 
-## How the advisor decides which to call
+The advisor selects tools based on the form of the question. Their selection is automatic and does not require explicit indication by the user. Typical patterns:
 
-The model selects skills based on the question's surface form and the manifest of available tools. There is no explicit routing the user controls — the routing is the model's job. In practice:
+* A question mentioning a specific stakeholder — almost always `Stakeholders`.
+* A question about *public statements* — `Public pulse`.
+* A question about *voting patterns* — `Legislation`.
+* A question about a document — `Documents`.
+* Multi-part questions — combining multiple tools.
 
-- A question that names a specific MP almost always pulls `stakeholders`.
-- A question about *what someone said publicly* pulls `public_pulse`.
-- A question about *how someone voted* pulls `legislation`.
-- A question about a document — whether by filename, topic, or content — pulls `documents`.
-- Multi-part questions pull from multiple families and braid the results.
-
-When the advisor encounters a question that has no matching tool — for example, a request for sentiment analysis or for material outside the legislative corpus — it answers what it *can* answer and notes the unanswered part rather than aborting the whole turn.
+When a question extends beyond the available tools, the advisor answers what it has tools for and notes the unanswered part.

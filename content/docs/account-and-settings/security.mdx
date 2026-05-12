@@ -1,108 +1,31 @@
 ---
-title: Security and Privacy
-description: Password change, two-step verification setup and replacement, active sessions, login history, and the forthcoming data-export controls.
+title: Security and privacy
+description: Account protection management — password change, two-factor authentication, and active session monitoring.
 ---
 
-The **Security & Privacy** panel collects the controls that protect access to the account: password, two-step verification, the list of devices currently signed in, and the recent sign-in history. A future control for data export under GDPR is also surfaced here.
+The **Security & Privacy** panel is used to protect profile access and monitor login history and active devices.
 
-## Password
+## Login password
 
-A control for changing the account's sign-in password.
+The **Change password** option opens the access key change form. The new password must consist of at least eight characters, including at least one digit and one special character. For SSO accounts (Google/Microsoft), password changes occur on the external provider's side.
 
-For users authenticated by email and password (the default), selecting **Change password** opens a modal requiring three fields:
+## Two-factor verification (2FA)
 
-- **Old password** — the current password, for re-authentication.
-- **New password** — the replacement.
-- **Repeat new password** — entered a second time to guard against typos.
+Two-factor authentication is required for every account.
 
-Password requirements:
+* **Status** — the *Live* badge confirms active protection.
+* **Changing the authenticator application** — the **Replace authenticator** button allows deregistering the current application and generating a new QR code. This process must be completed immediately after initiation.
 
-- Minimum **8 characters**.
-- At least **one number**.
-- At least **one special character** (anything outside `A-Z`, `a-z`, `0-9`).
+## Access monitoring
 
-There is no upper-case requirement. Passwords that meet the criteria are accepted on submit; mismatches and unmet criteria are surfaced inline before the form may be submitted.
+* **Active sessions** — a list of devices currently signed into the profile. The row labeled as *This device* represents the current browser. The **Sign out all other devices** button allows remotely terminating all other sessions.
+* **Login history** — a chronological log of the last 15 events (logins, logouts, account parameter changes) along with the IP address and device type.
 
-For users authenticated via Google or Microsoft SSO, the **Change password** action is replaced with a notice: *"You sign in with [provider]. Password is managed by your identity provider."*. Password changes are made on the provider's side.
+## Data export (GDPR)
 
-## Two-step verification
+The feature labeled as **coming-soon** will eventually allow downloading a full archive of account data (profile, conversations, alerts). Until its launch, direct requests to technical support.
 
-Two-step verification (also known as MFA or TOTP) is **required** for all Persate accounts. The panel surfaces the current state and the controls for managing it.
+## Empty view and error states
 
-### When 2FA is set up
-
-The panel shows:
-
-- A green **Live** badge confirming protection is active.
-- The friendly name of the enrolled device (e.g. *"iPhone Authenticator"*) and the date of enrolment.
-- A **Replace authenticator** button.
-
-### Replacing the authenticator
-
-Selecting **Replace authenticator** reveals an inline confirmation panel reading *"Replace your authenticator? We'll remove [device name] and take you to a new QR code so you can enroll a different device. You'll need the new code handy before you confirm — you won't be able to sign in without it."*
-
-Confirming with **Yes, replace** unenrols the existing TOTP factor and redirects to the **/mfa-setup** screen, where a new QR code is presented. The user must complete the new enrolment immediately — the account is in a vulnerable state until a new factor is enrolled.
-
-### When 2FA has not yet been set up
-
-This state is unusual outside of first-time enrolment, since 2FA is required at sign-up. Where it occurs (e.g. for accounts created before the requirement, or after an unenrol), the panel shows:
-
-- A description: *"Add a second factor (authenticator app or security key) to prevent unauthorized sign-in."*
-- A **Set up** button taking the user to the **/mfa-setup** flow.
-
-The full first-time setup is documented in [Setting up two-factor authentication](/getting-started/set-up-two-factor) under Getting started.
-
-## Active sessions
-
-A list of every device currently signed in to the account. The list serves two purposes: visibility into where the account is open, and the ability to sign out devices remotely.
-
-### Per-session row
-
-Each row presents:
-
-- A **device-type icon** (smartphone, tablet, monitor) inferred from the user agent.
-- A **device label** describing the browser and operating system (e.g. *"Chrome on Windows 11"*).
-- The **IP address** at last activity, where available.
-- A **relative timestamp** of the most recent activity (*"just now"*, *"7m ago"*, *"3d ago"*, or an absolute date for older sessions).
-- A **This device** badge on the row representing the current browser.
-- A **Sign out** button on every other row.
-
-### Bulk sign-out
-
-Where two or more devices other than the current one are signed in, a **Sign out all other devices** button appears beneath the list. Selecting it revokes every session except the current one.
-
-Signed-out sessions cannot be restored — they must sign in again from scratch, which (for sessions on a recognised device) typically means re-entering the password and the 2FA code.
-
-### Compatibility note
-
-Some authentication-provider builds do not expose session listing. Where this is the case, the panel displays *"Session management is not available on this auth provider build. Contact support if you need to sign out remotely."* in place of the list.
-
-## Login history
-
-A chronological log of recent authentication events on the account. Up to 15 entries are shown, most-recent first.
-
-Per-entry display:
-
-- A **device-type icon** matching the parser's classification.
-- An **action label**: *Signed in*, *Signed out*, *Account created*, *Session refreshed*, or *Account updated*.
-- The **device label** (browser and operating system).
-- The **timestamp** in the user's local timezone.
-- The **IP address**, where available.
-
-The log helps spot unfamiliar activity. Sign-ins from unexpected geographies or devices are typically the first warning sign of a compromised credential. Where the log shows an unrecognised entry, the recommended response is:
-
-1. Change the password (Password section, above).
-2. Replace the 2FA authenticator (Two-step verification, above).
-3. Sign out all other devices (Active sessions, above).
-
-### Compatibility note
-
-Where the underlying audit log is unavailable for this account, the panel reads *"Login history isn't exposed for this account. Contact support to enable audit-log access."*.
-
-## Data and export
-
-A control for downloading all account data or requesting permanent account deletion under GDPR.
-
-This control is presently labelled **coming-soon** and is disabled. The action button is reserved for the forthcoming export flow, which will produce a downloadable archive of the user's profile, conversations, alerts, and uploaded files.
-
-For accounts that need export or deletion before this ships, the request must be submitted to the workspace administrator or to Persate support directly.
+* *„Session management unavailable”* — for a given authentication type, the remote session logout feature is not supported.
+* *„Login history not exposed”* — lack of access to the audit event log for the current profile.

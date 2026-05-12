@@ -1,65 +1,40 @@
 ---
-title: Viewing and organising files
-description: The document viewer, side-panel metadata, search, sharing, and deletion.
+title: Browsing and organizing files
+description: Working with the document browser, managing metadata, searching, and deleting files.
 ---
 
-Files in the Repository may be opened, searched, shared, and removed via the standard document viewer.
+The **Document browser** enables opening, searching, and managing files in the repository.
 
-## Opening a file
+## Opening files
 
-Selecting a file's name (in list view) or its card (in tile view) opens the file in the document viewer. The viewer arranges the document on the left and a metadata panel on the right.
+Selecting a document name in the list view or a tile in the tile view opens the file. The browser displays the document content on the left side and the metadata panel on the right.
 
-Files are rendered using the browser's built-in PDF viewer, with zoom controls, page navigation, and the browser-native text search.
+PDF documents are displayed using a built-in engine that provides zoom control, page navigation, and an in-file text search function.
 
-## The metadata panel
+## Metadata panel
 
-The right-hand panel contains the principal file metadata, organised into expandable sections.
+The sidebar groups document information into several sections:
 
-### Summary
+* **Summary** — an automatically generated summary, visible after document processing completes.
+* **Information** — technical properties such as size, modification date, analysis status, and detected language.
+* **Visibility** — document visibility management. Allows changing the status between **Private** and **Groups**. Changing permissions does not move the file; it only modifies its visibility scope for other users.
+* **Actions** — the **Download** (downloading the file to disk) and **Delete** (removal) buttons located in the top right corner.
 
-An automatically generated synopsis of the document, suitable for triage prior to a full read. The summary appears after document analysis completes — typically within a few seconds for short files, longer for larger documents.
+## Content search
 
-### Information
+The **Search field** at the top of the view enables full-text searching across all available documents. The system searches file content, not just file names. Searching can be precisely narrowed using date, size, and status filters.
 
-The factual properties of the file:
+## Batch operations
 
-- File extension and size
-- Date of last modification
-- Processing status (indexed, embedded, and similar)
-- Detected language
+In the list view, multiple documents can be selected simultaneously using the checkboxes next to file names. This causes a bottom action bar to appear displaying the number of selected elements. Currently, the only available batch operation is **Delete** — removing the selected files.
 
-### Tags
+## Deleting documents
 
-User-applied labels for grouping files. Tags are displayed in the file's detail panel; their use is recommended for accounts with substantial document holdings.
+Files are deleted individually in the metadata panel or in bulk in the list view. Deletion occurs immediately. The platform does not have a recycle bin; files are not retained after deletion and cannot be restored.
 
-### Sharing
+**Important:** The deletion operation is irreversible. If a document may be needed in the future, download it before performing this action.
 
-The access scope of the file. The control toggles between **Private** (visible only to the uploading user) and **Group** (visible to specified groups, selected via a multi-select). Modifications take effect immediately and do not relocate the file; only the visibility is adjusted.
+## Empty view and error states
 
-### Actions
-
-Two controls are provided at the foot of the panel: **Download** and **Delete**.
-
-## Searching the Repository
-
-The **search field** at the top of the Repository performs full-text search across all files visible to the user. The query is matched against document content, not solely against filenames.
-
-Search may be combined with **filters** — filename, modification date, file size, and processing status — alongside separate selectors for file type and source, to construct precise queries.
-
-A query intended for repeated use should be saved as a [Smart folder](/repository/smart-folders).
-
-## Multi-file selection (list view)
-
-In **list view**, a checkbox precedes each row. Selecting two or more rows reveals an action bar at the foot of the screen, indicating the count of selected items and the available bulk operations. At present, **Delete** is the only supported bulk action.
-
-Multi-file selection is not yet available in tile view.
-
-## Deletion
-
-Files may be deleted individually via the **Delete** control in the file's metadata panel, or in bulk via the multi-file selection mechanism in list view. Deletion takes effect immediately; the platform does not provide a recycle bin or staging area for deleted items.
-
-<Callout type="warn" title="Deletion is permanent">
-The operation is irreversible. If a file may subsequently be required, it should be downloaded prior to deletion.
-</Callout>
-
-→ Next: [Smart folders](/repository/smart-folders)
+* *„Summary not available yet"* — the document is being processed. The summary will appear automatically after the analysis completes.
+* *„Search returned no results"* — no documents match the entered phrase or active filters.

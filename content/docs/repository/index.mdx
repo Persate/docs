@@ -1,31 +1,35 @@
 ---
 title: Repository
-description: "The private document library: structure, navigation, and the topics covered in this section."
+description: A private document library for storing, searching, and analyzing files.
 ---
 
-The **Repository** is the document library associated with the account. It accepts PDF documents and indexes them for retrieval through full-text and semantic search.
+The **Repository** is a private document library associated with the account. It enables storing, searching, sorting, filtering, and previewing existing files.
 
-It is accessed via the sidebar entry **KNOWLEDGE BASE → Repository**.
+Access to the module is provided by the **KNOWLEDGE BASE → Repository** entry in the sidebar.
 
-## Purpose
+## Feature overview
 
-The Repository serves three principal functions:
+The Repository enables document management across three key areas:
 
-1. **Consolidation.** A single location for documents that would otherwise reside across email, cloud-storage services, and local filesystems.
-2. **Retrieval.** Full-text and semantic search across the document body, removing the need to recall exact filenames.
-3. **Reference for the AI advisor.** Documents in the Repository are available as source material when consulting the in-app advisor.
+* **Consolidation** — storing documents from various external sources and local drives in a single location.
+* **Search** — advanced document content searching, eliminating the need to remember exact file names.
+* **AI Advisor source** — documents in the repository serve as the knowledge base for the advisor when generating responses and analyses.
 
-## Navigation
+## Navigation and views
 
-Two view modes are available, toggled via controls in the upper-right area of the screen:
+The platform offers two file presentation modes, switchable in the top right area of the screen:
 
-- **List view** — a tabular layout with columns for file type, name, date, and related metadata. Best suited to locating a specific file or to operating on many files in sequence.
-- **Tile view** — a card grid optimised for visual browsing.
+* **List view** — a tabular layout containing the file type, name, date, and metadata. Facilitates operations on multiple files simultaneously.
+* **Tile view** — a card-based presentation optimized for quick visual browsing.
 
-A **search field** at the top of the screen performs full-text search across document content, not only filenames. **Filters** are available for narrowing results by filename, modification date, file size, and processing status, alongside separate selectors for file type and source.
+The sidebar on the right side of the screen contains a **Search field** that searches document content. **Filters** are also available, allowing results to be narrowed by name, date, size, and processing status.
+
+## Empty view and error states
+
+* *„No documents found"* — the repository does not contain any files yet, or none match the active filters.
+* *„Couldn't load documents"* — database connection error. Refreshing the page is recommended.
 
 ## Pages in this section
 
-- **[Uploading files](/repository/upload)** — adding individual files, batch uploads, and access scope.
-- **[Viewing and organising files](/repository/view-and-organize)** — the document viewer, side-panel metadata, sharing controls, and deletion.
-- **[Smart folders](/repository/smart-folders)** — persistent saved queries that operate as virtual folders.
+* **[Uploading files](/repository/upload)** — adding PDF documents and specifying their visibility.
+* **[Browsing and organizing files](/repository/view-and-organize)** — working with the document browser and managing metadata.

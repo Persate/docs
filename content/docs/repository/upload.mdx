@@ -1,49 +1,48 @@
 ---
 title: Uploading files
-description: Adding documents to the Repository, with control over access scope.
+description: Adding documents to the Repository and specifying the access scope.
 ---
 
-To upload files, select **Upload** at the top of the sidebar. A side panel opens on the right, providing controls for file selection, access scope, and submission.
+**Uploading files** enables adding documents to the repository. Selecting the **Upload** option in the top left area of the screen opens the upload panel on the right side.
 
-## Selecting files
+## File selection methods
 
-Two methods are supported:
+Documents can be added in two ways:
 
-- **Drag and drop** — files may be dragged from the operating system onto the upload panel.
-- **File picker** — selecting the drop zone opens the operating system's file-selection dialogue.
+* **Drag and drop** — files can be dragged directly from the operating system onto the upload panel area.
+* **Disk selection** — selecting the drop zone opens the system file selection window.
 
-Multiple files may be selected in a single batch. Each selected file is presented as a row in the upload list, identified by its file-type icon and filename, and accompanied by a control to remove it from the batch.
+Multiple files can be added simultaneously in a single operation. Every selected element appears on the list with a type icon, name, and an option to remove it from the batch before uploading.
 
-Only **PDF** files are currently accepted, with an upper limit of **20 MB per file**. Files in other formats are rejected by the upload panel.
+**Important:** Currently, the platform supports only **PDF** files. The maximum size of a single document is **20 MB**.
 
-## Specifying access scope
+## Access scope
 
-The upload panel includes an access-scope control with two settings:
+Before uploading files, specify their visibility using the toggle:
 
-- **Private** (default) — the files are visible only to the uploading user.
-- **Group** — the files are additionally visible to members of selected groups. Selecting **Group** reveals a multi-select control for choosing the relevant groups.
+* **Private** — files visible only to the person uploading them.
+* **Group** — files accessible to members of designated groups. After selecting this option, a menu appears allowing the appropriate groups to be indicated.
 
-The setting applies to the entire batch. Mixing private and group-visible files in a single upload is therefore not supported; two separate uploads are required.
+The access scope setting applies to the entire batch of files sent in a single operation.
 
-<Callout title="Permissions are file-level, not folder-level">
-The Repository does not employ folders in the conventional sense. Access scope is associated with each file individually (or with each upload batch). The scope of an existing file may be modified subsequently via the **Sharing** section of its detail panel.
-</Callout>
+**Note:** The repository does not use folders in the traditional sense. Permissions are assigned to individual files. The access scope can be changed later in the **Sharing** section of the file details panel.
 
-## Submitting the upload
+## Processing workflow
 
-Selecting **Upload** at the foot of the panel transmits the files to the account. Larger files and larger batches may take noticeable time; a progress indicator is shown.
+Selecting the **Upload** button at the bottom of the panel initiates file uploading. After the upload completes, the platform automatically performs a series of background processes:
 
-After upload, each file is processed by several background services:
+* Analyzes the file to enable advanced searching and creates an automatic content summary.
+* Identifies the document language.
+* Prepares the document for use with the AI Advisor.
 
-- **Indexing** — required for full-text search.
-- **Semantic embedding** — required for use as a reference by the AI advisor.
-- **Summary generation** — an automatically generated synopsis, displayed in the file's detail panel.
-- **Language detection** — identifies the document language (Polish, English, and others).
+Documents appear on the list immediately after uploading; advanced analysis features become available after background processing completes.
 
-Files become available for browsing as soon as they appear in the file list; subsequent processing enriches the summary and search results without affecting basic access.
+## Empty view and error states
 
-## Importing from cloud storage
+* *„File too large"* — the selected file exceeds the 20 MB limit. Reduce the document size or split it into smaller parts.
+* *„Unsupported file type"* — an attempt to upload a format other than PDF.
+* *„Upload failed"* — connection error during file upload. Retrying is recommended.
 
-Integrations for **Google Drive** and **Microsoft OneDrive** are under development. The corresponding **Sources** entry under **KNOWLEDGE BASE** in the sidebar is currently disabled and will be enabled in a subsequent release.
+## Cloud source import
 
-→ Next: [viewing and organising files](/repository/view-and-organize)
+Import features from **Google Drive** and **Microsoft OneDrive** services are in preparation. The **Sources** entry in the sidebar is currently visible but unavailable — it will be made accessible in a future platform update.

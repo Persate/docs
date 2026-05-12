@@ -1,91 +1,77 @@
 ---
 title: Best practices
-description: Practical guidance for getting the most out of the AI advisor — choosing a depth, framing questions for the corpus, when to attach files, how to use citations, and the failure modes to recognise.
+description: Practical guidelines for effective work with the AI Advisor — depth selection, formulating questions, attaching files, handling citations, and recognizing budget exhaustion signals.
 ---
 
-The **AI advisor** rewards a particular style of question and penalises others. This page distils the patterns that recur across heavy users into operational guidance.
+## Selecting analysis depth for the query
 
-## Choose the depth that matches the question
+Accurate selection ensures the advisor returns adequate results — quick for searches, comprehensive for analysis.
 
-The depth dial is the single most consequential control. Get it right and the advisor returns appropriately — fast for lookups, thorough for analysis. Get it wrong in either direction and the experience degrades.
-
-| Depth | Choose when... | Avoid when... |
+| Depth | When to select | When to avoid |
 | --- | --- | --- |
-| **Surface** | The answer is a single fact or a small list, the source is obvious, and you'll either accept the first plausible result or rephrase. *"What was the result of the latest energy vote?"* | The question requires synthesis across multiple sources or a comparison. Surface depth will under-search. |
-| **Balanced** | The everyday setting. The question requires the advisor to ground its answer with a few lookups, and you want a complete answer reasonably quickly. | A Surface answer would suffice (you're paying for needless lookups). |
-| **Deep** | The question is genuinely multi-source — comparison, briefing, opposition research, or *"surface anything noteworthy"*. You're prepared to wait longer for a substantively richer answer. | The question is narrow. Deep depth will over-search and may return more than you wanted. |
+| **Surface** | The answer is a single fact or a short list, and the first reliable match is sufficient. | The query requires multi-source synthesis — Surface will search too shallowly. |
+| **Balanced** | Default setting. The query requires several searches, and a full answer is expected in a reasonable time. | A Surface answer would suffice — Balanced generates unnecessary searches. |
+| **Deep** | A multi-source query: comparison, briefing, identifying discrepancies, or *„highlight anything relevant”*. | The query is narrow — Deep will search too broadly and may return more than necessary. |
 
-A useful heuristic: if the answer fits in one short paragraph, **Surface** is enough. If it needs section headers, **Deep** is justified. **Balanced** covers the everything in between.
+## Formulating questions using corpus terms
 
-## Frame the question in terms of the corpus
+The advisor is designed with specific skills — analyzing and searching Sejm proceedings, stakeholders, clubs, votes, and files. Questions formulated precisely using these terms generate better and more accurate responses.
 
-The advisor is anchored to specific entities — Sejm proceedings, MPs, parliamentary clubs, voting numbers, file names. Questions framed in those terms produce sharper answers than questions framed in abstract terms.
+* **Less effective:** *„What is happening with energy policy?"* — the scope remains undefined.
+* **More effective:** *„Summarize recent floor activity on the renewable energy bill, including the last vote and committee actions from the past week."*
 
-- **Less effective:** *"What's happening with energy policy?"* — the model has to infer scope.
-- **More effective:** *"Summarise the most recent floor activity on the renewable-energy bill, including the latest vote and any committee actions in the past week."* — the model knows what to search for.
+Not every question needs to be elaborate. Including **at least one specific piece of information** — a bill name, stakeholder, club, date range, committee, or file — is sufficient.
 
-This does not mean every question must be ten lines long. It means **anchor at least one concrete entity** — a bill name, an MP, a club, a date range, a committee, a file. The advisor's tools are organised around those entities, and naming one of them routes the question to the right skill family immediately.
+## Attaching a file instead of describing it
 
-## Attach a file rather than describing it
+When the answer resides in a document already available in the repository, attaching it is faster and more accurate than asking the advisor to search for it.
 
-When the answer is in a document the user already has, attaching it is faster, cheaper, and more accurate than asking the advisor to find it.
+Entering `@` in the input field opens the file selector. Searching is performed by name or — after switching the mode — by document content. Multiple files can be attached simultaneously.
 
-- Press **`@`** in the input to open the file picker.
-- Search by filename if you know the name; toggle to hybrid search if you only remember what the document was about.
-- Attach as many files as relevant; the advisor handles multi-file context.
+The advisor treats the attached file as a primary reference and skips the step of searching across all files.
 
-The advisor sees an attached file as a first-class reference — it bypasses the search step and goes straight to extracting from the file. This matters more than it sounds: a Hybrid search across the entire corpus is the single most expensive call the advisor makes.
+When **not** to attach a file: when the goal is to *find* the correct document. A query like *„Which of our briefings discusses changes in public procurement law?"* should be submitted without an attachment to trigger the advisor's hybrid search.
 
-When **not** to attach: when you want the advisor to *find* the right file. *"Which of our briefings discusses the procurement-law changes?"* should be asked without an attachment so the advisor's hybrid search runs.
+## Reading citations, not just response content
 
-## Read the citations, don't just trust the prose
+Every advisor data source is exposed as a verifiable link. This enables verifying the generated data:
 
-Every URI the advisor surfaces is auditable. The chips are not decorative.
+* Vote counts and results per club.
+* Stakeholder identities.
+* The content of a cited post.
+* The source document at the cited fragment.
 
-- Click **`legislation://voting/...`** chips to verify the vote count and the per-club division.
-- Click **`feature://stakeholder/...`** chips to verify the MP is who the advisor named.
-- Click **`feature://public_pulse/tweet/...`** chips to confirm the post says what the advisor paraphrased.
-- Click **file citation** superscripts to download the source file at the cited passage.
+Generated responses generally align with facts, but if a generated response appears incorrect, regenerate it by selecting the arrow icon below the response. The second pass often returns correctly grounded citations.
 
-Where a chip seems off — the wrong MP, the wrong vote, the wrong file — regenerate the response. The advisor's stochastic nature means a second pass often produces correctly grounded citations even on a question it just got wrong.
+## Utilizing conversation continuity
 
-## Use conversation continuity
+The advisor retains the full conversation as context for follow-up questions. Three effective patterns:
 
-The advisor retains the full conversation as context for follow-up questions. Three patterns work well:
+* **In-progress refinement** — *„Now break down that same comparison by voivodeship instead of club."* — the advisor reuses the previous result.
+* **Deepening a specific finding** — *„Tell me more about the discrepancy in amendment 14."*
+* **Transitioning to action** — *„Configure an alert covering the bills you just briefed."* — the advisor extracts identifiers from the previous response.
 
-- **Refine inline.** *"Now break the same comparison down by voivodeship instead of by club."* — the advisor reuses the prior result and only re-runs what changed.
-- **Drill into a specific finding.** *"Tell me more about the divergence on amendment 14."* — the advisor goes back to the relevant tools.
-- **Pivot to action.** *"Set up an alert covering the bills you just briefed me on."* — the advisor pulls the bill identifiers from its prior answer and creates the alert without re-asking.
+Avoid jumping between unrelated threads in a single conversation. For different topics, open new sessions — the chat history makes this efficient.
 
-Avoid **thread-switching** — a single conversation that jumps from energy policy to procurement reform to a personnel question loses focus. Open a new conversation for unrelated topics; the chat history makes it cheap.
+## Recognizing the budget exhaustion signal
 
-## Recognise the budget-exhaustion signal
+When a query exceeds the single-request budget — usually a Deep analysis with a very broad scope — the response concludes with a note regarding the incomplete portion:
 
-When a question genuinely exceeds the per-turn budget — typically a Deep query with too broad a scope — the response ends with a brief note about what could not be completed.
+> *„...Out of the eleven bills you asked about, I discussed nine in detail; the query budget was insufficient for bills 10 and 11. Repeat the query narrowed down to those two specifically."*
 
-> *"...Of the eleven bills you asked about, I covered nine in detail; for bills 10 and 11 I ran out of turn budget. Re-run the question scoped to those two specifically and I'll cover them in the next turn."*
+This is a valid result. The recommended action is to accept the partial response and submit a narrower follow-up query. If budget exhaustion occurs regularly for a given question type, the question is likely too broad — two queries with the Balanced setting yield a better combined result than one at the Deep level.
 
-This is the correct outcome — better than a hard failure mid-stream. The remediation is to:
+## Responding to elicitation forms
 
-1. Take the partial answer at face value (it is grounded).
-2. Reissue the unfinished part as a follow-up question, narrower.
-
-If you find yourself hitting budget exhaustion regularly on the same kind of question, the question is probably too broad. Splitting the question into two or three Balanced-depth turns will produce a better total result than a single Deep turn.
-
-## Don't replicate elicitation in your prose
-
-When a tool needs disambiguation, the advisor surfaces an inline form (*"Which Sejm term?"*, *"Which of these two MPs named Kowalski?"*). Answer the form rather than re-prompting in the chat.
-
-- **Less effective:** seeing the disambiguation form, ignoring it, and typing *"I meant the current Sejm, term 10"* into the chat input. The form remains unresolved; the advisor sees a new turn rather than a continuation.
-- **More effective:** answering the form. The original tool resumes and the response continues from where it paused.
+When a tool requires a resolution (e.g., *„Which Sejm term?"*, *„Which of the two stakeholders named Kowalski?"*), the advisor displays a form. Fill it out directly — entering the answer in the chat field leaves the form unresolved and initiates a new turn instead of continuing the current one.
 
 ## When the advisor is the wrong tool
 
-The advisor is not built for, and will redirect from, several classes of question:
+The advisor deflects several classes of questions:
 
-- **General-purpose chat.** *"What do you think of the Polish electoral system?"* The advisor is constrained to factual, sourced answers about specific Sejm activity; it will not opine.
-- **Off-corpus political analysis.** Questions that require context from outside the legislative corpus — international relations, market forecasting, electoral polling — are not what the toolkit covers. The advisor will note the limitation and answer what it can from the corpus rather than inventing material.
-- **Drafting.** The advisor will summarise, brief, and compare, but it will not draft a press release, a legal brief, or a position paper. Use the summarised material as input to your own drafting.
-- **Bulk operations.** *"Send an email to every MP in the Energy Committee."* The advisor performs queries, not actions. Where actions exist on the platform — alert creation, file uploads — they are explicit and confirmed; there is no mass-action surface.
+* **General conversation** — questions about opinions and evaluations outside the legislative corpus.
+* **Out-of-scope analysis** — international relations, market forecasts, election polls. The advisor will note the limitation and answer what is available from the corpus.
+* **Content creation** — the advisor summarizes, briefs, and compares, but does not write press releases or legal documents.
+* **Bulk operations** — the advisor executes queries, not actions. Existing actions (creating alerts, uploading files) are explicit and confirmed.
 
-For these cases, the advisor will produce a brief reply explaining the limitation and (where possible) point to the part of the platform that fits.
+In these cases, the advisor explains the limitation and points to the appropriate part of the platform when possible.

@@ -1,81 +1,51 @@
 ---
-title: Inspecting an alert
-description: The alert detail view — hero banner, action controls, the trigger-history log, and (for shared alerts) the group-permissions panel.
+title: Alert detail
+description: Detailed alert view — title banner, trigger event log, and permissions management.
 ---
 
-Selecting any card on the **Alerts and risks** list opens the **detail view** for that alert. The screen is composed of a **hero banner**, a row of **action controls**, the **trigger-history log**, and — for shared alerts — a **permissions panel**. The right column carries a sticky reference card showing the alert's description and keyword set.
+The **Detailed view** enables analyzing recorded events and managing the alert's state and visibility. It consists of a title banner, action row, event log, and reference panel.
 
-A breadcrumb at the top of the screen reads **Alert Details**. A **Back to alerts** link returns to the directory.
+## Title banner
 
-## Hero banner
+The banner contains key alert metadata:
 
-The banner spans the full width of the page.
+* **Name and status** — header with state information: **Active** or **Paused**.
+* **Visibility** — designated as **Private** (creator only) or **Shared** (shared within selected groups).
+* **Creation date** — timestamp presented next to a clock icon.
+* **AI illustration** — a thematic image automatically matched to every alert.
 
-- **Banner image** — the AI-generated thematic illustration produced when the alert was created. While the illustration is being generated, or where generation has failed, the banner falls back to a neutral gradient.
-- **Status badge** — **Active** or **Paused**, with a coloured dot.
-- **Visibility badge** — **Private** (lock icon) or **Shared** (globe icon).
-- **Alert name** — rendered as the heading.
-- **Created** — the alert's creation timestamp, shown beneath the name with a clock icon.
-- **Image attribution popover** — a small information icon in the top-right of the banner reveals the source attribution for the illustration when one is recorded.
+## Action buttons
 
-## Action controls
+Buttons enabling state modification are located below the banner:
 
-A row of buttons sits beneath the banner.
-
-### Pause / Resume
-
-Toggles the alert's matching state. While paused, no new trigger events are recorded; existing events remain visible. Resuming re-engages the alert without backfilling the period of pause.
-
-### Make Shared / Make Private
-
-Toggles the alert's visibility.
-
-- **Make Shared** opens an inline dialog containing a **group multi-select**. At least one group must be selected to confirm. On confirmation the alert becomes visible to members of the selected groups in addition to the creator.
-- **Make Private** removes all group access. A confirmation prompt is required: *"Moving to private will remove all group access. Continue?"*. On confirmation, the alert is no longer visible to any groups; existing trigger events and the alert itself are preserved.
-
-### Edit
-
-Opens the alert form pre-populated with the current values. The form behaviour is described in [Creating and editing alerts](/alerts/creating-alerts).
-
-### Delete
-
-Removes the alert and its entire trigger history. A native confirmation prompt is required, naming the alert and stating *"This cannot be undone"*. Deletion is irreversible; on success the user is returned to the alerts list.
+* **Pause / Resume** — pauses or resumes content monitoring. In the paused state, new events are not recorded.
+* **Make Shared / Make Private** — changes the visibility scope. Switching to shared status requires designating at least one user group in the dialog window.
+* **Edit** — opens the alert parameter editing form.
+* **Delete** — permanently deletes the alert along with its entire event history. The operation requires confirmation and is irreversible.
 
 ## Trigger history
 
-The main content area is occupied by **Trigger History** — the chronological log of every event matched against the alert.
+The **Trigger History** section contains a chronological log of all matches. Every entry presents:
 
-Each entry presents:
+* **Source** — the type of content where the match was found (e.g., **Sejm speech**, **Public pulse**).
+* **Timestamp** — the exact moment the event was detected.
+* **Context fragment** — a snippet of the matching content. Longer fragments are automatically truncated; they can be expanded using the **Show more** option.
 
-- A **source-type chip** — one of **Sejm speech**, **Public pulse**, **File**, or **Live**, identifying the channel from which the match originated.
-- A **detection timestamp** in the user's local timezone.
-- A **context snippet** — the surrounding text from the matched content. Snippets longer than approximately 240 characters are collapsed by default with a fade-out gradient and a **Show more / Show less** control.
-
-Events are loaded incrementally; a **Load more** control fetches additional pages when available.
-
-If no matches have ever been recorded for the alert, the section displays *"No trigger events yet — matches against this alert's keywords and description will appear here"*.
+When no matches exist, the message *„No trigger events yet”* is displayed.
 
 ## Permissions panel
 
-For alerts whose visibility is **Shared**, a second section beneath Trigger History is titled **Shared with**. It enumerates every group with read access and provides controls for adjusting membership.
+For alerts with **Shared** status, the **Shared with** section is available. It enables:
 
-- An **Add group** button reveals a multi-select listing groups not yet granted access. Selecting one or more groups and confirming adds them.
-- An **X** button beside each listed group removes it. The change takes effect immediately; no confirmation prompt is shown.
+* **Adding groups** — the **Add group** button allows selecting new groups from the list.
+* **Removing access** — selecting the **X** icon next to a group name immediately revokes its permission to view the alert.
 
-Where the alert is shared but no groups are presently in the access list, the panel displays *"Not shared with any groups"*. This state typically arises briefly during permission changes; restoring access requires re-adding at least one group.
+## Reference bar
 
-The permissions panel is hidden entirely for **Private** alerts.
+The right column contains a sticky card previewing alert parameters: the full description and a list of active keywords. It serves as a reference point while reviewing the event history.
 
-## Reference sidebar
+## Empty view and error states
 
-The right column carries a sticky reference card with two sub-sections:
-
-- **Description** — the alert's full description text. Where empty, the card displays *"No description"* in italics.
-- **Keywords** — the keyword set, rendered as a wrap of pills. Where empty, the card displays *"No keywords"* in italics.
-
-The sidebar is intended for at-a-glance reference while reviewing trigger events; the editable values are reached via the **Edit** button.
-
-## Errors
-
-- **Alert not found** — the URL refers to an alert identifier that does not match any record (most commonly because the alert has been deleted, or the user lacks access). A **Back to alerts** button returns to the directory.
-- **Loading skeleton** — while the alert is being fetched, the screen presents placeholder shapes for the banner, action row, and content sections.
+* *„No trigger events yet”* — no matches have been recorded for this alert yet.
+* *„Alert not found”* — the record does not exist or permissions to view it are missing. In this case, return to the main list.
+* *„Not shared with any groups”* — the alert is shared, but no group is assigned to it. Designating recipients is required for correct operation.
