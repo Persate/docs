@@ -1,28 +1,28 @@
 ---
 title: Asystent AI
-description: "Wewnątrzaplikacyjny asystent analityczny Persate."
+description: Wyspecjalizowany asystent analityczny Persate do pracy z korpusem legislacyjnym i dokumentami własnymi.
 ---
 
-**Asystent AI** towyspecjalizowane narzędzie analityczne przeznaczone do pracy eksploracyjnej w obrębie korpusu legislacyjnego, oraz dokumentów własnych użytkownika. Nie jest to swobodny chatbot — to agent z trwałym, precyzyjnie ukierunkowanym zestawem zdolności. Każda odpowiedź, jaką formułuje, zakotwiczona jest w faktycznym wyszukiwaniu, a każde odniesienie stanowi cytowanie z odnośnikiem do źródła.
+**Asystent AI** to wyspecjalizowane narzędzie analityczne przeznaczone do pracy eksploracyjnej w obrębie korpusu legislacyjnego oraz dokumentów własnych. Nie jest to swobodny chatbot — każda odpowiedź zakotwiczona jest w faktycznym wyszukiwaniu, a każde odniesienie stanowi cytowanie z odnośnikiem do źródła.
 
-Dostęp do asystenta zapewnia pozycja **INTELLIGENCE → Advisor** w panelu bocznym.
+Dostęp do asystenta zapewnia pozycja **INTELLIGENCE → Advisor** w pasku bocznym.
 
 ## Zakres zastosowań
 
-Asystent automatyzuje procesy badawcze, które tradycyjnie wymagałyby ręcznego przeszukiwania wielu źródeł, m.in.:
+Asystent automatyzuje procesy badawcze wymagające ręcznego przeszukiwania wielu źródeł, m.in.:
 
-*   **Złożone wyszukiwanie korelacyjne:** Pozwala łączyć dane z różnego pochodzenia. Przykład: *„Która komisja rozpatrywała ostatnią ustawę o cenach energii i kto głosował przeciw?”*. Asystent automatycznie zestawia transkrypty z posiedzeń komisji z wynikami głosowań.
-*   **Wieloźródłowa synteza danych:** Umożliwia porównywanie deklaracji z faktami. Przykład: *„Zestaw publiczne wypowiedzi klubu na temat odejścia od węgla z ich faktycznymi głosowaniami z ostatniego półrocza”*. Narzędzie analizuje aktywność w mediach społecznościowych i konfrontuje ją z oficjalnymi rozstrzygnięciami.
+* **Złożone wyszukiwanie korelacyjne** — łączenie danych z różnych źródeł. Przykład: *„Która komisja rozpatrywała ostatnią ustawę o cenach energii i kto głosował przeciw?"*
+* **Wieloźródłowa synteza danych** — zestawianie deklaracji z faktami. Przykład: *„Zestaw publiczne wypowiedzi klubu na temat odejścia od węgla z ich głosowaniami z ostatniego półrocza."*
 
-**Uwaga:** Asystent nie jest przeznaczony do generowania treści kreatywnych, pisania kodu ani prowadzenia swobodnych rozmów niezwiązanych z korpusem legislacyjnym.
+**Uwaga:** Asystent nie jest przeznaczony do generowania treści kreatywnych, pisania kodu ani prowadzenia rozmów niezwiązanych z korpusem legislacyjnym.
 
 ## Kluczowe cechy systemu
 
--  **Ugruntowane odpowiedzi:** Każda informacja podawana przez asystenta poprzedzona jest analizą danych platformy: rekordów głosowań, profili posłów, stenogramów oraz wgranych dokumentów.
--  **Interaktywne cytowania:** Każde twierdzenie posiada przypis w formie klikalnej plakietki. Wybranie odnośnika natychmiast otwiera źródłowy rekord bezpośrednio w interfejsie platformy.
--  **Struktura turowa:** Komunikacja odbywa się w ramach zamkniętych tur roboczych, co gwarantuje precyzję i zapobiega błędom w logicznym wnioskowaniu.
+* **Ugruntowane odpowiedzi** — każda informacja poprzedzona jest analizą danych platformy: rekordów głosowań, profili posłów, stenogramów oraz wgranych dokumentów.
+* **Interaktywne cytowania** — każde twierdzenie posiada przypis w formie klikalnej plakietki otwierającej źródłowy rekord bezpośrednio w interfejsie platformy.
+* **Struktura turowa** — komunikacja odbywa się w ramach zamkniętych tur roboczych, co gwarantuje precyzję odpowiedzi.
 
-## Obszary kompetencji 
+## Obszary kompetencji
 
 Asystent operuje w ramach sześciu wyspecjalizowanych modułów danych:
 
@@ -31,47 +31,39 @@ Asystent operuje w ramach sześciu wyspecjalizowanych modułów danych:
 | **Legislacja** | Wyniki głosowań, metadane wniosków, historia aktywności legislacyjnej posłów. |
 | **Interesariusze** | Baza danych o parlamentarzystach: biografie, przynależność klubowa, frekwencja. |
 | **Public Pulse** | Monitoring aktywności monitorowanych podmiotów w mediach społecznościowych. |
-| **Alerty** | Zarządzanie istniejącymi alertami użytkownika oraz tworzenie nowych reguł. |
+| **Alerty** | Zarządzanie istniejącymi alertami oraz tworzenie nowych reguł. |
 | **Dokumenty** | Przeszukiwanie wgranych plików oraz publicznego korpusu Persate. |
 | **Kontekst** | Wykorzystanie historii bieżącej rozmowy do doprecyzowania analizy. |
 
-Kompetencje te opisuje szczegółowo sekcja [Możliwości asystenta](/pl/advisor/skills).
+Kompetencje te opisuje szczegółowo sekcja [Umiejętności asystenta](/pl/advisor/skills).
 
-## Zarządzanie głębokością analizy
+## Głębokość analizy
 
-Za pomocą ikony zasięgu po lewej stronie pola wprowadzania możesz określić priorytet analizy dla danej wiadomości:
+Za pomocą ikony zasięgu po lewej stronie pola wprowadzania wiadomości określa się poziom szczegółowości analizy dla danej wiadomości:
 
-*   **Surface (Powierzchniowa):** Szybkie i bezpośrednie odpowiedzi na proste pytania uzupełniające.
-*   **Balanced (Zrównoważona):** Ustawienie domyślne, zapewnia optymalny balans między szybkością a szczegółowością gruntowania danych.
-*   **Deep (Głęboka):** Kompleksowa analiza cross-reference. Asystent bada wątki drugorzędne i szerokie powiązania. Proces trwa dłużej, ale jest najbardziej wyczerpujący.
+* **Surface** — szybkie odpowiedzi na proste pytania.
+* **Balanced** — ustawienie domyślne, optymalny balans między szybkością a szczegółowością.
+* **Deep** — kompleksowa analiza wieloźródłowa. Asystent bada wątki drugorzędne i szerokie powiązania.
 
-Głębokość ustawiana jest dla pojedynczej wiadomości. Domyślne ustawienie dla nowych wiadomości konfiguruje się w **Settings → Advisor**. Zmiana wartości dla pojedynczej wiadomości nie modyfikuje ustawienia domyślnego. Opis sugerowanego użycia opisuje sekcja [Dobre praktyki](/pl/advisor/best-practices).
+Głębokość ustawiana jest dla pojedynczej wiadomości i nie zmienia ustawienia domyślnego konta. Domyślną wartość konfiguruje się w **Settings → Advisor**. Szczegóły opisuje sekcja [Dobre praktyki](/pl/advisor/best-practices).
 
 ## Historia konwersacji
 
-Prawy panel interfejsu zawiera pełną listę sesji przypisanych do Twojego konta, uporządkowanych chronologicznie (najnowsze u góry). Każda konwersacja jest automatycznie tytułowana na podstawie tematyki pierwszej wiadomości.
+Prawy panel interfejsu zawiera listę sesji przypisanych do konta, uporządkowanych chronologicznie. Każda konwersacja jest automatycznie tytułowana na podstawie tematyki pierwszej wiadomości.
 
-*   **Nowa konwersacja:** Przycisk **New conversation** resetuje przestrzeń roboczą i inicjuje nową rozmowę.
-*   **Wznawianie sesji:** Wybranie dowolnej pozycji z listy przywraca pełny zapis rozmowy, w tym wszystkie wykonane wyszukiwania, wygenerowane odpowiedzi oraz interaktywne cytowania.
-*   **Usuwanie danych:** Ikona kosza przy tytule sesji pozwala na trwałe usunięcie konwersacji wraz z całą historią chatu.
+* **Nowa konwersacja** — przycisk **New conversation** resetuje przestrzeń roboczą.
+* **Wznawianie sesji** — wybranie dowolnej pozycji z listy historii konwersacji przywraca pełny zapis rozmowy.
+* **Usuwanie danych** — ikona kosza przy tytule sesji trwale usuwa konwersację.
 
-**Prywatność:** Historia konwersacji jest przypisana indywidualnie do profilu użytkownika i nie jest współdzielona wewnątrz organizacji.
+Historia konwersacji jest przypisana do indywidualnego konta i nie jest współdzielona wewnątrz organizacji.
 
-## Ciągłość pracy i obsługa sesji
+## Ciągłość pracy
 
-System zapewnia pełną ciągłość procesów analitycznych. Jeśli opuścisz widok Asystenta lub odświeżysz przeglądarkę w trakcie generowania odpowiedzi, **Twoje zapytanie nie zostanie przerwane**. Po ponownym otwarciu konwersacji system automatycznie przywróci postęp prac i dokończy wyświetlanie informacji.
-
-W praktyce pozwala to na dużą swobodę pracy:
-
-*   **Praca wielozadaniowa:** Możesz zlecić złożoną analizę i przejść do innej sekcji platformy (np. **Posiedzeń na żywo**), aby zająć się innymi zadaniami, podczas gdy Asystent pracuje w tle.
-*   **Bezpieczne odświeżanie:** Nawet jeśli przeładujesz stronę w trakcie otrzymywania danych, proces będzie kontynuowany bez utraty wygenerowanej treści.
-*   **Dostęp synchroniczny:** Możesz otworzyć tę samą konwersację w kilku kartach przeglądarki – wszystkie będą wyświetlać ten sam postęp analizy w czasie rzeczywistym.
-
-Jedynym sposobem na przerwanie aktywnego procesu analizy jest ręczne usunięcie konwersacji przez użytkownika w trakcie jej trwania.
+Aktywna analiza nie zostaje przerwana po opuszczeniu widoku lub odświeżeniu przeglądarki — asystent kontynuuje pracę w tle. Po ponownym otwarciu konwersacji system automatycznie przywraca postęp. Tę samą konwersację można otworzyć w kilku kartach przeglądarki — wszystkie wyświetlają ten sam postęp w czasie rzeczywistym.
 
 ## Strony w tej sekcji
 
-- **[Konwersacje](/pl/advisor/conversations)** — komponowanie wiadomości, oznaczanie plików, podręczny selektor głębokości, oś czasu wiadomości, cytowania, kopiowanie i regeneracja oraz historia.
-- **[Możliwości asystenta](/pl/advisor/skills)** — co asystent potrafi wraz z przykładami pytań, które kierowane są do każdego obszaru.
-- **[Przykłady robocze](/pl/advisor/examples)** — istotne treściowo zapytania oraz oczekiwane zachowanie, zaczerpnięte z powtarzających się przypadków pracy zespołów public-affairs i prawnych.
-- **[Dobre praktyki](/pl/advisor/best-practices)** — wybór głębokości, kiedy załączać pliki a kiedy pozwolić asystentowi szukać, obsługa cytowań oraz pułapki ogólnikowych zapytań.
+* **[Interfejs i praca z asystentem](/pl/advisor/conversations)** — kompozycja wiadomości, oznaczanie plików, selektor głębokości, oś czasu wiadomości, cytowania, kopiowanie oraz historia.
+* **[Umiejętności asystenta](/pl/advisor/skills)** — opis kompetencji i przykładowe zapytania.
+* **[Przykłady robocze](/pl/advisor/examples)** — gotowe zapytania z opisem oczekiwanego zachowania asystenta.
+* **[Dobre praktyki](/pl/advisor/best-practices)** — wybór głębokości, załączanie plików, obsługa cytowań oraz pułapki ogólnikowych pytań.

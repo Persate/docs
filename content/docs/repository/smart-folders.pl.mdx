@@ -1,37 +1,49 @@
 ---
-title: Smart folders
-description: Trwałe zapisane zapytania działające jako foldery wirtualne. Pasujące pliki pojawiają się automatycznie.
+title: smart foldery
+description: Trwałe zapytania działające jako wirtualne foldery, automatycznie agregujące pasujące dokumenty.
+hidden: true
 ---
 
-**Smart folder** to trwałe zapisane zapytanie. Po jego zdefiniowaniu system automatycznie aktualizuje zawartość foldera: każdy plik spełniający skonfigurowane kryteria — zapytanie tekstowe, typy plików, daty, źródła lub tagi — pojawia się w folderze, w tym pliki nowo wgrane.
+**smart foldery** to zapisane zapytania, które automatycznie aktualizują swoją zawartość. Każdy dokument spełniający określone kryteria — takie jak fraza tekstowa, typ pliku, data czy tag — pojawia się w folderze bez konieczności ręcznego przenoszenia.
 
-Smart folder nie jest folderem w klasycznym znaczeniu; pliki nie są do niego przenoszone. Przynależność wyznaczana jest w momencie zapytania na podstawie kryteriów foldera.
+smart folder nie jest fizyczną lokalizacją; pliki pozostają w repozytorium, a ich przynależność do folderu jest wyznaczana dynamicznie na podstawie skonfigurowanych filtrów.
 
-## Reprezentatywne zastosowania
+## Przykłady zastosowań
 
-- Folder zawierający wszystkie dokumenty, w których występuje fraza "**legislacja 2025**", uszeregowane według daty modyfikacji w taki sposób, by najnowsze dokumenty znajdowały się na początku listy.
-- Folder przeznaczony do triażu, prezentujący wszystkie dokumenty PDF dłuższe niż pięćdziesiąt stron, którym nie nadano jeszcze tagów.
-- Folder konsolidujący dokumenty pochodzące z Google Drive odnoszące się do wskazanego interesariusza.
+*   Gromadzenie wszystkich dokumentów zawierających frazę *„legislacja 2025”*, uszeregowanych od najnowszych.
+*   Wyodrębnienie plików PDF dłuższych niż 50 stron, które nie posiadają jeszcze przypisanych tagów.
+*   Konsolidacja dokumentacji dotyczącej konkretnego interesariusza na podstawie słów kluczowych.
 
-## Konfiguracja
+## Konfiguracja i edycja
 
-Smart folders prezentowane są obok Repozytorium. Otwarcie Smart foldera pokazuje — i pozwala modyfikować — jego bieżącą konfigurację w panelu po prawej stronie:
+smart foldery są widoczne w pasku bocznym obok głównego widoku repozytorium. Wybranie folderu pozwala na modyfikację jego kryteriów w panelu bocznym:
 
-- **Content search** — zapytanie tekstowe (na przykład "podatek węglowy").
-- **Filtry** — ograniczenia według wzorca nazwy pliku, daty ostatniej modyfikacji, rozmiaru, statusu przetwarzania, typu pliku oraz źródła (Persate, Google Drive, OneDrive).
-- **Sortowanie** — według daty, alfabetycznie, według rozmiaru pliku lub innych dostępnych kryteriów.
+*   **Content search** — zapytanie tekstowe (np. *„podatek węglowy”*).
+*   **Filtry** — ograniczenia dotyczące nazwy, daty, rozmiaru, typu dokumentu lub źródła (np. Persate, Google Drive).
+*   **Sortowanie** — porządkowanie wyników według daty, rozmiaru lub alfabetycznie.
 
-Modyfikacje są zapisywane przez wybranie opcji **Save**, po czym zawartość foldera podlega ponownemu wyznaczeniu.
+Zmiany zatwierdza się przyciskiem **Save**, co powoduje natychmiastowe odświeżenie listy plików.
 
-## Dostępne widoki
+## Tryby prezentacji
 
-Każdy Smart folder oferuje dwa tryby widoku, dostępne poprzez karty akcji u góry strony:
+Każdy folder oferuje dwa sposoby wyświetlania danych:
 
-- **Storage view** — prezentuje pasujące pliki w standardowym układzie listy lub kafelków. Odpowiedni do lektury lub pobierania pojedynczych dokumentów.
-- **Timeline view** — prezentuje te same pliki uszeregowane według daty. Odpowiedni do identyfikacji wzorców w czasie, na przykład tego, czy dokumenty dotyczące określonego tematu kumulują się w narastającym tempie.
+*   **Storage view** — standardowy układ listy lub kafelków, optymalny do pobierania dokumentów.
+*   **Timeline view** — prezentacja plików na osi czasu. Pozwala na identyfikację natężenia dokumentacji w określonych przedziałach czasowych.
 
-## Zalecenia
+## Zalecany sposób pracy
 
-- **Definiowanie należy rozpoczynać od kryteriów ogólnych, a następnie je zawężać.** Pierwsze definicje Smart folderów są zwykle albo zbyt wąskie (brak wyników), albo zbyt szerokie (wyniki obejmujące całe Repozytorium). Zapisanie foldera i obserwacja wyników stanowi podstawę iteracyjnego dopracowywania.
-- **Należy łączyć zapytanie tekstowe z filtrami.** Samo zapytanie tekstowe zwykle dopasowuje większą liczbę dokumentów niż było to zamierzone. Dodanie jednego lub dwóch filtrów (na przykład `typ pliku = PDF`) zawęża wyniki, jednocześnie zachowując odporność foldera na drobne zmiany w metadanych dokumentów.
-- **Tagi sprawdzają się przy powtarzających się tematach.** Tematy trudne do wyrażenia jako zapytanie tekstowe wygodnie jest oznaczać tagami ręcznie, a Smart folder konfigurować w taki sposób, by filtrował po tym tagu. Powstaje w ten sposób widok napędzany tagiem, łatwy do utrzymania.
+1.  Zdefiniować ogólne kryteria zapytania (np. tylko słowo kluczowe).
+2.  Zapisać folder i zweryfikować liczbę zwróconych wyników.
+3.  Zawęzić wyniki poprzez dodanie filtrów technicznych (np. wybranie wyłącznie formatu PDF).
+4.  Dodać filtry metadanych (np. tagi lub źródło dokumentu), aby wykluczyć nieistotne pozycje.
+5.  Ustawić domyślne sortowanie ułatwiające bieżącą pracę z folderem.
+
+## Stany pustego widoku i błędu
+
+*   *„No documents match this folder's criteria”* — żadne pliki w repozytorium nie spełniają warunków zdefiniowanych w konfiguracji folderu.
+*   *„Invalid search query”* — błąd w składni zapytania tekstowego. Należy uprościć frazę wyszukiwania.
+
+## Znane ograniczenia
+
+Aktualnie jeden smart folder może opierać się na maksymalnie jednym zapytaniu tekstowym łączonym z dowolną liczbą filtrów technicznych.

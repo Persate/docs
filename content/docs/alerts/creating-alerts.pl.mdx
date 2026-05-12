@@ -1,75 +1,46 @@
 ---
 title: Tworzenie i edycja alertów
-description: Formularz alertu — nazwa, opis, słowa kluczowe, widoczność, ulepszenie AI oraz zabezpieczenie przed tworzeniem duplikatów.
+description: Definiowanie tematów do monitorowania przy użyciu asystenta AI oraz weryfikacja wygenerowanych reguł.
 ---
 
-Nowy alert tworzy się z paska bocznego sekcji **Alerty i ryzyka** poprzez wybranie opcji **Create alert**. Ten sam formularz wykorzystywany jest w trybie edycji przy modyfikacji istniejącego alertu. Formularz zajmuje własną trasę (`/alerts/new` dla tworzenia, `/alerts/[id]/edit` dla edycji) i zorganizowany jest w pięć sekcji.
+**Tworzenie alertów** umożliwia definiowanie nowych tematów do monitorowania za pomocą asystenta AI, który automatycznie buduje reguły na podstawie opisu w języku naturalnym.
 
-## Nazwa
+## Definiowanie tematu
 
-Krótka, identyfikująca etykieta alertu. Wymagana. Nazwa pojawia się jako nagłówek na karcie alertu oraz w górnej części widoku szczegółowego.
+Proces rozpoczyna się od wprowadzenia opisu zagadnienia w polu tekstowym **What do you want to monitor?**. Platforma pozwala na opisanie tematu własnymi słowami (np. konkretnej ustawy, osoby, problemu społecznego lub trendu branżowego).
 
-## Opis
+Można również skorzystać z gotowych sugestii widocznych poniżej pola wprowadzania, takich jak:
 
-Opis tematu, który alert ma śledzić, w języku naturalnym. Wymagany. Opis pełni dwie funkcje:
+* **Law or act** — śledzenie zmian w konkretnych aktach prawnych.
+* **Politician or institution** — monitorowanie wypowiedzi i aktywności wybranych polityków.
+* **Industry topic** — obserwacja zmian regulacyjnych w określonym sektorze.
+* **Societal issue** — śledzenie dyskursu wokół problemów społecznych.
 
-- Stanowi podstawowy materiał wejściowy dla semantycznego dopasowywania platformy do napływających wystąpień sejmowych, wpisów Public Pulse oraz innych treści.
-- Prezentowany jest pod nazwą alertu na karcie, dostarczając kontekstu użytkownikom przeglądającym listę.
+## Tryby generowania
 
-Opis jest ograniczony do 2000 znaków, lecz zawężony opis (jedno lub dwa zdania) zazwyczaj zapewnia najprecyzyjniejsze dopasowanie.
+Po wpisaniu tematu, z menu rozwijanego (dostępnego po wybraniu ikony obok pola tekstowego) wybiera się jeden z dwóch trybów pracy asystenta AI:
 
-## Słowa kluczowe
+* **Quick** — szybki tryb (ok. 30 sekund), w którym platforma automatycznie dekomponuje temat i automatycznie tworzy alert bez dodatkowego przeszukiwania sieci czy możliwości głębszego dopracowania go.
+* **Deep** — pogłębiony tryb (ok. 120 sekund), w którym asystent analizuje temat, weryfikuje informacje w sieci, przygotowuje przykłady i prezentuje draft do zatwierdzenia lub modyfikacji przez użytkownika.
 
-Lista dosłownych terminów, które muszą wystąpić w dopasowanej treści. Opcjonalne, lecz zalecane dla tematów posiadających wyraźnie określone słownictwo.
+Po wybraniu trybu generowanie uruchamia się ikoną wysyłania umieszczoną po prawej stronie pola tekstowego.
 
-Pole słów kluczowych obsługuje dwa separatory, przełączane kontrolką nad polem:
+## Weryfikacja i edycja draftu (tryb Deep)
 
-- **Comma (,)** *(domyślny)* — słowa kluczowe rozdzielane są przecinkami, co umożliwia stosowanie wyrażeń wielowyrazowych (np. `green deal, energy transition`).
-- **Space** — słowa kluczowe rozdzielane są białymi znakami, ograniczając każdą pozycję do pojedynczego tokenu.
+W przypadku wybrania trybu **Deep**, platforma prezentuje wygenerowany draft alertu. Widok ten zawiera tytuł, opis, zidentyfikowane podtematy, tagi oraz wyniki testowego wyszukiwania.
 
-Wciśnięcie **Enter**, wybranie opcji **Add** lub utrata fokusa na polu zatwierdza wpisane słowa do listy plakietek. **Backspace** w pustym polu usuwa ostatnio dodaną pozycję.
+Poniżej draftu, w sekcji **What would you like to do?**, można określić dalsze działanie:
 
-Każde zatwierdzone słowo kluczowe prezentowane jest jako usuwalna plakietka nad polem. Duplikaty są w cichy sposób pomijane.
+* **Looks good — save it** — opcja zatwierdzająca draft w obecnej formie.
+* Zestaw predefiniowanych opcji (zależnych od kontekstu, np. podział na dwa alerty, zawężenie do konkretnych profili) — pozwalają na szybkie dostosowanie alertu według inteligentnej propozycji.
+* **Tell me what to change** — pole tekstowe pozwalające na wpisanie własnych wytycznych dla asystenta (np. usunięcie konkretnego podtematu).
+* **Discard this draft** — opcja odrzucenia przygotowanego draftu i powrotu do początkowego formularza.
 
-## Widoczność
+Wybraną akcję zatwierdza się przyciskiem **Save** widocznym w prawym dolnym rogu.
 
-Dwie opcje określają, kto może widzieć i wykorzystywać alert:
+## Stany pustego widoku i błędu
 
-- **Private** *(domyślna)* — widoczny wyłącznie dla użytkownika, który go utworzył.
-- **Shared** — widoczny dla wskazanych grup użytkowników poza twórcą.
+{/* TODO: BŁĘDY I MODYFIKACJA ALERTU*/}
 
-Wybranie **Shared** w trybie tworzenia ujawnia pole **Share with groups** — wielokrotnego wyboru obejmujące każdą grupę, z którą użytkownik może dzielić zasoby. Dla alertu współdzielonego musi zostać zaznaczona przynajmniej jedna grupa.
-
-W trybie edycji widoczność można przełączać pomiędzy Private a Shared z poziomu widoku szczegółowego alertu; sam formularz nie udostępnia pola wyboru grup.
-
-## Ulepszenie AI
-
-Przełącznik **Enhance with AI** obecny jest w trybie tworzenia (pominięty w trybie edycji). Po włączeniu — domyślnie — AI platformy przepisuje opis dla zwiększenia jasności oraz rozszerza zestaw słów kluczowych o terminy semantycznie powiązane jeszcze przed zapisem alertu. Pierwotny zapis użytkownika zostaje zachowany obok ulepszenia.
-
-Wyłączenie przełącznika zapisuje opis i słowa kluczowe dokładnie tak, jak zostały wprowadzone. Jest to ustawienie właściwe, gdy użytkownik starannie wykalibrował parametry dopasowania i nie chce, by zostały zmienione.
-
-## Wykrywanie duplikatów
-
-Po wybraniu opcji **Create Alert** platforma sprawdza istniejące alerty użytkownika pod kątem tych, których przedmiot pokrywa się merytorycznie z nowym. W przypadku znalezienia dopasowań wyświetlany jest żółty panel ostrzegawczy wymieniający podobne alerty (każdy wraz z nazwą i opisem) oraz oferujący dwie opcje:
-
-- **Cancel** — porzucenie zgłoszenia. Użytkownik zazwyczaj przegląda istniejące alerty, by zdecydować, czy nie rozszerzyć któregoś z nich zamiast tworzyć nowy.
-- **Create Anyway** — kontynuacja tworzenia mimo nakładania się. Nowy alert powstaje niezależnie od istniejących; zdarzenia wyzwalające nie są deduplikowane między alertami.
-
-Wykrywanie duplikatów wykonywane jest wyłącznie podczas tworzenia; edycja istniejącego alertu nie ponawia sprawdzenia.
-
-## Zatwierdzenie
-
-Trzy stany sterują kontrolką zatwierdzenia:
-
-- **Disabled** — dopóki **Nazwa** i **Opis** nie zawierają tekstu nieskładającego się wyłącznie z białych znaków.
-- **Active** — etykieta **Create Alert** w trybie tworzenia oraz **Save Changes** w trybie edycji.
-- **Busy** — etykieta **Creating...** lub **Saving...** w trakcie przetwarzania żądania; zarówno zatwierdzenie, jak i anulowanie są nieaktywne.
-
-Po sukcesie:
-
-- W **trybie tworzenia** użytkownik wraca do listy alertów. Nowy alert pojawia się natychmiast, z generowaniem ilustracji banneru w toku.
-- W **trybie edycji** użytkownik wraca do widoku szczegółowego alertu z zaktualizowanymi wartościami.
-
-## Anulowanie
-
-Przycisk **Cancel** obok kontrolki zatwierdzenia powoduje powrót do poprzedniego ekranu bez utrwalenia zmian. W trakcie zatwierdzania kontrolka anulowania jest nieaktywna.
+* *„Not enough data to create alert”* — brak wystarczających danych do stworzenia alertu, podaj więcej informacji lub spróbuj ponownie.
+* *„Generation failed”* — błąd serwera w trakcie tworzenia alertu, spróbuj ponownie lub odśwież stronę.

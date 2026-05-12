@@ -1,65 +1,40 @@
 ---
 title: Przeglądanie i porządkowanie plików
-description: Przeglądarka dokumentów, metadane w panelu bocznym, wyszukiwanie, udostępnianie oraz usuwanie.
+description: Praca z przeglądarką dokumentów, zarządzanie metadanymi, wyszukiwanie oraz usuwanie plików.
 ---
 
-Pliki znajdujące się w Repozytorium mogą być otwierane, przeszukiwane, udostępniane oraz usuwane przy pomocy standardowej przeglądarki dokumentów.
+**Przeglądarka dokumentów** umożliwia otwieranie, przeszukiwanie i zarządzanie plikami znajdującymi się w repozytorium.
 
-## Otwieranie pliku
+## Otwieranie plików
 
-Wybranie nazwy pliku (w widoku listy) lub karty pliku (w widoku kafelków) otwiera plik w przeglądarce dokumentów. Przeglądarka prezentuje dokument po lewej stronie ekranu oraz panel metadanych po prawej.
+Wybranie nazwy dokumentu w widoku listy lub kafelka w widoku kafelkowym otwiera plik. Przeglądarka wyświetla treść dokumentu po lewej stronie oraz panel metadanych po prawej.
 
-Pliki są renderowane przy użyciu wbudowanej przeglądarki PDF dostępnej w przeglądarce internetowej, z kontrolkami zoomu, nawigacją po stronach oraz natywnym wyszukiwaniem tekstu.
+Dokumenty PDF są wyświetlane za pomocą wbudowanego silnika, który zapewnia kontrolę powiększenia, nawigację między stronami oraz funkcję wyszukiwania tekstu wewnątrz pliku.
 
 ## Panel metadanych
 
-Panel po prawej stronie zawiera podstawowe metadane pliku, uporządkowane w rozwijalnych sekcjach.
+Panel boczny grupuje informacje o dokumencie w kilku sekcjach:
 
-### Podsumowanie
+*   **Summary** — automatycznie wygenerowane streszczenie, widoczne po zakończeniu przetwarzania dokumentu.
+*   **Information** — właściwości techniczne, takie jak rozmiar, data modyfikacji, status analizy oraz wykryty język.
+*   **Visibility** — zarządzanie widocznością dokumentu. Pozwala na zmianę statusu między **Private** a **Groups**. Zmiana uprawnień nie powoduje przeniesienia pliku, a jedynie modyfikuje jego zakres widoczności dla innych użytkowników.
+*   **Actions** — przyciski **Download** (pobieranie pliku na dysk) oraz **Delete** (usuwanie) znajdujące się w prawym górnym rogu.
 
-Automatycznie wygenerowane streszczenie dokumentu, przeznaczone do wstępnej oceny przed pełną lekturą. Podsumowanie pojawia się po zakończeniu analizy dokumentu — zazwyczaj w ciągu kilku sekund dla krótkich plików, dłużej w przypadku obszerniejszych dokumentów.
+## Wyszukiwanie treści
 
-### Information
+**Pole wyszukiwania** w górnej części widoku pozwala na przeszukiwanie pełnotekstowe wszystkich dostępnych dokumentów. System przeszukuje treść plików, a nie tylko ich nazwy. Wyszukiwanie można precyzyjnie zawężać za pomocą filtrów daty, rozmiaru i statusu.
 
-Faktyczne właściwości pliku:
+## Operacje wsadowe
 
-- Rozszerzenie pliku oraz rozmiar
-- Data ostatniej modyfikacji
-- Status przetwarzania (zaindeksowany, zembeddingowany i podobne)
-- Wykryty język
+W widoku listy można zaznaczyć wiele dokumentów jednocześnie za pomocą pól wyboru przy nazwach plików. Powoduje to wyświetlenie dolnego paska akcji z informacją o liczbie wybranych elementów. Obecnie jedyną dostępną operacją grupową jest **Delete** - usunięcie zaznaczonych plików.
 
-### Tags
+## Usuwanie dokumentów
 
-Etykiety nadawane przez użytkownika, służące do grupowania plików. Tagi prezentowane są w panelu szczegółów pliku; ich stosowanie jest zalecane przy kontach o znacznym wolumenie dokumentów.
+Pliki usuwa się pojedynczo w panelu metadanych lub zbiorczo w widoku listy. Usunięcie następuje natychmiastowo. Platforma nie posiada kosza, pliki nie zostają przechowywane po ich usunięciu, niemożliwe jest ich przywrócenie.
 
-### Sharing
+**Ważne:** Operacja usunięcia jest nieodwracalna. Jeśli dokument może być potrzebny w przyszłości, należy go pobrać przed wykonaniem tej akcji.
 
-Zakres dostępu do pliku. Kontrolka przełącza między **Private** (widoczność wyłącznie dla użytkownika wgrywającego) oraz **Group** (widoczność dla wskazanych grup, wybieranych z listy wielokrotnego wyboru). Modyfikacje obowiązują natychmiast i nie powodują przeniesienia pliku; zmianie ulega wyłącznie zakres widoczności.
+## Stany pustego widoku i błędu
 
-### Actions
-
-W dolnej części panelu udostępnione są dwie kontrolki: **Download** oraz **Delete**.
-
-## Wyszukiwanie w Repozytorium
-
-**Pole wyszukiwania** w górnej części Repozytorium wykonuje wyszukiwanie pełnotekstowe pośród wszystkich plików widocznych dla użytkownika. Zapytanie jest dopasowywane do treści dokumentu, nie wyłącznie do nazwy pliku.
-
-Wyszukiwanie można łączyć z **filtrami** — nazwą pliku, datą modyfikacji, rozmiarem oraz statusem przetwarzania — uzupełnionymi o odrębne selektory typu pliku oraz źródła, w celu skonstruowania precyzyjnych zapytań.
-
-Zapytanie przewidziane do regularnego wykonywania zaleca się zapisać jako [Smart folder](/pl/repository/smart-folders).
-
-## Zaznaczanie wielu plików (widok listy)
-
-W **widoku listy** każdy wiersz poprzedzony jest polem wyboru. Zaznaczenie dwóch lub więcej wierszy powoduje wyświetlenie paska akcji u dołu ekranu, wskazującego liczbę zaznaczonych pozycji oraz dostępne operacje wsadowe. Obecnie jedyną wspieraną akcją hurtową jest **Delete**.
-
-Zaznaczanie wielu plików nie jest dotychczas dostępne w widoku kafelków.
-
-## Usuwanie
-
-Pliki można usuwać pojedynczo poprzez kontrolkę **Delete** w panelu metadanych pliku lub wsadowo, korzystając z mechanizmu zaznaczania wielu plików w widoku listy. Usunięcie obowiązuje natychmiast; platforma nie udostępnia kosza ani obszaru przejściowego dla usuniętych elementów.
-
-<Callout type="warn" title="Usunięcie jest nieodwracalne">
-Operacji nie można cofnąć. W przypadku, gdy plik może być w przyszłości potrzebny, należy go pobrać przed usunięciem.
-</Callout>
-
-→ Dalej: [Smart folders](/pl/repository/smart-folders)
+*   *„Summary not available yet”* — dokument jest w trakcie przetwarzania. Podsumowanie pojawi się automatycznie po zakończeniu analizy.
+*   *„Search returned no results”* — żadne dokumenty nie pasują do wpisanej frazy lub aktywnych filtrów.

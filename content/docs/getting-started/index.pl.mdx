@@ -1,19 +1,30 @@
 ---
 title: Pierwsze kroki
-description: Założenie konta, uwierzytelnianie dwuskładnikowe oraz pierwsze logowanie.
+description: Proces zakładania konta, konfiguracja uwierzytelniania dwuskładnikowego oraz procedura pierwszego logowania na platformę.
 ---
 
-Przed rozpoczęciem pracy z platformą Persate należy wykonać trzy kroki:
-
-1. **[Założenie konta](/pl/getting-started/create-account)** — rejestracja jest możliwa zarówno za pomocą adresu e-mail i hasła, jak i przy użyciu logowania jednokrotnego (SSO) z kontem Google lub Microsoft.
-2. **[Konfiguracja uwierzytelniania dwuskładnikowego](/pl/getting-started/set-up-two-factor)** — sparowanie aplikacji autoryzacyjnej jest obowiązkowe dla każdego użytkownika.
-3. **[Pierwsze logowanie](/pl/getting-started/first-login)** — zakończone wprowadzeniem do Cockpitu.
-
-Cała procedura zajmuje około pięciu minut. Etap konfiguracji uwierzytelniania dwuskładnikowego wymaga dostępu do urządzenia mobilnego.
+Rozpoczęcie pracy z platformą Persate wymaga przejścia przez trzy etapy: rejestrację, zabezpieczenie konta oraz pierwsze uwierzytelnienie. Cała procedura zajmuje około pięciu minut i wymaga dostępu do urządzenia mobilnego w celu konfiguracji zabezpieczeń.
 
 ## Wymagania wstępne
 
-- Adres e-mail, na który zostanie wysłany link weryfikacyjny.
-- Aplikacja autoryzacyjna zainstalowana na urządzeniu mobilnym. Przykładowo: Google Authenticator, Authy, 1Password, Microsoft Authenticator lub dowolna inna aplikacja obsługująca standard TOTP.
+* Aktywny adres e-mail (służący do weryfikacji i komunikacji).
+* Urządzenie mobilne z zainstalowaną aplikacją autoryzacyjną obsługującą standard TOTP (np. Google Authenticator, Authy, Microsoft Authenticator).
 
-Nie jest wymagany kod zaproszenia ani dane płatnicze.
+Dostęp do platformy nie wymaga kodu zaproszenia ani podawania danych płatniczych na etapie rejestracji.
+
+## Etapy wdrożenia
+
+1. **[Założenie konta](/pl/getting-started/create-account)** — wybór metody uwierzytelniania (e-mail lub SSO).
+2. **[Uwierzytelnianie dwuskładnikowe](/pl/getting-started/set-up-two-factor)** — sparowanie aplikacji autoryzacyjnej w celu zabezpieczenia profilu.
+3. **[Pierwsze logowanie](/pl/getting-started/first-login)** — wprowadzenie do głównego pulpitu startowego (Cockpit).
+
+## Stany pustego widoku i błędu
+
+* *„Verification link expired”* — link wysłany w wiadomości e-mail stracił ważność. Należy ponowić proces rejestracji lub skorzystać z opcji przypomnienia hasła.
+* *„Account already exists”* — próba rejestracji na adres, który jest już w bazie. W takim przypadku należy skorzystać z ekranu logowania.
+
+## Strony w tej sekcji
+
+* **[Założenie konta](/pl/getting-started/create-account)** — rejestracja e-mail oraz logowanie jednokrotne (Google/Microsoft).
+* **[Uwierzytelnianie dwuskładnikowe](/pl/getting-started/set-up-two-factor)** — procedura skanowania kodu QR i weryfikacji klucza TOTP.
+* **[Pierwsze logowanie](/pl/getting-started/first-login)** — nawigacja po Cockpicie oraz globalne wyszukiwanie i wgrywanie plików.

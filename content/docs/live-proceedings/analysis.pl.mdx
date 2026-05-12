@@ -1,84 +1,46 @@
 ---
 title: Otwieranie posiedzenia
-description: Widok szczegółowy pojedynczej sesji — odtwarzacz wideo, transkrypcje, identyfikacja mówców oraz wybór pomiędzy rodzajem trybami Record Analysis i Enhanced Record.
+description: Widok szczegółowy sesji — odtwarzacz wideo, transkrypcja w czasie rzeczywistym oraz pełna analiza komprehensywna.
 ---
 
-Wybranie karty na liście **Posiedzeń na żywo** otwiera **widok szczegółowy** danego posiedzenia. Ekran dzieli się na dwie strefy: **odtwarzacz wideo** w górnej części oraz **panel analizy** poniżej. Obie strefy współdzielą stan — przewinięcie wideo przesuwa kursor analizy, a wybranie linii transkryptu przeskakuje wideo do odpowiadającego momentu.
-
-Pasek nawigacyjny u góry ekranu odzwierciedla widok źródłowy (**Ongoing**, **Previous** lub **Scheduled**), po którym wyświetlany jest tytuł sesji.
+**Widok szczegółowy** integruje odtwarzacz wideo z panelami analizy treści. Wybranie karty na liście głównej otwiera widok szczegółowy. Przewinięcie nagrania synchronizuje wyświetlany fragment transkrypcji, który jest aktualnie mówiony, a kliknięcie w tekst przesuwa wideo do odpowiadającego momentu.
 
 ## Odtwarzacz wideo
 
-Odtwarzacz znajduje się w centralnej części ekranu.
+Interfejs automatycznie dostosowuje się do stanu sesji:
 
-- **W przypadku sesji bieżących** transmisja na żywo jest pobierana z oficjalnego kanału Sejmu. Odtwarzanie rozpoczyna się automatycznie po udostępnieniu strumienia.
-- **W przypadku sesji minionych** nagranie jest serwowane z archiwum Sejmu. Odtwarzanie rozpoczyna się automatycznie po otwarciu strony.
-- **W przypadku sesji zaplanowanych** strumień nie jest dostępny do momentu rozpoczęcia sesji. Odtwarzacz zastępowany jest komunikatem "Scheduled — analysis will be available once the session begins". W odniesieniu do sesji rozpoczynających się w ciągu najbliższych trzydziestu minut system podejmuje próbę nawiązania połączenia z wyprzedzeniem, by odtwarzanie mogło rozpocząć się niezwłocznie po rozpoczęciu transmisji na żywo.
+* **Sesje bieżące** — strumień na żywo pobierany z oficjalnego kanału sejmu.
+* **Sesje minione** — nagranie archiwalne z możliwością swobodnego przewijania.
+* **Sesje zaplanowane** — transmisja rozpocznie się w momencie jej startu na oficjalnym kanale sejmu, wyświetlany jest komunikat *„Scheduled — analysis will be available once the session begins”*.
 
-Przełącznik w kontrolkach odtwarzacza pozwala wyświetlić lub ukryć **nakładki twarzy** — kolorowe prostokąty wskazujące mówców rozpoznanych w bieżącej klatce. Ustawienie jest zachowywane pomiędzy sesjami konta.
+W lewym górnym rogu odtwarzacza znajduje się przycisk pozwalają na włączenie **nakładek twarzy**, które oznaczają mówców rozpoznanych w kadrze.
 
-Jeśli strumienia nie można przygotować do odtwarzania, odtwarzacz zastępowany jest komunikatem **Playback unavailable** opisującym przyczynę błędu. Przycisk ponowienia podejmuje kolejną próbę zestawienia strumienia.
+## Tryby analizy
 
-## Dwie zakładki analizy
+Po prawej stronie znajdują się zakładki reprezentujące dwa podejścia do przetwarzania treści:
 
-Dla sesji minionych panel analizy poprzedzony jest paskiem zakładek z dwiema pozycjami:
+### Record Analysis
 
-- **Record Analysis** — tryb pracy w czasie rzeczywistym. Dostępny zarówno dla transmisji bieżących, jak i nagrań.
-- **Enhanced Record** — tryb komprehensywny. Dostępny wyłącznie dla nagrań.
+Tryb zorientowany na szybkość, dostępny dla transmisji na żywo (**Live Session**) oraz jako przyspieszony przegląd archiwalny (**Priority Review**).
 
-W przypadku sesji bieżących prezentowany jest wyłącznie widok **Record Analysis** tryb Enhanced Record operuje na zakończonych nagraniach. Dla sesji zaplanowanych obie zakładki pozostają ukryte do czasu rozpoczęcia transmisji.
+* **Transkrypcja** — tekst pojawia się w dolnej części panelu w miarę wypowiadania słów.
+* **Profile mówców** — system rozpoznaje twarze znane z katalogu interesariuszy. Mówcy nierozpoznani otrzymują tymczasowe identyfikatory (np. **Speaker 3**).
 
-Kropka statusu obok etykiety zakładki odzwierciedla bieżący stan:
+Jeśli analiza nie jest aktywna, dostępny jest przycisk **Start Record Analysis**.
 
-| Wskaźnik | Znaczenie |
-| --- | --- |
-| Pusty pierścień | Analiza nie została jeszcze uruchomiona. |
-| Wirujący okrąg | Analiza jest uruchamiana, buforuje lub jest w toku. |
-| Pulsująca cyjanowa kropka | Trwa sesja w czasie rzeczywistym (wyłącznie Record Analysis). |
-| Wypełniona kropka | Wynik jest dostępny. |
-| Ikona alertu | Analiza zakończyła się niepowodzeniem. Pełny komunikat błędu znajduje się w treści panelu. |
+### Enhanced Record
 
-## Record Analysis
-
-Zakładka **Record Analysis** prezentuje wynik analizy w czasie rzeczywistym. Możliwa jest praca w dwóch trybach w zależności od stanu posiedzenia:
-
-- **Live Session** — tryb pracy w czasie rzeczywistym wykorzystywany podczas bieżącej transmisji. Transkrypcja, detekcja mówców oraz rozpoznawanie twarzy są generowane na bieżąco. Najnowsze fragmenty pojawiają się w dolnej części panelu, a kursor podąża za pozycją transmisji na żywo.
-- **Priority Review** — tryb pracy w czasie rzeczywistym zastosowany retroaktywnie do zarchiwizowanego nagrania. Ta sama analiza jest uruchamiana na archiwalnym materiale, dostarczając transkrypcje z etykietami mówców oraz identyfikacje twarzy w ciągu kilku minut, zamiast dłuższego czasu obróbki trybu komprehensywnego.
-
-Jeżeli dla posiedzenia nie wytworzono dotąd analizy Record Analysis, panel udostępnia przycisk **Start Record Analysis**. Jego wybór uruchamia tryb Live Session dla bieżącej transmisji lub Priority Review dla zarchiwizowanego nagrania, zależnie od stanu posiedzenia.
-
-Po rozpoczęciu analizy panel wyświetla wskaźnik kolejki (gdy dotyczy), a następnie fragmenty transkryptu w miarę ich pozyskiwania.
-
-### Fragmenty transkryptu
-
-Każdy fragment prezentuje mówcę (jeśli został rozpoznany), wypowiedziany tekst oraz znacznik czasu. Wybranie fragmentu przewija wideo do odpowiadającego momentu. Podczas odtwarzania na żywo aktywny fragment jest podświetlony, wybranie wcześniejszego fragmentu chwilowo odłącza kursor od bieżącej pozycji transmisji.
-
-### Profile mówców
-
-W przypadku dopasowania twarzy do znanej postaci parlamentarnej przy fragmencie wyświetlana jest jej nazwa. Mówcy nierozpoznani są oznaczani identyfikatorem generowanym automatycznie (np. **Speaker 3**) i będą mogli zostać zharmonizowani ze znanymi profilami w przyszłości.
-
-## Enhanced Record
-
-Zakładka **Enhanced Record** prezentuje wynik analizy komprehensywnej. Proces ten jest wolniejszy od Record Analysis, lecz dostarcza wyniku o wyższej wierności — dopracowanego transkryptu, wykrycia tematów, ustrukturyzowanej osi czasu sesji oraz pełnego rozpoznawania twarzy w całości nagrania.
-
-Dla nagrań, dla których analiza nie została uruchomiona, panel udostępnia przycisk **Start Enhanced Record**. Po zainicjowaniu postęp raportowany jest jako wartość procentowa wraz z etykietą etapu (np. **Detecting faces**, **Recognizing faces**, **Transcription & diarization**, **Active speaker analysis**). Operacja może zostać przerwana w trakcie wykonywania, a jej przerwanie odrzuca wynik częściowy.
-
-Po ukończeniu panel wyświetla pełen zestaw wytworzonych artefaktów. Wybranie pozycji posiadającej znacznik czasu przewija wideo do odpowiadającego momentu.
-
-## Wybór pomiędzy trybami analizy
-
-Oba tryby mają charakter komplementarny, nie alternatywny.
-
-- **Record Analysis** sprawdza się tam, gdzie istotny jest czas — podczas transmisji na żywo lub gdy świeżo zakończona sesja musi zostać przejrzana w ciągu kilku minut.
-- **Enhanced Record** sprawdza się tam, gdzie istotne są dokładność i struktura — gdy sesja ma być cytowana, podsumowywana lub wykorzystana jako materiał referencyjny.
-
-Uruchomienie jednego z trybów analiz nie wyklucza możliwości użycia drugiego. Oba mogą zostać uruchomione dla tego samego posiedzenia. Odpowiadające im zakładki prezentują wyniki niezależnie.
+Tryb komprehensywny, dostarczający transkrypcję o najwyższej wierności, podział na tematy oraz ustrukturyzowaną oś czasu. Praca w tym trybie trwa dłużej i jest dostępna wyłącznie dla zakończonych nagrań. Proces uruchamia się przyciskiem **Start Enhanced Record**, a postęp raportowany jest etapami (np. **Transcription & diarization**, **Detecting faces**).
 
 ## Zalecany sposób pracy
 
-Dla większości użytkowników typowy schemat postępowania jest następujący:
+1. Sprawdzenie bieżących transmisji w widoku **Ongoing** oraz nadchodzących w **Scheduled**.
+2. Uruchomienie **Live Session** dla sesji w toku w celu uzyskania natychmiastowego wglądu w wypowiedzi.
+3. Zlecenie **Enhanced Record** dla kluczowych posiedzeń po ich zakończeniu w celu uzyskania materiału referencyjnego.
+4. Wykorzystanie funkcji skoku z transkryptu do wideo w celu precyzyjnego odszukania konkretnych wypowiedzi.
 
-1. Otwarcie **Live Proceedings** rano, przełączenie na **Ongoing** w celu sprawdzenia bieżących transmisji oraz na **Scheduled** w celu zaplanowania reszty dnia.
-2. Dla sesji w toku otwarcie posiedzenia i uruchomienie **Live Session** — transkrypt budowany jest w czasie rzeczywistym i może być wykorzystywany jeszcze przed zakończeniem sesji.
-3. Dla sesji o szczególnym znaczeniu zlecenie **Enhanced Record** po zakończeniu w celu uzyskania artefaktów strukturalnych, wynik jest zazwyczaj dostępny w ciągu godziny dla sesji o przeciętnej długości.
-4. Wykorzystywanie funkcji przeskoku z transkryptu do wideo w celu ponownego odtworzenia konkretnych momentów bez przewijania pełnej transmisji.
+## Stany pustego widoku i błędu
+
+* *„Playback unavailable”* — błąd zestawiania strumienia wideo. Zaleca się odświeżenie strony.
+* *„Scheduled — analysis will be available...”* — próba otwarcia sesji przed jej rozpoczęciem.
+* *„Analysis failed”* — błąd serwera.

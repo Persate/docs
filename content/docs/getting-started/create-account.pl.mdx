@@ -1,33 +1,30 @@
 ---
 title: Zakładanie konta
-description: Rejestracja przy użyciu adresu e-mail i hasła lub poprzez logowanie jednokrotne z kontem Google lub Microsoft.
+description: Metody rejestracji na platformie — tradycyjny formularz oraz logowanie jednokrotne (SSO).
 ---
 
-Rejestracja konta jest możliwa na dwa sposoby. W celu jej rozpoczęcia należy przejść pod adres [persate.com](https://persate.com) i wybrać opcję **Sign up**.
+Proces tworzenia konta rozpoczyna się na stronie głównej [persate.com](https://persate.com) po wybraniu opcji **Sign up**. Dostępne są dwie ścieżki rejestracji.
 
-## Metoda A — adres e-mail i hasło
+## Formularz e-mail i hasło
 
-Formularz rejestracyjny wymaga podania następujących danych:
+Rejestracja tradycyjna wymaga uzupełnienia następujących pól:
 
-- **Adres e-mail.** Na podany adres zostanie wysłany link weryfikacyjny.
-- **Hasło.** Co najmniej osiem znaków, w tym przynajmniej jedna cyfra oraz jeden znak specjalny (np. `!`, `@`, `#` lub `?`). Formularz na bieżąco wskazuje, które kryteria nie zostały jeszcze spełnione.
-- **Powtórzenie hasła.** Identyczne hasło, wprowadzone ponownie.
-- **Akceptacja regulaminów.** Należy zaznaczyć oba pola wyboru: Polityki prywatności oraz Regulaminu.
+* **Adres e-mail** — na który zostanie wysłana wiadomość z linkiem weryfikacyjnym.
+* **Hasło** — minimum osiem znaków, w tym jedna cyfra i jeden znak specjalny.
+* **Powtórzenie hasła** — w celu wyeliminowania pomyłek przy wpisywaniu.
+* **Zgody** — akceptacja Polityki prywatności oraz Regulaminu.
 
-Po wysłaniu formularza aplikacja wyświetla komunikat informujący, że jeśli adres wymaga weryfikacji, link dotrze wkrótce, wraz z przypomnieniem o możliwości zalogowania się lub zresetowania hasła, jeżeli konto już istnieje. Wiadomość weryfikacyjna zawiera link, którego otwarcie kończy proces rejestracji.
+Po wysłaniu formularza należy odebrać wiadomość e-mail i otworzyć zawarty w niej link, aby aktywować konto.
 
-<Callout title="Wiadomość weryfikacyjna nie dotarła">
-Wiadomość mogła trafić do folderu spam. Jeżeli po kilku minutach jest nadal niedostępna, prawdopodobnie wystąpiła pomyłka w adresie — formularz celowo nie informuje, czy podany adres jest już zarejestrowany, w celu ochrony istniejących kont.
-</Callout>
+**Uwaga:** Wiadomość weryfikacyjna może trafić do folderu spam. Jeśli link nie dotrze w ciągu kilku minut, zaleca się sprawdzenie poprawności wpisanego adresu.
 
-## Metoda B — logowanie jednokrotne (Google lub Microsoft)
+## Logowanie jednokrotne (SSO)
 
-Zamiast wypełniania formularza rejestracyjnego można wybrać przycisk **Continue using Google Account** albo **Continue using Microsoft Account**. Po wybraniu właściwego konta w oknie dostawcy oraz zatwierdzeniu wymaganych uprawnień rejestracja jest zakończona.
+Alternatywną metodą jest wykorzystanie przycisku **Continue using Google Account** lub **Continue using Microsoft Account**. Po zatwierdzeniu uprawnień w oknie zewnętrznego dostawcy konto jest tworzone automatycznie. Ta metoda łączy rejestrację z logowaniem i nie wymaga późniejszej weryfikacji adresu e-mail przez link.
 
-Logowanie jednokrotne łączy rejestrację i logowanie w jednej operacji, dla kolejnych wizyt nie istnieje odrębny krok rejestracji. Konto jest tworzone automatycznie przy pierwszym użyciu.
+## Stany pustego widoku i błędu
 
-## Następny krok
-
-Po weryfikacji adresu e-mail (lub — w przypadku logowania jednokrotnego — po zatwierdzeniu okna dostawcy) konto jest aktywne. Przy kolejnym logowaniu aplikacja poprosi o skonfigurowanie uwierzytelniania dwuskładnikowego.
-
-→ [Dalej: konfiguracja uwierzytelniania dwuskładnikowego](/pl/getting-started/set-up-two-factor)
+* *„Password too weak”* — wprowadzone hasło nie spełnia wymogów bezpieczeństwa.
+* *„Passwords do not match”* — wartości w polach hasła i jego powtórzenia są różne.
+* *„Email already taken”* — system nie pozwala na utworzenie drugiego konta na ten sam adres.
+* *„Invalid email format”* — wprowadzony tekst nie jest poprawnym adresem e-mail.

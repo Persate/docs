@@ -1,74 +1,41 @@
 ---
 title: Posiedzenia na żywo
-description: "Oglądanie, przeglądanie i kolejkowanie sesji parlamentarnych: bieżące transmisje, archiwum nagrań oraz harmonogram nadchodzących posiedzeń."
+description: Punkt dostępu do transmisji parlamentarnych — śledzenie bieżących obrad, przegląd archiwum nagrań oraz wgląd w harmonogram prac Sejmu.
 ---
 
-**Posiedzenia na żywo** to punkt wejścia do transmisji parlamentarnych — sesji Sejmu, posiedzeń komisji i podkomisji, konferencji oraz innych zgromadzeń prowadzonych w oficjalnym kanale wideo Sejmu. Ten sam ekran pełni trzy funkcje: umożliwia śledzenie obecnie trwającej sesji, przegląd nagrania z sesji minionej oraz wgląd w harmonogram sesji jeszcze nieodbytych.
+**Posiedzenia na żywo** to moduł umożliwiający dostęp do oficjalnych kanałów wideo Sejmu. Platforma pozwala na śledzenie transmisji w czasie rzeczywistym, analizę nagrań archiwalnych oraz przeglądanie kalendarza nadchodzących zgromadzeń (komisji, sesji plenarnych, konferencji).
 
-Dostęp do widoku zapewnia pozycja **CORE → Live Proceedings** w pasku bocznym.
+Dostęp do widoku zapewnia pozycja **KNOWLEDGE BASE → Live Proceedings** w pasku bocznym.
 
-## Trzy widoki podrzędne
+## Widoki podrzędne
 
-Przełącznik widoku w górnej części ekranu pozwala wybrać jedną z trzech list. Domyślnym widokiem jest **Previous**.
+Interfejs pozwala na przełączanie się między trzema listami:
 
-- **Ongoing** — sesje transmitowane na żywo w danej chwili. Poza godzinami obrad lista pozostaje pusta.
-- **Previous** — sesje już zakończone. Nagrania są przechowywane bezterminowo i pozostają dostępne do analizy.
-- **Scheduled** — sesje zapowiedziane w kalendarzu parlamentarnym, lecz jeszcze nierozpoczęte. Sortowane rosnąco po dacie, od najwcześniejszej.
+* **Ongoing** — sesje transmitowane na żywo w danej chwili.
+* **Previous** — archiwum zakończonych nagrań dostępnych do analizy.
+* **Scheduled** — sesje zapowiedziane, uporządkowane chronologicznie według daty rozpoczęcia.
 
-Wybranie karty sesji otwiera jej **widok szczegółowy**, opisany w sekcji [Otwieranie posiedzenia](/pl/live-proceedings/analysis).
+## Karta posiedzenia
 
-## Lista posiedzeń
+Każde posiedzenie jest reprezentowane przez kartę zawierającą tytuł sesji, czas rozpoczęcia oraz typu (np. **Session**, **Commission**, **Conference**). Ikony w prawej części karty informują o stanie procesów analitycznych:
 
-Sesje są pogrupowane miesiącami. W obrębie miesiąca pozycje są uporządkowane według czasu rozpoczęcia — od najnowszych dla widoków **Previous** oraz **Ongoing**, od najwcześniejszych dla widoku **Scheduled**.
+* **Niebieska** — dostępne jest przeanalizowane nagranie.
+* **Pomarańczowa** — trwa analiza nagrania.
+* **Czerwona** — wystąpił błąd serwera w trakcie analizy.
 
-Każda karta prezentuje:
+## Narzędzia filtrowania
 
-- Godło Sejmu RP.
-- Tytuł sesji w brzmieniu opublikowanym przez Kancelarię Sejmu.
-- Czas rozpoczęcia w lokalnej strefie czasowej użytkownika, poprzedzony ikoną zegara.
-- **Plakietkę typu** wskazującą rodzaj zgromadzenia: Session, Commission, Subcommittee, Conference lub Other.
-- Jedną lub więcej **ikon statusu** odzwierciedlających stan automatycznej analizy (opisane poniżej).
+W panelu bocznym dostępne są filtry oraz panel wyszukiwania pozwalające na zawężenie listy posiedzeń:
 
-Wybranie karty otwiera widok szczegółowy posiedzenia.
+* **Wyszukiwanie** — filtrowanie pełnotekstowe w tytułach sesji.
+* **Zakres dat** — ograniczenie listy do wybranego przedziału czasowego.
+* **Typ posiedzenia** — selektor wielokrotnego wyboru dla rodzajów zgromadzeń.
 
-## Filtry w pasku bocznym
+## Stany pustego widoku i błędu
 
-W prawym panelu bocznym dostępne są trzy kontrolki. Filtry obowiązują w obrębie aktualnie wybranego widoku podrzędnego; przełączenie widoku zachowuje ich stan.
-
-### Wyszukiwanie
-
-Wyszukiwanie pełnotekstowe w tytułach sesji. Wyniki aktualizują się w trakcie wpisywania zapytania. Dopasowanie ignoruje wielkość liter.
-
-### Zakres dat
-
-Para selektorów daty ograniczających listę sesji do wybranego przedziału. Pozostawienie któregokolwiek z pól pustym oznacza brak ograniczenia w danym kierunku.
-
-### Typ posiedzenia
-
-Pole wielokrotnego wyboru z pięcioma typami zgromadzeń wymienionymi powyżej. Sesje, których typ nie został zaznaczony, są ukrywane. Brak zaznaczenia jest równoznaczny z zaznaczeniem wszystkich typów.
-
-## Ikony statusu na karcie
-
-Ikony w prawym górnym rogu każdej karty informują o stanie obu procesów (pipeline'ów) analitycznych bez konieczności otwierania karty.
-
-| Ikona | Pipeline | Znaczenie |
-| --- | --- | --- |
-| Pulsujący wskaźnik **Live** (niebieski) | Record Analysis | Dla tego posiedzenia trwa obecnie sesja transkrypcji w czasie rzeczywistym. |
-| Wskaźnik **Live** (niebieski) | Record Analysis | Analiza w czasie rzeczywistym została zarejestrowana i jest dostępna do wglądu. |
-| Wskaźnik **Lightning** (secondary) | Record Analysis | Wykonano przyspieszoną analizę retroaktywną (Priority Review) zarchiwizowanego nagrania. |
-| Wskaźnik **Lightning** (bursztyn) | Record Analysis | Zlecenie Priority Review zostało zakolejkowane i rozpocznie się, gdy zwolnią się zasoby. |
-| Wskaźnik **Lightning** (czerwień) | Record Analysis | Próba Priority Review zakończyła się niepowodzeniem. |
-| Wskaźnik **Processed** (niebieski) | Enhanced Record | Pełna analiza komprehensywna jest ukończona. |
-| Wskaźnik **Processed** (bursztyn, z procentem) | Enhanced Record | Analiza komprehensywna jest w toku. |
-| Wskaźnik **Processed** (czerwień) | Enhanced Record | Analiza komprehensywna zakończyła się niepowodzeniem. |
-
-Karta bez ikon statusu wskazuje, że dla danego posiedzenia nie zlecono dotąd żadnej analizy. Oba procesy analizy mogą zostać uruchomione z poziomu widoku szczegółowego.
-
-## Stany pustego widoku
-
-- **No proceedings found** — aktywne filtry nie zwracają żadnych dopasowań. Modyfikacja zapytania, zakresu dat lub doboru typów zazwyczaj rozwiązuje problem.
-- **Failed to load proceedings** — komunikacja z serwerem nie powiodła się. Stronę należy odświeżyć. W przypadku utrzymywania się błędu zespół operacyjny otrzymuje powiadomienie automatycznie.
+* *„No proceedings found”* — aktywne filtry wykluczają wszystkie pozycje z listy.
+* *„Failed to load proceedings”* — błąd połączenia z serwerem. Zaleca się odświeżenie strony.
 
 ## Strony w tej sekcji
 
-- **[Otwieranie posiedzenia](/pl/live-proceedings/analysis)** — widok szczegółowy, odtwarzacz wideo oraz dwie zakładki analizy (Record Analysis i Enhanced Record).
+* **[Otwieranie posiedzenia](/pl/live-proceedings/analysis)** — widok szczegółowy z odtwarzaczem wideo oraz trybami analizy **Record Analysis** i **Enhanced Record**.

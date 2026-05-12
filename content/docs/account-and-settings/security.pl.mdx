@@ -1,108 +1,31 @@
 ---
 title: Bezpieczeństwo i prywatność
-description: Zmiana hasła, konfiguracja i wymiana weryfikacji dwuetapowej, aktywne sesje, historia logowań oraz przyszłe kontrolki eksportu danych.
+description: Zarządzanie ochroną konta — zmiana hasła, uwierzytelnianie dwuskładnikowe oraz monitoring aktywnych sesji.
 ---
 
-Panel **Security & Privacy** gromadzi kontrolki chroniące dostęp do konta: hasło, weryfikację dwuetapową, listę urządzeń aktualnie zalogowanych oraz najnowszą historię logowań. Eksponowana jest tutaj również przyszła kontrolka eksportu danych w trybie GDPR.
+Panel **Security & Privacy** służy do ochrony dostępu do profilu oraz monitorowania historii logowań i aktywnych urządzeń.
 
-## Hasło
+## Hasło logowania
 
-Kontrolka zmiany hasła logowania konta.
+Opcja **Change password** otwiera formularz zmiany klucza dostępu. Nowe hasło musi składać się z minimum ośmiu znaków, zawierać co najmniej jedną cyfrę i jeden znak specjalny. W przypadku kont SSO (Google/Microsoft) zmiana hasła odbywa się po stronie zewnętrznego dostawcy.
 
-Dla użytkowników uwierzytelnianych adresem e-mail i hasłem (domyślnie) wybranie **Change password** otwiera modal wymagający trzech pól:
+## Weryfikacja dwuetapowa (2FA)
 
-- **Stare hasło** — bieżące hasło, w celu ponownego uwierzytelnienia.
-- **Nowe hasło** — zastępcze.
-- **Powtórzenie nowego hasła** — wprowadzone powtórnie w celu zabezpieczenia przed literówkami.
+Uwierzytelnianie dwuskładnikowe jest wymagane dla każdego konta.
 
-Wymagania dla hasła:
+* **Status** — plakietka *Live* potwierdza aktywną ochronę.
+* **Zmiana aplikacji uwierzytelniającej** — przycisk **Replace authenticator** pozwala na wyrejestrowanie obecnej aplikacji i wygenerowanie nowego kodu QR. Proces ten należy ukończyć niezwłocznie po zainicjowaniu.
 
-- Minimum **8 znaków**.
-- Co najmniej **jedna cyfra**.
-- Co najmniej **jeden znak specjalny** (cokolwiek poza `A-Z`, `a-z`, `0-9`).
+## Monitorowanie dostępu
 
-Brak wymogu wielkiej litery. Hasła spełniające kryteria są akceptowane przy zatwierdzeniu; rozbieżności i niespełnione kryteria są eksponowane w treści formularza, zanim zostanie on dopuszczony do zatwierdzenia.
+* **Aktywne sesje** — lista urządzeń aktualnie zalogowanych do profilu. Wiersz oznaczony jako *This device* reprezentuje bieżącą przeglądarkę. Przycisk **Sign out all other devices** pozwala na zdalne zakończenie wszystkich pozostałych sesji.
+* **Historia logowań** — chronologiczny dziennik ostatnich 15 zdarzeń (logowania, wylogowania, zmiany parametrów konta) wraz z adresem IP i typem urządzenia.
 
-Dla użytkowników uwierzytelnionych przez SSO Google lub Microsoft akcja **Change password** zastępowana jest informacją: *"You sign in with [provider]. Password is managed by your identity provider."*. Zmiany haseł wykonywane są po stronie dostawcy.
+## Eksport danych (GDPR)
 
-## Weryfikacja dwuetapowa
+Funkcja oznaczona jako **coming-soon** docelowo umożliwi pobranie pełnego archiwum danych konta (profilu, konwersacji, alertów). Do czasu jej uruchomienia żądania należy kierować bezpośrednio do wsparcia technicznego.
 
-Weryfikacja dwuetapowa (znana również jako MFA lub TOTP) jest **wymagana** dla wszystkich kont Persate. Panel eksponuje bieżący stan oraz kontrolki zarządzania.
+## Stany pustego widoku i błędu
 
-### Gdy 2FA jest skonfigurowane
-
-Panel prezentuje:
-
-- Zieloną plakietkę **Live** potwierdzającą aktywną ochronę.
-- Przyjazną nazwę zarejestrowanego urządzenia (np. *"iPhone Authenticator"*) oraz datę rejestracji.
-- Przycisk **Replace authenticator**.
-
-### Wymiana autentykatora
-
-Wybranie **Replace authenticator** ujawnia osadzony panel potwierdzenia z komunikatem *"Replace your authenticator? We'll remove [device name] and take you to a new QR code so you can enroll a different device. You'll need the new code handy before you confirm — you won't be able to sign in without it."*
-
-Potwierdzenie **Yes, replace** wyrejestrowuje istniejący czynnik TOTP i przekierowuje na ekran **/mfa-setup**, gdzie prezentowany jest nowy kod QR. Użytkownik musi natychmiast ukończyć nową rejestrację — konto pozostaje w stanie zagrożonym do czasu zarejestrowania nowego czynnika.
-
-### Gdy 2FA nie zostało jeszcze skonfigurowane
-
-Stan ten jest niespotykany poza pierwszą rejestracją, ponieważ 2FA jest wymagane już przy rejestracji konta. Tam, gdzie się pojawia (np. dla kont utworzonych przed wprowadzeniem wymogu lub po wyrejestrowaniu), panel prezentuje:
-
-- Opis: *"Add a second factor (authenticator app or security key) to prevent unauthorized sign-in."*
-- Przycisk **Set up** prowadzący do przepływu **/mfa-setup**.
-
-Pełna konfiguracja pierwszorazowa udokumentowana jest w sekcji [Konfiguracja uwierzytelniania dwuskładnikowego](/pl/getting-started/set-up-two-factor) w obrębie Pierwszych kroków.
-
-## Aktywne sesje
-
-Lista każdego urządzenia aktualnie zalogowanego do konta. Lista służy dwóm celom: widoczności miejsc, w których konto jest otwarte, oraz możliwości zdalnego wylogowania urządzeń.
-
-### Wiersz per sesja
-
-Każdy wiersz prezentuje:
-
-- **Ikonę typu urządzenia** (smartfon, tablet, monitor) wnioskowaną na podstawie user agenta.
-- **Etykietę urządzenia** opisującą przeglądarkę i system operacyjny (np. *"Chrome on Windows 11"*).
-- **Adres IP** w momencie ostatniej aktywności, gdy dostępny.
-- **Względny znacznik czasu** najnowszej aktywności (*"just now"*, *"7m ago"*, *"3d ago"* lub absolutną datę dla starszych sesji).
-- Plakietkę **This device** w wierszu reprezentującym bieżącą przeglądarkę.
-- Przycisk **Sign out** w każdym pozostałym wierszu.
-
-### Zbiorcze wylogowanie
-
-Gdy zalogowane są dwa lub większa liczba urządzeń poza bieżącym, pod listą pojawia się przycisk **Sign out all other devices**. Jego wybranie odbiera dostęp każdej sesji poza bieżącą.
-
-Wylogowanych sesji nie można przywrócić — muszą zalogować się od nowa, co (dla sesji na rozpoznawanym urządzeniu) zazwyczaj oznacza ponowne wprowadzenie hasła oraz kodu 2FA.
-
-### Uwaga o kompatybilności
-
-Niektóre buildy dostawcy uwierzytelnienia nie eksponują listy sesji. W takich przypadkach panel wyświetla w miejsce listy *"Session management is not available on this auth provider build. Contact support if you need to sign out remotely."*.
-
-## Historia logowań
-
-Chronologiczny dziennik najnowszych zdarzeń uwierzytelnienia na koncie. Prezentowanych jest do 15 wpisów, najnowsze u góry.
-
-Per wpis:
-
-- **Ikona typu urządzenia** odpowiadająca klasyfikacji parsera.
-- **Etykieta akcji**: *Signed in*, *Signed out*, *Account created*, *Session refreshed* lub *Account updated*.
-- **Etykieta urządzenia** (przeglądarka i system operacyjny).
-- **Znacznik czasu** w lokalnej strefie czasowej użytkownika.
-- **Adres IP**, gdy dostępny.
-
-Dziennik pomaga dostrzec nieznaną aktywność. Logowania z nieoczekiwanych geografii lub urządzeń są zazwyczaj pierwszym sygnałem ostrzegawczym o naruszeniu poświadczeń. Gdy w dzienniku pojawia się nierozpoznany wpis, zalecaną reakcją jest:
-
-1. Zmiana hasła (sekcja Hasło, powyżej).
-2. Wymiana autentykatora 2FA (Weryfikacja dwuetapowa, powyżej).
-3. Wylogowanie wszystkich pozostałych urządzeń (Aktywne sesje, powyżej).
-
-### Uwaga o kompatybilności
-
-Tam, gdzie audit-log nie jest dostępny dla danego konta, panel wyświetla *"Login history isn't exposed for this account. Contact support to enable audit-log access."*.
-
-## Dane i eksport
-
-Kontrolka pobierania wszystkich danych konta lub żądania trwałego usunięcia konta w trybie GDPR.
-
-Kontrolka jest obecnie oznaczona jako **coming-soon** i nieaktywna. Przycisk akcji zarezerwowany jest dla przyszłego przepływu eksportu, który wytworzy archiwum do pobrania zawierające profil użytkownika, konwersacje, alerty oraz wgrane pliki.
-
-Dla kont wymagających eksportu lub usunięcia przed udostępnieniem tej funkcji żądanie należy zgłosić administratorowi przestrzeni roboczej lub bezpośrednio do wsparcia Persate.
+* *„Session management unavailable”* — dla danego typu uwierzytelniania funkcja zdalnego wylogowania sesji nie jest obsługiwana.
+* *„Login history not exposed”* — brak dostępu do dziennika zdarzeń audytowych dla bieżącego profilu.

@@ -1,49 +1,49 @@
 ---
 title: Wgrywanie plików
-description: Dodawanie dokumentów do Repozytorium z określeniem zakresu dostępu.
+description: Dodawanie dokumentów do Repozytorium i określenie zakresu dostępu.
 ---
 
-W celu wgrania plików należy wybrać opcję **Upload** w górnej części paska bocznego. Po prawej stronie ekranu otwiera się panel zawierający kontrolki wyboru plików, ustawienia zakresu dostępu oraz przycisk wysyłki.
+**Wgrywanie plików** pozwala na dodawanie dokumentów do repozytorium. Proces inicjuje się poprzez wybranie opcji **Upload**, w lewej górnej części ekranu, otwiera to panel po prawej stronie ekranu.
 
-## Wybór plików
+## Metody wyboru plików
 
-Obsługiwane są dwie metody:
+Dokumenty można dodać na dwa sposoby:
 
-- **Przeciągnij i upuść** — pliki można przeciągnąć z poziomu systemu operacyjnego na panel wysyłki.
-- **Wybór z dysku** — wybranie strefy upuszczania otwiera systemowe okno wyboru plików.
+* **Przeciągnij i upuść** — pliki można przeciągnąć bezpośrednio z systemu operacyjnego na obszar panelu wysyłki.
+* **Wybór z dysku** — wybranie strefy upuszczania otwiera systemowe okno wyboru plików.
 
-W ramach jednej operacji możliwe jest dodanie wielu plików. Każdy wybrany plik prezentowany jest jako wiersz listy, opisany ikoną typu i nazwą, oraz wyposażony w kontrolkę usunięcia z paczki.
+W ramach jednej operacji można dodać wiele plików jednocześnie. Każdy wybrany element pojawia się na liście z ikoną typu, nazwą oraz opcją usunięcia z paczki przed wysyłką.
 
-Aktualnie przyjmowane są wyłącznie pliki **PDF**, z górnym limitem **20 MB na plik**. Pliki w innych formatach są odrzucane przez panel wysyłki.
+**Ważne:** Aktualnie platforma obsługuje wyłącznie pliki **PDF**. Maksymalny rozmiar pojedynczego dokumentu wynosi **20 MB**.
 
-## Określenie zakresu dostępu
+## Zakres dostępu
 
-W panelu wysyłki znajduje się przełącznik zakresu dostępu z dwoma ustawieniami:
+Przed przesłaniem plików należy określić ich widoczność za pomocą przełącznika:
 
-- **Private** (domyślnie) — pliki widoczne wyłącznie dla użytkownika wgrywającego.
-- **Group** — pliki dodatkowo widoczne dla członków wskazanych grup. Wybranie opcji **Group** udostępnia kontrolkę wielokrotnego wyboru pozwalającą wskazać odpowiednie grupy.
+* **Private** — pliki widoczne wyłącznie dla osoby wgrywającej.
+* **Group** — pliki dostępne dla członków wskazanych grup. Po wybraniu tej opcji pojawia się menu pozwalające na wskazanie odpowiednich grup.
 
-Ustawienie to obowiązuje dla całej paczki. Łączenie plików prywatnych oraz widocznych grupowo w obrębie jednej operacji nie jest możliwe; wymagane są dwie odrębne wysyłki.
+Ustawienie zakresu dostępu dotyczy całej paczki plików wysyłanych w jednej operacji.
 
-<Callout title="Uprawnienia są przypisywane na poziomie pliku, nie folderu">
-Repozytorium nie korzysta z folderów w klasycznym znaczeniu. Zakres dostępu jest powiązany z pojedynczym plikiem (lub paczką wysyłki). Zakres istniejącego pliku można zmodyfikować w późniejszym czasie poprzez sekcję **Sharing** w panelu szczegółów pliku.
-</Callout>
+**Uwaga:** Repozytorium nie korzysta z folderów w klasycznym znaczeniu. Uprawnienia są przypisywane do pojedynczych plików. Zakres dostępu można zmienić w późniejszym czasie w sekcji **Sharing** panelu szczegółów pliku.
 
-## Wysyłka
+## Proces przetwarzania
 
-Wybranie opcji **Upload** w dolnej części panelu inicjuje przesyłanie plików na konto. Większe pliki oraz liczniejsze paczki mogą wymagać zauważalnego czasu; postęp prezentowany jest na pasku.
+Wybranie przycisku **Upload** w dolnej części panelu rozpoczyna przesyłanie plików. Po zakończeniu wysyłki platforma automatycznie wykonuje szereg procesów w tle:
 
-Po zakończeniu wysyłki każdy plik przechodzi szereg procesów wykonywanych w tle:
 
-- **Indeksowanie** — niezbędne dla wyszukiwania pełnotekstowego.
-- **Osadzenie semantyczne (embedding)** — niezbędne, by plik mógł posłużyć jako materiał źródłowy dla asystenta AI.
-- **Generowanie podsumowania** — automatyczne streszczenie wyświetlane w panelu szczegółów pliku.
-- **Wykrycie języka** — identyfikacja języka dokumentu (polskiego, angielskiego oraz innych).
+* Analizuje plik w celu umożliwienia zaawansowanego wyszukiwania i tworzy automatyczne streszczenie treści.
+* Identyfikuje język dokumentu.
+* Przygotowuje dokument do pracy z Asystentem AI.
 
-Pliki stają się dostępne do przeglądania natychmiast po pojawieniu się na liście; dalsze przetwarzanie wzbogaca podsumowanie oraz wyniki wyszukiwania, nie wpływając na podstawowy dostęp.
+Dokumenty pojawiają się na liście natychmiast po przesłaniu, zaawansowane funkcje analizy stają się dostępne po zakończeniu przetwarzania w tle.
 
-## Import plików ze źródeł chmurowych
+## Stany pustego widoku i błędu
 
-Integracje z **Google Drive** oraz **Microsoft OneDrive** są w trakcie przygotowania. Odpowiadająca im pozycja **Sources** w pasku bocznym (sekcja **KNOWLEDGE BASE**) jest obecnie wyłączona i zostanie udostępniona w kolejnym wydaniu.
+* *„File too large”* — wybrany plik przekracza limit 20 MB. Należy zmniejszyć rozmiar dokumentu lub podzielić go na mniejsze części.
+* *„Unsupported file type”* — próba wgrania formatu innego niż PDF.
+* *„Upload failed”* — błąd połączenia podczas przesyłania pliku. Zaleca się ponowienie próby.
 
-→ Dalej: [przeglądanie i porządkowanie plików](/pl/repository/view-and-organize)
+## Import ze źródeł chmurowych
+
+Funkcje importu z usług **Google Drive** oraz **Microsoft OneDrive** są w przygotowaniu. Pozycja **Sources** w pasku bocznym jest aktualnie widoczna, lecz niedostępna — zostanie udostępniona w jednej z kolejnych aktualizacji platformy.

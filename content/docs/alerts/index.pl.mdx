@@ -1,68 +1,57 @@
 ---
 title: Alerty i ryzyka
-description: "Stałe obserwatoria nad strumieniem legislacyjnym: określenie tematu sprawia, że platforma monitoruje każde wystąpienie sejmowe, wpis Public Pulse, nagranie oraz wgrany plik pod kątem dopasowań i prezentuje je jako zdarzenia wyzwalające."
+description: Stałe monitorowanie sygnałów legislacyjnych, wpisów Public Pulse oraz wgranych dokumentów pod kątem zdefiniowanych tematów.
 ---
 
-**Alerty i ryzyka** to mechanizm stałych obserwatoriów platformy. Każdy alert definiuje temat — najczęściej opis w języku naturalnym oraz zestaw słów kluczowych — a platforma monitoruje każdy nadchodzący sygnał legislacyjny pod kątem dopasowań. W przypadku znalezienia dopasowania **zdarzenie wyzwalające** zostaje zarejestrowane przy alercie i wyeksponowane w widoku użytkownika.
+**Alerty i ryzyka** Służą do stałego automatycznego monitorowania napływających sygnałów, transmisji, plików, czy aktywności w mediach społecznościowych, pod kątem zdefiniowanych tematów i słów kluczowych. W przypadku znalezienia dopasowania rejestrowane jest **zdarzenie wyzwalające**.
 
-Dostęp do alertów zapewnia pozycja **CORE → Alerts & Risks** w pasku bocznym.
+Dostęp do modułu zapewnia pozycja **INTELLIGENCE → Alerts & Risks** w pasku bocznym.
 
-## Co obserwuje alert
+## Kanały monitorowania
 
-Alert jest dopasowywany do czterech kanałów treści, każdego prezentującego odrębny rodzaj zdarzenia:
+Platforma monitoruje cztery rodzaje treści:
 
-- **Sejm speech** — transkrypty wystąpień z przeanalizowanych nagrań sejmowych.
-- **Public pulse** — wpisy przechwycone z kont X (Twitter) monitorowanych interesariuszy.
-- **File** — dokumenty wgrane do **Repozytorium** użytkownika.
-- **Live** — fragmenty obecnie transmitowanych sesji, przechwytywane przez pipeline Record Analysis.
+* **Sejm speech** — transkrypty wystąpień z nagrań sejmowych.
+* **Public pulse** — wpisy z kont X monitorowanych interesariuszy.
+* **File** — dokumenty wgrane do repozytorium.
+* **Live** — fragmenty transmitowanych sesji przechwytywane w czasie rzeczywistym.
 
-Ten sam alert może uzyskiwać dopasowania we wszystkich czterech kanałach jednocześnie; każde dopasowanie jest rejestrowane niezależnie.
+## Widok listy alertów
 
-## Lista alertów
-
-Widok otwiera się siatką kart alertów. Karty prezentowane są w układzie dwukolumnowym na ekranach desktopowych oraz jednokolumnowym na wąskich.
+Główny widok prezentuje zestawienie kart wszystkich skonfigurowanych alertów.
 
 ### Karta alertu
 
 Każda karta zawiera:
 
-- **Banner** — tematyczną ilustrację generowaną przez AI w momencie utworzenia alertu. W trakcie generowania ilustracji banner zastępowany jest neutralnym gradientem.
-- **Plakietkę statusu** w lewym dolnym rogu banneru — **ACTIVE** lub **PAUSED**.
-- **Nazwę** alertu w roli nagłówka.
-- Krótki **opis** pod nazwą.
-- Stopkę z napisem **Last trigger** uzupełnionym najnowszą datą zarejestrowanego dopasowania. W przypadku braku zdarzeń wartość prezentowana jest jako *N/A*.
-- Opcjonalny **popover atrybucji** w stopce odtwarzający źródło atrybucji obrazu banneru.
+* **Banner** — ilustrację tematyczną dopasowywaną na podstawie tematu danego alertu.
+* **Status** — **ACTIVE** (aktywny) lub **PAUSED** (wstrzymany).
+* **Nazwę i opis** — etykiety identyfikujące monitorowany temat.
+* **Last trigger** — datę najnowszego zarejestrowanego dopasowania.
 
-Wybranie karty otwiera **widok szczegółowy**, opisany w sekcji [Wgląd w alert](/pl/alerts/alert-detail).
+Wybranie karty otwiera widok szczegółowy z historią wszystkich zdarzeń.
 
-## Pasek boczny
+## Panel boczny
 
-W prawym panelu bocznym dostępne są dwie kontrolki.
+W prawym panelu bocznym dostępne są funkcje zarządzania:
 
-### Create alert
-
-Wyróżniony przycisk **Create alert** w górnej części paska otwiera formularz tworzenia alertu. Pełny opis formularza znajduje się w sekcji [Tworzenie i edycja alertów](/pl/alerts/creating-alerts).
-
-### Wyszukiwanie
-
-Pole tekstowe filtrujące załadowane alerty według nazwy, opisu lub słowa kluczowego. Dopasowanie ignoruje wielkość liter i aktualizuje się w trakcie wpisywania zapytania.
+* **Create alert** — otwiera formularz tworzenia nowego alertu.
+* **Wyszukiwanie** — pozwala na filtrowanie listy alertów według nazwy lub opisu.
 
 ## Cykl życia alertu
 
-Alert przechodzi przez trzy stany:
+Alert może znajdować się w jednym z trzech stanów:
 
-- **Active** — alert jest dopasowywany do napływających zdarzeń. Nowe dopasowania kumulują się jako zdarzenia wyzwalające.
-- **Paused** — alert jest zachowywany, lecz nowe dopasowania nie są wykonywane. Zdarzenia zgromadzone przed wstrzymaniem pozostają widoczne.
-- **Deleted** — alert wraz z historią zdarzeń zostaje trwale usunięty. Usunięcie wymaga potwierdzenia i jest nieodwracalne.
-
-Przejścia stanów wykonuje się z poziomu widoku szczegółowego alertu za pomocą kontrolek **Pause** / **Resume** oraz akcji **Delete**.
+* **Active** — platforma aktywnie szuka dopasowań w nowych danych.
+* **Paused** — nowe dopasowania nie są wykonywane, lecz dotychczasowa historia pozostaje dostępna.
+* **Deleted** — alert wraz z całą historią zostaje trwale i nieodwracalnie usunięty.
 
 ## Stany pustego widoku i błędu
 
-- **No alerts found** — na koncie nie utworzono jeszcze żadnych alertów lub aktywne wyszukiwanie wyklucza każdy załadowany alert. Punktem wejścia dla pierwszego alertu jest przycisk **Create alert** w pasku bocznym.
-- **Czerwony banner błędu** pojawia się nad listą, gdy komunikacja z feature service'em zawiedzie. Stronę można odświeżyć; powtarzające się błędy są raportowane do zespołu operacyjnego automatycznie.
+* *„No alerts found”* — na koncie nie utworzono jeszcze żadnych alertów lub filtry wyszukiwania wykluczają wszystkie pozycje.
+* *„Couldn't load alerts”* — błąd komunikacji z serwerem. Zaleca się odświeżenie strony.
 
 ## Strony w tej sekcji
 
-- **[Tworzenie i edycja alertów](/pl/alerts/creating-alerts)** — formularz alertu: nazwa, opis, słowa kluczowe, widoczność, ulepszenie AI oraz ostrzeżenie o duplikatach.
-- **[Wgląd w alert](/pl/alerts/alert-detail)** — widok szczegółowy: banner tytułowy, kontrolki akcji, historia wyzwoleń oraz panel udostępniania.
+* **[Tworzenie i edycja alertów](/pl/alerts/creating-alerts)** — opis formularza, słów kluczowych i ulepszania AI.
+* **[Wgląd w alert](/pl/alerts/alert-detail)** — historia zdarzeń wyzwalających, kontrolki statusu i panel uprawnień.

@@ -1,54 +1,35 @@
 ---
 title: Konto i ustawienia
-description: "Modal ustawień: jak go otworzyć, jakie zawiera panele oraz co obejmuje każdy z paneli."
+description: Zarządzanie profilem, bezpieczeństwem, powiadomieniami oraz preferencjami platformy z poziomu ustawień.
 ---
 
-**Modal ustawień** to pojedynczy punkt zarządzania kontem, bezpieczeństwem, powiadomieniami, wyglądem oraz domyślnymi ustawieniami funkcji platformy. Jest modalem, a nie dedykowaną stroną, by pozostawał dostępny z dowolnego miejsca aplikacji bez utraty bieżącej pozycji użytkownika.
+**Okno ustawień** to centralny punkt zarządzania profilem i parametrami pracy na platformie. Zostało zaprojektowane jako nakładka dostępna z dowolnego miejsca w aplikacji, co pozwala na zmianę ustawień bez utraty bieżącego stanu pracy.
 
-## Jak go otworzyć
+Dostęp do ustawień możliwy jest poprzez wybranie ikony profilu w górnym pasku nawigacyjnym, a następnie wybranie przycisku **Settings** z ikoną zębatki.
 
-Trzy punkty wejścia prowadzą do tego samego modala.
+## Struktura ustawień
 
-- **Pasek boczny** — wybranie ikony zębatki w dolnej części paska bocznego (lub pozycji **Settings** w układzie rozwiniętym).
-- **Górny pasek nawigacyjny** — wybranie ikony zębatki w prawym górnym klastrze pulpitu.
-- **Dock mobilny** — pozycja **Profile** w dolnym docku otwiera modal w jego mobilnym układzie pełnoekranowym.
+Ustawienia podzielone są na dwie kategorie:
 
-Modal otwiera się domyślnie na panelu **Account**. Niektóre odsyłacze w innych miejscach platformy (np. tarcza głębokości w Asystencie) odsyłają wprost do konkretnego panelu — modal otwiera się wtedy na wskazanym panelu.
+### Kategoria GENERAL
 
-## Układ
+* **Account - konto** — tożsamość w platformie: zdjęcie profilowe, wyświetlana nazwa, adres e-mail i role.
+* **Security & Privacy - bezpieczeństwo i prywatność** — ochrona dostępu: zmiana hasła, uwierzytelnianie dwuskładnikowe oraz lista aktywnych i przeszłych sesji.
+* **Notifications - powiadomienia** — konfiguracja powiadomień systemowych i alertów e-mail.
+* **Preferences - preferencje** — personalizacja interfejsu: motywy kolorystyczne, język i strefa czasowa.
 
-Modal zajmuje środek ekranu (do 1160 × 860 px na desktopie) na zaciemnionym tle. Zorganizowany jest w:
+### Kategoria PLATFORM
 
-- **Nagłówek** — tytuł modala (*Settings*) oraz podtytuł odzwierciedlający aktywny panel.
-- **Pasek boczny** *(po lewej)* — przełącznik paneli zorganizowany w dwie grupy (**GENERAL** oraz **PLATFORM**).
-- **Obszar treści** *(po prawej)* — aktywny panel.
+* **Advisor** — parametry pracy Asystenta AI (np. głębokość analizy).
+* **Analysis** — ustawienia synchronizacji dokumentów i inteligentnych sugestii.
 
-Na ekranach mobilnych pasek boczny zwija się za przyciskiem cofnięcia; wybranie panelu przechodzi do jego pełnoekranowej treści wraz z paskiem nawigacyjnym u góry.
+## Stany pustego widoku i błędu
 
-## Panele
-
-Sześć paneli prezentowanych w dwóch grupach.
-
-### GENERAL
-
-| Panel | Obejmuje |
-| --- | --- |
-| **Account** | Zdjęcie profilowe, nazwę wyświetlaną, adres e-mail logowania, rolę oraz członkostwo w grupach. Patrz [Konto](/pl/account-and-settings/account). |
-| **Security & Privacy** | Hasło, weryfikację dwuetapową, aktywne sesje, historię logowań oraz eksport danych. Patrz [Bezpieczeństwo i prywatność](/pl/account-and-settings/security). |
-| **Notifications** | Preferencje powiadomień e-mail. Patrz [Preferencje, powiadomienia i analiza](/pl/account-and-settings/preferences). |
-| **Preferences** | Wygląd/motyw, reset ukrytych bannerów, język, strefa czasowa. Patrz [Preferencje, powiadomienia i analiza](/pl/account-and-settings/preferences). |
-
-### PLATFORM
-
-| Panel | Obejmuje |
-| --- | --- |
-| **Advisor** | Domyślną głębokość myślenia dla nowych konwersacji. Udokumentowane w sekcji Asystenta na stronie [Dobre praktyki](/pl/advisor/best-practices). |
-| **Analysis** | Interwał synchronizacji plików oraz inteligentne sugestie. Patrz [Preferencje, powiadomienia i analiza](/pl/account-and-settings/preferences). |
+* *„Settings unavailable”* — błąd ładowania parametrów konta. Zaleca się odświeżenie strony.
+* *„Feature locked”* — niektóre ustawienia (np. zmiana e-maila w kontach SSO) są zarządzane przez zewnętrznych dostawców i pozostają zablokowane w interfejsie Persate.
 
 ## Strony w tej sekcji
 
-- **[Konto](/pl/account-and-settings/account)** — zarządzanie zdjęciem profilowym, nazwą wyświetlaną, adresem e-mail, rolą oraz członkostwem w grupach.
-- **[Bezpieczeństwo i prywatność](/pl/account-and-settings/security)** — zmiana hasła, konfiguracja i wymiana weryfikacji dwuetapowej, aktywne sesje i historia logowań oraz przyszłe kontrolki eksportu danych.
-- **[Preferencje, powiadomienia i analiza](/pl/account-and-settings/preferences)** — wygląd i język, przełączniki powiadomień e-mail oraz kontrolki panelu Analysis (większość w przygotowaniu).
-
-Panel **Advisor** — domyślna głębokość myślenia — udokumentowany jest w sekcji Asystenta na stronie [Dobre praktyki](/pl/advisor/best-practices), ponieważ najlepiej rozumie się go w zestawieniu z tarczą głębokości per wiadomość.
+* **[Konto](/pl/account-and-settings/account)** — zarządzanie zdjęciem profilowym, nazwą wyświetlaną oraz członkostwem w grupach.
+* **[Bezpieczeństwo i prywatność](/pl/account-and-settings/security)** — zmiana hasła, zarządzanie aplikacją autoryzacyjną i historia logowań.
+* **[Preferencje i powiadomienia](/pl/account-and-settings/preferences)** — konfiguracja wyglądu, powiadomień oraz funkcji w przygotowaniu.

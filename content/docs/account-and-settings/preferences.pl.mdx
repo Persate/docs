@@ -1,85 +1,33 @@
 ---
-title: Preferencje, powiadomienia i analiza
-description: Preferencje wyglądu i języka, przełączniki powiadomień e-mail oraz kontrolki panelu Analysis — trzy mniejsze panele Ustawień skonsolidowane dla referencji.
+title: Preferencje i powiadomienia
+description: Personalizacja interfejsu, ustawienia powiadomień e-mail oraz parametry analizy danych.
 ---
 
-Niniejsza strona omawia trzy mniejsze panele **Modala ustawień**: **Preferences**, **Notifications** oraz **Analysis**. Część kontrolek w tych panelach jest obecnie oznaczona jako **coming-soon** i eksponowana w celu widoczności — staną się one aktywne w kolejnych wydaniach.
+Panele **Preferences**, **Notifications** oraz **Analysis** służą do konfiguracji sposobu działania i wyglądu platformy. Niektóre funkcje oznaczone jako **coming-soon** zostaną udostępnione w nadchodzących wydaniach.
 
-Czwarty panel funkcji platformy — **Advisor** — udokumentowany jest w sekcji Asystenta na stronie [Dobre praktyki](/pl/advisor/best-practices).
+## Wygląd i interfejs
 
-## Preferences
+W panelu **Preferences** można zarządzać warstwą wizualną:
 
-Ustawienia rządzące tym, jak platforma wygląda i się zachowuje.
+* **Motyw** — wybór pomiędzy *Moonlit night* (ciemny), *Sunny mode* (jasny) a *Follow system* (automatyczny).
+* **Bannery funkcji** — przycisk **Reset** pozwala na przywrócenie wszystkich wcześniej ukrytych bannerów wprowadzających na stronach modułów.
 
-### Wygląd
+## Powiadomienia e-mail
 
-Selektor motywu z trzema opcjami:
+Panel **Notifications** pozwala na zarządzanie komunikacją wychodzącą:
 
-- **Moonlit night** *(domyślny)* — motyw ciemny.
-- **Sunny mode** — motyw jasny.
-- **Follow system** — platforma respektuje preferencję motywu systemu operacyjnego użytkownika, przełączając się automatycznie wraz z jej zmianą.
+* **Aktualizacje produktu** — jedyny obecnie aktywny przełącznik, sterujący wysyłką informacji o nowych funkcjach.
+* **Alerty bezpieczeństwa** — (w przygotowaniu) powiadomienia o logowaniach i zmianach hasła.
+* **Cotygodniowy digest** — (w przygotowaniu) podsumowanie zmian w obserwowanych zasobach.
 
-Zmiana wchodzi w życie natychmiast i utrzymuje się pomiędzy sesjami i urządzeniami.
+## Parametry analizy
 
-### Bannery funkcji
+W panelu **Analysis** (funkcje dostępne wkrótce) znajduje się:
 
-Każda główna strona funkcji (Cockpit, Posiedzenia na żywo, Rejestr głosowań, Interesariusze, Public Pulse, Alerty, Asystent AI) nosi możliwy do oddalenia banner wprowadzający opisujący, czym dana funkcja jest. Po oddaleniu banner nie pojawia się już ponownie automatycznie.
+* **Interwał synchronizacji** — częstotliwość pobierania plików z zewnętrznych źródeł (Google Drive, OneDrive).
+* **Inteligentne sugestie** — przełącznik automatycznego rekomendowania powiązanych postępowań i dokumentów.
 
-Kontrolka **Feature banners** raportuje liczbę aktualnie oddalonych bannerów oraz eksponuje pojedynczy przycisk **Reset**. Reset przywraca każdy uprzednio oddalony banner; bannery oddalają się ponownie wyłącznie na jawne działanie użytkownika.
+## Stany pustego widoku i błędu
 
-W przypadku braku oddalonych bannerów kontrolka prezentuje *"No banners hidden"*, a akcja jest niedostępna.
-
-### Język *(w przygotowaniu)*
-
-Interfejs platformy jest obecnie wyłącznie anglojęzyczny. Dodatkowe lokalizacje zaplanowane są na kolejne wydanie.
-
-Bieżąca lokalizacja prezentowana jest w celu odniesienia (*English*); selektor stanie się aktywny po przetłumaczeniu kolejnych lokalizacji.
-
-### Strefa czasowa *(w przygotowaniu)*
-
-Znaczniki czasu w obrębie platformy — posiedzenia, digesty, zaplanowane briefingi — renderują się obecnie w strefie czasowej przeglądarki użytkownika. Przyszła preferencja strefy czasowej przechowywana po stronie serwera pozwoli temu samemu kontu renderować czasy spójnie pomiędzy urządzeniami i współdzielonymi treściami.
-
-Bieżąca wartość domyślna to *(GMT +2:00) Warsaw*.
-
-## Notifications
-
-Preferencje powiadomień e-mail. Platforma nie oferuje obecnie powiadomień osadzonych ani powiadomień push; oba zaplanowane i eksponowane jako pozycje **coming-soon**.
-
-### Aktualizacje produktu
-
-E-mail o nowych funkcjach, ulepszeniach oraz notatkach wydania. Wysyłane nie częściej niż raz w tygodniu.
-
-Jest to **jedyny obecnie aktywny przełącznik** w panelu. Wartość domyślna to **on**; może zostać przełączony na off w dowolnym momencie. Zmiany utrwalane są natychmiast w metadanych konta użytkownika.
-
-### Alerty bezpieczeństwa *(w przygotowaniu)*
-
-E-mail dla prób logowania, zmian hasła oraz zdarzeń MFA. Przełącznik jest obecnie nieaktywny — po udostępnieniu będzie **on by default** i nie będzie wymagał manualnego włączenia.
-
-### Cotygodniowy digest *(w przygotowaniu)*
-
-Poniedziałkowy poranny e-mail podsumowujący zmiany w obserwowanych dokumentach użytkownika, śledzonych interesariuszach oraz aktywnych alertach. Przełącznik jest obecnie nieaktywny.
-
-### W aplikacji i push *(w przygotowaniu)*
-
-Roadmapa platformy obejmuje zarówno powiadomienia w aplikacji (centrum powiadomień dostępne z górnego paska nawigacyjnego), jak i powiadomienia push (dostarczane na urządzenie mobilne użytkownika). Żadne nie jest jeszcze eksponowane jako przełącznik — wiersz uwzględniony jest dla widoczności.
-
-## Analysis
-
-Panel **Analysis** rządzi tym, jak platforma indeksuje i łączy pliki. Obie kontrolki w tym panelu są obecnie **coming-soon**.
-
-### Interwał synchronizacji *(w przygotowaniu)*
-
-Częstotliwość, z jaką platforma pobiera nowe pliki z podłączonych źródeł zewnętrznych. Selektor eksponuje cztery interwały — *Every hour*, *Every three hours*, *Every twelve hours*, *Once a day* — i wejdzie w życie po włączeniu integracji **Sources** (Google Drive, Microsoft OneDrive). Do tego czasu selektor pełni funkcję informacyjną.
-
-### Inteligentne sugestie *(w przygotowaniu)*
-
-Przełącznik, który po włączeniu sprawi, że platforma proaktywnie eksponuje powiązane postępowania, poprawki oraz odsyłacze krzyżowe w przepływie pracy użytkownika. Wartością domyślną będzie **off**; użytkownicy chcący doświadczenia bardziej aktywnie rekomendującego włączą tu opcję.
-
-## Dlaczego tyle kontrolek "w przygotowaniu"
-
-Modal ustawień jest z założenia wybiegający w przyszłość. Każdy wiersz *coming-soon* rezerwuje miejsce, w którym dane ustawienie pojawi się po udostępnieniu wspierającej go funkcji, dzięki czemu użytkownicy uczący się układu jednorazowo nie muszą uczyć się go ponownie po każdym wydaniu.
-
-W praktyce dziś:
-
-- **Account, Security & Privacy, Advisor, Preferences (Wygląd i Bannery funkcji) oraz Notifications (Aktualizacje produktu)** są w pełni aktywne.
-- **Preferences (Język i Strefa czasowa), Notifications (Alerty bezpieczeństwa, Cotygodniowy digest, W aplikacji i push), Analysis (obie kontrolki) oraz Security & Privacy (Dane i eksport)** są widoczne, lecz jeszcze nieoperacyjne.
+* *„No banners hidden”* — brak bannerów do zresetowania, przycisk pozostaje nieaktywny.
+* *„Feature coming soon”* — próba konfiguracji funkcji przewidzianej w przyszłości.

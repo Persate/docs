@@ -1,130 +1,83 @@
 ---
 title: Interfejs i praca z Asystentem
-description: Komponowanie wiadomości, zarządzanie plikami, poziomy głębokości analizy oraz praca z historią i cytowaniami.
+description: Kompozycja wiadomości, oznaczanie plików, poziomy głębokości analizy, oś czasu, cytowania oraz historia konwersacji.
 ---
 
 ## Strefa kompozycji zapytania
 
-Panel wprowadzania wiadomości znajduje się w dolnej części ekranu i zawiera trzy kluczowe elementy:
+Panel wprowadzania wiadomości znajduje się w dolnej części ekranu i zawiera trzy elementy:
 
-*   **Selektor głębokości:** Ikona po lewej stronie pozwala wybrać intensywność analizy dla **następnej wiadomości** (**Surface**, **Balanced**, **Deep**). Wybór dotyczy tylko bieżącego pytania — po wysyłaniu wiadomości system wraca do ustawienia domyślnego.
-*   **Pole tekstowe:** Obsługuje wprowadzanie wielu linii tekstu (**Shift + Enter**). Sam klawisz **Enter** wysyła zapytanie do analizy.
-*   **Przycisk wysyłania wiadomości:** Jest nieaktywny, gdy pole jest puste lub gdy Asystent wciąż generuje odpowiedź na poprzednie pytanie.
-
-**Uwaga:** Pod polem tekstowym znajduje się przypomnienie o konieczności weryfikacji kluczowych informacji – Asystent pracuje na faktach, ale zawsze warto sprawdzić najważniejsze dane u źródła.
-
-## Stan początkowy
-
-Zanim otwarta zostanie jakakolwiek konwersacja, przestrzeń robocza prezentuje wycentrowane powitanie (*"Good morning, "* uzupełnione nazwą wyświetlaną użytkownika) oraz monit *"Can I help you with anything?"*. Strefa kompozycji znajduje się pod powitaniem i pozycjonowana jest na środku ekranu do momentu wysłania pierwszej wiadomości. Po pierwszej wysyłce układ przechodzi w przejście: obszar wiadomości rozwija się ku górze, a strefa kompozycji dokuje na dole.
+* **Selektor głębokości** — ikona po lewej stronie pozwala wybrać intensywność analizy (**Surface**, **Balanced**, **Deep**) dla następnej wiadomości. Wybór dotyczy wyłącznie bieżącego pytania — po wysłaniu system wraca do ustawienia domyślnego. Domyślną wartość konfiguruje się w **Settings → Advisor**.
+* **Pole tekstowe** — obsługuje wprowadzanie wielu linii tekstu (`Shift + Enter`). Klawisz `Enter` wysyła zapytanie.
+* **Przycisk wysyłania** — nieaktywny, gdy pole tekstowe jest puste lub gdy asystent generuje odpowiedź na poprzednie pytanie.
 
 ## Oznaczanie plików (`@`)
 
-Możesz precyzyjnie wskazać dokumenty, na których ma skupić się Asystent. Wpisanie symbolu **`@`** w polu tekstowym otwiera wyszukiwarkę plików z Twojego **Repozytorium** oraz korpusu publicznego.
+Wpisanie symbolu `@` w polu tekstowym otwiera wyszukiwarkę dokumentów z Repozytorium oraz korpusu publicznego:
 
-*   **Wyszukiwanie po nazwie:** Szybki tryb, gdy znasz konkretny tytuł dokumentu.
-*   **Wyszukiwanie hybrydowe (treściowe):** Przełącznik w prawej części pola wyszukiwania pozwala szukać dokumentów na podstawie ich zawartości, nawet jeśli nazwa pliku nie zawiera szukanej frazy.
-*   **Znaczniki plików:** Wybrane dokumenty pojawiają się jako znaczniki nad polem tekstowym. Możesz załączyć wiele plików jednocześnie.
+* **Wyszukiwanie po nazwie** — szybki tryb dla plików o znanych tytułach.
+* **Wyszukiwanie hybrydowe** — przełącznik w prawej części pola wyszukiwania umożliwia szukanie dokumentów na podstawie ich treści.
+* **Znaczniki plików** — pojawiają się nad polem tekstowym. Można załączyć wiele plików jednocześnie.
 
-**Kiedy załączać pliki?** Załączaj plik bezpośrednio, gdy wiesz, że zawiera on odpowiedź. Jeśli nie masz pewności, gdzie znajduje się informacja, pozwól Asystentowi samodzielnie przeszukać zasoby.
+Plik warto załączyć bezpośrednio, gdy zawiera on szukaną odpowiedź. Jeśli lokalizacja informacji jest nieznana, lepiej pozwolić asystentowi samodzielnie przeszukać zasoby.
 
 ## Oś czasu wiadomości
 
-Każda tura produkuje **oś czasu wiadomości** strumieniowaną od góry odpowiedzi, przed treścią właściwą. Oś czasu jest widocznym zapisem tego, co asystent zrobił, by wytworzyć odpowiedź.
+Każda tura produkuje **oś czasu wiadomości** strumieniowaną przed treścią odpowiedzi. Stanowi widoczny zapis działań asystenta w trakcie pracy.
 
 ### Bloki rozumowania
 
-Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *"Thinking…"* (w trakcie pracy) lub *"Working through the request"* (po jej zakończeniu). Pozostają otwarte, gdy agent jest w trakcie rozumowania, i zwijane są automatycznie po zakończeniu tury — użytkownik może ponownie otworzyć dowolny blok w celu inspekcji rozumowania.
+Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *„Thinking…"* (w trakcie pracy) lub *„Working through the request"* (po zakończeniu). Po zakończeniu tury bloki są automatycznie zwijane — dowolny z nich można ponownie otworzyć w celu inspekcji.
 
-Bloki rozumowania nie są ostateczną odpowiedzią; są roboczymi notatkami modelu. Są przydatne dla zrozumienia *dlaczego* agent doszedł do danego wniosku, szczególnie gdy wniosek jest zaskakujący.
+Bloki rozumowania stanowią robocze notatki modelu, nie część ostatecznej odpowiedzi. Są przydatne do zrozumienia, *dlaczego* asystent doszedł do danego wniosku.
 
-### Plakietki wywołań narzędzi
+### Znaczniki wywołań narzędzi
 
-Każde zewnętrzne wyszukiwanie wykonywane przez agenta staje się **plakietką** w osi czasu. Plakietka zawiera:
+Każde zewnętrzne wyszukiwanie wykonywane przez asystenta staje się znacznikiem w osi czasu. Zawiera on:
 
-- **Ikonę** identyfikującą **rodzinę umiejętności** (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
-- **Humanizowaną nazwę narzędzia** — `legislation.list_votings` staje się *List votings*, `documents.hybrid_search` staje się *Hybrid search*.
-- **Glif stanu**: spinner dla *running*, `…` dla *pending*, wykrzyknik dla *error*. Pomyślne wywołania prezentują **czas zegarowy** wykonania (np. `1.2s`).
+* **Ikonę** identyfikującą rodzinę umiejętności (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
+* **Nazwę narzędzia**.
+* **Status** — ikony odpowiadające kolejnym etapom pracy. Zakończone wywołania prezentują czas wykonania (np. `1.2s`).
 
-Sąsiednie wywołania narzędzi są składane w **zwijaną grupę** (*"Using N tools…"* w trakcie pracy, *"N tools used"* po jej zakończeniu), tak by tura wywołująca osiem wyszukiwań po kolei nie produkowała domyślnie ośmiowierszowego bloku.
+Sąsiednie wywołania narzędzi są składane w zwijaną grupę (*„Using N tools…"* w trakcie, *„N tools used"* po zakończeniu).
 
 ### Formularze elicytacji
 
-Niektóre narzędzia wymagają od użytkownika strukturalnego wkładu w trakcie tury — wyboru jednej z kilku kadencji Sejmu, wskazania właściwego posła w sytuacji kolizji nazwisk, potwierdzenia akcji destrukcyjnej. Wówczas narzędzie emituje **żądanie elicytacji**: plakietka pozostaje w stanie *running*, a pod nią pojawia się osadzony formularz.
+Niektóre narzędzia wymagają strukturalnego wkładu w trakcie tury — np. wyboru kadencji Sejmu lub wskazania posła przy kolizji nazwisk. Narzędzie emituje wówczas **żądanie elicytacji**: proces pozostaje w stanie *running*, a pod nią pojawia się formularz.
 
-- Pola tekstowe renderują się jako pola wprowadzania.
-- Wartości jednokrotnego wyboru renderują się jako listy rozwijane.
-- Potwierdzenia logiczne renderują się jako pola wyboru.
-- Żądania o strukturze obiektu renderują się jako stos pól nazwanych.
+Formularz należy zatwierdzić lub pominąć (pominięte żądania korzystają z domyślnej wartości narzędzia). Po rozstrzygnięciu wywołanie narzędzia wznawia się.
 
-Użytkownik zatwierdza lub pomija. Zatwierdzona wartość jest zapisywana w treści (*"You answered: ..."*); pominięte żądania korzystają z domyślnej wartości narzędzia. Po rozstrzygnięciu wywołanie narzędzia wznawia się i produkuje swój ostateczny wynik.
+## Odnośniki w odpowiedziach
 
-Asystent nie powiela tego zachowania w swojej własnej treści — gdy narzędzie potrafi rozstrzygnąć poprzez elicytację, model wywołuje je zamiast zadawać użytkownikowi to samo pytanie tekstowo.
+W treści odpowiedzi mogą znaleźć się odnośniki, które pozwalają na szybki dostęp do materiałów źródłowych. Są to bezpośrednie linki do konkretnych elementów systemu. Kliknięcie ich otwiera w nowej karcie:
+   * Głosowania w Rejestrze głosowań.
+   * Profile interesariuszy oraz szczegóły alertów.
+   * Oryginalne wpisy w serwisie X.
+   * Konkretne pliki lub ich fragmenty w Repozytorium.
 
-## Cytowania
+## Przyciski per wiadomość
 
-Treść odpowiedzi asystenta wykorzystuje dwa odrębne style cytowań, oba renderowane w specjalny sposób.
+Pod każdą ukończoną wiadomością asystenta dostępne są ikony:
 
-### Plakietki zasobów
-
-Wbudowane tokeny postaci `[scheme://...]` (np. `[legislation://voting/12/47]`, `[feature://stakeholder/abc-123]`) renderowane są jako plakietki opatrzone ikoną źródła, etykietą oraz celem kliknięcia otwierającym odpowiadający rekord w platformie. Użytkownik nie widzi samego URI — widzi wyłącznie plakietkę — lecz URI to dokładnie to, co model wyemitował, i pozostaje stabilne pomiędzy regeneracjami.
-
-Obsługiwane schematy URI:
-
-| Schemat | Otwiera |
-| --- | --- |
-| `legislation://voting/{proceeding}/{voting_number}` | Szczegóły głosowania w **Rejestrze głosowań**. |
-| `feature://stakeholder/{stakeholder_id}` | Profil interesariusza. |
-| `feature://public_pulse/tweet/{tweet_id}` | Oryginalny wpis w X. |
-| `feature://alert/{alert_id}` | Szczegóły alertu. |
-| `documents://file/{file_id}` | Plik w **Repozytorium**. |
-| `documents://chunk/{file_id}/{chunk_id}` | Plik przewinięty do konkretnego fragmentu. |
-
-### Cytowania plików
-
-Odniesienia postaci `[filename, citation-id]` w treści modelu renderowane są jako niewielkie numerowane plakietki w indeksie górnym wbudowane w tekst. Najechanie ujawnia źródłową nazwę pliku z ikoną formatu pliku; kliknięcie pobiera plik.
-
-Ten styl jest zarezerwowany dla wyników wyszukiwania hybrydowego asystenta po wgranych plikach — gdy odpowiedź jest ugruntowana we fragmencie, który użytkownik sam wgrał, cytowanie eksponuje oryginalny dokument bezpośrednio.
-
-## Kontrolki per wiadomość
-
-Pod każdą ukończoną wiadomością asystenta:
-
-- **Copy** — kopiuje treść właściwą do schowka. Znaczniki cytowań zastępowane są ich tekstową reprezentacją.
-- **Regenerate** — ponownie wysyła poprzednią wiadomość użytkownika i produkuje nową odpowiedź. Oryginalna odpowiedź zostaje zastąpiona; wcześniejsze tury powyżej nie są naruszane.
-
-Edycja i ponowne wysłanie wiadomości użytkownika nie jest dziś dostępne.
+* **Kopiowanie** — kopiuje treść odpowiedzi do schowka. Znaczniki cytowań zastępowane są ich tekstową reprezentacją.
+* **Strzałka restartu** — ponownie wysyła poprzednie zapytanie i zastępuje bieżącą odpowiedź nową.
 
 ## Historia konwersacji
 
-Prawa kolumna wymienia każdą konwersację na koncie użytkownika.
+Prawa kolumna interfejsu zawiera listę wszystkich konwersacji na koncie:
 
-- **Advisor History** to tytuł kolumny.
-- **New conversation** w górnej części czyści przestrzeń roboczą.
-- Wcześniejsze konwersacje wymienione są pod tematem wyprowadzonym przez platformę z ich pierwszych wiadomości. *New conversation* to wartość zastępcza, dopóki temat nie zostanie ustalony.
-- Wybranie konwersacji ponownie ją otwiera. Transkrypt zostaje załadowany z pełną wiernością — bloki rozumowania, plakietki narzędzi, plakietki cytowań i wszelkie nierozstrzygnięte formularze elicytacji są rekonstruowane.
-- Przycisk kosza obok każdej pozycji trwale usuwa konwersację wraz z jej transkryptem. Kontrolka pojawia się przy najechaniu dla nieaktywnych konwersacji i zawsze widoczna jest dla aktywnej.
+* **New conversation** — czyści przestrzeń roboczą i inicjuje nową sesję.
+* Wcześniejsze konwersacje wyświetlane są pod tematem wyprowadzonym z ich pierwszych wiadomości.
+* Wybranie konwersacji otwiera ją z pełnym zapisem — bloki rozumowania, plakietki narzędzi i cytowania są rekonstruowane.
+* Ikona kosza przy pozycji trwale usuwa konwersację wraz z historią.
 
-Na wąskich ekranach kolumna historii ukryta jest za przyciskiem **History** w prawym górnym rogu przestrzeni roboczej; jego wybranie wysuwa szufladę dolną z tą samą zawartością.
+Na wąskich ekranach kolumna historii jest dostępna przez przycisk **History** w prawym górnym rogu.
 
 ## Odświeżenie i wznowienie
 
-Tura w toku, gdy użytkownik opuszcza konwersację, odświeża przeglądarkę lub na chwilę traci łączność, **nie jest tracona**. Backend asystenta wykonuje turę jako odłączone zadanie tła i transmituje swoje zdarzenia do klientów podłączonych w chwili ich wyzwolenia. Ponowne otwarcie konwersacji ponownie podłącza do strumienia na żywo i odtwarza to, co dotąd się wydarzyło, zanim nowe zdarzenia zaczną napływać dalej.
+Aktywna tura nie zostaje utracona po opuszczeniu widoku, odświeżeniu przeglądarki lub chwilowej utracie połączenia. Asystent realizuje turę jako odłączone zadanie i transmituje zdarzenia do klientów podłączonych w momencie ich wyzwolenia. Ponowne otwarcie konwersacji podłącza do strumienia na żywo i odtwarza dotychczasowy postęp.
 
-W praktyce oznacza to, że bezpiecznie można:
+## Stany pustego widoku i błędu
 
-- Wysłać zapytanie **Deep** i przejść do **Posiedzeń na żywo** w celu zajęcia się czymś innym, podczas gdy asystent pracuje.
-- Świadomie odświeżyć przeglądarkę w trakcie strumienia — odpowiedź będzie składana dalej.
-- Otworzyć konwersację w drugiej karcie — obie karty widzą ten sam strumień.
-
-Jedynym scenariuszem, który przerywa turę, jest jawne usunięcie konwersacji przez użytkownika w trakcie jej trwania.
-
-## Błędy
-
-Gdy w trakcie tury coś pójdzie źle, pod częściową odpowiedzią pojawia się blok błędu. Blok zawiera:
-
-- **Kod błędu** identyfikujący kategorię awarii (np. `turn_budget_exhausted`, `tool_unavailable`, `model_refusal`).
-- **Komunikat** opisujący konkretną awarię.
-
-Najczęstsze przyczyny to wyczerpanie budżetu (tura legalnie zabrakło zasobów na pytanie), niedostępność usługi nadrzędnej (jedna z usług zaplecza chwilowo nie odpowiada) oraz odmowy zakresu korpusu (pytanie wykracza poza zakres, do którego asystent jest zbudowany).
-
-Ponowne uruchomienie nieudanej tury jest rozsądną pierwszą reakcją. W przypadku utrzymującego się błędu pomocne może być zawężenie pytania lub jego rozbicie na części.
+* *„No conversation selected"* — przestrzeń robocza jest pusta, należy wybrać istniejącą sesję lub utworzyć nową.
+* Blok błędu z kodem — pojawia się pod częściową odpowiedzią, gdy tura zakończy się niepowodzeniem. Ponowne uruchomienie tury jest zalecaną pierwszą reakcją.

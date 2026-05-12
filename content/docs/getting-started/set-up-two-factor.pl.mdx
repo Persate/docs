@@ -1,40 +1,22 @@
 ---
 title: Konfiguracja uwierzytelniania dwuskładnikowego
-description: Sparowanie aplikacji autoryzacyjnej, dzięki któremu kolejne logowania wymagają zarówno hasła, jak i sześciocyfrowego kodu weryfikacyjnego.
+description: Zabezpieczanie konta przy użyciu aplikacji autoryzacyjnej i standardu TOTP.
 ---
 
-Uwierzytelnianie dwuskładnikowe (2FA) jest obowiązkowe dla każdego konta Persate. Mechanizm ten zapewnia ochronę konta nawet w przypadku ujawnienia hasła, każde logowanie wymaga dodatkowo aktualnego kodu tymczasowego generowanego przez sparowaną aplikację autoryzacyjną.
+Uwierzytelnianie dwuskładnikowe (2FA) jest obowiązkowym elementem zabezpieczenia każdego profilu na platformie Persate. Każda próba logowania, poza podaniem hasła, wymaga wprowadzenia tymczasowego kodu z aplikacji mobilnej.
 
-Ekran **Set Up Authenticator** wyświetlany jest automatycznie podczas pierwszego logowania po założeniu konta.
+Ekran *Set Up Authenticator* pojawia się automatycznie przy pierwszym logowaniu po utworzeniu konta.
 
-## Wymagane oprogramowanie
+## Procedura parowania urządzenia
 
-Aplikacja autoryzacyjna zgodna ze standardem TOTP, zainstalowana na urządzeniu mobilnym. Odpowiednia jest między innymi:
+1. Otwarcie aplikacji autoryzacyjnej na telefonie i wybranie opcji dodawania nowego konta (ikona **+**).
+2. Zeskanowanie aparatem kodu QR wyświetlonego w przeglądarce. W przypadku braku możliwości skanowania można ręcznie wprowadzić klucz konfiguracyjny widoczny pod kodem.
+3. Wprowadzenie sześciocyfrowego kodu wygenerowanego przez aplikację do odpowiedniego pola w interfejsie Persate.
+4. Wybranie przycisku **Verify and finish setup**.
 
-- Google Authenticator
-- Authy
-- 1Password
-- Microsoft Authenticator
+**Ważne:** Utrata dostępu do aplikacji autoryzacyjnej uniemożliwia samodzielne zalogowanie się i wymaga kontaktu ze wsparciem technicznym. Zaleca się korzystanie z aplikacji oferujących kopię zapasową w chmurze (np. Authy lub 1Password).
 
-## Procedura konfiguracji uwierzytelniania dwuskładnikowego
+## Stany pustego widoku i błędu
 
-1. **Uruchomienie aplikacji autoryzacyjnej** oraz wybranie opcji "Dodaj konto" (lub przycisku **+**).
-2. **Zeskanowanie kodu QR** wyświetlonego na ekranie Persate przy użyciu aparatu urządzenia, dostępnego z poziomu aplikacji autoryzacyjnej. Jeżeli urządzenie nie umożliwia skanowania kodu QR (na przykład w przypadku rejestracji z komputera stacjonarnego bez kamery), należy skopiować **klucz konfiguracyjny** wyświetlony pod kodem QR i wprowadzić go ręcznie do aplikacji autoryzacyjnej.
-3. **Wprowadzenie sześciocyfrowego kodu**, który aplikacja prezentuje dla wpisu Persate, w odpowiednie pole na stronie.
-4. Wybranie opcji **Verify and finish setup**.
-
-Konfiguracja jest tym samym zakończona. Kod prezentowany przez aplikację autoryzacyjną generowany jest na nowo co trzydzieści sekund, obowiązuje wartość aktualna w momencie logowania.
-
-<Callout title="Kopia bezpieczeństwa aplikacji autoryzacyjnej">
-Utrata dostępu do aplikacji autoryzacyjnej — w wyniku zmiany urządzenia lub przypadkowego usunięcia — wymaga interwencji wsparcia technicznego. Aplikacje synchronizujące dane w chmurze, takie jak Authy oraz 1Password, znacząco upraszczają migrację na nowe urządzenie w porównaniu z aplikacjami przechowującymi dane wyłącznie lokalnie (jak Google Authenticator w konfiguracji domyślnej).
-</Callout>
-
-## Kolejne logowania
-
-Przy każdym kolejnym logowaniu, aplikacja Persate wymaga podania sześciocyfrowego kodu z aplikacji autoryzacyjnej.
-
-Pole kodu składa się z sześciu odrębnych okienek, wprowadzenie cyfry w pierwszym z nich powoduje automatyczne przesunięcie kursora. Możliwe jest również wklejenie pełnego sześciocyfrowego kodu do pierwszego okienka — pozostałe wypełnią się samoczynnie.
-
-Odrzucenie kodu najczęściej wskazuje, że wartość wygasła pomiędzy momentem wygenerowania a wprowadzenia. W większości przypadków odczekanie i wprowadzenie nowo wygenerowanego kodu rozwiązuje problem.
-
-→ [Dalej: pierwsze logowanie](/pl/getting-started/first-login)
+* *„Invalid code”* — wprowadzony kod jest nieprawidłowy lub stracił ważność. Kod zmienia się co 30 sekund; należy upewnić się, że wpisywana jest aktualna wartość.
+* *„Clock desync”* — błąd wynikający z różnicy czasu między serwerem a urządzeniem mobilnym. Należy upewnić się, że w ustawieniach telefonu włączona jest automatyczna synchronizacja czasu.

@@ -1,53 +1,40 @@
 ---
 title: Cockpit
-description: Ekran startowy agregujący kluczowe parametry aktywności oraz zestawienie najnowszych aktualizacji danych w jednym panelu.
+description: Ekran startowy agregujący kluczowe sygnały aktywności parlamentarnej, alertów oraz statystyki repozytorium w jednym panelu.
 ---
 
-**Cockpit** to domyślny ekran startowy wyświetlany po uwierzytelnieniu. Agreguje najistotniejsze sygnały — bieżącą aktywność parlamentarną, ostatnie zdarzenia z alertów, działania interesariuszy oraz statystyki repozytorium — w jeden ekran do szybkiego przeglądu.
+**Cockpit** to domyślny pulpit startowy wyświetlany po zalogowaniu. Agreguje najistotniejsze aktualizacje z całej platformy, umożliwiając szybki przegląd bieżącej sytuacji bez konieczności odwiedzania poszczególnych modułów.
 
-Ponowne otwarcie Cockpitu jest możliwe w każdej chwili poprzez wybranie pozycji **Cockpit** w pasku bocznym.
+Dostęp do widoku zapewnia pozycja **Cockpit** w pasku bocznym.
 
-## Komponenty Cockpitu
+## Komponenty pulpitu
 
-### Pasek wiadomości
+Pulpit startowy składa się z sekcji:
 
-Przewijająca się belka umieszczona u góry ekranu. Cyklicznie prezentuje komunikaty aplikacji oraz informacje operacyjne. 
+* **Alerts and risks - alerty i ryzyka** — zestawienie najnowszych zdarzeń wyzwalających. Wybranie karty otwiera szczegóły zdarzenia w module **[Alerty i ryzyka](/pl/alerts)**.
+* **Stakeholders - aktywni interesariusze** — karuzela prezentująca do pięciu osób o najwyższej aktywności w ostatnim czasie (domyślnie 24h). Aktywność obejmuje wpisy w mediach społecznościowych oraz wystąpienia sejmowe. Klknięcie awatara interesariusza przenosi do jego profilu w sekcji **[Interesariusze](/pl/stakeholders/profile)**. 
+* **Live proceedings - posiedzenia na żywo** — wskazuje stan obrad Sejmu. W trakcie trwania sesji wyświetla pulsujący znacznik oraz tytuł sesji. Wybranie kafelka przenosi do widoku **[Posiedzenia na żywo](/pl/live-proceedings)**.
+* **Repository - podsumowanie repozytorium** — kafelek z całkowitą liczbą dokumentów przypisanych do konta i odnośnikiem do **[Repozytorium](/pl/repository)**.
+* **Ledger - ostatnie głosowanie** — skrócony zapis najnowszego rozstrzygnięcia z odnośnikiem do **[Rejestru głosowań](/pl/voting-ledger)**.
 
-### Kafelek posiedzeń na żywo
+## Funkcje w przygotowaniu
 
-Wskazuje stan obrad Sejmu. W trakcie trwającej sesji wyświetla pulsujący czerwony znacznik oraz tytuł sesji. Poza godzinami obrad prezentuje informację o najbliższej zaplanowanej sesji. Wybranie kafelka otwiera **[Posiedzenia na żywo](/pl/live-proceedings)** w widoku transmisji.
+* **Daily report** — komponent oznaczony etykietą **SOON**, który docelowo zapewni automatyczne podsumowanie najważniejszych zdarzeń z ostatniej doby w formie jednostronicowego raportu.
 
-### Karty alertów i ryzyk
+## Synchronizacja danych
 
-Siatka ostatnich zdarzeń odpowiadających skonfigurowanym regułom alertów. Każda karta reprezentuje pojedyncze zdarzenie; jej wybranie otwiera szczegóły zdarzenia.
+Wskaźnik **Updated: [godzina]** w górnej części ekranu informuje o aktualności danych:
 
-W przypadku braku skonfigurowanych reguł panel wyświetla komunikat "No alerts triggered yet". Konfigurację reguł alertów opisuje sekcja **[Alerty i ryzyka](/pl/alerts)**.
-
-### Karuzela aktywnych interesariuszy
-
-Wyświetlane jest do pięciu pozycji z listy interesariuszy użytkownika, uszeregowanych według ostatniej aktywności. Domyślnym oknem czasowym są **ostatnie dwadzieścia cztery godziny**. W przypadku braku aktywności w tym oknie panel automatycznie korzysta z **ostatnich siedmiu dni** i odpowiednio aktualizuje opis.
-
-Aktywność obejmuje publikacje w mediach społecznościowych oraz trafienia w alerty. Wybranie awatara otwiera odpowiedni profil.
-
-### Kafelek repozytorium
-
-Wyświetla całkowitą liczbę dokumentów przypisanych do konta wraz z odnośnikiem do **[Repozytorium](/pl/repository)** umożliwiającym pełne ich przeglądanie.
-
-### Kafelek rejestru
-
-Wyświetla najnowsze głosowanie parlamentarne, w tym jego tytuł, czas rozstrzygnięcia oraz odnośnik do pełnego zapisu w **[Rejestrze głosowań](/pl/voting-ledger)**.
-
-### Kafelek "Daily report"
-
-Oznaczony jako **SOON**. Komponent w przyszłości zapewni jednostronicowe podsumowanie głosowań, alertów oraz aktywności interesariuszy z ostatniej doby. 
-
-## Wskaźnik synchronizacji
-
-W lewym górnym narożniku ekranu prezentowany jest moment ostatniego odświeżenia danych w postaci **Updated: [godzina]**.
-
-- **Niebieski wskaźnik** oznacza, że prezentowane dane są aktualne.
-- **Bursztynowy wskaźnik** oznacza dostępność nowszych danych; odświeżenie strony aktualizuje widok.
+* **Niebieski** — wyświetlane informacje są aktualne.
+* **Bursztynowy** — dostępne są nowsze dane; widok wymaga odświeżenia strony.
 
 ## Zalecany sposób pracy
 
-Cockpit zaprojektowano z myślą o sekwencyjnym przeglądzie od góry do dołu. Po około tygodniu regularnego korzystania użytkownik samodzielnie identyfikuje kafelki najistotniejsze dla swojej pracy. Najczęściej obserwowane ścieżki nawigacji z Cockpitu prowadzą do **Posiedzeń na żywo**, **Alertów** oraz **Repozytorium**.
+1. Weryfikacja stanu synchronizacji w celu upewnienia się, że prezentowane dane są najnowsze.
+2. Rozpoczęcie dnia od przeglądu **Cockpitu** w celu identyfikacji trwających obrad i nowych zdarzeń wyzwalających.
+3. Przejście do właściwego modułu aplikacji w celu realizacji zidentyfikowanych zadań.
+
+## Stany pustego widoku i błędu
+
+* *„No alerts triggered yet”* — dla skonfigurowanych Alertów nie odnotowano jeszcze żadnych dopasowań.
+* *„Couldn't load data”* — błąd pobierania informacji dla poszczególnych kafelków. Zaleca się odświeżenie strony.

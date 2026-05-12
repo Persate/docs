@@ -1,32 +1,33 @@
 ---
 title: Pierwsze logowanie
-description: Procedura uwierzytelniania oraz wstępna orientacja w obszarze Cockpitu.
+description: Procedura uwierzytelniania oraz orientacja w interfejsie po uzyskaniu dostępu do Cockpitu.
 ---
 
-## Procedura uwierzytelniania
+Logowanie odbywa się na stronie [persate.com](https://persate.com) po wybraniu opcji **Sign in**.
 
-W celu zalogowania się należy przejść pod adres [persate.com](https://persate.com) i wybrać **Sign in**. Uwierzytelnianie przebiega dwuetapowo:
+## Proces logowania
 
-1. **Adres e-mail.** Należy wprowadzić adres przypisany do konta i wybrać **Continue**. Następnie wyświetlone zostanie pole hasła.
-2. **Hasło.** Należy wprowadzić hasło konta i wybrać **Sign In**.
+Uwierzytelnianie przebiega w dwóch krokach:
 
-Kolejny ekran wymaga wprowadzenia **sześciocyfrowego kodu weryfikacyjnego** ze sparowanej aplikacji autoryzacyjnej (zob. [Konfiguracja uwierzytelniania dwuskładnikowego](/pl/getting-started/set-up-two-factor)). Po jego zaakceptowaniu aplikacja przekierowuje użytkownika do Cockpitu.
+1. Wprowadzenie adresu e-mail i wybranie przycisku **Continue**.
+2. Wprowadzenie hasła i wybranie **Sign In**.
 
-W przypadku kont założonych przy użyciu logowania jednokrotnego, etapy adresu e-mail i hasła zastępuje przycisk **Continue using Google Account** lub **Continue using Microsoft Account**.
+Po podaniu poprawnych danych system prosi o sześciocyfrowy kod z aplikacji autoryzacyjnej. W przypadku logowania przez Google lub Microsoft, kroki e-mail i hasło zastępuje przycisk **Continue using Google Account** (lub Microsoft).
 
-### Zapomniane hasło
+## Resetowanie hasła
 
-Strona **Resetowanie hasła** (adres URL: `persate.com/password-reset`) przyjmuje adres e-mail i wysyła pod ten adres link do zresetowania hasła. Otwarcie linku w wiadomości prowadzi do strony, na której można ustawić nowe hasło. Po zalogowaniu hasło można również zmienić w sekcji **Settings**.
+W przypadku utraty hasła można skorzystać z formularza pod adresem `persate.com/password-reset`. System wysyła na podany adres link umożliwiający ustawienie nowej wartości. Zmiana hasła jest również możliwa po zalogowaniu, w sekcji **Settings**.
 
-## Wstępna orientacja
+## Nawigacja startowa
 
-Domyślnym ekranem startowym po uwierzytelnieniu jest **Cockpit** (adres URL: `/dashboard`). 
+Po pomyślnym zalogowaniu domyślnym widokiem jest **Cockpit**. Kluczowe elementy interfejsu to:
 
-Następujące elementy zasługują na uwagę od pierwszej sesji:
+* **Pasek boczny** — główne menu nawigacyjne po lewej stronie.
+* **Upload** — przycisk otwierający panel dodawania dokumentów.
+* **Search** — ikona lupy uruchamiająca globalną wyszukiwarkę.
 
-- **Pasek boczny (po lewej).** Zapewnia nawigację do każdego obszaru funkcjonalnego aplikacji. Pozycje oznaczone **SOON** są zarezerwowane dla funkcjonalności zaplanowanych do wprowadzenia w kolejnych wydaniach.
-- **Elementy nagłówka paska bocznego.**
-  - **Upload** otwiera panel boczny służący do dodawania plików do Repozytorium.
-  - **Search** otwiera globalne okno wyszukiwania, obejmujące pliki w całej aplikacji.
+## Stany pustego widoku i błędu
 
-→ [Dalej: orientacja w Cockpicie](/pl/cockpit)
+* *„Invalid credentials”* — błędny adres e-mail lub hasło.
+* *„Code mismatch”* — wprowadzony kod TOTP nie jest poprawny.
+* *„Account locked”* — zbyt wiele nieudanych prób logowania. Należy odczekać lub zresetować hasło.

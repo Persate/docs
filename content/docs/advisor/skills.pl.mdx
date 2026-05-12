@@ -1,115 +1,90 @@
 ---
 title: Umiejętności asystenta
-description: Referencja dla sześciu rodzin umiejętności, z których czerpie asystent — co obejmuje każda, jakie pytania trafiają do każdej oraz jakie zasoby każda potrafi zwrócić.
+description: Opis umiejętności asystenta, zakres działania, typowe pytania oraz zwracane zasoby.
 ---
 
-Możliwości **Asystenta AI** podzielone są na sześć **rodzin umiejętności** (skill families), z których każda eksponuje niewielki zestaw narzędzi. Każde wywołanie narzędzia pojawia się w osi czasu wiadomości jako **plakietka umiejętności** identyfikująca rodzinę, z której pochodzi, oraz wykonaną akcję.
+Możliwości **Asystenta AI** podzielone są na sześć **rodzin umiejętności**, z których każda eksponuje zestaw narzędzi analitycznych. Każde wywołanie narzędzia pojawia się w osi czasu wiadomości, identyfikując wykonaną akcję.
 
-Niniejsza strona to referencja opisująca, czemu służy każda rodzina, jakie typowe sformułowania trafiają do każdej oraz jakie URI zasobów każda może zwrócić jako cytowanie. Nie jest to wyczerpująca enumeracja każdego narzędzia — ten zestaw ewoluuje i najlepiej inspekcjonować go za pośrednictwem samych plakietek.
+## Legislation - legislacja
 
-## legislation
-
-Ustrukturyzowany rejestr aktywności sejmowej: głosowania, wnioski, sponsorzy, rozstrzygnięcia oraz okolone metadane.
+Analiza rejestru aktywności sejmowej: głosowań, wniosków, rozstrzygnięć oraz powiązanych danych.
 
 **Typowe pytania:**
-- *"Jaki był wynik ostatniego głosowania nad ustawą energetyczną?"*
-- *"Jak komisja budżetowa rozstrzygnęła poprawkę nr 17?"*
-- *"Wymień głosowania z ostatniego posiedzenia Sejmu, które przeszły większością mniejszą niż pięć głosów."*
+* *„Jaki był wynik ostatniego głosowania nad ustawą energetyczną?"*
+* *„Jak komisja budżetowa rozstrzygnęła poprawkę nr 17?"*
+* *„Wymień głosowania z ostatniego posiedzenia Sejmu, które przeszły większością mniejszą niż pięć głosów."*
 
-**Zwraca zasoby postaci:**
-- `legislation://voting/{proceeding}/{voting_number}` — pojedyncze głosowanie, otwierane w **Rejestrze głosowań**.
+**Zwracane zasoby:**
+* Odnosnik do głosowania, otwierany w **Rejestrze głosowań**.
 
-Gdy asystent zacytuje URI postaci `legislation://voting/...`, plakietka w treści linkuje bezpośrednio do mandatowej mapy sali dla danego rozstrzygnięcia.
+## Stakeholders - interesariusze
 
-## stakeholders
-
-Katalog posłów: biografia, klub, okręg, frekwencja w głosowaniach, identyfikatory społecznościowe, zidentyfikowane fragmenty wystąpień.
+Przeszukiwanie katalogu posłów: biografii, klubów, okręgów, frekwencji w głosowaniach, identyfikatorów społecznościowych, zidentyfikowanych fragmentów wystąpień.
 
 **Typowe pytania:**
-- *"Kto przewodniczy Komisji Finansów Publicznych i jaki jest jego rejestr głosowań w sprawie ustaw podatkowych?"*
-- *"Znajdź każdego posła z województwa wielkopolskiego, który głosował przeciwko ustawie klimatycznej."*
-- *"Co poseł Nowak powiedział w plenum o reformie mieszkaniowej?"*
+* *„Kto przewodniczy Komisji Finansów Publicznych i jaki jest jego rejestr głosowań w sprawach podatkowych?"*
+* *„Znajdź każdego posła z województwa wielkopolskiego, który głosował przeciwko ustawie klimatycznej."*
+* *„Co poseł Nowak powiedział w plenum o reformie mieszkaniowej?"*
 
-**Zwraca zasoby postaci:**
-- `feature://stakeholder/{stakeholder_id}` — otwiera profil interesariusza.
+**Zwracane zasoby:**
+* Odnosnik do profilu interesariusza.
 
-Rodzina nakłada się z **legislation** — pytania o sposób głosowania posła trafiają do `legislation`, podczas gdy pytania biograficzne, kontaktowe oraz o sekcje analityczne trafiają do `stakeholders`. Asystent łączy wyniki obu w pojedynczą odpowiedź, gdy zachodzi potrzeba.
+## Public pulse - aktywność w mediach społecznościowych
 
-## public_pulse
-
-Zagregowany strumień X (Twitter) obejmujący wszystkich monitorowanych interesariuszy, z tymi samymi filtrami co widok **Public Pulse** w platformie.
+Przeszukiwanie zagregowanego strumienia z X (Twitter) obejmującego wszystkich monitorowanych interesariuszy.
 
 **Typowe pytania:**
-- *"Co opozycja powiedziała publicznie o najnowszej poprawce do kodeksu pracy?"*
-- *"Czy któryś z ministrów napisał o głosowaniu nad budżetem od czasu jego przyjęcia?"*
-- *"Wyeksponuj trendujące hashtagi z wpisów posłów z ostatnich 48 godzin."*
+* *„Co opozycja powiedziała publicznie o najnowszej poprawce do kodeksu pracy?"*
+* *„Czy któryś z ministrów napisał o głosowaniu nad budżetem od czasu jego przyjęcia?"*
+* *„Wyeksponuj trendujące hashtagi z wpisów posłów z ostatnich 48 godzin."*
 
-**Zwraca zasoby postaci:**
-- `feature://public_pulse/tweet/{tweet_id}` — otwiera oryginalny wpis w X.
+**Zwracane zasoby:**
+* Odnośnik do oryginalnego wpisu w X.
 
-Jest to jedyna rodzina dotykająca danych zewnętrznych względem platformy. Asystent wykorzystuje ją, by ugruntować twierdzenia o *publicznym pozycjonowaniu* — co aktorzy polityczni mówią publicznie — w odróżnieniu od tego, jak głosowali lub co napisali w komisji.
+## Alerts - alerty
 
-## alerts
-
-Istniejące stałe obserwatoria użytkownika oraz tworzenie nowych.
+Istniejące alerty, modyfikacja ich oraz tworzenie nowych.
 
 **Typowe pytania:**
-- *"Które alerty wyzwoliły się najczęściej w tym tygodniu?"*
-- *"Skonfiguruj alert na każdą wzmiankę o nowej ustawie farmaceutycznej."*
-- *"Wstrzymaj mój alert dotyczący odniesień do Brexitu — temat już nieaktualny."*
+* *„Które alerty wyzwoliły się najczęściej w tym tygodniu?"*
+* *„Skonfiguruj alert na każdą wzmiankę o nowej ustawie farmaceutycznej."*
+* *„Wstrzymaj mój alert dotyczący odniesień do Brexitu — temat już nieaktualny."*
 
-**Zwraca zasoby postaci:**
-- `feature://alert/{alert_id}` — otwiera szczegóły alertu.
+**Zwracane zasoby:**
+* Odnośnik do szczegółego widoku alertu.
 
-Gdy asystent tworzy alert w odpowiedzi na żądanie, dobiera **wąskie, tematycznie konkretne słowa kluczowe** zamiast terminów ogólnych. Żądanie *"powiadom mnie o polityce energetycznej"* interpretowane jest jako punkt wyjścia — asystent proponuje konkretne słowa kluczowe i raportuje je z powrotem, by użytkownik mógł skorygować dobór, jeśli okaże się zbyt wąski lub zbyt szeroki.
+## Documents - repozytorium
 
-Alerty utworzone przez asystenta są wybiegające w przyszłość: wyzwalają się w odniesieniu do dokumentów i transkryptów pozyskanych *po* utworzeniu, nie retroaktywnie.
-
-## documents
-
-Wyszukiwanie i operacje metadanych po wgranych plikach **Repozytorium** użytkownika oraz po publicznym korpusie Persate (profile polityków, programy partyjne, dokumenty publiczne zarządzane centralnie przez platformę). Rodzina obejmuje zarówno wyszukiwanie po treści (hybrydowe, po nazwie pliku, sekwencyjne), jak i operacje na poziomie pliku (enumeracja, liczniki, podsumowania, odczyt metadanych, pełny odczyt).
+Wyszukiwanie i operacje na plikach z **Repozytorium**. 
 
 **Typowe pytania:**
-- *"Co mówi nasz wewnętrzny briefing o mechanizmie cenowym gazu?"*
-- *"Przeszukaj każdą rządową białą księgę pod kątem odniesień do dotacji przemysłowych."*
-- *"Znajdź fragment, w którym ustawa o zamówieniach publicznych definiuje 'infrastrukturę krytyczną'."*
-- *"Ile dokumentów wgraliśmy od początku roku?"*
-- *"Podaj jednoakapitowe streszczenie pliku, o którym rozmawialiśmy w zeszłym tygodniu."*
+* *„Co mówi nasz wewnętrzny briefing o mechanizmie cenowym gazu?"*
+* *„Przeszukaj każdą rządową białą księgę pod kątem odniesień do dotacji przemysłowych."*
+* *„Znajdź fragment, w którym ustawa o zamówieniach publicznych definiuje 'infrastrukturę krytyczną'."*
+* *„Ile dokumentów wgraliśmy od początku roku?"*
 
-**Zwraca zasoby postaci:**
-- `documents://file/{file_id}` — otwiera plik.
-- `documents://chunk/{file_id}/{chunk_id}` — otwiera plik przewinięty do konkretnego fragmentu.
+**Zwracane zasoby:**
+*  Odnośnik do konkretnego pliku lub jego fragmentu.
 
-Asystent wybiera spomiędzy trzech zakresów wyszukiwania:
+## Chat context - kontest chatów
 
-- **Tenant + public** *(domyślne dla większości pytań)* — pliki użytkownika oraz publiczny korpus Persate.
-- **Public only** — gdy pytanie dotyczy ogólnego materiału legislacyjnego, nie własnych dokumentów użytkownika.
-- **Tenant only** — gdy pytanie użytkownika jednoznacznie dotyczy jego własnych plików (*"w naszych wewnętrznych briefingach, ..."*).
-
-Gdy plik jest wymieniony z nazwy, asystent przechodzi na wyszukiwanie po nazwie pliku lub wyszukiwanie sekwencji zamiast cięższego pipeline'u hybrydowego.
-
-## chat_context
-
-Wyszukiwanie w obrębie wcześniejszych konwersacji użytkownika z asystentem.
+Wyszukiwanie w obrębie wcześniejszych konwersacji z asystentem.
 
 **Typowe pytania:**
-- *"Wcześniej dzisiaj rozmawialiśmy o ustawie energetycznej — wróć do tego wątku."*
-- *"Co powiedziałeś mi w zeszłym tygodniu o reformie zamówień publicznych?"*
+* *„Wcześniej dzisiaj rozmawialiśmy o ustawie energetycznej — wróć do tego wątku."*
+* *„Co powiedziałeś mi w zeszłym tygodniu o reformie zamówień publicznych?"*
 
-**Zwraca zasoby postaci:**
-- `chatcontext://session/{session_id}` — otwiera wcześniejszą konwersację.
-- `chatcontext://message/{message_id}` — otwiera wcześniejszą wiadomość w kontekście.
+**Zwracane zasoby:**
+* Odnośnik do archwialnej wiadomości lub konwersacji
 
-Rodzina ta umożliwia ciągłość pomiędzy sesjami bez konieczności ręcznego ponownego wklejania wcześniejszego kontekstu przez użytkownika. Z perspektywy asystenta jest to dostęp tylko do odczytu: asystent nie może usuwać, edytować ani anotować wcześniejszych konwersacji.
+## Jak asystent dobiera narzędzia
 
-## Jak asystent decyduje, co wywołać
+Asystent wybiera narzędzia na podstawie formy pytania. Ich wybór jest automatyczny i nie wymaga jawnego wskazania przez użytkownika. Typowe wzorce:
 
-Model wybiera umiejętności na podstawie powierzchniowej formy pytania oraz manifestu dostępnych narzędzi. Nie istnieje jawne routowanie sterowane przez użytkownika — routowanie jest zadaniem modelu. W praktyce:
+* Pytanie wymieniające konkretnego posła — niemal zawsze `Stakeholders`.
+* Pytanie o *publiczne wypowiedzi* — `Public pulse`.
+* Pytanie o *sposób głosowania* — `Legislation`.
+* Pytanie o dokument — `Documents`.
+* Pytania wieloczęściowe — łączenie wielu narzędzi.
 
-- Pytanie wymieniające z imienia konkretnego posła niemal zawsze pociąga `stakeholders`.
-- Pytanie o *to, co ktoś powiedział publicznie* pociąga `public_pulse`.
-- Pytanie o *to, jak ktoś głosował* pociąga `legislation`.
-- Pytanie o dokument — czy to po nazwie, temacie czy treści — pociąga `documents`.
-- Pytania wieloczęściowe pociągają z wielu rodzin i splatają wyniki.
-
-Gdy asystent napotyka pytanie, dla którego nie istnieje pasujące narzędzie — na przykład żądanie analizy nastrojów lub materiału spoza korpusu legislacyjnego — odpowiada na to, co *może* odpowiedzieć, i odnotowuje pozostawioną bez odpowiedzi część zamiast porzucać całą turę.
+Gdy pytanie wykracza poza dostępne narzędzia, asystent odpowiada na to, do czego ma narzędzia, a część pozostawioną bez odpowiedzi odnotowuje.

@@ -1,101 +1,61 @@
 ---
 title: Wgląd w profil interesariusza
-description: Widok szczegółowy pojedynczego interesariusza — szczegółowe informacje osobowe, wpisy z X oraz nagrania z transmisji Sejmowych.
+description: Widok szczegółowy pojedynczego interesariusza — dane osobowe, biografia, aktywność w głosowaniach oraz nagrania.
 ---
 
-Wybranie karty na liście **Interesariuszy** otwiera **profil** danej osoby. Ekran zorganizowany jest w trzy strefy: **kartę tytułową** ze zdjęciem i bannerem partyjnym, wiersz **kafelków statystyk kluczowych** oraz **obszar zakładek** poniżej.
+**Profil interesariusza** zawiera kompletny zbiór informacji o danej osobie. Ekran składa się z karty tytułowej, kafelków statystyk oraz obszaru zakładek.
 
-Pasek nawigacyjny u góry ekranu zawiera ścieżkę **Intelligence → Stakeholders → Nazwisko interesariusza**. Przycisk **Back to list** poniżej paska powoduje powrót do katalogu z zachowaniem poprzedniej pozycji przewijania.
+Dostęp do profilu uzyskuje się poprzez wybranie karty na liście **Interesariuszy**.
 
 ## Karta tytułowa
 
-Karta tytułowa rozciąga się na pełną szerokość strony.
+Górna część profilu prezentuje tożsamość interesariusza:
 
-- **Banner partyjny** — proceduralnie generowany gradient zaszczepiony przynależnością interesariusza, z logiem partii nałożonym po prawej stronie. Posłowie niezrzeszeni prezentowani są na neutralnym tle z godłem Sejmu.
-- **Awatar** — okrągłe zdjęcie rozdzielające dolną krawędź banneru.
-- **Pełne imię i nazwisko** — renderowane dużą czcionką obok awatara.
-- **Wiersz przynależności** — *"Member of the Sejm · "* uzupełnione przynależnością interesariusza. Dla posłów niezrzeszonych przynależność zastępowana jest formułą *"No club"*.
-- **Przyciski akcji** — **Share** oraz **Download** zarezerwowane dla przyszłych funkcjonalności.
+* **Banner partyjny** — tło kolorystyczne zgodne z przynależnością klubową.
+* **Imię i nazwisko** — główne oznaczenie profilu.
+* **Wiersz przynależności** — informacja o członkostwie w Sejmie i przynależności do klubu parlamentarnego.
 
-## Kafelki statystyk kluczowych
+## Statystyki kluczowe
 
-Pod kartą tytułową znajduje się czterokolumnowy wiersz kafelków statystyk. Prezentowane wartości są stałe dla bieżącej kadencji interesariusza:
+Pod kartą tytułową znajdują się kafelki z danymi liczbowymi:
 
-- **Votes received** — bezwzględna liczba głosów preferencyjnych oddanych na interesariusza w ostatnich wyborach.
-- **District** — nazwa okręgu, opcjonalnie uzupełniona o numer.
-- **Voivodeship** — województwo okręgu wyborczego.
-- **Attendance** — udział głosowań plenarnych, w których interesariusza odnotowano jako obecnego, wyrażony procentowo. W przypadku braku danych prezentowany jest myślnik.
+* **Votes received** — liczba głosów uzyskanych w wyborach.
+* **District** i **Voivodeship** — okręg i województwo wyborcze.
+* **Attendance** — procentowy udział w głosowaniach plenarnych.
 
-## Zakładki
+## Sekcje profilu (Zakładki)
 
-Dostępnych jest sześć zakładek, dwie z nich obecnie nieaktywne:
+Dane są pogrupowane w tematycznych zakładkach:
 
-- **Overview** (domyślna) — biografia, dane kontaktowe oraz aktywność w głosowaniach.
-- **X** — wpisy interesariusza w serwisie X (Twitter).
-- **Recordings** — każde przeanalizowane nagranie, w którym interesariusz został zidentyfikowany jako mówca.
-- **Promises** *(nieaktywna)* — obietnice wyborcze i stanowiska programowe, udostępnione w przyszłości.
-- **Financials** *(nieaktywna)* — złożone oświadczenia majątkowe interesariusza, udostępnione w przyszłości.
-- **Personal details** — wycinek danych osobowych z zakładki Overview, wyodrębniony z myślą o wydruku lub o użytkownikach potrzebujących wyłącznie karty kontaktowej.
+### Overview
 
-## Zakładka Overview
-
-### Profile
-
-Ustrukturyzowana biografia złożona z oficjalnych zapisów parlamentarnych, publicznych baz referencyjnych oraz wkładu redakcyjnego. 
-
-Pod ustrukturyzowaną biografią rozwijalna sekcja **Show raw sources** udostępnia poszczególne fragmenty osobno. Każdy fragment oznaczony jest kolorem swojego pochodzenia i odsyła do źródła, gdy jest dostępne. Fragmenty, które przeszły edycję redakcyjną, są opatrzone plakietką **Edited**.
-
-### Contact and details
-
-Karta podsumowująca po prawej stronie prezentuje datę i miejsce urodzenia, wykształcenie, zawód oraz adres e-mail. W przypadku braku którejkolwiek z wartości wyświetlana jest kursywa *None*.
-
-Druga strefa pod danymi szczegółowymi wymienia **online presence** — klikalne ikony zweryfikowanych kont interesariusza w mediach społecznościowych oraz zewnętrznych profili. Prezentowane są wyłącznie zweryfikowane identyfikatory.
+Domyślna sekcja zawierająca biografię oraz dane kontaktowe. Pod biografią dostępna jest sekcja **Show raw sources**, wyświetlająca źródłowe fragmenty danych. W przypadku braku danych kontaktowych (np. e-mail) wyświetlana jest kursywa *None*.
 
 ### Voting activity
 
-Pierścień frekwencji renderowany jako okrągły wskaźnik postępu (0–100%), uzupełniony o:
+Karta prezentująca pierścień frekwencji oraz bezwzględną liczbę oddanych głosów i nieobecności. Sekcja jest ukrywana, jeśli statystyki nie są dostępne.
 
-- **Votes cast / total votings** — bezwzględne liczby.
-- **Absences** — liczba głosowań, w których nie odnotowano głosu.
+### X
 
-Karta jest ukrywana, gdy dla interesariusza nie opublikowano statystyk głosowań.
+Strumień wpisów interesariusza w serwisie X. W przypadku braku powiązanego konta wyświetlany jest komunikat *„No X account on file”*.
 
-## Zakładka X
+### Recordings
 
-Zakładka **X** prezentuje wpisy interesariusza w serwisie X. Wpisy ładowane są przyrostowo — kolejne strony wyświetlane są w trakcie przewijania.
+Lista przeanalizowanych nagrań sejmowych, w których interesariusz został zidentyfikowany. Wybranie pozycji otwiera widok **Posiedzenia na żywo** z możliwością odsłuchania fragmentu.
 
-Jeżeli interesariusz nie ma przypisanego konta X, zakładka wyświetla komunikat *"No X account on file — this MP doesn't have an X (Twitter) account linked"*.
+### Personal details
 
-Błędy podczas ładowania raportowane są wraz z przyciskiem ponowienia. 
+Zestawienie danych kontaktowych i linków do profili zewnętrznych w formie przejrzystej karty.
 
-## Zakładka Recordings
+## Funkcje w przygotowaniu
 
-Zakładka **Recordings** wymienia każde przeanalizowane nagranie sejmowe, w którym interesariusz został zidentyfikowany jako mówca. Każda pozycja prezentuje:
+Poniższe sekcje są widoczne w interfejsie, lecz aktualnie pozostają niedostępne:
 
-- Tytuł sesji.
-- Datę sesji.
-- Podsumowanie udziału interesariusza: *"spoke X minutes · Y segments"*.
+* **Promises** — docelowo będzie prezentować obietnice wyborcze i stanowiska programowe.
+* **Financials** — docelowo będzie udostępniać oświadczenia majątkowe z podziałem na nieruchomości, aktywa i dochody.
 
-Wybranie pozycji otwiera **Posiedzenia na żywo**, gdzie nagranie można odtworzyć i prześledzić fragmenty mówcy w kontekście.
+## Stany pustego widoku i błędu
 
-Jeżeli dla interesariusza nie dokonano dotąd identyfikacji, panel prezentuje komunikat *"No recordings yet — this MP hasn't been identified in any analyzed recordings yet. The analysis pipeline is still catching up — recordings will appear here as they're processed."*
-
-## Zakładka Personal details
-
-Układ dwukolumnowy zawierający:
-
-- **Personal details** — te same pola co karta kontaktowa z zakładki Overview (data urodzenia, miejsce urodzenia, wykształcenie, zawód, adres e-mail).
-- **Media and links** — te same ikony zewnętrznych profili co w zakładce Overview, wyodrębnione tutaj z myślą o użytkownikach potrzebujących wyłącznie informacji katalogowych.
-
-Zakładka przeznaczona jest przede wszystkim do wydruku oraz do bezpośredniego linkowania z systemów zewnętrznych.
-
-## Zakładki w przygotowaniu
-
-Zakładki **Promises** oraz **Financials** są obecnie nieaktywne, lecz zostały zaplanowane do wdrożenia w najbliższej przyszłości.
-
-- **Promises** prezentować będzie obietnice wyborcze i stanowiska programowe pochodzące z publicznych wystąpień, opatrzone odsyłaczem do oryginalnej publikacji.
-- **Financials** prezentować będzie roczne oświadczenia majątkowe interesariusza, z wyborem daty oraz podziałem na sekcje obejmujące środki pieniężne, nieruchomości, udziały, akcje, dochody, mienie ruchome oraz zobowiązania.
-
-## Błędy
-
-- **Not found** — adres URL odsyła do identyfikatora interesariusza, który nie odpowiada żadnemu rekordowi. Przycisk **Back to list** powoduje powrót do katalogu.
+* *„No recordings yet”* — interesariusz nie został jeszcze zidentyfikowany w żadnym z przetworzonych nagrań.
+* *„No X account on file”* — do profilu nie przypisano konta w serwisie X.
+* *„Not found”* — rekord interesariusza nie istnieje pod wskazanym adresem. Zaleca się powrót do listy głównej.

@@ -1,75 +1,49 @@
 ---
 title: Interesariusze i Public Pulse
-description: "Dwa komplementarne widoki osób monitorowanych przez platformę: katalog interesariuszy obejmujący poszczególnych posłów oraz Public Pulse — zagregowany strumień ich aktywności w serwisie X (Twitter)."
+description: Katalog osób monitorowanych przez platformę oraz zagregowany strumień ich aktywności w serwisie X (Twitter).
 ---
 
-Platforma śledzi dwa powiązane strumienie skoncentrowane na wybranych osobach.
+**Interesariusze** to katalog parlamentarzystów zintegrowany z danymi o ich aktywności legislacyjnej i medialnej. Każdy profil łączy materiały biograficzne, przynależność klubową, wyniki głosowań oraz wystąpienia sejmowe.
 
-- **Interesariusze** — katalog wszystkich posłów Sejmu aktualnie pobranych z usługi legislacyjnej. Każdy wpis łączy materiał biograficzny, klub poselski i okręg, frekwencję w głosowaniach, identyfikatory mediów społecznościowych oraz zidentyfikowane wystąpienia w nagraniach sesji.
-- **Public Pulse** — zagregowany strumień aktywności na X (Twitter) z udziałem wszystkich interesariuszy z katalogu. Wpisy są strumieniowane w sposób ciągły i mogą być przeglądane jako chronologiczna lista lub jako wielotorowa oś czasu.
+Dostęp do modułu zapewnia grupa **KNOWLEDGE BASE** w pasku bocznym, pod pozycjami **Stakeholders** oraz **Public Pulse**.
 
-Oba widoki dostępne są z grupy **INTELLIGENCE** w pasku bocznym, kolejno pod pozycjami **Stakeholders** oraz **Public Pulse**.
+## Relacja między widokami
 
-## Wzajemna relacja widoków
+Platforma śledzi dwa powiązane strumienie danych:
 
-Katalog interesariuszy jest źródłem tożsamości. Public Pulse jest strumieniem aktywności obracającym się wokół tych tożsamości.
+* **Katalog interesariuszy** — baza tożsamości osób monitorowanych. Wybranie karty interesariusza otwiera jego pełny profil.
+* **Public Pulse** — strumień aktywności na platformie X przypisany do osób z katalogu. Filtry w tym widoku korzystają z tych samych metadanych (np. przynależności klubowej), co katalog główny.
 
-- Każdy wpis w Public Pulse jest przypisany do konkretnego interesariusza. Wybranie profilu otwiera ten sam rekord widoczny w katalogu.
-- Filtry Public Pulse (po klubie lub po wskazanej osobie) korzystają z tych samych metadanych, które zasilają katalog.
-- Zakładka **X** w profilu każdego interesariusza prezentuje te same wpisy co Public Pulse, lecz ograniczone do wybranego interesariusza.
+## Przegląd katalogu
 
-Strony poświęcone poszczególnym interesariuszom opisuje sekcja [Wgląd w profil interesariusza](/pl/stakeholders/profile). Widok Public Pulse opisuje sekcja [Public Pulse](/pl/stakeholders/public-pulse).
-
-## Lista interesariuszy
-
-Katalog prezentowany jest jako siatka kart — od czterech do sześciu w wierszu, w zależności od szerokości ekranu. Kolejne karty wyświetlane są w trakcie przewijania.
+Katalog prezentuje listę interesariuszy w formie kart.
 
 ### Karta interesariusza
 
 Każda karta zawiera:
 
-- **Banner partyjny** — proceduralnie generowane tło zaszczepione przynależnością posła, z logiem partii nałożonym w prawym górnym rogu. Posłowie niezrzeszeni prezentowani są z neutralną grafiką z godłem Sejmu w miejscu loga partii.
-- **Okrągły awatar**.
-- **Imię i nazwisko**.
-- **Zawód**.
-- **Adres e-mail**.
-- **Województwo** okręgu wyborczego.
-- Numer **District** oraz **Votes** — liczbę głosów uzyskanych w ostatnich wyborach, prezentowane jako dwa wskaźniki w stopce karty.
+* **Banner partyjny** — tło generowane na podstawie przynależności klubowej.
+* **Imię i nazwisko** oraz zdjęcie profilowe.
+* **Dane kontaktowe** — adres e-mail i podstawowe informacje zawodowe.
+* **Wskaźniki wyborcze** — liczba uzyskanych głosów (**Votes**) oraz numer okręgu (**District**).
 
-Wybranie karty otwiera **profil interesariusza** danego posła.
+Wybranie karty otwiera szczegółowy profil interesariusza.
 
-## Filtry w pasku bocznym
+## Filtrowanie i sortowanie
 
-### Wyszukiwanie
+W pasku bocznym dostępne są narzędzia do zarządzania widokiem:
 
-Dopasowanie tekstowe w obrębie imion i nazwisk. Wyniki aktualizują się w trakcie wpisywania zapytania, gdy ma ono co najmniej dwa znaki, dopasowanie ignoruje wielkość liter.
-
-### Klub
-
-Pole wielokrotnego wyboru obejmujące każdy klub aktualnie reprezentowany w izbie. Wybranie jednego lub większej liczby klubów ogranicza widoczne karty do posłów posiadających przynależność do wskazanych klubów. Brak zaznaczenia jest równoznaczny z zaznaczeniem wszystkich.
-
-### Województwo
-
-Pole wielokrotnego wyboru obejmujące województwa reprezentowane w dotąd załadowanych rekordach. Działa identycznie jak filtr klubów.
-
-### Sortowanie
-
-Cztery opcje sortowania stosowane do aktualnie załadowanych interesariuszy:
-
-- **Last Name (A-Z)** — nazwiska alfabetycznie - domyślne.
-- **Last Name (Z-A)**.
-- **Votes (Highest)** — liczba głosów uzyskanych w ostatnich wyborach, malejąco.
-- **Votes (Lowest)**.
-
-Sortowanie obowiązuje w obrębie rekordów już pobranych. W miarę przewijania i doczytywania kolejnych stron, nowe rekordy są scalane z istniejącym porządkiem.
+* **Wyszukiwanie** — filtrowanie listy według imion i nazwisk (wymagane min. 2 znaki).
+* **Klub** — ograniczenie listy do członków wybranych ugrupowań.
+* **Sortowanie** — porządkowanie według nazwiska (**Last Name**) lub liczby uzyskanych głosów (**Votes**).
 
 ## Stany pustego widoku i błędu
 
-- **No stakeholders match your filters** — aktywne filtry nie zwracają wyników. Usunięcie filtra, rozszerzenie zapytania lub wyczyszczenie wszystkich filtrów rozwiązuje problem.
-- **No stakeholders available** — usługa legislacyjna nie zwróciła rekordów. Sytuacja niespotykana poza okresem wyborczym.
-- **Couldn't load stakeholders** — komunikacja z feature serwerem nie powiodła się. Opis błędu rozróżnia przypadek braku uprawnień (*"You don't have permission to view stakeholders yet"*) od przejściowego problemu z łącznością. Należy odświeżyć stronę. 
+* *„No stakeholders match your filters”* — aktywne filtry wykluczają wszystkie pozycje. Zaleca się zmianę kryteriów wyszukiwania.
+* *„No stakeholders available”* — system nie pobrał danych z usługi legislacyjnej.
+* *„Couldn't load stakeholders”* — błąd połączenia z serwerem. Zaleca się odświeżenie strony.
 
 ## Strony w tej sekcji
 
-- **[Wgląd w profil interesariusza](/pl/stakeholders/profile)** — widok szczegółowy pojedynczego posła, w tym biografia, aktywność w głosowaniach, dane kontaktowe oraz zakładki X i Recordings.
-- **[Public Pulse](/pl/stakeholders/public-pulse)** — zagregowany strumień X obejmujący wszystkich monitorowanych interesariuszy, z trybami widoku Feed i Timeline, filtrami oraz panelem Trending Topics.
+* **[Wgląd w profil interesariusza](/pl/stakeholders/profile)** — szczegółowe dane osobowe, biografia, frekwencja oraz nagrania wystąpień.
+* **[Public Pulse](/pl/stakeholders/public-pulse)** — strumień aktywności w serwisie X z trybami **Feed** i **Timeline**.

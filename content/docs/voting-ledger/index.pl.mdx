@@ -1,86 +1,46 @@
 ---
 title: Rejestr głosowań
-description: "Pełen zapis głosowań parlamentarnych: przeglądanie ostatnich rozstrzygnięć, odczytywanie pojedynczych wyników oraz wgląd w sposób głosowania każdego posła."
+description: Katalog rozstrzygnięć parlamentarnych obejmujący oficjalne wyniki, dokumenty źródłowe oraz mandatowy zapis sposobu głosowania każdego posła.
 ---
 
-**Rejestr głosowań** to katalog rejestrowanych głosowań Sejmu. Każda pozycja odpowiada pojedynczemu głosowaniu — najczęściej wnioskowi poddanemu pod głosowanie podczas posiedzenia — i jest wzbogacona o oficjalny wynik liczbowy, rozstrzygnięcie, dokumenty źródłowe oraz mandatowy zapis sposobu głosowania każdego posła.
+**Rejestr głosowań** to chronologiczny zapis wszystkich głosowań Sejmu. Każda pozycja zawiera oficjalny wynik liczbowy, informację o rozstrzygnięciu oraz szczegółowy rozkład głosów per-mandat.
 
-Dostęp do widoku zapewnia pozycja **INTELLIGENCE → Ledger** w pasku bocznym.
+Dostęp do modułu zapewnia pozycja **KNOWLEDGE BASE → Ledger** w pasku bocznym.
 
-## Lista rozstrzygnięć
+## Struktura listy
 
-Głosowania prezentowane są jako siatka kart, pogrupowanych według **posiedzenia** (sejmowej sesji, w trakcie której się odbyły). Posiedzenia są wymienione w porządku malejącym — najnowsze u góry — a w obrębie posiedzenia głosowania są prezentowane w kolejności opublikowanej przez Kancelarię Sejmu.
-
-Liczba kart prezentowanych jednocześnie jest sterowana **selektorem rozmiaru strony** w dolnej części ekranu. Starsze głosowania osiąga się przez stronicowanie wstecz, nie zaś przez nieograniczone przewijanie. **Rejestr głosowań** jest przeznaczony do ukierunkowanego wyszukiwania, nie do swobodnego przeglądania.
+Głosowania są pogrupowane według **posiedzenia** i prezentowane w porządku malejącym. Widokiem steruje selektor rozmiaru strony, a dostęp do danych historycznych uzyskuje się poprzez stronicowanie.
 
 ## Karta głosowania
 
-### Identyfikatory i wynik
+Każde głosowanie jest reprezentowane przez kartę zawierającą:
 
-Trzy zwięzłe plakietki w lewym górnym rogu:
+* **Identyfikator** — numer posiedzenia (**Proceeding**) oraz numer głosowania (**Vote**).
+* **Wynik** — informacja o rozstrzygnięciu: **Passed** (przyjęte), **Rejected** (odrzucone), **Quorum present** lub **Quorum missing**.
+* **Wizualizację rozkładu głosów** — pasek segmentowany kolorystycznie: **Yes** (niebieski), **No** (czerwony), **Abstain** (bursztynowy), **Present** (popielaty) oraz **Absent** (szary).
+* **Metryki** — całkowita liczba oddanych głosów (**Votes cast**) lub obecnych posłów (**Members present**).
 
-- **Proceeding N** — numer posiedzenia parlamentu.
-- **Vote N** — numer porządkowy głosowania w obrębie tego posiedzenia.
-- **Plakietka wyniku** — rozstrzygnięcie głosowania. Możliwe wartości:
-  - **Passed** (zielona) — wniosek osiągnął wymagany próg.
-  - **Rejected** (czerwona) — wniosek nie osiągnął wymaganego progu.
-  - **Quorum present** (zielona) — w głosowaniach sprawdzających obecność, odnotowano wystarczającą liczbę posłów.
-  - **Quorum missing** (czerwona) — w głosowaniach sprawdzających obecność, odnotowano niewystarczającą liczbę posłów.
-  - W głosowaniach typu **On list** (wybór spomiędzy kilku nazwanych opcji) plakietka wyniku nie jest wyświetlana, w jej miejscu prezentowany jest rozkład głosów na opcje.
+Wybranie karty otwiera widok szczegółowy z mandatową mapą sali.
 
-### Tytuł i opis
+## Wyszukiwanie i filtrowanie
 
-Tytuł wniosku prezentowany jest jako nagłówek karty. Drugorzędny opis pokazywany jest poniżej, jeśli został zarejestrowany. Oba pola pochodzą wprost z zapisu parlamentarnego.
+Pole **Search** znajdujące się na panelu bocznym pozwala na filtrowanie rekordów aktualnie załadowanych na stronie według tytułu, tematu lub numeru głosowania. Dopasowanie ignoruje wielkość liter i aktualizuje się w czasie rzeczywistym.
 
-### Data
+## Zasady rozstrzygania
 
-Czas oddania głosu prezentowany w lokalnej strefie czasowej użytkownika, poprzedzony ikoną zegara.
+Platforma odnotowuje stosowany dla każdego głosowania rodzaj większości:
 
-### Wizualizacja wyniku
+* **Simple** — więcej głosów za niż przeciw.
+* **Absolute** — więcej niż połowa ustawowej liczby posłów.
+* **Qualified** — próg określony konstytucyjnie (np. 2/3 lub 3/5).
 
-Dolna część karty prezentuje rozkład głosów. Wykorzystywane są dwa style wizualne, zależnie od typu głosowania:
-
-- **Głosowania standardowe** (Yes/No/Abstain) — pozioma belka segmentowana kolorystycznie: niebieski dla Yes, czerwony dla No, bursztyn dla Abstain, popielaty dla Present (jeśli ma zastosowanie) oraz szary dla Absent. Tekstowa legenda powtarza każdą wartość wraz z etykietą.
-- **Głosowania listowe** (wybór spomiędzy nazwanych opcji) — do trzech opcji prezentowanych jako etykietowane paski postępu o szerokości proporcjonalnej do uzyskanego udziału głosów.
-
-### Stopka
-
-Stopka raportuje **Votes cast** lub — w głosowaniach sprawdzających obecność — **Members present**, czyli liczbę posłów, których głos (lub obecność) został odnotowany.
-
-Wybranie dowolnej karty otwiera **widok szczegółowy głosowania**, opisany w sekcji [Wgląd w głosowanie](/pl/voting-ledger/voting-detail).
-
-## Wyszukiwanie
-
-W prawym panelu bocznym dostępne jest pojedyncze pole **Search**. Dopasowanie wykonywane jest w oparciu o tytuł, temat oraz numer głosowań aktualnie pobranych z usługi legislacyjnej — to jest na bieżącej stronie. Doprecyzowanie zapytania obejmującego szerszy zakres historyczny realizuje się przez przełączanie stron i ponowne uruchomienie wyszukiwania.
-
-Dopasowanie ignoruje wielkość liter. Wyniki aktualizują się w trakcie wpisywania zapytania.
-
-## Rodzaje głosowań
-
-Sejm stosuje trzy mechanizmy rejestracji głosów, **Rejestr głosowań** zachowuje to rozróżnienie:
-
-- **Electronic** — głos oddany za pośrednictwem elektronicznego systemu głosowania.
-- **Traditional** — głos oddany przez podniesienie ręki, podział lub inny mechanizm manualny.
-- **On list** — głosowanie wybierające spomiędzy dyskretnego zbioru nazwanych opcji (na przykład kandydatów w wyborach), wynik wyrażany jest per opcja, nie jako za/przeciw.
-
-Rodzaj głosowania jest eksponowany w widoku szczegółowym i uwzględniany w logice ustalania wyniku.
-
-## Rodzaje większości
-
-Głosowania rozstrzygane są zgodnie z jedną z trzech reguł większościowych, zarejestrowaną dla każdego głosowania:
-
-- **Simple** — więcej głosów za niż przeciw.
-- **Absolute** — więcej niż połowa ustawowej liczby posłów.
-- **Qualified** — wyższy próg określony konstytucyjnie (zazwyczaj dwie trzecie lub trzy piąte).
-
-Stosowana większość jest raportowana w widoku szczegółowym i decyduje o przypisaniu etykiety **Passed** lub **Rejected**.
+Rodzaj większości bezpośrednio decyduje o przypisaniu etykiety **Passed** lub **Rejected**.
 
 ## Stany pustego widoku i błędu
 
-- **No votings match your search** — bieżące zapytanie nie zwraca wyników na obecnej stronie. Wyczyszczenie zapytania lub przełączenie się na inną stronę zazwyczaj rozwiązuje problem.
-- **No votings available** — usługa legislacyjna nie zwróciła głosowań dla bieżącego zakresu. Sytuacja niespotykana poza długimi przerwami parlamentarnymi.
-- **Couldn't load votings** — komunikacja z usługą legislacyjną nie powiodła się. Przycisk **Try again** ponawia żądanie. Gdy błąd wynika z braku uprawnień, komunikat zostaje zastąpiony tekstem *"You don't have permission to view legislative votings yet"*.
+* *„No votings match your search”* — na bieżącej stronie nie ma rekordów pasujących do zapytania.
+* *„No votings available”* — system nie odnotował żadnych głosowań w wybranym zakresie. Zaleca się ponowne załadowanie strony.
 
 ## Strony w tej sekcji
 
-- **[Wgląd w głosowanie](/pl/voting-ledger/voting-detail)** — widok szczegółowy pojedynczego głosowania, zawierający kartę przeglądową, dokumenty powiązane, rozkład opcji oraz mandatową mapę sali z filtrowaniem klubowym.
+* **[Wgląd w głosowanie](/pl/voting-ledger/voting-detail)** — szczegółowy widok pojedynczego głosowania, dokumenty powiązane oraz mandatowa mapa sali.

@@ -1,173 +1,153 @@
 ---
 title: Przykłady robocze
-description: Istotne treściowo zapytania oraz oczekiwane zachowanie asystenta, zaczerpnięte z powtarzających się przypadków użycia zespołów public-affairs i prawnych. Każdy przykład prezentuje pytanie, umiejętności wywołane przez asystenta oraz rodzaj oczekiwanej odpowiedzi.
+description: Reprezentatywne zapytania z opisem oczekiwanego zachowania asystenta.
 ---
 
-Niniejsza strona prowadzi przez sześć reprezentatywnych interakcji z **Asystentem AI**, dobranych tak, by objąć przepływy pracy najczęściej powracające w praktyce public-affairs i prawnej. Każdy przykład zorganizowany jest analogicznie:
+Każdy przykład zawiera:
 
-- **Zapytanie** — co użytkownik wpisuje.
-- **Sugerowana głębokość** — Surface, Balanced lub Deep.
-- **Co robi asystent** — plakietki umiejętności pojawiające się w osi czasu wiadomości, mniej więcej w kolejności wywołania.
-- **Jak wygląda odpowiedź** — struktura odpowiedzi, w tym plakietki cytowań, których użytkownik może oczekiwać w treści.
+* **Zapytanie** — treść wpisywanej wiadomości.
+* **Sugerowaną głębokość analizy** — Surface, Balanced lub Deep.
+* **Co robi asystent** — umiejętności pojawiające się w osi czasu wiadomości.
+* **Odpowiedź** — struktura i typ cytowań.
 
-Faktyczna treść każdej konkretnej odpowiedzi będzie się różnić — asystent jest niedeterministyczny — lecz *kształt* odpowiedzi i wykorzystane narzędzia są stabilne.
+Faktyczna treść każdej odpowiedzi może się różnić, są to jedynie przykładowe odpowiedzi natomiast jej ogólny kształt i wywoływane narzędzia są przeważnie zbliżone.
 
-## Przykład 1 — Atrybucja głosowania
+## Przykład 1 — Głosowania
 
-Częste pytanie wyjściowe: *kto jak głosował nad konkretną ustawą i jak wyglądał rozkład?*
+**Zapytanie:**
 
-> **Zapytanie.** Którzy posłowie z Koalicji Obywatelskiej głosowali przeciwko proponowanej poprawce do ustawy energetycznej na ostatnim posiedzeniu Sejmu? Pokaż wynik rozstrzygnięcia i odeślij do głosowania.
+>  Którzy posłowie z Koalicji Obywatelskiej głosowali przeciwko proponowanej poprawce do ustawy energetycznej na ostatnim posiedzeniu Sejmu? Pokaż wynik rozstrzygnięcia i odeślij do głosowania.
 
 **Sugerowana głębokość:** Balanced.
 
 **Co robi asystent:**
 
-1. **legislation** — `list_votings` enumeracja ostatnich głosowań; filtruje do tych, których tytuł lub temat wymienia ustawę energetyczną i poprawkę.
-2. **legislation** — `get_voting` dla pasującego głosowania, by pozyskać per-mandatowy rozkład oraz oficjalne metadane.
-3. **stakeholders** — `get_legislator` dla każdego członka Koalicji Obywatelskiej, który głosował *Nie*, by dopasować nazwiska do identyfikatorów.
+1. **Legislation** — `List votings` — enumeracja ostatnich głosowań; filtruje do głosowań dotyczących ustawy energetycznej i poprawki.
+2. **Legislation** — `Get voting` — pobranie rozkładu per-mandatowego i metadanych.
+3. **Stakeholders** — `Get stakeholder` — dopasowanie nazwisk do identyfikatorów dla członków KO głosujących.
 
 **Jak wygląda odpowiedź:**
 
-> Poprawka została **odrzucona** w głosowaniu *Voting 47 of Proceeding 12* dnia 28 marca 2026, wynikiem 198 za / 232 przeciw / 8 wstrzymujących się — patrz [legislation://voting/12/47]. Następujący członkowie Koalicji Obywatelskiej głosowali przeciwko: [feature://stakeholder/abc-123], [feature://stakeholder/def-456], [feature://stakeholder/ghi-789] (3 spośród 134 członków klubu; pozostałych 131 głosowało za).
-
-Dwie pierwsze plakietki to głosowanie wraz z połączoną mandatową mapą sali; trzy plakietki nazwisk linkują wprost do profili posłów.
+> Poprawka została **odrzucona** w głosowaniu *Voting 47 of Proceeding 12* dnia 28 marca 2026, wynikiem 198 za / 232 przeciw — patrz [legislation://voting/12/47]. Następujący członkowie Koalicji Obywatelskiej głosowali przeciwko: [feature://stakeholder/abc-123], [feature://stakeholder/def-456], [feature://stakeholder/ghi-789] (3 spośród 134 członków klubu).
 
 ## Przykład 2 — Stanowisko publiczne kontra rejestr głosowań
 
-Stałe pytanie pracy nad opozycją: *czy publiczna pozycja aktora pokrywa się z tym, jak faktycznie głosuje?*
+**Zapytanie:**
 
-> **Zapytanie.** Koalicja Klimatyczna była ostatnio bardzo głośna publicznie w sprawie odejścia od węgla w ostatnim miesiącu. Jak jej członkowie faktycznie głosowali w plenum w rozstrzygnięciach związanych z węglem w tym samym okresie? Czy występują rozbieżności między tym, co mówią, a tym, jak głosują?
+>  Koalicja Klimatyczna była ostatnio głośna publicznie w sprawie odejścia od węgla. Jak jej członkowie faktycznie głosowali w plenum w rozstrzygnięciach związanych z węglem w ostatnim miesiącu? Czy występują rozbieżności?
 
 **Sugerowana głębokość:** Deep.
 
 **Co robi asystent:**
 
-1. **stakeholders** — `search_legislators` filtrowane do przynależności Koalicji Klimatycznej.
-2. **public_pulse** — `search_tweets` dla tych identyfikatorów interesariuszy z zakresem dat ostatniego miesiąca i terminami wyszukiwania obejmującymi słownictwo odejścia od węgla.
-3. **legislation** — `list_votings` filtrowane do tego samego zakresu dat z terminami tematycznymi obejmującymi energetykę i węgiel.
-4. **legislation** — `get_voting` dla każdego kandydującego głosowania.
-5. **legislation** — `votes_by_legislator` dla weryfikacji krzyżowej.
+1. **Stakeholders** — `Search legislators` — filtrowanie do przynależności Koalicji Klimatycznej.
+2. **Public pulse** — `Search tweets` — wyszukiwanie wpisów za ostatni miesiąc z terminami odejścia od węgla.
+3. **Legislation** — `List votings` — filtrowanie do tego samego zakresu dat.
+4. **Legislation** — `Get voting` — szczegóły każdego kandydującego głosowania.
+5. **Legislation** — `Votes by legislator` — weryfikacja krzyżowa po członkostwie w klubie.
 
 **Jak wygląda odpowiedź:**
 
-> Spośród dziewięciu głosowań plenarnych nad poprawkami węglowymi w ostatnich 30 dniach członkowie Koalicji Klimatycznej byli zjednoczeni w sześciu (pełne wyrównanie głos-za z publicznymi wypowiedziami). Trzy istotne rozbieżności:
+> Spośród dziewięciu głosowań plenarnych nad poprawkami węglowymi w ostatnich 30 dniach Koalicja była zjednoczona w sześciu. Trzy rozbieżności:
 >
-> - **Posłanka Kowalska** ([feature://stakeholder/...]) napisała w poparciu proponowanego regionalnego funduszu sprawiedliwej transformacji ([feature://public_pulse/tweet/...]), lecz głosowała **wstrzymanie się** w poprawce o finansowanie ([legislation://voting/12/52]).
-> - Koalicja podzieliła się 7–2 w poprawce o harmonogramie zamykania kopalń ([legislation://voting/12/61]) pomimo zjednoczonego stanowiska kierownictwa ([feature://public_pulse/tweet/...]).
-> - **Poseł Nowak** ([feature://stakeholder/...]) był nieobecny w trzech z dziewięciu rozstrzygnięć, w tym w głównym głosowaniu o odejściu.
+> * **Posłanka Kowalska** ([feature://stakeholder/...]) pisała publicznie o proponowanym funduszu transformacyjnym ([feature://public_pulse/tweet/...]), lecz głosowała **wstrzymanie się** w poprawce o finansowaniu ([legislation://voting/12/52]).
+> * Koalicja podzieliła się 7–2 w poprawce o harmonogramie zamykania kopalń ([legislation://voting/12/61]).
+> * **Poseł Nowak** ([feature://stakeholder/...]) był nieobecny w trzech z dziewięciu głosowań.
 
-Asystent eksponuje *interesujące* ustalenia zamiast recytowania każdego głosowania — ustawienie głębokości pozwala mu zainwestować w porównanie.
+## Przykład 3 — Analiza dokumentu z załączonym plikiem
 
-## Przykład 3 — Pogłębione zanurzenie w dokument z załączonym plikiem
-
-Gdy odpowiedź znajduje się w konkretnym dokumencie, który użytkownik już posiada, załączenie pliku przewyższa pozwalanie asystentowi na wyszukiwanie.
-
-> **Zapytanie.** *(z załączonym `Q1-2026-renewables-briefing.pdf`)*  
-> Streszcz rekomendacje regulacyjne w tym briefingu i sprawdź, czy którakolwiek z nich została przyjęta na ostatnich posiedzeniach Sejmu.
+**Zapytanie:** 
+> Streść rekomendacje regulacyjne w tym briefingu i sprawdź, czy którakolwiek z nich została przyjęta na ostatnich posiedzeniach Sejmu *(z załączonym `Q1-2026-renewables-briefing.pdf`)*.
 
 **Sugerowana głębokość:** Balanced.
 
 **Co robi asystent:**
 
-1. **documents** — `get_file_summary` oraz `read_file` w celu wyciągnięcia rekomendacji bezpośrednio z załączonego pliku (bez kroku wyszukiwania — identyfikator pliku jest dostarczony).
-2. **legislation** — `list_votings` filtrowane po tematach obejmujących każdą wymienioną rekomendację.
-3. **legislation** — `get_voting` dla kandydujących dopasowań.
+1. **Documents** — `Read file` — odczyt rekomendacji bezpośrednio z załączonego pliku (bez kroku wyszukiwania — identyfikator pliku jest dostarczony).
+2. **Legislation** — `List votings` — filtrowanie po tematach obejmujących każdą rekomendację.
+3. **Legislation** — `Get voting` — szczegóły pasujących głosowań.
 
 **Jak wygląda odpowiedź:**
 
-> Briefing zawiera pięć rekomendacji regulacyjnych [Q1-2026-renewables-briefing.pdf, c1]. Spośród nich:
+> Briefing zawiera pięć rekomendacji [Q1-2026-renewables-briefing.pdf, c1]. Spośród nich:
 >
-> - **Rekomendacja 2** (uproszczenie procesu pozwoleń przyłączeniowych) odpowiada poprawce 14 w ustawie energetycznej, *przyjętej* dnia 22 marca — patrz [legislation://voting/12/41].
-> - **Rekomendacja 4** (rozszerzenie limitu kontraktów różnicowych) została zgłoszona, lecz *wycofana* przed głosowaniem; patrz nota proceduralna w [Q1-2026-renewables-briefing.pdf, c4].
-> - Pozostałe trzy rekomendacje nie pojawiły się dotąd w zgłoszonej legislacji.
-
-Numerowane indeksy górne (np. *c1*, *c4*) ujawniają po najechaniu źródłową nazwę pliku; kliknięcie pobiera plik.
+> * **Rekomendacja 2** (uproszczenie procesu pozwoleń przyłączeniowych) odpowiada poprawce 14 w ustawie energetycznej, *przyjętej* 22 marca — patrz [legislation://voting/12/41].
+> * **Rekomendacja 4** (rozszerzenie limitu kontraktów różnicowych) została zgłoszona, lecz *wycofana* przed głosowaniem [Q1-2026-renewables-briefing.pdf, c4].
+> * Pozostałe trzy rekomendacje nie pojawiły się dotąd w zgłoszonej legislacji.
 
 ## Przykład 4 — Konfiguracja alertu z elicytacją
 
-Konfiguracja wybiegającego w przyszłość obserwatorium to jeden z przypadków, w których asystent zatrzyma się dla potwierdzenia.
+**Zapytanie:**
 
-> **Zapytanie.** Skonfiguruj alert obserwujący jakiekolwiek odniesienie do nowej reformy farmaceutycznej w wystąpieniach plenarnych i wgranych dokumentach.
+>  Skonfiguruj alert obserwujący jakiekolwiek odniesienie do nowej reformy farmaceutycznej w wystąpieniach plenarnych i wgranych dokumentach.
 
 **Sugerowana głębokość:** Surface.
 
 **Co robi asystent:**
 
-1. **legislation** — `list_votings` w celu znalezienia ustawy, do której odnosi się użytkownik.
-2. Dopasowanie zwraca dwie kandydujące ustawy (jedną bieżącą reformę farmaceutyczną oraz starszą). Narzędzie emituje **elicytację** prosząc użytkownika o wybór.
-3. *(użytkownik wybiera bieżącą ustawę z osadzonego formularza)*
-4. **alerts** — `create_alert` z numerem wybranej ustawy, opisem ulepszonym AI oraz wąskimi, tematycznie konkretnymi słowami kluczowymi (nazwa ustawy, sprawozdawca, główny termin polityki — nie ogólnik *"reforma"*).
-5. Nowy alert zostaje zwrócony, eksponując się jako plakietka, którą użytkownik może otworzyć.
+1. **Legislation** — `List votings` — wyszukanie ustawy, do której odnosi się pytanie.
+2. Dopasowanie zwraca dwie kandydujące ustawy — narzędzie emituje **elicytację** z prośbą o wybór.
+3. *(wybór z osadzonego formularza)*
+4. **Alerts** — `Create alert` — tworzenie alertu z konkretną ustawą, opisem i wąskimi słowami kluczowymi.
 
 **Jak wygląda odpowiedź:**
 
-> Utworzono alert **Pharmaceuticals Reform 2026** ([feature://alert/...]). Obserwuje wystąpienia plenarne i wgrane dokumenty wymieniające numer ustawy, nazwisko sprawozdawcy oraz główne słowa kluczowe polityki. Ustawiony jest jako **Active** i **Private**; widoczność można zmienić z poziomu widoku szczegółowego alertu, gdy zechcesz udostępnić go grupie.
+> Utworzono alert **Pharmaceuticals Reform 2026** ([feature://alert/...]). Obserwuje wystąpienia plenarne i wgrane dokumenty. Status: **Active**, widoczność: **Private** — zmianę można wprowadzić w widoku szczegółowym alertu.
 
-Asystent wyjaśnia dobór słów kluczowych w odpowiedzi, by użytkownik mógł go skorygować — *"jeśli `pharmaceuticals` w pojedynkę jest zbyt głośny, zawęź do numeru ustawy"* to typowe pytanie uzupełniające.
+## Przykład 5 — Wydobycie fragmentu dokumentu
 
-## Przykład 5 — Ukierunkowane wydobycie fragmentu dokumentu
+**Zapytanie:**
 
-Wyciągnięcie konkretnego fragmentu z wgranego transkryptu lub dokumentu.
-
-> **Zapytanie.** Znajdź fragment w naszym najnowszym transkrypcie z Komisji Sprawiedliwości, w którym przewodniczący ogłosił harmonogram poprawki do ustawy o zamówieniach publicznych.
+>  Znajdź fragment w najnowszym transkrypcie z Komisji Sprawiedliwości, w którym przewodniczący ogłosił harmonogram poprawki do ustawy o zamówieniach publicznych.
 
 **Sugerowana głębokość:** Balanced.
 
 **Co robi asystent:**
 
-1. **documents** — `hybrid_search` filtrowane do najnowszych transkryptów komisji z terminami wyszukiwania obejmującymi ustawę o zamówieniach publicznych i ogłoszenia harmonogramu.
-2. **documents** — emituje URI `documents://chunk/...` dla pasującego fragmentu transkryptu.
+1. **Documents** — `Hybrid search` — wyszukiwanie w transkryptach komisji z terminami dotyczącymi ustawy o zamówieniach.
+2. **Documents** — zwrócenie odnośnika dla pasującego fragmentu.
 
 **Jak wygląda odpowiedź:**
 
-> Przewodniczący ogłosił harmonogram w transkrypcie posiedzenia z 30 marca 2026 ([documents://chunk/.../...]). Cytat z fragmentu:
+> Przewodniczący ogłosił harmonogram w transkrypcie z 30 marca 2026 ([documents://chunk/.../...]). Cytowany fragment:
 >
-> > *"The procurement-law amendment will be considered in second reading at the next sitting on 5 April, with committee report due by 3 April."*
+> *„The procurement-law amendment will be considered in second reading at the next sitting on 5 April."*
 >
-> Powyższa plakietka otwiera plik w cytowanym fragmencie.
+> Przycisk otwiera plik przewinięty do cytowanego fragmentu.
 
 ## Przykład 6 — Wieloźródłowy briefing legislacyjny
 
-Pokaz: żądanie czerpiące z każdego istotnego źródła i produkujące zsyntezowany brief.
+**Zapytanie:**
 
-> **Zapytanie.** Potrzebuję jednostronicowego briefu o stanie ustawy o energetyce odnawialnej: gdzie jest w procesie legislacyjnym, najnowsze działania komisji, publiczne pozycjonowanie głównych partii, prognozowany wynik głosowania oraz ewentualne obawy interesariuszy do uwzględnienia w przyszłotygodniowym posiedzeniu.
+>  Potrzebuję jednostronicowego briefu o stanie ustawy o energetyce odnawialnej: status legislacyjny, ostatnie działania komisji, publiczne pozycjonowanie partii, prognozowany wynik głosowania oraz obawy interesariuszy.
 
 **Sugerowana głębokość:** Deep.
 
 **Co robi asystent:**
 
-1. **legislation** — `list_votings`, `get_voting` w celu zestawienia trajektorii legislacyjnej ustawy oraz najnowszych działań w sali.
-2. **documents** — `hybrid_search` dla dyskusji komisji nad ustawą w ostatnich trzech tygodniach po wgranych transkryptach i korpusie publicznym.
-3. **public_pulse** — `search_tweets` dla interesariuszy każdego głównego klubu, z zakresem dat ostatnich dwóch tygodni i terminami tematycznymi obejmującymi ustawę.
-4. **legislation** — `votes_by_legislator` agregowane po klubie, w celu zaprojektowania prawdopodobnego wyniku głosowania na podstawie wcześniejszych wyrównań w polityce energetycznej.
-5. **documents** — `hybrid_search` po publicznym korpusie i plikach tenanta użytkownika dla ewentualnych notatek briefingowych już otrzymanych w tym temacie.
-6. **alerts** — `list_alerts` w celu sprawdzenia, czy użytkownik posiada już alert obejmujący tę ustawę (i zaoferowania utworzenia, jeśli nie).
+1. **Legislation** — `List votings`, `Get voting` — trajektoria legislacyjna ustawy.
+2. **Documents** — `Hybrid search` — dyskusje komisji w ostatnich trzech tygodniach.
+3. **Public pulse** — `Search tweets` — pozycjonowanie każdego głównego klubu w ostatnich dwóch tygodniach.
+4. **Legislation** — `Votes by legislator` — projekcja wyniku głosowania na podstawie wcześniejszych wyrównań.
+5. **Documents** — `Hybrid search` — wewnętrzne briefingi dotyczące tej ustawy.
+6. **Alerts** — `List alerts` — weryfikacja, czy istnieje alert obejmujący tę ustawę.
 
 **Jak wygląda odpowiedź:**
 
-> **Renewable Energy Bill — Brief**
+> *Status.* Ustawa jest w drugim czytaniu. Komisja Energetyki sprawozdała pozytywnie 28 marca ([legislation://voting/12/38]).
 >
-> *Status.* Ustawa znajduje się w drugim czytaniu. Komisja Energetyki sprawozdała pozytywnie 28 marca ([legislation://voting/12/38]); istotna poprawka Koalicji Klimatycznej została odrzucona ([legislation://voting/12/47]).
+> *Ostatnie działania komisji.* Przewodniczący ogłosił 5 kwietnia jako datę głosowania ([documents://chunk/.../...]).
 >
-> *Ostatnie działania komisji.* Przewodniczący Komisji Energetyki ogłosił 5 kwietnia jako datę głosowania w sali ([documents://chunk/.../...]). 1 kwietnia odbyło się techniczne wysłuchanie w sprawie zdolności przyłączeniowej sieci; dostępne wyciągi z dokumentów.
+> *Publiczne pozycjonowanie.* Koalicja Obywatelska popiera z zastrzeżeniami ([feature://public_pulse/tweet/...]). PiS oponuje, powołując się na koszty przemysłowe ([feature://public_pulse/tweet/...]).
 >
-> *Publiczne pozycjonowanie.*
-> - **Koalicja Obywatelska** wsparła w sposób ogólny, naciskając na dodatki transformacyjne ([feature://public_pulse/tweet/...]).
-> - **Prawo i Sprawiedliwość** oponuje w obecnej formie, powołując się na obawy o koszty przemysłowe ([feature://public_pulse/tweet/...]).
-> - **Polskie Stronnictwo Ludowe** zasygnalizowało warunkowe wsparcie zależne od finansowania sieci wiejskich ([feature://public_pulse/tweet/...]).
+> *Prognozowany wynik.* Ustawa prawdopodobnie przejdzie marginesem 30–45 głosów.
 >
-> *Prognozowany wynik.* Na podstawie wcześniejszego wyrównania na poziomie klubów w porównywalnych głosowaniach z polityki energetycznej ustawa prawdopodobnie przejdzie marginesem 30–45 głosów, jeśli aktualna koalicja się utrzyma. Dwóch posłów Polskiego Stronnictwa Ludowego ma świeże rejestry głosowań sugerujące, że mogą złamać linię ([feature://stakeholder/...], [feature://stakeholder/...]).
->
-> *Obawy interesariuszy.* Wewnętrzny briefing Twojej kancelarii z Q1 ([Q1-2026-renewables-briefing.pdf, c1]) wskazał opóźnienie przyłączeniowe sieci jako główne ryzyko branżowe. Transkrypt technicznego wysłuchania potwierdza tę obawę.
->
-> Żaden istniejący alert nie obejmuje tej ustawy — czy chcesz, bym jeden utworzył?
-
-Jest to rodzaj wieloźródłowej syntezy, do której asystent jest zbudowany. Przy głębokości **Deep** użytkownik widzi oś czasu składającą się w czasie rzeczywistym, w miarę jak asystent przepracowuje pytanie.
+> Żaden alert nie obejmuje tej ustawy — dostępna jest propozycja jego utworzenia.
 
 ## Wzorce powracające w przykładach
 
-W obrębie sześciu powyższych przykładów powtarzają się trzy wzorce:
+W powyższych przykładach powtarzają się trzy wzorce:
 
-- **Asystent rozpoczyna od ustrukturyzowanych wyszukiwań.** Rekordy głosowań, członkostwo w komisjach, tożsamość interesariuszy — narzędzia strukturalne wywoływane są jako pierwsze, by zakotwiczyć pytanie. Wyszukiwanie tekstowe pojawia się później, ograniczone przez to, co znalazły wyszukiwania strukturalne.
-- **Wieloźródłowe cytowania to norma, nie wyjątek.** Nawet proste pytania zwykle produkują dwie do trzech plakietek URI. Użytkownik może zweryfikować dowolne twierdzenie poprzez kliknięcie.
-- **Asystent elegancko zamyka pracę, gdy zbliża się do swoich limitów.** Zapytanie typu Deep, które dotrze do limitu tury, zwróci pełną odpowiedź dla części, które objął, oraz jednoliniową notę o tym, co zostało odroczone — nigdy twardej awarii w pytaniu, na które dało się odpowiedzieć częściowo.
+* **Asystent rozpoczyna od wyszukiwań strukturalnych.** Rekordy głosowań, tożsamość posłów i komisje są kotwicą — wyszukiwanie tekstowe jest zawężane przez to, co znalazły narzędzia strukturalne.
+* **Wieloźródłowe cytowania to norma.** Nawet proste pytania produkują kilka plakietek URI, pozwalających zweryfikować każde twierdzenie.
+* **Asystent elegancko zamyka pracę przy limitach tury.** Zapytanie Deep kończące się na limicie zwraca pełną odpowiedź dla objętej części i jednoliniową notę o odroczonym zakresie.
