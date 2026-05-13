@@ -44,55 +44,55 @@ const sections: Record<Lang, Tile[]> = {
   en: [
     {
       title: 'Getting started',
-      description: 'Account creation, two-factor authentication, and first sign-in.',
+      description: 'The guide explains the process of creating an account, configuring two-factor authentication, and signing in for the first time.',
       href: '/getting-started',
       icon: '/docs/persate/icons/book.svg',
     },
     {
       title: 'Cockpit',
-      description: 'The unified dashboard: live proceedings, alerts, and recent activity.',
+      description: 'The main dashboard aggregates information about live proceedings, triggered alerts, and the current activity of stakeholders.',
       href: '/cockpit',
       icon: '/docs/persate/icons/dashboard.svg',
     },
     {
       title: 'Live proceedings',
-      description: 'Watching live and recorded sessions, scheduled agendas, and analysis pipelines.',
+      description: 'The view allows watching live sessions and recordings, tracking the session schedule, and analyzing the results of analytical pipelines.',
       href: '/live-proceedings',
       icon: '/docs/persate/icons/live.svg',
     },
     {
       title: 'Voting ledger',
-      description: 'Browsing parliamentary votes, inspecting results, and reading the seat-by-seat chamber map.',
+      description: 'The ledger enables browsing the list of parliamentary votes, analyzing detailed results, and verifying the balance of power on the chamber map.',
       href: '/voting-ledger',
       icon: '/docs/persate/icons/voting.svg',
     },
     {
       title: 'Stakeholders and Public Pulse',
-      description: 'The MP directory and the aggregated X feed across every tracked stakeholder.',
+      description: 'The directory presents MP profiles and aggregates X stream activity for all tracked stakeholders.',
       href: '/stakeholders',
       icon: '/docs/persate/icons/stakeholders.svg',
     },
     {
       title: 'Alerts and risks',
-      description: 'Standing watches over the legislative stream, with trigger events and group sharing.',
+      description: 'The module allows configuring notifications for events in the legislative stream and sharing defined alerts with group members.',
       href: '/alerts',
       icon: '/docs/persate/icons/alert.svg',
     },
     {
       title: 'AI advisor',
-      description: 'The in-app legislative-intelligence agent: skills, conversations, worked examples, and best practices.',
+      description: 'The advisor supports complex search and synthesis of legislative information based on built-in capability modules.',
       href: '/advisor',
       icon: '/docs/persate/icons/chat.svg',
     },
     {
       title: 'Repository',
-      description: 'Uploading, organising, and searching the document library.',
+      description: 'The private document library allows uploading files, organizing them in a smart folder structure, and searching datasets.',
       href: '/repository',
       icon: '/docs/persate/icons/storage.svg',
     },
     {
       title: 'Account and settings',
-      description: 'The settings modal: profile, security and 2FA, sessions, notifications, and appearance.',
+      description: 'The settings modal allows managing the profile, verifying active sessions, configuring notifications, and adjusting appearance preferences.',
       href: '/account-and-settings',
       icon: '/docs/persate/icons/notification.svg',
     },
@@ -100,55 +100,55 @@ const sections: Record<Lang, Tile[]> = {
   pl: [
     {
       title: 'Pierwsze kroki',
-      description: 'Założenie konta, uwierzytelnianie dwuskładnikowe oraz pierwsze logowanie.',
+      description: 'Przewodnik wyjaśnia proces zakładania konta, konfiguracji uwierzytelniania dwuskładnikowego oraz pierwszego logowania.',
       href: '/pl/getting-started',
       icon: '/docs/persate/icons/book.svg',
     },
     {
       title: 'Cockpit',
-      description: 'Pulpit zbiorczy: posiedzenia na żywo, alerty oraz bieżąca aktywność.',
+      description: 'Główny ekran agreguje informacje o posiedzeniach na żywo, wyzwolonych alertach oraz bieżącej aktywności interesariuszy.',
       href: '/pl/cockpit',
       icon: '/docs/persate/icons/dashboard.svg',
     },
     {
       title: 'Posiedzenia na żywo',
-      description: 'Oglądanie sesji na żywo i nagrań, harmonogram obrad oraz pipeline\'y analityczne.',
+      description: 'Widok umożliwia oglądanie sesji na żywo i nagrań, śledzenie harmonogramu obrad oraz analizę wyników pipeline\'ów analitycznych.',
       href: '/pl/live-proceedings',
       icon: '/docs/persate/icons/live.svg',
     },
     {
       title: 'Rejestr głosowań',
-      description: 'Przeglądanie głosowań parlamentarnych, analiza wyników oraz mandatowa mapa sali.',
+      description: 'Rejestr pozwala przeglądać listę głosowań parlamentarnych, analizować szczegółowe wyniki oraz weryfikować układ sił na mapie sali.',
       href: '/pl/voting-ledger',
       icon: '/docs/persate/icons/voting.svg',
     },
     {
       title: 'Interesariusze i Public Pulse',
-      description: 'Katalog posłów oraz zagregowany strumień X obejmujący wszystkich monitorowanych interesariuszy.',
+      description: 'Katalog prezentuje profile posłów oraz agreguje aktywność w strumieniu X dla wszystkich monitorowanych interesariuszy.',
       href: '/pl/stakeholders',
       icon: '/docs/persate/icons/stakeholders.svg',
     },
     {
       title: 'Alerty i ryzyka',
-      description: 'Stałe obserwatoria nad strumieniem legislacyjnym, ze zdarzeniami wyzwalającymi i udostępnianiem grupowym.',
+      description: 'Moduł pozwala konfigurować powiadomienia o zdarzeniach w strumieniu legislacyjnym oraz udostępniać zdefiniowane alerty członkom grupy.',
       href: '/pl/alerts',
       icon: '/docs/persate/icons/alert.svg',
     },
     {
       title: 'Asystent AI',
-      description: 'Wewnątrzaplikacyjny agent inteligencji legislacyjnej: umiejętności, konwersacje, przykłady robocze i dobre praktyki.',
+      description: 'Asystent wspiera proces złożonego wyszukiwania i syntezy informacji legislacyjnych na podstawie wbudowanych modułów kompetencji.',
       href: '/pl/advisor',
       icon: '/docs/persate/icons/chat.svg',
     },
     {
       title: 'Repozytorium',
-      description: 'Wgrywanie, porządkowanie i przeszukiwanie biblioteki dokumentów.',
+      description: 'Prywatna biblioteka dokumentów pozwala wgrać pliki, organizować je w strukturze smart folderów oraz przeszukiwać zbiory danych.',
       href: '/pl/repository',
       icon: '/docs/persate/icons/storage.svg',
     },
     {
       title: 'Konto i ustawienia',
-      description: 'Modal ustawień: profil, bezpieczeństwo i 2FA, sesje, powiadomienia oraz wygląd.',
+      description: 'Okno ustawień pozwala zarządzać profilem, weryfikować aktywne sesje, konfigurować powiadomienia oraz dostosować preferencje wyglądu.',
       href: '/pl/account-and-settings',
       icon: '/docs/persate/icons/notification.svg',
     },
@@ -157,12 +157,12 @@ const sections: Record<Lang, Tile[]> = {
 
 const upcoming: Record<Lang, Pending[]> = {
   en: [
-    { title: 'Daily reports', description: 'Auto-generated end-of-day summaries of votes, alerts, and stakeholder activity.', icon: '/docs/persate/icons/report.svg' },
-    { title: 'Legislation tracker', description: 'Following bills end-to-end through the legislative process — readings, committees, and amendments.', icon: '/docs/persate/icons/scan.svg' },
+    { title: 'Daily reports', description: 'The tool automatically generates daily summaries of vote results, triggered alerts, and stakeholder activity.', icon: '/docs/persate/icons/report.svg' },
+    { title: 'Legislation tracker', description: 'The module allows tracking bills from the beginning to the end of the legislative process, including readings, committee work, and amendments.', icon: '/docs/persate/icons/scan.svg' },
   ],
   pl: [
-    { title: 'Raporty dzienne', description: 'Automatycznie generowane podsumowania głosowań, alertów oraz aktywności interesariuszy z końca dnia.', icon: '/docs/persate/icons/report.svg' },
-    { title: 'Tracker legislacyjny', description: 'Śledzenie ustaw od początku do końca procesu legislacyjnego — czytania, komisje i poprawki.', icon: '/docs/persate/icons/scan.svg' },
+    { title: 'Raporty dzienne', description: 'Narzędzie automatycznie tworzy dzienne podsumowania wyników głosowań, wyzwolonych alertów oraz aktywności interesariuszy.', icon: '/docs/persate/icons/report.svg' },
+    { title: 'Tracker legislacyjny', description: 'Moduł pozwala śledzić ustawy od początku do końca procesu legislacyjnego, obejmując czytania, prace w komisjach oraz poprawki.', icon: '/docs/persate/icons/scan.svg' },
   ],
 };
 
