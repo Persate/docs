@@ -1,6 +1,7 @@
 import './global.css';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
+import React from 'react';
 
 const montserrat = Montserrat({
   subsets: ['latin', 'latin-ext'],
@@ -23,11 +24,13 @@ export default function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { lang?: string };
+  params: Promise<{ lang?: string }>;
 }) {
+  const { lang } = React.use(params);
+  
   return (
     <html
-      lang={params?.lang ?? 'en'}
+      lang={lang ?? 'en'}
       className={`${montserrat.variable} font-sans`}
       suppressHydrationWarning
     >
