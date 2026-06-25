@@ -1,9 +1,18 @@
 ---
 title: Opening a proceeding
-description: Detailed session view — video player, real-time transcription, and comprehensive analysis.
+description: Detailed session view — video player, the session summary (Advisor summary), and a transcription panel with a timeline and a Raw / Polished toggle.
 ---
 
-The **Detailed view** integrates the video player with content analysis panels. Selecting a card from the main list opens the detailed view. Scrolling the recording synchronizes the currently spoken transcript fragment, and selecting text jumps the video to the corresponding moment.
+The **Detailed view** integrates the video player with content analysis panels. Selecting a card from the main list opens the detailed view. Scrolling the recording synchronizes the displayed transcript fragment currently being spoken, and selecting text jumps the video to the corresponding moment.
+
+## View layout
+
+The screen is divided into two columns:
+
+* **Left column** — the video player, with the **Advisor summary** card (the session summary) below it.
+* **Right column** — the **transcription** panel with a timeline (**Timeline**) and a **Raw / Polished** toggle.
+
+The two columns are synchronized: the playback position highlights and scrolls to the fragment of the transcript currently being spoken, and selecting any fragment or timeline point jumps the video to the corresponding moment.
 
 ## Video player
 
@@ -11,17 +20,45 @@ The interface automatically adapts to the session state:
 
 * **Ongoing sessions** — a live stream sourced from the official Sejm channel.
 * **Past sessions** — an archival recording with free scrolling capability.
-* **Scheduled sessions** — the broadcast will begin once it starts on the official Sejm channel; the message *„Scheduled — analysis will be available once the session begins"* is displayed.
+* **Scheduled sessions** — the broadcast will begin once it starts on the official Sejm channel; the message *"Scheduled — analysis will be available once the session begins"* is displayed.
 
 In the top left corner of the player, a button enables **face overlays**, which label speakers recognized in the frame.
 
+## Advisor summary — the session summary
+
+Below the player, in the left column, the **Advisor summary** card is displayed. It is built from the full, in-depth analysis of the recording and serves as a quick overview of the entire session's content without having to read the transcript from the beginning. The card contains:
+
+* **Editorial title** — a concise framing of the session's main topic.
+* **Course description** — a narrative summary of the most important threads, points of contention, and resolutions.
+
+The card appears only after the in-depth analysis (**Enhanced Record**) has been generated; while it is running, a progress indicator is shown, and for a live broadcast alone (**Record Analysis**) the summary is not available.
+
+## Transcription panel
+
+The right column contains the full transcript of the statements made during the session. Each fragment is labeled with its speaker — recognized stakeholders receive a profile with a photo, and unrecognized speakers a temporary identifier (e.g., **Speaker 3**). The panel supports searching within the content and scrolls automatically in line with the playback position; selecting a fragment jumps the video to the corresponding moment.
+
+Two controls are available in the panel header.
+
+### Timeline
+
+The **Timeline** button opens a side panel with the session timeline divided into successive topics. Each point contains a timestamp, a thread title, a short summary, and keywords. It is used for quick navigation across a longer session — selecting a point jumps the video and transcript to the start of the given topic. The timeline is created together with the in-depth analysis.
+
+### Raw / Polished toggle
+
+The **Raw / Polished** toggle determines how the transcript is presented:
+
+* **Raw** — the raw record straight from the machine transcription. It conveys statements verbatim, including hesitations and repetitions; useful when fidelity to the original statement matters.
+* **Polished** — a refined version: text cleaned up and organized, with statements attributed to speakers. It reads more comfortably and is suitable for quoting and further analytical work.
+
+The **Polished** version is available only after it has been generated as part of the in-depth analysis — until then (and for live broadcasts), the panel shows the **Raw** record.
+
 ## Analysis modes
 
-Tabs on the right side represent two approaches to content processing:
+The platform offers two approaches to content processing, selected automatically based on the session state. Ongoing sessions show real-time analysis (**Record Analysis**), and past sessions open directly in the in-depth result (**Enhanced Record**) — there is no longer a manual toggle between the modes.
 
 ### Record Analysis
 
-A speed-oriented mode, available for live broadcasts (**Live Session**) and as an accelerated archival review (**Priority Review**).
+A speed-oriented mode, available for live broadcasts (**Live Session**) and as an accelerated archival review.
 
 * **Transcription** — text appears in the lower part of the panel as words are spoken.
 * **Speaker profiles** — the system recognizes faces known from the stakeholder catalog. Unrecognized speakers receive temporary identifiers (e.g., **Speaker 3**).
@@ -30,17 +67,17 @@ If analysis is not active, the **Start Record Analysis** button is available.
 
 ### Enhanced Record
 
-A comprehensive mode, delivering the highest-fidelity transcription, topic segmentation, and a structured timeline. Processing in this mode takes longer and is available exclusively for completed recordings. The process is initiated using the **Start Enhanced Record** button, and progress is reported in stages (e.g., **Transcription & diarization**, **Detecting faces**).
+An in-depth mode delivering the highest-fidelity transcription, topic segmentation, accompanying analysis, and a structured timeline. This is the mode that powers the **Advisor summary** card, the **Polished** version of the transcript, and the **Timeline** described above. Work in this mode takes longer and is available exclusively for completed recordings. The process is initiated with the **Start Enhanced Record** button, and progress is reported in stages along with a completion percentage.
 
 ## Recommended workflow
 
 1. Check ongoing broadcasts in the **Ongoing** view and upcoming ones in **Scheduled**.
-2. Launch **Live Session** for sessions in progress to gain immediate insight into speeches.
+2. Launch **Live Session** for sessions in progress to gain immediate insight into the statements.
 3. Initiate **Enhanced Record** for key proceedings after their completion to obtain reference material.
 4. Use the transcript-to-video jump function to precisely locate specific statements.
 
 ## Empty view and error states
 
-* *„Playback unavailable"* — error establishing the video stream. Refreshing the page is recommended.
-* *„Scheduled — analysis will be available..."* — an attempt to open a session before its start.
-* *„Analysis failed"* — server error.
+* *"Playback unavailable"* — error establishing the video stream. Refreshing the page is recommended.
+* *"Scheduled — analysis will be available..."* — an attempt to open a session before its start.
+* *"Analysis failed"* — server error.

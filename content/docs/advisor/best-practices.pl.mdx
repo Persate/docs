@@ -1,24 +1,14 @@
 ---
 title: Dobre praktyki
-description: Praktyczne wskazówki do efektywnej pracy z Asystentem AI — wybór głębokości, formułowanie pytań, załączanie plików, obsługa cytowań oraz rozpoznawanie sygnałów wyczerpania budżetu.
+description: Praktyczne wskazówki do efektywnej pracy z Asystentem AI — formułowanie pytań, załączanie plików, obsługa cytowań oraz rozpoznawanie sygnałów wyczerpania budżetu.
 ---
-
-## Dobór głębokości analizy do zapytania
-
-Trafny wybór sprawia, że asystent zwraca adekwatne wyniki — szybkie dla wyszukiwań, wyczerpujące dla analizy.
-
-| Głębokość | Kiedy wybrać | Kiedy unikać |
-| --- | --- | --- |
-| **Surface** | Odpowiedź to pojedynczy fakt lub krótka lista, a pierwsze wiarygodne trafienie jest wystarczające. | Pytanie wymaga syntezy z wielu źródeł — Surface będzie wyszukiwać zbyt płytko. |
-| **Balanced** | Domyślne ustawienie. Pytanie wymaga kilku wyszukiwań, a oczekiwana jest pełna odpowiedź w rozsądnym czasie. | Wystarczyłaby odpowiedź Surface — Balanced generuje zbędne wyszukiwania. |
-| **Deep** | Pytanie wieloźródłowe: porównanie, briefing, identyfikacja rozbieżności, lub *„wyeksponuj cokolwiek istotnego"*. | Pytanie jest wąskie — Deep przeszuka zbyt szeroko i może zwrócić więcej, niż potrzeba. |
 
 ## Formułowanie pytania w terminach korpusu
 
-Asystent zaprojektowany jest z konkretnymi umiejętnościami — analiza i przeszukiwanie postępowań sejmowych, interesariuszy, klubów, głosowań, plików. Pytania sformułowane precyzyjnie w odniesieniu do tych terminów powodują generowanie lepszych i bardziej precyzyjnych odpowiedzi.
+Asystent dysponuje konkretnymi umiejętnościami — analiza i przeszukiwanie postępowań sejmowych, interesariuszy, klubów, głosowań, plików. Pytania sformułowane precyzyjnie w odniesieniu do tych terminów pozwalają uzyskać lepsze i bardziej trafne odpowiedzi.
 
-* **Mniej skuteczne:** *„Co się dzieje z polityką energetyczną?"* — zakres pozostaje nieokreślony.
-* **Bardziej skuteczne:** *„Streszcz najnowszą aktywność w sali nad ustawą o energetyce odnawialnej z ostatnim głosowaniem i działaniami komisji w ostatnim tygodniu."*
+* **Mniej skuteczne:** *„Co się dzieje z polityką energetyczną?”* — zakres pozostaje nieokreślony.
+* **Bardziej skuteczne:** *„Streszcz najnowszą aktywność w sali nad ustawą o energetyce odnawialnej z ostatnim głosowaniem i działaniami komisji w ostatnim tygodniu.”*
 
 Nie każde pytanie musi być rozbudowane. Wystarczy zawarcie **przynajmniej jednej konkretnej informacji** — nazwy ustawy, interesariusza, klubu, zakresu dat, komisji lub pliku.
 
@@ -30,7 +20,7 @@ Wpisanie `@` w polu wprowadzania otwiera selektor plików. Wyszukiwanie odbywa s
 
 Asystent traktuje załączony plik jako pierwszorzędne odniesienie i pomija krok wyszukiwania po zbiorze wszystkich plików.
 
-Kiedy **nie** warto załączać pliku: gdy celem jest *znalezienie* właściwego dokumentu. Pytanie *„Który z naszych briefingów omawia zmiany w prawie zamówień publicznych?"* powinno być zadane bez załącznika, by uruchomić wyszukiwanie hybrydowe asystenta.
+Kiedy **nie** warto załączać pliku: gdy celem jest *znalezienie* właściwego dokumentu. Pytanie *„Który z naszych briefingów omawia zmiany w prawie zamówień publicznych?”* powinno być zadane bez załącznika, by uruchomić wyszukiwanie hybrydowe asystenta.
 
 ## Czytanie cytowań, nie wyłącznie treści odpowiedzi
 
@@ -41,29 +31,29 @@ Każde źródło danych asystenta eksponowane jest jako weryfikowalny odnośnik.
 * Treści cytowanego wpisu.
 * Dokumentu źródłowego w cytowanym fragmencie.
 
-Generowane odpowiedzi przeważnie pokrywają się ze stanem faktycznym, natomiast gdy wygenerowana odpowiedź wydaje się błędna, warto wygenerować ją ponownie, wybierając ikonę strzałki pod odpowiedzią. Drugi przebieg często zwraca poprawnie ugruntowane cytowania.
+Generowane odpowiedzi przeważnie pokrywają się ze stanem faktycznym, natomiast gdy odpowiedź wydaje się błędna, warto poprosić o jej ponowne wygenerowanie, wybierając ikonę strzałki pod odpowiedzią. Drugi przebieg często zwraca poprawnie ugruntowane cytowania.
 
 ## Wykorzystanie ciągłości konwersacji
 
 Asystent zachowuje pełną konwersację jako kontekst dla pytań uzupełniających. Trzy skuteczne wzorce:
 
-* **Doprecyzowanie w toku** — *„Teraz rozbij to samo porównanie według województwa zamiast po klubie."* — asystent ponownie wykorzystuje wcześniejszy wynik.
-* **Pogłębienie w konkretne ustalenie** — *„Powiedz więcej o rozbieżności w poprawce 14."*
-* **Przejście do działania** — *„Skonfiguruj alert obejmujący ustawy, które właśnie zbriefingowałeś."* — asystent wyciąga identyfikatory z wcześniejszej odpowiedzi.
+* **Doprecyzowanie w toku** — *„Teraz rozbij to samo porównanie według województwa zamiast po klubie.”* — asystent ponownie wykorzystuje wcześniejszy wynik.
+* **Pogłębienie w konkretne ustalenie** — *„Powiedz więcej o rozbieżności w poprawce 14.”*
+* **Przejście do działania** — *„Skonfiguruj alert obejmujący ustawy, które właśnie zbriefingowałeś.”* — asystent wyciąga identyfikatory z wcześniejszej odpowiedzi.
 
 Zaleca się unikanie przeskakiwania między niezwiązanymi wątkami w jednej konwersacji. Dla różnych tematów warto otworzyć nowe sesje — historia czatu sprawia, że jest to efektywne.
 
 ## Rozpoznawanie sygnału wyczerpania budżetu
 
-Gdy pytanie przekracza budżet jednokrotnego zapytania — zazwyczaj głębokość analizy Deep z bardzo szerokim zakresem — odpowiedź kończy się notą o nieukończonej części:
+Gdy pytanie przekracza budżet jednokrotnego zapytania — zazwyczaj pytanie wieloźródłowe o bardzo szerokim zakresie — odpowiedź kończy się notą o nieukończonej części:
 
-> *„...Spośród jedenastu ustaw, o które pytałeś, omówiłem dziewięć szczegółowo, dla ustaw 10 i 11 zabrakło budżetu zapytania. Powtórz pytanie zawężone do tych dwóch konkretnie."*
+> *„...Spośród jedenastu ustaw, o które pytałeś, omówiłem dziewięć szczegółowo, dla ustaw 10 i 11 zabrakło budżetu zapytania. Powtórz pytanie zawężone do tych dwóch konkretnie.”*
 
-Jest to poprawny wynik. Zalecana reakcja to przyjęcie częściowej odpowiedzi i ponowne zadanie węższego pytania uzupełniającego. Jeśli wyczerpanie budżetu pojawia się regularnie przy danym typie pytania, pytanie jest prawdopodobnie zbyt szerokie — dwa zapytania z ustawieniem Balanced dają lepszy łączny wynik niż jedno na poziomie Deep.
+Jest to poprawny wynik. Zalecana reakcja to przyjęcie częściowej odpowiedzi i ponowne zadanie węższego pytania uzupełniającego. Jeśli wyczerpanie budżetu pojawia się regularnie przy danym typie pytania, pytanie jest prawdopodobnie zbyt szerokie — dwa węższe pytania dają lepszy łączny wynik niż jedno bardzo szerokie.
 
 ## Odpowiadanie na formularze elicytacji
 
-Gdy narzędzie potrzebuje rozstrzygnięcia (np. *„Która kadencja Sejmu?"*, *„Który z dwóch posłów o nazwisku Kowalski?"*), asystent wyświetla formularz. Należy go wypełnić bezpośrednio — wpisanie odpowiedzi w polu czatu pozostawia formularz nierozstrzygnięty i inicjuje nową turę, zamiast kontynuować bieżącą.
+Gdy narzędzie potrzebuje rozstrzygnięcia (np. *„Która kadencja Sejmu?”*, *„Który z dwóch posłów o nazwisku Kowalski?”*), asystent wyświetla formularz. Należy go wypełnić bezpośrednio — wpisanie odpowiedzi w polu czatu pozostawia formularz nierozstrzygnięty i inicjuje nową turę, zamiast kontynuować bieżącą.
 
 ## Kiedy asystent jest niewłaściwym narzędziem
 
@@ -71,7 +61,7 @@ Asystent odsuwa od kilku klas pytań:
 
 * **Ogólnodostępna konwersacja** — pytania o opinie i oceny spoza korpusu legislacyjnego.
 * **Analiza spoza zakresu** — stosunki międzynarodowe, prognozy rynkowe, sondaże wyborcze. Asystent odnotuje ograniczenie i odpowie na to, co jest dostępne z korpusu.
-* **Tworzenie treści** — asystent streści, zbriefinguje i porówna, lecz nie pisze komunikatów prasowych ani pism prawnych.
+* **Tworzenie treści** — asystent streści, przygotuje briefing i porówna, lecz nie pisze komunikatów prasowych ani pism prawnych.
 * **Operacje masowe** — asystent wykonuje zapytania, nie akcje. Istniejące akcje (tworzenie alertów, wgrywanie plików) są jawne i potwierdzane.
 
 W tych przypadkach asystent wyjaśnia ograniczenie i wskazuje właściwą część platformy, gdy to możliwe.

@@ -1,24 +1,14 @@
 ---
 title: Best practices
-description: Practical guidelines for effective work with the AI Advisor — depth selection, formulating questions, attaching files, handling citations, and recognizing budget exhaustion signals.
+description: Practical guidelines for effective work with the AI Advisor — formulating questions, attaching files, handling citations, and recognizing budget exhaustion signals.
 ---
-
-## Selecting analysis depth for the query
-
-Accurate selection ensures the advisor returns adequate results — quick for searches, comprehensive for analysis.
-
-| Depth | When to select | When to avoid |
-| --- | --- | --- |
-| **Surface** | The answer is a single fact or a short list, and the first reliable match is sufficient. | The query requires multi-source synthesis — Surface will search too shallowly. |
-| **Balanced** | Default setting. The query requires several searches, and a full answer is expected in a reasonable time. | A Surface answer would suffice — Balanced generates unnecessary searches. |
-| **Deep** | A multi-source query: comparison, briefing, identifying discrepancies, or *„highlight anything relevant”*. | The query is narrow — Deep will search too broadly and may return more than necessary. |
 
 ## Formulating questions using corpus terms
 
 The advisor is designed with specific skills — analyzing and searching Sejm proceedings, stakeholders, clubs, votes, and files. Questions formulated precisely using these terms generate better and more accurate responses.
 
-* **Less effective:** *„What is happening with energy policy?"* — the scope remains undefined.
-* **More effective:** *„Summarize recent floor activity on the renewable energy bill, including the last vote and committee actions from the past week."*
+* **Less effective:** *"What is happening with energy policy?"* — the scope remains undefined.
+* **More effective:** *"Summarize recent floor activity on the renewable energy bill, including the last vote and committee actions from the past week."*
 
 Not every question needs to be elaborate. Including **at least one specific piece of information** — a bill name, stakeholder, club, date range, committee, or file — is sufficient.
 
@@ -30,7 +20,7 @@ Entering `@` in the input field opens the file selector. Searching is performed 
 
 The advisor treats the attached file as a primary reference and skips the step of searching across all files.
 
-When **not** to attach a file: when the goal is to *find* the correct document. A query like *„Which of our briefings discusses changes in public procurement law?"* should be submitted without an attachment to trigger the advisor's hybrid search.
+When **not** to attach a file: when the goal is to *find* the correct document. A query like *"Which of our briefings discusses changes in public procurement law?"* should be submitted without an attachment to trigger the advisor's hybrid search.
 
 ## Reading citations, not just response content
 
@@ -47,23 +37,23 @@ Generated responses generally align with facts, but if a generated response appe
 
 The advisor retains the full conversation as context for follow-up questions. Three effective patterns:
 
-* **In-progress refinement** — *„Now break down that same comparison by voivodeship instead of club."* — the advisor reuses the previous result.
-* **Deepening a specific finding** — *„Tell me more about the discrepancy in amendment 14."*
-* **Transitioning to action** — *„Configure an alert covering the bills you just briefed."* — the advisor extracts identifiers from the previous response.
+* **In-progress refinement** — *"Now break down that same comparison by voivodeship instead of club."* — the advisor reuses the previous result.
+* **Deepening a specific finding** — *"Tell me more about the discrepancy in amendment 14."*
+* **Transitioning to action** — *"Configure an alert covering the bills you just briefed."* — the advisor extracts identifiers from the previous response.
 
 Avoid jumping between unrelated threads in a single conversation. For different topics, open new sessions — the chat history makes this efficient.
 
 ## Recognizing the budget exhaustion signal
 
-When a query exceeds the single-request budget — usually a Deep analysis with a very broad scope — the response concludes with a note regarding the incomplete portion:
+When a query exceeds the single-request budget — usually a multi-source question with a very broad scope — the response concludes with a note regarding the incomplete portion:
 
-> *„...Out of the eleven bills you asked about, I discussed nine in detail; the query budget was insufficient for bills 10 and 11. Repeat the query narrowed down to those two specifically."*
+> *"...Out of the eleven bills you asked about, I discussed nine in detail; the query budget was insufficient for bills 10 and 11. Repeat the query narrowed down to those two specifically."*
 
-This is a valid result. The recommended action is to accept the partial response and submit a narrower follow-up query. If budget exhaustion occurs regularly for a given question type, the question is likely too broad — two queries with the Balanced setting yield a better combined result than one at the Deep level.
+This is a valid result. The recommended action is to accept the partial response and submit a narrower follow-up query. If budget exhaustion occurs regularly for a given question type, the question is likely too broad — two narrower questions yield a better combined result than one very broad one.
 
 ## Responding to elicitation forms
 
-When a tool requires a resolution (e.g., *„Which Sejm term?"*, *„Which of the two stakeholders named Kowalski?"*), the advisor displays a form. Fill it out directly — entering the answer in the chat field leaves the form unresolved and initiates a new turn instead of continuing the current one.
+When a tool requires a resolution (e.g., *"Which Sejm term?"*, *"Which of the two stakeholders named Kowalski?"*), the advisor displays a form. Fill it out directly — entering the answer in the chat field leaves the form unresolved and initiates a new turn instead of continuing the current one.
 
 ## When the advisor is the wrong tool
 

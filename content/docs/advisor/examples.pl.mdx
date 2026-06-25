@@ -6,7 +6,6 @@ description: Reprezentatywne zapytania z opisem oczekiwanego zachowania asystent
 Każdy przykład zawiera:
 
 * **Zapytanie** — treść wpisywanej wiadomości.
-* **Sugerowaną głębokość analizy** — Surface, Balanced lub Deep.
 * **Co robi asystent** — umiejętności pojawiające się w osi czasu wiadomości.
 * **Odpowiedź** — struktura i typ cytowań.
 
@@ -18,12 +17,10 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 >  Którzy posłowie z Koalicji Obywatelskiej głosowali przeciwko proponowanej poprawce do ustawy energetycznej na ostatnim posiedzeniu Sejmu? Pokaż wynik rozstrzygnięcia i odeślij do głosowania.
 
-**Sugerowana głębokość:** Balanced.
-
 **Co robi asystent:**
 
 1. **Legislation** — `List votings` — enumeracja ostatnich głosowań; filtruje do głosowań dotyczących ustawy energetycznej i poprawki.
-2. **Legislation** — `Get voting` — pobranie rozkładu per-mandatowego i metadanych.
+2. **Legislation** — `Get voting` — pobranie rozkładu w rozbiciu na mandaty i metadanych.
 3. **Stakeholders** — `Get stakeholder` — dopasowanie nazwisk do identyfikatorów dla członków KO głosujących.
 
 **Jak wygląda odpowiedź:**
@@ -35,8 +32,6 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 **Zapytanie:**
 
 >  Koalicja Klimatyczna była ostatnio głośna publicznie w sprawie odejścia od węgla. Jak jej członkowie faktycznie głosowali w plenum w rozstrzygnięciach związanych z węglem w ostatnim miesiącu? Czy występują rozbieżności?
-
-**Sugerowana głębokość:** Deep.
 
 **Co robi asystent:**
 
@@ -59,8 +54,6 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 **Zapytanie:** 
 > Streść rekomendacje regulacyjne w tym briefingu i sprawdź, czy którakolwiek z nich została przyjęta na ostatnich posiedzeniach Sejmu *(z załączonym `Q1-2026-renewables-briefing.pdf`)*.
 
-**Sugerowana głębokość:** Balanced.
-
 **Co robi asystent:**
 
 1. **Documents** — `Read file` — odczyt rekomendacji bezpośrednio z załączonego pliku (bez kroku wyszukiwania — identyfikator pliku jest dostarczony).
@@ -81,8 +74,6 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 >  Skonfiguruj alert obserwujący jakiekolwiek odniesienie do nowej reformy farmaceutycznej w wystąpieniach plenarnych i wgranych dokumentach.
 
-**Sugerowana głębokość:** Surface.
-
 **Co robi asystent:**
 
 1. **Legislation** — `List votings` — wyszukanie ustawy, do której odnosi się pytanie.
@@ -99,8 +90,6 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 **Zapytanie:**
 
 >  Znajdź fragment w najnowszym transkrypcie z Komisji Sprawiedliwości, w którym przewodniczący ogłosił harmonogram poprawki do ustawy o zamówieniach publicznych.
-
-**Sugerowana głębokość:** Balanced.
 
 **Co robi asystent:**
 
@@ -120,8 +109,6 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 **Zapytanie:**
 
 >  Potrzebuję jednostronicowego briefu o stanie ustawy o energetyce odnawialnej: status legislacyjny, ostatnie działania komisji, publiczne pozycjonowanie partii, prognozowany wynik głosowania oraz obawy interesariuszy.
-
-**Sugerowana głębokość:** Deep.
 
 **Co robi asystent:**
 
@@ -150,4 +137,4 @@ W powyższych przykładach powtarzają się trzy wzorce:
 
 * **Asystent rozpoczyna od wyszukiwań strukturalnych.** Rekordy głosowań, tożsamość posłów i komisje są kotwicą — wyszukiwanie tekstowe jest zawężane przez to, co znalazły narzędzia strukturalne.
 * **Wieloźródłowe cytowania to norma.** Nawet proste pytania produkują kilka plakietek URI, pozwalających zweryfikować każde twierdzenie.
-* **Asystent elegancko zamyka pracę przy limitach tury.** Zapytanie Deep kończące się na limicie zwraca pełną odpowiedź dla objętej części i jednoliniową notę o odroczonym zakresie.
+* **Asystent elegancko zamyka pracę przy limitach tury.** Szerokie pytanie kończące się na limicie zwraca pełną odpowiedź dla objętej części i jednoliniową notę o odroczonym zakresie.

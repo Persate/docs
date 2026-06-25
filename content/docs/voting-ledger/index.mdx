@@ -1,6 +1,6 @@
 ---
 title: Voting ledger
-description: Catalog of parliamentary resolutions including official results, source documents, and the per-mandate voting record of every stakeholder.
+description: Catalog of parliamentary resolutions including official results, source documents, and the per-mandate voting record of every member.
 ---
 
 The **Voting ledger** is a chronological record of all Sejm votes. Every entry contains the official numerical result, resolution information, and a detailed per-mandate vote distribution.
@@ -9,37 +9,43 @@ Access to the module is provided by the **KNOWLEDGE BASE → Ledger** entry in t
 
 ## List structure
 
-Votes are grouped by **proceeding** and presented in descending order. The view is controlled by a page size selector, and access to historical data is obtained through pagination.
+Votes are presented in a table, in descending order (newest first). Access to historical data is provided by pagination with a page size selector at the bottom of the view.
 
-## Voting card
+## Table columns
 
-Every vote is represented by a card containing:
+Every row represents a single vote and contains:
 
-* **Identifier** — the proceeding number (**Proceeding**) and vote number (**Vote**).
-* **Result** — resolution information: **Passed**, **Rejected**, **Quorum present**, or **Quorum missing**.
-* **Vote distribution visualization** — a segmented color bar: **Yes** (blue), **No** (red), **Abstain** (amber), **Present** (light grey), and **Absent** (grey).
-* **Metrics** — the total number of votes cast (**Votes cast**) or present members (**Members present**).
+* **Result** — the resolution along with its status: among others **Passed**, **Rejected**, **Quorum present**, **Quorum missing**, or **List vote** for list votes.
+* **Motion** — the title of the matter under consideration.
+* **Topic** — the procedural context of the vote.
+* **Vote** — the vote distribution bar.
+* **Margin** — the difference between votes in favor and against.
+* **Date** — the date of the vote.
+* **No.** — the proceeding number and vote number.
 
-Selecting a card opens the detailed view with the mandate chamber map.
+Selecting a row opens the detailed view with the mandate chamber map.
 
 ## Search and filtering
 
-The **Search** field in the sidebar allows filtering records currently loaded on the page by title, topic, or vote number. Matching is case-insensitive and updates in real time.
+The sidebar provides:
+
+* **Search current page** — filters the records currently loaded on the page by title, topic, or vote number.
+* **Show procedural votes** — a toggle that reveals procedural votes (changes to the agenda, breaks, quorum checks). They are hidden by default.
 
 ## Resolution rules
 
 The platform records the majority type applied for each vote:
 
 * **Simple** — more votes in favor than against.
-* **Absolute** — more than half of the statutory number of stakeholders.
+* **Absolute** — more than half of the statutory number of members.
 * **Qualified** — a constitutionally defined threshold (e.g., 2/3 or 3/5).
 
 The majority type directly determines the assignment of the **Passed** or **Rejected** label.
 
 ## Empty view and error states
 
-* *„No votings match your search"* — no records on the current page match the query.
-* *„No votings available"* — the system has not recorded any votes in the selected range. Reloading the page is recommended.
+* *"No votings match your search"* — no records on the current page match the query.
+* *"No votings available"* — the system has not recorded any votes in the selected range. Reloading the page is recommended.
 
 ## Pages in this section
 

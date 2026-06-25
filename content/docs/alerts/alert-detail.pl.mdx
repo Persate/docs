@@ -1,16 +1,16 @@
 ---
 title: Wgląd w alert
-description: Widok szczegółowy alertu — banner tytułowy, dziennik zdarzeń wyzwalających oraz zarządzanie uprawnieniami.
+description: Widok szczegółowy alertu — banner tytułowy, dziennik zdarzeń wyzwalających, czułość dopasowania oraz zarządzanie uprawnieniami.
 ---
 
-**Widok szczegółowy** pozwala na analizę zarejestrowanych zdarzeń oraz zarządzanie stanem i widocznością alertu. Składa się z bannera tytułowego, wiersza akcji, dziennika zdarzeń oraz panelu referencyjnego.
+**Widok szczegółowy** pozwala na analizę zarejestrowanych zdarzeń oraz zarządzanie stanem, czułością i widocznością alertu. Składa się z bannera tytułowego, wiersza akcji, dziennika zdarzeń oraz panelu referencyjnego.
 
 ## Banner tytułowy
 
 Banner zawiera kluczowe metadane alertu:
 
 * **Nazwa i status** — nagłówek z informacją o stanie: **Active** (aktywny) lub **Paused** (wstrzymany).
-* **Widoczność** — oznaczenie **Private** (tylko dla twórcy) lub **Shared** (współdzielony w wybranych grupach).
+* **Widoczność** — oznaczenie **Private** (tylko dla twórcy) lub **Shared** (współdzielony z wybranymi grupami).
 * **Data utworzenia** — znacznik czasu prezentowany obok ikony zegara.
 * **Ilustracja AI** — tematyczny obraz dopasowywany automatycznie do każdego alertu.
 
@@ -18,34 +18,58 @@ Banner zawiera kluczowe metadane alertu:
 
 Pod bannerem znajdują się przyciski umożliwiające modyfikację stanu:
 
+* **Make Shared / Make Private** — zmienia zakres widoczności. Przełączenie na status współdzielony wymaga wskazania przynajmniej jednej grupy użytkowników w oknie dialogowym. Powrót do statusu prywatnego odbiera dostęp wszystkim grupom.
 * **Pause / Resume** — wstrzymuje lub wznawia monitorowanie treści. W stanie wstrzymania nowe zdarzenia nie są rejestrowane.
-* **Make Shared / Make Private** — zmienia zakres widoczności. Przełączenie na status współdzielony wymaga wskazania przynajmniej jednej grupy użytkowników w oknie dialogowym.
-* **Edit** — otwiera formularz edycji parametrów alertu.
-* **Delete** — trwale usuwa alert wraz z całą historią zdarzeń. Operacja wymaga potwierdzenia i jest nieodwracalna.
+* **Edit** (ikona ołówka) — otwiera formularz edycji parametrów alertu.
+* **Delete** (ikona kosza) — trwale usuwa alert wraz z całą historią zdarzeń. Operacja wymaga potwierdzenia i jest nieodwracalna.
 
-## Historia wyzwoleń
+## Historia zdarzeń
 
-Sekcja **Trigger History** zawiera chronologiczny dziennik wszystkich dopasowań. Każdy wpis prezentuje:
+Sekcja **Trigger History** zawiera chronologiczny dziennik dopasowań. Każdy wpis prezentuje:
 
-* **Źródło** — typ treści, w której znaleziono dopasowanie (np. **Sejm speech**, **Public pulse**).
-* **Znacznik czasu** — dokładny moment wykrycia zdarzenia.
-* **Fragment kontekstowy** — fragment treści dopasowania. Dłuższe fragmenty są automatycznie przycinane, można je rozwinąć opcją **Show more**.
+* **Źródło** — typ treści, w której znaleziono dopasowanie (np. **Sejm speech**, **X post**). Gdy dostępny jest odnośnik do materiału źródłowego, etykieta typu jest klikalna.
+* **Trafność** — etykieta **Bezpośrednie**, **Silne** lub **Słabe**, określająca pewność dopasowania.
+* **Znacznik czasu** — moment wykrycia zdarzenia.
+* **Tytuł i podsumowanie** — wygenerowany opis zdarzenia.
+* **„Dlaczego ten alert?”** — krótkie uzasadnienie, dlaczego treść uznano za dopasowanie.
+* **Cytaty** — zweryfikowane fragmenty źródła, rozwijane opcją **Pokaż cytaty**.
+* **Original** — oryginalny fragment kontekstowy treści.
+* **Matched** — dopasowane terminy.
+
+Przy każdym zdarzeniu dostępne są przyciski oceny **Trafne** / **Nietrafne**, którymi można przekazać informację zwrotną wpływającą na jakość przyszłych dopasowań.
 
 W przypadku braku dopasowań wyświetlany jest komunikat *„No trigger events yet”*.
+
+### Blisko progu
+
+Pod główną listą może pojawić się rozwijana sekcja **Blisko progu**, gromadząca dopasowania o niższej pewności, które nie trafiły do głównego dziennika. Sekcja pojawia się tylko wtedy, gdy takie dopasowania istnieją.
+
+## Czułość dopasowania
+
+W prawym panelu dostępny jest przełącznik **Czułość dopasowania**, decydujący o tym, jak szeroko alert wyłapuje treści:
+
+* **Precyzyjny** — tylko trafienia wprost o temacie alertu, najmniej szumu.
+* **Zrównoważony** — trafienia wprost i silne; słabsze trafiają do sekcji „Blisko progu”.
+* **Szeroki** — pokazuje również słabe dopasowania (oznaczone, bez powiadomień e-mail).
+
+Jeśli automatyczna analiza kalibracyjna uzna, że alert jest zbyt szeroki lub zbyt wąski, nad przełącznikiem może pojawić się dymek z sugestią zmiany czułości, którą można jednym kliknięciem zastosować lub odrzucić.
+
+## Plan monitorowania
+
+Dla alertów o ustrukturyzowanej regule prawa panel **Monitoring plan** podsumowuje sposób działania alertu: tryb, główny temat, monitorowane i kontekstowe podmioty, objęte źródła, wymagane dowody oraz wykluczenia. Dla pozostałych alertów panel ten zastępuje lista aktywnych **słów kluczowych**.
+
+## RCL Watchlist
+
+Sekcja **RCL Watchlist** pozwala obserwować konkretne projekty legislacyjne z Rządowego Centrum Legislacji. Wpisanie tematu, tytułu lub identyfikatora RCL wyszukuje pasujące projekty, które można dodać do listy obserwowanych i zapisać przyciskiem **Save RCL watchlist**.
 
 ## Panel uprawnień
 
 Dla alertów o statusie **Shared** dostępna jest sekcja **Shared with**. Umożliwia ona:
 
-* **Dodawanie grup** — przycisk **Add group** pozwala na wybranie nowych grup z listy.
+* **Dodawanie grup** — przycisk **Add group** pozwala wybrać nowe grupy z listy.
 * **Usuwanie dostępu** — wybranie ikony **X** przy nazwie grupy natychmiast odbiera jej uprawnienia do podglądu alertu.
-
-## Pasek referencyjny
-
-Prawa kolumna zawiera przyklejoną kartę z podglądem parametrów alertu: pełnym opisem oraz listą aktywnych słów kluczowych. Służy ona jako punkt odniesienia podczas przeglądania historii zdarzeń.
 
 ## Stany pustego widoku i błędu
 
 * *„No trigger events yet”* — dla tego alertu nie zarejestrowano jeszcze żadnych dopasowań.
-* *„Alert not found”* — rekord nie istnieje lub brak uprawnień do jego wyświetlenia. W takim przypadku należy wrócić do listy głównej.
-* *„Not shared with any groups”* — alert jest współdzielony, ale nie przypisano do niego żadnej grupy. Do poprawnego działania wymagane jest wskazanie odbiorców.
+* *„Alert not found”* — rekord nie istnieje lub brak uprawnień do jego wyświetlenia. Należy wrócić do listy głównej.

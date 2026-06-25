@@ -25,3 +25,7 @@ yarn-error.log*
 .vercel
 next-env.d.ts
 persate_docs_agent_guide.md
+
+# local AI tool shims
+.claude/
+.gemini/

@@ -1,61 +1,41 @@
 ---
 title: Stakeholder profile
-description: Detailed view of a single stakeholder — personal data, biography, voting activity, and recordings.
+description: Detailed stakeholder view — a biography broken down by source, contact data, attendance, and legislative activity.
 ---
 
-The **Stakeholder profile** contains a complete set of information about a given individual. The screen consists of a title card, statistics tiles, and a tabbed content area.
-
-Access to the profile is obtained by selecting a card from the **Stakeholders** list.
+The **Stakeholder profile** contains a complete set of information about a given entity. The profile is accessed by selecting an entry from the **Stakeholders** list.
 
 ## Title card
 
 The upper part of the profile presents the stakeholder's identity:
 
-* **Party banner** — a color background consistent with parliamentary club affiliation.
-* **Name** — the primary profile label.
-* **Affiliation row** — information about Sejm membership and parliamentary club affiliation.
+* **Banner** — a procedurally generated background based on club affiliation (with the group's logo, if available).
+* **Picture and name** — the primary profile label.
+* **Role row** — the function held along with its context (club or institution).
+* **Create alert** — for stakeholder profiles, the button allows creating an alert that tracks a given individual or entity; when an alert already exists, the button opens it (**Open alert**).
 
-## Key statistics
+## Biography and profile sections
 
-Statistics tiles with numerical data are located below the title card:
+The left column presents the profile as generated thematic sections (among others **Summary**, **Biography**, **Education**, **Professional career**, **Political career**, **Current mandate**, **Political positions**, **Voting record**, **Public statements**, **Affiliations & interests**, **Finances**). For longer profiles, a sticky table of contents is displayed on the left to aid navigation.
 
-* **Votes received** — the number of votes obtained in elections.
-* **District** and **Voivodeship** — the electoral district and voivodeship.
-* **Attendance** — the percentage of participation in plenary votes.
+Each section may contain references to sources (e.g., **Sejm RP**, **Wikipedia**, **Wikidata**, **mamprawowiedziec.pl**, **Editorial**). Below the content, an expandable **Show raw sources** section is available, presenting the source data fragments with their origin marked.
 
-## Profile sections (Tabs)
+## Contact data and statistics
 
-Data is grouped into thematic tabs:
+The right column contains:
 
-### Overview
+* **Contact & details** — role, institution, profession, education, date and place of birth, voivodeship, district, number of votes received, email, and a link to the source. Missing fields are marked in italics as *None*. Below is an **Online presence** section with links to external profiles (X, Facebook, Instagram, website, Wikipedia, mamprawowiedziec.pl).
+* **Voting activity** — an attendance ring along with the number of votes cast and absences. The section is hidden when statistics are not available.
 
-The default section containing biography and contact information. Below the biography, a **Show raw sources** section is available, displaying source data fragments. When no contact information is available (e.g., email), the italic *None* is displayed.
+## Conditional sections
 
-### Voting activity
+Below, if the data is available, additional sections are presented:
 
-A card presenting an attendance ring and the absolute count of cast votes and absences. The section is hidden when statistics are not available.
-
-### X
-
-The stakeholder's post stream on X. When no linked account exists, the message *„No X account on file"* is displayed.
-
-### Recordings
-
-A list of analyzed Sejm recordings in which the stakeholder was identified. Selecting an entry opens the **Live proceedings** view with the option to play back the fragment.
-
-### Personal details
-
-A compilation of contact information and links to external profiles presented as a clear card.
-
-## Features in development
-
-The following sections are visible in the interface but currently remain unavailable:
-
-* **Promises** — will eventually present electoral promises and policy positions.
-* **Financials** — will eventually provide asset declarations broken down by real estate, assets, and income.
+* **Campaign Promises** — campaign promises along with tags and links to sources.
+* **Financial Disclosures** — asset declarations broken down by period and category (cash assets, real estate, income, movable property, liabilities, shares and stocks).
 
 ## Empty view and error states
 
-* *„No recordings yet"* — the stakeholder has not yet been identified in any processed recordings.
-* *„No X account on file"* — no X account has been linked to the profile.
-* *„Not found"* — the stakeholder record does not exist at the specified address. Returning to the main list is recommended.
+* *"Profile not analyzed yet"* — the profile has not been analyzed yet; generated sections will appear after analysis.
+* *"No profile details"* — no biographical data for the given entity.
+* *"Not found"* — the stakeholder record does not exist at the specified address. Returning to the main list is recommended.

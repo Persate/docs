@@ -1,61 +1,41 @@
 ---
 title: Wgląd w profil interesariusza
-description: Widok szczegółowy pojedynczego interesariusza — dane osobowe, biografia, aktywność w głosowaniach oraz nagrania.
+description: Widok szczegółowy interesariusza — biografia z podziałem na źródła, dane kontaktowe, frekwencja oraz aktywność legislacyjna.
 ---
 
-**Profil interesariusza** zawiera kompletny zbiór informacji o danej osobie. Ekran składa się z karty tytułowej, kafelków statystyk oraz obszaru zakładek.
-
-Dostęp do profilu uzyskuje się poprzez wybranie karty na liście **Interesariuszy**.
+**Profil interesariusza** zawiera kompletny zbiór informacji o danym podmiocie. Dostęp do profilu uzyskuje się przez wybranie pozycji na liście **Interesariuszy**.
 
 ## Karta tytułowa
 
 Górna część profilu prezentuje tożsamość interesariusza:
 
-* **Banner partyjny** — tło kolorystyczne zgodne z przynależnością klubową.
-* **Imię i nazwisko** — główne oznaczenie profilu.
-* **Wiersz przynależności** — informacja o członkostwie w Sejmie i przynależności do klubu parlamentarnego.
+* **Banner** — tło generowane proceduralnie na podstawie przynależności klubowej (z logo ugrupowania, jeśli jest dostępne).
+* **Zdjęcie i nazwa** — główne oznaczenie profilu.
+* **Wiersz roli** — pełniona funkcja oraz kontekst (klub lub instytucja).
+* **Create alert** — dla profili interesariuszy przycisk pozwala utworzyć alert śledzący daną osobę lub podmiot; gdy alert już istnieje, przycisk otwiera go (**Open alert**).
 
-## Statystyki kluczowe
+## Biografia i sekcje profilu
 
-Pod kartą tytułową znajdują się kafelki z danymi liczbowymi:
+Lewa kolumna prezentuje profil w formie wygenerowanych sekcji tematycznych (m.in. **Summary**, **Biography**, **Education**, **Professional career**, **Political career**, **Current mandate**, **Political positions**, **Voting record**, **Public statements**, **Affiliations & interests**, **Finances**). Przy dłuższych profilach po lewej stronie wyświetlany jest przyklejony spis treści ułatwiający nawigację.
 
-* **Votes received** — liczba głosów uzyskanych w wyborach.
-* **District** i **Voivodeship** — okręg i województwo wyborcze.
-* **Attendance** — procentowy udział w głosowaniach plenarnych.
+Każda sekcja może zawierać odwołania do źródeł (np. **Sejm RP**, **Wikipedia**, **Wikidata**, **mamprawowiedziec.pl**, **Editorial**). Pod treścią dostępna jest rozwijana sekcja **Show raw sources** prezentująca źródłowe fragmenty danych z oznaczeniem pochodzenia.
 
-## Sekcje profilu (Zakładki)
+## Dane kontaktowe i statystyki
 
-Dane są pogrupowane w tematycznych zakładkach:
+Prawa kolumna zawiera:
 
-### Overview
+* **Contact & details** — rola, instytucja, zawód, wykształcenie, data i miejsce urodzenia, województwo, okręg, liczba uzyskanych głosów, e-mail oraz odnośnik do źródła. Brakujące pola oznaczane są kursywą *None*. Poniżej znajduje się sekcja **Online presence** z odnośnikami do profili zewnętrznych (X, Facebook, Instagram, strona WWW, Wikipedia, mamprawowiedziec.pl).
+* **Voting activity** — pierścień frekwencji wraz z liczbą oddanych głosów oraz nieobecności. Sekcja jest ukrywana, gdy statystyki nie są dostępne.
 
-Domyślna sekcja zawierająca biografię oraz dane kontaktowe. Pod biografią dostępna jest sekcja **Show raw sources**, wyświetlająca źródłowe fragmenty danych. W przypadku braku danych kontaktowych (np. e-mail) wyświetlana jest kursywa *None*.
+## Sekcje warunkowe
 
-### Voting activity
+Poniżej, jeśli dane są dostępne, prezentowane są dodatkowe sekcje:
 
-Karta prezentująca pierścień frekwencji oraz bezwzględną liczbę oddanych głosów i nieobecności. Sekcja jest ukrywana, jeśli statystyki nie są dostępne.
-
-### X
-
-Strumień wpisów interesariusza w serwisie X. W przypadku braku powiązanego konta wyświetlany jest komunikat *„No X account on file”*.
-
-### Recordings
-
-Lista przeanalizowanych nagrań sejmowych, w których interesariusz został zidentyfikowany. Wybranie pozycji otwiera widok **Posiedzenia na żywo** z możliwością odsłuchania fragmentu.
-
-### Personal details
-
-Zestawienie danych kontaktowych i linków do profili zewnętrznych w formie przejrzystej karty.
-
-## Funkcje w przygotowaniu
-
-Poniższe sekcje są widoczne w interfejsie, lecz aktualnie pozostają niedostępne:
-
-* **Promises** — docelowo będzie prezentować obietnice wyborcze i stanowiska programowe.
-* **Financials** — docelowo będzie udostępniać oświadczenia majątkowe z podziałem na nieruchomości, aktywa i dochody.
+* **Campaign Promises** — obietnice wyborcze wraz z tagami i odnośnikami do źródeł.
+* **Financial Disclosures** — oświadczenia majątkowe z podziałem na okresy oraz kategorie (zasoby pieniężne, nieruchomości, dochody, mienie ruchome, zobowiązania, udziały i akcje).
 
 ## Stany pustego widoku i błędu
 
-* *„No recordings yet”* — interesariusz nie został jeszcze zidentyfikowany w żadnym z przetworzonych nagrań.
-* *„No X account on file”* — do profilu nie przypisano konta w serwisie X.
-* *„Not found”* — rekord interesariusza nie istnieje pod wskazanym adresem. Zaleca się powrót do listy głównej.
+* *„Profile not analyzed yet”* — profil nie został jeszcze przeanalizowany; wygenerowane sekcje pojawią się po analizie.
+* *„No profile details”* — brak danych biograficznych dla danego podmiotu.
+* *„Not found”* — rekord interesariusza nie istnieje pod wskazanym adresem. Należy wrócić do listy głównej.

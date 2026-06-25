@@ -1,44 +1,50 @@
 ---
 title: Creating and editing alerts
-description: Defining topics for monitoring using the AI advisor and verifying generated rules.
+description: Defining topics to monitor using the AI advisor and verifying the generated rules.
 ---
 
-**Creating alerts** enables defining new topics for monitoring using the AI advisor, which automatically builds rules based on a natural language description.
+**Creating alerts** enables defining new topics to monitor using the AI advisor, which automatically builds rules based on a natural language description.
 
 ## Defining the topic
 
-The process begins by entering a description of the issue in the **What do you want to monitor?** text field. The platform allows describing the topic in your own words (e.g., a specific bill, person, social issue, or industry trend).
+The process begins by entering a description of the issue in the text field under the **What do you want to monitor?** heading. The platform allows describing the topic in your own words (e.g., a specific bill, person, social issue, or industry trend).
 
-Ready-made suggestions are available below the input field, such as:
+Ready-made suggestions visible below the input field can also be used, such as:
 
 * **Law or act** — tracking changes in specific legal acts.
-* **Politician or institution** — monitoring the statements and activity of selected politicians.
+* **Politician or institution** — monitoring the statements and activity of selected politicians or institutions.
 * **Industry topic** — observing regulatory changes in a specific sector.
 * **Societal issue** — tracking discourse around social problems.
 
-## Generation modes
+## Generation (Deep mode)
 
-After entering the topic, select one of the two AI advisor modes from the dropdown menu (available after selecting the icon next to the text field):
+After entering the topic, generation is started with the send icon on the right side of the field. The advisor works in **Deep** mode — it analyzes the topic, verifies information on the web, prepares examples, and presents a draft for approval or modification (approximately 120 seconds). During its work, the advisor may ask clarifying questions.
 
-* **Quick** — a fast mode (approx. 30 seconds) where the platform automatically decomposes the topic and creates an alert without additional web searching or the possibility of deeper refinement.
-* **Deep** — an in-depth mode (approx. 120 seconds) where the advisor analyzes the topic, verifies information on the web, prepares examples, and presents a draft for approval or modification.
+## Draft verification and editing
 
-After selecting the mode, start generation by selecting the send icon on the right side of the text field.
+Once finished, the advisor presents the generated alert draft. The view contains the title, description, identified subtopics, covered sources, and test search results.
 
-## Draft verification and editing (Deep mode)
-
-When **Deep** mode is selected, the platform presents the generated alert draft. This view contains the title, description, identified subtopics, tags, and test search results.
-
-Below the draft, in the **What would you like to do?** section, determine the next action:
+Below the draft, the next action can be determined:
 
 * **Looks good — save it** — approves the draft in its current form.
-* A set of predefined options (context-dependent, e.g., splitting into two alerts, narrowing down to specific profiles) — enables rapid alert adjustment according to an intelligent suggestion.
-* **Tell me what to change** — a text field allowing the input of custom instructions for the advisor (e.g., removing a specific subtopic).
-* **Discard this draft** — rejects the prepared draft and returns to the initial form.
+* A set of predefined options (context-dependent, e.g., splitting into two alerts or narrowing down to specific profiles) — enables rapid alert adjustment according to the advisor's suggestion.
+* **Tell me what to change** — a text field allowing custom instructions for the advisor to be entered (e.g., removing a specific subtopic).
 
-Confirm the selected action using the **Save** button in the bottom right corner.
+Saving the draft directs the user to the detailed view of the created alert.
+
+## Similar alerts
+
+If the advisor detects that the alert being created overlaps thematically with existing ones, it presents a relevant warning along with options to:
+
+* create a new alert from only the subtopics that do not duplicate existing ones,
+* create the alert despite the thematic overlap,
+* refine the description and regenerate.
+
+## Resuming interrupted drafts
+
+Interrupted alert creation is saved as a **draft**. Available drafts can be resumed from the **Drafts** tab in the alert list — the advisor continues its work from where it was interrupted. A draft can also be permanently discarded.
 
 ## Empty view and error states
 
-* *„Not enough data to create alert”* — insufficient data to create an alert; provide more information or try again.
-* *„Generation failed”* — server error during alert creation; try again or refresh the page.
+* *"Not enough data to create alert"* — insufficient data to create an alert; provide more information or try again.
+* *"Generation failed"* — server error during alert creation; try again or refresh the page.

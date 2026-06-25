@@ -7,40 +7,44 @@ description: Definiowanie tematów do monitorowania przy użyciu asystenta AI or
 
 ## Definiowanie tematu
 
-Proces rozpoczyna się od wprowadzenia opisu zagadnienia w polu tekstowym **What do you want to monitor?**. Platforma pozwala na opisanie tematu własnymi słowami (np. konkretnej ustawy, osoby, problemu społecznego lub trendu branżowego).
+Proces rozpoczyna się od wprowadzenia opisu zagadnienia w polu tekstowym pod nagłówkiem **What do you want to monitor?**. Platforma pozwala na opisanie tematu własnymi słowami (np. konkretnej ustawy, osoby, problemu społecznego lub trendu branżowego).
 
 Można również skorzystać z gotowych sugestii widocznych poniżej pola wprowadzania, takich jak:
 
 * **Law or act** — śledzenie zmian w konkretnych aktach prawnych.
-* **Politician or institution** — monitorowanie wypowiedzi i aktywności wybranych polityków.
+* **Politician or institution** — monitorowanie wypowiedzi i aktywności wybranych polityków lub instytucji.
 * **Industry topic** — obserwacja zmian regulacyjnych w określonym sektorze.
 * **Societal issue** — śledzenie dyskursu wokół problemów społecznych.
 
-## Tryby generowania
+## Generowanie (tryb Deep)
 
-Po wpisaniu tematu, z menu rozwijanego (dostępnego po wybraniu ikony obok pola tekstowego) wybiera się jeden z dwóch trybów pracy asystenta AI:
+Po wpisaniu tematu generowanie uruchamia się ikoną wysyłania po prawej stronie pola. Asystent pracuje w trybie **Deep** — analizuje temat, weryfikuje informacje w sieci, przygotowuje przykłady oraz prezentuje draft do zatwierdzenia lub modyfikacji (orientacyjny czas to ok. 120 sekund). W trakcie pracy asystent może zadać pytania doprecyzowujące.
 
-* **Quick** — szybki tryb (ok. 30 sekund), w którym platforma automatycznie dekomponuje temat i tworzy alert bez dodatkowego przeszukiwania sieci czy możliwości głębszego dopracowania go.
-* **Deep** — pogłębiony tryb (ok. 120 sekund), w którym asystent analizuje temat, weryfikuje informacje w sieci, przygotowuje przykłady i prezentuje draft do zatwierdzenia lub modyfikacji przez użytkownika.
+## Weryfikacja i edycja draftu
 
-Po wybraniu trybu, generowanie można rozpocząć, wybierając ikonę wysyłania po prawej stronie pola tekstowego.
+Po zakończeniu pracy asystent prezentuje wygenerowany draft alertu. Widok zawiera tytuł, opis, zidentyfikowane podtematy, objęte źródła oraz wyniki testowego wyszukiwania.
 
-## Weryfikacja i edycja draftu (tryb Deep)
+Poniżej draftu można określić dalsze działanie:
 
-W przypadku wybrania trybu **Deep**, platforma prezentuje wygenerowany draft alertu. Widok ten zawiera tytuł, opis, zidentyfikowane podtematy, tagi oraz wyniki testowego wyszukiwania.
+* **Looks good — save it** — zatwierdza draft w obecnej formie.
+* Zestaw predefiniowanych opcji (zależnych od kontekstu, np. podział na dwa alerty lub zawężenie do konkretnych profili) — pozwala szybko dostosować alert według propozycji asystenta.
+* **Tell me what to change** — pole tekstowe pozwalające wpisać własne wytyczne dla asystenta (np. usunięcie konkretnego podtematu).
 
-Poniżej draftu, w sekcji **What would you like to do?**, można określić dalsze działanie:
+Zapis draftu kieruje użytkownika do widoku szczegółowego utworzonego alertu.
 
-* **Looks good — save it** — opcja zatwierdzająca draft w obecnej formie.
-* Zestaw predefiniowanych opcji (zależnych od kontekstu, np. podział na dwa alerty, zawężenie do konkretnych profili) — pozwala na szybkie dostosowanie alertu według inteligentnej propozycji.
-* **Tell me what to change** — pole tekstowe pozwalające na wpisanie własnych wytycznych dla asystenta (np. usunięcie konkretnego podtematu).
-* **Discard this draft** — opcja odrzucenia przygotowanego draftu i powrotu do początkowego formularza.
+## Podobne alerty
 
-Wybraną akcję zatwierdza się przyciskiem **Save** widocznym w prawym dolnym rogu.
+Jeśli asystent wykryje, że tworzony alert pokrywa się tematycznie z istniejącymi, prezentuje stosowne ostrzeżenie wraz z opcjami:
+
+* utworzenia nowego alertu wyłącznie z podtematów, które nie powielają istniejących,
+* utworzenia alertu mimo nakładania się tematyki,
+* doprecyzowania opisu i ponownego wygenerowania.
+
+## Wznawianie przerwanych draftów
+
+Przerwane tworzenie alertu jest zapisywane jako **draft**. Dostępne drafty można wznowić z zakładki **Drafts** na liście alertów — asystent kontynuuje pracę od miejsca, w którym została przerwana. Draft można też trwale odrzucić.
 
 ## Stany pustego widoku i błędu
 
-
-
-* *„Not enough data to create alert”* — brak wystarczających danych do stworzenia alertu, podaj więcej informacji lub spróbuj ponownie.
-* *„Generation failed”* — błąd serwera w trakcie tworzenia alertu, spróbuj ponownie lub odśwież stronę.
+* *„Not enough data to create alert”* — brak wystarczających danych do utworzenia alertu; należy podać więcej informacji lub spróbować ponownie.
+* *„Generation failed”* — błąd serwera w trakcie tworzenia alertu; należy spróbować ponownie lub odświeżyć stronę.

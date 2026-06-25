@@ -1,28 +1,32 @@
 ---
-title: smart foldery
-description: Trwałe zapytania działające jako wirtualne foldery, automatycznie agregujące pasujące dokumenty.
+title: Smart folders
+description: Wirtualne foldery, automatycznie agregujące pasujące dokumenty.
 hidden: true
 ---
 
-**smart foldery** to zapisane zapytania, które automatycznie aktualizują swoją zawartość. Każdy dokument spełniający określone kryteria — takie jak fraza tekstowa, typ pliku, data czy tag — pojawia się w folderze bez konieczności ręcznego przenoszenia.
+Smart folder to zapisane zapytanie, które automatycznie aktualizuje swoją zawartość. Każdy dokument spełniający określone kryteria — takie jak fraza tekstowa, typ pliku, data czy tag — pojawia się w folderze bez konieczności ręcznego przenoszenia.
 
-smart folder nie jest fizyczną lokalizacją; pliki pozostają w repozytorium, a ich przynależność do folderu jest wyznaczana dynamicznie na podstawie skonfigurowanych filtrów.
+Smart folder nie jest fizyczną lokalizacją; pliki pozostają w repozytorium, a ich przynależność do folderu jest wyznaczana dynamicznie na podstawie skonfigurowanych filtrów.
 
 ## Przykłady zastosowań
 
 *   Gromadzenie wszystkich dokumentów zawierających frazę *„legislacja 2025”*, uszeregowanych od najnowszych.
-*   Wyodrębnienie plików PDF dłuższych niż 50 stron, które nie posiadają jeszcze przypisanych tagów.
+*   Wyodrębnienie plików PDF dłuższych niż 50 stron, które nie mają jeszcze przypisanych tagów.
 *   Konsolidacja dokumentacji dotyczącej konkretnego interesariusza na podstawie słów kluczowych.
+
+## Tworzenie folderu
+
+Nowy smart folder tworzy się przez opisanie poszukiwanego zbioru dokumentów w języku naturalnym (np. *„Raporty finansowe z ostatniego kwartału — pliki PDF i Word”*). Asystent AI automatycznie przekłada opis na zestaw reguł — kryteria treściowe oraz filtry techniczne — i prezentuje podgląd dopasowanych plików do zatwierdzenia. Dostępne są również gotowe sugestie startowe ułatwiające rozpoczęcie.
 
 ## Konfiguracja i edycja
 
-smart foldery są widoczne w panelu bocznym obok głównego widoku repozytorium. Wybranie folderu pozwala modyfikować jego kryteria w panelu bocznym:
+Smart foldery są widoczne w panelu bocznym obok głównego widoku repozytorium. Wybranie folderu otwiera jego widok szczegółowy, w którym prezentowane są pogrupowane reguły:
 
-*   **Content search** — zapytanie tekstowe (np. *„podatek węglowy”*).
-*   **Filtry** — ograniczenia dotyczące nazwy, daty, rozmiaru, typu dokumentu lub źródła (np. Persate, Google Drive).
-*   **Sortowanie** — porządkowanie wyników według daty, rozmiaru lub alfabetycznie.
+*   **Dostępność** — zakres widoczności (private / shared).
+*   **Filtry techniczne** — strukturalne ograniczenia dotyczące źródła, typu pliku, dat, rozmiaru lub nazwy.
+*   **Kryteria treściowe** — wymagane, opcjonalne i wykluczone frazy oraz dopasowanie po zawartości pliku.
 
-Zmiany zatwierdza się przyciskiem **Save**, co powoduje natychmiastowe odświeżenie listy plików.
+Kryteria folderu można doprecyzowywać, a zmiany zatwierdza się zapisem, co powoduje natychmiastowe odświeżenie listy plików.
 
 ## Tryby prezentacji
 
@@ -33,17 +37,11 @@ Każdy folder oferuje dwa sposoby wyświetlania danych:
 
 ## Zalecany sposób pracy
 
-1.  Zdefiniować ogólne kryteria zapytania (np. tylko słowo kluczowe).
-2.  Zapisać folder i zweryfikować liczbę zwróconych wyników.
-3.  Zawęzić wyniki poprzez dodanie filtrów technicznych (np. wybranie wyłącznie formatu PDF).
-4.  Dodać filtry metadanych (np. tagi lub źródło dokumentu), aby wykluczyć nieistotne pozycje.
-5.  Ustawić domyślne sortowanie ułatwiające bieżącą pracę z folderem.
+1.  Opisać poszukiwany zbiór dokumentów w języku naturalnym i pozwolić asystentowi zbudować reguły.
+2.  Zweryfikować podgląd dopasowanych plików oraz wygenerowane kryteria.
+3.  Doprecyzować folder, dodając lub usuwając filtry techniczne (np. wybierając wyłącznie format PDF).
+4.  Zawęzić kryteria treściowe (frazy wymagane, opcjonalne lub wykluczone), aby odsiać nieistotne pozycje.
 
 ## Stany pustego widoku i błędu
 
 *   *„No documents match this folder's criteria”* — żadne pliki w repozytorium nie spełniają warunków zdefiniowanych w konfiguracji folderu.
-*   *„Invalid search query”* — błąd w składni zapytania tekstowego. Należy uprościć frazę wyszukiwania.
-
-## Znane ograniczenia
-
-Aktualnie jeden smart folder może opierać się na maksymalnie jednym zapytaniu tekstowym łączonym z dowolną liczbą filtrów technicznych.

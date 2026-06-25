@@ -11,30 +11,21 @@ Access to the view is provided by the **Cockpit** entry in the sidebar.
 
 The startup dashboard consists of the following sections:
 
-* **Alerts and risks** — a summary of the latest trigger events. Selecting a card opens the event details in the **[Alerts and risks](/alerts)** module.
-* **Stakeholders** — a carousel presenting up to five individuals with the highest recent activity (default is 24h). Activity includes social media posts and parliamentary speeches. Selecting a stakeholder's avatar redirects to their profile in the **[Stakeholders](/stakeholders/profile)** section.
-* **Live proceedings** — indicates the status of Sejm proceedings. During an active session, a pulsing indicator and the session title are displayed. Selecting the tile redirects to the **[Live proceedings](/live-proceedings)** view.
+* **Alerts and risks** — a grid of cards presenting the latest trigger events. Selecting a card opens the event details in the **[Alerts and risks](/alerts)** module.
+* **Daily report** — a tile with a **Download report** button that downloads the latest available report. The **See more** link navigates to the **[Reports](/reports)** view.
+* **Stakeholders** — a grid presenting up to five individuals with the highest activity. By default it covers the last 24 hours; when there is no activity within that window, the range expands to 7 days (indicated by the caption above the grid). Activity includes social media posts and parliamentary speeches. Selecting a stakeholder's avatar redirects to their profile in the **[Stakeholders](/stakeholders/profile)** section.
+* **Live proceedings** — indicates the status of Sejm proceedings. During an active session, a pulsing indicator and the session title are displayed; otherwise, the next scheduled sitting is shown. Selecting the tile redirects to the **[Live proceedings](/live-proceedings)** view.
 * **Repository** — a tile displaying the total number of documents assigned to the account, along with a link to the **[Repository](/repository)**.
 * **Ledger** — a summarized record of the latest vote, along with a link to the **[Voting ledger](/voting-ledger)**.
-
-## Features in development
-
-* **Daily report** — a component marked with the **SOON** label. Once released, it will provide an automated summary of the most important events from the last 24 hours in the form of a one-page report.
-
-## Data synchronization
-
-The **Updated: [time]** indicator at the top of the screen provides information regarding data freshness:
-
-* **Blue** — the displayed information is up to date.
-* **Amber** — newer data is available; the view requires a page refresh.
+* **Smart Folders** — a shortcut tile showing the number of saved folders, along with a link to **[Smart Folders](/repository/smart-folders)**.
 
 ## Recommended workflow
 
-1. Verify the synchronization status to ensure the data is up to date.
-2. Begin the day by reviewing the **Cockpit** to check ongoing proceedings and new trigger events.
+1. Begin the day by reviewing the **Cockpit** to check ongoing proceedings and new trigger events.
+2. Download the **Daily report** to review a summary of activity from the last 24 hours.
 3. Navigate to the appropriate application module to address specific tasks.
 
 ## Empty view and error states
 
-* *„No alerts triggered yet”* — no matches have been recorded yet for the configured alerts.
-* *„Couldn't load data”* — an error occurred while retrieving information for individual tiles. Refreshing the page is recommended.
+* *"No alerts triggered yet"* — no matches have been recorded yet for the configured alerts; the cards remain empty.
+* *"No standout activity"* — the stakeholder grid contains no individuals with standout activity in the current time window.

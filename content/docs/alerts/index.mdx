@@ -3,55 +3,72 @@ title: Alerts and risks
 description: Continuous monitoring of legislative signals, Public Pulse posts, and uploaded documents for defined topics.
 ---
 
-**Alerts and risks** are used for continuous, automated monitoring of incoming signals, broadcasts, files, and social media activity for defined topics and keywords. When a match is found, a **trigger event** is recorded.
+**Alerts and risks** provides continuous, automated monitoring of incoming signals, broadcasts, files, and social media activity for defined topics and keywords. When a match is found, a **trigger event** is recorded.
 
 Access to the module is provided by the **INTELLIGENCE → Alerts & Risks** entry in the sidebar.
 
 ## Monitoring channels
 
-The platform monitors four types of content:
+Each alert can cover multiple source types. An alert with no defined source scope listens to all channels (labeled **All sources**). The platform recognizes the following types, among others:
 
+* **Legal act** — published legal acts.
+* **Legislative print** — Sejm prints.
+* **RCL project** — legislative projects in the Government Legislation Centre.
 * **Sejm speech** — speech transcripts from Sejm recordings.
-* **Public pulse** — posts from the X accounts of monitored stakeholders.
+* **X post** — posts from the X accounts of monitored stakeholders (Public Pulse).
 * **File** — documents uploaded to the repository.
 * **Live** — fragments of broadcasted sessions captured in real time.
 
+## List tabs
+
+The top bar of the view offers tabs that filter the list:
+
+* **All** — all alerts.
+* **Active** — alerts actively listening.
+* **Paused** — paused alerts.
+* **Drafts** — interrupted alert creation processes that can be resumed.
+
 ## Alert list view
 
-The main view presents a grid of cards for all configured alerts.
+The list is available in two modes, toggled in the top right corner:
 
-### Alert card
+* **Table view** — a table with the columns **Name**, **Status**, **Sources**, **Access**, **Last event**, and **Created**. The **Name**, **Status**, **Last event**, and **Created** column headers support sorting. The **Name** column can be edited directly in the list.
+* **Card view** — a card layout with a thematic thumbnail, status, and the date of the last event.
 
-Every card contains:
+Selecting a row or card opens the detailed view with the history of all events.
 
-* **Banner** — a thematic illustration matched based on the alert's topic.
-* **Status** — **ACTIVE** or **PAUSED**.
-* **Name and description** — labels identifying the monitored topic.
-* **Last trigger** — the date of the most recently recorded match.
+### Sources and Access columns
 
-Selecting a card opens the detailed view with the history of all events.
+* **Sources** — icons representing the source types covered by the alert. An alert with no defined scope receives the **All sources** label.
+* **Access** — designated as **Private** (creator only) or **Shared** (shared with selected groups).
+
+### Bulk operations
+
+In table mode, selecting rows (checkboxes) displays a bottom bar of bulk actions: **Resume selected**, **Pause selected**, and **Delete selected**. The delete action requires confirmation.
 
 ## Sidebar
 
-Management functions are available in the right sidebar:
+The right sidebar provides management and filtering functions:
 
 * **Create alert** — opens the form to create a new alert.
-* **Search** — enables filtering the alert list by name or description.
+* **Search** — filters loaded alerts by name, description, or keyword.
+* **Source type** — narrows the list to alerts covering a selected source type.
+* **Space** — filters by visibility (**Private** or **Shared**).
 
 ## Alert lifecycle
 
 An alert can be in one of three states:
 
 * **Active** — the platform actively searches for matches in new data.
-* **Paused** — new matches are not executed, but the historical record remains available.
+* **Paused** — new matches are not recorded, but the existing history remains available.
 * **Deleted** — the alert, along with its entire history, is permanently and irreversibly removed.
 
 ## Empty view and error states
 
-* *„No alerts found”* — no alerts have been created on the account yet, or search filters exclude all entries.
-* *„Couldn't load alerts”* — server communication error. Refreshing the page is recommended.
+* *"No alerts found"* — no alerts have been created on the account yet, or search filters exclude all entries.
+* *"Couldn't load alerts"* — server communication error. Refreshing the page is recommended.
 
 ## Pages in this section
 
-* **[Creating and editing alerts](/alerts/creating-alerts)** — description of the form, keywords, and AI enhancement.
-* **[Alert detail](/alerts/alert-detail)** — trigger event history, status toggles, and permissions panel.
+* **[Creating and editing alerts](/alerts/creating-alerts)** — description of the AI advisor that builds rules and verification of the draft.
+* **[Alert detail](/alerts/alert-detail)** — trigger event history, match sensitivity, RCL monitoring, and the permissions panel.

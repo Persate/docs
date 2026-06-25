@@ -3,47 +3,64 @@ title: Alerty i ryzyka
 description: Stałe monitorowanie sygnałów legislacyjnych, wpisów Public Pulse oraz wgranych dokumentów pod kątem zdefiniowanych tematów.
 ---
 
-**Alerty i ryzyka** służą do stałego automatycznego monitorowania napływających sygnałów, transmisji, plików, czy aktywności w mediach społecznościowych, pod kątem zdefiniowanych tematów i słów kluczowych. W przypadku znalezienia dopasowania rejestrowane jest **zdarzenie wyzwalające**.
+**Alerty i ryzyka** służą do stałego automatycznego monitorowania napływających sygnałów, transmisji, plików czy aktywności w mediach społecznościowych pod kątem zdefiniowanych tematów i słów kluczowych. W przypadku znalezienia dopasowania rejestrowane jest **zdarzenie wyzwalające**.
 
 Dostęp do modułu zapewnia pozycja **INTELLIGENCE → Alerts & Risks** w panelu bocznym.
 
 ## Kanały monitorowania
 
-Platforma monitoruje cztery rodzaje treści:
+Każdy alert może obejmować wiele rodzajów źródeł. Alert bez wskazanego zakresu źródeł nasłuchuje wszystkich kanałów (oznaczenie **All sources**). Platforma rozpoznaje m.in. następujące typy:
 
+* **Legal act** — opublikowane akty prawne.
+* **Legislative print** — druki sejmowe.
+* **RCL project** — projekty legislacyjne w Rządowym Centrum Legislacji.
 * **Sejm speech** — transkrypty wystąpień z nagrań sejmowych.
-* **Public pulse** — wpisy z kont X monitorowanych interesariuszy.
+* **X post** — wpisy z kont X monitorowanych interesariuszy (Public Pulse).
 * **File** — dokumenty wgrane do repozytorium.
 * **Live** — fragmenty transmitowanych sesji przechwytywane w czasie rzeczywistym.
 
+## Zakładki listy
+
+W górnym pasku widoku dostępne są zakładki filtrujące listę:
+
+* **All** — wszystkie alerty.
+* **Active** — alerty aktywnie nasłuchujące.
+* **Paused** — alerty wstrzymane.
+* **Drafts** — przerwane procesy tworzenia alertów, które można wznowić.
+
 ## Widok listy alertów
 
-Główny widok prezentuje zestawienie kart wszystkich skonfigurowanych alertów.
+Lista dostępna jest w dwóch trybach, przełączanych w prawym górnym rogu:
 
-### Karta alertu
+* **Table view** — tabela z kolumnami **Name**, **Status**, **Sources**, **Access**, **Last event** oraz **Created**. Nagłówki kolumn **Name**, **Status**, **Last event** i **Created** umożliwiają sortowanie. Kolumnę **Name** można edytować bezpośrednio na liście.
+* **Card view** — układ kart z miniaturą tematyczną, statusem oraz datą ostatniego zdarzenia.
 
-Każda karta zawiera:
+Wybranie wiersza lub karty otwiera widok szczegółowy z historią wszystkich zdarzeń.
 
-* **Banner** — ilustrację tematyczną dopasowywaną na podstawie tematu danego alertu.
-* **Status** — **ACTIVE** (aktywny) lub **PAUSED** (wstrzymany).
-* **Nazwę i opis** — etykiety identyfikujące monitorowany temat.
-* **Last trigger** — datę najnowszego zarejestrowanego dopasowania.
+### Kolumna Sources i Access
 
-Wybranie karty otwiera widok szczegółowy z historią wszystkich zdarzeń.
+* **Sources** — ikony reprezentujące typy źródeł objęte alertem. Alert bez zdefiniowanego zakresu otrzymuje etykietę **All sources**.
+* **Access** — oznaczenie **Private** (tylko dla twórcy) lub **Shared** (współdzielony z wybranymi grupami).
+
+### Operacje zbiorcze
+
+W trybie tabeli zaznaczenie wierszy (pola wyboru) wyświetla dolny pasek akcji zbiorczych: **Resume selected** (wznów), **Pause selected** (wstrzymaj) oraz **Delete selected** (usuń). Akcja usuwania wymaga potwierdzenia.
 
 ## Panel boczny
 
-W prawym panelu bocznym dostępne są funkcje zarządzania:
+W prawym panelu bocznym dostępne są funkcje zarządzania i filtrowania:
 
 * **Create alert** — otwiera formularz tworzenia nowego alertu.
-* **Wyszukiwanie** — pozwala na filtrowanie listy alertów według nazwy lub opisu.
+* **Search** — filtruje załadowane alerty według nazwy, opisu lub słowa kluczowego.
+* **Source type** — zawęża listę do alertów obejmujących wybrany typ źródła.
+* **Space** — filtruje według widoczności (**Private** lub **Shared**).
 
 ## Cykl życia alertu
 
 Alert może znajdować się w jednym z trzech stanów:
 
 * **Active** — platforma aktywnie szuka dopasowań w nowych danych.
-* **Paused** — nowe dopasowania nie są wykonywane, lecz dotychczasowa historia pozostaje dostępna.
+* **Paused** — nowe dopasowania nie są rejestrowane, lecz dotychczasowa historia pozostaje dostępna.
 * **Deleted** — alert wraz z całą historią zostaje trwale i nieodwracalnie usunięty.
 
 ## Stany pustego widoku i błędu
@@ -53,5 +70,5 @@ Alert może znajdować się w jednym z trzech stanów:
 
 ## Strony w tej sekcji
 
-* **[Tworzenie i edycja alertów](/pl/alerts/creating-alerts)** — opis formularza, słów kluczowych i ulepszania AI.
-* **[Wgląd w alert](/pl/alerts/alert-detail)** — historia zdarzeń wyzwalających, przełączniki statusu i panel uprawnień.
+* **[Tworzenie i edycja alertów](/pl/alerts/creating-alerts)** — opis asystenta AI tworzącego reguły oraz weryfikacji draftu.
+* **[Wgląd w alert](/pl/alerts/alert-detail)** — historia zdarzeń wyzwalających, czułość dopasowania, monitorowanie RCL oraz panel uprawnień.

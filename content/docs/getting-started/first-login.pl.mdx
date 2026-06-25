@@ -12,11 +12,16 @@ Uwierzytelnianie wymaga wykonania dwóch kroków:
 1. Wprowadzenie adresu e-mail i wybranie przycisku **Continue**.
 2. Wprowadzenie hasła i wybranie **Sign In**.
 
-Po podaniu poprawnych danych, platforma wymaga wpisania sześciocyfrowego kodu z aplikacji autoryzacyjnej. Przy logowaniu przez konto Google lub Microsoft, wystarczy wybrać przycisk **Continue using Google Account** (lub Microsoft).
+Po podaniu poprawnych danych platforma kieruje do weryfikacji dwuetapowej (2FA). Przepływ ten dotyczy każdego logowania hasłem:
+
+* Konto z już skonfigurowanym czynnikiem przechodzi na ekran **Two-Factor Authentication**, gdzie należy wpisać sześciocyfrowy kod z aplikacji uwierzytelniającej.
+* Konto bez skonfigurowanego czynnika trafia na ekran **Set Up Authenticator** — wyświetla kod QR (oraz klucz do wpisania ręcznie) i wymaga jednorazowego potwierdzenia kodem, aby dokończyć konfigurację.
+
+Przy logowaniu przez konto Google lub Microsoft wystarczy wybrać przycisk **Continue using Google Account** (lub Microsoft).
 
 ## Resetowanie hasła
 
-W przypadku utraty hasła można skorzystać z formularza pod adresem `persate.com/password-reset`. System wysyła na podany adres link umożliwiający ustawienie nowej wartości. Zmiana hasła jest również możliwa po zalogowaniu, w sekcji **Settings**.
+Ekran logowania **nie zawiera** linku „Forgot password”. Reset hasła uruchamia się przez bezpośrednie wejście pod adres `persate.com/password-reset` — adres trzeba znać. Po wpisaniu adresu e-mail system zawsze wyświetla ten sam, neutralny komunikat o ewentualnym wysłaniu linku (bez ujawniania, czy konto istnieje). Zmiana hasła jest również możliwa po zalogowaniu, w sekcji **Settings**.
 
 ## Nawigacja startowa
 
@@ -26,8 +31,8 @@ Po pomyślnym zalogowaniu domyślnym widokiem jest **Cockpit**. Kluczowe element
 * **Upload** — przycisk otwierający panel dodawania dokumentów.
 * **Search** — ikona lupy uruchamiająca globalną wyszukiwarkę.
 
-## Stany pustego widoku i błędu
+## Stany błędu
 
-* *„Invalid credentials”* — błędny adres e-mail lub hasło.
-* *„Code mismatch”* — wprowadzony kod TOTP nie jest poprawny.
-* *„Account locked”* — zbyt wiele nieudanych prób logowania. Należy odczekać lub zresetować hasło.
+* *„Login Failed”* z opisem *„Invalid credentials provided”* — błędny adres e-mail lub hasło.
+* *„Verification Failed”* z opisem *„Invalid code. Please try again”* — wprowadzony kod z aplikacji uwierzytelniającej nie jest poprawny.
+* *„OAuth Error”* — nie udało się zalogować przez konto Google lub Microsoft.

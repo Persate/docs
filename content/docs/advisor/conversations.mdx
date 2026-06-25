@@ -1,13 +1,13 @@
 ---
 title: Interface and advisor workflow
-description: Message composition, file tagging, analysis depth levels, timeline, citations, and conversation history.
+description: Message composition, file tagging, timeline, citations, and conversation history.
 ---
 
 ## Query composition area
 
 The message input panel is located at the bottom of the screen and contains three elements:
 
-* **Depth selector** — the icon on the left side enables selecting the analysis intensity (**Surface**, **Balanced**, **Deep**) for the next message. The selection applies only to the current query — after sending, the system reverts to the default setting. Configure the default value in **Settings → Advisor**.
+* **File-add button** — the icon on the left side opens the document selector covering the Repository and the public corpus (the same one triggered by the `@` symbol).
 * **Text field** — supports multi-line text input (`Shift + Enter`). The `Enter` key submits the query.
 * **Send button** — inactive when the text field is empty or when the advisor is generating a response to the previous question.
 
@@ -27,7 +27,7 @@ Every turn produces a **message timeline** streamed before the response content.
 
 ### Reasoning blocks
 
-Fragments of the model's chain of thought appear as collapsible rows labeled *„Thinking…”* (in progress) or *„Working through the request”* (completed). Upon turn completion, blocks are automatically collapsed — any of them can be reopened for inspection.
+Fragments of the model's chain of thought appear as collapsible rows labeled *"Thinking…"* (in progress) or *"Working through the request"* (completed). Upon turn completion, blocks are automatically collapsed — any of them can be reopened for inspection.
 
 Reasoning blocks represent the model's working notes, not part of the final response. They are useful for understanding *why* the advisor reached a given conclusion.
 
@@ -39,7 +39,7 @@ Every external search executed by the advisor becomes a badge in the timeline. I
 * **Tool name**.
 * **Status** — icons corresponding to successive stages of operation. Completed calls display the execution time (e.g., `1.2s`).
 
-Adjacent tool calls are grouped into a collapsible set (*„Using N tools…”* in progress, *„N tools used”* completed).
+Adjacent tool calls are grouped into a collapsible set (*"Using N tools…"* in progress, *"N tools used"* completed).
 
 ### Elicitation forms
 
@@ -79,5 +79,5 @@ An active turn is not lost upon leaving the view, refreshing the browser, or exp
 
 ## Empty view and error states
 
-* *„No conversation selected”* — the workspace is empty; select an existing session or create a new one.
+* *"No conversation selected"* — the workspace is empty; select an existing session or create a new one.
 * Error block with a code — appears below a partial response when a turn fails. Restarting the turn is the recommended first action.

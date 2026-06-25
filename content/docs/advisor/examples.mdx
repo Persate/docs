@@ -6,7 +6,6 @@ description: Representative queries with a description of the expected advisor b
 Every example contains:
 
 * **Query** — the content of the entered message.
-* **Suggested analysis depth** — Surface, Balanced, or Deep.
 * **What the advisor does** — the skills appearing in the message timeline.
 * **Response** — the structure and type of citations.
 
@@ -17,8 +16,6 @@ The actual content of every response may vary. These are only examples; however,
 **Query:**
 
 > Which Civic Coalition stakeholders voted against the proposed amendment to the energy bill at the last Sejm session? Show the resolution result and link to the vote.
-
-**Suggested depth:** Balanced.
 
 **What the advisor does:**
 
@@ -35,8 +32,6 @@ The actual content of every response may vary. These are only examples; however,
 **Query:**
 
 > The Climate Coalition has recently been vocal publicly regarding the coal phase-out. How did its members actually vote in the plenum on coal-related resolutions in the last month? Are there any discrepancies?
-
-**Suggested depth:** Deep.
 
 **What the advisor does:**
 
@@ -59,8 +54,6 @@ The actual content of every response may vary. These are only examples; however,
 **Query:** 
 > Summarize the regulatory recommendations in this briefing and check if any of them were passed at recent Sejm sessions *(with attached `Q1-2026-renewables-briefing.pdf`)*.
 
-**Suggested depth:** Balanced.
-
 **What the advisor does:**
 
 1. **Documents** — `Read file` — reading recommendations directly from the attached file (without a search step — the file identifier is provided).
@@ -81,8 +74,6 @@ The actual content of every response may vary. These are only examples; however,
 
 > Configure an alert tracking any reference to the new pharmaceutical reform in plenary speeches and uploaded documents.
 
-**Suggested depth:** Surface.
-
 **What the advisor does:**
 
 1. **Legislation** — `List votings` — searching for the bill referenced in the question.
@@ -100,8 +91,6 @@ The actual content of every response may vary. These are only examples; however,
 
 > Find the fragment in the latest Justice Committee transcript where the chairman announced the schedule for the public procurement bill amendment.
 
-**Suggested depth:** Balanced.
-
 **What the advisor does:**
 
 1. **Documents** — `Hybrid search` — searching committee transcripts for terms related to the procurement bill.
@@ -111,7 +100,7 @@ The actual content of every response may vary. These are only examples; however,
 
 > The chairman announced the schedule in the transcript from 30 March 2026 ([documents://chunk/.../...]). Cited fragment:
 >
-> *„The procurement-law amendment will be considered in second reading at the next sitting on 5 April."*
+> *"The procurement-law amendment will be considered in second reading at the next sitting on 5 April."*
 >
 > The button opens the file scrolled to the cited fragment.
 
@@ -120,8 +109,6 @@ The actual content of every response may vary. These are only examples; however,
 **Query:**
 
 > I need a one-page brief on the state of the renewable energy bill: legislative status, recent committee actions, public party positioning, projected voting outcome, and stakeholder concerns.
-
-**Suggested depth:** Deep.
 
 **What the advisor does:**
 
@@ -150,4 +137,4 @@ Three patterns recur in the examples above:
 
 * **The advisor starts with structural searches.** Voting records, stakeholder identities, and committees provide an anchor — text searching is narrowed by what the structural tools found.
 * **Multi-source citations are the norm.** Even simple queries produce several URI badges, enabling verification of every claim.
-* **The advisor gracefully closes its work at turn limits.** A Deep query ending at the limit returns a full response for the covered portion and a single-line note regarding the deferred scope.
+* **The advisor gracefully closes its work at turn limits.** A broad query ending at the limit returns a full response for the covered portion and a single-line note regarding the deferred scope.

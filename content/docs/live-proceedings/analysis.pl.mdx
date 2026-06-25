@@ -1,27 +1,64 @@
 ---
 title: Otwieranie posiedzenia
-description: Widok szczegółowy sesji — odtwarzacz wideo, transkrypcja w czasie rzeczywistym oraz pełna analiza komprehensywna.
+description: Widok szczegółowy sesji — odtwarzacz wideo, podsumowanie posiedzenia (Advisor summary) oraz panel transkrypcji z osią czasu i przełącznikiem Raw / Polished.
 ---
 
 **Widok szczegółowy** integruje odtwarzacz wideo z panelami analizy treści. Wybranie karty na liście głównej otwiera widok szczegółowy. Przewinięcie nagrania synchronizuje wyświetlany fragment transkrypcji, który jest aktualnie mówiony, a wybranie tekstu przesuwa wideo do odpowiadającego momentu.
+
+## Układ widoku
+
+Ekran dzieli się na dwie kolumny:
+
+* **Kolumna lewa** — odtwarzacz wideo, a pod nim karta **Advisor summary** (podsumowanie posiedzenia).
+* **Kolumna prawa** — panel **transkrypcji** z osią czasu (**Timeline**) oraz przełącznikiem **Raw / Polished**.
+
+Obie kolumny są ze sobą zsynchronizowane: pozycja odtwarzania podświetla i przewija aktualnie wypowiadany fragment transkrypcji, a wybranie dowolnego fragmentu lub punktu osi czasu przesuwa wideo do odpowiadającego momentu.
 
 ## Odtwarzacz wideo
 
 Interfejs automatycznie dostosowuje się do stanu sesji:
 
-* **Sesje bieżące** — strumień na żywo pobierany z oficjalnego kanału sejmu.
+* **Sesje bieżące** — strumień na żywo pobierany z oficjalnego kanału Sejmu.
 * **Sesje minione** — nagranie archiwalne z możliwością swobodnego przewijania.
-* **Sesje zaplanowane** — transmisja rozpocznie się w momencie jej startu na oficjalnym kanale sejmu, wyświetlany jest komunikat *„Scheduled — analysis will be available once the session begins”*.
+* **Sesje zaplanowane** — transmisja rozpocznie się w momencie jej startu na oficjalnym kanale Sejmu, wyświetlany jest komunikat *„Scheduled — analysis will be available once the session begins”*.
 
 W lewym górnym rogu odtwarzacza znajduje się przycisk pozwalający włączyć **nakładki twarzy**, które oznaczają mówców rozpoznanych w kadrze.
 
+## Advisor summary — podsumowanie posiedzenia
+
+Pod odtwarzaczem, w lewej kolumnie, wyświetla się karta **Advisor summary** (podsumowanie). Powstaje na podstawie pełnej, pogłębionej analizy nagrania i służy jako szybki przegląd treści całego posiedzenia bez potrzeby czytania transkrypcji od początku. Karta zawiera:
+
+* **Tytuł redakcyjny** — zwięzłe ujęcie głównego tematu posiedzenia.
+* **Opis przebiegu** — narracyjne streszczenie najważniejszych wątków, punktów spornych i rozstrzygnięć.
+
+Karta pojawia się dopiero po wygenerowaniu pogłębionej analizy (**Enhanced Record**); w jej trakcie widoczny jest wskaźnik postępu, a dla samej transmisji na żywo (**Record Analysis**) podsumowanie nie jest dostępne.
+
+## Panel transkrypcji
+
+Prawa kolumna zawiera pełną transkrypcję wypowiedzi z posiedzenia. Każdy fragment opatrzony jest mówcą — rozpoznani interesariusze otrzymują profil ze zdjęciem, a nierozpoznani mówcy tymczasowy identyfikator (np. **Speaker 3**). Panel obsługuje wyszukiwanie w treści oraz przewija się automatycznie zgodnie z pozycją odtwarzania; wybranie fragmentu przesuwa wideo do odpowiadającej chwili.
+
+W nagłówku panelu dostępne są dwa elementy sterujące.
+
+### Timeline — oś czasu
+
+Przycisk **Timeline** otwiera boczny panel z osią czasu posiedzenia podzieloną na kolejne tematy. Każdy punkt zawiera znacznik czasu, tytuł wątku, krótkie streszczenie oraz słowa kluczowe. Służy do szybkiej nawigacji po dłuższym posiedzeniu — wybranie punktu przesuwa wideo i transkrypcję do początku danego tematu. Oś czasu powstaje wraz z pogłębioną analizą.
+
+### Przełącznik Raw / Polished
+
+Przełącznik **Raw / Polished** decyduje o sposobie prezentacji transkrypcji:
+
+* **Raw** — surowy zapis wprost z transkrypcji maszynowej. Oddaje wypowiedzi dosłownie, łącznie z wahaniami i powtórzeniami; przydatny, gdy liczy się wierność oryginalnej wypowiedzi.
+* **Polished** — wersja dopracowana: tekst oczyszczony i uporządkowany, z przypisaniem wypowiedzi do mówców. Czyta się ją wygodniej i nadaje się do cytowania oraz dalszej pracy analitycznej.
+
+Wersja **Polished** dostępna jest dopiero po jej wygenerowaniu w ramach pogłębionej analizy — do tego czasu (oraz dla transmisji na żywo) panel pokazuje zapis **Raw**.
+
 ## Tryby analizy
 
-Po prawej stronie znajdują się zakładki reprezentujące dwa podejścia do przetwarzania treści:
+Platforma oferuje dwa podejścia do przetwarzania treści, dobierane automatycznie do stanu posiedzenia. Sesje bieżące pokazują analizę w czasie rzeczywistym (**Record Analysis**), a sesje minione otwierają się bezpośrednio w pogłębionym wyniku (**Enhanced Record**) — nie ma już ręcznego przełącznika między trybami.
 
 ### Record Analysis
 
-Tryb zorientowany na szybkość, dostępny dla transmisji na żywo (**Live Session**) oraz jako przyspieszony przegląd archiwalny (**Priority Review**).
+Tryb zorientowany na szybkość, dostępny dla transmisji na żywo (**Live Session**) oraz jako przyspieszony przegląd archiwalny.
 
 * **Transkrypcja** — tekst pojawia się w dolnej części panelu w miarę wypowiadania słów.
 * **Profile mówców** — system rozpoznaje twarze znane z katalogu interesariuszy. Mówcy nierozpoznani otrzymują tymczasowe identyfikatory (np. **Speaker 3**).
@@ -30,7 +67,7 @@ Jeśli analiza nie jest aktywna, dostępny jest przycisk **Start Record Analysis
 
 ### Enhanced Record
 
-Tryb komprehensywny, dostarczający transkrypcję o najwyższej wierności, podział na tematy oraz ustrukturyzowaną oś czasu. Praca w tym trybie trwa dłużej i jest dostępna wyłącznie dla zakończonych nagrań. Proces uruchamia się przyciskiem **Start Enhanced Record**, a postęp raportowany jest etapami (np. **Transcription & diarization**, **Detecting faces**).
+Tryb pogłębiony, dostarczający transkrypcję o najwyższej wierności, podział na tematy, analizę towarzyszącą oraz ustrukturyzowaną oś czasu. To właśnie ten tryb zasila kartę **Advisor summary**, dopracowaną wersję **Polished** transkrypcji oraz oś czasu **Timeline** opisane powyżej. Praca w tym trybie trwa dłużej i jest dostępna wyłącznie dla zakończonych nagrań. Proces uruchamia się przyciskiem **Start Enhanced Record**, a postęp raportowany jest etapami wraz z procentem ukończenia.
 
 ## Zalecany sposób pracy
 

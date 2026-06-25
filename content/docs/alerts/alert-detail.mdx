@@ -1,16 +1,16 @@
 ---
 title: Alert detail
-description: Detailed alert view — title banner, trigger event log, and permissions management.
+description: Detailed alert view — title banner, trigger event log, match sensitivity, and permissions management.
 ---
 
-The **Detailed view** enables analyzing recorded events and managing the alert's state and visibility. It consists of a title banner, action row, event log, and reference panel.
+The **Detailed view** enables analyzing recorded events and managing the alert's state, sensitivity, and visibility. It consists of a title banner, action row, event log, and reference panel.
 
 ## Title banner
 
 The banner contains key alert metadata:
 
 * **Name and status** — header with state information: **Active** or **Paused**.
-* **Visibility** — designated as **Private** (creator only) or **Shared** (shared within selected groups).
+* **Visibility** — designated as **Private** (creator only) or **Shared** (shared with selected groups).
 * **Creation date** — timestamp presented next to a clock icon.
 * **AI illustration** — a thematic image automatically matched to every alert.
 
@@ -18,20 +18,49 @@ The banner contains key alert metadata:
 
 Buttons enabling state modification are located below the banner:
 
+* **Make Shared / Make Private** — changes the visibility scope. Switching to shared status requires designating at least one user group in the dialog window. Returning to private status revokes access from all groups.
 * **Pause / Resume** — pauses or resumes content monitoring. In the paused state, new events are not recorded.
-* **Make Shared / Make Private** — changes the visibility scope. Switching to shared status requires designating at least one user group in the dialog window.
-* **Edit** — opens the alert parameter editing form.
-* **Delete** — permanently deletes the alert along with its entire event history. The operation requires confirmation and is irreversible.
+* **Edit** (pencil icon) — opens the alert parameter editing form.
+* **Delete** (trash icon) — permanently deletes the alert along with its entire event history. The operation requires confirmation and is irreversible.
 
 ## Trigger history
 
-The **Trigger History** section contains a chronological log of all matches. Every entry presents:
+The **Trigger History** section contains a chronological log of matches. Every entry presents:
 
-* **Source** — the type of content where the match was found (e.g., **Sejm speech**, **Public pulse**).
-* **Timestamp** — the exact moment the event was detected.
-* **Context fragment** — a snippet of the matching content. Longer fragments are automatically truncated; they can be expanded using the **Show more** option.
+* **Source** — the type of content where the match was found (e.g., **Sejm speech**, **X post**). When a link to the source material is available, the type label is clickable.
+* **Relevance** — a **Bezpośrednie**, **Silne**, or **Słabe** label indicating the confidence of the match.
+* **Timestamp** — the moment the event was detected.
+* **Title and summary** — a generated description of the event.
+* **"Dlaczego ten alert?"** — a brief explanation of why the content was considered a match.
+* **Citations** — verified source fragments, expanded with the **Pokaż cytaty** option.
+* **Original** — the original contextual fragment of the content.
+* **Matched** — the matched terms.
 
-When no matches exist, the message *„No trigger events yet”* is displayed.
+Each event also offers **Trafne** / **Nietrafne** rating buttons, which provide feedback that influences the quality of future matches.
+
+When no matches exist, the message *"No trigger events yet"* is displayed.
+
+### Near threshold
+
+Below the main list, an expandable **Blisko progu** section may appear, collecting lower-confidence matches that did not reach the main log. The section appears only when such matches exist.
+
+## Match sensitivity
+
+The right panel offers a **Czułość dopasowania** control that determines how broadly the alert captures content:
+
+* **Precyzyjny** — only hits explicitly about the alert's topic, with the least noise.
+* **Zrównoważony** — explicit and strong hits; weaker ones go to the "Blisko progu" section.
+* **Szeroki** — also shows weak matches (flagged, without email notifications).
+
+If automatic calibration analysis determines that the alert is too broad or too narrow, a tooltip may appear above the control suggesting a sensitivity change that can be applied or dismissed with a single click.
+
+## Monitoring plan
+
+For alerts with a structured legal rule, the **Monitoring plan** panel summarizes how the alert operates: mode, main topic, monitored and contextual entities, covered sources, required evidence, and exclusions. For other alerts, this panel is replaced by a list of active **keywords**.
+
+## RCL Watchlist
+
+The **RCL Watchlist** section allows tracking specific legislative projects from the Government Legislation Centre. Entering an RCL topic, title, or identifier searches for matching projects, which can be added to the watchlist and saved with the **Save RCL watchlist** button.
 
 ## Permissions panel
 
@@ -40,12 +69,7 @@ For alerts with **Shared** status, the **Shared with** section is available. It 
 * **Adding groups** — the **Add group** button allows selecting new groups from the list.
 * **Removing access** — selecting the **X** icon next to a group name immediately revokes its permission to view the alert.
 
-## Reference bar
-
-The right column contains a sticky card previewing alert parameters: the full description and a list of active keywords. It serves as a reference point while reviewing the event history.
-
 ## Empty view and error states
 
-* *„No trigger events yet”* — no matches have been recorded for this alert yet.
-* *„Alert not found”* — the record does not exist or permissions to view it are missing. In this case, return to the main list.
-* *„Not shared with any groups”* — the alert is shared, but no group is assigned to it. Designating recipients is required for correct operation.
+* *"No trigger events yet"* — no matches have been recorded for this alert yet.
+* *"Alert not found"* — the record does not exist or permissions to view it are missing. Return to the main list.

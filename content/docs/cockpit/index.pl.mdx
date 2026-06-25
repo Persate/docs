@@ -11,30 +11,21 @@ Dostęp do widoku zapewnia pozycja **Cockpit** w panelu bocznym.
 
 Pulpit startowy składa się z sekcji:
 
-* **Alerts and risks - alerty i ryzyka** — zestawienie najnowszych zdarzeń wyzwalających. Wybranie karty otwiera szczegóły zdarzenia w module **[Alerty i ryzyka](/pl/alerts)**.
-* **Stakeholders - aktywni interesariusze** — karuzela prezentująca do pięciu osób o najwyższej aktywności w ostatnim czasie (domyślnie 24h). Aktywność obejmuje wpisy w mediach społecznościowych oraz wystąpienia sejmowe. Wybranie awatara interesariusza przenosi do jego profilu w sekcji **[Interesariusze](/pl/stakeholders/profile)**. 
-* **Live proceedings - posiedzenia na żywo** — wskazuje stan obrad Sejmu. W trakcie trwania sesji wyświetla pulsujący znacznik oraz tytuł sesji. Wybranie kafelka przenosi do widoku **[Posiedzenia na żywo](/pl/live-proceedings)**.
+* **Alerts and risks - alerty i ryzyka** — siatka kart prezentujących najnowsze zdarzenia wyzwalające. Wybranie karty otwiera szczegóły zdarzenia w module **[Alerty i ryzyka](/pl/alerts)**.
+* **Daily report - raport dzienny** — kafelek z przyciskiem **Download report**, który pobiera najnowszy dostępny raport. Odnośnik **See more** przenosi do widoku **[Raporty](/pl/reports)**.
+* **Stakeholders - aktywni interesariusze** — siatka prezentująca do pięciu osób o najwyższej aktywności. Domyślnie obejmuje ostatnie 24 godziny; gdy w tym oknie brak aktywności, zakres rozszerza się do 7 dni (informuje o tym podpis nad siatką). Aktywność obejmuje wpisy w mediach społecznościowych oraz wystąpienia sejmowe. Wybranie awatara interesariusza przenosi do jego profilu w sekcji **[Interesariusze](/pl/stakeholders/profile)**.
+* **Live proceedings - posiedzenia na żywo** — wskazuje stan obrad Sejmu. W trakcie sesji wyświetla pulsujący znacznik oraz tytuł sesji, w pozostałych przypadkach najbliższe zaplanowane posiedzenie. Wybranie kafelka przenosi do widoku **[Posiedzenia na żywo](/pl/live-proceedings)**.
 * **Repository - podsumowanie repozytorium** — kafelek z całkowitą liczbą dokumentów przypisanych do konta i odnośnikiem do **[Repozytorium](/pl/repository)**.
 * **Ledger - ostatnie głosowanie** — skrócony zapis najnowszego rozstrzygnięcia z odnośnikiem do **[Rejestru głosowań](/pl/voting-ledger)**.
-
-## Funkcje w przygotowaniu
-
-* **Daily report** — komponent oznaczony etykietą **SOON**, który docelowo zapewni automatyczne podsumowanie najważniejszych zdarzeń z ostatniej doby w formie jednostronicowego raportu.
-
-## Synchronizowanie danych
-
-Wskaźnik **Updated: [godzina]** w górnej części ekranu informuje o aktualności danych:
-
-* **Niebieski** — wyświetlane informacje są aktualne.
-* **Bursztynowy** — dostępne są nowsze dane; widok wymaga odświeżenia strony.
+* **Smart Folders - zapisane filtry** — kafelek skrótu z liczbą zapisanych folderów i odnośnikiem do **[Smart Folders](/pl/repository/smart-folders)**.
 
 ## Zalecany sposób pracy
 
-1. Zweryfikować stan synchronizacji, aby upewnić się, że dane są aktualne.
-2. Rozpocząć dzień od przeglądu **Cockpitu**, aby sprawdzić trwające obrady i nowe zdarzenia wyzwalające.
+1. Rozpocząć dzień od przeglądu **Cockpitu**, aby sprawdzić trwające obrady i nowe zdarzenia wyzwalające.
+2. Pobrać **Daily report**, by zapoznać się z podsumowaniem aktywności z ostatniej doby.
 3. Przejść do właściwego modułu aplikacji, aby zająć się konkretnymi zadaniami.
 
 ## Stany pustego widoku i błędu
 
-* *„No alerts triggered yet”* — dla skonfigurowanych Alertów nie odnotowano jeszcze żadnych dopasowań.
-* *„Couldn't load data”* — błąd pobierania informacji dla poszczególnych kafelków. Zaleca się odświeżenie strony.
+* *„No alerts triggered yet”* — dla skonfigurowanych Alertów nie odnotowano jeszcze żadnych dopasowań; karty pozostają puste.
+* *„No standout activity”* — w siatce interesariuszy brak osób z wyróżniającą się aktywnością w bieżącym oknie czasowym.

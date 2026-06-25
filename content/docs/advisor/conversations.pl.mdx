@@ -1,13 +1,13 @@
 ---
-title: Interfejs i praca z Asystentem
-description: Kompozycja wiadomości, oznaczanie plików, poziomy głębokości analizy, oś czasu, cytowania oraz historia konwersacji.
+title: Interfejs i praca z asystentem
+description: Kompozycja wiadomości, oznaczanie plików, oś czasu, cytowania oraz historia konwersacji.
 ---
 
 ## Strefa kompozycji zapytania
 
 Panel wprowadzania wiadomości znajduje się w dolnej części ekranu i zawiera trzy elementy:
 
-* **Selektor głębokości** — ikona po lewej stronie pozwala wybrać intensywność analizy (**Surface**, **Balanced**, **Deep**) dla następnej wiadomości. Wybór dotyczy wyłącznie bieżącego pytania — po wysłaniu system wraca do ustawienia domyślnego. Domyślną wartość konfiguruje się w **Settings → Advisor**.
+* **Przycisk dodawania plików** — ikona po lewej stronie otwiera selektor dokumentów z Repozytorium oraz korpusu publicznego (ten sam, który uruchamia symbol `@`).
 * **Pole tekstowe** — obsługuje wprowadzanie wielu linii tekstu (`Shift + Enter`). Klawisz `Enter` wysyła zapytanie.
 * **Przycisk wysyłania** — nieaktywny, gdy pole tekstowe jest puste lub gdy asystent generuje odpowiedź na poprzednie pytanie.
 
@@ -23,11 +23,11 @@ Plik warto załączyć bezpośrednio, gdy zawiera on szukaną odpowiedź. Jeśli
 
 ## Oś czasu wiadomości
 
-Każda tura produkuje **oś czasu wiadomości** strumieniowaną przed treścią odpowiedzi. Stanowi widoczny zapis działań asystenta w trakcie pracy.
+Każda tura generuje **oś czasu wiadomości**, wyświetlaną strumieniowo przed treścią odpowiedzi. Stanowi ona widoczny zapis działań asystenta w trakcie pracy.
 
 ### Bloki rozumowania
 
-Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *„Thinking…"* (w trakcie pracy) lub *„Working through the request"* (po zakończeniu). Po zakończeniu tury bloki są automatycznie zwijane — dowolny z nich można ponownie otworzyć, aby go sprawdzić.
+Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *„Thinking…”* (w trakcie pracy) lub *„Working through the request”* (po zakończeniu). Po zakończeniu tury bloki są automatycznie zwijane — dowolny z nich można ponownie otworzyć, aby go sprawdzić.
 
 Bloki rozumowania stanowią robocze notatki modelu, nie część ostatecznej odpowiedzi. Są przydatne do zrozumienia, *dlaczego* asystent doszedł do danego wniosku.
 
@@ -39,11 +39,11 @@ Każde zewnętrzne wyszukiwanie wykonywane przez asystenta staje się znacznikie
 * **Nazwę narzędzia**.
 * **Status** — ikony odpowiadające kolejnym etapom pracy. Zakończone wywołania prezentują czas wykonania (np. `1.2s`).
 
-Sąsiednie wywołania narzędzi są składane w zwijaną grupę (*„Using N tools…"* w trakcie, *„N tools used"* po zakończeniu).
+Sąsiednie wywołania narzędzi są składane w zwijaną grupę (*„Using N tools…”* w trakcie, *„N tools used”* po zakończeniu).
 
 ### Formularze elicytacji
 
-Niektóre narzędzia wymagają strukturalnego wkładu w trakcie tury — np. wyboru kadencji Sejmu lub wskazania posła przy kolizji nazwisk. Narzędzie emituje wówczas **żądanie elicytacji**: proces pozostaje w stanie *running*, a pod nią pojawia się formularz.
+Niektóre narzędzia wymagają strukturalnego wkładu w trakcie tury — np. wyboru kadencji Sejmu lub wskazania posła przy kolizji nazwisk. Narzędzie emituje wówczas **żądanie elicytacji**: proces pozostaje w stanie *running*, a pod nim pojawia się formularz.
 
 Formularz należy zatwierdzić lub pominąć (pominięte żądania korzystają z domyślnej wartości narzędzia). Po rozstrzygnięciu wywołanie narzędzia wznawia się.
 
@@ -79,5 +79,5 @@ Aktywna tura nie zostaje utracona po opuszczeniu widoku, odświeżeniu przegląd
 
 ## Stany pustego widoku i błędu
 
-* *„No conversation selected"* — przestrzeń robocza jest pusta, należy wybrać istniejącą sesję lub utworzyć nową.
+* *„No conversation selected”* — przestrzeń robocza jest pusta, należy wybrać istniejącą sesję lub utworzyć nową.
 * Blok błędu z kodem — pojawia się pod częściową odpowiedzią, gdy tura zakończy się niepowodzeniem. Ponowne uruchomienie tury jest zalecaną pierwszą reakcją.

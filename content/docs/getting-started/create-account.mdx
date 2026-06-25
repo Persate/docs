@@ -1,30 +1,31 @@
 ---
 title: Account creation
-description: Registration methods on the platform — traditional form and single sign-on (SSO).
+description: Registration methods on the platform — the traditional form and single sign-on (SSO).
 ---
 
-Initiate registration on the [persate.com](https://persate.com) homepage by selecting **Sign up**. Two registration paths are available.
+Registration can be started on the [persate.com](https://persate.com) homepage by selecting **Sign up**. Two registration paths are available.
 
 ## Email and password form
 
 Traditional registration requires completing the following fields:
 
-* **Email address** — where the verification link message is sent.
-* **Password** — a minimum of eight characters, including one digit and one special character.
+* **Email address** — the account address.
+* **Password** — a minimum of eight characters, including at least one digit and at least one special character. While the password is being entered, a list of requirements appears below the field, and the criteria that have been met are marked in real time.
 * **Password confirmation** — to ensure it is entered without typos.
-* **Acknowledgements** — acceptance of the Privacy Policy and Terms of Service.
+* **Acknowledgements** — two separate checkboxes: acceptance of the **Privacy Policy** and the **Terms of Service**. The registration button remains inactive until both boxes are selected.
 
-Once the form is submitted, a message is delivered to the provided address. Open the link contained within it to activate the account.
+After the form is submitted, the interface displays a general message confirming that the request has been received — *"Request received"* — along with the information that if the address requires verification, a link will arrive shortly, and that if the account already exists, the user should sign in or reset the password. The message is intentionally neutral and does not reveal whether a given address is already registered.
 
-**Note:** The verification message may be delivered to the spam folder. If the link does not arrive within a few minutes, verify the correctness of the entered address.
+**Note:** If the address requires verification, the message containing the link may be delivered to the spam folder. If the link does not arrive within a few minutes, verifying the correctness of the entered address is recommended.
 
 ## Single sign-on (SSO)
 
 An account can also be created by selecting **Continue using Google Account** or **Continue using Microsoft Account**. After signing in, the account is created automatically. This method bypasses the email address verification step.
 
-## Empty view and error states
+## Error states
 
-* *„Password too weak”* — the entered password does not meet security requirements.
-* *„Passwords do not match”* — the values in the password and confirmation fields differ.
-* *„Email already taken”* — the platform does not allow creating a second account with the same address.
-* *„Invalid email format”* — the entered text is not a valid email address.
+* *"Passwords do not match"* — the values in the password and confirmation fields differ.
+* *"Sign-up Failed"* with the description *"Password must be at least 8 characters long"* — the password is too short.
+* *"Sign-up Failed"* with the description *"Password must include at least 1 number"* — the password does not contain a digit.
+* *"Sign-up Failed"* with the description *"Password must include at least 1 special character"* — the password does not contain a special character.
+* *"Sign-up Failed"* with a description of an unexpected error — the request could not be processed; try again.

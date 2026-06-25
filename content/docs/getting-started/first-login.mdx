@@ -1,9 +1,9 @@
 ---
 title: First sign-in
-description: The authentication procedure and interface orientation after accessing the Cockpit.
+description: The authentication procedure and interface orientation after gaining access to the Cockpit.
 ---
 
-Sign-in takes place on the [persate.com](https://persate.com) homepage after selecting **Sign in**.
+Sign-in takes place on the [persate.com](https://persate.com) homepage by selecting **Sign in**.
 
 ## Sign-in process
 
@@ -12,22 +12,27 @@ Authentication requires completing two steps:
 1. Enter the email address and select **Continue**.
 2. Enter the password and select **Sign In**.
 
-After providing valid credentials, the platform requires entering a six-digit code from the authenticator application. When signing in using a Google or Microsoft account, simply select **Continue using Google Account** (or Microsoft).
+Once valid credentials are provided, the platform directs the user to two-factor authentication (2FA). This flow applies to every password sign-in:
+
+* An account with an already configured factor proceeds to the **Two-Factor Authentication** screen, where the six-digit code from the authenticator app must be entered.
+* An account without a configured factor is taken to the **Set Up Authenticator** screen — it displays a QR code (along with a key to enter manually) and requires a one-time confirmation with a code to complete the configuration.
+
+When signing in with a Google or Microsoft account, simply select **Continue using Google Account** (or Microsoft).
 
 ## Password reset
 
-In the event of a lost password, use the form at `persate.com/password-reset`. The platform dispatches a link to the provided address to set a new password. Changing the password is also possible after signing in, under the **Settings** section.
+The sign-in screen **does not contain** a "Forgot password" link. A password reset is started by navigating directly to `persate.com/password-reset` — the address must be known. After the email address is entered, the system always displays the same neutral message about a link possibly being sent (without revealing whether the account exists). Changing the password is also possible after signing in, in the **Settings** section.
 
 ## Startup navigation
 
-After successfully signing in, the default view is the **Cockpit**. Key interface elements include:
+After signing in successfully, the default view is the **Cockpit**. The key interface elements are:
 
 * **Sidebar** — the main navigation menu on the left side.
-* **Upload** — the button opening the document addition panel.
-* **Search** — the magnifying glass icon launching the global search.
+* **Upload** — the button that opens the document upload panel.
+* **Search** — the magnifying glass icon that launches the global search.
 
-## Empty view and error states
+## Error states
 
-* *„Invalid credentials”* — incorrect email address or password.
-* *„Code mismatch”* — the entered TOTP code is incorrect.
-* *„Account locked”* — too many failed sign-in attempts. Wait a few minutes or reset the password.
+* *"Login Failed"* with the description *"Invalid credentials provided"* — incorrect email address or password.
+* *"Verification Failed"* with the description *"Invalid code. Please try again"* — the code entered from the authenticator app is not correct.
+* *"OAuth Error"* — signing in with a Google or Microsoft account failed.

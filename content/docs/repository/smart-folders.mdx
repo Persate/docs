@@ -1,28 +1,32 @@
 ---
 title: Smart folders
-description: Persistent queries functioning as virtual folders, automatically aggregating matching documents.
+description: Virtual folders that automatically aggregate matching documents.
 hidden: true
 ---
 
-**Smart folders** are saved queries that automatically update their contents. Every document meeting specified criteria — such as a text phrase, file type, date, or tag — appears in the folder without the need for manual transfer.
+A smart folder is a saved query that automatically updates its contents. Every document meeting specified criteria — such as a text phrase, file type, date, or tag — appears in the folder without the need for manual transfer.
 
 A smart folder is not a physical location; files remain in the repository, and their folder membership is determined dynamically based on configured filters.
 
 ## Example use cases
 
-* Aggregating all documents containing the phrase *„legislation 2025"*, ordered from newest.
+* Gathering all documents containing the phrase *"legislation 2025"*, ordered from newest.
 * Isolating PDF files longer than 50 pages that do not yet have assigned tags.
 * Consolidating documentation related to a specific stakeholder based on keywords.
 
+## Creating a folder
+
+A new smart folder is created by describing the desired set of documents in natural language (e.g., *"Financial reports from the last quarter — PDF and Word files"*). The AI advisor automatically translates the description into a set of rules — content criteria and technical filters — and presents a preview of the matched files for confirmation. Ready-made starter suggestions are also available to ease getting started.
+
 ## Configuration and editing
 
-Smart folders are visible in the sidebar alongside the main repository view. Selecting a folder allows modifying its criteria in the sidebar:
+Smart folders are visible in the sidebar alongside the main repository view. Selecting a folder opens its detailed view, where the rules are presented grouped:
 
-* **Content search** — a text query (e.g., *„carbon tax"*).
-* **Filters** — restrictions regarding name, date, size, document type, or source (e.g., Persate, Google Drive).
-* **Sorting** — ordering results by date, size, or alphabetically.
+* **Availability** — the visibility scope (private / shared).
+* **Technical filters** — structural restrictions regarding source, file type, dates, size, or name.
+* **Content criteria** — required, optional, and excluded phrases, along with matching by file content.
 
-Confirm changes using the **Save** button, which triggers an immediate refresh of the file list.
+The folder criteria can be refined, and changes are confirmed by saving, which triggers an immediate refresh of the file list.
 
 ## Presentation modes
 
@@ -33,17 +37,11 @@ Every folder offers two data display modes:
 
 ## Recommended workflow
 
-1. Define general query criteria (e.g., a keyword only).
-2. Save the folder and verify the number of returned results.
-3. Narrow results by adding technical filters (e.g., selecting only the PDF format).
-4. Add metadata filters (e.g., tags or document source) to exclude irrelevant entries.
-5. Set the default sorting to facilitate ongoing work with the folder.
+1. Describe the desired set of documents in natural language and let the advisor build the rules.
+2. Verify the preview of matched files and the generated criteria.
+3. Refine the folder by adding or removing technical filters (e.g., selecting only the PDF format).
+4. Narrow the content criteria (required, optional, or excluded phrases) to filter out irrelevant entries.
 
 ## Empty view and error states
 
-* *„No documents match this folder's criteria"* — no files in the repository meet the conditions defined in the folder configuration.
-* *„Invalid search query"* — an error in the text query syntax. Simplify the search phrase.
-
-## Known limitations
-
-Currently, a single smart folder can be based on a maximum of one text query combined with any number of technical filters.
+* *"No documents match this folder's criteria"* — no files in the repository meet the conditions defined in the folder configuration.

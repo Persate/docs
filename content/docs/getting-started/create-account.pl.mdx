@@ -9,22 +9,23 @@ Rejestrację można rozpocząć na stronie głównej [persate.com](https://persa
 
 Rejestracja tradycyjna wymaga uzupełnienia następujących pól:
 
-* **Adres e-mail** — na który zostanie wysłana wiadomość z linkiem weryfikacyjnym.
-* **Hasło** — minimum osiem znaków, w tym jedna cyfra i jeden znak specjalny.
+* **Adres e-mail** — adres konta.
+* **Hasło** — minimum osiem znaków, w tym co najmniej jedna cyfra i co najmniej jeden znak specjalny. W trakcie wpisywania hasła pod polem pojawia się lista wymagań, a spełnione kryteria są oznaczane na bieżąco.
 * **Powtórzenie hasła** — aby upewnić się, że wpisano je bez literówek.
-* **Zgody** — akceptacja Polityki prywatności oraz Regulaminu.
+* **Zgody** — dwa osobne pola wyboru: akceptacja **Privacy Policy** (Polityki prywatności) oraz **Terms of Service** (Regulaminu). Przycisk rejestracji pozostaje nieaktywny, dopóki oba pola nie zostaną zaznaczone.
 
-Po przesłaniu formularza na podany adres trafi wiadomość. Otwarcie zawartego w niej linku aktywuje konto.
+Po przesłaniu formularza interfejs wyświetla ogólny komunikat potwierdzający przyjęcie zgłoszenia — *„Request received”* wraz z informacją, że jeśli adres wymaga weryfikacji, link nadejdzie wkrótce, a jeśli konto już istnieje, należy się zalogować lub zresetować hasło. Komunikat jest celowo neutralny i nie ujawnia, czy dany adres jest już zarejestrowany.
 
-**Uwaga:** Wiadomość weryfikacyjna może trafić do folderu spam. Jeśli link nie dotrze w ciągu kilku minut, zaleca się sprawdzenie poprawności wpisanego adresu.
+**Uwaga:** Jeśli adres wymaga weryfikacji, wiadomość z linkiem może trafić do folderu spam. Gdy link nie dotrze w ciągu kilku minut, zaleca się sprawdzenie poprawności wpisanego adresu.
 
 ## Logowanie jednokrotne (SSO)
 
-Konto można również utworzyć wybierając opcję **Continue using Google Account** lub **Continue using Microsoft Account**. Po zalogowaniu się, konto zostanie utworzone automatycznie. Metoda ta pozwala pominąć krok weryfikacji adresu e-mail.
+Konto można również utworzyć, wybierając opcję **Continue using Google Account** lub **Continue using Microsoft Account**. Po zalogowaniu konto zostanie utworzone automatycznie. Metoda ta pozwala pominąć krok weryfikacji adresu e-mail.
 
-## Stany pustego widoku i błędu
+## Stany błędu
 
-* *„Password too weak”* — wprowadzone hasło nie spełnia wymogów bezpieczeństwa.
 * *„Passwords do not match”* — wartości w polach hasła i jego powtórzenia są różne.
-* *„Email already taken”* — system nie pozwala na utworzenie drugiego konta na ten sam adres.
-* *„Invalid email format”* — wprowadzony tekst nie jest poprawnym adresem e-mail.
+* *„Sign-up Failed”* z opisem *„Password must be at least 8 characters long”* — hasło jest zbyt krótkie.
+* *„Sign-up Failed”* z opisem *„Password must include at least 1 number”* — hasło nie zawiera cyfry.
+* *„Sign-up Failed”* z opisem *„Password must include at least 1 special character”* — hasło nie zawiera znaku specjalnego.
+* *„Sign-up Failed”* z opisem o nieoczekiwanym błędzie — zgłoszenia nie udało się przetworzyć; należy spróbować ponownie.
