@@ -19,6 +19,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Semgrep SAST
+        run: |
+          python3 -m pip install --quiet semgrep
+          semgrep scan \
+            --config p/typescript \
+            --config p/react \
+            --config p/secrets \
+            --severity ERROR \
+            --error
+
       - name: Setup Node 20
         uses: actions/setup-node@v4
         with:
