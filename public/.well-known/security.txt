@@ -1,0 +1,9 @@
+# Persate security disclosure policy (RFC 9116)
+# If you believe you have found a security vulnerability affecting
+# Persate, please report it to us responsibly using the contact below.
+
+Contact: mailto:security@persate.com
+Expires: 2027-07-06T00:00:00.000Z
+Preferred-Languages: en, pl
+Canonical: https://persate.com/.well-known/security.txt
+Canonical: https://docs.persate.com/.well-known/security.txt
