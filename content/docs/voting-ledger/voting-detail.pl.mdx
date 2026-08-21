@@ -1,48 +1,43 @@
 ---
-title: Wgląd w głosowanie
-description: Widok szczegółowy głosowania — karta przeglądowa, dokumenty powiązane, rozkład opcji oraz mandatowa mapa sali.
+title: Szczegóły rekordu
+description: Odczytywanie szczegółów głosowań, decyzji i spraw bez łączenia danych różnych instytucji.
 ---
 
-**Widok szczegółowy** udostępnia kompletny zapis pojedynczego głosowania. Ekran składa się z sekcji przeglądu, dokumentów źródłowych oraz interaktywnej mapy sali.
+Otwórz rekord z **PUBLIC → Votes**. Dostępne sekcje zależą od instytucji i danych opublikowanych przez jej źródło urzędowe.
 
-Dostęp do widoku można uzyskać, wybierając dowolną kartę w **Rejestrze głosowań**.
+## Szczegóły głosowania Sejmu
 
-## Przegląd i metryki
+Strona szczegółów Sejmu może pokazywać:
 
-Główny panel zawiera kluczowe parametry rozstrzygnięcia:
+* wynik i informację o wymaganym progu;
+* czas głosowania, obecność, frekwencję i regułę większości;
+* liczby głosów według opcji;
+* powiązane materiały i dokumenty urzędowe;
+* mapę sali z głosem każdego posła.
 
-* **Status rozstrzygnięcia** — etykieta **Passed**, **Rejected**, **Quorum present** lub **Quorum missing** wraz z informacją o osiągnięciu wymaganego progu.
-* **Voted at** — dokładny czas oddania głosów.
-* **Members present** — liczba posłów odnotowanych w sali.
-* **Majority** — stosowana reguła większościowa (**Simple**, **Absolute** lub **Qualified**).
-* **Turnout** — frekwencja wyrażona procentowo i bezwzględnie.
+Filtr klubu nad mapą pozwala skupić się na jednym klubie; **All seats** przywraca pełny widok. Wybierz albo wskaż miejsce, jeżeli interfejs to obsługuje, aby sprawdzić posła i zapisany głos.
 
-## Dokumenty powiązane
+## Szczegóły głosowania Senatu
 
-Sekcja ta wymienia materiały źródłowe powiązane z głosowaniem (druki sejmowe, akty ELI, sprawozdania komisji). Dokument o największym znaczeniu merytorycznym jest wyróżniony plakietką **Priority**. Każda pozycja zawiera przycisk akcji otwierający dokument w nowej karcie.
+Strona Senatu korzysta z oficjalnego wyniku i dostępnych sum. Może zawierać powiązane dokumenty, procesy legislacyjne i rozkład miejsc w sali Senatu, jeżeli źródło udostępniło głosy senatorów możliwe do przypisania do miejsc.
 
-W przypadku braku materiałów wyświetlany jest komunikat *„No linked documents were found for this vote yet”*.
+Brak listy senatorów lub mapy oznacza, że wymagane dane źródłowe są niedostępne; Persate nie zastępuje ich danymi Sejmu.
 
-## Interaktywna mapa sali
+## Decyzje Prezydenta
 
-Mapa odwzorowuje faktyczny układ miejsc w Sejmie. Każdy mandat jest oznaczony punktem w kolorze oddanego głosu:
+Zakładka Prezydenta jest listą decyzji jednoosobowych. Użyj akcji prowadzącej do źródła urzędowego w wierszu, jeżeli jest dostępna. Nie ma szczegółów głosowania ani mapy izby, ponieważ Prezydent nie głosuje w izbie.
 
-* **Niebieski** — **Yes** (za).
-* **Czerwony** — **No** (przeciw).
-* **Bursztynowy** — **Abstain** (wstrzymuje się).
-* **Popielaty** — **Present** (obecny — dla głosowań sprawdzających obecność).
-* **Szary** — **Absent** (nieobecny).
+## Szczegóły sprawy Trybunału Konstytucyjnego
 
-### Filtrowanie klubowe
+Szczegóły TK mogą pokazywać oznaczenie sprawy, stan, przedmiot, wnioskodawcę, rodzaj kontroli, skład lub informacje o rozstrzygnięciu, wyrok Trybunału i powiązane dokumenty urzędowe. Sprawa może istnieć przed opublikowaniem orzeczenia; wtedy informacje o wyroku pozostają niedostępne.
 
-Nad mapą znajduje się lista klubów parlamentarnych. Wybranie konkretnego ugrupowania ogranicza widoczność na mapie wyłącznie do jego członków. Kolor wskaźnika klubu reprezentuje jego głos większościowy. Opcja **All seats** przywraca widok pełnej izby.
+## Dokumenty i pochodzenie danych
 
-### Szczegóły mandatu
+Powiązane materiały mogą otwierać się w panelu dokumentu Persate albo w nowej karcie, zależnie od źródła i formatu. Za tekst autorytatywny uznawaj powiązany dokument urzędowy. Brakujący dokument jest oznaczany jako niedostępny i nie jest odtwarzany przez Persate.
 
-Najechanie kursorem na punkt na mapie wyświetla tożsamość posła oraz oddany przez niego głos. Układ miejsc jest zgodny z oficjalną mapą dzienną Kancelarii Sejmu.
+## Rozwiązywanie problemów
 
-## Stany pustego widoku i błędu
-
-* *„No linked documents were found for this vote yet”* — brak przypisanych materiałów źródłowych dla danego rozstrzygnięcia.
-* *„Couldn't load voting details”* — błąd połączenia z serwerem lub brak uprawnień do podglądu szczegółów. Zaleca się ponowne załadowanie strony.
-* *„No options available”* — dla głosowań standardowych sekcja wyboru opcji pozostaje ukryta.
+* Nie można załadować rekordu — wróć do listy instytucji i otwórz go ponownie; źródło może być chwilowo niedostępne.
+* Brak powiązanych dokumentów — źródło nie połączyło dokumentów z rekordem.
+* Brak mapy sali — instytucja nie przeprowadza głosowania izby albo brakuje danych o poszczególnych miejscach.
+* Liczby różnią się od późniejszej publikacji urzędowej — zapisz adres i czas, a następnie zgłoś rozbieżność; źródła publiczne bywają korygowane po pierwszej publikacji.

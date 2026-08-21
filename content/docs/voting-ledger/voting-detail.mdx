@@ -1,48 +1,43 @@
 ---
-title: Voting detail
-description: Detailed voting view — overview card, linked documents, option distribution, and the mandate chamber map.
+title: Record details
+description: Read institution-specific voting, decision, and case records without conflating their data.
 ---
 
-The **Detailed view** provides a complete record of a single vote. The screen consists of the overview section, source documents, and an interactive chamber map.
+Open a record from **PUBLIC → Votes**. The available sections depend on the active institution and on what its official source publishes.
 
-Access to the view is obtained by selecting any card in the **Voting ledger**.
+## Sejm voting detail
 
-## Overview and metrics
+The Sejm detail page can show:
 
-The main panel contains key resolution parameters:
+* result and threshold information;
+* voting time, attendance, turnout, and majority rule;
+* counts by option;
+* related official items and documents;
+* a seat-by-seat chamber map with member votes.
 
-* **Resolution status** — the label **Passed**, **Rejected**, **Quorum present**, or **Quorum missing**, along with information about whether the required threshold was reached.
-* **Voted at** — the exact time the votes were cast.
-* **Members present** — the number of stakeholders recorded in the chamber.
-* **Majority** — the applied majority rule (**Simple**, **Absolute**, or **Qualified**).
-* **Turnout** — attendance expressed as a percentage and in absolute terms.
+Use the club filter above the chamber map to focus on one parliamentary club; **All seats** restores the full map. Select or hover a seat where supported to inspect the member and recorded vote.
 
-## Linked documents
+## Senate voting detail
 
-This section lists source materials linked to the vote (parliamentary prints, ELI acts, committee reports). The document of greatest substantive significance is highlighted with a **Priority** badge. Every entry contains an action button that opens the document in a new tab.
+The Senate detail page uses the official Senate result and available counts. It can include related documents, linked legislative processes, and a Senate chamber distribution when the source provides member votes that can be matched to seats.
 
-When no materials are available, the message *"No linked documents were found for this vote yet"* is displayed.
+An absent senator list or chamber visualization means that the required source data is unavailable; Persate does not substitute Sejm data.
 
-## Interactive chamber map
+## Presidential decisions
 
-The map reproduces the actual seating layout of the Sejm. Every mandate is marked with a dot in the color of the cast vote:
+The presidential tab is a list of individual decisions. Use the official source action in the row where available. There is no chamber-vote detail or seat map because the President does not cast a chamber vote.
 
-* **Blue** — **Yes** (in favor).
-* **Red** — **No** (against).
-* **Amber** — **Abstain**.
-* **Light grey** — **Present** (for attendance-checking votes).
-* **Grey** — **Absent**.
+## Constitutional Tribunal case detail
 
-### Club filtering
+The TK detail can show case identity, status, subject, applicant, review type, composition or decision information, the Tribunal verdict, and related official documents. A case may exist before a ruling is published; in that state, verdict information remains unavailable.
 
-Above the map, a list of parliamentary clubs is displayed. Selecting a specific group restricts the map visibility exclusively to its members. The club indicator color represents its majority vote. The **All seats** option restores the full chamber view.
+## Documents and provenance
 
-### Mandate details
+Related items may open in a Persate document panel or in a new browser tab, depending on the source and format. Treat the linked official document as the authoritative text. A missing document is displayed as unavailable and is not recreated by Persate.
 
-Hovering over a point on the map displays the stakeholder's identity and their cast vote. The seating layout corresponds to the official daily map from the Chancellery of the Sejm.
+## Troubleshooting
 
-## Empty view and error states
-
-* *"No linked documents were found for this vote yet"* — no source materials are assigned for the given resolution.
-* *"Couldn't load voting details"* — server connection error or insufficient permissions to view details. Reloading the page is recommended.
-* *"No options available"* — for standard votes, the option selection section remains hidden.
+* Record cannot be loaded — return to the institution list and open it again; the source may be temporarily unavailable.
+* No related documents — the source has not linked any documents to this record.
+* No chamber map — the institution has no chamber vote, or seat-level source data is unavailable.
+* Counts differ from a later official publication — record the URL and time and report the discrepancy; public-source corrections can arrive after the first publication.

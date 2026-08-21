@@ -1,38 +1,41 @@
 ---
 title: Pierwsze logowanie
-description: Procedura uwierzytelniania oraz orientacja w interfejsie po uzyskaniu dostępu do Cockpitu.
+description: Bezpieczne logowanie i rozpoznanie pierwszego ekranu Persate.
 ---
 
-Logowanie odbywa się na stronie [persate.com](https://persate.com) po wybraniu opcji **Sign in**.
+Otwórz [persate.com](https://persate.com) i wybierz **Sign in**. Publiczna strona logowania zaczyna się od adresu e-mail i oferuje również logowanie przez Google i Microsoft.
 
-## Proces logowania
+<img src="/docs/persate/screenshots/auth/login-desktop.png" alt="Pełna strona logowania Persate z polem adresu e-mail i opcjami Google oraz Microsoft" />
 
-Uwierzytelnianie wymaga wykonania dwóch kroków:
+## Logowanie hasłem
 
-1. Wprowadzenie adresu e-mail i wybranie przycisku **Continue**.
-2. Wprowadzenie hasła i wybranie **Sign In**.
+1. Wpisz adres e-mail konta i wybierz **Continue**.
+2. Wpisz hasło i wybierz **Sign In**.
+3. Gdy pojawi się prośba, wpisz bieżący sześciocyfrowy kod z aplikacji uwierzytelniającej.
 
-Po podaniu poprawnych danych platforma kieruje do weryfikacji dwuetapowej (2FA). Przepływ ten dotyczy każdego logowania hasłem:
+Jeśli aplikacja uwierzytelniająca nie jest jeszcze skonfigurowana, Persate otworzy **Set Up Authenticator**. Zeskanuj kod QR albo wpisz pokazany klucz ręcznie, a następnie potwierdź bieżącym kodem. Weryfikacja dwuetapowa jest wymagana dla kont Persate.
 
-* Konto z już skonfigurowanym czynnikiem przechodzi na ekran **Two-Factor Authentication**, gdzie należy wpisać sześciocyfrowy kod z aplikacji uwierzytelniającej.
-* Konto bez skonfigurowanego czynnika trafia na ekran **Set Up Authenticator** — wyświetla kod QR (oraz klucz do wpisania ręcznie) i wymaga jednorazowego potwierdzenia kodem, aby dokończyć konfigurację.
+Na ekranie weryfikacji opcja **Trust this browser for 30 days** może pomijać kod przy kolejnych logowaniach w tej przeglądarce. Używaj jej wyłącznie w prywatnej, zarządzanej przeglądarce. Działania wrażliwe mogą nadal wymagać weryfikacji, a zaufanie można cofnąć w **Settings → Security & Privacy**.
 
-Przy logowaniu przez konto Google lub Microsoft wystarczy wybrać przycisk **Continue using Google Account** (lub Microsoft).
+## Logowanie przez Google lub Microsoft
+
+Wybierz dostawcę na pierwszym ekranie i dokończ jego proces autoryzacji. Użyj tożsamości przypisanej do konta Persate. Po udanym logowaniu dostawcy Persate może nadal wymagać weryfikacji dwuetapowej, chyba że przeglądarka jest zaufana.
 
 ## Resetowanie hasła
 
-Ekran logowania **nie zawiera** linku „Forgot password”. Reset hasła uruchamia się przez bezpośrednie wejście pod adres `persate.com/password-reset` — adres trzeba znać. Po wpisaniu adresu e-mail system zawsze wyświetla ten sam, neutralny komunikat o ewentualnym wysłaniu linku (bez ujawniania, czy konto istnieje). Zmiana hasła jest również możliwa po zalogowaniu, w sekcji **Settings**.
+Bieżący pierwszy ekran nie pokazuje odsyłacza do resetowania hasła. Dla konta z hasłem otwórz `persate.com/password-reset`, wpisz adres e-mail i postępuj według otrzymanej wiadomości. Persate używa neutralnej odpowiedzi, aby ekran nie ujawniał istnienia konta.
 
-## Nawigacja startowa
+Hasła zarządzane przez Google, Microsoft lub organizacyjnego dostawcę tożsamości należy resetować po stronie tego dostawcy.
 
-Po pomyślnym zalogowaniu domyślnym widokiem jest **Cockpit**. Kluczowe elementy interfejsu to:
+## Po zalogowaniu
 
-* **Panel boczny** — główne menu nawigacyjne po lewej stronie.
-* **Upload** — przycisk otwierający panel dodawania dokumentów.
-* **Search** — ikona lupy uruchamiająca globalną wyszukiwarkę.
+Persate otwiera **Cockpit**. Widoczny panel boczny zależy od funkcji organizacji, roli, grup i przypisanych Labs. Brak pozycji w nawigacji może więc wynikać z uprawnień, a nie z błędu ładowania.
 
-## Stany błędu
+Globalne wyszukiwanie w górnym pasku obejmuje dostępne obszary. Menu profilu zawiera Ustawienia i wylogowanie. Kontrolki przesyłania do Repozytorium pojawiają się tylko wtedy, gdy Repozytorium jest włączone.
 
-* *„Login Failed”* z opisem *„Invalid credentials provided”* — błędny adres e-mail lub hasło.
-* *„Verification Failed”* z opisem *„Invalid code. Please try again”* — wprowadzony kod z aplikacji uwierzytelniającej nie jest poprawny.
-* *„OAuth Error”* — nie udało się zalogować przez konto Google lub Microsoft.
+## Rozwiązywanie problemów
+
+* **Invalid credentials provided** — sprawdź e-mail i hasło; nie powtarzaj wielokrotnie prób dla zablokowanego lub nieznanego konta.
+* **Invalid code. Please try again** — użyj nowego kodu i sprawdź zegar urządzenia.
+* Błąd dostawcy lub OAuth — rozpocznij ponownie na stronie logowania Persate i użyj przypisanego konta dostawcy.
+* **Access Denied** po uwierzytelnieniu — konto jest prawidłowe, ale nie ma wymaganego dostępu do organizacji, roli, grupy lub funkcji; skontaktuj się z administratorem.

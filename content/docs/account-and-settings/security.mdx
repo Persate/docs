@@ -1,31 +1,42 @@
 ---
 title: Security and privacy
-description: Account protection management — password change, two-factor authentication, and active session monitoring.
+description: Manage passwords, two-step verification, sessions, trusted browsers, and login history.
 ---
 
-The **Security & Privacy** panel is used to protect profile access and monitor login history and active devices.
+Open **Settings → Security & Privacy**. Treat unexpected devices or activity as a security incident and contact your administrator immediately.
 
-## Login password
+## Password
 
-The **Change password** option opens the password change form. The new password must consist of at least eight characters, including at least one digit and one special character. For SSO accounts (Google/Microsoft), password changes occur on the external provider's side.
+For password-based accounts, select **Change password**. A new password must contain at least eight characters, one number, and one special character.
 
-## Two-factor authentication (2FA)
+Google- or Microsoft-managed accounts show **Managed by provider**. Change that password through the identity provider.
 
-Two-factor authentication is required for every account.
+## Two-step verification
 
-* **Status** — the *Live* badge confirms active protection.
-* **Changing the authenticator app** — the **Replace authenticator** button allows deregistering the current app and generating a new QR code. This process must be completed immediately after initiation.
+Two-step verification is required for Persate accounts. When an authenticator is enrolled, the row shows a **Live** status and **Replace authenticator**.
 
-## Access monitoring
+Replacement keeps the current authenticator active while the new one is enrolled. Have the new device available and finish the confirmation before leaving the flow.
 
-* **Active sessions** — a list of devices currently signed into the profile. The row labeled as *This device* represents the current browser. The **Sign out all other devices** button allows remotely terminating all other sessions.
-* **Login history** — a chronological log of recent events (logins, logouts, account parameter changes) along with the IP address and device type. The list includes up to a dozen or so of the most recent entries; entries belonging to the same session are merged, so a single row may represent multiple session refreshes.
+## Active sessions
 
-## Data export (GDPR)
+Review the devices currently signed in. Sign out sessions that you do not recognize. Signing out another session may take effect when that client next checks its session.
 
-The feature labeled as **coming-soon** will eventually allow downloading a full archive of account data (profile, conversations, alerts). Until its launch, requests should be directed to technical support.
+## Trusted devices
 
-## Empty view and error states
+When this panel is available, it lists browsers that may skip the authenticator challenge at sign-in for up to 30 days. Trust applies to that browser, not to the whole computer, and sensitive actions still require verification.
 
-* *"Session management unavailable"* — for a given authentication type, the remote session logout feature is not supported.
-* *"Login history not exposed"* — lack of access to the audit event log for the current profile.
+Managing trusted devices requires a current authenticator code. Revoke an individual browser or all other trusted browsers if a device is lost, shared, or no longer controlled by you.
+
+## Login history
+
+Review recent sign-in activity, including the time and device information made available to Persate. If the list fails to load, refresh once; do not assume an empty screen means there was no activity.
+
+## Data and export
+
+**Data & export** is marked **Coming soon**. The disabled button does not submit an export or deletion request. Use your organization's approved support channel for a current request.
+
+## Troubleshooting
+
+* Authenticator code rejected — use the current six-digit code and confirm the device clock is accurate.
+* Trusted-devices panel unavailable — the account has no enrolled authenticator or this security backend is not enabled.
+* Unknown session or sign-in — sign it out if possible, change the password for password accounts, and report it.

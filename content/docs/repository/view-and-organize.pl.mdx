@@ -1,40 +1,49 @@
 ---
-title: Przeglądanie i porządkowanie plików
-description: Praca z przeglądarką dokumentów, zarządzanie metadanymi, wyszukiwanie oraz usuwanie plików.
+title: Przeglądanie i zarządzanie plikami
+description: Wyszukiwanie, podgląd, udostępnianie, pobieranie i usuwanie plików w Repozytorium.
 ---
 
-**Przeglądarka dokumentów** umożliwia otwieranie, przeszukiwanie i zarządzanie plikami znajdującymi się w repozytorium.
+Otwórz **WORKSPACE → Repository**, aby pracować z własnymi plikami oraz plikami udostępnionymi grupom, do których należysz.
 
-## Otwieranie plików
+## Znajdowanie pliku
 
-Wybranie nazwy dokumentu w widoku listy lub kafelka w widoku kafelkowym otwiera plik. Przeglądarka wyświetla treść dokumentu po lewej stronie oraz panel metadanych po prawej.
+Kontrolki nad listą plików pozwalają:
 
-Dokumenty PDF są wyświetlane za pomocą wbudowanego silnika, który zapewnia kontrolę powiększenia, nawigację między stronami oraz funkcję wyszukiwania tekstu wewnątrz pliku.
+* przełączać widok listy i kafelków;
+* wyszukiwać w widocznym Repozytorium według nazwy pliku;
+* filtrować i sortować bieżący zestaw wyników;
+* zaznaczać pliki do operacji zbiorczych.
 
-## Panel metadanych
+Jeśli widzisz komunikat **No files found**, wyczyść wyszukiwanie i filtry, zanim uznasz Repozytorium za puste. Dostęp zależy od organizacji i grup, dlatego inni użytkownicy mogą widzieć inny zestaw plików.
 
-Panel boczny grupuje informacje o dokumencie w kilku sekcjach:
+## Podgląd i informacje o pliku
 
-*   **Summary** — automatycznie wygenerowane streszczenie, widoczne po zakończeniu przetwarzania dokumentu.
-*   **Information** — właściwości techniczne, takie jak rozmiar, data modyfikacji, status analizy oraz wykryty język.
-*   **Visibility** — zarządzanie widocznością dokumentu. Pozwala zmienić status między **Private** a **Groups**. Zmiana uprawnień nie powoduje przeniesienia pliku, a jedynie modyfikuje jego zakres widoczności dla innych użytkowników.
-*   **Actions** — przyciski **Download** (pobieranie pliku na dysk) oraz **Delete** (usuwanie) znajdujące się w prawym górnym rogu.
+Wybierz plik, aby otworzyć podgląd i metadane. Panel może pokazywać oryginalny plik, stan przetwarzania, wykryty język, podsumowanie i odbiorców, jeżeli te dane są dostępne.
 
-## Wyszukiwanie treści
+Bezpośrednio po przesłaniu pola zależne od przetwarzania mogą być jeszcze niedostępne. Poczekaj na zakończenie przetwarzania i otwórz plik ponownie. Jeśli przeglądarka nie obsługuje podglądu danego formatu, pobierz oryginał.
 
-**Pole wyszukiwania** w górnej części widoku pozwala przeszukiwać pełnotekstowo wszystkie dostępne dokumenty. System przeszukuje treść plików, a nie tylko ich nazwy. Wyszukiwanie można precyzyjnie zawężać za pomocą filtrów daty, rozmiaru i statusu.
+## Zmiana dostępu
 
-## Operacje wsadowe
+Właściciel pliku lub uprawniony administrator może zmienić odbiorców na:
 
-W widoku listy można zaznaczyć wiele dokumentów jednocześnie za pomocą pól wyboru przy nazwach plików. Powoduje to wyświetlenie dolnego paska akcji z informacją o liczbie wybranych elementów. Obecnie jedyną dostępną operacją grupową jest **Delete** - usunięcie zaznaczonych plików.
+* **Only me**;
+* jedną lub kilka grup w tej samej organizacji.
 
-## Usuwanie dokumentów
+Usunięcie grupy odbiera jej dostęp, ale nie usuwa pliku. Użytkownik należący do kilku wybranych grup zachowuje dostęp przez każdą pozostałą grupę.
 
-Pliki usuwa się pojedynczo w panelu metadanych lub zbiorczo w widoku listy. Usunięcie następuje natychmiastowo. Platforma nie posiada kosza, pliki nie zostają przechowywane po ich usunięciu, niemożliwe jest ich przywrócenie.
+## Pobieranie
 
-**Ważne:** Operacja usunięcia jest nieodwracalna. Jeśli dokument może być potrzebny w przyszłości, należy go pobrać przed wykonaniem tej akcji.
+Użyj **Download** w menu działań pliku, aby pobrać oryginał. Aby pobrać kilka plików, zaznacz je i wybierz zbiorcze pobieranie. Nie zamykaj karty przeglądarki, dopóki pobieranie się nie rozpocznie.
 
-## Stany pustego widoku i błędu
+## Usuwanie
 
-*   *„Summary not available yet”* — dokument jest w trakcie przetwarzania. Podsumowanie pojawi się automatycznie po zakończeniu analizy.
-*   *„Search returned no results”* — żadne dokumenty nie pasują do wpisanej frazy lub aktywnych filtrów.
+Użyj menu działań, aby usunąć pojedynczy plik, albo zaznacz kilka plików i wybierz zbiorcze usuwanie. Dokładnie sprawdź okno potwierdzenia: operacja usuwa plik i dane po przetworzeniu, a nie przenosi ich do kosza.
+
+Plik może usunąć tylko właściciel lub uprawniony administrator. Jeżeli współdzielony plik ma pozostać dostępny, zmień odbiorców zamiast go usuwać.
+
+## Rozwiązywanie problemów
+
+* **Preview unavailable** — pobierz oryginał i sprawdź, czy przetwarzanie się zakończyło.
+* **Summary unavailable** — ekstrakcja tekstu lub generowanie podsumowania nadal trwa albo zakończyło się błędem.
+* Niedostępna akcja — plik jest Ci udostępniony, ale nie jesteś jego właścicielem ani uprawnionym administratorem.
+* Nieudane pobieranie — odśwież stronę i spróbuj ponownie; jeśli problem trwa, zapisz nazwę pliku i skontaktuj się z administratorem.

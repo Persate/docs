@@ -1,41 +1,41 @@
 ---
 title: Preferencje i powiadomienia
-description: Personalizowanie interfejsu, ustawienia powiadomień e-mail oraz parametry analizy danych.
+description: Konfigurowanie aktywnych preferencji i odróżnianie ich od pozycji Coming soon.
 ---
 
-Panele **Preferences**, **Notifications** oraz **Analysis** służą do konfiguracji sposobu działania i wyglądu platformy. Niektóre funkcje oznaczone jako **coming-soon** zostaną udostępnione w nadchodzących wydaniach.
+## Powiadomienia
 
-## Wygląd i interfejs
+Otwórz **Settings → Notifications**. Poniższe preferencje są aktywne i zapisują się od razu:
 
-W panelu **Preferences** można zarządzać warstwą wizualną oraz wybranymi parametrami pracy:
+* **Product updates** — okazjonalne wiadomości o produkcie i wydaniach.
+* **Alert emails** — e-mail, gdy włączony alert potwierdzi dopasowanie.
+* **Alert match notifications** — powiadomienie w aplikacji i na telefonie o potwierdzonym dopasowaniu alertu.
+* **Daily report notifications** — powiadomienie w aplikacji i na telefonie, gdy raport poranny jest gotowy; domyślnie wyłączone do czasu zgody.
+* **Advisor notifications** — powiadomienie w aplikacji i na telefonie po zakończeniu zadania Advisora.
 
-* **Motyw (Appearance)** — wybór pomiędzy *Moonlit night* (ciemny), *Sunny mode* (jasny) a *Follow system* (automatyczny).
-* **Bannery funkcji (Feature banners)** — przycisk **Reset** pozwala przywrócić wszystkie wcześniej ukryte bannery wprowadzające na stronach modułów.
-* **Głosowania proceduralne w Ledger (Procedural votes in Ledger)** — przełącznik decydujący o wyświetlaniu głosowań proceduralnych (zmiany porządku obrad, przerwy, sprawdzenia kworum) w Rejestrze głosowań. Domyślnie są ukryte, by ograniczyć szum; włączenie przełącznika pokazuje je.
-* **Język (Language)** — wiersz w przygotowaniu; obecnie platforma działa wyłącznie po angielsku (*English*).
-* **Strefa czasowa (Timezone)** — wiersz w przygotowaniu; obecnie obowiązuje *(GMT +2:00) Warsaw*.
+Dopasowania alertów znajdują się w **CORE → Tracker**. Skrzynka na górnym pasku służy ogłoszeniom produktowym i wiadomościom bezpośrednim.
 
-## Powiadomienia e-mail
+**Security alerts** i **Weekly digest** są oznaczone jako **Coming soon**; ich nieaktywne przełączniki nie zmieniają dostarczania wiadomości.
 
-Panel **Notifications** pozwala zarządzać komunikacją wychodzącą. Obecnie aktywne są dwa przełączniki:
+## Preferencje
 
-* **Aktualizacje produktu (Product updates)** — informacje o nowych funkcjach i wydaniach.
-* **Alerty e-mail (Alert emails)** — wiadomość e-mail przy wyzwoleniu jednego z włączonych alertów.
+Otwórz **Settings → Preferences**, aby skonfigurować:
 
-Pozostałe pozycje są oznaczone jako w przygotowaniu:
+* **Appearance** — Moonlit night, Sunny mode albo Follow system.
+* **Advisor output style** — Verbose, Compact albo Hidden podczas pracy Advisora. Zakończona aktywność pozostaje zwinięta.
+* **Feature banners** — przywracanie ukrytych banerów wprowadzających.
+* **Procedural votes in Ledger** — pokazywanie domyślnie ukrytych głosowań, np. zmian porządku obrad, przerw i kontroli kworum.
+* **Editor import storage** — gdy Editor jest dostępny, zdecyduj, czy Persate ma pytać przy każdym imporcie, zapisywać importy w Repozytorium, czy używać ich tylko w danym dokumencie. Opcja Repozytorium pojawia się tylko wtedy, gdy ono także jest włączone.
 
-* **Alerty bezpieczeństwa (Security alerts)** — powiadomienia o logowaniach, zmianach hasła i zdarzeniach weryfikacji dwuetapowej.
-* **Cotygodniowy digest (Weekly digest)** — poniedziałkowe podsumowanie zmian w obserwowanych dokumentach.
-* **Powiadomienia w aplikacji i push (In-app & push)** — alerty w czasie rzeczywistym wewnątrz platformy oraz na urządzeniu mobilnym.
+**Language** i **Timezone** są oznaczone jako **Coming soon**. Pokazane wartości są informacyjne i obecnie nie można ich zmienić.
 
-## Parametry analizy
+## Analiza
 
-W panelu **Analysis** (funkcje dostępne wkrótce) znajduje się:
+Zarówno **Synchronization interval**, jak i **Smart suggestions** w **Settings → Analysis** są oznaczone jako **Coming soon**. Zmiana widocznych wartości zastępczych nie uruchamia synchronizacji chmurowej ani automatycznych sugestii.
 
-* **Interwał synchronizacji** — częstotliwość pobierania plików z zewnętrznych źródeł (Google Drive, OneDrive).
-* **Inteligentne sugestie** — przełącznik automatycznego rekomendowania powiązanych postępowań i dokumentów.
+## Rozwiązywanie problemów
 
-## Stany pustego widoku i błędu
-
-* *„No banners hidden”* — brak bannerów do zresetowania, przycisk pozostaje nieaktywny.
-* *„Feature coming soon”* — próba konfiguracji funkcji przewidzianej w przyszłości.
+* Błąd zapisu — Persate przywraca poprzednią wartość; sprawdź połączenie i spróbuj ponownie.
+* Brak preferencji Editora — Editor nie jest włączony dla organizacji.
+* Brak opcji Repozytorium — Repozytorium nie jest włączone.
+* **No banners hidden** — nie ma ukrytych banerów do przywrócenia.

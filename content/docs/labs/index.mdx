@@ -1,0 +1,48 @@
+---
+title: Persate Labs
+description: Tenant-specific, versioned research tools assigned to workspace groups.
+---
+
+**Persate Labs** contains specialized data workbenches enabled for selected organizations and groups. Labs are not a universal product catalogue: two users in the same organization can see different tools when their group assignments differ.
+
+## Access requirements
+
+A lab appears only when all of the following are true:
+
+* **Labs** is enabled for the organization;
+* the user belongs to a group assigned to that lab;
+* all prerequisite features are enabled;
+* a reviewed release is available;
+* the installed Persate client can render that lab package.
+
+The **LABS** sidebar section is absent when there are no usable assignments. The catalogue page displays **Your group has no labs assigned right now** when access exists but the current group has no assigned tool.
+
+## Versioned data
+
+Each lab opens a reviewed release. The release is immutable: reviewers can promote or reject new web findings, but those decisions take effect in a later release rather than silently changing the open dataset.
+
+Status labels distinguish the review state of a relationship or finding:
+
+* **Verified** — supported by reviewed evidence;
+* **Probable** — plausible but not fully verified;
+* **Unresolved** — not resolved by the reviewed material.
+
+Live web findings are explicitly unreviewed. They must not be presented as part of the reviewed release until promoted through the lab workflow.
+
+## Lab Advisor
+
+Some labs include a **Lab Advisor**. It is separate from the main Advisor and carries the current lab view into a new conversation. The panel is resizable on wider screens and opens as an overlay on narrow screens.
+
+Lab Advisor access requires both the lab assignment and Advisor access. Conversations belong to the current user. A running turn can be stopped, and use is subject to the workspace allowance.
+
+## Failure states
+
+* Lab not assigned — the user's groups do not have this lab.
+* Prerequisite not entitled — a feature required by the lab is not enabled.
+* No reviewed release — access is valid, but the lab has no publishable dataset yet.
+* Data unavailable — the reviewed release could not be loaded. Retry without changing review state.
+* Unknown lab — the link is obsolete or the client cannot render the assigned package.
+
+## Pages in this section
+
+* **[Using a lab workbench](/labs/workbench)** — views, selection, evidence, web review, export, and Lab Advisor.

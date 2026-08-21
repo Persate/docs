@@ -1,0 +1,52 @@
+---
+title: Sources
+description: Odczytywanie rejestru możliwości, zakresu, świeżości i gotowości źródeł do alertów.
+---
+
+**PUBLIC → Sources** to rejestr możliwości tylko do odczytu. Pokazuje rodziny źródeł znane Persate oraz bieżącą dostępność raportowaną dla organizacji. Nie jest to łącznik dysku chmurowego i nie zmienia konfiguracji źródeł.
+
+## Kolumny tabeli
+
+Każdy wiersz może zawierać:
+
+* **Source** — nazwę źródła widoczną dla użytkownika i kategorię;
+* **Status** — bieżący stan możliwości;
+* **Availability** — obszary Persate, które mogą używać źródła;
+* **Coverage** — zakres czasu lub treści reprezentowany przez bieżące dane;
+* **Refresh** — oczekiwany albo zaobserwowany sposób aktualizacji;
+* **Alerts** — informację, czy źródło może uczestniczyć w monitorowaniu alertów;
+* **Last update** — ostatni raportowany czas odświeżenia, jeżeli telemetria jest dostępna.
+
+Ikony dostępności prowadzą do odpowiedniej funkcji Persate, gdy istnieje docelowy widok.
+
+## Filtrowanie katalogu
+
+Panel boczny pozwala:
+
+* wyszukiwać po nazwie lub opisie źródła;
+* filtrować według kategorii;
+* wyświetlać wyłącznie źródła obsługujące alerty;
+* wyświetlać wyłącznie wiersze dostępne jako dane surowe.
+
+Filtry wpływają tylko na widok katalogu. Nie włączają, nie wyłączają ani nie synchronizują źródła.
+
+## Katalog zastępczy
+
+Jeżeli nie uda się załadować bieżącej telemetrii źródeł, Persate pozostawia widoczny katalog bazowy i wyświetla baner błędu. Nazwy oraz zamierzone możliwości nadal pomagają w orientacji, ale świeżość, zakres i stan mogą nie odzwierciedlać najnowszego uruchomienia.
+
+Wiersz katalogu bazowego nie potwierdza, że dane są aktualnie dostępne dla alertu, raportu lub wyszukiwania. Należy otworzyć powiązaną funkcję i sprawdzić jej stan.
+
+## Interpretacja stanu
+
+Stan i dostępność są odrębnymi informacjami:
+
+* źródło może być znane, lecz chwilowo niedostępne;
+* źródło może działać w jednej funkcji, ale nie obsługiwać alertów;
+* zakres może być częściowy nawet przy stanie operacyjnym;
+* brak wartości ostatniej aktualizacji oznacza brak telemetrii, a nie brak wcześniejszego odświeżenia.
+
+## Stany błędu
+
+* Katalog pozostaje dostępny — telemetria nie została pobrana i wyświetlany jest katalog bazowy.
+* Brak pasujących wierszy — należy wyczyścić wyszukiwanie oraz filtry kategorii, alertów lub danych surowych.
+* Powiązana funkcja jest zablokowana — źródło istnieje, lecz organizacja nie ma dostępu do miejsca docelowego.

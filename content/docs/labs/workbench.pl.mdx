@@ -1,0 +1,50 @@
+---
+title: Korzystanie z laboratorium
+description: Nawigacja po widokach, przegląd dowodów, eksport zakresu i używanie Lab Advisora.
+---
+
+Dokładne etykiety i model danych zależą od przypisanego laboratorium. Wspólne środowisko udostępnia następujące widoki, jeżeli dany pakiet je obsługuje:
+
+* **Summary** — kontekst wydania i główne liczby;
+* **People** — encje z wyszukiwaniem i bieżącym stanem przeglądu;
+* **Graph** — relacje między encjami;
+* **Timeline** — zdarzenia i dowody uporządkowane w czasie.
+
+## Wyszukiwanie i filtrowanie encji
+
+Wyszukiwanie wymaga co najmniej dwóch znaków. Można filtrować według grupy oraz stanu **Verified**, **Probable** lub **Unresolved**. Wybranie encji ustawia na niej fokus w bieżącym widoku i, gdy to możliwe, otwiera jej dossier.
+
+W grafie wybranie węzła ustawia fokus. Modyfikator wskazany przez interfejs pozwala oznaczyć kilka węzłów. Wybrany zestaw roboczy można odłożyć i przywrócić bez zmiany wydania.
+
+## Kontrolki grafu
+
+Graf pozwala zwolnić układ fokusu, rozdzielić zestaw roboczy lub ponownie pogrupować widoczne węzły. Kontrolki wpływają wyłącznie na bieżący widok. Nie dodają, nie usuwają ani nie zmieniają przejrzanych relacji.
+
+## Dossier i dowody
+
+Dossier osoby grupuje przejrzane relacje i ich dowody. Po otwarciu dowodu można sprawdzić źródło i stan przeglądu. Zarchiwizowany dowód jest udostępniany jako dokładnie zapisany plik; nieudany podgląd nie zmienia rekordu.
+
+Każdy **live web finding** należy traktować jako nieprzejrzany. Recenzent może:
+
+* wybrać **Promote**, aby skierować wynik do kolejnej przejrzanej transzy;
+* wybrać **Reject**;
+* cofnąć oczekującą decyzję.
+
+Zatwierdzenie nie zmienia wydania aktualnie otwartego na ekranie.
+
+## Eksport
+
+Kontrolka eksportu pobiera skoroszyt dla bieżącego zakresu. Zależnie od laboratorium zakresem może być całe wydanie, grupa główna albo wybrane węzły, wraz ze stanami przeglądu. Eksport wymaga aktywnej autoryzowanej sesji; nieaktualny lub udostępniony odnośnik nie zastępuje dostępu do laboratorium.
+
+## Lab Advisor
+
+Należy otworzyć **Lab Advisor**, aby zadać pytanie o bieżące wydanie. Nowa rozmowa zapisuje kontekst aktualnego widoku. Późniejsza zmiana widoku nie modyfikuje wcześniejszych odpowiedzi.
+
+Polecenie **Stop** anuluje uruchomioną odpowiedź. Po wyczerpaniu limitu środowisko nadal działa, lecz Advisor nie rozpocznie kolejnej odpowiedzi do czasu przywrócenia limitu.
+
+## Stany puste i błędy
+
+* Brak wyników wyszukiwania — należy wyczyścić filtry stanu lub grupy albo wpisać szersze zapytanie zawierające co najmniej dwa znaki.
+* Dowód niedostępny — źródła może brakować w przejrzanym wydaniu; nie należy wywodzić relacji wyłącznie z grafu.
+* Advisor niedostępny — należy potwierdzić przypisanie laboratorium oraz dostęp do Advisora.
+* Eksport nieudany — należy zachować wybrany zakres i ponowić po ponownym uwierzytelnieniu.

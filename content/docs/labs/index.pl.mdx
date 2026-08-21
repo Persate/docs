@@ -1,0 +1,48 @@
+---
+title: Persate Labs
+description: Narzędzia badawcze przypisane do organizacji i grup, korzystające z wersjonowanych danych.
+---
+
+**Persate Labs** zawiera wyspecjalizowane środowiska danych włączane dla wybranych organizacji i grup. Labs nie jest uniwersalnym katalogiem produktu: dwóch użytkowników tej samej organizacji może widzieć inne narzędzia w zależności od przypisania do grup.
+
+## Wymagania dostępu
+
+Laboratorium pojawia się tylko wtedy, gdy spełnione są wszystkie warunki:
+
+* funkcja **Labs** jest włączona dla organizacji;
+* użytkownik należy do grupy przypisanej do laboratorium;
+* włączono wszystkie wymagane funkcje;
+* dostępne jest przejrzane wydanie danych;
+* zainstalowany klient Persate potrafi wyświetlić pakiet laboratorium.
+
+Sekcja **LABS** w panelu bocznym jest ukryta, jeżeli nie ma dostępnego przypisania. Katalog wyświetla **Your group has no labs assigned right now**, gdy dostęp do Labs istnieje, lecz bieżąca grupa nie ma przypisanego narzędzia.
+
+## Wersjonowane dane
+
+Każde laboratorium otwiera przejrzane wydanie. Wydanie jest niezmienne: recenzenci mogą zatwierdzać lub odrzucać nowe wyniki z sieci, lecz decyzje obowiązują w kolejnym wydaniu zamiast niejawnie zmieniać otwarty zbiór.
+
+Etykiety rozróżniają stan relacji lub ustalenia:
+
+* **Verified** — potwierdzone przejrzanymi dowodami;
+* **Probable** — prawdopodobne, ale nie w pełni zweryfikowane;
+* **Unresolved** — nierozstrzygnięte na podstawie przejrzanych materiałów.
+
+Wyniki z bieżącego wyszukiwania sieci są wyraźnie oznaczone jako nieprzejrzane. Nie należy przedstawiać ich jako części zweryfikowanego wydania przed zatwierdzeniem w procesie laboratorium.
+
+## Lab Advisor
+
+Niektóre laboratoria zawierają **Lab Advisor**. Jest oddzielny od głównego Advisora i przekazuje bieżący widok laboratorium do nowej rozmowy. Na szerokim ekranie panel można zmieniać rozmiarem, a na wąskim otwiera się jako nakładka.
+
+Dostęp do Lab Advisora wymaga przypisania do laboratorium i dostępu do Advisora. Rozmowy należą do bieżącego użytkownika. Uruchomioną odpowiedź można zatrzymać, a użycie podlega limitowi obszaru roboczego.
+
+## Stany błędu
+
+* Laboratorium nieprzypisane — grupy użytkownika nie mają tego laboratorium.
+* Brak wymaganej funkcji — funkcja konieczna dla laboratorium nie jest włączona.
+* Brak przejrzanego wydania — dostęp jest prawidłowy, lecz laboratorium nie ma jeszcze zbioru gotowego do publikacji.
+* Dane niedostępne — nie udało się załadować przejrzanego wydania. Ponowienie nie zmienia stanu przeglądu.
+* Nieznane laboratorium — odnośnik jest nieaktualny albo klient nie potrafi wyświetlić przypisanego pakietu.
+
+## Strony w tej sekcji
+
+* **[Korzystanie z laboratorium](/pl/labs/workbench)** — widoki, zaznaczanie, dowody, przegląd wyników sieci, eksport i Lab Advisor.

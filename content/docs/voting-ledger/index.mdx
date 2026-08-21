@@ -1,52 +1,51 @@
 ---
-title: Voting ledger
-description: Catalog of parliamentary resolutions including official results, source documents, and the per-mandate voting record of every member.
+title: Votes
+description: Browse Sejm and Senate votes, presidential decisions, and Constitutional Tribunal cases.
 ---
 
-The **Voting ledger** is a chronological record of all Sejm votes. Every entry contains the official numerical result, resolution information, and a detailed per-mandate vote distribution.
+Open **PUBLIC → Votes**. The top navigation separates four public institutional records:
 
-Access to the module is provided by the **KNOWLEDGE BASE → Ledger** entry in the sidebar.
+* **Sejm** — vote outcomes and per-member voting records;
+* **Senat** — Senate vote outcomes and, where published, per-senator voting records;
+* **Prezydent** — presidential decisions on legislation; these are decisions, not chamber votes;
+* **TK** — Constitutional Tribunal cases and rulings; these are cases and judgments, not votes.
 
-## List structure
+Do not combine metrics across tabs. Each institution publishes different fields and follows a different decision process.
 
-Votes are presented in a table, in descending order (newest first). Access to historical data is provided by pagination with a page size selector at the bottom of the view.
+## Sejm
 
-## Table columns
+The Sejm table shows the result, motion, topic, vote distribution, margin, date, and proceeding/vote number. Select a row to open the complete record.
 
-Every row represents a single vote and contains:
+**Search current page** filters records already loaded by title, topic, or number. The **Procedural votes in Ledger** preference controls whether agenda changes, recesses, quorum checks, and similar procedural votes are shown; they are hidden by default.
 
-* **Result** — the resolution along with its status: among others **Passed**, **Rejected**, **Quorum present**, **Quorum missing**, or **List vote** for list votes.
-* **Motion** — the title of the matter under consideration.
-* **Topic** — the procedural context of the vote.
-* **Vote** — the vote distribution bar.
-* **Margin** — the difference between votes in favor and against.
-* **Date** — the date of the vote.
-* **No.** — the proceeding number and vote number.
+Result labels can include **Passed**, **Rejected**, **Quorum present**, **Quorum missing**, and list-vote outcomes. The recorded majority rule determines the result where applicable.
 
-Selecting a row opens the detailed view with the mandate chamber map.
+## Senat
 
-## Search and filtering
+The Senate table presents the official Senate result, subject, topic, distribution, margin, date, and vote number made available by the source. Search filters the records already fetched. Select a row to open its details.
 
-The sidebar provides:
+Senate records are not inferred from the Sejm record. If the source has not published a field or a member list, Persate leaves that information unavailable.
 
-* **Search current page** — filters the records currently loaded on the page by title, topic, or vote number.
-* **Show procedural votes** — a toggle that reveals procedural votes (changes to the agenda, breaks, quorum checks). They are hidden by default.
+## Prezydent
 
-## Resolution rules
+This tab lists presidential decisions, including the outcome, act or matter, summary, decision date, and available official source. Use search for the currently fetched decisions and the **Outcome** filter to narrow the list.
 
-The platform records the majority type applied for each vote:
+The President acts individually, so Persate does not show a vote distribution or chamber map for this tab.
 
-* **Simple** — more votes in favor than against.
-* **Absolute** — more than half of the statutory number of members.
-* **Qualified** — a constitutionally defined threshold (e.g., 2/3 or 3/5).
+## TK
 
-The majority type directly determines the assignment of the **Passed** or **Rejected** label.
+This tab lists Constitutional Tribunal cases with their status, signature, subject, applicant, review type, outcome, and date when available. Use search for the currently fetched cases. Enable **Rulings only** to hide matters that have not yet been decided.
 
-## Empty view and error states
+Select a case to open its record and related official material.
 
-* *"No votings match your search"* — no records on the current page match the query.
-* *"No votings available"* — the system has not recorded any votes in the selected range. Reloading the page is recommended.
+## Data and empty states
 
-## Pages in this section
+Persate presents fields published by the relevant public source. Missing values are shown as unavailable; they are not estimated.
 
-* **[Voting detail](/voting-ledger/voting-detail)** — detailed view of a single vote, linked documents, and the mandate chamber map.
+* No results after search — clear the current-page query and institution-specific filters.
+* Source unavailable — retry after refreshing; keep the institution and record number when reporting the problem.
+* Detail unavailable — the public source may not expose the record yet, or the identifier may no longer resolve.
+
+## Related guide
+
+* **[Record details](/voting-ledger/voting-detail)** — institution-specific detail pages, documents, and chamber maps.

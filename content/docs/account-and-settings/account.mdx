@@ -1,26 +1,35 @@
 ---
 title: Account
-description: Identity management — profile picture, display name, email address, and assigned roles and groups.
+description: Manage the profile details shown across Persate and inspect your workspace access.
 ---
 
-The **Account** panel is used to manage identity elements visible to other collaborators within the workspace. It is the default panel opened upon accessing the settings.
+Open **Settings → Account**.
 
-## Identity
+## Profile photo
 
-* **Profile picture** — acceptable formats are JPG, PNG, or WebP up to 2 MB in size. Selecting the avatar or the **Upload photo** button opens a file selection window. Removing a custom photo using the **Remove custom photo** button restores the automatically generated avatar or the one provided by the SSO provider.
-* **Display name** — the label presented in comments and reports. If no custom name is provided, the system uses data supplied by the identity provider or the email address. Confirm changes using the **Save** button.
-* **Email** — the primary address for signing in and notifications. Changing the address requires selecting the **Change email** option and confirming with links sent to both the old and new addresses (not applicable to SSO accounts).
+Select the avatar or **Upload photo**. Persate accepts JPG, PNG, and WebP images up to 2 MB. **Remove custom photo** restores the generated avatar or the image supplied by the identity provider.
 
-## Permissions and groups
+Use only an approved professional image. The photo can appear in shared briefings, comments, and collaborator lists.
 
-Information regarding the access level is presented in the lower part of the panel:
+## Display name
 
-* **Role** — the permission level in the workspace: **Administrator**, **Owner**, **Member**, **Viewer**, or **Guest**. This is a read-only field.
-* **Groups** — a list of groups to which the profile is assigned. Group membership determines access to shared documents and alerts.
+Enter the name that Persate should show to collaborators, then select **Save**. If the field is blank, Persate falls back to the identity-provider name or email address.
 
-Changes to roles and group affiliations are performed by an administrator from the **Admin Panel**.
+## Email
 
-## Empty view and error states
+Select **Change email**, enter the requested credentials and new address, then follow the confirmation links sent to both the old and new addresses. The address does not change until the confirmation flow completes.
 
-* *"You're not currently a member of any groups"* — the profile has not yet been assigned to any collaborator group.
-* *"Change email unavailable"* — the feature is unavailable for accounts integrated via Google or Microsoft; the address change must occur on the provider's side.
+For provider-managed sign-in, account credentials may have to be changed with the provider.
+
+## Role and groups
+
+**Role** is read-only and shows the workspace-level permission assigned to the account. **Groups** lists the user's current memberships and group role. Groups control access to shared documents, analyses, channels, and assigned Labs.
+
+Only a workspace administrator can change roles or memberships. An empty group list is valid, but group-scoped content will not be available.
+
+## Troubleshooting
+
+* Photo upload rejected — confirm the format and 2 MB limit.
+* **Save** disabled — the display name has not changed.
+* Confirmation email missing — check both old and new inboxes and the spam folders.
+* Incorrect role or group — contact a workspace administrator; the Account page cannot change it.

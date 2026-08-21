@@ -1,0 +1,51 @@
+---
+title: Editor
+description: Tworzenie, porządkowanie i przegląd artykułów w Persate.
+---
+
+Oznaczony jako beta **Editor** łączy prywatną bibliotekę dokumentów, edytor tekstu sformatowanego i prowadzony przegląd. Jest dostępny wyłącznie po włączeniu funkcji **Editor** dla organizacji.
+
+## Biblioteka Editora
+
+Należy otworzyć **WORKSPACE → Editor**. Biblioteka prezentuje artykuły bieżącego użytkownika i pozwala:
+
+* utworzyć pusty artykuł;
+* zaimportować dokument;
+* wyszukiwać po tytule artykułu;
+* filtrować między **Drafts** i **Reviewed**;
+* zaznaczyć jeden lub więcej artykułów do trwałego usunięcia.
+
+Artykuły są prywatne dla właściciela, z wyjątkiem wyraźnie uzasadnionego dostępu administracyjnego. Usunięcie artykułu usuwa również historię przeglądów w Editorze.
+
+## Obszar pisania
+
+Pasek narzędzi obejmuje akapity, nagłówki, cytaty, listy punktowane i numerowane, bloki kodu, pogrubienie, kursywę, podkreślenie, przekreślenie, odnośniki, cofanie i ponawianie. Zmiany są zapisywane automatycznie po krótkim opóźnieniu.
+
+Prawy obszar przełącza się między kontrolkami **Text** i modułem przeglądu **Advisor**. Na wąskich ekranach przegląd otwiera się w wysuwanym panelu.
+
+## Główne procesy
+
+1. [Utworzyć lub zaimportować draft](/pl/editor/import-and-draft).
+2. Zredagować tekst i w razie potrzeby wybrać **Restructure document**.
+3. [Uruchomić pełny przegląd](/pl/editor/review-and-versions), wybierając co najmniej jeden moduł.
+4. Zastosować, odrzucić lub przywrócić poszczególne sugestie.
+5. Użyć **Versions**, aby sprawdzić lub przywrócić wcześniejszą przejrzaną wersję.
+
+## Limity i wymagania
+
+* Draft artykułu może zawierać maksymalnie 250 000 znaków.
+* **Restructure document** i pełny przegląd obsługują maksymalnie 60 000 znaków.
+* Zmiana struktury wymaga co najmniej 80 znaków i więcej niż jednego wykrytego bloku treści.
+* Pełny przegląd wykorzystuje limit Advisora organizacji i może zostać zablokowany po jego wyczerpaniu.
+
+## Błędy i konflikty współbieżności
+
+* **This document changed in another tab. Reload** — zapisana rewizja jest nowsza niż otwarty edytor. Przed dalszą pracą należy przeładować stronę.
+* **Review in progress** — edycja jest zablokowana podczas pełnego przeglądu. Polecenie **Stop full review** kończy proces; ukończone wyniki częściowe pozostają dostępne.
+* **Review failed** lub **Review interrupted** — wynik może być częściowy. Przed ponowieniem należy sprawdzić zapisany draft.
+* **Feature locked** — organizacja nie ma dostępu do Editora.
+
+## Strony w tej sekcji
+
+* **[Import i draft](/pl/editor/import-and-draft)** — puste artykuły, import plików, zapis w Repozytorium, zmiana struktury i autozapis.
+* **[Przegląd i wersje](/pl/editor/review-and-versions)** — moduły przeglądu, werdykty, działania, zatrzymywanie i przywracanie wersji.

@@ -1,0 +1,50 @@
+---
+title: Using a lab workbench
+description: Navigating lab views, reviewing evidence, exporting a scope, and using Lab Advisor.
+---
+
+The exact labels and data model depend on the assigned lab. The common workbench provides the following views when the package supports them:
+
+* **Summary** — release context and high-level counts;
+* **People** — searchable entities and their current review status;
+* **Graph** — relationships between entities;
+* **Timeline** — dated events and evidence.
+
+## Find and filter entities
+
+Use search with at least two characters. Filter by group and by **Verified**, **Probable**, or **Unresolved** status. Selecting an entity focuses it in the active view and opens its dossier when available.
+
+In the graph, select a node to focus it. Use the platform modifier shown by the interface to mark several nodes. The selected working set can be set aside and restored without changing the release.
+
+## Graph controls
+
+The graph can release a focused layout, fragment a working set, or regroup the visible nodes. These controls affect only the current view. They do not add, remove, or rewrite reviewed relationships.
+
+## Dossiers and evidence
+
+A person dossier groups reviewed relationships and their evidence. Open an evidence item to inspect its source and review state. Archived evidence is served as the exact stored file; a failed preview does not change the evidence record.
+
+Treat every **live web finding** as unreviewed. Reviewers may:
+
+* **Promote** the finding for inclusion in the next reviewed tranche;
+* **Reject** it;
+* undo the pending review decision.
+
+Promotion does not modify the release currently open on screen.
+
+## Export
+
+Use the export control to download a workbook for the current scope. Depending on the lab, the scope can be the whole release, a root group, or the selected nodes, with review statuses included. Export requires an active authorized session; a stale or shared download link is not a substitute for lab access.
+
+## Lab Advisor
+
+Open **Lab Advisor** to ask about the current release. Starting a new conversation captures the current view context. Changing the view later does not retroactively rewrite earlier turns.
+
+Use **Stop** to cancel a running turn. If the turn allowance is exhausted, the workbench remains available but the Advisor cannot start a new response until access is restored.
+
+## Empty and error states
+
+* No search results — clear status/group filters or enter a broader query of at least two characters.
+* Evidence unavailable — the source may be missing from the reviewed release; do not infer the relationship from the graph alone.
+* Advisor unavailable — confirm both the lab assignment and Advisor entitlement.
+* Export failed — keep the selected scope and retry after re-authenticating.

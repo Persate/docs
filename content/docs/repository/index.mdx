@@ -1,35 +1,46 @@
 ---
 title: Repository
-description: A private document library for storing, searching, and analyzing files.
+description: A tenant-aware document library for storing, sharing, searching, previewing, and downloading files.
 ---
 
-The **Repository** is a private document library associated with the account. It enables storing, searching, sorting, filtering, and previewing existing files.
+**WORKSPACE → Repository** contains files owned by the current user and files shared through the user's groups. Repository access must be enabled for the organization.
 
-Access to the module is provided by the **KNOWLEDGE BASE → Repository** entry in the sidebar.
+## What Repository provides
 
-## Feature overview
+* Local upload for PDF, DOCX, XLSX, and CSV files.
+* Private or selected-group access for each file.
+* List and tile views with search, filters, sorting, preview, and metadata.
+* Single and batch download.
+* Single and batch deletion.
+* Source material for the main Advisor and other entitled workflows.
+* [Google Drive and Microsoft OneDrive connections](/repository/cloud-integrations).
+* [Smart Folders](/repository/smart-folders) that collect files by semantic and technical criteria.
 
-The Repository enables document management across three key areas:
+Repository is not a traditional folder tree. File audience controls access; Smart Folders are saved matching rules and do not move or duplicate the underlying files.
 
-* **Consolidation** — storing documents from various external sources and local drives in a single location.
-* **Search** — advanced document content searching, eliminating the need to remember exact file names.
-* **AI Advisor source** — documents in the repository serve as the knowledge base for the advisor when generating responses and analyses.
+## Access model
 
-## Navigation and views
+Every Repository file has one audience:
 
-The platform offers two file presentation modes, switchable in the top right area of the screen:
+* **Only me** — the owner only;
+* selected groups — current members of those groups.
 
-* **List view** — a tabular layout containing the file type, name, date, and metadata. Facilitates operations on multiple files simultaneously.
-* **Tile view** — a card-based presentation optimized for quick visual browsing.
+The owner or an authorized administrator can update the audience later. Removing a group from a file stops access through that group but does not delete the file.
 
-The sidebar on the right side of the screen contains a **Search field** that searches document content. **Filters** are also available, allowing results to be narrowed by name, date, size, and processing status.
+## Processing status
 
-## Empty view and error states
+Files appear in the list after a successful upload. Content extraction, summary generation, language detection, and search indexing continue in the background. Features that depend on extracted text remain unavailable until processing reaches the required state.
 
-* *"No documents found"* — the repository does not contain any files yet, or none match the active filters.
-* *"Couldn't load documents"* — database connection error. Refreshing the page is recommended.
+## Empty and access states
+
+* **No files found** — the Repository is empty or current search and filters exclude every visible file.
+* Processing or summary not ready — the upload succeeded but analysis has not completed.
+* Preview unavailable — download the original and confirm that the browser supports the format.
+* Feature locked — Repository is not enabled for the organization.
 
 ## Pages in this section
 
-* **[Uploading files](/repository/upload)** — adding PDF documents and specifying their visibility.
-* **[Browsing and organizing files](/repository/view-and-organize)** — working with the document browser and managing metadata.
+* **[Uploading files](/repository/upload)** — formats, batch limits, access, retries, and processing.
+* **[Browsing and organizing files](/repository/view-and-organize)** — views, search, preview, access, download, and deletion.
+* **[Cloud integrations](/repository/cloud-integrations)** — connect and import from Google Drive or Microsoft OneDrive.
+* **[Smart Folders](/repository/smart-folders)** — create reusable semantic collections.

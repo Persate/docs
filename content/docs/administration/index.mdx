@@ -1,0 +1,40 @@
+---
+title: Administration
+description: Admin-only workspace membership, access groups, and tenant usage views.
+---
+
+The **OPERATIONS → Operations** area is restricted to users with the **Admin** role. It appears only when the operations panel is enabled for the deployed Persate environment.
+
+## Operations tabs
+
+* **Users** — invite users, manage pending invitations, change roles, remove members, and open per-user usage details.
+* **Groups & Permissions** — create groups, manage members, and assign group access to Repository files.
+* **Tenant Details** — review organization identity, plan state, storage use, current allowance use, reset timing, and usage analytics.
+
+Administrative visibility does not override every product feature. A user still requires the relevant organization entitlement and record-level access after being assigned a role or group.
+
+## Roles
+
+The user-management interface assigns **Admin** or **Member**:
+
+* **Admin** — can open Operations and manage the workspace.
+* **Member** — uses the product features and group resources enabled for the organization but cannot open Operations.
+
+Changing a role takes effect through the authenticated workspace claims. A user may need to refresh or sign in again before every surface reflects the change.
+
+## Tenant details and allowances
+
+The tenant view separates private and shared storage, displays current allowance use, and shows workspace-level and per-user activity for the selected period. It is an operational view, not an invoice.
+
+If a workspace allowance is exhausted, eligible AI background work can be suppressed and interactive AI actions can be rejected until the allowance resets or the plan changes. Existing stored content remains available according to its feature and access rules.
+
+## Access and loading errors
+
+* **Operations unavailable** — the panel is not enabled on this deployment.
+* Admin required — the current role cannot open the area.
+* Session unavailable or expired — reload or sign in again before repeating an administrative mutation.
+* Tenant details or analytics unavailable — no role, group, or plan value was changed; retry the read.
+
+## Pages in this section
+
+* **[Users and groups](/administration/users-and-groups)** — invitations, roles, membership, file access, and destructive-action safeguards.

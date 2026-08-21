@@ -1,38 +1,41 @@
 ---
 title: First sign-in
-description: The authentication procedure and interface orientation after gaining access to the Cockpit.
+description: Sign in securely and recognize the first Persate screen.
 ---
 
-Sign-in takes place on the [persate.com](https://persate.com) homepage by selecting **Sign in**.
+Open [persate.com](https://persate.com) and select **Sign in**. The public sign-in page starts with the email address and also offers Google and Microsoft identity-provider options.
 
-## Sign-in process
+<img src="/docs/persate/screenshots/auth/login-desktop.png" alt="Full Persate sign-in page showing the email field and Google and Microsoft sign-in options" />
 
-Authentication requires completing two steps:
+## Password sign-in
 
-1. Enter the email address and select **Continue**.
+1. Enter the account email address and select **Continue**.
 2. Enter the password and select **Sign In**.
+3. Enter the current six-digit authenticator code when prompted.
 
-Once valid credentials are provided, the platform directs the user to two-factor authentication (2FA). This flow applies to every password sign-in:
+If no authenticator is enrolled, Persate opens **Set Up Authenticator**. Scan the QR code or enter the displayed key manually, then confirm with a current code. Two-step verification is required for Persate accounts.
 
-* An account with an already configured factor proceeds to the **Two-Factor Authentication** screen, where the six-digit code from the authenticator app must be entered.
-* An account without a configured factor is taken to the **Set Up Authenticator** screen — it displays a QR code (along with a key to enter manually) and requires a one-time confirmation with a code to complete the configuration.
+On the verification screen, **Trust this browser for 30 days** can skip the authenticator challenge on later sign-ins in that browser. Use it only on a private, managed browser. Sensitive actions can still require verification, and trust can be revoked under **Settings → Security & Privacy**.
 
-When signing in with a Google or Microsoft account, simply select **Continue using Google Account** (or Microsoft).
+## Google or Microsoft sign-in
+
+Select the provider on the first sign-in screen and complete the provider's authorization flow. Use the provider identity assigned to the Persate account. A successful provider sign-in can still require Persate two-step verification unless the browser is trusted.
 
 ## Password reset
 
-The sign-in screen **does not contain** a "Forgot password" link. A password reset is started by navigating directly to `persate.com/password-reset` — the address must be known. After the email address is entered, the system always displays the same neutral message about a link possibly being sent (without revealing whether the account exists). Changing the password is also possible after signing in, in the **Settings** section.
+The current first screen does not show a password-reset link. For a password-based account, open `persate.com/password-reset`, enter the email address, and follow the message if one is delivered. Persate uses a neutral response so the screen does not reveal whether an account exists.
 
-## Startup navigation
+Provider-managed passwords must be reset with Google, Microsoft, or the organization's identity provider.
 
-After signing in successfully, the default view is the **Cockpit**. The key interface elements are:
+## After sign-in
 
-* **Sidebar** — the main navigation menu on the left side.
-* **Upload** — the button that opens the document upload panel.
-* **Search** — the magnifying glass icon that launches the global search.
+Persate opens **Cockpit**. The visible sidebar is assembled from organization entitlements, your role, group memberships, and assigned Labs. Therefore, a missing navigation item can be an access decision rather than a loading problem.
 
-## Error states
+Use the global search control in the top navigation to search across entitled areas. Use the profile menu for Settings and sign-out actions. Repository upload controls appear only when Repository is enabled.
 
-* *"Login Failed"* with the description *"Invalid credentials provided"* — incorrect email address or password.
-* *"Verification Failed"* with the description *"Invalid code. Please try again"* — the code entered from the authenticator app is not correct.
-* *"OAuth Error"* — signing in with a Google or Microsoft account failed.
+## Troubleshooting
+
+* **Invalid credentials provided** — verify the email and password; do not repeatedly retry a locked or unknown account.
+* **Invalid code. Please try again** — use a fresh authenticator code and confirm that the device clock is accurate.
+* Provider or OAuth error — restart from the Persate sign-in page and use the assigned provider account.
+* **Access Denied** after authentication — the account is valid but lacks the required tenant, role, group, or feature access; contact a workspace administrator.

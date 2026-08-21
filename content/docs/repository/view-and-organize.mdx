@@ -1,40 +1,49 @@
 ---
-title: Browsing and organizing files
-description: Working with the document browser, managing metadata, searching, and deleting files.
+title: Browse and manage files
+description: Find, preview, share, download, and delete files in Repository.
 ---
 
-The **Document browser** enables opening, searching, and managing files in the repository.
+Open **WORKSPACE → Repository** to work with files that you own or that a group has shared with you.
 
-## Opening files
+## Find a file
 
-Selecting a document name in the list view or a tile in the tile view opens the file. The browser displays the document content on the left side and the metadata panel on the right.
+Use the controls above the file list to:
 
-PDF documents are displayed using a built-in engine that provides zoom control, page navigation, and an in-file text search function.
+* switch between list and tile view;
+* search the visible Repository by file name;
+* filter and sort the current result set;
+* select one or more files for batch actions.
 
-## Metadata panel
+If **No files found** appears, clear the search and filters before concluding that the Repository is empty. Access is tenant- and group-aware, so another user can see a different result set.
 
-The sidebar groups document information into several sections:
+## Preview and inspect
 
-* **Summary** — an automatically generated summary, visible after document processing completes.
-* **Information** — technical properties such as size, modification date, analysis status, and detected language.
-* **Visibility** — document visibility management. Allows changing the status between **Private** and **Groups**. Changing permissions does not move the file; it only modifies its visibility scope for other users.
-* **Actions** — the **Download** (downloading the file to disk) and **Delete** (removal) buttons located in the top right corner.
+Select a file to open its preview and metadata. The panel can show the original file, processing information, detected language, summary, and access audience when those values are available.
 
-## Content search
+Immediately after upload, processing-dependent fields may still be unavailable. Wait for processing to finish and reopen the file. If the browser cannot preview the format, download the original instead.
 
-The **Search field** at the top of the view enables full-text searching across all available documents. The system searches file content, not just file names. Searching can be precisely narrowed using date, size, and status filters.
+## Change access
 
-## Batch operations
+The file owner or an authorized administrator can change the audience between:
 
-In the list view, multiple documents can be selected simultaneously using the checkboxes next to file names. This causes a bottom action bar to appear displaying the number of selected elements. Currently, the only available batch operation is **Delete** — removing the selected files.
+* **Only me**;
+* one or more groups in the same organization.
 
-## Deleting documents
+Removing a group removes that group's access; it does not delete the file. A user who belongs to multiple selected groups still keeps access through any remaining group.
 
-Files are deleted individually in the metadata panel or in bulk in the list view. Deletion occurs immediately. The platform does not have a recycle bin; files are not retained after deletion and cannot be restored.
+## Download
 
-**Important:** The deletion operation is irreversible. If a document may be needed in the future, download it before performing this action.
+Use **Download** from a file's actions to retrieve the original. To download several files, select them and use the batch download action. Keep the browser tab open until the download starts.
 
-## Empty view and error states
+## Delete
 
-* *"Summary not available yet"* — the document is being processed. The summary will appear automatically after the analysis completes.
-* *"Search returned no results"* — no documents match the entered phrase or active filters.
+Use the file action menu to delete one file, or select multiple files and use the batch delete action. Confirm the dialog carefully: deletion removes the file and its processed data and is not a move to a recycle bin.
+
+Only the owner or an authorized administrator can delete a file. If a shared file must remain available, change its audience instead of deleting it.
+
+## Troubleshooting
+
+* **Preview unavailable** — download the original and confirm that processing has completed.
+* **Summary unavailable** — text extraction or summary generation is still running or failed for this file.
+* **Action unavailable** — the file is shared with you, but you are not its owner or an authorized administrator.
+* **Download failed** — retry after refreshing; if the failure persists, record the file name and contact your administrator.

@@ -1,0 +1,53 @@
+---
+title: Przegląd i wersje
+description: Uruchamianie pełnego przeglądu w Editorze i bezpieczna obsługa wyników.
+---
+
+## Uruchomienie pełnego przeglądu
+
+Należy otworzyć **Review**, wybrać co najmniej jeden moduł i uruchomić pełny przegląd:
+
+* **Facts & sources** — sprawdza twierdzenia faktyczne i w miarę dostępności przedstawia dowody wspierające lub przeczące.
+* **Language & clarity** — proponuje poprawki redakcyjne zwiększające jasność i jakość stylu.
+
+Przegląd obsługuje artykuły do 60 000 znaków. W trakcie działania dokument jest tylko do odczytu. Postęp obejmuje etapy kontekstu, twierdzeń, narzędzi i języka zależnie od wybranych modułów.
+
+## Odczytywanie punktów przeglądu
+
+Punkty są powiązane z wyróżnionymi fragmentami artykułu. Punkt może otrzymać etykietę:
+
+* **Confirmed**;
+* **Contradicted**;
+* **Potentially misleading**;
+* **Unverified**;
+* **Suggested improvement**.
+
+Etykiety opisują wynik przeglądu danego fragmentu i nie zastępują decyzji redakcyjnej. Przed publikacją należy otworzyć wskazane źródła i porównać je z dokładnym brzmieniem twierdzenia.
+
+## Obsługa punktu
+
+* **Apply** zastępuje powiązany fragment proponowanym tekstem.
+* **Dismiss** zapisuje decyzję o odrzuceniu sugestii.
+* **Restore** cofa zastosowaną zamianę i przywraca wcześniejszy fragment.
+* **Explain** otwiera kontekst Advisora dla wybranego punktu, jeżeli kontrolka jest dostępna.
+
+Działania są zapisywane natychmiast. Ręczna edycja powiązanego fragmentu może oznaczyć punkt jako nieaktualny, ponieważ pierwotny zakres tekstu przestał istnieć.
+
+## Zatrzymanie lub wznowienie przeglądu
+
+Polecenie **Stop full review** anuluje uruchomiony proces. Ukończone punkty pozostają widoczne. Po przerwaniu połączenia Editor sprawdza zapisany przebieg i może wznowić odbieranie dostępnych wyników.
+
+Próba uruchomienia kolejnego przeglądu przy aktywnym procesie jest odrzucana. Należy poczekać na zakończenie, zatrzymać bieżący przegląd albo ponownie otworzyć zapisany stan artykułu.
+
+## Versions
+
+Każdy ukończony przegląd tworzy wpis wersji. Po wybraniu wersji można sprawdzić tylko do odczytu migawkę artykułu i jej wyniki. **Restore this version** zastępuje bieżący draft wskazaną migawką i zapisanymi punktami po potwierdzeniu.
+
+Przywrócenie tworzy nową bieżącą rewizję i nie zmienia wpisu historycznego. Jeżeli bieżący tekst ma zostać zachowany osobno, należy go wcześniej skopiować.
+
+## Stany błędu
+
+* **Review supports documents up to 60,000 characters** — należy skrócić artykuł albo przeglądać sekcje oddzielnie.
+* Wyczerpany limit — należy poczekać na odnowienie limitu obszaru roboczego lub skontaktować się z administratorem.
+* **Review failed** — żądanie nie zostało ukończone. Artykuł pozostaje zapisany; można ponowić działanie z panelu przeglądu.
+* Konflikt rewizji — przed zastosowaniem lub przywróceniem kolejnej zmiany należy przeładować bieżący artykuł.

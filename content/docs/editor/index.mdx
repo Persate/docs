@@ -1,0 +1,51 @@
+---
+title: Editor
+description: Drafting, structuring, and reviewing articles in Persate.
+---
+
+The beta **Editor** combines a private document library, a rich-text workspace, and a guided review. It is available only when the **Editor** feature is enabled for the organization.
+
+## Editor library
+
+Open **WORKSPACE → Editor**. The library lists the current user's articles and supports:
+
+* creating a blank article;
+* importing a document;
+* searching by article title;
+* filtering between **Drafts** and **Reviewed**;
+* selecting one or more articles for permanent deletion.
+
+Articles are private to their owner unless an administrator has an explicit administrative reason to access them. Deleting an article also removes its Editor review history.
+
+## Writing workspace
+
+The text toolbar includes paragraphs, headings, quotes, bullet and numbered lists, code blocks, bold, italic, underline, strikethrough, links, undo, and redo. Changes are saved automatically after a short delay.
+
+The right workspace switches between **Text** controls and the review **Advisor**. On narrow screens, review opens as a sheet so the article remains readable.
+
+## Main workflows
+
+1. [Create or import a draft](/editor/import-and-draft).
+2. Edit the text and, when useful, select **Restructure document**.
+3. [Run a full review](/editor/review-and-versions) using at least one review module.
+4. Apply, dismiss, or restore individual suggestions.
+5. Use **Versions** to inspect or restore a previous reviewed snapshot.
+
+## Limits and prerequisites
+
+* Article drafts can contain up to 250,000 characters.
+* **Restructure document** and full review support up to 60,000 characters.
+* Restructuring requires at least 80 characters and more than one detected content block.
+* A full review consumes the organization's Advisor allowance and may be blocked when that allowance is exhausted.
+
+## Error and concurrency states
+
+* **This document changed in another tab. Reload** — the saved revision is newer than the open editor. Reload before continuing to avoid overwriting work.
+* **Review in progress** — editing is locked while a full review is running. Select **Stop full review** to end it; completed partial results remain available.
+* **Review failed** or **Review interrupted** — review output may be partial. Retry after checking the saved draft.
+* **Feature locked** — the organization does not have Editor access.
+
+## Pages in this section
+
+* **[Import and draft](/editor/import-and-draft)** — blank articles, file imports, Repository persistence, restructuring, and autosave.
+* **[Review and versions](/editor/review-and-versions)** — review modules, verdicts, actions, stopping, and restoring versions.

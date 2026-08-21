@@ -1,36 +1,46 @@
 ---
 title: Repozytorium
-description: Prywatna biblioteka dokumentów przeznaczona do gromadzenia, przeszukiwania i analizy plików.
+description: Biblioteka dokumentów organizacji do przechowywania, udostępniania, wyszukiwania, podglądu i pobierania plików.
 ---
 
-**Repozytorium** to prywatna biblioteka dokumentów powiązana z kontem. Umożliwia ono przechowywanie, wyszukiwanie, sortowanie, filtrację oraz podgląd istniejących plików.
+**WORKSPACE → Repository** zawiera pliki należące do bieżącego użytkownika oraz pliki udostępnione przez jego grupy. Funkcja Repository musi być włączona dla organizacji.
 
-Dostęp do modułu zapewnia pozycja **KNOWLEDGE BASE → Repository** w panelu bocznym.
+## Możliwości Repozytorium
 
-## Przegląd funkcji
+* Wgrywanie plików PDF, DOCX, XLSX i CSV z komputera.
+* Prywatny lub grupowy zakres dostępu do każdego pliku.
+* Widok listy i kafelków z wyszukiwaniem, filtrami, sortowaniem, podglądem i metadanymi.
+* Pobieranie pojedyncze i zbiorcze.
+* Usuwanie pojedyncze i zbiorcze.
+* Materiał źródłowy dla głównego Advisora i innych uprawnionych procesów.
+* [Połączenia z Google Drive i Microsoft OneDrive](/pl/repository/cloud-integrations).
+* [Smart Folders](/pl/repository/smart-folders) zbierające pliki według kryteriów semantycznych i technicznych.
 
-Repozytorium umożliwia zarządzanie dokumentacją w trzech kluczowych obszarach:
+Repozytorium nie jest tradycyjnym drzewem folderów. Zakres pliku steruje dostępem, a Smart Folders są zapisanymi regułami dopasowania i nie przenoszą ani nie powielają plików źródłowych.
 
-* **Konsolidacja** — przechowywanie w jednym miejscu dokumentów pochodzących z różnych źródeł zewnętrznych i dysków lokalnych.
-* **Wyszukiwanie** — zaawansowane przeszukiwanie treści dokumentów, eliminujące konieczność pamiętania dokładnych nazw plików.
-* **Źródło dla Asystenta AI** — dokumenty w repozytorium stanowią bazę wiedzy dla asystenta podczas generowania odpowiedzi i analiz.
+## Model dostępu
 
-## Nawigacja i widoki
+Każdy plik Repozytorium ma jeden zakres:
 
-Platforma oferuje dwa sposoby prezentacji plików, przełączane w prawym górnym obszarze ekranu:
+* **Only me** — wyłącznie właściciel;
+* wybrane grupy — bieżący członkowie tych grup.
 
-* **Widok listy** — tabelaryczne zestawienie zawierające typ pliku, nazwę, datę i metadane. Ułatwia operacje na wielu plikach jednocześnie.
-* **Widok kafelków** — prezentacja w formie kart zoptymalizowana pod kątem szybkiego przeglądu wzrokowego.
+Właściciel lub uprawniony administrator może później zmienić zakres. Usunięcie grupy z pliku odbiera dostęp przez tę grupę, ale nie usuwa pliku.
 
-W prawej części ekranu znajduje się panel boczny, a w nim dostępne jest **Pole wyszukiwania** przeszukujące treść dokumentów. Dostępne są również **Filtry** pozwalające zawężać wyniki według nazwy, daty, rozmiaru oraz statusu przetwarzania.
+## Stan przetwarzania
 
-## Stany pustego widoku i błędu
+Po udanym wgraniu pliki pojawiają się na liście. Ekstrakcja treści, tworzenie podsumowania, wykrywanie języka i indeksowanie wyszukiwania trwają w tle. Funkcje zależne od wydobytego tekstu są niedostępne do osiągnięcia wymaganego stanu.
 
-* *„No documents found”* — w repozytorium nie ma jeszcze żadnych plików lub żadne nie pasują do aktywnych filtrów.
-* *„Couldn't load documents”* — błąd połączenia z bazą danych. Zaleca się odświeżenie strony.
+## Stany puste i dostęp
+
+* **No files found** — Repozytorium jest puste albo wyszukiwanie i filtry wykluczają wszystkie widoczne pliki.
+* Przetwarzanie lub podsumowanie niegotowe — wgrywanie zakończyło się, ale analiza nadal trwa.
+* Podgląd niedostępny — należy pobrać oryginał i sprawdzić obsługę formatu przez przeglądarkę.
+* Feature locked — Repository nie jest włączone dla organizacji.
 
 ## Strony w tej sekcji
 
-* **[Wgrywanie plików](/pl/repository/upload)** — dodawanie dokumentów PDF i określanie ich widoczności.
-* **[Przeglądanie i porządkowanie plików](/pl/repository/view-and-organize)** — praca z przeglądarką dokumentów i zarządzanie metadanymi.
-
+* **[Wgrywanie plików](/pl/repository/upload)** — formaty, limity partii, dostęp, ponawianie i przetwarzanie.
+* **[Przeglądanie i porządkowanie](/pl/repository/view-and-organize)** — widoki, wyszukiwanie, podgląd, dostęp, pobieranie i usuwanie.
+* **[Integracje chmurowe](/pl/repository/cloud-integrations)** — połączenie i import z Google Drive lub Microsoft OneDrive.
+* **[Smart Folders](/pl/repository/smart-folders)** — wielokrotnego użytku kolekcje semantyczne.

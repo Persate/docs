@@ -1,31 +1,42 @@
 ---
 title: Bezpieczeństwo i prywatność
-description: Zarządzanie ochroną konta — zmiana hasła, weryfikacja dwuetapowa oraz monitoring aktywnych sesji.
+description: Zarządzanie hasłem, weryfikacją dwuetapową, sesjami, zaufanymi przeglądarkami i historią logowań.
 ---
 
-Panel **Security & Privacy** służy do ochrony dostępu do profilu oraz monitorowania historii logowań i aktywnych urządzeń.
+Otwórz **Settings → Security & Privacy**. Nieznane urządzenie lub aktywność traktuj jako incydent bezpieczeństwa i natychmiast zgłoś administratorowi.
 
-## Hasło logowania
+## Hasło
 
-Opcja **Change password** otwiera formularz zmiany hasła. Nowe hasło musi składać się z minimum ośmiu znaków, zawierać co najmniej jedną cyfrę i jeden znak specjalny. W przypadku kont SSO (Google/Microsoft) zmiana hasła odbywa się po stronie zewnętrznego dostawcy.
+Dla kont z hasłem wybierz **Change password**. Nowe hasło musi mieć co najmniej osiem znaków, jedną cyfrę i jeden znak specjalny.
 
-## Weryfikacja dwuetapowa (2FA)
+Konta zarządzane przez Google lub Microsoft pokazują **Managed by provider**. Hasło zmień u dostawcy tożsamości.
 
-Weryfikacja dwuetapowa jest wymagana dla każdego konta.
+## Weryfikacja dwuetapowa
 
-* **Status** — plakietka *Live* potwierdza aktywną ochronę.
-* **Zmiana aplikacji uwierzytelniającej** — przycisk **Replace authenticator** pozwala wyrejestrować obecną aplikację i wygenerować nowy kod QR. Proces ten należy ukończyć niezwłocznie po zainicjowaniu.
+Weryfikacja dwuetapowa jest wymagana dla kont Persate. Po skonfigurowaniu aplikacji uwierzytelniającej wiersz pokazuje stan **Live** i akcję **Replace authenticator**.
 
-## Monitorowanie dostępu
+Podczas wymiany dotychczasowa aplikacja pozostaje aktywna do chwili skonfigurowania nowej. Miej nowe urządzenie przy sobie i zakończ potwierdzanie przed opuszczeniem procesu.
 
-* **Aktywne sesje** — lista urządzeń aktualnie zalogowanych do profilu. Wiersz oznaczony jako *This device* reprezentuje bieżącą przeglądarkę. Przycisk **Sign out all other devices** pozwala zdalnie zakończyć wszystkie pozostałe sesje.
-* **Historia logowań** — chronologiczny dziennik ostatnich zdarzeń (logowania, wylogowania, zmiany parametrów konta) wraz z adresem IP i typem urządzenia. Lista obejmuje do kilkunastu najnowszych pozycji; wpisy dotyczące tej samej sesji są scalane, więc pojedynczy wiersz może reprezentować wiele odświeżeń sesji.
+## Aktywne sesje
 
-## Eksport danych (GDPR)
+Sprawdzaj urządzenia aktualnie zalogowane do konta. Wyloguj sesje, których nie rozpoznajesz. Wylogowanie innej sesji może zacząć obowiązywać, gdy tamten klient ponownie sprawdzi stan sesji.
 
-Funkcja oznaczona jako **coming-soon** docelowo umożliwi pobranie pełnego archiwum danych konta (profilu, konwersacji, alertów). Do czasu jej uruchomienia żądania należy kierować bezpośrednio do wsparcia technicznego.
+## Zaufane urządzenia
 
-## Stany pustego widoku i błędu
+Jeżeli panel jest dostępny, pokazuje przeglądarki, które mogą pomijać kod z aplikacji uwierzytelniającej przy logowaniu przez maksymalnie 30 dni. Zaufanie dotyczy konkretnej przeglądarki, nie całego komputera, a działania wrażliwe nadal wymagają weryfikacji.
 
-* *„Session management unavailable”* — dla danego typu uwierzytelniania funkcja zdalnego wylogowania sesji nie jest obsługiwana.
-* *„Login history not exposed”* — brak dostępu do dziennika zdarzeń audytowych dla bieżącego profilu.
+Zarządzanie zaufanymi urządzeniami wymaga bieżącego kodu. Cofnij zaufanie pojedynczej przeglądarce lub wszystkim pozostałym, gdy urządzenie zaginęło, jest współdzielone albo nie masz już nad nim kontroli.
+
+## Historia logowań
+
+Sprawdzaj ostatnie logowania wraz z czasem i informacjami o urządzeniu dostępnymi dla Persate. Jeżeli lista się nie ładuje, odśwież stronę raz; pusty ekran nie dowodzi braku aktywności.
+
+## Dane i eksport
+
+**Data & export** ma oznaczenie **Coming soon**. Nieaktywny przycisk nie składa wniosku o eksport ani usunięcie danych. Użyj zatwierdzonego kanału wsparcia w swojej organizacji.
+
+## Rozwiązywanie problemów
+
+* Odrzucony kod — użyj bieżącego kodu sześciocyfrowego i sprawdź zegar urządzenia.
+* Brak panelu zaufanych urządzeń — konto nie ma skonfigurowanej aplikacji uwierzytelniającej albo obsługa bezpieczeństwa nie jest włączona.
+* Nieznana sesja lub logowanie — wyloguj sesję, jeśli to możliwe, zmień hasło konta z hasłem i zgłoś zdarzenie.

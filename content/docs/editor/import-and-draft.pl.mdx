@@ -1,0 +1,42 @@
+---
+title: Import i draft
+description: Rozpoczęcie artykułu w Editorze od pustej strony lub zaimportowanego dokumentu.
+---
+
+## Tworzenie pustego artykułu
+
+1. Otworzyć **Editor**.
+2. Wybrać **Create article**.
+3. Wpisać lub wkleić treść artykułu.
+4. Dodać tytuł i sformatować dokument paskiem narzędzi.
+
+Persate wykrywa strukturę artykułu we wklejonym tekście. Autozapis rozpoczyna się po utworzeniu artykułu.
+
+## Import dokumentu
+
+Należy wybrać **Import document** w bibliotece lub panelu przeglądu. Editor przyjmuje pliki PDF, DOCX, JPG, JPEG, PNG i TIFF.
+
+Jeżeli organizacja ma również dostęp do Repozytorium, należy wybrać tryb importu:
+
+* **Save to Repository** — zapisuje oryginał jako zwykły plik Repozytorium i wykorzystuje go do utworzenia draftu w Editorze.
+* **Use for this document only** — wyodrębnia treść dla draftu bez zachowywania przesłanego pliku w Repozytorium.
+
+Wybór można zapamiętać dla kolejnych importów. Bez dostępu do Repozytorium tryb tymczasowy jest wybierany automatycznie.
+
+Import tymczasowy jest prywatny. Persate usuwa przesłane źródło po ekstrakcji, natomiast artykuł pozostaje. Import zapisany w Repozytorium podlega zakresowi dostępu i regułom przechowywania tego pliku.
+
+## Przetwarzanie importu
+
+Biblioteka wyświetla stan **Importing** podczas wydobywania tekstu. Editor okresowo sprawdza stan. Skany mogą wymagać kilku minut, ponieważ strony muszą zostać rozpoznane.
+
+Jeżeli ekstrakcja nie powiedzie się, należy wypróbować inny obsługiwany plik PDF, DOCX lub obraz albo utworzyć pusty artykuł i wkleić tekst. Formaty arkuszy kalkulacyjnych przyjmowane przez Repozytorium nie są formatami importu Editora.
+
+## Restructure document
+
+**Restructure document** porządkuje nagłówki, akapity i listy bez uruchamiania pełnego przeglądu faktów i języka.
+
+Działanie wymaga co najmniej 80 znaków i dwóch wykrytych bloków. Jeżeli istnieją oczekujące sugestie przeglądu, Editor prosi o potwierdzenie, ponieważ zmiana struktury usuwa te adnotacje. Zmianę można cofnąć z historii edytora.
+
+## Konflikty zapisu
+
+Autozapis wykorzystuje rewizje dokumentu. Jeżeli ten sam artykuł został zmieniony w innym miejscu, Editor odrzuca nieaktualny zapis i wyświetla **This document changed in another tab. Reload**. W razie potrzeby należy skopiować niezapisany tekst, przeładować stronę i ponowić edycję na bieżącej rewizji.

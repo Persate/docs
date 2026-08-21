@@ -1,0 +1,39 @@
+---
+title: Cloud integrations
+description: Connect Google Drive or Microsoft OneDrive and import provider files for Persate processing.
+---
+
+Repository can connect to **Google Drive** and **Microsoft OneDrive** when the integration is enabled for your organization.
+
+## Connect a provider
+
+1. Open **WORKSPACE → Repository** and choose the relevant cloud provider.
+2. Select the connection action.
+3. Review the provider's authorization screen and approve only the access required for your work.
+4. Return to Persate after the provider redirects you back.
+
+Persate validates the authorization callback before opening the provider browser. If validation fails, return to Repository and start the connection again. Do not share callback URLs or authorization codes.
+
+## Browse provider files
+
+The provider view lists **Name**, **Date modified**, and **File size**. Select a folder name to open it. Use the breadcrumb to return to a parent folder.
+
+Folder visibility and file availability follow the connected provider account. A file that is not shared with that account cannot be imported through Persate.
+
+## Import for analysis
+
+Select the Persate action in a file row to import that file and start Persate processing. The action is disabled after the provider item is already linked to a Persate file.
+
+Importing creates a Persate-side file record and downloads the provider file for processing. It does not change or delete the original in Google Drive or OneDrive. Processing-dependent features become available after extraction and indexing finish.
+
+## Current limitations
+
+The current provider pages support connection, folder browsing, and explicit per-file import. Automatic synchronization schedules are shown in Settings as **Coming soon** and should not be relied on. Reconnect the provider if its authorization expires or is revoked on the provider side.
+
+## Troubleshooting
+
+* **Callback could not be verified** — return to Repository and start the connection again; do not reuse the failed callback URL.
+* **Provider authorization denied** — reconnect and approve the requested scope, or ask your administrator whether the integration is permitted.
+* **File not listed** — confirm that the connected provider account can access it and check the current folder.
+* **Import action unavailable** — the item is a folder, is already linked, or an import is already running.
+* **Processing not ready** — the provider download completed, but Persate extraction or indexing is still running.

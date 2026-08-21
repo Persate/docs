@@ -1,26 +1,35 @@
 ---
 title: Konto
-description: Zarządzanie tożsamością — zdjęcie profilowe, wyświetlana nazwa, adres e-mail oraz przypisane role i grupy.
+description: Zarządzanie danymi profilu widocznymi w Persate i sprawdzanie dostępu w organizacji.
 ---
 
-Panel **Account** służy do zarządzania elementami tożsamości widocznymi dla innych współpracowników w obrębie przestrzeni roboczej. Jest to domyślny panel otwierany po wejściu do ustawień.
+Otwórz **Settings → Account**.
 
-## Tożsamość
+## Zdjęcie profilu
 
-* **Zdjęcie profilowe** — dopuszczalne formaty to JPG, PNG lub WebP o rozmiarze do 2 MB. Wybranie awatara lub przycisku **Upload photo** otwiera okno wyboru pliku. Usunięcie własnego zdjęcia przyciskiem **Remove custom photo** przywraca awatar generowany automatycznie lub dostarczony przez dostawcę SSO.
-* **Nazwa wyświetlana** — etykieta prezentowana w komentarzach i raportach. W przypadku braku własnej nazwy system korzysta z danych dostarczonych przez dostawcę tożsamości lub adresu e-mail. Zmiany zatwierdza się przyciskiem **Save**.
-* **E-mail** — główny adres logowania i powiadomień. Zmiana adresu wymaga wybrania opcji **Change email** i potwierdzenia linkami wysłanymi na stary oraz nowy adres (nie dotyczy kont SSO).
+Wybierz awatar albo **Upload photo**. Persate przyjmuje obrazy JPG, PNG i WebP do 2 MB. **Remove custom photo** przywraca awatar wygenerowany lub przekazany przez dostawcę tożsamości.
 
-## Uprawnienia i grupy
+Używaj wyłącznie zatwierdzonego zdjęcia służbowego. Może pojawiać się we współdzielonych briefingach, komentarzach i listach współpracowników.
 
-W dolnej części panelu prezentowane są informacje o poziomie dostępu:
+## Nazwa wyświetlana
 
-* **Rola** — poziom uprawnień w przestrzeni roboczej: **Administrator**, **Owner**, **Member**, **Viewer** lub **Guest**. Jest to pole wyłącznie do odczytu.
-* **Grupy** — lista grup, do których przypisano profil. Członkostwo w grupach decyduje o dostępie do współdzielonych dokumentów i alertów.
+Wpisz nazwę, którą Persate ma pokazywać współpracownikom, i wybierz **Save**. Gdy pole jest puste, Persate używa nazwy od dostawcy tożsamości albo adresu e-mail.
 
-Zmiany ról oraz przynależności do grup są wykonywane przez administratora z poziomu **Admin Panel**.
+## Adres e-mail
 
-## Stany pustego widoku i błędu
+Wybierz **Change email**, podaj wymagane dane i nowy adres, a następnie użyj odsyłaczy potwierdzających wysłanych na stary i nowy adres. Zmiana nie nastąpi, dopóki proces potwierdzania się nie zakończy.
 
-* *„You're not currently a member of any groups”* — profil nie został jeszcze przypisany do żadnej grupy współpracowników.
-* *„Change email unavailable”* — funkcja niedostępna dla kont zintegrowanych przez Google lub Microsoft, zmiana adresu musi nastąpić po stronie dostawcy.
+Przy logowaniu zarządzanym przez zewnętrznego dostawcę dane konta mogą wymagać zmiany po jego stronie.
+
+## Rola i grupy
+
+**Role** to pole tylko do odczytu z uprawnieniem konta w organizacji. **Groups** pokazuje bieżące członkostwa i rolę w każdej grupie. Grupy sterują dostępem do udostępnionych dokumentów, analiz, kanałów i przypisanych Labs.
+
+Role i członkostwa może zmieniać wyłącznie administrator organizacji. Pusta lista grup jest prawidłowa, ale treści grupowe nie będą dostępne.
+
+## Rozwiązywanie problemów
+
+* Odrzucone zdjęcie — sprawdź format i limit 2 MB.
+* Nieaktywny **Save** — nazwa wyświetlana nie została zmieniona.
+* Brak wiadomości potwierdzającej — sprawdź starą i nową skrzynkę oraz foldery spamu.
+* Nieprawidłowa rola lub grupa — skontaktuj się z administratorem; nie można ich zmienić na stronie Account.

@@ -1,48 +1,45 @@
 ---
 title: Uploading files
-description: Adding documents to the Repository and specifying the access scope.
+description: Adding a controlled batch of files to Repository and assigning its audience.
 ---
 
-**Uploading files** enables adding documents to the repository. Selecting the **Upload** option in the top left area of the screen opens the upload panel on the right side.
+Open **Upload** from the platform controls. The **Upload files** drawer displays the file list and one access setting for the entire batch.
 
-## File selection methods
+## Supported files and limits
 
-Documents can be added in two ways:
+The live upload control accepts PDF, DOCX, XLSX, and CSV files. The displayed maximum is 50 MB per file. A batch can contain at most five files. Workspace storage limits and content validation still apply after the browser accepts the selection.
 
-* **Drag and drop** — files can be dragged directly from the operating system onto the upload panel area.
-* **Disk selection** — selecting the drop zone opens the system file selection window.
+## Build a batch
 
-Multiple files can be added simultaneously in a single operation. Every selected element appears on the list with a type icon, name, and an option to remove it from the batch before uploading.
+1. Drag files onto the drop zone or select **choose file**.
+2. Confirm each file name, type, and **pending** status.
+3. Remove any unintended item before upload. An item cannot be removed while its status is **uploading**.
+4. Set **Access for these files** to **Only me** or selected groups.
+5. Select **Add files**.
 
-**Important:** Currently, the platform supports only **PDF** files. The maximum size of a single document is **20 MB**.
+Files are sent one at a time. Each row changes from **pending** to **uploading**, then **success** or **error**. The drawer closes automatically only when every attempted file succeeds.
 
-## Access scope
+## Batch access
 
-Before uploading files, specify their visibility using the toggle:
+One audience applies to all files in the batch. When group access is selected, at least one group is required.
 
-* **Private** — files visible only to the person uploading them.
-* **Group** — files accessible to members of designated groups. After selecting this option, a menu appears allowing the appropriate groups to be indicated.
+The audience is locked as soon as the first upload attempt starts. This keeps successful files and any retried failures on the same access contract. To upload another set with a different audience, close and reopen the drawer and create a new batch.
 
-The access scope setting applies to the entire batch of files sent in a single operation.
+## Retry failures
 
-**Note:** The repository does not use folders in the traditional sense. Permissions are assigned to individual files. The access scope can be changed later in the **Sharing** section of the file details panel.
+After a partial failure, leave the successful rows unchanged and select **Add files** again. Persate retries rows in **error** or **pending** state. It does not resend rows already marked **success**.
 
-## Processing workflow
+Before retrying, check that the file remains below the displayed limit, the extension and actual content agree, the workspace has storage capacity, the signed-in user still has Repository and selected-group access, and the network connection is stable.
 
-Selecting the **Upload** button at the bottom of the panel initiates file uploading. After the upload completes, the platform automatically performs a series of background processes:
+## Background processing
 
-* Analyzes the file to enable advanced searching and creates an automatic content summary.
-* Identifies the document language.
-* Prepares the document for use with the AI Advisor.
+A **success** upload means the original file was accepted and stored. Extraction, summary generation, and search indexing can finish later. Do not repeatedly upload the same file merely because its summary is not yet visible.
 
-Documents appear on the list immediately after uploading; advanced analysis features become available after background processing completes.
+## Error states
 
-## Empty view and error states
-
-* *"File too large"* — the selected file exceeds the 20 MB limit. Reduce the document size or split it into smaller parts.
-* *"Unsupported file type"* — an attempt to upload a format other than PDF.
-* *"Upload failed"* — connection error during file upload. Retrying is recommended.
-
-## Cloud source import
-
-Import features from **Google Drive** and **Microsoft OneDrive** services are in preparation. The **Sources** entry in the sidebar is currently visible but unavailable — it will be made accessible in a future platform update.
+* **You can upload a maximum of 5 files at a time** — split the selection into separate batches.
+* **Choose at least one group, or select Only me** — complete the audience before upload.
+* Unsupported file — use PDF, DOCX, XLSX, or CSV and confirm the file is not merely renamed.
+* File too large — reduce the file below 50 MB.
+* Storage allowance reached — remove unneeded files or contact an administrator.
+* **error** after a partial batch — correct the affected file and retry; successful rows are retained.

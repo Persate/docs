@@ -1,0 +1,53 @@
+---
+title: Review and versions
+description: Running a full Editor review and resolving its findings safely.
+---
+
+## Start a full review
+
+Open **Review**, choose at least one module, and start the full review:
+
+* **Facts & sources** — checks factual claims and provides supporting or contradicting evidence when available.
+* **Language & clarity** — proposes editorial improvements for clarity and style.
+
+Review supports articles up to 60,000 characters. The document is read-only while the review runs. Progress moves through context, claim, tool, and language stages according to the selected modules.
+
+## Read review points
+
+Review points are linked to highlighted passages in the article. A point can be labeled:
+
+* **Confirmed**;
+* **Contradicted**;
+* **Potentially misleading**;
+* **Unverified**;
+* **Suggested improvement**.
+
+These labels describe the review result for that passage; they do not replace editorial judgment. Open the listed sources and compare them with the exact claim before publishing.
+
+## Resolve a point
+
+* **Apply** replaces the linked passage with the proposed text.
+* **Dismiss** records that the suggestion will not be used.
+* **Restore** reverses an applied replacement and returns the prior passage.
+* **Explain** opens the Advisor context for the selected point when that control is available.
+
+Actions are saved immediately. Editing the affected passage manually can make a point stale because its original text range no longer exists.
+
+## Stop or resume a review
+
+Select **Stop full review** to cancel the running work. Points already completed remain visible. If the connection is interrupted, Editor checks the saved run and can resume receiving available results.
+
+Starting another review while one is already active is rejected. Wait for completion, stop the current review, or reopen the saved article state.
+
+## Versions
+
+Every completed review creates a version entry. Select a version to inspect its read-only article snapshot and findings. **Restore this version** replaces the current draft with that snapshot and its saved review points after confirmation.
+
+Restoring a version creates a new current revision; it does not rewrite the historical entry. Copy the current text first if it must be preserved separately.
+
+## Failure states
+
+* **Review supports documents up to 60,000 characters** — shorten the article or review sections separately.
+* Allowance exhausted — wait for the workspace allowance to reset or contact an administrator.
+* **Review failed** — the request did not complete. The article remains saved; retry from the review panel.
+* Revision conflict — reload the current article before applying or restoring another change.

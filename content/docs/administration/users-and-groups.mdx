@@ -1,0 +1,49 @@
+---
+title: Users and groups
+description: Inviting users, assigning roles, and controlling group file access.
+---
+
+## Invite a user
+
+1. Open **Operations → Users**.
+2. Select **Add user**.
+3. Enter the e-mail address and choose **Admin** or **Member**.
+4. Select **Send invite**.
+
+The normal flow sends a link that lets the recipient set a password. If an existing account is not yet attached to an organization, Persate asks for confirmation before sending a join invitation.
+
+The optional manual-password flow creates the user immediately and requires at least 12 characters. Use it only when the organization's approved identity procedure requires it; the administrator becomes responsible for delivering the initial credential securely.
+
+## Pending invitations
+
+For a pending invitation, an administrator can:
+
+* **Resend invite** — issues another invitation message for the same pending member;
+* **Revoke invite** — invalidates the pending invitation.
+
+Revoking an invitation does not delete an unrelated existing identity. A recipient whose link has expired must request a new invite from an administrator.
+
+## Change a role or remove a user
+
+Select a user and open **Edit User** to change between **Admin** and **Member**. Open **Remove User** to remove the user from the organization.
+
+Removal is a destructive administrative action and requires confirmation. Before removal, transfer ownership or export work that must be retained, and review the user's group access. Do not use role removal as a substitute for revoking an active session when immediate sign-out is required.
+
+## Create and manage a group
+
+1. Open **Groups & Permissions**.
+2. Select **Create New Group** and provide its name and description.
+3. Open the group detail page.
+4. Use **Add member to group** to select organization users.
+5. Use the file picker to share a Repository file with the group.
+
+The group detail page lists members and files. **Remove Member** removes group membership. **Remove File Access** updates that file's audience so the group no longer receives access through this assignment.
+
+Deleting a group requires confirmation and cannot be undone. Review its file assignments and Lab assignments first. Deleting a group does not imply deletion of every underlying file.
+
+## Access troubleshooting
+
+* User cannot see a shared file — confirm active organization membership, group membership, file audience, and the Repository entitlement.
+* User cannot see a Lab — confirm the enabled Lab assignment for the group and all prerequisite entitlements.
+* User still sees an old role — refresh the session or sign in again.
+* Mutation failed — reload the current list before retrying so the action is applied to the latest membership state.

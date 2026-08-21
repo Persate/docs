@@ -1,50 +1,51 @@
 ---
 title: Tworzenie i edycja alertów
-description: Definiowanie tematów do monitorowania przy użyciu asystenta AI oraz weryfikacja wygenerowanych reguł.
+description: Budowanie reguły monitorowania, ustawianie odbiorców i czułości oraz bezpieczny zapis.
 ---
 
-**Tworzenie alertów** umożliwia definiowanie nowych tematów do monitorowania za pomocą asystenta AI, który automatycznie buduje reguły na podstawie opisu w języku naturalnym.
+Otwórz **CORE → Tracker** i wybierz **Create alert**.
 
-## Definiowanie tematu
+## Opis celu monitorowania
 
-Proces rozpoczyna się od wprowadzenia opisu zagadnienia w polu tekstowym pod nagłówkiem **What do you want to monitor?**. Platforma pozwala na opisanie tematu własnymi słowami (np. konkretnej ustawy, osoby, problemu społecznego lub trendu branżowego).
+W polu **What do you want to monitor?** opisz dokładny przedmiot oraz zmianę lub dowód, które mają oznaczać dopasowanie. Gdy to potrzebne, podaj jednoznaczne nazwy, identyfikatory, jurysdykcję i wykluczenia.
 
-Można również skorzystać z gotowych sugestii widocznych poniżej pola wprowadzania, takich jak:
+Wyszukiwanie wzmianek może powiązać alert z konkretną osobą, organizacją, projektem RCL lub innym obsługiwanym obiektem. Wybieraj wynik jednoznaczny zamiast zwykłego tekstu, gdy podobne nazwy mogłyby się pomylić.
 
-* **Law or act** — śledzenie zmian w konkretnych aktach prawnych.
-* **Politician or institution** — monitorowanie wypowiedzi i aktywności wybranych polityków lub instytucji.
-* **Industry topic** — obserwacja zmian regulacyjnych w określonym sektorze.
-* **Societal issue** — śledzenie dyskursu wokół problemów społecznych.
+Persate analizuje polecenie i buduje szkic z nazwą, opisem, słowami kluczowymi lub encjami, ustrukturyzowaną intencją i zakresem źródeł. Może poprosić o doprecyzowanie. Działający proces można zatrzymać; zakończony postęp szkicu pozostaje dostępny, jeżeli backend go zapisał.
 
-## Generowanie (tryb Deep)
+## Weryfikacja przed zapisem
 
-Po wpisaniu tematu generowanie uruchamia się ikoną wysyłania po prawej stronie pola. Asystent pracuje w trybie **Deep** — analizuje temat, weryfikuje informacje w sieci, przygotowuje przykłady oraz prezentuje draft do zatwierdzenia lub modyfikacji (orientacyjny czas to ok. 120 sekund). W trakcie pracy asystent może zadać pytania doprecyzowujące.
+Sprawdź w szkicu:
 
-## Weryfikacja i edycja draftu
+* właściwą osobę, organizację, projekt, interpelację lub temat;
+* warunki, które mają tworzyć dopasowanie;
+* wykluczenia i encje wyłącznie kontekstowe;
+* obsługiwane źródła w proponowanym zakresie;
+* nakładanie się z istniejącym alertem.
 
-Po zakończeniu pracy asystent prezentuje wygenerowany draft alertu. Widok zawiera tytuł, opis, zidentyfikowane podtematy, objęte źródła oraz wyniki testowego wyszukiwania.
+Użyj pola doprecyzowania, aby zlecić poprawkę. Jeżeli Persate oznaczy warunek jako nieobsługiwany, zmień definicję przed zapisem, zamiast zakładać, że sama etykieta uruchomi monitoring.
 
-Poniżej draftu można określić dalsze działanie:
+## Odbiorcy i czułość
 
-* **Looks good — save it** — zatwierdza draft w obecnej formie.
-* Zestaw predefiniowanych opcji (zależnych od kontekstu, np. podział na dwa alerty lub zawężenie do konkretnych profili) — pozwala szybko dostosować alert według propozycji asystenta.
-* **Tell me what to change** — pole tekstowe pozwalające wpisać własne wytyczne dla asystenta (np. usunięcie konkretnego podtematu).
+Wybierz **Only me** albo wybrane grupy. Dla dostępu współdzielonego wymagana jest co najmniej jedna grupa. Wybrane grupy mogą otworzyć alert; uprawnieni odbiorcy dostają powiadomienia tylko kanałami włączonymi we własnych preferencjach.
 
-Zapis draftu kieruje użytkownika do widoku szczegółowego utworzonego alertu.
+Dobierz czułość do procesu:
 
-## Podobne alerty
+* **Precise** — węższy zestaw głównych dopasowań;
+* **Balanced** — główne dopasowania oraz słabsze wyniki blisko progu;
+* **Broad** — szerszy zakres i więcej wyników do weryfikacji.
 
-Jeśli asystent wykryje, że tworzony alert pokrywa się tematycznie z istniejącymi, prezentuje stosowne ostrzeżenie wraz z opcjami:
+Sprawdź podgląd i wybierz pokazany przycisk **Save** albo **Create alert**. Udany zapis otwiera szczegóły alertu. Nie opuszczaj strony podczas końcowego zapisu.
 
-* utworzenia nowego alertu wyłącznie z podtematów, które nie powielają istniejących,
-* utworzenia alertu mimo nakładania się tematyki,
-* doprecyzowania opisu i ponownego wygenerowania.
+## Szkice i edycja
 
-## Wznawianie przerwanych draftów
+Przerwana zapisana praca pojawia się w **Drafts** i może zostać wznowiona lub odrzucona. Jeżeli szkic przestał być dostępny, mógł zostać usunięty albo ukryty przez reguły dostępu organizacji.
 
-Przerwane tworzenie alertu jest zapisywane jako **draft**. Dostępne drafty można wznowić z zakładki **Drafts** na liście alertów — asystent kontynuuje pracę od miejsca, w którym została przerwana. Draft można też trwale odrzucić.
+**Edit** w szczegółach alertu otwiera ten sam proces z istniejącą definicją. Persate musi załadować informacje o dostępie przed edycją, aby niepełny lub nieaktualny rekord nie nadpisał odbiorców.
 
-## Stany pustego widoku i błędu
+## Rozwiązywanie problemów
 
-* *„Not enough data to create alert”* — brak wystarczających danych do utworzenia alertu; należy podać więcej informacji lub spróbować ponownie.
-* *„Generation failed”* — błąd serwera w trakcie tworzenia alertu; należy spróbować ponownie lub odświeżyć stronę.
+* Brak dokładnego obiektu — poszerz wyszukiwanie, sprawdź identyfikator albo użyj jednoznacznego opisu tematu.
+* Nieobsługiwany warunek — zawęź regułę do możliwości potwierdzonej przez kreator.
+* **Choose at least one group, or select Only me** — uzupełnij odbiorców przed zapisem.
+* Zapis się nie zakończył — pozostań na stronie, spróbuj ponownie jeden raz i sprawdź, czy alert nie został utworzony, zanim zaczniesz od początku.

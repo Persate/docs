@@ -1,0 +1,49 @@
+---
+title: Użytkownicy i grupy
+description: Zapraszanie użytkowników, przypisywanie ról i kontrolowanie grupowego dostępu do plików.
+---
+
+## Zapraszanie użytkownika
+
+1. Otworzyć **Operations → Users**.
+2. Wybrać **Add user**.
+3. Wprowadzić adres e-mail i wybrać **Admin** albo **Member**.
+4. Wybrać **Send invite**.
+
+Standardowy proces wysyła odnośnik, za pomocą którego odbiorca ustawia hasło. Jeżeli istniejące konto nie jest jeszcze powiązane z organizacją, Persate prosi o potwierdzenie przed wysłaniem zaproszenia do dołączenia.
+
+Opcjonalny tryb ręcznego hasła tworzy użytkownika natychmiast i wymaga co najmniej 12 znaków. Należy go stosować tylko wtedy, gdy wymaga tego zatwierdzona procedura tożsamości organizacji; administrator odpowiada wtedy za bezpieczne przekazanie początkowego hasła.
+
+## Oczekujące zaproszenia
+
+Dla oczekującego zaproszenia administrator może wybrać:
+
+* **Resend invite** — wysyła kolejne zaproszenie dla tego samego oczekującego członka;
+* **Revoke invite** — unieważnia oczekujące zaproszenie.
+
+Unieważnienie zaproszenia nie usuwa niezależnego istniejącego konta. Odbiorca z wygasłym odnośnikiem musi poprosić administratora o nowe zaproszenie.
+
+## Zmiana roli lub usunięcie użytkownika
+
+Po wybraniu użytkownika **Edit User** pozwala zmienić rolę między **Admin** i **Member**. **Remove User** usuwa użytkownika z organizacji.
+
+Usunięcie jest destrukcyjnym działaniem administracyjnym i wymaga potwierdzenia. Wcześniej należy przekazać własność lub wyeksportować pracę, która musi zostać zachowana, oraz sprawdzić dostęp grupowy użytkownika. Usunięcie roli nie zastępuje unieważnienia aktywnej sesji, gdy wymagane jest natychmiastowe wylogowanie.
+
+## Tworzenie i obsługa grupy
+
+1. Otworzyć **Groups & Permissions**.
+2. Wybrać **Create New Group** i podać nazwę oraz opis.
+3. Otworzyć stronę szczegółową grupy.
+4. Użyć **Add member to group**, aby wybrać użytkowników organizacji.
+5. Użyć selektora plików, aby udostępnić grupie plik Repozytorium.
+
+Strona grupy przedstawia członków i pliki. **Remove Member** usuwa członkostwo. **Remove File Access** aktualizuje zakres dostępu pliku, przez co grupa przestaje uzyskiwać dostęp przez to przypisanie.
+
+Usunięcie grupy wymaga potwierdzenia i jest nieodwracalne. Wcześniej należy sprawdzić przypisania plików i laboratoriów. Usunięcie grupy nie oznacza usunięcia wszystkich plików źródłowych.
+
+## Rozwiązywanie problemów z dostępem
+
+* Użytkownik nie widzi udostępnionego pliku — należy sprawdzić aktywne członkostwo w organizacji, członkostwo w grupie, zakres pliku i dostęp do Repozytorium.
+* Użytkownik nie widzi laboratorium — należy sprawdzić włączone przypisanie laboratorium do grupy i wszystkie wymagane funkcje.
+* Użytkownik nadal widzi starą rolę — należy odświeżyć sesję albo zalogować się ponownie.
+* Zmiana nie powiodła się — przed ponowieniem należy odświeżyć listę, aby działać na najnowszym stanie członkostwa.

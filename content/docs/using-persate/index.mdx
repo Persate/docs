@@ -1,0 +1,43 @@
+---
+title: Using Persate
+description: Navigation, tenant-specific access, mobile controls, and platform-wide actions.
+---
+
+Persate organizes work into a persistent navigation shell. The entries shown to a user depend on the features enabled for the organization, the user's role, and group assignments.
+
+## Navigation areas
+
+The desktop sidebar uses these sections:
+
+* **Cockpit** — the starting dashboard.
+* **CORE** — **Advisor** and **Tracker**.
+* **WORKSPACE** — **Repository**, **Smart Folders**, **Reports**, and the beta **Editor**.
+* **LABS** — tools assigned to the user's groups. The section is absent when no compatible lab is assigned.
+* **PUBLIC** — **Legislation**, **Recordings**, **Votes**, **Stakeholders**, **Media**, and **Sources**.
+* **OPERATIONS** — administrator pages. This section is visible only to workspace administrators when the operations panel is enabled.
+
+An entry may be absent or may show a feature-locked screen when the organization does not have access. A visible entry is not a substitute for the server-side permission check performed when the page loads.
+
+## Desktop header
+
+The desktop header provides:
+
+* the light/dark theme switch;
+* **Feedback**;
+* a link to this documentation;
+* separate **Announcements** and **Messages** feeds;
+* the profile menu, with **Profile**, **Preferences**, **Settings**, and **Log out**.
+
+## Mobile navigation
+
+On narrow screens, the bottom dock provides the primary navigation plus **Search**, **Upload**, and **Profile**. Filters that normally occupy a page sidebar open as an overlay or sheet. Detail pages may move their metadata rail into a drawer.
+
+## Feature and access messages
+
+* **Feature locked** — the feature is not enabled for the current organization or account. Contact a workspace administrator.
+* **Access denied** — the signed-in account does not belong to an organization that can open the platform, or the current role cannot perform the action.
+* **Sign-in check unavailable** — Persate could not verify the current organization access. Select **Retry** before starting a state-changing operation.
+
+## Pages in this section
+
+* **[Search and notifications](/using-persate/search-and-notifications)** — global search, announcements, messages, and notification preferences.

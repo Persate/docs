@@ -1,50 +1,51 @@
 ---
-title: Creating and editing alerts
-description: Defining topics to monitor using the AI advisor and verifying the generated rules.
+title: Create and edit alerts
+description: Build a reviewable monitoring rule, set its audience and sensitivity, and save it safely.
 ---
 
-**Creating alerts** enables defining new topics to monitor using the AI advisor, which automatically builds rules based on a natural language description.
+Open **CORE → Tracker** and select **Create alert**.
 
-## Defining the topic
+## Describe the monitoring objective
 
-The process begins by entering a description of the issue in the text field under the **What do you want to monitor?** heading. The platform allows describing the topic in your own words (e.g., a specific bill, person, social issue, or industry trend).
+Under **What do you want to monitor?**, describe the exact subject and the change or evidence that should count. Include distinguishing names, identifiers, jurisdiction, and exclusions when they matter.
 
-Ready-made suggestions visible below the input field can also be used, such as:
+The mention search can bind the alert to an exact person, organization, RCL project, or other supported object. Prefer an exact result over plain text when similarly named entities could be confused.
 
-* **Law or act** — tracking changes in specific legal acts.
-* **Politician or institution** — monitoring the statements and activity of selected politicians or institutions.
-* **Industry topic** — observing regulatory changes in a specific sector.
-* **Societal issue** — tracking discourse around social problems.
+Persate researches the request and builds a draft containing the name, description, keywords or entities, structured intent, and source scope. It can ask for clarification. You can stop a running creation; completed draft progress remains available when the backend has saved it.
 
-## Generation (Deep mode)
+## Review before saving
 
-After entering the topic, generation is started with the send icon on the right side of the field. The advisor works in **Deep** mode — it analyzes the topic, verifies information on the web, prepares examples, and presents a draft for approval or modification (approximately 120 seconds). During its work, the advisor may ask clarifying questions.
+Check the generated draft for:
 
-## Draft verification and editing
+* the exact person, organization, project, question, or topic;
+* conditions that should create a match;
+* exclusions and context-only entities;
+* supported sources in the proposed scope;
+* overlap with an existing alert.
 
-Once finished, the advisor presents the generated alert draft. The view contains the title, description, identified subtopics, covered sources, and test search results.
+Use the refinement input to request a correction. If Persate flags an unsupported condition, change the definition before saving instead of assuming that the label will be monitored.
 
-Below the draft, the next action can be determined:
+## Audience and sensitivity
 
-* **Looks good — save it** — approves the draft in its current form.
-* A set of predefined options (context-dependent, e.g., splitting into two alerts or narrowing down to specific profiles) — enables rapid alert adjustment according to the advisor's suggestion.
-* **Tell me what to change** — a text field allowing custom instructions for the advisor to be entered (e.g., removing a specific subtopic).
+Choose **Only me** or selected groups. At least one group is required for shared access. Selected groups can open the alert; eligible recipients receive notifications only through delivery channels enabled in their own preferences.
 
-Saving the draft directs the user to the detailed view of the created alert.
+Choose the match sensitivity appropriate to the workflow:
 
-## Similar alerts
+* **Precise** — narrower main matches;
+* **Balanced** — main matches plus lower-confidence near misses;
+* **Broad** — wider capture with more review noise.
 
-If the advisor detects that the alert being created overlaps thematically with existing ones, it presents a relevant warning along with options to:
+Review the preview, then select **Save** or **Create alert** as shown. A successful save opens the alert detail. Do not navigate away while the final save is running.
 
-* create a new alert from only the subtopics that do not duplicate existing ones,
-* create the alert despite the thematic overlap,
-* refine the description and regenerate.
+## Drafts and edits
 
-## Resuming interrupted drafts
+Interrupted saved work appears under **Drafts** and can be resumed or discarded. If a draft is no longer accessible, it may have been deleted or hidden by tenant access controls.
 
-Interrupted alert creation is saved as a **draft**. Available drafts can be resumed from the **Drafts** tab in the alert list — the advisor continues its work from where it was interrupted. A draft can also be permanently discarded.
+From an alert detail, **Edit** opens the same review-oriented flow with the existing definition. Access information must load before Persate permits editing, so a stale or partial alert cannot silently overwrite its audience.
 
-## Empty view and error states
+## Troubleshooting
 
-* *"Not enough data to create alert"* — insufficient data to create an alert; provide more information or try again.
-* *"Generation failed"* — server error during alert creation; try again or refresh the page.
+* No exact object found — broaden the mention search, confirm the identifier, or use a well-scoped topic description.
+* Unsupported condition — refine the rule to a capability the creator confirms.
+* **Choose at least one group, or select Only me** — complete the audience before saving.
+* Save did not complete — remain on the page, retry once, and confirm that no alert was created before starting over.

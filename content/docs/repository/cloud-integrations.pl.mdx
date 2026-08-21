@@ -1,0 +1,39 @@
+---
+title: Integracje chmurowe
+description: Łączenie Google Drive lub Microsoft OneDrive i import plików do przetwarzania w Persate.
+---
+
+Repozytorium może łączyć się z **Google Drive** i **Microsoft OneDrive**, jeżeli integracja jest włączona dla organizacji.
+
+## Łączenie dostawcy
+
+1. Otwórz **WORKSPACE → Repository** i wybierz odpowiedniego dostawcę chmurowego.
+2. Wybierz akcję połączenia.
+3. Sprawdź ekran autoryzacji dostawcy i zatwierdź wyłącznie dostęp potrzebny do pracy.
+4. Wróć do Persate po przekierowaniu od dostawcy.
+
+Persate weryfikuje odpowiedź autoryzacyjną przed otwarciem przeglądarki plików. Jeśli weryfikacja się nie powiedzie, wróć do Repozytorium i rozpocznij połączenie ponownie. Nie udostępniaj adresów callback ani kodów autoryzacyjnych.
+
+## Przeglądanie plików dostawcy
+
+Widok dostawcy pokazuje kolumny **Name**, **Date modified** i **File size**. Wybierz nazwę folderu, aby go otworzyć. Użyj ścieżki nawigacyjnej, aby wrócić do folderu nadrzędnego.
+
+Widoczność folderów i dostępność plików wynikają z uprawnień połączonego konta. Pliku nieudostępnionego temu kontu nie można zaimportować przez Persate.
+
+## Import do analizy
+
+Wybierz akcję Persate w wierszu pliku, aby go zaimportować i rozpocząć przetwarzanie. Akcja jest niedostępna, gdy element dostawcy jest już powiązany z plikiem w Persate.
+
+Import tworzy rekord pliku po stronie Persate i pobiera plik dostawcy do przetwarzania. Nie zmienia ani nie usuwa oryginału w Google Drive lub OneDrive. Funkcje zależne od przetwarzania stają się dostępne po ekstrakcji i indeksowaniu.
+
+## Obecne ograniczenia
+
+Bieżące strony dostawców obsługują połączenie, przeglądanie folderów i jawny import pojedynczych plików. Harmonogram automatycznej synchronizacji jest w Ustawieniach oznaczony jako **Coming soon** i nie należy na nim polegać. Po wygaśnięciu lub cofnięciu autoryzacji po stronie dostawcy połącz konto ponownie.
+
+## Rozwiązywanie problemów
+
+* **Callback could not be verified** — wróć do Repozytorium i rozpocznij połączenie ponownie; nie używaj ponownie nieudanego adresu callback.
+* Odmowa autoryzacji — połącz konto ponownie i zatwierdź wymagany zakres albo zapytaj administratora, czy integracja jest dozwolona.
+* Brak pliku na liście — sprawdź, czy połączone konto ma do niego dostęp, i potwierdź bieżący folder.
+* Niedostępna akcja importu — element jest folderem, został już powiązany albo import nadal trwa.
+* Przetwarzanie niegotowe — pobieranie od dostawcy się zakończyło, ale ekstrakcja lub indeksowanie w Persate nadal trwa.

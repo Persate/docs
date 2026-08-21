@@ -1,4 +1,4 @@
 {
   "title": "Dokumentacja",
-  "pages": ["getting-started", "cockpit", "live-proceedings", "voting-ledger", "stakeholders", "public-pulse", "alerts", "reports", "legislation-tracker", "advisor", "repository", "account-and-settings"]
+  "pages": ["getting-started", "using-persate", "cockpit", "advisor", "alerts", "repository", "editor", "labs", "legislation-tracker", "voting-ledger", "stakeholders", "public-pulse", "live-proceedings", "reports", "sources", "administration", "account-and-settings"]
 }

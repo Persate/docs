@@ -1,49 +1,45 @@
 ---
 title: Wgrywanie plików
-description: Dodawanie dokumentów do Repozytorium i określenie zakresu dostępu.
+description: Dodawanie kontrolowanej partii plików do Repozytorium i przypisywanie zakresu dostępu.
 ---
 
-**Wgrywanie plików** pozwala dodawać dokumenty do repozytorium. Wybranie opcji **Upload** w lewej górnej części ekranu otwiera panel przesyłania po prawej stronie.
+Należy otworzyć **Upload** w kontrolkach platformy. Panel **Upload files** pokazuje listę plików i jedno ustawienie dostępu dla całej partii.
 
-## Metody wyboru plików
+## Obsługiwane pliki i limity
 
-Dokumenty można dodać na dwa sposoby:
+Bieżąca kontrolka przyjmuje pliki PDF, DOCX, XLSX i CSV. Wyświetlany limit wynosi 50 MB na plik. Partia może zawierać maksymalnie pięć plików. Limit pamięci organizacji i walidacja treści nadal obowiązują po zaakceptowaniu wyboru przez przeglądarkę.
 
-* **Przeciągnij i upuść** — pliki można przeciągnąć bezpośrednio z systemu operacyjnego na obszar panelu przesyłania.
-* **Wybór z dysku** — wybranie strefy upuszczania otwiera systemowe okno wyboru plików.
+## Przygotowanie partii
 
-W ramach jednej operacji można dodać wiele plików jednocześnie. Każdy wybrany element pojawia się na liście z ikoną typu, nazwą oraz opcją usunięcia z paczki przed przesłaniem.
+1. Przeciągnąć pliki do strefy albo wybrać **choose file**.
+2. Sprawdzić nazwę, typ i stan **pending** każdego pliku.
+3. Usunąć niezamierzone pozycje przed rozpoczęciem. Pozycji ze stanem **uploading** nie można usunąć.
+4. Ustawić **Access for these files** na **Only me** albo wybrane grupy.
+5. Wybrać **Add files**.
 
-**Ważne:** Aktualnie platforma obsługuje wyłącznie pliki **PDF**. Maksymalny rozmiar pojedynczego dokumentu wynosi **20 MB**.
+Pliki są wysyłane kolejno. Wiersz zmienia stan z **pending** na **uploading**, a następnie **success** albo **error**. Panel zamyka się automatycznie tylko wtedy, gdy wszystkie próby zakończą się powodzeniem.
 
-## Zakres dostępu
+## Dostęp partii
 
-Przed przesłaniem plików należy określić ich widoczność za pomocą przełącznika:
+Jeden zakres obowiązuje dla wszystkich plików w partii. Przy dostępie grupowym wymagane jest wybranie co najmniej jednej grupy.
 
-* **Private** — pliki widoczne wyłącznie dla osoby wgrywającej.
-* **Group** — pliki dostępne dla członków wskazanych grup. Po wybraniu tej opcji pojawia się menu pozwalające wskazać odpowiednie grupy.
+Zakres zostaje zablokowany wraz z rozpoczęciem pierwszej próby. Dzięki temu udane pliki i ponawiane błędy zachowują ten sam kontrakt dostępu. Aby wgrać kolejny zestaw z innym zakresem, należy zamknąć i ponownie otworzyć panel oraz utworzyć nową partię.
 
-Ustawienie zakresu dostępu dotyczy całej paczki plików wysyłanych w jednej operacji.
+## Ponawianie błędów
 
-**Uwaga:** Repozytorium nie korzysta z folderów w klasycznym znaczeniu. Uprawnienia są przypisywane do pojedynczych plików. Zakres dostępu można zmienić w późniejszym czasie w sekcji **Sharing** panelu szczegółów pliku.
+Po częściowym błędzie należy pozostawić udane wiersze i ponownie wybrać **Add files**. Persate ponawia pozycje ze stanem **error** lub **pending** i nie wysyła ponownie pozycji oznaczonych jako **success**.
 
-## Proces przetwarzania
+Przed ponowieniem należy sprawdzić, czy plik mieści się w limicie, rozszerzenie odpowiada treści, organizacja ma wolną pamięć, użytkownik nadal ma dostęp do Repozytorium i wybranych grup oraz czy połączenie jest stabilne.
 
-Wybranie przycisku **Upload** w dolnej części panelu rozpoczyna przesyłanie plików. Po zakończeniu przesyłania platforma automatycznie wykonuje szereg procesów w tle:
+## Przetwarzanie w tle
 
+Stan **success** oznacza przyjęcie i zapis oryginalnego pliku. Ekstrakcja, podsumowanie i indeksowanie mogą zakończyć się później. Brak podsumowania nie jest powodem do wielokrotnego wgrywania tego samego pliku.
 
-* Analizuje plik, aby umożliwić zaawansowane wyszukiwanie, i tworzy automatyczne streszczenie treści.
-* Identyfikuje język dokumentu.
-* Przygotowuje dokument do pracy z Asystentem AI.
+## Stany błędu
 
-Dokumenty pojawiają się na liście natychmiast po przesłaniu, zaawansowane funkcje analizy stają się dostępne po zakończeniu przetwarzania w tle.
-
-## Stany pustego widoku i błędu
-
-* *„File too large”* — wybrany plik przekracza limit 20 MB. Należy zmniejszyć rozmiar dokumentu lub podzielić go na mniejsze części.
-* *„Unsupported file type”* — próba wgrania formatu innego niż PDF.
-* *„Upload failed”* — błąd połączenia podczas przesyłania pliku. Zaleca się ponowienie próby.
-
-## Import ze źródeł chmurowych
-
-Funkcje importu z usług **Google Drive** oraz **Microsoft OneDrive** są w przygotowaniu. Pozycja **Sources** w panelu bocznym jest aktualnie widoczna, lecz niedostępna — zostanie udostępniona w jednej z kolejnych aktualizacji platformy.
+* **You can upload a maximum of 5 files at a time** — należy podzielić wybór na osobne partie.
+* **Choose at least one group, or select Only me** — przed wgraniem należy uzupełnić zakres.
+* Nieobsługiwany plik — należy użyć PDF, DOCX, XLSX lub CSV i sprawdzić, czy plik nie został jedynie przemianowany.
+* Plik za duży — należy zmniejszyć go poniżej 50 MB.
+* Limit pamięci wyczerpany — należy usunąć zbędne pliki albo skontaktować się z administratorem.
+* **error** po częściowej partii — należy poprawić dany plik i ponowić; udane wiersze pozostają zapisane.

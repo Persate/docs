@@ -1,0 +1,40 @@
+---
+title: Administracja
+description: Zarządzanie członkostwem, grupami dostępu i wykorzystaniem organizacji przez administratora.
+---
+
+Obszar **OPERATIONS → Operations** jest ograniczony do użytkowników z rolą **Admin**. Pojawia się tylko wtedy, gdy panel operacyjny jest włączony w danym środowisku Persate.
+
+## Zakładki Operations
+
+* **Users** — zapraszanie użytkowników, obsługa oczekujących zaproszeń, zmiana ról, usuwanie członków i otwieranie szczegółów użycia użytkownika.
+* **Groups & Permissions** — tworzenie grup, zarządzanie członkami i przypisywanie grupowego dostępu do plików Repozytorium.
+* **Tenant Details** — przegląd identyfikacji organizacji, stanu planu, wykorzystania pamięci i bieżącego limitu, terminu odnowienia oraz analityki użycia.
+
+Dostęp administracyjny nie zastępuje wszystkich uprawnień produktowych. Użytkownik nadal potrzebuje odpowiedniej funkcji organizacji i dostępu do rekordu po przypisaniu roli lub grupy.
+
+## Role
+
+Interfejs zarządzania użytkownikami przypisuje role **Admin** lub **Member**:
+
+* **Admin** — może otwierać Operations i zarządzać obszarem roboczym.
+* **Member** — korzysta z funkcji i zasobów grupowych włączonych dla organizacji, ale nie może otwierać Operations.
+
+Zmiana roli obowiązuje przez uwierzytelnione uprawnienia obszaru roboczego. Użytkownik może wymagać odświeżenia lub ponownego logowania, zanim zmiana pojawi się we wszystkich miejscach.
+
+## Tenant Details i limity
+
+Widok organizacji rozdziela pamięć prywatną i współdzieloną, pokazuje wykorzystanie bieżącego limitu oraz aktywność organizacji i użytkowników w wybranym okresie. Jest to widok operacyjny, a nie faktura.
+
+Po wyczerpaniu limitu część działań AI w tle może zostać pominięta, a interaktywne działania AI odrzucone do czasu odnowienia limitu lub zmiany planu. Istniejąca treść pozostaje dostępna zgodnie z funkcją i zakresem dostępu.
+
+## Błędy dostępu i ładowania
+
+* **Operations unavailable** — panel nie jest włączony w tym środowisku.
+* Wymagany administrator — bieżąca rola nie może otworzyć obszaru.
+* Sesja niedostępna lub wygasła — przed ponowieniem zmiany administracyjnej należy przeładować stronę albo zalogować się ponownie.
+* Szczegóły organizacji lub analityka niedostępne — żadna rola, grupa ani wartość planu nie została zmieniona; należy ponowić odczyt.
+
+## Strony w tej sekcji
+
+* **[Użytkownicy i grupy](/pl/administration/users-and-groups)** — zaproszenia, role, członkostwo, dostęp do plików i zabezpieczenia działań destrukcyjnych.

@@ -1,0 +1,52 @@
+---
+title: Sources
+description: Reading Persate's source capability, coverage, freshness, and alert-readiness ledger.
+---
+
+**PUBLIC → Sources** is a read-only capability ledger. It shows which source families Persate knows about and the current availability reported for the organization. It is not a cloud-drive connector and does not modify source configuration.
+
+## Table columns
+
+Each row can include:
+
+* **Source** — the customer-facing source name and category;
+* **Status** — the current capability state;
+* **Availability** — which Persate areas can use the source;
+* **Coverage** — the time or content scope represented by current data;
+* **Refresh** — the expected or observed update pattern;
+* **Alerts** — whether the source can participate in alert monitoring;
+* **Last update** — the latest reported refresh time, when telemetry is available.
+
+Availability icons link to the corresponding Persate feature when a navigable destination exists.
+
+## Filter the catalogue
+
+Use the sidebar to:
+
+* search by source name or description;
+* filter by source category;
+* show only alert-enabled sources;
+* show only rows available as raw data.
+
+Filters affect the catalogue view only. They do not enable, disable, or resynchronize a source.
+
+## Catalogue fallback
+
+If live source telemetry cannot be loaded, Persate keeps a baseline catalogue visible and displays an error banner. In that state, source names and intended capabilities remain useful for orientation, but freshness, coverage, and status values may not represent the latest run.
+
+Do not interpret a baseline row as confirmation that data is currently available for an alert, report, or search. Open the linked feature and confirm its own state.
+
+## Status interpretation
+
+Status and availability are separate:
+
+* a source may be known but temporarily unavailable;
+* a source may be usable in one feature but not alert-enabled;
+* coverage can be partial even when status is operational;
+* the absence of a last-update value means no telemetry value is available, not that the source has never been refreshed.
+
+## Error states
+
+* Catalogue remains available — live telemetry failed and the baseline catalogue is being shown.
+* No rows match — clear search, category, alert, or raw-data filters.
+* Linked feature is locked — the source exists, but the current organization is not entitled to that destination.

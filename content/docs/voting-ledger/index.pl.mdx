@@ -1,52 +1,51 @@
 ---
-title: Rejestr głosowań
-description: Katalog rozstrzygnięć parlamentarnych obejmujący oficjalne wyniki, dokumenty źródłowe oraz mandatowy zapis sposobu głosowania każdego posła.
+title: Głosowania i decyzje
+description: Przeglądanie głosowań Sejmu i Senatu, decyzji Prezydenta oraz spraw Trybunału Konstytucyjnego.
 ---
 
-**Rejestr głosowań** to chronologiczny zapis wszystkich głosowań Sejmu. Każda pozycja zawiera oficjalny wynik liczbowy, informację o rozstrzygnięciu oraz szczegółowy rozkład głosów w rozbiciu na mandaty.
+Otwórz **PUBLIC → Votes**. Górna nawigacja rozdziela cztery publiczne rejestry instytucjonalne:
 
-Dostęp do modułu zapewnia pozycja **KNOWLEDGE BASE → Ledger** w panelu bocznym.
+* **Sejm** — wyniki głosowań i głosy poszczególnych posłów;
+* **Senat** — wyniki głosowań Senatu i, gdy zostały opublikowane, głosy senatorów;
+* **Prezydent** — decyzje dotyczące ustaw; są to decyzje, a nie głosowania izby;
+* **TK** — sprawy i orzeczenia Trybunału Konstytucyjnego; nie są to głosowania.
 
-## Struktura listy
+Nie łącz wskaźników z różnych zakładek. Każda instytucja publikuje inne pola i działa według innej procedury.
 
-Głosowania są prezentowane w formie tabeli, w porządku malejącym (od najnowszych). Dostęp do danych historycznych zapewnia stronicowanie z selektorem rozmiaru strony w dolnej części widoku.
+## Sejm
 
-## Kolumny tabeli
+Tabela Sejmu pokazuje wynik, wniosek, temat, rozkład głosów, przewagę, datę i numer posiedzenia/głosowania. Wybierz wiersz, aby otworzyć pełny rekord.
 
-Każdy wiersz reprezentuje pojedyncze głosowanie i zawiera:
+**Search current page** filtruje już załadowane rekordy po tytule, temacie lub numerze. Preferencja **Procedural votes in Ledger** decyduje, czy pokazywać zmiany porządku obrad, przerwy, kontrole kworum i podobne głosowania proceduralne; domyślnie są ukryte.
 
-* **Result** — rozstrzygnięcie wraz ze statusem: m.in. **Passed** (przyjęte), **Rejected** (odrzucone), **Quorum present**, **Quorum missing** lub **List vote** dla głosowań na liście.
-* **Motion** — tytuł rozpatrywanej sprawy.
-* **Topic** — kontekst proceduralny głosowania.
-* **Vote** — pasek rozkładu głosów.
-* **Margin** — różnica między głosami za i przeciw.
-* **Date** — data głosowania.
-* **No.** — numer posiedzenia oraz numer głosowania.
+Wynik może mieć m.in. etykietę **Passed**, **Rejected**, **Quorum present**, **Quorum missing** albo wynik głosowania imiennego. Gdy ma to zastosowanie, o wyniku decyduje zapisana reguła większości.
 
-Wybranie wiersza otwiera widok szczegółowy z mandatową mapą sali.
+## Senat
 
-## Wyszukiwanie i filtrowanie
+Tabela Senatu pokazuje oficjalny wynik, sprawę, temat, rozkład głosów, przewagę, datę i numer głosowania udostępnione przez źródło. Wyszukiwanie filtruje już pobrane rekordy. Wybierz wiersz, aby otworzyć szczegóły.
 
-W panelu bocznym dostępne są:
+Dane Senatu nie są wyprowadzane z rekordu sejmowego. Jeżeli źródło nie opublikowało pola lub listy senatorów, Persate pozostawia tę informację jako niedostępną.
 
-* **Search current page** — filtruje rekordy aktualnie załadowane na stronie według tytułu, tematu lub numeru głosowania.
-* **Show procedural votes** — przełącznik odsłaniający głosowania proceduralne (zmiany porządku obrad, przerwy, sprawdzenia kworum). Domyślnie są one ukryte.
+## Prezydent
 
-## Zasady rozstrzygania
+Zakładka pokazuje decyzje Prezydenta, w tym wynik, ustawę lub sprawę, podsumowanie, datę decyzji i dostępne źródło urzędowe. Użyj wyszukiwania dla pobranych rekordów i filtra **Outcome**, aby zawęzić listę.
 
-Platforma odnotowuje stosowany dla każdego głosowania rodzaj większości:
+Prezydent działa jednoosobowo, dlatego ta zakładka nie ma rozkładu głosów ani mapy sali.
 
-* **Simple** — więcej głosów za niż przeciw.
-* **Absolute** — więcej niż połowa ustawowej liczby posłów.
-* **Qualified** — próg określony konstytucyjnie (np. 2/3 lub 3/5).
+## TK
 
-Rodzaj większości bezpośrednio decyduje o przypisaniu etykiety **Passed** lub **Rejected**.
+Zakładka pokazuje sprawy Trybunału Konstytucyjnego wraz ze stanem, sygnaturą, przedmiotem, wnioskodawcą, rodzajem kontroli, wynikiem i datą, jeżeli są dostępne. Wyszukiwanie obejmuje pobrane sprawy. Włącz **Rulings only**, aby ukryć sprawy jeszcze nierozstrzygnięte.
 
-## Stany pustego widoku i błędu
+Wybierz sprawę, aby otworzyć jej rekord i powiązane materiały urzędowe.
 
-* *„No votings match your search”* — na bieżącej stronie nie ma rekordów pasujących do zapytania.
-* *„No votings available”* — system nie odnotował żadnych głosowań w wybranym zakresie. Zaleca się ponowne załadowanie strony.
+## Dane i puste stany
 
-## Strony w tej sekcji
+Persate pokazuje pola opublikowane przez właściwe źródło publiczne. Brakujące wartości są oznaczane jako niedostępne, a nie szacowane.
 
-* **[Wgląd w głosowanie](/pl/voting-ledger/voting-detail)** — szczegółowy widok pojedynczego głosowania, dokumenty powiązane oraz mandatowa mapa sali.
+* Brak wyników po wyszukiwaniu — wyczyść zapytanie i filtry właściwe dla instytucji.
+* Niedostępne źródło — odśwież i spróbuj ponownie; zgłaszając problem, podaj instytucję i numer rekordu.
+* Niedostępny szczegół — źródło mogło jeszcze nie opublikować rekordu albo identyfikator przestał działać.
+
+## Powiązany przewodnik
+
+* **[Szczegóły rekordu](/pl/voting-ledger/voting-detail)** — strony szczegółów, dokumenty i mapy izb właściwe dla instytucji.

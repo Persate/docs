@@ -1,34 +1,26 @@
 ---
 title: Account and settings
-description: Managing the profile, security, notifications, and platform preferences from the settings view.
+description: Manage your Persate profile, security, notifications, and personal preferences.
 ---
 
-The **Settings window** is the central point for managing the profile and operating parameters on the platform. It is designed as an overlay accessible from anywhere in the application, which allows changing settings without losing the current work state.
+Open the profile menu in the top navigation and select **Settings**. The settings dialog opens over the current page, so closing it returns you to your work.
 
-Access the settings by selecting the profile icon in the top navigation bar, followed by the **Settings** button with the gear icon.
+## Settings sections
 
-## Settings structure
+* **Account** — profile photo, display name, email, workspace role, and group memberships.
+* **Security & Privacy** — password, two-step verification, sessions, trusted browsers, and login history.
+* **Notifications** — email, alert-match, daily-report, and Advisor notification preferences.
+* **Preferences** — theme, Advisor output style, feature banners, procedural votes, and Editor import defaults when available.
+* **Analysis** — future synchronization and suggestion controls. These rows are currently marked **Coming soon**.
 
-Settings are divided into two categories:
+Settings are personal unless the row explicitly describes a workspace-managed value. Role, group membership, feature access, and organization policy are controlled by an administrator.
 
-### GENERAL category
+## Save and error behavior
 
-* **Account** — platform identity: profile picture, display name, email address, and roles.
-* **Security & Privacy** — access protection: password change, two-factor authentication (2FA), and a list of active and past sessions.
-* **Notifications** — configuration of system notifications and email alerts.
-* **Preferences** — interface personalization: color themes, language, and time zone.
-
-### PLATFORM category
-
-* **Analysis** — document synchronization and smart suggestion settings.
-
-## Empty view and error states
-
-* *"Settings unavailable"* — error loading account parameters. Refreshing the page is recommended.
-* *"Feature locked"* — certain settings (e.g., changing the email for SSO accounts) are managed by external providers and remain locked in the Persate interface.
+Most toggles save immediately. Display-name and form changes require their visible confirmation button. If a save fails, Persate restores the previous value and shows an error; retry once after checking the connection.
 
 ## Pages in this section
 
-* **[Account](/account-and-settings/account)** — managing the profile picture, display name, and group membership.
-* **[Security and privacy](/account-and-settings/security)** — changing the password, managing the authenticator app, and login history.
-* **[Preferences and notifications](/account-and-settings/preferences)** — configuring appearance, notifications, and upcoming features.
+* **[Account](/account-and-settings/account)** — identity, email, role, and groups.
+* **[Security and privacy](/account-and-settings/security)** — password, authenticator, sessions, and trusted browsers.
+* **[Preferences and notifications](/account-and-settings/preferences)** — active preferences and rows that are not yet available.
