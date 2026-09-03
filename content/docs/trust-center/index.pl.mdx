@@ -1,0 +1,51 @@
+---
+title: Trust Center
+description: Architektura bezpieczeństwa platformy Persate dla zespołów bezpieczeństwa, zgodności i zakupów — przepływ danych, lokalizacja hostingu oraz szyfrowanie w tranzycie i w spoczynku.
+---
+
+Strona przeznaczona dla zespołów bezpieczeństwa, zgodności i zakupów oceniających Persate. Zabezpieczenia konta dostępne każdemu użytkownikowi (hasło, weryfikacja dwuetapowa, sesje, zaufane przeglądarki, historia logowań) opisano w sekcji [Bezpieczeństwo i prywatność](/pl/account-and-settings/security).
+
+## Architektura bezpieczeństwa
+
+Diagram pokazuje, jak dane przepływają między użytkownikami, platformą Persate i usługami zarządzanymi, z których platforma korzysta, oraz w których miejscach są szyfrowane.
+
+<img src="/docs/persate/trust-center/security-architecture.pl.svg" alt="Diagram architektury bezpieczeństwa. Użytkownicy (przeglądarka, aplikacja mobilna, operatorzy) łączą się przez TLS z platformą Persate hostowaną w UE: warstwą aplikacji webowej oraz warstwą API z bramą, usługami aplikacyjnymi, procesami w tle i własną inferencją AI. Pamięć podręczna i kolejki, indeks pełnotekstowy, indeks wektorowy oraz baza publicznego korpusu prawnego znajdują się w prywatnej sieci danych bez dostępu z internetu. Platforma łączy się przez TLS z usługami zarządzanymi w UE: zarządzanym PostgreSQL szyfrowanym w spoczynku z izolacją najemców, dostawcą tożsamości z uwierzytelnianiem dwuskładnikowym, magazynem obiektów w Polsce oraz dostawcami AI i poczty." />
+
+### Hosting i lokalizacja danych
+
+* Wszystkie komponenty platformy działają na terenie Unii Europejskiej. Usługi aplikacyjne, procesy w tle oraz własne magazyny wyszukiwania, wektorów i pamięci podręcznej działają w Polsce. Zarządzana baza PostgreSQL i dostawca tożsamości działają w UE (Niemcy).
+* Magazyn obiektów z przesłanymi dokumentami, podglądami i kopiami zapasowymi znajduje się w Polsce.
+* Własne magazyny danych (pamięć podręczna i kolejki zadań, indeks pełnotekstowy, indeks wektorowy, publiczny korpus prawny) pracują w sieci prywatnej bez publicznej ekspozycji. Są dostępne wyłącznie dla usług aplikacyjnych i procesów w tle.
+* Narzędzia administracyjne są dostępne wyłącznie przez tunel VPN i nie są wystawione do internetu.
+
+### Szyfrowanie w tranzycie
+
+| Ścieżka | Zabezpieczenie |
+|---|---|
+| Przeglądarka lub aplikacja mobilna → aplikacja webowa i API | TLS 1.2 lub nowszy; HSTS wymuszony na domenie aplikacji |
+| Serwer aplikacji webowej → API | TLS; połączenie serwer–serwer uwierzytelniane dedykowanym kluczem wewnętrznym |
+| Usługi aplikacyjne → zarządzany PostgreSQL i dostawca tożsamości | TLS |
+| Usługi aplikacyjne i procesy w tle → magazyn obiektów | TLS |
+| Usługi aplikacyjne → dostawcy AI i poczty | TLS, per żądanie |
+| Dostęp operatorów do narzędzi administracyjnych | Tunel VPN oraz TLS 1.2/1.3, ograniczony do zakresu adresów VPN |
+| Wdrożenia | SSH z uwierzytelnianiem kluczem i weryfikacją klucza hosta |
+
+### Szyfrowanie w spoczynku
+
+| Magazyn | Zabezpieczenie |
+|---|---|
+| Zarządzany PostgreSQL (dane najemców, konta) | Szyfrowanie w spoczynku po stronie dostawcy (AES-256); codzienne kopie zapasowe |
+| Magazyn obiektów (przesłane dokumenty, podglądy, kopie zapasowe) | Lokalizacja w UE; szyfrowanie w spoczynku po stronie dostawcy jest w trakcie potwierdzania i zostanie tu opisane po weryfikacji |
+| Własne indeksy i kolejki | Ochrona przez izolację sieciową i kontrolę dostępu; szyfrowanie w spoczynku nie jest obecnie stosowane na poziomie aplikacji |
+
+### Uwierzytelnianie i sesje
+
+* Logowanie odbywa się hasłem lub przez pojedyncze logowanie (SSO), a przed otwarciem obszarów chronionych wymagane jest uwierzytelnianie dwuskładnikowe (TOTP).
+* Sesje są przenoszone w ciasteczkach Secure, SameSite ograniczonych do domeny aplikacji i weryfikowane po stronie serwera przy każdym chronionym żądaniu.
+* Role i przynależność do organizacji są ustalane na podstawie sesji po stronie serwera. Obszar administracji wymaga roli administratora.
+* Gdy usługa uwierzytelniania jest niedostępna, dostęp jest odmawiany (fail closed), a nie przyznawany.
+* Ruch API jest limitowany na bramie, a dla punktów logowania dodatkowo per konto.
+
+### Izolacja najemców
+
+Dane każdej organizacji są przechowywane w osobnym schemacie bazy danych z politykami bezpieczeństwa na poziomie wierszy (RLS), a indeksy wyszukiwania i wektorowe są partycjonowane per organizacja. Kontekst organizacji w żądaniach pochodzi ze zweryfikowanej sesji, a nie z danych przesyłanych przez klienta.

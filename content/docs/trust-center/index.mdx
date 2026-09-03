@@ -1,0 +1,51 @@
+---
+title: Trust Center
+description: Security architecture of the Persate platform for security, compliance, and procurement reviewers — data flow, hosting regions, and encryption in transit and at rest.
+---
+
+This page is intended for security, compliance, and procurement teams evaluating Persate. Account-level protections available to every user (passwords, two-step verification, sessions, trusted browsers, login history) are described in [Security and privacy](/account-and-settings/security).
+
+## Security architecture
+
+The diagram shows how data moves between users, the Persate platform, and the managed services it depends on, and where that data is encrypted.
+
+<img src="/docs/persate/trust-center/security-architecture.svg" alt="Security architecture diagram. Users (web browser, mobile app, operators) connect over TLS to the Persate platform hosted in the EU: a web application tier and an API tier with a gateway, application services, background workers, and self-hosted AI inference. Cache and queues, full-text index, vector index, and the public legal corpus sit on a private data network with no internet exposure. The platform connects over TLS to managed services in the EU: managed PostgreSQL encrypted at rest with tenant isolation, an identity provider with two-factor authentication, object storage in Poland, and AI and email providers." />
+
+### Hosting and data location
+
+* All platform components run in the European Union. Application services, background workers, and the self-hosted search, vector, and cache stores run in Poland. The managed PostgreSQL database and the identity provider run in the EU (Germany).
+* Object storage for uploaded documents, previews, and backups is located in Poland.
+* Self-hosted datastores (cache and task queues, full-text index, vector index, public legal corpus) sit on a private network with no public exposure. They are reachable only from application services and background workers.
+* Administrative tools are reachable only through a VPN tunnel and are not exposed to the internet.
+
+### Encryption in transit
+
+| Path | Protection |
+|---|---|
+| Browser or mobile app → web application and API | TLS 1.2 or newer; HSTS enforced on the application domain |
+| Web application server → API | TLS; server-to-server hop authenticated with a dedicated internal key |
+| Application services → managed PostgreSQL and identity provider | TLS |
+| Application services and workers → object storage | TLS |
+| Application services → AI and email providers | TLS, per request |
+| Operator access to administrative tools | VPN tunnel plus TLS 1.2/1.3, restricted to the VPN address range |
+| Deployments | SSH with key-based authentication and host key verification |
+
+### Encryption at rest
+
+| Store | Protection |
+|---|---|
+| Managed PostgreSQL (tenant data, accounts) | Encrypted at rest by the provider (AES-256); daily backups |
+| Object storage (uploaded documents, previews, backups) | Located in the EU; provider-side encryption at rest is being confirmed and will be stated here once verified |
+| Self-hosted indexes and queues | Protected by network isolation and access controls; encryption at rest is not currently applied at the application layer |
+
+### Authentication and sessions
+
+* Sign-in uses a password or single sign-on, followed by mandatory two-factor authentication (TOTP) before protected areas open.
+* Sessions are carried in Secure, SameSite cookies scoped to the application domain and are validated server-side on every protected request.
+* Roles and organisation membership are resolved from the server-side session. The administration area requires an administrator role.
+* If the authentication service is unavailable, access fails closed rather than granting access.
+* API traffic is rate-limited at the gateway and additionally per account for sign-in endpoints.
+
+### Tenant isolation
+
+Each organisation's data is stored in its own database schema with row-level security policies, and search and vector indexes are partitioned per organisation. Requests carry the organisation context from the verified session, not from client input.
