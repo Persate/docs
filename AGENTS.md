@@ -33,7 +33,7 @@ content/docs/
 ## 3. The two build traps (see the skill for detail)
 
 1. **No bare `{...}` in MDX prose** — MDX evaluates them as JSX and the build explodes. Wrap in a code span `` `{id}` `` or escape `\{ \}`. Applies to placeholders, JSON snippets, URL patterns like `/users/{id}`.
-2. **Never list `"index"` in a `meta.json` `pages` array** — it deletes the section landing page. The index is implicit; only list siblings.
+2. **Never list `"index"` in a `meta.json` `pages` array** — Fumadocs then treats the landing page as an ordinary child and drops it from the folder header (`delete node.index` in the page-tree builder). The page still builds and is reachable by URL, but the sidebar section header stops linking to it and turns into a plain expand/collapse button, with the landing page repeated as a child entry. Verified on the live PL sidebar in PER-533. The index is implicit; only list siblings.
 
 Validate before declaring done:
 
@@ -92,3 +92,11 @@ When in doubt: *would this leak to a competitor's eyes?* Redact. Internal engine
 - Don't list `"index"` in `meta.json` `pages`.
 - Don't invent UI labels or behavior — read FE.
 - Don't `git commit` without explicit instruction.
+
+---
+
+## 8. Tooling
+
+- Install with `npm ci`, not `npm install`, so `node_modules` matches `package-lock.json`.
+- ESLint stays on 9.x: `eslint-config-next@16.2.4` bundles `eslint-plugin-react` 7.x, which crashes on ESLint 10 (`scopeManager.addGlobals is not a function`, `contextOrFilename.getFilename is not a function`). If `npm run lint` crashes with either error, `node_modules` has drifted from the lockfile — run `npm ci`.
+- `npm run lint` must exit 0 with no warnings and `npm run build` must pass before declaring done.

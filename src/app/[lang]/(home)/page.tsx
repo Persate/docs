@@ -323,7 +323,6 @@ export default async function HomePage(props: PageProps<'/[lang]'>) {
     <main className="flex flex-col flex-1 bg-bg">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify([websiteJsonLd, orgJsonLd]) }}
       />
       <section className="border-b border-separator">

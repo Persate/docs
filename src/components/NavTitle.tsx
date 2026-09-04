@@ -9,7 +9,6 @@ import type { ComponentProps } from 'react';
  */
 export function NavTitle({ className }: ComponentProps<'a'>) {
   return (
-    // eslint-disable-next-line @next/next/no-html-link-for-pages
     <a href="https://persate.com/" className={className}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img

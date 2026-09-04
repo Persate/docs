@@ -61,7 +61,6 @@ export default async function Page(props: PageProps<'/[lang]/[...slug]'>) {
     >
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <DocsTitle>{page.data.title}</DocsTitle>
