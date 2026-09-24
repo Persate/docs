@@ -7,7 +7,7 @@
     "dev": "next dev",
     "start": "next start",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
-    "postinstall": "fumadocs-mdx",
+    "postinstall": "node scripts/patch-fumadocs-i18n.mjs && fumadocs-mdx",
     "lint": "eslint"
   },
   "dependencies": {
