@@ -10,15 +10,17 @@ const montserrat = Montserrat({
   variable: '--font-montserrat',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://persate.com'),
-  title: {
-    template: '%s | Persate | Documentation',
-    default: 'Persate | Documentation',
-  },
-  description:
-    'User guide for Persate, the public-affairs intelligence platform for monitoring the Polish parliament.',
-};
+export async function generateMetadata({ params }: LayoutProps<'/[lang]'>): Promise<Metadata> {
+  const { lang } = await params;
+  const documentation = lang === 'pl' ? 'Dokumentacja' : 'Documentation';
+  return {
+    metadataBase: new URL('https://persate.com'),
+    title: { template: `%s | Persate | ${documentation}`, default: `Persate | ${documentation}` },
+    description: lang === 'pl'
+      ? 'Instrukcja obsługi Persate, platformy analitycznej do monitorowania polskiego parlamentu.'
+      : 'User guide for Persate, the public-affairs intelligence platform for monitoring the Polish parliament.',
+  };
+}
 
 const locales = [
   { name: 'English', locale: 'en' },

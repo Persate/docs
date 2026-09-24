@@ -19,9 +19,9 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 **Co robi asystent:**
 
-1. **Legislation** — `List votings` — enumeracja ostatnich głosowań; filtruje do głosowań dotyczących ustawy energetycznej i poprawki.
-2. **Legislation** — `Get voting` — pobranie rozkładu w rozbiciu na mandaty i metadanych.
-3. **Stakeholders** — `Get stakeholder` — dopasowanie nazwisk do identyfikatorów dla członków KO głosujących.
+1. **Legislacja** — `List votings` — enumeracja ostatnich głosowań; filtruje do głosowań dotyczących ustawy energetycznej i poprawki.
+2. **Legislacja** — `Get voting` — pobranie rozkładu w rozbiciu na mandaty i metadanych.
+3. **Interesariusze** — `Get stakeholder` — dopasowanie nazwisk do identyfikatorów dla członków KO głosujących.
 
 **Jak wygląda odpowiedź:**
 
@@ -35,11 +35,11 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 **Co robi asystent:**
 
-1. **Stakeholders** — `Search legislators` — filtrowanie do przynależności Koalicji Klimatycznej.
+1. **Interesariusze** — `Search legislators` — filtrowanie do przynależności Koalicji Klimatycznej.
 2. **Public pulse** — `Search tweets` — wyszukiwanie wpisów za ostatni miesiąc z terminami odejścia od węgla.
-3. **Legislation** — `List votings` — filtrowanie do tego samego zakresu dat.
-4. **Legislation** — `Get voting` — szczegóły każdego kandydującego głosowania.
-5. **Legislation** — `Votes by legislator` — weryfikacja krzyżowa po członkostwie w klubie.
+3. **Legislacja** — `List votings` — filtrowanie do tego samego zakresu dat.
+4. **Legislacja** — `Get voting` — szczegóły każdego kandydującego głosowania.
+5. **Legislacja** — `Votes by legislator` — weryfikacja krzyżowa po członkostwie w klubie.
 
 **Jak wygląda odpowiedź:**
 
@@ -56,9 +56,9 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 **Co robi asystent:**
 
-1. **Documents** — `Read file` — odczyt rekomendacji bezpośrednio z załączonego pliku (bez kroku wyszukiwania — identyfikator pliku jest dostarczony).
-2. **Legislation** — `List votings` — filtrowanie po tematach obejmujących każdą rekomendację.
-3. **Legislation** — `Get voting` — szczegóły pasujących głosowań.
+1. **Dokumenty** — `Read file` — odczyt rekomendacji bezpośrednio z załączonego pliku (bez kroku wyszukiwania — identyfikator pliku jest dostarczony).
+2. **Legislacja** — `List votings` — filtrowanie po tematach obejmujących każdą rekomendację.
+3. **Legislacja** — `Get voting` — szczegóły pasujących głosowań.
 
 **Jak wygląda odpowiedź:**
 
@@ -76,14 +76,14 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 **Co robi asystent:**
 
-1. **Legislation** — `List votings` — wyszukanie ustawy, do której odnosi się pytanie.
+1. **Legislacja** — `List votings` — wyszukanie ustawy, do której odnosi się pytanie.
 2. Dopasowanie zwraca dwie kandydujące ustawy — narzędzie emituje **elicytację** z prośbą o wybór.
 3. *(wybór z osadzonego formularza)*
-4. **Alerts** — `Create alert` — tworzenie alertu z konkretną ustawą, opisem i wąskimi słowami kluczowymi.
+4. **Alerty** — `Create alert` — tworzenie alertu z konkretną ustawą, opisem i wąskimi słowami kluczowymi.
 
 **Jak wygląda odpowiedź:**
 
-> Utworzono alert **Pharmaceuticals Reform 2026** ([feature://alert/...]). Obserwuje wystąpienia plenarne i wgrane dokumenty. Status: **Active**, widoczność: **Private** — zmianę można wprowadzić w widoku szczegółowym alertu.
+> Utworzono alert **Pharmaceuticals Reform 2026** ([feature://alert/...]). Obserwuje wystąpienia plenarne i wgrane dokumenty. Status: **Aktywne**, widoczność: **Prywatne** — zmianę można wprowadzić w widoku szczegółowym alertu.
 
 ## Przykład 5 — Wydobycie fragmentu dokumentu
 
@@ -93,8 +93,8 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 **Co robi asystent:**
 
-1. **Documents** — `Hybrid search` — wyszukiwanie w transkryptach komisji z terminami dotyczącymi ustawy o zamówieniach.
-2. **Documents** — zwrócenie odnośnika dla pasującego fragmentu.
+1. **Dokumenty** — `Hybrid search` — wyszukiwanie w transkryptach komisji z terminami dotyczącymi ustawy o zamówieniach.
+2. **Dokumenty** — zwrócenie odnośnika dla pasującego fragmentu.
 
 **Jak wygląda odpowiedź:**
 
@@ -112,12 +112,12 @@ Faktyczna treść każdej odpowiedzi może się różnić. Są to jedynie przyk�
 
 **Co robi asystent:**
 
-1. **Legislation** — `List votings`, `Get voting` — trajektoria legislacyjna ustawy.
-2. **Documents** — `Hybrid search` — dyskusje komisji w ostatnich trzech tygodniach.
+1. **Legislacja** — `List votings`, `Get voting` — trajektoria legislacyjna ustawy.
+2. **Dokumenty** — `Hybrid search` — dyskusje komisji w ostatnich trzech tygodniach.
 3. **Public pulse** — `Search tweets` — pozycjonowanie każdego głównego klubu w ostatnich dwóch tygodniach.
-4. **Legislation** — `Votes by legislator` — projekcja wyniku głosowania na podstawie wcześniejszych wyrównań.
-5. **Documents** — `Hybrid search` — wewnętrzne briefingi dotyczące tej ustawy.
-6. **Alerts** — `List alerts` — weryfikacja, czy istnieje alert obejmujący tę ustawę.
+4. **Legislacja** — `Votes by legislator` — projekcja wyniku głosowania na podstawie wcześniejszych wyrównań.
+5. **Dokumenty** — `Hybrid search` — wewnętrzne briefingi dotyczące tej ustawy.
+6. **Alerty** — `List alerts` — weryfikacja, czy istnieje alert obejmujący tę ustawę.
 
 **Jak wygląda odpowiedź:**
 

@@ -9,8 +9,8 @@ description: Widok szczegółowy alertu — banner tytułowy, dziennik zdarzeń 
 
 Banner zawiera kluczowe metadane alertu:
 
-* **Nazwa i status** — nagłówek z informacją o stanie: **Active** (aktywny) lub **Paused** (wstrzymany).
-* **Widoczność** — oznaczenie **Private** (tylko dla twórcy) lub **Shared** (współdzielony z wybranymi grupami).
+* **Nazwa i status** — nagłówek z informacją o stanie: **Aktywne** (aktywny) lub **Wstrzymane** (wstrzymany).
+* **Widoczność** — oznaczenie **Prywatne** (tylko dla twórcy) lub **Udostępnione** (współdzielony z wybranymi grupami).
 * **Data utworzenia** — znacznik czasu prezentowany obok ikony zegara.
 * **Ilustracja AI** — tematyczny obraz dopasowywany automatycznie do każdego alertu.
 
@@ -20,8 +20,8 @@ Pod bannerem znajdują się przyciski umożliwiające modyfikację stanu:
 
 * **Make Shared / Make Private** — zmienia zakres widoczności. Przełączenie na status współdzielony wymaga wskazania przynajmniej jednej grupy użytkowników w oknie dialogowym. Powrót do statusu prywatnego odbiera dostęp wszystkim grupom.
 * **Pause / Resume** — wstrzymuje lub wznawia monitorowanie treści. W stanie wstrzymania nowe zdarzenia nie są rejestrowane.
-* **Edit** (ikona ołówka) — otwiera formularz edycji parametrów alertu.
-* **Delete** (ikona kosza) — trwale usuwa alert wraz z całą historią zdarzeń. Operacja wymaga potwierdzenia i jest nieodwracalna.
+* **Edytuj** (ikona ołówka) — otwiera formularz edycji parametrów alertu.
+* **Usuń** (ikona kosza) — trwale usuwa alert wraz z całą historią zdarzeń. Operacja wymaga potwierdzenia i jest nieodwracalna.
 
 ## Historia zdarzeń
 
@@ -33,8 +33,8 @@ Sekcja **Trigger History** zawiera chronologiczny dziennik dopasowań. Każdy wp
 * **Tytuł i podsumowanie** — wygenerowany opis zdarzenia.
 * **„Dlaczego ten alert?”** — krótkie uzasadnienie, dlaczego treść uznano za dopasowanie.
 * **Cytaty** — zweryfikowane fragmenty źródła, rozwijane opcją **Pokaż cytaty**.
-* **Original** — oryginalny fragment kontekstowy treści.
-* **Matched** — dopasowane terminy.
+* **Oryginał** — oryginalny fragment kontekstowy treści.
+* **Dopasowano** — dopasowane terminy.
 
 Przy każdym zdarzeniu dostępne są przyciski oceny **Trafne** / **Nietrafne**, którymi można przekazać informację zwrotną wpływającą na jakość przyszłych dopasowań.
 
@@ -60,11 +60,11 @@ Dla alertów o ustrukturyzowanej regule prawa panel **Monitoring plan** podsumow
 
 ## RCL Watchlist
 
-Sekcja **RCL Watchlist** pozwala obserwować konkretne projekty legislacyjne z Rządowego Centrum Legislacji. Wpisanie tematu, tytułu lub identyfikatora RCL wyszukuje pasujące projekty, które można dodać do listy obserwowanych i zapisać przyciskiem **Save RCL watchlist**.
+Sekcja **RCL Watchlist** pozwala obserwować konkretne projekty legislacyjne z Rządowego Centrum Legislacji. Wpisanie tematu, tytułu lub identyfikatora RCL wyszukuje pasujące projekty, które można dodać do listy obserwowanych i zapisać przyciskiem **Zapisz obserwowane projekty RCL**.
 
 ## Panel uprawnień
 
-Dla alertów o statusie **Shared** dostępna jest sekcja **Shared with**. Umożliwia ona:
+Dla alertów o statusie **Udostępnione** dostępna jest sekcja **Shared with**. Umożliwia ona:
 
 * **Dodawanie grup** — przycisk **Add group** pozwala wybrać nowe grupy z listy.
 * **Usuwanie dostępu** — wybranie ikony **X** przy nazwie grupy natychmiast odbiera jej uprawnienia do podglądu alertu.
