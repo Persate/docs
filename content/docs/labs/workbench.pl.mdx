@@ -5,14 +5,14 @@ description: Nawigacja po widokach, przegląd dowodów, eksport zakresu i używa
 
 Dokładne etykiety i model danych zależą od przypisanego laboratorium. Wspólne środowisko udostępnia następujące widoki, jeżeli dany pakiet je obsługuje:
 
-* **Summary** — kontekst wydania i główne liczby;
-* **People** — encje z wyszukiwaniem i bieżącym stanem przeglądu;
+* **Podsumowanie** — kontekst wydania i główne liczby;
+* **Osoby** — encje z wyszukiwaniem i bieżącym stanem przeglądu;
 * **Graph** — relacje między encjami;
-* **Timeline** — zdarzenia i dowody uporządkowane w czasie.
+* **Oś czasu** — zdarzenia i dowody uporządkowane w czasie.
 
 ## Wyszukiwanie i filtrowanie encji
 
-Wyszukiwanie wymaga co najmniej dwóch znaków. Można filtrować według grupy oraz stanu **Verified**, **Probable** lub **Unresolved**. Wybranie encji ustawia na niej fokus w bieżącym widoku i, gdy to możliwe, otwiera jej dossier.
+Wyszukiwanie wymaga co najmniej dwóch znaków. Można filtrować według grupy oraz stanu **Zweryfikowane**, **Prawdopodobne** lub **Nierozstrzygnięte**. Wybranie encji ustawia na niej fokus w bieżącym widoku i, gdy to możliwe, otwiera jej dossier.
 
 W grafie wybranie węzła ustawia fokus. Modyfikator wskazany przez interfejs pozwala oznaczyć kilka węzłów. Wybrany zestaw roboczy można odłożyć i przywrócić bez zmiany wydania.
 
@@ -27,7 +27,7 @@ Dossier osoby grupuje przejrzane relacje i ich dowody. Po otwarciu dowodu można
 Każdy **live web finding** należy traktować jako nieprzejrzany. Recenzent może:
 
 * wybrać **Promote**, aby skierować wynik do kolejnej przejrzanej transzy;
-* wybrać **Reject**;
+* wybrać **Odrzuć**;
 * cofnąć oczekującą decyzję.
 
 Zatwierdzenie nie zmienia wydania aktualnie otwartego na ekranie.
@@ -40,7 +40,7 @@ Kontrolka eksportu pobiera skoroszyt dla bieżącego zakresu. Zależnie od labor
 
 Należy otworzyć **Lab Advisor**, aby zadać pytanie o bieżące wydanie. Nowa rozmowa zapisuje kontekst aktualnego widoku. Późniejsza zmiana widoku nie modyfikuje wcześniejszych odpowiedzi.
 
-Polecenie **Stop** anuluje uruchomioną odpowiedź. Po wyczerpaniu limitu środowisko nadal działa, lecz Advisor nie rozpocznie kolejnej odpowiedzi do czasu przywrócenia limitu.
+Polecenie **Zatrzymaj** anuluje uruchomioną odpowiedź. Po wyczerpaniu limitu środowisko nadal działa, lecz Advisor nie rozpocznie kolejnej odpowiedzi do czasu przywrócenia limitu.
 
 ## Stany puste i błędy
 

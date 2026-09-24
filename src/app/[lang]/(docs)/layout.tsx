@@ -34,7 +34,7 @@ export default async function Layout({ children, params }: LayoutProps<'/[lang]'
   };
 
   return (
-    <DocsLayout tree={tree} {...baseOptions()}>
+    <DocsLayout tree={tree} {...baseOptions(lang)}>
       {children}
     </DocsLayout>
   );

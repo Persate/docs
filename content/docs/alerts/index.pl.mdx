@@ -3,64 +3,64 @@ title: Alerty Trackera
 description: Tworzenie, udostępnianie, wstrzymywanie i przeglądanie alertów dla obsługiwanych źródeł.
 ---
 
-**CORE → Tracker** zawiera definicje alertów i zapisane dopasowania. Gdy aktywny alert spełni zapisaną regułę w obsługiwanym monitorowanym źródle, Persate rejestruje zdarzenie w tym alercie.
+**GŁÓWNE → Monitorowanie** zawiera definicje alertów i zapisane dopasowania. Gdy aktywny alert spełni zapisaną regułę w obsługiwanym monitorowanym źródle, Persate rejestruje zdarzenie w tym alercie.
 
 Etykiety źródeł przy alercie opisują zapisany zakres. Nie gwarantują, że każdy możliwy strumień jest włączony dla organizacji. Przed oparciem procesu na alertach sprawdź stan działania alertu i rejestr Sources.
 
 ## Kanały monitorowania
 
-Każdy alert może obejmować wiele rodzajów źródeł. Alert bez wskazanego zakresu źródeł nasłuchuje wszystkich kanałów (oznaczenie **All sources**). Platforma rozpoznaje m.in. następujące typy:
+Każdy alert może obejmować wiele rodzajów źródeł. Alert bez wskazanego zakresu źródeł nasłuchuje wszystkich kanałów (oznaczenie **Wszystkie źródła**). Platforma rozpoznaje m.in. następujące typy:
 
-* **Legal act** — opublikowane akty prawne.
+* **Akt prawny** — opublikowane akty prawne.
 * **Legislative print** — druki sejmowe.
-* **RCL project** — projekty legislacyjne w Rządowym Centrum Legislacji.
+* **Projekt RCL** — projekty legislacyjne w Rządowym Centrum Legislacji.
 * **Sejm speech** — transkrypty wystąpień z nagrań sejmowych.
 * **X post** — wpisy z kont X monitorowanych interesariuszy (Public Pulse).
-* **File** — dokumenty wgrane do repozytorium.
+* **Plik** — dokumenty wgrane do repozytorium.
 
 ## Zakładki listy
 
 W górnym pasku widoku dostępne są zakładki filtrujące listę:
 
-* **All** — wszystkie alerty.
-* **Active** — alerty aktywnie nasłuchujące.
-* **Paused** — alerty wstrzymane.
-* **Drafts** — przerwane procesy tworzenia alertów, które można wznowić.
+* **Wszystkie** — wszystkie alerty.
+* **Aktywne** — alerty aktywnie nasłuchujące.
+* **Wstrzymane** — alerty wstrzymane.
+* **Szkice** — przerwane procesy tworzenia alertów, które można wznowić.
 
 ## Widok listy alertów
 
 Lista dostępna jest w dwóch trybach, przełączanych w prawym górnym rogu:
 
-* **Table view** — tabela z kolumnami **Name**, **Status**, **Sources**, **Access**, **Last event** oraz **Created**. Nagłówki kolumn **Name**, **Status**, **Last event** i **Created** umożliwiają sortowanie. Kolumnę **Name** można edytować bezpośrednio na liście.
-* **Card view** — układ kart z miniaturą tematyczną, statusem oraz datą ostatniego zdarzenia.
+* **Widok tabeli** — tabela z kolumnami **Nazwa**, **Status**, **Źródła**, **Dostęp**, **Ostatnie zdarzenie** oraz **Utworzono**. Nagłówki kolumn **Nazwa**, **Status**, **Ostatnie zdarzenie** i **Utworzono** umożliwiają sortowanie. Kolumnę **Nazwa** można edytować bezpośrednio na liście.
+* **Widok kart** — układ kart z miniaturą tematyczną, statusem oraz datą ostatniego zdarzenia.
 
 Wybranie wiersza lub karty otwiera widok szczegółowy z historią wszystkich zdarzeń.
 
 ### Kolumna Sources i Access
 
-* **Sources** — ikony reprezentujące typy źródeł objęte alertem. Alert bez zdefiniowanego zakresu otrzymuje etykietę **All sources**.
-* **Access** — oznaczenie **Private** (tylko dla twórcy) lub **Shared** (współdzielony z wybranymi grupami).
+* **Źródła** — ikony reprezentujące typy źródeł objęte alertem. Alert bez zdefiniowanego zakresu otrzymuje etykietę **Wszystkie źródła**.
+* **Dostęp** — oznaczenie **Prywatne** (tylko dla twórcy) lub **Udostępnione** (współdzielony z wybranymi grupami).
 
 ### Operacje zbiorcze
 
-W trybie tabeli zaznaczenie wierszy (pola wyboru) wyświetla dolny pasek akcji zbiorczych: **Resume selected** (wznów), **Pause selected** (wstrzymaj) oraz **Delete selected** (usuń). Akcja usuwania wymaga potwierdzenia.
+W trybie tabeli zaznaczenie wierszy (pola wyboru) wyświetla dolny pasek akcji zbiorczych: **Wznów zaznaczone** (wznów), **Wstrzymaj zaznaczone** (wstrzymaj) oraz **Usuń zaznaczone** (usuń). Akcja usuwania wymaga potwierdzenia.
 
 ## Panel boczny
 
 W prawym panelu bocznym dostępne są funkcje zarządzania i filtrowania:
 
-* **Create alert** — otwiera formularz tworzenia nowego alertu.
-* **Search** — filtruje załadowane alerty według nazwy, opisu lub słowa kluczowego.
-* **Source type** — zawęża listę do alertów obejmujących wybrany typ źródła.
-* **Space** — filtruje według widoczności (**Private** lub **Shared**).
+* **Utwórz alert** — otwiera formularz tworzenia nowego alertu.
+* **Wyszukiwanie** — filtruje załadowane alerty według nazwy, opisu lub słowa kluczowego.
+* **Typ źródła** — zawęża listę do alertów obejmujących wybrany typ źródła.
+* **Space** — filtruje według widoczności (**Prywatne** lub **Udostępnione**).
 
 ## Cykl życia alertu
 
 Alert może znajdować się w jednym z trzech stanów:
 
-* **Active** — platforma aktywnie szuka dopasowań w nowych danych.
-* **Paused** — nowe dopasowania nie są rejestrowane, lecz dotychczasowa historia pozostaje dostępna.
-* **Deleted** — alert wraz z całą historią zostaje trwale i nieodwracalnie usunięty.
+* **Aktywne** — platforma aktywnie szuka dopasowań w nowych danych.
+* **Wstrzymane** — nowe dopasowania nie są rejestrowane, lecz dotychczasowa historia pozostaje dostępna.
+* **Usunięte** — alert wraz z całą historią zostaje trwale i nieodwracalnie usunięty.
 
 ## Stany pustego widoku i błędu
 

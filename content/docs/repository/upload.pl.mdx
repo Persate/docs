@@ -3,7 +3,7 @@ title: Wgrywanie plików
 description: Dodawanie kontrolowanej partii plików do Repozytorium i przypisywanie zakresu dostępu.
 ---
 
-Należy otworzyć **Upload** w kontrolkach platformy. Panel **Upload files** pokazuje listę plików i jedno ustawienie dostępu dla całej partii.
+Należy otworzyć **Prześlij** w kontrolkach platformy. Panel **Prześlij pliki** pokazuje listę plików i jedno ustawienie dostępu dla całej partii.
 
 ## Obsługiwane pliki i limity
 
@@ -11,13 +11,13 @@ Bieżąca kontrolka przyjmuje pliki PDF, DOCX, XLSX i CSV. Wyświetlany limit wy
 
 ## Przygotowanie partii
 
-1. Przeciągnąć pliki do strefy albo wybrać **choose file**.
+1. Przeciągnąć pliki do strefy albo wybrać **wybierz plik**.
 2. Sprawdzić nazwę, typ i stan **pending** każdego pliku.
 3. Usunąć niezamierzone pozycje przed rozpoczęciem. Pozycji ze stanem **uploading** nie można usunąć.
-4. Ustawić **Access for these files** na **Only me** albo wybrane grupy.
-5. Wybrać **Add files**.
+4. Ustawić **Access for these files** na **Tylko ja** albo wybrane grupy.
+5. Wybrać **Dodaj pliki**.
 
-Pliki są wysyłane kolejno. Wiersz zmienia stan z **pending** na **uploading**, a następnie **success** albo **error**. Panel zamyka się automatycznie tylko wtedy, gdy wszystkie próby zakończą się powodzeniem.
+Pliki są wysyłane kolejno. Wiersz zmienia stan z **pending** na **uploading**, a następnie **sukces** albo **błąd**. Panel zamyka się automatycznie tylko wtedy, gdy wszystkie próby zakończą się powodzeniem.
 
 ## Dostęp partii
 
@@ -27,13 +27,13 @@ Zakres zostaje zablokowany wraz z rozpoczęciem pierwszej próby. Dzięki temu u
 
 ## Ponawianie błędów
 
-Po częściowym błędzie należy pozostawić udane wiersze i ponownie wybrać **Add files**. Persate ponawia pozycje ze stanem **error** lub **pending** i nie wysyła ponownie pozycji oznaczonych jako **success**.
+Po częściowym błędzie należy pozostawić udane wiersze i ponownie wybrać **Dodaj pliki**. Persate ponawia pozycje ze stanem **błąd** lub **pending** i nie wysyła ponownie pozycji oznaczonych jako **sukces**.
 
 Przed ponowieniem należy sprawdzić, czy plik mieści się w limicie, rozszerzenie odpowiada treści, organizacja ma wolną pamięć, użytkownik nadal ma dostęp do Repozytorium i wybranych grup oraz czy połączenie jest stabilne.
 
 ## Przetwarzanie w tle
 
-Stan **success** oznacza przyjęcie i zapis oryginalnego pliku. Ekstrakcja, podsumowanie i indeksowanie mogą zakończyć się później. Brak podsumowania nie jest powodem do wielokrotnego wgrywania tego samego pliku.
+Stan **sukces** oznacza przyjęcie i zapis oryginalnego pliku. Ekstrakcja, podsumowanie i indeksowanie mogą zakończyć się później. Brak podsumowania nie jest powodem do wielokrotnego wgrywania tego samego pliku.
 
 ## Stany błędu
 
@@ -42,4 +42,4 @@ Stan **success** oznacza przyjęcie i zapis oryginalnego pliku. Ekstrakcja, pods
 * Nieobsługiwany plik — należy użyć PDF, DOCX, XLSX lub CSV i sprawdzić, czy plik nie został jedynie przemianowany.
 * Plik za duży — należy zmniejszyć go poniżej 50 MB.
 * Limit pamięci wyczerpany — należy usunąć zbędne pliki albo skontaktować się z administratorem.
-* **error** po częściowej partii — należy poprawić dany plik i ponowić; udane wiersze pozostają zapisane.
+* **błąd** po częściowej partii — należy poprawić dany plik i ponowić; udane wiersze pozostają zapisane.
