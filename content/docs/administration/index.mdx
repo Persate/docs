@@ -1,40 +1,44 @@
 ---
 title: Administration
-description: Admin-only workspace membership, access groups, and tenant usage views.
+description: Organization settings, members, access groups, usage and processing permissions.
 ---
 
-The **OPERATIONS → Operations** area is restricted to users with the **Admin** role. It appears only when the operations panel is enabled for the deployed Persate environment.
+Organization management is in **Settings → Organization**. Administrators manage the organization. Members can read its profile, external-provider permissions and experiments; member management, groups and usage require an administrator.
 
-## Operations tabs
+## Organization pages
 
-* **Users** — invite users, manage pending invitations, change roles, remove members, and open per-user usage details.
-* **Groups & Permissions** — create groups, manage members, and assign group access to Repository files.
-* **Tenant Details** — review organization identity, plan state, storage use, current allowance use, reset timing, and usage analytics.
+* **General** — organization name and report privacy. **Detailed source context in reports** controls whether report generation receives source headlines, links and event details. When off, reports use topic summaries and counts.
+* **Members** — search members, invite users, manage pending invitations, change roles and open per-user usage details.
+* **Groups & permissions** — search groups, manage members and assign access to Repository files.
+* **Usage & plan** — current plan and billing cycle, storage and AI token totals, accessible files, member count and resource allowances. Per-member usage loads when opened.
+* **External providers** — providers that receive organization data, the processing purpose, data shared, dependent functions and the consequence of disabling each permission.
+* **Experimental features** — separate opt-in controls for optional Advisor and global-search assessments and generated alert banners. Each experiment also requires its provider permission and service availability.
 
-Administrative visibility does not override every product feature. A user still requires the relevant organization entitlement and record-level access after being assigned a role or group.
+Administrative visibility does not replace organization feature access or record-level permissions. The accessible-file count follows the current administrator's file access. Unlimited allowances are shown as unlimited; missing usage data shows a retry state.
 
 ## Roles
 
-The user-management interface assigns **Admin** or **Member**:
+* **Admin** — manages the organization and its settings.
+* **Member** — uses the enabled features and resources shared with the member.
 
-* **Admin** — can open Operations and manage the workspace.
-* **Member** — uses the product features and group resources enabled for the organization but cannot open Operations.
+Changing a role takes effect through authenticated workspace permissions. Refresh or sign in again if a surface still shows the old role.
 
-Changing a role takes effect through the authenticated workspace claims. A user may need to refresh or sign in again before every surface reflects the change.
+## Provider permissions and consequences
 
-## Tenant details and allowances
+Permissions apply to the processing purpose shown in each row. Multiple rows can name the same provider because different functions have independent controls.
 
-The tenant view separates private and shared storage, displays current allowance use, and shows workspace-level and per-user activity for the selected period. It is an operational view, not an invoice.
+Disabling external alert judging stops new AI alert matching and delivery; there is no local judging model. AI judging in smart folders also stops, while structural filters and manually selected content may remain available. Disabling the Advisor provider prevents new Advisor work. Disabling report generation prevents new reports. Existing conversations, reports and stored content are retained.
 
-If a workspace allowance is exhausted, eligible AI background work can be suppressed and interactive AI actions can be rejected until the allowance resets or the plan changes. Existing stored content remains available according to its feature and access rules.
+Disabling cloud image assessment stops licensed-image selection because there is no local assessor. Generated banners have a separate provider permission and experiment. Other permissions describe their own fallback or unavailable function in the table; disabling one purpose does not disable every external service.
 
-## Access and loading errors
+Changes apply within 60 seconds. New Advisor and optional assessment requests check the latest permission. Requests already processing may finish.
 
-* **Operations unavailable** — the panel is not enabled on this deployment.
-* Admin required — the current role cannot open the area.
-* Session unavailable or expired — reload or sign in again before repeating an administrative mutation.
-* Tenant details or analytics unavailable — no role, group, or plan value was changed; retry the read.
+## Saving and loading errors
+
+Organization changes require **Save changes**. Disabling a provider or allowing detailed report context opens a confirmation explaining its effect. Unsaved changes remain visible if a save fails. If another administrator changed the same setting, reload the latest values before retrying.
+
+If a workspace allowance is exhausted, eligible AI background work can be skipped and interactive AI actions can be rejected until the allowance resets or the plan changes. Existing content remains available according to its access rules. Usage is an operational summary, not an invoice.
 
 ## Pages in this section
 
-* **[Users and groups](/administration/users-and-groups)** — invitations, roles, membership, file access, and destructive-action safeguards.
+* **[Users and groups](/administration/users-and-groups)** — invitations, roles, membership and file access.
