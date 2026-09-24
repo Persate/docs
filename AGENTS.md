@@ -51,7 +51,7 @@ Every page exists as a pair: `<page>.mdx` (English) and `<page>.pl.mdx` (Polish)
 
 - Same headings, same section order, same frontmatter keys (`title`, `description`).
 - When you change one language, update the other in the same change — **or** explicitly record the drift so it can be reconciled later.
-- Polish is the primary product language; English mirrors it. If a task scopes to PL-only, list which EN siblings now drift instead of silently leaving them.
+- The interface supports English and Polish; English is the default for accounts without a saved choice. Authored/source content keeps its original language. If a task scopes to PL-only, list which EN siblings now drift instead of silently leaving them.
 
 ---
 
@@ -100,3 +100,8 @@ When in doubt: *would this leak to a competitor's eyes?* Redact. Internal engine
 - Install with `npm ci`, not `npm install`, so `node_modules` matches `package-lock.json`.
 - ESLint stays on 9.x: `eslint-config-next@16.2.4` bundles `eslint-plugin-react` 7.x, which crashes on ESLint 10 (`scopeManager.addGlobals is not a function`, `contextOrFilename.getFilename is not a function`). If `npm run lint` crashes with either error, `node_modules` has drifted from the lockfile — run `npm ci`.
 - `npm run lint` must exit 0 with no warnings and `npm run build` must pass before declaring done.
+
+
+## 9. Bilingual interface controls
+
+The Fumadocs 16.8.5 package includes several hardcoded control labels outside its built-in translation keys. `scripts/patch-fumadocs-i18n.mjs` connects those labels to the existing locale context during `npm ci`; Polish labels live in `src/app/[lang]/layout.tsx`, with the original English fallbacks. The patch is version-checked and idempotent. Review it when upgrading Fumadocs; do not remove a failing patch without replacing its bilingual behavior. Verify sidebar, theme, search, copy and page-opening controls in both languages and at mobile widths. This is a source patch, never a runtime DOM text replacement.
