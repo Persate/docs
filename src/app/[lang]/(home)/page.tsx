@@ -150,7 +150,7 @@ const sections: Record<Lang, Tile[]> = {
       icon: '/docs/persate/icons/data.svg',
     },
     {
-      title: 'Cockpit',
+      title: 'Kokpit',
       description: 'Główny ekran agreguje informacje o posiedzeniach na żywo, wyzwolonych alertach oraz bieżącej aktywności interesariuszy.',
       href: '/pl/cockpit',
       icon: '/docs/persate/icons/dashboard.svg',
@@ -192,7 +192,7 @@ const sections: Record<Lang, Tile[]> = {
       icon: '/docs/persate/icons/storage.svg',
     },
     {
-      title: 'Editor',
+      title: 'Redaktor',
       description: 'Importuj lub twórz artykuł, zmieniaj strukturę, uruchamiaj przegląd źródeł i języka, rozstrzygaj sugestie i zarządzaj wersjami.',
       href: '/pl/editor',
       icon: '/docs/persate/icons/book.svg',

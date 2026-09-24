@@ -68,6 +68,7 @@ export default async function Page(props: PageProps<'/[lang]/[...slug]'>) {
       <div className="flex flex-row gap-2 items-center border-b pb-6">
         <MarkdownCopyButton markdownUrl={markdownUrl} />
         <ViewOptionsPopover
+          data-page-url={url}
           markdownUrl={markdownUrl}
           githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${page.path}`}
         />
@@ -89,7 +90,7 @@ function breadcrumbList(page: NonNullable<ReturnType<typeof source.getPage>>) {
     {
       '@type': 'ListItem',
       position: 1,
-      name: 'Documentation',
+      name: locale === 'pl' ? 'Dokumentacja' : 'Documentation',
       item: publicUrl(locale, []),
     },
   ];
@@ -129,7 +130,7 @@ export async function generateMetadata(
     openGraph: {
       type: 'article',
       url,
-      siteName: 'Persate Documentation',
+      siteName: page.locale === 'pl' ? 'Dokumentacja Persate' : 'Persate Documentation',
       title: page.data.title,
       description: page.data.description,
       locale: localeOg,
