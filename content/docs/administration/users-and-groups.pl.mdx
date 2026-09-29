@@ -6,7 +6,7 @@ description: Zapraszanie użytkowników, przypisywanie ról i kontrolowanie grup
 ## Zapraszanie użytkownika
 
 1. Otworzyć **Ustawienia → Organizacja → Członkowie**.
-2. Wybrać **Dodaj użytkownika**.
+2. Wybrać **Zaproś członka** w panelu filtrów.
 3. Wprowadzić adres e-mail i wybrać **Administracja** albo **Członek**.
 4. Wybrać **Wyślij zaproszenie**.
 
@@ -15,6 +15,8 @@ Standardowy proces wysyła odnośnik, za pomocą którego odbiorca ustawia hasł
 Opcjonalny tryb ręcznego hasła tworzy użytkownika natychmiast i wymaga co najmniej 12 znaków. Należy go stosować tylko wtedy, gdy wymaga tego zatwierdzona procedura tożsamości organizacji; administrator odpowiada wtedy za bezpieczne przekazanie początkowego hasła.
 
 ## Oczekujące zaproszenia
+
+Oczekujące i wygasłe zaproszenia znajdują się w oddzielnej tabeli pod aktywnymi członkami. Każda tabela ma własne przyciski zmiany strony. Wyszukiwanie i filtry obejmują całą listę, również wpisy poza pierwszą stroną.
 
 Dla oczekującego zaproszenia administrator może wybrać:
 
@@ -25,19 +27,27 @@ Unieważnienie zaproszenia nie usuwa niezależnego istniejącego konta. Odbiorca
 
 ## Zmiana roli lub usunięcie użytkownika
 
-Po wybraniu użytkownika **Edytuj użytkownika** pozwala zmienić rolę między **Administracja** i **Członek**. **Usuń użytkownika** usuwa użytkownika z organizacji.
+Pole **Rola** w wierszu członka pozwala zmienić rolę między **Administracja** i **Członek**. Pole własnej roli bieżącego administratora jest wyłączone. **Usuń użytkownika** usuwa użytkownika z organizacji po potwierdzeniu.
+
+Panel filtrów umożliwia wyszukiwanie nazw i adresów e-mail oraz filtrowanie według roli, grupy i niedawnej aktywności. Na wąskim ekranie otwiera go przycisk **Filtry**. Tabela przedstawia członkostwa w grupach, wykorzystanie tokenów, datę dołączenia i **Ostatnią aktywność**. Aktywność oznacza przybliżony czas użycia sesji przeglądarkowej, aktualizowany nie częściej niż co pięć minut. **Niedostępne** oznacza brak znacznika czasu; nie oznacza, że członek nigdy nie korzystał z produktu.
+
+Wybranie nazwy członka otwiera szczegóły wykorzystania. Panel profilu pokazuje również rolę w organizacji, status i członkostwa w grupach. **Dodaj do grupy** dodaje członkostwo; odnośnik do grupy otwiera zarządzanie jej członkami.
 
 Usunięcie jest destrukcyjnym działaniem administracyjnym i wymaga potwierdzenia. Wcześniej należy przekazać własność lub wyeksportować pracę, która musi zostać zachowana, oraz sprawdzić dostęp grupowy użytkownika. Usunięcie roli nie zastępuje unieważnienia aktywnej sesji, gdy wymagane jest natychmiastowe wylogowanie.
 
 ## Tworzenie i obsługa grupy
 
 1. Otworzyć **Grupy i uprawnienia**.
-2. Wybrać **Utwórz nową grupę** i podać nazwę oraz opis.
+2. Wybrać **Utwórz grupę** i podać nazwę oraz opis.
 3. Otworzyć stronę szczegółową grupy.
-4. Użyć **Dodaj członka do grupy**, aby wybrać użytkowników organizacji.
-5. Użyć selektora plików, aby udostępnić grupie plik Repozytorium.
+4. Wybrać **Dodaj członka**, aby wskazać członka organizacji i jego rolę w grupie.
+5. Otworzyć **Pliki** i wybrać **Udostępnij plik**, aby udostępnić grupie plik Repozytorium.
 
-Strona grupy przedstawia członków i pliki. **Usuń członka** usuwa członkostwo. **Odbierz dostęp do pliku** aktualizuje zakres dostępu pliku, przez co grupa przestaje uzyskiwać dostęp przez to przypisanie.
+Lista grup przedstawia podgląd członków, osoby zarządzające, datę utworzenia i liczbę przypisanych plików bez plików zarchiwizowanych. Można wyszukiwać po nazwie lub opisie, filtrować według osoby zarządzającej i przeglądać kolejne strony wyników.
+
+Strona grupy ma oddzielne zakładki **Członkowie** i **Pliki**. Wiersze członków rozróżniają **Rolę w grupie** i **Rolę w organizacji**. Zmiana roli w grupie zapisuje przypisanie od razu. **Edytuj** pozwala zmienić nazwę lub opis grupy. Grupa obejmująca całą organizację ma stałe członkostwo i nie można jej tutaj edytować ani usunąć.
+
+**Usuń członka** usuwa członkostwo. **Odbierz dostęp do pliku** aktualizuje zakres dostępu pliku, przez co grupa przestaje uzyskiwać dostęp przez to przypisanie.
 
 Usunięcie grupy wymaga potwierdzenia i jest nieodwracalne. Wcześniej należy sprawdzić przypisania plików i laboratoriów. Usunięcie grupy nie oznacza usunięcia wszystkich plików źródłowych.
 

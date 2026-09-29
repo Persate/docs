@@ -6,7 +6,7 @@ description: Inviting users, assigning roles, and controlling group file access.
 ## Invite a user
 
 1. Open **Settings → Organization → Members**.
-2. Select **Add user**.
+2. Select **Invite member** in the filters panel.
 3. Enter the e-mail address and choose **Admin** or **Member**.
 4. Select **Send invite**.
 
@@ -15,6 +15,8 @@ The normal flow sends a link that lets the recipient set a password. If an exist
 The optional manual-password flow creates the user immediately and requires at least 12 characters. Use it only when the organization's approved identity procedure requires it; the administrator becomes responsible for delivering the initial credential securely.
 
 ## Pending invitations
+
+Pending and expired invitations appear in a separate table below active members. Each table has its own page controls. Search and filters apply across the complete list, including entries beyond the first page.
 
 For a pending invitation, an administrator can:
 
@@ -25,19 +27,27 @@ Revoking an invitation does not delete an unrelated existing identity. A recipie
 
 ## Change a role or remove a user
 
-Select a user and open **Edit User** to change between **Admin** and **Member**. Open **Remove User** to remove the user from the organization.
+Use the **Role** control in a member's row to change between **Admin** and **Member**. The current administrator's own role control is disabled. **Remove User** removes a user from the organization after confirmation.
+
+The filters panel searches names and email addresses and filters by role, group and recent activity. On a narrow screen, select **Filters** to open it. The table shows group memberships, token usage, the joining date and **Last active**. Last activity is the approximate time a browser session was used, updated at most every five minutes. **Not available** means no activity timestamp is available; it does not mean the member has never used the product.
+
+Open a member's name to see usage details. The profile panel also shows organization role, status and group memberships. **Add to group** adds a membership; open a group's link to manage its members.
 
 Removal is a destructive administrative action and requires confirmation. Before removal, transfer ownership or export work that must be retained, and review the user's group access. Do not use role removal as a substitute for revoking an active session when immediate sign-out is required.
 
 ## Create and manage a group
 
-1. Open **Groups & Permissions**.
-2. Select **Create New Group** and provide its name and description.
+1. Open **Groups & permissions**.
+2. Select **Create group** and provide its name and description.
 3. Open the group detail page.
-4. Use **Add member to group** to select organization users.
-5. Use the file picker to share a Repository file with the group.
+4. Select **Add member** to choose an organization member and their group role.
+5. Open **Files** and select **Share file** to share a Repository file with the group.
 
-The group detail page lists members and files. **Remove Member** removes group membership. **Remove File Access** updates that file's audience so the group no longer receives access through this assignment.
+The group list shows a preview of members, managers, the creation date and the number of assigned files, excluding archived files. Search by name or description, filter by manager and use the page controls to browse results.
+
+The group detail page has separate **Members** and **Files** tabs. Member rows distinguish **Group role** from **Organization role**. Changing the group role updates the assignment immediately. **Edit** changes the group's name or description. The organization-wide group has fixed membership and cannot be edited or deleted here.
+
+**Remove Member** removes group membership. **Remove File Access** updates that file's audience so the group no longer receives access through this assignment.
 
 Deleting a group requires confirmation and cannot be undone. Review its file assignments and Lab assignments first. Deleting a group does not imply deletion of every underlying file.
 
