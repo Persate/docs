@@ -1,31 +1,36 @@
 ---
 title: Kokpit
-description: Ekran startowy agregujący kluczowe sygnały aktywności parlamentarnej, alertów oraz statystyki repozytorium w jednym panelu.
+description: Przegląd istotnych zdarzeń z alertów, etapów projektów i stanowisk konsultacyjnych w jednym widoku.
 ---
 
-**Kokpit** to domyślny pulpit startowy wyświetlany po zalogowaniu. Agreguje najistotniejsze aktualizacje z całej platformy, umożliwiając szybki przegląd bieżącej sytuacji bez konieczności odwiedzania poszczególnych modułów.
+**Kokpit** to ekran startowy po zalogowaniu. Pozycja **Kokpit** w panelu bocznym otwiera przegląd zdarzeń dotyczących alertów dostępnych na koncie. Widok wymaga dostępu do alertów.
 
-Dostęp do widoku zapewnia pozycja **Kokpit** w panelu bocznym.
+## Karty zdarzeń
 
-## Komponenty pulpitu
+Mozaika porządkuje zdarzenia według ocenionej istotności, liczby zgrupowanych zdarzeń i czasu wykrycia. Pierwszeństwo mają pozycje **Potencjalnie istotne**. Brak oceny nie oznacza, że zdarzenie jest nieistotne.
 
-Pulpit startowy składa się z sekcji:
+Największa karta przedstawia wiodące zdarzenie. Jeśli dla jego projektu są dostępne stanowiska, kolorowe kafelki pism pokazują organizacje i ocenione stanowiska. Wpisy z X dotyczące tego samego zdarzenia lub tematu Public Pulse są pokazywane jako jedna karta. Jeśli alerty zostawiają wolne miejsce, pozostałe karty pokazują potencjalnie istotne zdarzenia publiczne z ostatnich dwóch dni, których alerty nie dopasowały, wraz z kluczową wartością liczbową, jeśli jest dostępna. Mozaika pokazuje tylko karty z treścią: przy mniejszej liczbie pozycji karty powiększają się i wypełniają widok.
 
-* **Tracker alerts** — siatka kart prezentujących najnowsze zapisane dopasowania. Wybranie karty otwiera szczegóły zdarzenia w **[Trackerze](/pl/alerts)**.
-* **Daily report - raport dzienny** — kafelek z przyciskiem **Pobierz raport**, który pobiera najnowszy dostępny raport. Odnośnik **See more** przenosi do widoku **[Raporty](/pl/reports)**.
-* **Stakeholders - aktywni interesariusze** — siatka prezentująca do pięciu osób o najwyższej aktywności. Domyślnie obejmuje ostatnie 24 godziny; gdy w tym oknie brak aktywności, zakres rozszerza się do 7 dni (informuje o tym podpis nad siatką). Aktywność obejmuje wpisy w mediach społecznościowych oraz wystąpienia sejmowe. Wybranie awatara interesariusza przenosi do jego profilu w sekcji **[Interesariusze](/pl/stakeholders/profile)**.
-* **Nagrania** — wskazuje stan obrad Sejmu. W trakcie sesji wyświetla pulsujący znacznik oraz tytuł sesji, w pozostałych przypadkach najbliższe zaplanowane posiedzenie. Wybranie kafelka przenosi do widoku **[Recordings](/pl/live-proceedings)**.
-* **Repository - podsumowanie repozytorium** — kafelek z całkowitą liczbą dokumentów przypisanych do konta i odnośnikiem do **[Repozytorium](/pl/repository)**.
-* **Głosowania** — skrócony zapis najnowszego rozstrzygnięcia z odnośnikiem do **[Votes](/pl/voting-ledger)**.
-* **Smart Folders - zapisane filtry** — kafelek skrótu z liczbą zapisanych folderów i odnośnikiem do **[Smart Folders](/pl/repository/smart-folders)**.
+Wybranie karty otwiera szczegóły. Sekcja **Dlaczego to ważne** pokazuje automatyczne uzasadnienie i maksymalnie dwa tematy, jeśli są dostępne. Oceny mogą być niepełne lub błędne; przed wykorzystaniem informacji należy sprawdzić podlinkowane źródło. Treści źródłowe i uzasadnienia zachowują oryginalny język.
+
+## Podsumowania na pulpicie
+
+* **Od ostatniej wizyty** — nowe zdarzenia pogrupowane według alertów, z nagłówkiem i liczbą nowych pozycji. Wybranie alertu otwiera jego dopasowania.
+* **Twoje projekty w procesie** — projekty rządowe (RCL) powiązane ze zdarzeniami z Twoich alertów z ostatnich siedmiu dni, ich bieżący etap i następny krok. Oś rozróżnia etapy zawierające dokumenty, wcześniejsze puste etapy oraz etapy nadchodzące. Bieżący etap jest ustalany na podstawie dostępnych dokumentów, więc może nie odzwierciedlać jeszcze najnowszego stanu procesu.
+* **Kto zabiera głos** — stanowiska dotyczące powiązanych projektów, pogrupowane według organizacji i oceny: **Sprzeciw**, **Prośba o zmiany** lub **Bez uwag**. Są to automatyczne odczytania ocenionych pism, a nie zweryfikowane wnioski prawne. Etykieta z datą wskazuje dostępne pokrycie; brak organizacji na karcie nie dowodzi, że nie złożyła stanowiska.
+
+Wszystkie trzy podsumowania są zawsze widoczne. Stanowiska pokazane na wiodącej karcie nie są powtarzane w podsumowaniu.
 
 ## Zalecany sposób pracy
 
-1. Rozpocząć dzień od przeglądu **Cockpitu**, aby sprawdzić trwające obrady i nowe zdarzenia wyzwalające.
-2. Pobrać **Daily report**, by zapoznać się z podsumowaniem aktywności z ostatniej doby.
-3. Przejść do właściwego modułu aplikacji, aby zająć się konkretnymi zadaniami.
+1. Przejrzeć wiodące zdarzenia i pozycje potencjalnie istotne.
+2. Otworzyć kartę, przeczytać uzasadnienie i sprawdzić źródło.
+3. Sprawdzić etapy projektów oraz stanowiska konsultacyjne, a następnie przejść do właściwego alertu lub projektu.
 
-## Stany pustego widoku i błędu
+## Wygląd
 
-* *„No alerts triggered yet”* — dla skonfigurowanych Alertów nie odnotowano jeszcze żadnych dopasowań; karty pozostają puste.
-* *„No standout activity”* — w siatce interesariuszy brak osób z wyróżniającą się aktywnością w bieżącym oknie czasowym.
+Jasny motyw jest domyślny, jeśli wcześniej nie wybrano motywu. Ustawienie można zmienić w **Ustawienia → Preferencje → Wygląd**, wybierając **Dzienny**, **Nocny** albo **Zgodnie z systemem**. Dotychczasowy wybór pozostaje aktywny.
+
+## Puste widoki i ładowanie
+
+Komunikat **Żaden alert nie został jeszcze wywołany** oznacza, że nie ma dopasowań gotowych do wyświetlenia. Można utworzyć alert lub otworzyć istniejące alerty. Komunikat **Brak zdarzeń z tytułami** oznacza, że ostatnie dopasowania oczekują na tytuł. Elementy zastępcze są zastępowane po pobraniu danych. Podsumowanie bez danych informuje o tym jednym zdaniem, a podsumowanie, którego nie udało się wczytać, wyświetla przycisk **Spróbuj ponownie**.
