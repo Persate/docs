@@ -1,31 +1,36 @@
 ---
 title: Cockpit
-description: The startup screen aggregating key parliamentary activity signals, alerts, and repository statistics into a single panel.
+description: Review important alert developments, project stages, and consultation positions in one dashboard.
 ---
 
-The **Cockpit** is the default startup dashboard displayed after signing in. It aggregates the most relevant updates from across the platform, enabling a quick overview of the current situation without navigating to individual modules.
+The **Cockpit** is the startup dashboard after signing in. Open **Cockpit** in the sidebar to review developments on the alerts available to the account. This view requires access to alerts.
 
-Access to the view is provided by the **Cockpit** entry in the sidebar.
+## Development cards
 
-## Dashboard components
+The mosaic ranks alert developments by assessed significance, the number of grouped events, and recency. **Potentially major** items come first. An item without an assessment is not treated as unimportant.
 
-The startup dashboard consists of the following sections:
+The largest card shows the leading development. If positions are available for its project, coloured letter tiles show the organisations and their assessed stances. Posts on X about the same Public Pulse event or theme appear as one card. When your alerts leave room, the remaining cards show potentially major public developments from the last two days that your alerts did not match, including a key figure when one is available. The mosaic shows only cards with content: with fewer items, the cards grow to fill the space.
 
-* **Tracker alerts** — a grid of cards presenting the latest recorded matches. Selecting a card opens the event details in **[Tracker](/alerts)**.
-* **Daily report** — a tile with a **Download report** button that downloads the latest available report. The **See more** link navigates to the **[Reports](/reports)** view.
-* **Stakeholders** — a grid presenting up to five individuals with the highest activity. By default it covers the last 24 hours; when there is no activity within that window, the range expands to 7 days (indicated by the caption above the grid). Activity includes social media posts and parliamentary speeches. Selecting a stakeholder's avatar redirects to their profile in the **[Stakeholders](/stakeholders/profile)** section.
-* **Recordings** — indicates the status of Sejm proceedings. During an active session, a pulsing indicator and the session title are displayed; otherwise, the next scheduled sitting is shown. Selecting the tile redirects to **[Recordings](/live-proceedings)**.
-* **Repository** — a tile displaying the total number of documents assigned to the account, along with a link to the **[Repository](/repository)**.
-* **Votes** — a summarized record of the latest vote, along with a link to **[Votes](/voting-ledger)**.
-* **Smart Folders** — a shortcut tile showing the number of saved folders, along with a link to **[Smart Folders](/repository/smart-folders)**.
+Selecting a card opens its details. **Why it matters** shows the automated rationale and up to two topics when available. Assessments can be incomplete or incorrect; check the linked source before relying on them. Source text and rationales retain their original language.
+
+## Dashboard summaries
+
+* **Since your last visit** — new activity grouped by alert, with a headline and a new-item count. Select an alert to open its matches.
+* **Your projects in the process** — government (RCL) projects linked to your alert activity in the last seven days, their current stage, and the next step. The track distinguishes stages containing documents from earlier empty and upcoming stages. The current stage is inferred from the available documents, so it may lag the official process.
+* **Who's weighing in** — positions on linked projects, grouped by organisation and stance: **Objects**, **Asks for changes**, or **No objections**. These are automated readings of assessed letters, not verified legal conclusions. The date label states the available coverage; absence from the card does not establish that an organisation filed no position.
+
+All three summaries are always shown. Positions already shown on the leading card are not repeated in the summary.
 
 ## Recommended workflow
 
-1. Begin the day by reviewing the **Cockpit** to check ongoing proceedings and new trigger events.
-2. Download the **Daily report** to review a summary of activity from the last 24 hours.
-3. Navigate to the appropriate application module to address specific tasks.
+1. Review the leading developments and potentially major items.
+2. Open a card to read the rationale and verify its source.
+3. Check project stages and consultation positions, then open the relevant alert or project to continue working.
 
-## Empty view and error states
+## Appearance
 
-* *"No alerts triggered yet"* — no matches have been recorded yet for the configured alerts; the cards remain empty.
-* *"No standout activity"* — the stakeholder grid contains no individuals with standout activity in the current time window.
+Light mode is the default when no theme has been chosen. Change it under **Settings → Preferences → Appearance** using **Sunny mode**, **Moonlit night**, or **Follow system**. An existing choice remains in effect.
+
+## Empty and loading states
+
+**No alerts triggered yet** means no alert matches are ready to display. Create an alert or open the existing alerts. **No titled events yet** means recent matches are still waiting for a display title. Placeholders are replaced as data arrives. A summary with nothing to show says so in one line, and one that cannot be loaded offers **Try again**.
