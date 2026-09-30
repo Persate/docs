@@ -42,7 +42,7 @@ export function getPageMarkdownUrl(page: (typeof source)['$inferPage']) {
 export async function getLLMText(page: (typeof source)['$inferPage']) {
   const processed = await page.data.getText('processed');
 
-  return `# ${page.data.title} (${page.url})
+  return `# ${page.data.title} (${publicUrl(page.locale ?? i18n.defaultLanguage, page.slugs)})
 
 ${processed}`;
 }
