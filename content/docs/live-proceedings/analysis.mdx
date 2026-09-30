@@ -80,4 +80,6 @@ An in-depth mode delivering the highest-fidelity transcription, topic segmentati
 
 * *"Playback unavailable"* — error establishing the video stream. Refreshing the page is recommended.
 * *"Scheduled — analysis will be available..."* — an attempt to open a session before its start.
-* *"Analysis failed"* — server error.
+* *"Analysis failed"* — server error. **Retry analysis** starts it again.
+* *"No transcript · Needs verification"* — the saved analysis contains no transcript, which does not confirm that the recording had no speech. **Re-run analysis** analyses it again. While a re-run waits for a free slot, **Cancel analysis** withdraws it.
+* If Persate refuses a start or a cancel (for example, after too many requests in a few minutes), the reason is shown next to the button.
