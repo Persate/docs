@@ -1,0 +1,91 @@
+{
+  "base": "https://persate.com",
+  "viewport": { "width": 1440, "height": 900 },
+  "quality": 82,
+  "shots": [
+    {
+      "id": "legislation-projects",
+      "file": "legislation/projects",
+      "path": "/legislation/projects"
+    },
+    {
+      "id": "legislation-project",
+      "file": "legislation/project-detail",
+      "from": "/legislation/projects",
+      "open": ["tbody tr.cursor-pointer", "tbody tr"],
+      "expect": "^/legislation/projects/[^/?]+"
+    },
+    {
+      "id": "legislation-journey",
+      "file": "legislation/journey",
+      "from": "/legislation/sejm",
+      "open": ["tbody tr.cursor-pointer", "tbody tr"],
+      "expect": "^/legislation/journey/"
+    },
+    {
+      "id": "votes-sejm",
+      "file": "votes/sejm",
+      "path": "/ledger"
+    },
+    {
+      "id": "votes-detail",
+      "file": "votes/voting-detail",
+      "from": "/ledger",
+      "open": ["tbody tr.cursor-pointer:has-text('całości')", "tbody tr.cursor-pointer"],
+      "expect": "^/ledger/\\d+/\\d+"
+    },
+    {
+      "id": "votes-president",
+      "file": "votes/president",
+      "path": "/ledger/prezydent"
+    },
+    {
+      "id": "recordings",
+      "file": "recordings/list",
+      "path": "/live"
+    },
+    {
+      "id": "recording-detail",
+      "file": "recordings/detail",
+      "from": "/live",
+      "open": ["main article", "main [role='button']", "main li button", "main button:has(img)"],
+      "expect": "proceedingId="
+    },
+    {
+      "id": "stakeholders",
+      "file": "stakeholders/organizations",
+      "path": "/stakeholders"
+    },
+    {
+      "id": "stakeholders-sejm",
+      "file": "stakeholders/sejm",
+      "path": "/stakeholders/sejm"
+    },
+    {
+      "id": "stakeholder-profile",
+      "file": "stakeholders/profile",
+      "from": "/stakeholders/sejm",
+      "open": ["tbody tr.cursor-pointer", "tbody tr", "main a[href^='/stakeholders/']"],
+      "expect": "^/stakeholders/(?!sejm|people|presidency|compare|playground)[^/?]+$"
+    },
+    {
+      "id": "media",
+      "file": "media/overview",
+      "path": "/media"
+    },
+    {
+      "id": "media-story",
+      "file": "media/story",
+      "from": "/media",
+      "open": ["main a[href^='/media/stories/']", "main a[href^='/media/events/']"],
+      "expect": "^/media/(stories|events)/"
+    },
+    {
+      "id": "media-topic",
+      "file": "media/topic",
+      "from": "/media",
+      "open": ["main a[href^='/media/topics/']", "main [role='button']", "main li button"],
+      "expect": "^/media/topics/"
+    }
+  ]
+}
