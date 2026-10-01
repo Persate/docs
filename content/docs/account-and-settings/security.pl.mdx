@@ -1,9 +1,9 @@
 ---
 title: Bezpieczeństwo i prywatność
-description: Hasło, weryfikacja dwuetapowa, sesje, zaufane urządzenia, połączone aplikacje AI, historia logowania, analityczne pliki cookie i eksport danych osobowych.
+description: Hasło, weryfikacja dwuetapowa, sesje, zaufane urządzenia, historia logowania, analityczne pliki cookie i eksport danych osobowych.
 ---
 
-Stronę otwiera się przez **Ustawienia → Bezpieczeństwo i prywatność**. Nieznane urządzenie, logowanie lub połączoną aplikację należy traktować jako incydent bezpieczeństwa: odebrać dostęp na tej stronie i zgłosić zdarzenie administratorowi organizacji.
+Stronę otwiera się przez **Ustawienia → Bezpieczeństwo i prywatność**. Nieznane urządzenie, logowanie lub połączoną aplikację AI należy traktować jako incydent bezpieczeństwa: odebrać dostęp — sesjom i urządzeniom na tej stronie, aplikacjom AI w **MCP i aplikacje AI** — i zgłosić zdarzenie administratorowi organizacji.
 
 ## Hasło
 
@@ -13,11 +13,11 @@ Konta logujące się kontem Google lub Microsoft pokazują zamiast tego **Zarzą
 
 ## Weryfikacja dwuetapowa
 
-Weryfikacja dwuetapowa jest wymagana dla wszystkich kont Persate. Wiersz wskazuje aplikację uwierzytelniającą, która chroni konto, i pokazuje stan **Aktywne**.
+Weryfikacja dwuetapowa dodaje do logowania kod z aplikacji uwierzytelniającej. Dla większości kont jest opcjonalna, ale jest wymagana do pracy z plikami firmowymi: przeglądania informacji o plikach, przesyłania plików oraz korzystania z narzędzi plikowych w Advisorze i w połączonych aplikacjach AI. Konta administratorów systemowych muszą z niej korzystać. Zob. **[Weryfikacja dwuetapowa](/pl/getting-started/set-up-two-factor)**.
+
+Konto bez aplikacji uwierzytelniającej pokazuje przycisk **Skonfiguruj**, który rozpoczyna konfigurację. Po skonfigurowaniu wiersz wskazuje aplikację uwierzytelniającą, która chroni konto, i pokazuje stan **Aktywne**, a logowanie wymaga kodu, chyba że przeglądarka jest zaufana.
 
 Aby przenieść weryfikację na nowe urządzenie, należy wybrać **Zmień aplikację uwierzytelniającą**. Dotychczasowa aplikacja pozostaje aktywna do czasu skonfigurowania nowej, dlatego przed potwierdzeniem warto mieć nowe urządzenie pod ręką. Po wybraniu **Tak, zmień** Persate prosi o potwierdzenie tożsamości, a następnie otwiera konfigurację nowej aplikacji. **Anuluj** pozostawia dotychczasową.
-
-Konto bez aplikacji uwierzytelniającej pokazuje przycisk **Skonfiguruj**, który rozpoczyna konfigurację.
 
 ## Aktywne sesje
 
@@ -37,11 +37,9 @@ Zarządzanie zaufanymi urządzeniami może wymagać bieżącego kodu: komunikat 
 
 Każda z tych czynności wymaga potwierdzenia. Cofnięcie zaufania działa natychmiast, a sesje nawiązane dzięki temu zaufaniu również zostają zakończone.
 
-## Połączone aplikacje AI
+## MCP i aplikacje AI
 
-Sekcja **Połączone aplikacje AI** zawiera aplikacje AI, którym pozwolono korzystać z Persate w imieniu użytkownika przez połączenie zewnętrzne, np. ChatGPT lub Claude. Każdy wpis pokazuje datę połączenia, ostatniego użycia i wygaśnięcia połączenia; aplikacje zarejestrowane samodzielnie mają oznaczenie **Niezweryfikowane**.
-
-Należy wybrać **Odłącz** przy aplikacji albo — gdy połączonych jest kilka — **Odłącz wszystkie**, a następnie potwierdzić. Aplikacja od razu traci dostęp do Persate; aby znów z niej korzystać, trzeba połączyć ją ponownie z poziomu aplikacji. Komunikat **Brak połączonych aplikacji AI.** oznacza, że nie ma żadnych połączeń. Sposób łączenia opisuje strona **[Aplikacje AI (MCP)](/pl/mcp)**.
+Wiersz **MCP i aplikacje AI** dotyczy aplikacji AI, np. ChatGPT lub Claude, którym pozwolono korzystać z Persate w imieniu użytkownika przez połączenie zewnętrzne. Odnośnik **Zarządzaj połączeniami AI** otwiera **Ustawienia → MCP i aplikacje AI**, gdzie znajduje się lista połączonych aplikacji i można je odłączyć. Zob. **[MCP i aplikacje AI](/pl/account-and-settings/mcp)**.
 
 ## Historia logowania
 
@@ -69,4 +67,4 @@ Eksport nie obejmuje treści plików — pobiera się je z Repozytorium. W spraw
 
 * Odrzucony kod uwierzytelniający — należy użyć bieżącego kodu sześciocyfrowego i sprawdzić, czy zegar urządzenia jest ustawiony poprawnie.
 * Sekcja **Zaufane urządzenia** ponownie prosi o kod — zarządzanie zaufanymi urządzeniami wymaga świeżego kodu uwierzytelniającego; zapamiętana przeglądarka nie wystarcza.
-* Nieznana sesja, logowanie lub połączona aplikacja — należy ją wylogować lub odłączyć, zmienić hasło, jeśli konto je ma, i zgłosić zdarzenie.
+* Nieznana sesja, logowanie lub połączona aplikacja AI — należy wylogować sesję lub odłączyć aplikację w **MCP i aplikacje AI**, zmienić hasło, jeśli konto je ma, i zgłosić zdarzenie.

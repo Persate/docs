@@ -40,7 +40,7 @@ Diagram pokazuje, jak dane przepływają między użytkownikami, platformą Pers
 
 ### Uwierzytelnianie i sesje
 
-* Logowanie odbywa się hasłem lub przez pojedyncze logowanie (SSO), a przed otwarciem obszarów chronionych wymagane jest uwierzytelnianie dwuskładnikowe (TOTP).
+* Logowanie odbywa się hasłem lub przez pojedyncze logowanie (SSO). Na zwykłych kontach można odłożyć początkową konfigurację uwierzytelniania dwuskładnikowego (TOTP); informacje o plikach firmowych i przesyłanie plików wymagają 2FA. Konta ze skonfigurowanym 2FA nadal weryfikują logowanie, z obsługą zaufanych przeglądarek. Wrażliwe operacje wymagają świeżej weryfikacji, a administratorzy systemowi muszą skonfigurować 2FA przed wejściem na platformę.
 * Sesje są przenoszone w ciasteczkach Secure, SameSite ograniczonych do domeny aplikacji i weryfikowane po stronie serwera przy każdym chronionym żądaniu.
 * Role i przynależność do organizacji są ustalane na podstawie sesji po stronie serwera. Obszar administracji wymaga roli administratora.
 * Gdy usługa uwierzytelniania jest niedostępna, dostęp jest odmawiany (fail closed), a nie przyznawany.
