@@ -1,53 +1,64 @@
 ---
 title: Przegląd i wersje
-description: Uruchamianie pełnego przeglądu w Editorze i bezpieczna obsługa wyników.
+description: Sprawdzanie faktów i języka poleceniem Sprawdź dokument, rozstrzyganie punktów przeglądu oraz praca z historią dokumentu i zapisanymi przeglądami.
 ---
 
-## Uruchomienie pełnego przeglądu
+Polecenie **Sprawdź dokument** przegląda artykuł fragment po fragmencie i oznacza ustalenia bezpośrednio w tekście. Przed każdym sprawdzeniem Redaktor zapisuje wersję artykułu, którą widok **Historia** przechowuje jako zapisany przegląd.
 
-Należy otworzyć **Przegląd**, wybrać co najmniej jeden moduł i uruchomić pełny przegląd:
+## Uruchomienie sprawdzania
 
-* **Fakty i źródła** — sprawdza twierdzenia faktyczne i w miarę dostępności przedstawia dowody wspierające lub przeczące.
-* **Język i przejrzystość** — proponuje poprawki redakcyjne zwiększające jasność i jakość stylu.
+1. Na pasku narzędzi otworzyć **Więcej opcji formatowania** (**…**) → **Opcje przeglądu** i wybrać moduły:
+   * **Fakty i źródła** — sprawdza twierdzenia faktyczne i podaje odnośniki do znalezionych dowodów;
+   * **Język i przejrzystość** — proponuje poprawki gramatyki i literówek, jasności, precyzji oraz stylu.
+2. Wybrać **Sprawdź dokument**.
 
-Przegląd obsługuje artykuły do 60 000 znaków. W trakcie działania dokument jest tylko do odczytu. Postęp obejmuje etapy kontekstu, twierdzeń, narzędzi i języka zależnie od wybranych modułów.
+Domyślnie zaznaczone są oba moduły, a wybór jest zapamiętywany na potrzeby kolejnych sprawdzeń. Polecenie **Sprawdź dokument** jest niedostępne, gdy nie wybrano żadnego modułu, oraz dla dokumentów dłuższych niż 60 000 znaków (**Do 60 000 znaków w jednym sprawdzeniu.**). Przed rozpoczęciem sprawdzania artykuł jest zapisywany.
+
+W trakcie sprawdzania dokument jest tylko do odczytu, a wiersz stanu nad tekstem pokazuje etap — na przykład **Przygotowywanie kontekstu**, **Wyodrębnianie stwierdzeń**, **Sprawdzanie faktów · 3/12** lub **Sprawdzanie języka**. Punkty pojawiają się w tekście w miarę ich powstawania. **Zatrzymaj sprawdzanie** kończy proces; punkty już zwrócone pozostają widoczne. Po ponownym wczytaniu strony lub zerwaniu połączenia Redaktor ponownie łączy się z trwającym sprawdzaniem.
+
+Jeżeli sprawdzanie nie zostanie ukończone, wiersz stanu informuje o tym, na przykład komunikatem **Sprawdzanie nie zostało ukończone. Ponów je z menu paska narzędzi.** Należy wtedy ponownie wybrać **Sprawdź dokument**.
 
 ## Odczytywanie punktów przeglądu
 
-Punkty są powiązane z wyróżnionymi fragmentami artykułu. Punkt może otrzymać etykietę:
+Każdy punkt oznacza fragment kolorowym podkreśleniem i numerem na prawym marginesie; numery są ukryte, gdy obszar dokumentu jest wąski. Numeracja odpowiada kolejności w tekście.
 
-* **Potwierdzone**;
-* **Sprzeczne ze źródłami**;
-* **Potencjalnie mylące**;
-* **Niezweryfikowane**;
-* **Proponowana poprawka**.
+| Wynik | Kolor |
+| :--- | :--- |
+| **Potwierdzone** | niebieski |
+| **Sprzeczne ze źródłami**, **Potencjalnie mylące** | czerwony |
+| **Niezweryfikowane** | szary |
+| Sugestia językowa (gramatyka lub literówka, jasność, precyzja, styl) | czerwony |
+| Zastosowana zmiana | zielony |
 
-Etykiety opisują wynik przeglądu danego fragmentu i nie zastępują decyzji redakcyjnej. Przed publikacją należy otworzyć wskazane źródła i porównać je z dokładnym brzmieniem twierdzenia.
+Po najechaniu kursorem na fragment wyświetla się podsumowanie punktu, a delikatne linie łączą go z powiązanymi punktami — leżącymi w pobliżu lub dotyczącymi tego samego tematu. Wybranie fragmentu lub jego numeru otwiera szybkie działania: proponowaną zmianę (**Przed** i **Po**), **Zastosuj sugestię**, **Cofnij zmianę** dla zastosowanego punktu oraz **Wyjaśnienie**.
 
-## Obsługa punktu
+**Wyjaśnienie** otwiera ustalenie w panelu bocznym: etykietę, podsumowanie, cytowany fragment, uzasadnienie, proponowaną zmianę oraz — dla modułu **Fakty i źródła** — odnośniki do wykorzystanych źródeł. Etykieta podaje wynik (**Potwierdzone**, **Sprzeczne ze źródłami**, **Potencjalnie mylące**, **Niezweryfikowane** lub **Proponowana poprawka**) albo stan punktu (**Zastosowane**, **Oddalone** lub **Zmienione ręcznie**). **Nie udało się przejrzeć** oznacza fragment, którego sprawdzanie nie zdołało ocenić.
 
-* **Zastosuj** zastępuje powiązany fragment proponowanym tekstem.
-* **Odrzuć** zapisuje decyzję o odrzuceniu sugestii.
-* **Przywróć** cofa zastosowaną zamianę i przywraca wcześniejszy fragment.
-* **Explain** otwiera kontekst Advisora dla wybranego punktu, jeżeli kontrolka jest dostępna.
+Etykiety wspierają decyzję redakcyjną, ale jej nie zastępują. Przed publikacją należy otworzyć źródła i porównać je z dokładnym brzmieniem twierdzenia.
 
-Działania są zapisywane natychmiast. Ręczna edycja powiązanego fragmentu może oznaczyć punkt jako nieaktualny, ponieważ pierwotny zakres tekstu przestał istnieć.
+## Rozstrzyganie punktu
 
-## Zatrzymanie lub wznowienie przeglądu
+Punkty można rozstrzygać po zakończeniu sprawdzania. W panelu bocznym:
 
-Polecenie **Zatrzymaj pełny przegląd** anuluje uruchomiony proces. Ukończone punkty pozostają widoczne. Po przerwaniu połączenia Editor sprawdza zapisany przebieg i może wznowić odbieranie dostępnych wyników.
+* **Zastosuj** zastępuje fragment proponowanym tekstem; przycisk jest dostępny tylko wtedy, gdy punkt zawiera propozycję.
+* **Odrzuć** pozostawia fragment bez zmian i oznacza punkt jako **Oddalone**.
+* **Przywróć** ponownie otwiera zastosowany lub oddalony punkt; w przypadku zastosowanego punktu przywraca pierwotne brzmienie.
 
-Próba uruchomienia kolejnego przeglądu przy aktywnym procesie jest odrzucana. Należy poczekać na zakończenie, zatrzymać bieżący przegląd albo ponownie otworzyć zapisany stan artykułu.
+Decyzje są zapisywane natychmiast. Ręczna edycja fragmentu z otwartym punktem oznacza ten punkt jako **Zmienione ręcznie**. Punkty oddalone i zmienione ręcznie przestają oznaczać tekst, a pozostałe punkty otrzymują nową numerację.
 
-## Versions
+## Historia dokumentu
 
-Każdy ukończony przegląd tworzy wpis wersji. Po wybraniu wersji można sprawdzić tylko do odczytu migawkę artykułu i jej wyniki. **Przywróć tę wersję** zastępuje bieżący draft wskazaną migawką i zapisanymi punktami po potwierdzeniu.
+Pozycja **Historia** na pasku widoków otwiera stronę **Historia dokumentu**:
 
-Przywrócenie tworzy nową bieżącą rewizję i nie zmienia wpisu historycznego. Jeżeli bieżący tekst ma zostać zachowany osobno, należy go wcześniej skopiować.
+* **Bieżący szkic** — **Pisz dalej →** przenosi z powrotem do tekstu.
+* **Zmiany od ostatniego przeglądu** — co zmieniło się w tekście od ostatniego zapisanego przeglądu, w postaci przed i po.
+* **Ostatnie zmiany** — 50 najnowszych zmian: pisanie, formatowanie, zmiany tytułu, zastosowane punkty przeglądu i zastosowane zmiany Advisora. Każdy wpis pokazuje autora (**Ty** lub **Advisor · Zastosowane przez Ciebie**), czas oraz tekst przed zmianą i po niej; zmiany wpisywane jedna po drugiej są łączone w jeden wpis. Zmiany wprowadzone przed udostępnieniem tej listy nie były rejestrowane.
+* **Pochodzenie dokumentu** — sposób powstania artykułu (**Oryginalny dokument**, **Dokument zaimportowany przez Ciebie** z nazwą pliku albo **Szkic utworzony przez Advisora**), data utworzenia i początek pierwotnego tekstu.
+* **Zapisane przeglądy** — wersje zapisane przed każdym sprawdzeniem, od najnowszej. Wersje są numerowane w kolejności powstania (**Przegląd 1** to najstarsza) i pokazują moduły, czas, stan sprawdzania (na przykład **Ukończono**, **Częściowo ukończone**, **Zatrzymane**, **Niepowodzenie** lub **Przerwane**) oraz różnicę względem poprzedniej zapisanej wersji. Przed pierwszym sprawdzeniem lista wyświetla komunikat **Brak wcześniejszych przeglądów**.
 
-## Stany błędu
+## Otwieranie i przywracanie zapisanego przeglądu
 
-* **Review supports documents up to 60,000 characters** — należy skrócić artykuł albo przeglądać sekcje oddzielnie.
-* Wyczerpany limit — należy poczekać na odnowienie limitu obszaru roboczego lub skontaktować się z administratorem.
-* **Przegląd nie powiódł się** — żądanie nie zostało ukończone. Artykuł pozostaje zapisany; można ponowić działanie z panelu przeglądu.
-* Konflikt rewizji — przed zastosowaniem lub przywróceniem kolejnej zmiany należy przeładować bieżący artykuł.
+Wybranie zapisanego przeglądu otwiera jego wersję tylko do odczytu, z komunikatem **Podgląd zapisanego przeglądu** nad tekstem. Niezapisane zmiany w bieżącym szkicu są najpierw zapisywane. Punkty przeglądu nie są wyświetlane na zapisanej wersji, a Advisor jest w tym czasie niedostępny.
+
+* **Wróć do bieżącego szkicu** przywraca widok bieżącego tekstu.
+* **Przywróć tę wersję** od razu, bez dodatkowego potwierdzenia, zastępuje bieżący szkic zapisaną wersją i usuwa punkty przeglądu bieżącego szkicu. Aby zachować bieżące brzmienie, należy skopiować je poleceniem **Kopiuj tekst** przed otwarciem zapisanej wersji.

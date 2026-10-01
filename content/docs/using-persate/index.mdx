@@ -1,43 +1,80 @@
 ---
 title: Using Persate
-description: Navigation, tenant-specific access, mobile controls, and platform-wide actions.
+description: The sidebar, the header, settings, phone controls and access messages that apply across the platform.
 ---
 
-Persate organizes work into a persistent navigation shell. The entries shown to a user depend on the features enabled for the organization, the user's role, and group assignments.
+Every Persate module sits in the same frame: the sidebar on the left, the header with help and account controls at the top, and the module in the main area. On a phone, a dock at the bottom of the screen replaces both. The entries shown depend on the features enabled for the organization, the user's role and the Labs assigned to the user.
 
-## Navigation areas
+## Sidebar
 
-The desktop sidebar uses these sections:
+Two actions sit at the top of the sidebar:
 
-* **Cockpit** — the starting dashboard.
-* **CORE** — **Advisor** and **Tracker**.
-* **WORKSPACE** — **Repository**, **Smart Folders**, **Reports**, and the beta **Editor**.
-* **LABS** — tools assigned to the user's groups. The section is absent when no compatible lab is assigned.
-* **PUBLIC** — **Legislation**, **Recordings**, **Votes**, **Stakeholders**, **Media**, and **Sources**.
-* **OPERATIONS** — administrator pages. This section is visible only to workspace administrators when the operations panel is enabled.
+* **Upload** — opens the upload panel for Repository files. It is shown when the Repository is enabled for the organization.
+* **Search** — opens global search. See [Search and notifications](/using-persate/search-and-notifications).
 
-An entry may be absent or may show a feature-locked screen when the organization does not have access. A visible entry is not a substitute for the server-side permission check performed when the page loads.
+The navigation below them is grouped as follows:
 
-## Desktop header
+| Group | Entries |
+|---|---|
+| — | **[Cockpit](/cockpit)** — the start screen |
+| **CORE** | **[Advisor](/advisor)**, **[Tracker](/alerts)** |
+| **WORKSPACE** | **[Repository](/repository)**, **[Smart Folders](/repository/smart-folders)**, **[Editor](/editor)** |
+| **PUBLIC** | **[Legislation](/legislation-tracker)**, **[Recordings](/live-proceedings)**, **[Votes](/voting-ledger)**, **[Stakeholders](/stakeholders)**, **[Media](/public-pulse)** |
+| **Labs** | the [Labs](/labs) assigned to the user |
 
-The desktop header provides:
+An entry appears only when its feature is enabled for the organization, and a group without entries is hidden. **Labs** is a collapsible section at the bottom of the sidebar; it appears only when at least one Lab is assigned and remembers whether it was left expanded. A page opened directly when the organization's plan does not include it shows **This feature is not included in your plan**. Hidden entries are a convenience only: access is checked again whenever data loads.
 
-* the light/dark theme switch;
+The button at the left end of the header collapses the sidebar to a rail of icons and expands it again; Ctrl+B (⌘B on a Mac) does the same. Inside a module, a bar above the page shows the group and the module and, on a detail page, the path to the open record; the module name then links back to the module's main page.
+
+In a browser on Windows or macOS, **Download** at the bottom of the sidebar downloads the Persate desktop app. In the desktop app for Windows, **Update ready** appears there when a new version is ready; selecting it restarts Persate to install the update.
+
+## Header
+
+The left side of the header holds the sidebar button, **Open documentation**, which opens this documentation in a new tab in the interface language, the **Go back** and **Go forward** arrows and the Persate wordmark.
+
+The right side holds:
+
+* the theme switch, which toggles between light and dark and saves the choice to the account; **Settings → Preferences → Appearance** also offers following the system setting;
 * **Feedback**;
-* a link to this documentation;
-* separate **Announcements** and **Messages** feeds;
-* the profile menu, with **Profile**, **Preferences**, **Settings**, and **Log out**.
+* **Announcements** and **Messages** — two feeds with unread counters, described in [Search and notifications](/using-persate/search-and-notifications);
+* the account menu (the avatar), which shows the display name and email address and offers **Account settings**, **Preferences** and **Log out**.
 
-## Mobile navigation
+Notices from the Persate team can appear as bars above the header, and a bar also appears when the connection is lost or data loads unusually slowly. See [Search and notifications](/using-persate/search-and-notifications).
 
-On narrow screens, the bottom dock provides the primary navigation plus **Search**, **Upload**, and **Profile**. Filters that normally occupy a page sidebar open as an overlay or sheet. Detail pages may move their metadata rail into a drawer.
+## Sending feedback
 
-## Feature and access messages
+**Feedback** sends a rating, comments and screenshots to the Persate team.
 
-* **Feature locked** — the feature is not enabled for the current organization or account. Contact a workspace administrator.
-* **Access denied** — the signed-in account does not belong to an organization that can open the platform, or the current role cannot perform the action.
-* **Sign-in check unavailable** — Persate could not verify the current organization access. Select **Retry** before starting a state-changing operation.
+1. Select **Feedback** in the header.
+2. Optionally add screenshots under **Upload visuals**: drag them in, pick files or paste them with Ctrl+V. PNG and JPG images are accepted, up to ten.
+3. Choose a rating from 0 to 5 under **How was your experience?** A rating is required.
+4. Describe the experience under **Your feedback** and select **Submit feedback**.
+
+## Settings
+
+The account menu opens **Account settings** or **Preferences** directly. While settings are open, the sidebar lists the settings pages instead of the modules:
+
+* **PERSONAL** — **Account**, **Security & Privacy**, **Notifications**, **Preferences**;
+* **PLATFORM** — **Sources**;
+* **ORGANIZATION** — **General**, **Members**, **Groups & permissions**, **Usage & plan**, **External providers**, **Experimental features**. **Members**, **Groups & permissions** and **Usage & plan** are listed only for organization administrators.
+
+**Back to app** at the top of the settings sidebar returns to the last page visited, or to the Cockpit. See [Account and settings](/account-and-settings), [Sources](/sources) and [Administration](/administration).
+
+## On a phone
+
+On a phone, the sidebar and the header are replaced by a dock at the bottom of the screen. It holds buttons for the Cockpit, search, upload (when the Repository is enabled) and the profile, which opens Settings, plus a menu button that lists every available module. On conversation screens such as Advisor, the dock shrinks to a single menu button so that it does not cover the message field.
+
+* Page filters open from a filter button as a panel over the page.
+* In Settings, the top bar shows **Back to app**, the page name and **Sections**, which opens the list of settings pages.
+* Announcements, Messages and Feedback are in the header, which is shown on larger screens.
+* Persate on a phone works in portrait orientation. In landscape it shows **Portrait mode only** until the phone is turned upright.
+
+## Access messages
+
+* **This feature is not included in your plan** — the organization's plan does not include the module. Contact an organization administrator to extend the plan.
+* **Access Denied** — the account is not assigned to a Persate organization, or an account without the administrator role opened organization management pages. An invited user should open the invitation link from the email; otherwise ask an organization administrator for an invitation or a role change.
+* **Sign-in check unavailable** — Persate could not confirm the session and loaded no data. Select **Try again** after a moment.
 
 ## Pages in this section
 
-* **[Search and notifications](/using-persate/search-and-notifications)** — global search, announcements, messages, and notification preferences.
+* **[Search and notifications](/using-persate/search-and-notifications)** — global search with source previews, announcements, messages, notices and notification settings.

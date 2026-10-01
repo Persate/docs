@@ -1,63 +1,87 @@
 ---
-title: Asystent AI
-description: Wyspecjalizowany asystent analityczny Persate do pracy z korpusem legislacyjnym i dokumentami własnymi.
+title: Advisor
+description: Narzędzie analityczne Persate do pracy z legislacją, głosowaniami, nagraniami, Mediami, interesariuszami i dokumentami organizacji, z odpowiedziami powiązanymi ze źródłami.
 ---
 
-**Asystent AI** to wyspecjalizowane narzędzie analityczne przeznaczone do pracy eksploracyjnej w obrębie korpusu legislacyjnego oraz dokumentów własnych. Nie jest to swobodny chatbot — każda odpowiedź zakotwiczona jest w rzeczywistym wyszukiwaniu, a każde odniesienie stanowi cytowanie z odnośnikiem do źródła.
+**Advisor** to narzędzie analityczne Persate do pracy badawczej na danych publicznych platformy oraz na dokumentach organizacji. Nie jest to swobodny chatbot: odpowiada na podstawie wyszukiwań wykonywanych przez warstwę MCP platformy, a każde odniesienie w odpowiedzi jest cytowaniem otwierającym źródło.
 
-Otwórz Advisora przez **GŁÓWNE → Advisor** w panelu bocznym.
+Advisora otwiera się przez **GŁÓWNE → Advisor** w panelu bocznym. Pozycja jest widoczna, gdy funkcja jest włączona dla organizacji.
 
 ## Zakres zastosowań
 
-Asystent automatyzuje procesy badawcze wymagające ręcznego przeszukiwania wielu źródeł, m.in.:
+Advisor automatyzuje prace badawcze, które w innym wypadku wymagałyby ręcznego przeszukiwania kilku modułów:
 
-* **Złożone wyszukiwanie korelacyjne** — łączenie danych z różnych źródeł. Przykład: *„Która komisja rozpatrywała ostatnią ustawę o cenach energii i kto głosował przeciw?”*
-* **Wieloźródłowa synteza danych** — zestawianie deklaracji z faktami. Przykład: *„Zestaw publiczne wypowiedzi klubu na temat odejścia od węgla z ich głosowaniami z ostatniego półrocza.”*
+* **Wyszukiwanie korelacyjne** — łączenie rekordów z różnych modułów. Przykład: *„Która komisja zajmowała się ostatnim projektem ustawy o cenach energii i jak głosowały nad nim poszczególne kluby?”*
+* **Synteza wieloźródłowa** — zestawianie deklaracji z faktami. Przykład: *„Porównaj publiczne wypowiedzi klubu na temat odejścia od węgla z jego głosowaniami z ostatniego półrocza.”*
+* **Praca z plikami organizacji** — odczyt, streszczanie i porównywanie dokumentów z Repozytorium oraz konfrontowanie ich z rekordami publicznymi.
+* **Przygotowanie pracy w innych modułach** — na prośbę: szkic alertu w Monitorowaniu, inteligentny folder albo szkic artykułu w Redaktorze. Advisor niczego nie aktywuje ani nie publikuje; szkice przegląda się i kończy w module docelowym.
 
-**Uwaga:** Asystent nie jest przeznaczony do generowania treści kreatywnych, pisania kodu ani prowadzenia rozmów niezwiązanych z korpusem legislacyjnym.
+**Uwaga:** Advisor nie jest przeznaczony do swobodnej rozmowy, twórczego pisania, pisania kodu ani prognoz niezwiązanych z danymi platformy.
 
 ## Kluczowe cechy systemu
 
-* **Ugruntowane odpowiedzi** — każda informacja poprzedzona jest analizą danych platformy: rekordów głosowań, profili posłów, stenogramów oraz wgranych dokumentów.
-* **Interaktywne cytowania** — każde twierdzenie posiada przypis w formie klikalnej plakietki otwierającej źródłowy rekord bezpośrednio w interfejsie platformy.
-* **Struktura turowa** — komunikacja odbywa się w ramach zamkniętych tur roboczych, co gwarantuje precyzję odpowiedzi.
+* **Ugruntowane odpowiedzi** — każda odpowiedź opiera się na wyszukiwaniach wykonanych w danej turze; przebieg pracy jest widoczny nad odpowiedzią.
+* **Interaktywne cytowania** — twierdzenia mają znaczniki źródeł otwierające głosowanie, profil, fragment dokumentu, moment nagrania lub wpis.
+* **Widoczny przebieg pracy** — rozumowanie, wywołania narzędzi, plan i agenci badawczy są widoczni podczas pracy, a po jej zakończeniu zwijają się do jednego wiersza.
+* **Weryfikacja źródeł** — wiele odpowiedzi ma ikonę tarczy, która podsumowuje, czy kluczowe informacje znajdują potwierdzenie w źródłach.
+* **Współpraca w trakcie pracy** — do trwającego zadania można dodać uwagę, a samo zadanie można w każdej chwili zatrzymać.
 
 ## Obszary kompetencji
 
-Asystent operuje w ramach sześciu wyspecjalizowanych modułów danych:
+Narzędzia Advisora są pogrupowane w **rodziny umiejętności**; każda z nich to przestrzeń nazw w warstwie MCP (np. `legislation`, `civic`, `stakeholders`, `public_pulse`, `recordings`, `documents`, `alerts`, `chat_context`). Dostępne narzędzia zależą od modułów włączonych dla organizacji.
 
-| Moduł | Zakres analizy |
+| Obszar | Zakres analizy |
 | :--- | :--- |
-| **Legislacja** | Wyniki głosowań, metadane wniosków, historia aktywności legislacyjnej posłów. |
-| **Interesariusze** | Baza danych o parlamentarzystach: biografie, przynależność klubowa, frekwencja. |
-| **Public Pulse** | Monitoring aktywności monitorowanych podmiotów w mediach społecznościowych. |
-| **Alerty** | Zarządzanie istniejącymi alertami oraz tworzenie nowych reguł. |
-| **Dokumenty** | Przeszukiwanie wgranych plików oraz publicznego korpusu Persate. |
-| **Kontekst** | Wykorzystanie historii bieżącej rozmowy do doprecyzowania analizy. |
+| **Legislacja i głosowania** | Głosowania Sejmu i Senatu, procesy legislacyjne i projekty RCL, druki sejmowe, opublikowane akty prawne, interpelacje i zapytania poselskie, komisje, decyzje Prezydenta oraz sprawy przed Trybunałem Konstytucyjnym. |
+| **Interesariusze** | Profile polityków i organizacji, przynależność klubowa, okręg, frekwencja w głosowaniach i aktywność. |
+| **Nagrania** | Przeanalizowane nagrania posiedzeń i komisji: podsumowania, transkrypcje i wystąpienia. |
+| **Media** | Archiwum wpisów obserwowanych kont w serwisie X oraz wydarzenia, wątki i tematy z modułu Media. |
+| **Dokumenty** | Pliki z Repozytorium oraz publiczny korpus Persate. |
+| **Monitorowanie** | Alerty użytkownika i ich dopasowania; szkice alertów na prośbę. |
+| **Internet** | Publiczne strony internetowe, gdy wymaga tego pytanie. |
+| **Rozmowy** | Wcześniejsze rozmowy użytkownika z Advisorem. |
 
-Kompetencje te opisuje szczegółowo sekcja [Umiejętności asystenta](/pl/advisor/skills).
+Rodziny, typowe pytania i rodzaje cytowań opisuje sekcja [Umiejętności Advisora](/pl/advisor/skills).
 
-## Zakres analizy
+## Głębokość analizy
 
-Asystent samodzielnie dobiera zakres analizy do treści pytania — krótkie wyszukiwania faktów rozstrzyga szybko, a pytania wieloźródłowe (porównania, briefingi, wskazywanie rozbieżności) przeszukuje szerzej. Dobór ten odbywa się automatycznie i nie wymaga żadnego ustawienia po stronie użytkownika; jedynym wkładem jest precyzyjnie sformułowane pytanie. Wskazówki, jak formułować pytania, opisuje sekcja [Dobre praktyki](/pl/advisor/best-practices).
+Przełącznik głębokości w polu wiadomości określa, jak dokładnie Advisor opracowuje daną wiadomość:
+
+* **Podstawowo** — szybko, tylko bezpośrednie odniesienia; sprawdza się przy wyszukiwaniu faktów i krótkich pytaniach uzupełniających.
+* **Zrównoważony** — ustawienie standardowe, zalecane dla większości pytań.
+* **Dogłębnie** — najdokładniejsza opcja, do wieloźródłowych briefingów i porównań.
+
+Wybór dotyczy jednej wiadomości. Po jej wysłaniu przełącznik wraca do ustawienia domyślnego. Wskazówki dotyczące doboru głębokości zawiera sekcja [Dobre praktyki](/pl/advisor/best-practices).
 
 ## Historia konwersacji
 
-Prawy panel interfejsu zawiera listę sesji przypisanych do konta, uporządkowanych chronologicznie. Każda konwersacja otrzymuje automatycznie tytuł na podstawie tematu pierwszej wiadomości.
+Lista rozmów znajduje się po prawej stronie; kontrolka **Rozmowy** przy prawej krawędzi ekranu pokazuje ją lub ukrywa. Każda rozmowa ma tytuł wyprowadzony z pierwszego pytania.
 
-* **Nowa konwersacja** — przycisk **Nowa rozmowa** resetuje przestrzeń roboczą.
-* **Wznawianie sesji** — wybranie dowolnej pozycji z listy historii konwersacji przywraca pełny zapis rozmowy.
-* **Usuwanie danych** — ikona kosza przy tytule sesji trwale usuwa konwersację.
+* **Nowa rozmowa** — czyści przestrzeń roboczą.
+* **Szukaj w rozmowach** — filtruje listę.
+* **Wznawianie** — wybranie pozycji przywraca pełny zapis, łącznie z przebiegiem pracy i cytowaniami.
+* **Usuwanie** — ikona kosza trwale usuwa rozmowę, bez dodatkowego potwierdzenia.
 
 Historia konwersacji jest przypisana do indywidualnego konta i nie jest współdzielona wewnątrz organizacji.
 
 ## Ciągłość pracy
 
-Aktywna analiza nie zostaje przerwana po opuszczeniu widoku lub odświeżeniu przeglądarki — asystent kontynuuje pracę w tle. Po ponownym otwarciu konwersacji system automatycznie przywraca postęp. Tę samą konwersację można otworzyć w kilku kartach przeglądarki — wszystkie wyświetlają ten sam postęp w czasie rzeczywistym.
+Trwające zadanie nie zostaje przerwane po opuszczeniu widoku ani po odświeżeniu przeglądarki — Advisor kontynuuje pracę w tle. Ponowne otwarcie rozmowy w tej samej przeglądarce przywraca połączenie i dotychczasowy postęp. Gdy w [Ustawienia → Powiadomienia](/pl/account-and-settings/preferences) włączone są **Powiadomienia Advisora**, po zakończeniu zadania pozostawionego w tle pojawia się powiadomienie.
+
+## Inne punkty wejścia
+
+* **Wyszukiwanie globalne** — zapytanie sformułowane jak pytanie udostępnia polecenie **Zapytaj Advisora**, które rozpoczyna nową rozmowę z tym pytaniem. Zob. [Wyszukiwanie i powiadomienia](/pl/using-persate/search-and-notifications).
+* **Redaktor** — Redaktor ma własny panel Advisora dla przygotowywanego artykułu; te sesje nie trafiają do historii Advisora. Zob. [Redaktor](/pl/editor).
+* **Laboratoria** — niektóre laboratoria zawierają oddzielny **Lab Advisor**. Zob. [Laboratoria](/pl/labs).
+
+## Dostępność i ustawienia organizacji
+
+* Administratorzy zezwalają na zewnętrzne przetwarzanie, z którego korzysta Advisor, albo je blokują w sekcji **Ustawienia → Organizacja → Dostawcy zewnętrzni**. Gdy przetwarzanie jest zablokowane, Advisor nie rozpoczyna nowych zadań; istniejące rozmowy pozostają zachowane. Zob. [Administracja](/pl/administration).
 
 ## Strony w tej sekcji
 
-* **[Interfejs i praca z asystentem](/pl/advisor/conversations)** — kompozycja wiadomości, oznaczanie plików, oś czasu wiadomości, cytowania, kopiowanie oraz historia.
-* **[Umiejętności asystenta](/pl/advisor/skills)** — opis kompetencji i przykładowe zapytania.
-* **[Przykłady robocze](/pl/advisor/examples)** — gotowe zapytania z opisem oczekiwanego zachowania asystenta.
-* **[Dobre praktyki](/pl/advisor/best-practices)** — formułowanie pytań, załączanie plików, obsługa cytowań oraz pułapki ogólnikowych pytań.
+* **[Interfejs i praca z Advisorem](/pl/advisor/conversations)** — rozpoczynanie rozmowy, pole wiadomości, odpowiedzi i cytowania, szkice w innych modułach oraz historia.
+* **[Śledzenie pracy Advisora](/pl/advisor/activity)** — zapis przebiegu pracy, plan, agenci badawczy, uwagi dodawane w trakcie pracy, pytania uściślające i zatrzymywanie.
+* **[Umiejętności Advisora](/pl/advisor/skills)** — rodziny umiejętności, typowe pytania i identyfikatory URI cytowań.
+* **[Przykłady robocze](/pl/advisor/examples)** — gotowe zapytania z opisem oczekiwanego zachowania.
+* **[Dobre praktyki](/pl/advisor/best-practices)** — formułowanie pytań, dobór głębokości, załączanie kontekstu, czytanie cytowań i obsługa odpowiedzi częściowych.

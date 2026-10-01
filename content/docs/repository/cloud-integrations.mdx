@@ -1,39 +1,49 @@
 ---
 title: Cloud integrations
-description: Connect Google Drive or Microsoft OneDrive and import provider files for Persate processing.
+description: Connecting a Google Drive or Microsoft OneDrive account, browsing its folders and importing selected files into Persate for analysis.
 ---
 
-Repository can connect to **Google Drive** and **Microsoft OneDrive** when the integration is enabled for your organization.
+Persate can connect to a **Google Drive** or **Microsoft OneDrive** account, list its folders and files, and import selected files. Imported files go through the same analysis as uploaded files and then appear in Repository.
 
-## Connect a provider
+## Open the provider page
 
-1. Open **WORKSPACE → Repository** and choose the relevant cloud provider.
-2. Select the connection action.
-3. Review the provider's authorization screen and approve only the access required for your work.
-4. Return to Persate after the provider redirects you back.
+The provider pages have no entry in the sidebar. While signed in, open them by address:
 
-Persate validates the authorization callback before opening the provider browser. If validation fails, return to Repository and start the connection again. Do not share callback URLs or authorization codes.
+* Google Drive — `persate.com/integration/google-drive`
+* Microsoft OneDrive — `persate.com/integration/microsoft-onedrive`
 
-## Browse provider files
+If no account is connected yet, the page shows **Connect to Google Drive** or **Connect to OneDrive** with the **Connect Now** button.
 
-The provider view lists **Name**, **Date modified**, and **File size**. Select a folder name to open it. Use the breadcrumb to return to a parent folder.
+## Connect an account
 
-Folder visibility and file availability follow the connected provider account. A file that is not shared with that account cannot be imported through Persate.
+1. Select **Connect Now**. The button changes to **Redirecting...** and the provider's sign-in and consent screen opens.
+2. Sign in to the provider account whose files should be available, review the requested access and approve it.
+3. The provider sends the browser back to Persate, which shows **Finalizing Connection**. When the connection succeeds, a notification confirms it (**Google Drive connected.** or **OneDrive connected.**) and the provider page lists the account's files.
 
-## Import for analysis
+Persate checks that the provider's response matches the connection request started from Persate. If the check fails, **Connection failed** states that the callback could not be verified, and the connection is not completed. Do not reuse or share the address the provider returned to; start again with **Connect Now** instead.
 
-Select the Persate action in a file row to import that file and start Persate processing. The action is disabled after the provider item is already linked to a Persate file.
+## Browse files
 
-Importing creates a Persate-side file record and downloads the provider file for processing. It does not change or delete the original in Google Drive or OneDrive. Processing-dependent features become available after extraction and indexing finish.
+The page header shows the current path, starting with **Google Drive** or **Microsoft Onedrive**; selecting an earlier part of the path returns to that folder. The list shows **Name**, **Date modified** and **File size**, and selecting a folder opens it. **List view** and **Tile view** switch above the list, as in Repository.
+
+The list contains what the connected provider account can access. A file that is not available to that account cannot be imported.
+
+## Import a file for analysis
+
+In list view, each file row ends with a button showing the Persate logo; screen readers announce it as **Analyze** followed by the file name. Selecting it imports the file into Persate and starts analysis, and the list refreshes. The button is dimmed and unavailable for folders, for files that have already been imported, and while that file's import is in progress. In tile view, the same logo appears as a badge on each tile and turns gray once the file has been analyzed.
+
+Importing copies the file into Persate; the original stays unchanged in Google Drive or OneDrive. Content search, summaries and Advisor answers based on the file become available once analysis has finished.
 
 ## Current limitations
 
-The current provider pages support connection, folder browsing, and explicit per-file import. Reconnect the provider if its authorization expires or is revoked on the provider side.
+* Files are imported one at a time; a folder cannot be imported as a whole.
+* The provider pages have no disconnect control. To withdraw Persate's access, remove it in the security settings of the Google or Microsoft account.
 
 ## Troubleshooting
 
-* **Callback could not be verified** — return to Repository and start the connection again; do not reuse the failed callback URL.
-* **Provider authorization denied** — reconnect and approve the requested scope, or ask your administrator whether the integration is permitted.
-* **File not listed** — confirm that the connected provider account can access it and check the current folder.
-* **Import action unavailable** — the item is a folder, is already linked, or an import is already running.
-* **Processing not ready** — the provider download completed, but Persate extraction or indexing is still running.
+* **Connection failed** with a message that the callback could not be verified — open the provider page again and select **Connect Now**.
+* **Connection failed** with **Access was denied.** — the consent screen was declined; open the provider page again, select **Connect Now** and approve the requested access.
+* The page stays on **Connection failed** — open the provider page by address again; it does not return there on its own.
+* **Couldn't load Google Drive** or **Couldn't load OneDrive** — the text below the heading gives the reason; refresh the page and try again.
+* A file is not listed — check that the connected account can open it and that the right folder is open.
+* The import button is dimmed — the item is a folder, the file has already been imported, or its import is in progress.

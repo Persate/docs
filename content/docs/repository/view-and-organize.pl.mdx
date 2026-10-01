@@ -1,49 +1,101 @@
 ---
 title: Przeglądanie i zarządzanie plikami
-description: Wyszukiwanie, podgląd, udostępnianie, pobieranie i usuwanie plików w Repozytorium.
+description: Wyszukiwanie plików w Repozytorium, panel pliku, zmiana dostępu, pobieranie, zaznaczanie wielu plików i ich usuwanie.
 ---
 
-Otwórz **PRZESTRZEŃ ROBOCZA → Repozytorium**, aby pracować z własnymi plikami oraz plikami udostępnionymi grupom, do których należysz.
+**PRZESTRZEŃ ROBOCZA → Repozytorium** łączy listę plików z paskiem bocznym zawierającym wyszukiwanie, filtry i inteligentne foldery. Lista zaczyna się od ostatnio dodanych plików.
 
-## Znajdowanie pliku
+## Wyszukiwanie pliku
 
-Kontrolki nad listą plików pozwalają:
+Pasek boczny zawiera:
 
-* przełączać widok listy i kafelków;
-* wyszukiwać w widocznym Repozytorium według nazwy pliku;
-* filtrować i sortować bieżący zestaw wyników;
-* zaznaczać pliki do operacji zbiorczych.
+* **Szukaj plików** — wyszukiwanie działa od dwóch znaków. Krótkie zapytania dopasowują nazwy plików; dłuższe przeszukują także treść przetworzonych plików.
+* **Dostęp** — **Dowolny dostęp**, **Tylko ja** albo **Udostępnione**. Po wybraniu opcji **Udostępnione** pole **Grupy** zawęża listę do wskazanych grup (domyślnie **Dowolna grupa**).
+* **Typ pliku** — .pdf, .docx, .xlsx lub .csv.
+* **Sortuj** — otwiera panel sortowania. **Dodaj sortowanie** oferuje opcje **Nazwa**, **Czas przesłania** i **Rozmiar pliku**. Obowiązuje jedna reguła naraz, początkowo w kolejności malejącej; wybranie reguły zmienia kierunek. **Zmień sortowanie** zastępuje regułę, a **Usuń sortowanie** przywraca domyślną kolejność, od najnowszych.
+* **Filtr** — otwiera panel filtrów. **Dodaj filtr** oferuje:
+  * **Nazwa** — **Jest**, **Nie jest**, **Zawiera**, **Nie zawiera**, **Zaczyna się od** lub **Kończy się na** podany tekst;
+  * **Data modyfikacji** — **Pomiędzy**, **Przed**, **Po** lub **W dniu**;
+  * **Rozmiar pliku** — równy, większy albo mniejszy od wartości w KB, MB lub GB;
+  * **Status analizy** — **Ukończone**, **Przetwarzanie** albo **Niepowodzenie**.
 
-Jeśli widzisz komunikat **Nie znaleziono plików**, wyczyść wyszukiwanie i filtry, zanim uznasz Repozytorium za puste. Dostęp zależy od organizacji i grup, dlatego inni użytkownicy mogą widzieć inny zestaw plików.
+Filtry łączą się ze sobą i z wyszukiwaniem. **Usuń filtrowanie** usuwa wszystkie filtry. Ponowne wybranie **Sortuj** lub **Filtr** zamyka panel i usuwa jego reguły.
 
-## Podgląd i informacje o pliku
+Bardzo duże Repozytorium nie jest wyświetlane w całości; pozostałe pliki można wyświetlić za pomocą wyszukiwania, filtrów i sortowania. Dostęp zależy od członkostwa w grupach, dlatego dwóch użytkowników może widzieć różne pliki.
 
-Wybierz plik, aby otworzyć podgląd i metadane. Panel może pokazywać oryginalny plik, stan przetwarzania, wykryty język, podsumowanie i odbiorców, jeżeli te dane są dostępne.
+## Stosowanie inteligentnego folderu
 
-Bezpośrednio po przesłaniu pola zależne od przetwarzania mogą być jeszcze niedostępne. Poczekaj na zakończenie przetwarzania i otwórz plik ponownie. Jeśli przeglądarka nie obsługuje podglądu danego formatu, pobierz oryginał.
+Sekcja **Inteligentne foldery** na dole paska bocznego pokazuje pierwsze dziesięć folderów i ma własne pole wyszukiwania. Wybranie folderu ogranicza listę do jego plików; jeżeli folder ma kryteria treści, pasek boczny pokazuje je w sekcji **Dopasowanie semantyczne**. **Wyczyść filtry inteligentnego folderu** przywraca pełną listę; folder przestaje obowiązywać także po zmianie wyszukiwania lub filtra. Gdy folderów jest więcej niż dziesięć, przycisk **Zarządzaj wszystkimi** otwiera stronę inteligentnych folderów. Szczegóły zawiera strona [Inteligentne foldery](/pl/repository/smart-folders).
+
+## Widok listy i kafelków
+
+Przełącznik **Widok listy** / **Widok kafelków** znajduje się nad listą, po prawej stronie; przeglądarka zapamiętuje wybór.
+
+W widoku listy kolumny to **Typ**, **Nazwa**, **Opis** (podsumowanie pliku), **Ostatnia zmiana** (data dodania pliku), **Rozmiar pliku**, **Grupy** (**Prywatne** albo grupy z dostępem), **Właściciel** i **Analiza**. Na telefonie lista pokazuje typ, nazwę, datę w kolumnie **Przesłano** i ikonę analizy. Kafelki pokazują obraz podglądu, nazwę, dostęp, rozmiar i datę.
+
+## Otwieranie pliku
+
+Wybranie wiersza lub kafelka otwiera panel **Szczegóły pliku**, który łączy podgląd ze szczegółami pliku.
+
+* Pliki PDF otwierają się w podglądzie całego dokumentu. Jeżeli plik został otwarty z cytowania Advisora, podgląd zaczyna się od cytowanej strony, a szczegóły pokazują **Cytowany fragment** z oznaczeniem **Od strony** i numerem strony.
+* Pozostałe formaty pokazują obraz pierwszej strony i odnośnik **Otwórz podgląd w nowej karcie**. Ten obraz powstaje podczas analizy.
+* **Podgląd niedostępny** oznacza, że podglądu nie da się wyświetlić; wtedy należy pobrać plik.
+* Na telefonie **Pełny ekran** powiększa podgląd, a **Pokaż szczegóły** przywraca szczegóły.
+
+Szczegóły obejmują:
+
+* **Podsumowanie** — wygenerowane podsumowanie; **Pokaż więcej** rozwija dłuższy tekst.
+* **Informacje** — **Rozszerzenie**, **Ostatnia modyfikacja**, **Status** (przetwarzanie, przeanalizowany albo błąd analizy), **Rozmiar** i **Język**.
+* **Tagi** — widoczne, gdy plik ma tagi.
+* **Dostęp** — **Tylko ja**, **Wybrane grupy** z nazwami grup albo, dla pliku udostępnionego przez inną osobę, **Udostępniono przez** z nazwami grup. Administrator oglądający prywatny plik innej osoby widzi **Tylko właściciel**.
+
+Cytowania Advisora i dopasowania z Monitorowania wskazujące plik z Repozytorium otwierają ten panel bezpośrednio.
 
 ## Zmiana dostępu
 
-Właściciel pliku lub uprawniony administrator może zmienić odbiorców na:
+Dostęp do pliku może zmienić tylko jego właściciel i dopiero po zakończeniu przetwarzania.
 
-* **Tylko ja**;
-* jedną lub kilka grup w tej samej organizacji.
+1. Otworzyć plik i odszukać sekcję **Dostęp** w szczegółach.
+2. Wybrać **Zmień**.
+3. Wybrać **Tylko ja** albo **Wybrane grupy**. W przypadku grup wskazać co najmniej jedną w polu **Grupy**; grup oznaczonych jako **Tylko odczyt** nie można wybrać.
+4. Wybrać **Zaktualizuj dostęp**.
 
-Usunięcie grupy odbiera jej dostęp, ale nie usuwa pliku. Użytkownik należący do kilku wybranych grup zachowuje dostęp przez każdą pozostałą grupę.
+Przed przełączeniem udostępnionego pliku na **Tylko ja** panel podaje, ile grup utraci dostęp. **Anuluj** pozostawia dostęp bez zmian.
 
-## Pobieranie
+Gdy przycisku **Zmień** nie ma, komunikat pod podsumowaniem dostępu podaje przyczynę:
 
-Użyj **Pobierz** w menu działań pliku, aby pobrać oryginał. Aby pobrać kilka plików, zaznacz je i wybierz zbiorcze pobieranie. Nie zamykaj karty przeglądarki, dopóki pobieranie się nie rozpocznie.
+* plik jest jeszcze przetwarzany — dostęp można zmienić po zakończeniu analizy;
+* plik należy do innej osoby — dostęp zmienia tylko właściciel;
+* administrator ogląda cudzy plik — udostępnia go grupom w **Ustawienia → Grupy i uprawnienia**, zgodnie z opisem w [Użytkownicy i grupy](/pl/administration/users-and-groups).
 
-## Usuwanie
+Usunięcie grupy kończy dostęp przez tę grupę, ale nie usuwa pliku. Członek kilku grup zachowuje dostęp przez każdą grupę, która pozostała wybrana.
 
-Użyj menu działań, aby usunąć pojedynczy plik, albo zaznacz kilka plików i wybierz zbiorcze usuwanie. Dokładnie sprawdź okno potwierdzenia: operacja usuwa plik i dane po przetworzeniu, a nie przenosi ich do kosza.
+## Pobieranie plików
 
-Plik może usunąć tylko właściciel lub uprawniony administrator. Jeżeli współdzielony plik ma pozostać dostępny, zmień odbiorców zamiast go usuwać.
+* Jeden plik: otworzyć go i wybrać **Pobierz** w nagłówku panelu. Powiadomienia towarzyszą pobieraniu aż do komunikatu **Pobieranie zakończone** z nazwą pliku.
+* Kilka plików: zaznaczyć je na liście i wybrać **Pobierz** na pasku zaznaczenia. Persate dostarcza je w jednym archiwum ZIP.
+
+## Zaznaczanie wielu plików
+
+W widoku listy pole wyboru pojawia się po wskazaniu wiersza kursorem; na ekranach dotykowych jest widoczne stale. Pole wyboru w nagłówku zaznacza wszystkie pliki na liście. Pasek u dołu ekranu pokazuje liczbę zaznaczonych plików i udostępnia:
+
+* **Utwórz inteligentny folder** — otwiera kreator inteligentnego folderu z zaznaczonymi plikami dołączonymi jako przykłady;
+* **Pobierz** — pobiera zaznaczone pliki jako archiwum ZIP;
+* **Usuń** — usuwa zaznaczone pliki;
+* ikonę krzyżyka (**Wyczyść zaznaczenie**) — czyści zaznaczenie.
+
+Przełączenie na widok kafelków czyści zaznaczenie.
+
+## Usuwanie plików
+
+**Usuń** jest dostępne w nagłówku panelu pliku i na pasku zaznaczenia. Usuwanie rozpoczyna się natychmiast, bez okna potwierdzenia, a Repozytorium nie ma kosza, dlatego usuniętego pliku nie da się przywrócić z poziomu interfejsu. Powiadomienie potwierdza wynik; pliki, których nie udało się usunąć, są zliczane w powiadomieniu o błędzie i pozostają na liście.
+
+Aby przestać udostępniać plik grupie i jednocześnie go zachować, należy zmienić dostęp zamiast usuwać plik.
 
 ## Rozwiązywanie problemów
 
-* **Podgląd niedostępny** — pobierz oryginał i sprawdź, czy przetwarzanie się zakończyło.
-* **Summary unavailable** — ekstrakcja tekstu lub generowanie podsumowania nadal trwa albo zakończyło się błędem.
-* Niedostępna akcja — plik jest Ci udostępniony, ale nie jesteś jego właścicielem ani uprawnionym administratorem.
-* Nieudane pobieranie — odśwież stronę i spróbuj ponownie; jeśli problem trwa, zapisz nazwę pliku i skontaktuj się z administratorem.
+* **Nie znaleziono plików** — należy wyczyścić wyszukiwanie, filtry i zastosowany inteligentny folder.
+* **Błąd wczytywania plików** — należy odświeżyć stronę.
+* **Podgląd niedostępny** — należy pobrać oryginał; w przypadku formatów innych niż PDF trzeba poczekać na zakończenie analizy.
+* Brak przycisku **Zmień** w sekcji **Dostęp** — przyczynę podaje komunikat pod podsumowaniem dostępu.
+* Pliku nie widać na długiej liście — należy wyszukać go po nazwie albo zawęzić listę filtrami.

@@ -1,47 +1,72 @@
 ---
 title: Szczegóły rekordu
-description: Odczytywanie szczegółów głosowań, decyzji i spraw bez łączenia danych różnych instytucji.
+description: Odczytywanie głosowań Sejmu i Senatu, decyzji Prezydenta oraz spraw Trybunału Konstytucyjnego bez łączenia danych różnych instytucji.
 ---
 
-Otwórz rekord z **PUBLICZNE → Głosowania**. Dostępne sekcje zależą od instytucji i danych opublikowanych przez jej źródło urzędowe.
+Rekord otwiera się z **PUBLICZNE → Głosowania** albo z odnośnika w przebiegu procesu legislacyjnego, w odpowiedzi Advisora lub w wynikach wyszukiwania. Każda instytucja ma własną stronę szczegółów; widoczne sekcje zależą od tego, co publikuje jej źródło urzędowe. Panel boczny zawiera spis sekcji strony ułatwiający nawigację.
 
-## Szczegóły głosowania Sejmu
+## Głosowanie Sejmu
 
-Strona szczegółów Sejmu może pokazywać:
+Nagłówek pokazuje tytuł głosowania oraz, jeśli zostały opublikowane, jego temat i opis. Panel boczny zawiera:
 
-* wynik i informację o wymaganym progu;
-* czas głosowania, obecność, frekwencję i regułę większości;
-* liczby głosów według opcji;
-* powiązane materiały i dokumenty urzędowe;
-* mapę sali z głosem każdego posła.
+* **Wynik** — rozstrzygnięcie (na przykład **Przyjęte** lub **Brak kworum**), liczby głosów **Tak**, **Nie**, **Wstrzymanie się**, **Głosy nieważne** i **Nie głosowało** wraz z udziałem w składzie izby, liczbę oddanych głosów i liczbę mandatów uwzględnionych w wyniku;
+* **Szczegóły** — **Izba**, **Kadencja**, **Posiedzenie**, **Głosowanie**, **Data**, **Sposób** (**Elektroniczne**, **Tradycyjne** albo **Głosowanie nad listą kandydatów**) i **Większość** (**Zwykła**, **Bezwzględna**, **Kwalifikowana** albo **3/5 głosów**, wraz z wymaganą liczbą głosów, jeśli ją zapisano).
 
-Filtr klubu nad mapą pozwala skupić się na jednym klubie; **Wszystkie mandaty** przywraca pełny widok. Wybierz albo wskaż miejsce, jeżeli interfejs to obsługuje, aby sprawdzić posła i zapisany głos.
+Sekcja **Wynik głosowania** przedstawia mapę sali: każde miejsce odpowiada jednemu posłowi i ma kolor zapisanego głosu, a pod mapą znajduje się legenda z liczbami. Po wskazaniu miejsca kursorem widoczny jest poseł i jego głos. W części **Wyróżnij kluby parlamentarne** można wybrać jeden lub kilka klubów, aby wyróżnić ich miejsca; **Wszystkie mandaty** przywraca pełną mapę.
 
-## Szczegóły głosowania Senatu
+W głosowaniu nad kandydatami sekcja **Kandydaci / opcje** wymienia każdą opcję z liczbą głosów i udziałem w oddanych głosach. Wybranie kandydata pokazuje na mapie sali, kto go poparł; ponowne wybranie usuwa zaznaczenie.
 
-Strona Senatu korzysta z oficjalnego wyniku i dostępnych sum. Może zawierać powiązane dokumenty, procesy legislacyjne i rozkład miejsc w sali Senatu, jeżeli źródło udostępniło głosy senatorów możliwe do przypisania do miejsc.
+Jeśli źródło nie opublikowało indywidualnych głosów, strona o tym informuje, a opublikowane wyniki zbiorcze pozostają w panelu bocznym. Jeśli indywidualne głosy są chwilowo niedostępne, przycisk **Ponów wczytywanie indywidualnych głosów** wczytuje je ponownie.
 
-Brak listy senatorów lub mapy oznacza, że wymagane dane źródłowe są niedostępne; Persate nie zastępuje ich danymi Sejmu.
+## Głosowanie Senatu
 
-## Decyzje Prezydenta
+Panel boczny zawiera:
 
-Strona szczegółów zaczyna się od decyzji i ustawy, której dotyczy. Dostępne sekcje obejmują automatyczne podsumowanie, proces legislacyjny ustawy, uzasadnienie weta, ponowne rozpatrzenie przez Sejm, powiązane sprawy TK, wcześniejsze weta ustawy o tej samej nazwie oraz dokumenty źródłowe.
+* **Wynik** — **Przyjęte** albo **Odrzucone**, liczby **Za**, **Przeciw**, **Wstrzymanie się**, **Nie oddano głosu** i **Nieobecni**, liczbę oddanych głosów i liczbę uwzględnionych mandatów;
+* **Szczegóły** — **Izba**, **Kadencja**, **Posiedzenie**, **Głosowanie**, **Data** oraz **Sposób** i **Większość** w brzmieniu opublikowanym przez Senat.
 
-Przy ponownym rozpatrzeniu weta strona pokazuje zapisany wynik i próg trzech piątych głosów. Panel **Ścieżka ustawy** łączy zarejestrowane zdarzenia z Sejmu, Senatu, Prezydenta i TK oraz prowadzi do dostępnych rekordów. Powtórzone odwołania do druku i jawnie oznaczone wersje dostępne/skanowane są łączone; preferowana jest wersja dostępna.
+Senat odróżnia senatorów nieobecnych na posiedzeniu (**Nieobecni**) od senatorów obecnych, którzy nie oddali głosu (**Nie oddano głosu**).
 
-## Szczegóły sprawy Trybunału Konstytucyjnego
+Sekcja **Rozkład głosów według mandatów** przedstawia mapę sali Senatu z głosem każdego senatora na podstawie indywidualnych rekordów opublikowanych przez Senat. Po wskazaniu miejsca kursorem widoczny jest senator i jego głos; miejsce bez rekordu jest oznaczone jako pozbawione zarejestrowanego głosu. Persate nie uzupełnia brakujących danych Senatu danymi Sejmu.
 
-Szczegóły TK korzystają z tego samego układu strony: wynik jest na górze, a obok znajduje się panel **Ścieżka ustawy**. Strona może pokazywać automatyczne podsumowanie, nazwiska sędziów, jednogłośność lub rozstrzygnięcie większością głosów, zdania odrębne, wskazaną datę utraty mocy, oryginalną sentencję i źródła. Zdania odrębne mogą dotyczyć uzasadnienia lub składu i nie określają dokładnego wyniku głosowania.
+## Decyzja Prezydenta
 
-Sprawa może istnieć przed opublikowaniem orzeczenia; wtedy informacje o wyroku pozostają niedostępne. Tekst źródłowy zachowuje oryginalny język po zmianie języka interfejsu.
+Nagłówek pokazuje rozstrzygnięcie, datę decyzji i tytuł ustawy; przy włączonym przełączniku **Krótkie tytuły** oficjalny tytuł jest widoczny pod krótkim. Strona może zawierać:
+
+* **Omówienie AI** — automatyczne omówienie decyzji wraz ze źródłami, na których się opiera. Wiążący jest tekst oficjalny.
+* **Ustawa** — ustawa i jej projekt: druk i druki łączne, kadencja, **Zobacz przebieg procesu** oraz **Przebieg procesu na sejm.gov.pl**. Jeśli decyzja nie jest jeszcze powiązana z projektem, ustawę wskazują poniższe oficjalne źródła.
+* **Uzasadnienie weta** — przy wecie wniosek Prezydenta o ponowne rozpatrzenie ustawy.
+* **Ponowne rozpatrzenie przez Sejm** — przy wecie głosowanie Sejmu nad wetem: **Tak**, **Nie**, **Wstrzymanie się** i **Nie głosowało**, liczba głosów za w zestawieniu z liczbą potrzebną do odrzucenia weta, zasada (trzy piąte oddanych głosów przy obecności co najmniej połowy posłów) oraz **Zobacz głosowanie Sejmu**. Jeśli głosowania jeszcze nie odnotowano, sekcja o tym informuje.
+* **Trybunał Konstytucyjny** — przy skierowaniu powiązane sprawy Trybunału z datami wpływu i rozstrzygnięcia.
+* **Wcześniejsze weta tej ustawy** oraz **Wcześniejsze weta ustaw o tym samym tytule** — wcześniejsze decyzje; druga lista obejmuje inne ustawy o tym samym tytule, a nie tę samą ustawę.
+* **Oficjalne źródła** — urzędowe zapisy decyzji, każdy z odnośnikiem **Oficjalne źródło**.
+* **Dokumenty** — dokumenty powiązane z decyzją; otwarcie dokumentu pokazuje jego kopię w Persate w panelu podglądu.
+
+Panel boczny zawiera:
+
+* **Ścieżka ustawy** — zarejestrowane etapy ustawy w Sejmie, Senacie, u Prezydenta i w Trybunale wraz z datami, na przykład **Ustawa uchwalona**, **Stanowisko Senatu**, **Przekazano Prezydentowi**, **Głosowanie nad wetem** lub **Orzeczenie Trybunału**. Etapy prowadzą do odpowiedniego głosowania, decyzji lub sprawy, jeśli taki rekord jest dostępny.
+* **Działania** — **Zobacz przebieg procesu**, **Przebieg procesu na sejm.gov.pl** oraz **Otwórz oficjalne źródło**, jeśli są dostępne.
+* **Szczegóły** — **Przekazano Prezydentowi**, **Termin decyzji**, **Decyzja**, **Data**, **Przegląd**, **Druk**, **Odnotowane przez Sejm** oraz **Potwierdzone przez** (źródła urzędowe, które odnotowują decyzję).
+
+## Sprawa Trybunału Konstytucyjnego
+
+Nagłówek pokazuje sygnaturę, rozstrzygnięcie lub stan oczekiwania, datę orzeczenia oraz oznaczenie **Ustawa wstrzymana** przy oczekującej sprawie kontroli prewencyjnej. Gdy orzeczenie określa, kiedy zaskarżony przepis traci moc, notatka podaje datę lub okres odroczenia wraz z cytatem z orzeczenia. Strona może zawierać:
+
+* **Omówienie AI** — automatyczne omówienie sprawy.
+* **Skład orzekający** — przy orzeczeniu: **Orzeczenie jednogłośne** albo **Orzeczenie większością głosów**, jeśli podaje to tekst orzeczenia, oraz sędziowie z oznaczeniem **Przewodniczący składu**, **Sprawozdawca** i **Zdanie odrębne**. Zdania odrębne mogą dotyczyć uzasadnienia lub składu; nie określają dokładnego wyniku głosowania.
+* **Oficjalna treść orzeczenia** — tekst orzeczenia w oryginalnym języku. Bez orzeczenia sekcja informuje, że Trybunał nie wydał jeszcze orzeczenia, że sprawę zakończono bez zarejestrowanego orzeczenia albo że źródło nie podaje, jak sprawa się zakończyła.
+* **Źródła** — oficjalny rekord sprawy, treść wyroku i zaskarżony akt, otwierane w nowej karcie.
+
+Panel boczny zawiera sekcje **Ścieżka ustawy** i **Szczegóły** (**Sygnatura**, **Wnioskodawca**, **Wpłynęło**, **Rozprawa**, **Przegląd** i **Zaskarżone**) oraz przycisk **Otwórz oficjalne źródło**.
 
 ## Dokumenty i pochodzenie danych
 
-Powiązane materiały mogą otwierać się w panelu dokumentu Persate albo w nowej karcie, zależnie od źródła i formatu. Za tekst autorytatywny uznawaj powiązany dokument urzędowy. Brakujący dokument jest oznaczany jako niedostępny i nie jest odtwarzany przez Persate.
+Powiązane elementy otwierają się w panelu podglądu Persate albo w nowej karcie przeglądarki, zależnie od źródła i formatu. Na stronach głosowań Sejmu i Senatu sekcja **Powiązane elementy** łączy dokumenty, powiązane procesy legislacyjne oraz relacje z grafu powiązań, takie jak osoby, organizacje, druki, akty lub pytania. Za tekst wiążący należy uznawać powiązany dokument urzędowy. Dokument, którego źródło nie opublikowało, jest oznaczony jako niedostępny; Persate go nie odtwarza.
 
 ## Rozwiązywanie problemów
 
-* Nie można załadować rekordu — wróć do listy instytucji i otwórz go ponownie; źródło może być chwilowo niedostępne.
-* Brak powiązanych dokumentów — źródło nie połączyło dokumentów z rekordem.
-* Brak mapy sali — instytucja nie przeprowadza głosowania izby albo brakuje danych o poszczególnych miejscach.
-* Liczby różnią się od późniejszej publikacji urzędowej — zapisz adres i czas, a następnie zgłoś rozbieżność; źródła publiczne bywają korygowane po pierwszej publikacji.
+* **Szczegóły głosowania są niedostępne**, **Nie znaleziono głosowania**, **Nie znaleziono decyzji** albo **Nie znaleziono sprawy** — rekordu nie udało się wczytać lub odnośnik jest nieaktualny. Należy wrócić do listy i ponownie otworzyć rekord albo wybrać **Spróbuj ponownie**, jeśli przycisk jest dostępny.
+* **Nie udało się odświeżyć sprawy.** — strona sprawy pozostaje widoczna, ale odświeżenie się nie powiodło; należy wybrać **Spróbuj ponownie**.
+* **Brak powiązanych elementów** albo **Brak powiązanych dokumentów** — z rekordem nie powiązano jeszcze dokumentów, procesów ani relacji.
+* Brak mapy sali — instytucja nie przeprowadza głosowania izby albo źródło nie opublikowało danych o poszczególnych miejscach.
+* Liczby różnią się od późniejszej publikacji urzędowej — należy zapisać odnośnik i czas, a następnie zgłosić rozbieżność; źródła publiczne bywają korygowane po pierwszej publikacji.

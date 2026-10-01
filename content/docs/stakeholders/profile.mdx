@@ -1,41 +1,51 @@
 ---
 title: Stakeholder profile
-description: Detailed stakeholder view — a biography broken down by source, contact data, attendance, and legislative activity.
+description: A person's profile with sourced profile sections, details, available data, voting activity, campaign promises and financial disclosures, and tracking the person with an alert.
 ---
 
-The **Stakeholder profile** contains a complete set of information about a given entity. The profile is accessed by selecting an entry from the **Stakeholders** list.
+A person's profile opens from a person tile in the **Organizations** search, a row in a members table, a node in a [Connections](/stakeholders/connections) graph or a citation in an Advisor answer.
 
-## Title card
+## Header
 
-The upper part of the profile presents the stakeholder's identity:
+The header shows the photo, the name and a line with the current role and the party group or institution (*Public profile* when no role is known). For party members, the banner uses the party's colors and logo.
 
-* **Banner** — a procedurally generated background based on club affiliation (with the group's logo, if available).
-* **Picture and name** — the primary profile label.
-* **Role row** — the function held along with its context (club or institution).
-* **Create alert** — for stakeholder profiles, the button allows creating an alert that tracks a given individual or entity; when an alert already exists, the button opens it (**Open alert**).
+## Profile sections
 
-## Biography and profile sections
+The main column presents the profile as thematic sections, such as **Summary**, **Biography**, **Education**, **Professional career**, **Political career**, **Current mandate**, **Political positions**, **Voting record**, **Public statements**, **Affiliations & interests** and **Finances**. Only sections with content appear. On a wide screen, a table of contents on the left follows the reading position; on a phone, the section list (**Contents**) is at the bottom of the **Details** panel.
 
-The left column presents the profile as generated thematic sections (among others **Summary**, **Biography**, **Education**, **Professional career**, **Political career**, **Current mandate**, **Political positions**, **Voting record**, **Public statements**, **Affiliations & interests**, **Finances**). For longer profiles, a sticky table of contents is displayed on the left to aid navigation.
+Under a section, **Sources:** lists what it was built from, with links when available. **Show raw sources** expands the original source fragments. Each fragment carries a label naming its origin (for example official parliamentary records, public reference databases or editorial notes), a link to the original and an **Edited** badge when it was corrected by hand.
 
-Each section may contain references to sources (e.g., **Sejm RP**, **Wikipedia**, **Wikidata**, **mamprawowiedziec.pl**, **Editorial**). Below the content, an expandable **Show raw sources** section is available, presenting the source data fragments with their origin marked.
+When generated sections are not available, the profile shows the plain biography or *Profile not analyzed yet*.
 
-## Contact data and statistics
+## Campaign promises and financial disclosures
 
-The right column contains:
+For members of the Sejm, two more sections can appear:
 
-* **Contact & details** — role, institution, profession, education, date and place of birth, voivodeship, district, number of votes received, email, and a link to the source. Missing fields are marked in italics as *None*. Below is an **Online presence** section with links to external profiles (X, Facebook, Instagram, website, Wikipedia, mamprawowiedziec.pl).
-* **Voting activity** — an attendance ring along with the number of votes cast and absences. The section is hidden when statistics are not available.
+* **Campaign Promises** — promises with tags and links to their sources.
+* **Financial Disclosures** — asset declarations. The buttons with filing dates switch between declarations; each declaration shows its filled-in parts: **Cash & savings**, **Real estate**, **Income**, **Movable assets**, **Liabilities** and **Shares & stocks**.
 
-## Conditional sections
+## Details panel
 
-Below, if the data is available, additional sections are presented:
+The right-hand panel (on a phone, the **Details** button) contains:
 
-* **Campaign Promises** — campaign promises along with tags and links to sources.
-* **Financial Disclosures** — asset declarations broken down by period and category (cash assets, real estate, income, movable property, liabilities, shares and stocks).
+* **Actions** — **Track person**, or **See alert** once an alert for the person exists.
+* **Details** — **Role**, **Institution**, **Profession**, **Education**, **Date of birth**, **Place of birth**, **Voivodeship**, **District**, **Votes received**, **Email** and **Source**, a link to the official profile the data comes from. Only known values appear; otherwise the group shows *No additional profile details are available.*
+* **Available data** — tiles for the data Persate holds about the person: **Face** and **Voice** (the person can be recognized by face or voice in analyzed recordings) and **X** (Persate follows the person's posts on X).
+* **Online presence** — links to the person's social media profiles, website and public reference pages.
+* **Voting activity** — the **Attendance** bar, **Votes cast** (out of all votings) and **Absences**. The group appears only when voting statistics are available.
 
-## Empty view and error states
+## Track a person
 
-* *"Profile not analyzed yet"* — the profile has not been analyzed yet; generated sections will appear after analysis.
-* *"No profile details"* — no biographical data for the given entity.
-* *"Not found"* — the stakeholder record does not exist at the specified address. Returning to the main list is recommended.
+1. Under **Actions**, select **Track person**.
+2. In the **Alert creation** dialog, set **Access** — **Only me** or selected groups — and choose the **Sensitivity**.
+3. Select **Start tracking**.
+
+When an existing alert can take the person as a further case, the dialog also offers **Tracking destination**: choose **Add this case to an existing alert**, pick the alert and select **Add to alert**. The existing alert keeps its audience and settings.
+
+The alert follows substantive public and legislative mentions of this exact person, such as speeches, votes, authored documents and media. Once it exists, **See alert** opens it in [Tracker](/alerts).
+
+## Empty and error states
+
+* *Not found* — the address does not match any person in Persate. Return to the **Organizations** tab and search again.
+* *Profile not analyzed yet* — generated profile sections appear after the person has been analyzed.
+* *No additional profile details are available.* — no details are known beyond the name and role.

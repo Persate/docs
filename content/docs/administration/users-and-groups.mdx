@@ -1,59 +1,89 @@
 ---
 title: Users and groups
-description: Inviting users, assigning roles, and controlling group file access.
+description: Inviting members, changing roles, removing members, and managing groups and their file access in Settings.
 ---
 
-## Invite a user
+Organization administrators manage members and groups in **Settings**, under **ORGANIZATION → Members** and **ORGANIZATION → Groups & permissions**. Both pages are shown only to administrators. Older administration links open the same pages.
 
-1. Open **Settings → Organization → Members**.
-2. Select **Invite member** in the filters panel.
-3. Enter the e-mail address and choose **Admin** or **Member**.
-4. Select **Send invite**.
+## Members
 
-The normal flow sends a link that lets the recipient set a password. If an existing account is not yet attached to an organization, Persate asks for confirmation before sending a join invitation.
+**Members** lists the active members of the organization. Above the table:
 
-The optional manual-password flow creates the user immediately and requires at least 12 characters. Use it only when the organization's approved identity procedure requires it; the administrator becomes responsible for delivering the initial credential securely.
+* the search field (**Name or email…**) finds members by name or email;
+* **Filters** narrows the list by **Role**, **Group** and **Last active** (**Any time**, **Last 7 days**, **Last 30 days** or **Not available**); the button shows how many filters are active;
+* **Invite member** opens the invitation dialog.
 
-## Pending invitations
+The table shows each **Member** with their email, **Role**, **Groups**, **Tokens this cycle**, **Last active** and **Joined**. The administrator's own row is marked **You**. When the window is too narrow for every column, the missing values are listed under the member's name. Selecting a name or a row opens the member's profile.
 
-Pending and expired invitations appear in a separate table below active members. Each table has its own page controls. Search and filters apply across the complete list, including entries beyond the first page.
+**Last active** is the last use of a session that passed two-step verification since the member joined the organization. **Not available** means no timestamp is recorded; it does not mean that the member has never used Persate.
 
-For a pending invitation, an administrator can:
+## Invite a member
 
-* **Resend invite** — issues another invitation message for the same pending member;
-* **Revoke invite** — invalidates the pending invitation.
+1. Select **Invite member**. The **Add user** dialog opens.
+2. Enter the **Email** and choose the **Role**: **Admin** or **Member**.
+3. Select **Send invite**. Persate emails an invitation with a link for setting a password.
 
-Revoking an invitation does not delete an unrelated existing identity. A recipient whose link has expired must request a new invite from an administrator.
+If an account with that address already exists but does not belong to any organization, the dialog asks whether to send it an invitation to join; **Send invite** confirms.
 
-## Change a role or remove a user
+**Set a password manually (skip the invite email)** creates the account at once, without an invitation email. The password needs at least 12 characters, and the button changes to **Create user**. Use this option only when the organization's approved identity procedure requires it; the administrator is then responsible for delivering the initial password securely.
 
-Use the **Role** control in a member's row to change between **Admin** and **Member**. The current administrator's own role control is disabled. **Remove User** removes a user from the organization after confirmation.
+## Invitations
 
-The filters panel searches names and email addresses and filters by role, group and recent activity. On a narrow screen, select **Filters** to open it. The table shows group memberships, token usage, the joining date and **Last active**. Last activity is the approximate time a browser session was used, updated at most every five minutes. **Not available** means no activity timestamp is available; it does not mean the member has never used the product.
+Pending and expired invitations appear in a separate **Invites** table below the members, with **Email**, **Role** and **Status** (**Pending** or **Expired**). Search and filters apply to both tables, and each table has its own pages.
 
-Open a member's name to see usage details. The profile panel also shows organization role, status and group memberships. **Add to group** adds a membership; open a group's link to manage its members.
+* **Resend invite** sends the invitation again.
+* **Revoke invite** cancels the invitation.
 
-Removal is a destructive administrative action and requires confirmation. Before removal, transfer ownership or export work that must be retained, and review the user's group access. Do not use role removal as a substitute for revoking an active session when immediate sign-out is required.
+## Change a role
 
-## Create and manage a group
+The **Role** control in a member's row, or on the member's profile, switches between **Admin** and **Member**; the change is saved at once. An administrator cannot change their own role or remove themselves from the organization — in their own row these controls are inactive, and another administrator has to make the change. The organization always keeps at least one active administrator: a change that would leave none is refused with **The organization must keep at least one active administrator.** If a page still shows the old role after a change, refresh it or sign in again.
 
-1. Open **Groups & permissions**.
-2. Select **Create group** and provide its name and description.
-3. Open the group detail page.
-4. Select **Add member** to choose an organization member and their group role.
-5. Open **Files** and select **Share file** to share a Repository file with the group.
+## Member profile
 
-The group list shows a preview of members, managers, the creation date and the number of assigned files, excluding archived files. Search by name or description, filter by manager and use the page controls to browse results.
+The profile shows the member's usage for the selected period — **7d**, **30d**, **90d** or **Billing cycle** — including events, files, tokens and last activity, the most used features and token trends. Activity is limited to event metadata.
 
-The group detail page has separate **Members** and **Files** tabs. Member rows distinguish **Group role** from **Organization role**. Changing the group role updates the assignment immediately. **Edit** changes the group's name or description. The organization-wide group has fixed membership and cannot be edited or deleted here.
+The side panel shows the member's **Role**, **Status**, **Last active**, **Joined**, **Private storage** and **Groups**. **Add to group** adds the member to another group with the group role **Member**; selecting a group opens it.
 
-**Remove Member** removes group membership. **Remove File Access** updates that file's audience so the group no longer receives access through this assignment.
+## Remove a member
 
-Deleting a group requires confirmation and cannot be undone. Review its file assignments and Lab assignments first. Deleting a group does not imply deletion of every underlying file.
+Select the bin icon in the member's row, or **Remove from organization** on the profile, and confirm. Removal deletes the member's account and private files and cannot be undone. Before removing a member, transfer or export work that must be kept and review the groups and files the member shares.
+
+## Groups
+
+**Groups & permissions** lists the organization's groups with their description, **Members**, **Managers**, **Created** date and the number of shared **Files**. The search field finds groups by name or description, and **Filters** limits the list to groups with a given **Manager**.
+
+The organization-wide group, **Everyone at** followed by the organization's name, includes every member. It is managed by the organization's administrators: its membership is fixed, and it cannot be edited or deleted. Files can still be shared with it.
+
+### Create a group
+
+1. Select **Create group**. The **Create New Group** dialog opens.
+2. Enter the **Name** and, optionally, the **Description**.
+3. Select **Create Group**.
+
+### Manage a group
+
+Selecting a group, or its pencil icon (**Manage Group**), opens its page with the **Members** and **Files** tabs. **Edit** changes the name and description, and **Delete Group** deletes the group.
+
+**Members** tab:
+
+* **Add member** opens **Add member to group**: choose the **User** and the **Role** in the group, then select **Add to group**.
+* Each row shows the **Group role**, the **Organization role**, **Last active** and the **Added** date. A changed **Group role** is saved at once.
+* The bin icon removes the member from the group.
+
+Group roles are **Member**, **Manager** and **Viewer**. Members and managers can share content with the group; a viewer sees what is shared with the group but cannot share into it — in sharing controls the group is marked **Read only**.
+
+**Files** tab:
+
+* **Share file** opens a picker for choosing a Repository file to share with the group.
+* **Remove File Access** stops sharing the file with the group. The file itself is not deleted.
+
+### Delete a group
+
+A group can be deleted only after its files are no longer shared with it: remove its file access first, then select **Delete Group** and confirm. Deleting a group cannot be undone and does not delete the files.
 
 ## Access troubleshooting
 
-* User cannot see a shared file — confirm active organization membership, group membership, file audience, and the Repository entitlement.
-* User cannot see a Lab — confirm the enabled Lab assignment for the group and all prerequisite entitlements.
-* User still sees an old role — refresh the session or sign in again.
-* Mutation failed — reload the current list before retrying so the action is applied to the latest membership state.
+* A member cannot see a shared file — check the member's group membership, the file's sharing with that group and that Repository is enabled for the organization.
+* A member cannot see a lab — labs are assigned to groups; check the member's groups, then contact the organization's administrator or Persate about the assignment.
+* A member still sees an old role — the member should refresh the page or sign in again.
+* An action failed — reload the list before trying again, so that the action applies to the current state.

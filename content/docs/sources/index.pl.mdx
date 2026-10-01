@@ -1,52 +1,51 @@
 ---
 title: Źródła
-description: Odczytywanie rejestru możliwości, zakresu, świeżości i gotowości źródeł do alertów.
+description: Sprawdzanie, które źródła danych obejmuje Persate, jak kompletne są ich dane i gdzie każde źródło jest wykorzystywane.
 ---
 
-**PUBLICZNE → Źródła** to rejestr możliwości tylko do odczytu. Pokazuje rodziny źródeł znane Persate oraz bieżącą dostępność raportowaną dla organizacji. Nie jest to łącznik dysku chmurowego i nie zmienia konfiguracji źródeł.
+Katalog źródeł to przegląd tylko do odczytu, obejmujący źródła danych wykorzystywane przez Persate: zawartość każdego źródła, jego bieżącą dostępność, zakres danych oraz części platformy, które z niego korzystają. Katalog otwiera się przez **Ustawienia** → **PLATFORMA** → **Źródła**. Jest dostępny dla wszystkich członków organizacji. Nie służy do podłączania dysków w chmurze i nie zmienia konfiguracji źródeł.
 
-## Kolumny tabeli
+## Odczytywanie tabeli
 
-Każdy wiersz może zawierać:
+Każdy wiersz opisuje jedno źródło:
 
-* **Źródło** — nazwę źródła widoczną dla użytkownika i kategorię;
-* **Status** — bieżący stan możliwości;
-* **Dostępność** — obszary Persate, które mogą używać źródła;
-* **Zakres danych** — zakres czasu lub treści reprezentowany przez bieżące dane;
-* **Refresh** — oczekiwany albo zaobserwowany sposób aktualizacji;
-* **Alerty** — informację, czy źródło może uczestniczyć w monitorowaniu alertów;
-* **Ostatnia aktualizacja** — ostatni raportowany czas odświeżenia, jeżeli telemetria jest dostępna.
+* **Źródło** — nazwa źródła i krótki opis jego zawartości.
+* **Status** — **Dostępne**, gdy źródło działa prawidłowo, albo jego bieżący zgłoszony stan.
+* **Dostępność** — ikony części Persate, które korzystają ze źródła, takich jak **Repozytorium**, **Interesariusze**, **Legislacja**, **Rejestr**, **Nagrania**, **Wyszukiwanie**, **Advisor**, **Alerty** czy **Media**. Ikona prowadzi do danej części platformy, jeśli ma ona własną stronę.
+* **Zakres danych** — zakres bieżących danych, na przykład liczba dokumentów, głosowań lub wpisów. W przypadku źródeł przeszukiwalnych pasek pokazuje udział rekordów gotowych do pełnego wyszukiwania.
+* **Ocena istotności** i **Etykiety** — informacja, czy automatyczna ocena istotności i etykietowanie przetwarzają materiały ze źródła. Po wskazaniu ikony kursorem widoczna jest data ostatniej analizy, okres bez analiz albo informacja, że analiza nie dotyczy źródła.
+* **Odświeżanie** — częstotliwość aktualizacji źródła.
+* **Alerty** — informacja, czy i w jaki sposób źródło zasila monitorowanie alertów. Po wskazaniu wartości kursorem widoczne są szczegóły pokrycia alertów.
+* **Ostatnia aktualizacja** — ostatnia zgłoszona aktualizacja, jeśli jest dostępna.
 
-Ikony dostępności prowadzą do odpowiedniej funkcji Persate, gdy istnieje docelowy widok.
+W węższym oknie dodatkowe kolumny są ukryte. Na telefonie status jest wyświetlany jako pierwszy, a kolumny **Ocena istotności** i **Etykiety** są połączone w kolumnę **Analiza**.
 
 ## Filtrowanie katalogu
 
-Panel boczny pozwala:
+Panel boczny udostępnia:
 
-* wyszukiwać po nazwie lub opisie źródła;
-* filtrować według kategorii;
-* wyświetlać wyłącznie źródła obsługujące alerty;
-* wyświetlać wyłącznie wiersze dostępne jako dane surowe.
+* **Szukaj źródeł** — wyszukiwanie po nazwie lub opisie, na przykład *RCL*, *nagrania* lub *dziennik*;
+* **Kategoria** — **Wszystkie źródła** albo jedna kategoria;
+* **Tylko źródła obsługujące alerty** — wyłącznie źródła zasilające alerty;
+* **Pokaż źródła dostępne tylko w postaci surowych danych** — domyślnie włączony; po wyłączeniu ukrywa źródła dostępne wyłącznie jako surowe dane.
 
-Filtry wpływają tylko na widok katalogu. Nie włączają, nie wyłączają ani nie synchronizują źródła.
+Oba przełączniki stają się aktywne po wczytaniu bieżącego stanu źródeł. Filtry zmieniają wyłącznie widok; nie włączają, nie wyłączają ani nie synchronizują źródła. Komunikat **Żadne źródła nie pasują do tych filtrów** oznacza, że wyszukiwanie lub filtry wykluczają wszystkie źródła; po ich wyczyszczeniu widoczny jest pełny katalog.
 
-## Katalog zastępczy
+## Gdy bieżący stan jest niedostępny
 
-Jeżeli nie uda się załadować bieżącej telemetrii źródeł, Persate pozostawia widoczny katalog bazowy i wyświetla baner błędu. Nazwy oraz zamierzone możliwości nadal pomagają w orientacji, ale świeżość, zakres i stan mogą nie odzwierciedlać najnowszego uruchomienia.
-
-Wiersz katalogu bazowego nie potwierdza, że dane są aktualnie dostępne dla alertu, raportu lub wyszukiwania. Należy otworzyć powiązaną funkcję i sprawdzić jej stan.
+Jeśli nie uda się wczytać bieżącego stanu źródeł, katalog pozostaje widoczny z komunikatem **Bieżące dane o stanie źródeł są niedostępne. Katalog źródeł pozostaje dostępny.** i przyciskiem **Ponów**. Wiersze nadal pokazują nazwy i opisy, ale w kolumnach statusu, dostępności, alertów, odświeżania i ostatniej aktualizacji widoczna jest kreska. Taki wiersz służy wyłącznie do orientacji; dostępność danych należy potwierdzić w odpowiedniej części platformy. Jeśli nie uda się wczytać samego katalogu, pojawia się komunikat **Nie udało się wczytać źródeł** z przyciskiem **Spróbuj ponownie**.
 
 ## Interpretacja stanu
 
-Stan i dostępność są odrębnymi informacjami:
+Status, dostępność i zakres danych odpowiadają na różne pytania:
 
-* źródło może być znane, lecz chwilowo niedostępne;
-* źródło może działać w jednej funkcji, ale nie obsługiwać alertów;
-* zakres może być częściowy nawet przy stanie operacyjnym;
-* brak wartości ostatniej aktualizacji oznacza brak telemetrii, a nie brak wcześniejszego odświeżenia.
+* źródło może figurować w katalogu, a jednocześnie być chwilowo niedostępne;
+* źródło może działać w jednej części platformy, ale nie zasilać alertów;
+* zakres danych może być częściowy nawet przy statusie **Dostępne**;
+* brak wartości ostatniej aktualizacji oznacza, że aktualizacja nie została zgłoszona, a nie że źródło nigdy nie było aktualizowane.
 
-## Stany błędu
+## Fragmenty źródeł
 
-* Katalog pozostaje dostępny — telemetria nie została pobrana i wyświetlany jest katalog bazowy.
-* Brak pasujących wierszy — należy wyczyścić wyszukiwanie oraz filtry kategorii, alertów lub danych surowych.
-* Powiązana funkcja jest zablokowana — źródło istnieje, lecz organizacja nie ma dostępu do miejsca docelowego.
+Odnośnik Advisora do transkrypcji nagrania albo wynik **Transkrypcja** w wyszukiwaniu otwiera dokładnie cytowany fragment na osobnej stronie. Strona zawiera nagłówek **Fragment transkrypcji** oraz **Oryginalny fragment źródła** w formie cytatu. Cytowane fragmenty dokumentów legislacyjnych otwierają się natomiast w czytniku modułu Legislacja z wyróżnionym fragmentem; zob. [Opublikowane akty i publikacje](/pl/legislation-tracker/published-acts).
+
+Komunikat **Fragment źródła niedostępny** oznacza, że fragmentu nie udało się otworzyć: może być już niedostępny albo konto może nie mieć już do niego dostępu.

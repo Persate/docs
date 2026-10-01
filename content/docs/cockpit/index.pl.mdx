@@ -1,36 +1,61 @@
 ---
 title: Kokpit
-description: Przegląd istotnych zdarzeń z alertów, etapów projektów i stanowisk konsultacyjnych w jednym widoku.
+description: Ekran startowy po zalogowaniu — uszeregowane zdarzenia z alertów, etapy projektów i stanowiska konsultacyjne w jednym widoku.
 ---
 
-**Kokpit** to ekran startowy po zalogowaniu. Pozycja **Kokpit** w panelu bocznym otwiera przegląd zdarzeń dotyczących alertów dostępnych na koncie. Widok wymaga dostępu do alertów.
+**Kokpit** to ekran startowy po zalogowaniu. Wraca się do niego przez **Kokpit**, pierwszą pozycję panelu bocznego; na telefonie jest to pierwszy przycisk dolnego paska. Widok powstaje z alertów dostępnych dla konta, dlatego jest dostępny, gdy alerty są włączone dla organizacji. W przeciwnym razie strona wyświetla komunikat **Ta funkcja nie jest częścią Twojego pakietu**.
+
+Strona składa się z dwóch części: mozaiki kart zdarzeń oraz kolumny z trzema podsumowaniami. Na szerokim ekranie kolumna znajduje się po prawej stronie mozaiki; w węższym oknie i na telefonie podsumowania są wyświetlane nad kartami.
 
 ## Karty zdarzeń
 
-Mozaika porządkuje zdarzenia według ocenionej istotności, liczby zgrupowanych zdarzeń i czasu wykrycia. Pierwszeństwo mają pozycje **Potencjalnie istotne**. Brak oceny nie oznacza, że zdarzenie jest nieistotne.
+Mozaika mieści do ośmiu kart. Kolejność wyznacza ocena istotności, następnie liczba zgrupowanych zdarzeń, a na końcu czas wykrycia: najpierw pozycje **Potencjalnie istotne**, potem warte uwagi, nieocenione i rutynowe. Brak oceny jest normalny i nie oznacza, że zdarzenie jest nieistotne.
 
-Największa karta przedstawia wiodące zdarzenie. Jeśli dla jego projektu są dostępne stanowiska, kolorowe kafelki pism pokazują organizacje i ocenione stanowiska. Wpisy z X dotyczące tego samego zdarzenia lub tematu Public Pulse są pokazywane jako jedna karta. Jeśli alerty zostawiają wolne miejsce, pozostałe karty pokazują potencjalnie istotne zdarzenia publiczne z ostatnich dwóch dni, których alerty nie dopasowały, wraz z kluczową wartością liczbową, jeśli jest dostępna. Mozaika pokazuje tylko karty z treścią: przy mniejszej liczbie pozycji karty powiększają się i wypełniają widok.
+* **Karta wiodąca** — największa karta przedstawia zdarzenie z najwyższą pozycją. Jeśli do projektu, którego dotyczy, wpłynęły pisma z konsultacji, kafelki pism pokazują organizacje i ocenione stanowiska wraz z liczbą pism i ich podziałem według stanowisk, z adnotacją **Odczyt automatyczny**.
+* **Druga karta** — trafia do niej najmocniejsza pozycja potencjalnie istotna z ostatnich siedmiu dni, w miarę możliwości z innego alertu niż karta wiodąca. Bez takiej pozycji zawiera kolejną kartę z rankingu.
+* **Pozostałe karty** — pokazują typ źródła, nazwę alertu, tytuł, źródło lub autora z czasem oraz, jeśli jest znany, bieżący etap powiązanego projektu rządowego. Mozaika unika ustawiania obok siebie kart z tego samego alertu.
 
-Wybranie karty otwiera szczegóły. Sekcja **Dlaczego to ważne** pokazuje automatyczne uzasadnienie i maksymalnie dwa tematy, jeśli są dostępne. Oceny mogą być niepełne lub błędne; przed wykorzystaniem informacji należy sprawdzić podlinkowane źródło. Treści źródłowe i uzasadnienia zachowują oryginalny język.
+Zdarzenie dopasowane przez kilka alertów pojawia się tylko raz. Wpisy na X dotyczące tego samego zdarzenia lub tematu z modułu Media są łączone w jedną kartę; wpis bez czytelnego tytułu nie jest pokazywany.
 
-## Podsumowania na pulpicie
+Jeśli alerty nie wypełniają wszystkich pól, pozostałe karty pokazują zdarzenia z całej Polski z ostatnich dwóch dni ocenione jako potencjalnie istotne, wraz z kluczową wartością liczbową, jeśli jest dostępna. Zdarzenie dotyczące projektu, który jest już na karcie alertu, nie jest powtarzane. Mozaika pokazuje tylko karty z treścią: przy mniejszej liczbie pozycji zbędne rzędy znikają, a karty poszerzają się i wypełniają widok.
 
-* **Od ostatniej wizyty** — nowe zdarzenia pogrupowane według alertów, z nagłówkiem i liczbą nowych pozycji. Wybranie alertu otwiera jego dopasowania.
-* **Twoje projekty w procesie** — projekty rządowe (RCL) powiązane ze zdarzeniami z Twoich alertów z ostatnich siedmiu dni, ich bieżący etap i następny krok. Oś rozróżnia etapy zawierające dokumenty, wcześniejsze puste etapy oraz etapy nadchodzące. Bieżący etap jest ustalany na podstawie dostępnych dokumentów, więc może nie odzwierciedlać jeszcze najnowszego stanu procesu.
-* **Kto zabiera głos** — stanowiska dotyczące powiązanych projektów, pogrupowane według organizacji i oceny: **Sprzeciw**, **Prośba o zmiany** lub **Bez uwag**. Są to automatyczne odczytania ocenionych pism, a nie zweryfikowane wnioski prawne. Etykieta z datą wskazuje dostępne pokrycie; brak organizacji na karcie nie dowodzi, że nie złożyła stanowiska.
+## Szczegóły karty
 
-Wszystkie trzy podsumowania są zawsze widoczne. Stanowiska pokazane na wiodącej karcie nie są powtarzane w podsumowaniu.
+Wybranie karty otwiera panel szczegółów po prawej stronie. W zależności od pozycji panel zawiera:
+
+* odnośnik do źródła, autora i czas wykrycia;
+* streszczenie zdarzenia;
+* **Dlaczego to ważne** — etykietę istotności, automatyczne uzasadnienie i maksymalnie dwa tematy, z adnotacją **Ocena automatyczna, niezweryfikowana.** Uzasadnienie jest napisane po polsku i nie jest tłumaczone;
+* **Oryginał** — fragment źródła;
+* **Dopasowano** — wyrażenia, które dopasował alert;
+* **Wywołane przez alert** — odnośnik do alertu, który znalazł pozycję.
+
+Oceny mogą być niepełne lub błędne. Przed wykorzystaniem informacji należy sprawdzić źródło. Treść źródłowa zachowuje oryginalny język.
+
+## Podsumowania
+
+Kolumna zawsze zawiera te same trzy podsumowania. Każde z nich wczytuje się, pozostaje puste lub zgłasza błąd niezależnie od reszty strony.
+
+* **Od ostatniej wizyty** — nowe pozycje pogrupowane według alertów. Wiersz zawiera nazwę alertu, główny nagłówek i liczbę nowych pozycji; wybranie wiersza otwiera alert, a **Zobacz wszystkie** otwiera moduł Monitorowanie. Wizyta jest liczona dopiero wtedy, gdy podsumowanie rzeczywiście pojawiło się na ekranie. Gdy nie ma nic nowego, podsumowanie wyświetla **Nic nowego od ostatniej wizyty.**
+* **Twoje projekty w procesie** — rządowe projekty (RCL) powiązane z aktywnością alertów z ostatnich siedmiu dni. Wiersz zawiera tytuł projektu, oś etapów, bieżący etap z datą oraz następny krok (**Następnie:**). Na osi pełne segmenty oznaczają etapy z dokumentami, przygaszone — wcześniejsze etapy bez dokumentów, większy segment — etap bieżący, a obrysowane — etapy przyszłe; po wskazaniu segmentu widać nazwę etapu i daty. W projekcie ustawy oś zarysowuje również późniejsze kroki parlamentarne; pokazują one dalszą ścieżkę, a nie faktyczny stan prac w parlamencie. Bieżący etap jest ustalany na podstawie opublikowanych dokumentów i może nie nadążać za oficjalnym procesem. **Wszystkie projekty** otwiera listę projektów rządowych. Bez powiązanych projektów podsumowanie wyświetla **W tym tygodniu Twoje alerty nie trafiły na projekty rządowe.** oraz przycisk **Przejrzyj swoje alerty**.
+* **Kto zabiera głos** — stanowiska konsultacyjne dotyczące powiązanych projektów. Przy każdym projekcie widać liczbę stanowisk, pasek podzielony według stanowisk i etykiety organizacji oznaczone kolorem stanowiska: **Sprzeciw**, **Prośba o zmiany** lub **Bez uwag**. Etykieta **Pisma od** wskazuje początek dostępnego zakresu danych. Stanowiska są automatycznym odczytaniem pism, a nie zweryfikowanymi wnioskami prawnymi; organizacja nieobecna w podsumowaniu mogła mimo to złożyć stanowisko. Na szerszym ekranie projekt z karty wiodącej nie jest tu powtarzany, a jeśli jest jedynym projektem z pismami, podsumowanie wyświetla **W głównym kaflu**; na telefonie, gdzie karta wiodąca nie pokazuje kafelków pism, projekt jest wymieniony. Bez pism podsumowanie wyświetla **Brak pism z konsultacji Twoich projektów.** oraz przycisk **Przeglądaj projekty**.
 
 ## Zalecany sposób pracy
 
-1. Przejrzeć wiodące zdarzenia i pozycje potencjalnie istotne.
-2. Otworzyć kartę, przeczytać uzasadnienie i sprawdzić źródło.
-3. Sprawdzić etapy projektów oraz stanowiska konsultacyjne, a następnie przejść do właściwego alertu lub projektu.
+1. Przejrzeć kartę wiodącą i pozycje potencjalnie istotne.
+2. Otworzyć kartę, przeczytać sekcję **Dlaczego to ważne** i sprawdzić źródło.
+3. Sprawdzić w **Od ostatniej wizyty**, które alerty mają nowe pozycje, a następnie etapy projektów i stanowiska konsultacyjne.
+4. Kontynuować pracę na stronie alertu lub projektu.
+
+## Puste widoki, ładowanie i błędy
+
+* Podczas wczytywania elementy zastępcze utrzymują układ strony. Karty są rozmieszczane po otrzymaniu danych z alertów; pola oczekujące na zdarzenia z całej Polski pozostają elementami zastępczymi, dopóki te dane nie nadejdą.
+* **Żaden alert nie został jeszcze wywołany** — alerty nie mają jeszcze dopasowań do pokazania. Jeśli dostępne są zdarzenia z całej Polski, komunikat zajmuje pole wiodące z przyciskiem **Utwórz alert**, a zdarzenia wypełniają pozostałe pola. Bez nich komunikat wypełnia całą mozaikę.
+* **Brak zdarzeń z tytułami** — najnowsze dopasowania czekają na tytuł. **Zobacz alerty** otwiera moduł Monitorowanie.
+* **Nie udało się wczytać wiadomości z alertów.** — nie udało się wczytać kart; należy wybrać **Spróbuj ponownie**. Komunikat **Nie udało się wczytać wiadomości z całej Polski.** pojawia się w jednym polu z osobnym przyciskiem **Spróbuj ponownie**.
+* **Nie udało się wczytać tej sekcji.** — jedno podsumowanie nie zostało wczytane; jego przycisk **Spróbuj ponownie** wczytuje ponownie tylko to podsumowanie.
+* **Nie udało się wczytać Kokpitu.** — nie udało się wczytać żadnej części strony; **Spróbuj ponownie** wczytuje wszystkie.
 
 ## Wygląd
 
-Jasny motyw jest domyślny, jeśli wcześniej nie wybrano motywu. Ustawienie można zmienić w **Ustawienia → Preferencje → Wygląd**, wybierając **Dzienny**, **Nocny** albo **Zgodnie z systemem**. Dotychczasowy wybór pozostaje aktywny.
-
-## Puste widoki i ładowanie
-
-Komunikat **Żaden alert nie został jeszcze wywołany** oznacza, że nie ma dopasowań gotowych do wyświetlenia. Można utworzyć alert lub otworzyć istniejące alerty. Komunikat **Brak zdarzeń z tytułami** oznacza, że ostatnie dopasowania oczekują na tytuł. Elementy zastępcze są zastępowane po pobraniu danych. Podsumowanie bez danych informuje o tym jednym zdaniem, a podsumowanie, którego nie udało się wczytać, wyświetla przycisk **Spróbuj ponownie**.
+Jasny motyw jest domyślny, jeśli nie wybrano innego. Przełącznik motywu na górnym pasku zmienia motyw jasny na ciemny i odwrotnie oraz zapisuje wybór na koncie. W **Ustawienia → Preferencje → Wygląd** dostępne są opcje **Dzienny**, **Nocny** i **Zgodnie z systemem**. Szczegóły opisano na stronie [Preferencje i powiadomienia](/pl/account-and-settings/preferences).

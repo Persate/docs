@@ -1,42 +1,73 @@
 ---
-title: Live proceedings
-description: Access point for parliamentary broadcasts — tracking ongoing proceedings, browsing the recording archive, and viewing the Sejm work schedule.
+title: Recordings
+description: Video recordings of Sejm proceedings with Persate's analysis — the three lists, list and tile layouts, status icons, filters, and other ways to open a recording.
 ---
 
-**Live proceedings** is a module providing access to the official Sejm video channels. The platform enables following broadcasts in real time, analyzing archival recordings, and browsing the calendar of upcoming gatherings (committees, plenary sessions, conferences).
+**Recordings** gives access to video recordings of Sejm proceedings — plenary sittings, committee and subcommittee sittings, conferences and other events — together with Persate's analysis of each recording: a transcript with identified speakers and, for finished recordings, a timeline, a polished transcript and the official Sejm transcript where these are available.
 
-Open the view from **PUBLIC → Recordings** in the sidebar.
+The module appears under **PUBLIC → Recordings** when the feature is enabled for the organization. Otherwise the page shows **This feature is not included in your plan**.
 
-## Sub-views
+## Ongoing, Previous and Scheduled
 
-The interface allows switching between three lists:
+The top bar switches between three lists:
 
-* **Ongoing** — sessions currently being broadcast live.
-* **Previous** — an archive of completed recordings available for analysis.
-* **Scheduled** — announced sessions, ordered chronologically by start date.
+* **Ongoing** — proceedings being broadcast right now.
+* **Previous** — proceedings that have ended. This list opens by default.
+* **Scheduled** — announced proceedings that have not started yet.
 
-## Proceeding card
+**Ongoing** and **Previous** show the newest proceedings first; **Scheduled** shows the nearest first. A proceeding is listed in only one of the three lists and moves to the next one when it starts and ends.
 
-Proceedings are grouped by month. Each is represented by a card containing the session title, start time, and type (**Session**, **Commission**, **Subcommittee**, **Conference**, or **Other**). Icons on the right side of the card indicate the status of analytical processes across two tracks — **Record Analysis** (real-time analysis) and **Enhanced Record** (in-depth analysis). The icon color indicates the state:
+## List and tiles
 
-* **Blue** — the analysis result is ready.
-* **Orange** — analysis is in progress or queued (for in-depth analysis, a progress percentage is displayed).
-* **Red** — a server error occurred during analysis.
-* **Grey question mark** — *No transcript · Needs verification*: the analysis finished but saved no transcript. This does not confirm that nobody spoke; open the recording to re-run the analysis.
+The toggle at the right of the top bar switches between two layouts. The browser remembers the choice.
 
-## Filtering tools
+* **List** — rows grouped by month, with the columns **Recording**, **Date**, **Type** and **Status**.
+* **Tiles** — one card per recording with its first frame, type, start time and room.
 
-Filters and the search panel, available in the sidebar, allow narrowing the proceedings list:
+Selecting a row or a tile opens the recording; see [Opening a proceeding](/live-proceedings/analysis).
 
-* **Search** — in session titles.
-* **Date range** — restricting the list to a selected time period.
-* **Proceeding type** — a multi-select selector for gathering types.
+## Status icons
 
-## Empty view and error states
+The **Status** column — in tiles, the top-right corner of the card — shows at most one icon per recording. Hovering over the icon shows what it means.
 
-* *"No proceedings found"* — active filters exclude all entries from the list.
-* *"Failed to load proceedings"* — server connection error. Refreshing the page is recommended.
+| Icon | Meaning |
+|---|---|
+| No icon | The recording has no analysis yet. |
+| Check mark | **Recording Analysis** is complete. |
+| Spinning circle | The analysis is running or queued; while it runs, the tooltip shows the percentage done. |
+| Red cross | The analysis failed, or it stopped and is waiting to resume on its own. The tooltip names the state — for example *retry scheduled* or *waiting for recording* — and, when known, the time of the next retry or check. |
+| Grey question mark | **No transcript · Needs verification** — the analysis finished but saved no transcript. This does not confirm that nobody spoke; the analysis can be run again from the recording view. |
+| Grey circle | The original video is no longer available from its source: **Persate only** (Persate plays the copy it saved) or **Video unavailable**. Any saved analysis remains accessible. |
+
+[Analysis status](/live-proceedings/status) explains each state and the action it offers.
+
+## Narrowing the list
+
+The side panel filters the list that is currently open:
+
+* **Search** — matches the title, the committee and the room (*Search sessions...*).
+* **Date Range** — limits the list to a selected period.
+* **Proceeding type** — **Session**, **Commission**, **Subcommittee**, **Conference** or **Other**; several types can be selected at once.
+* **Recording availability** — shows only recordings marked **Persate only**, **Unavailable** or **Stale unavailable**. With nothing selected (**Any availability**), all recordings are listed.
+* **Political party** — shows recordings whose title names a parliamentary club or party, such as a club's press conference.
+
+The selected filters stay in place when switching between the lists and are kept for the rest of the browser session.
+
+## Other ways to open a recording
+
+Recordings can also be opened from other parts of Persate, usually at the relevant moment:
+
+* **Search** — results include recordings and matching fragments of their transcripts; a transcript match opens the recording at that moment. See [Search and notifications](/using-persate/search-and-notifications).
+* **Advisor** — a citation of a statement in an Advisor answer opens the recording at the cited moment.
+* **Tracker** — alert matches found in Sejm speeches offer a **Play from** link to the matched moment.
+* **Legislation** — committee pages link to the recordings of their sittings (**Open recording**).
+
+## Empty and error states
+
+* **No proceedings found** — the list is empty or no recording in it matches the active filters.
+* **Failed to load proceedings** — the list could not be loaded; trying again later is recommended.
 
 ## Pages in this section
 
-* **[Opening a proceeding](/live-proceedings/analysis)** — detailed view with the video player and the **Record Analysis** and **Enhanced Record** analysis modes.
+* **[Opening a proceeding](/live-proceedings/analysis)** — the player, the transcript and its views, the official Sejm transcript, the summary, and live analysis.
+* **[Analysis status](/live-proceedings/status)** — what each analysis and availability state means and which action it offers.

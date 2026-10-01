@@ -1,42 +1,96 @@
 ---
 title: Search and notifications
-description: Finding records across Persate and managing the two navbar feeds.
+description: Global search with source previews, the Announcements and Messages feeds, notices above the header and notification settings.
 ---
 
 ## Global search
 
-Open **Search** from the platform controls and enter a word, phrase, topic, question or identifier in **Search the platform...**. Results can include legislation, votes, stakeholders, Repository files, Smart Folders, alerts, recordings, Media stories and posts, and Sources. Questions that need a broader explanation also offer **Ask the Advisor**.
+Open search with **Search** at the top of the sidebar, or with the search button in the dock on a phone, and type in **Search the platform...**. Results start to appear from two characters and update while typing. Some sources need a longer query, so a short query can miss results that a fuller one finds.
 
-On a wide screen, results appear in a cloud around the search field. Existing cards stay in place while further results arrive. Category buttons focus the search on an area; the **Previous results** and **Next results** arrows reveal the remaining retrieved results. On smaller screens or with enlarged text, results appear as compact scrolling rows.
+Search covers the modules enabled for the organization, and every result respects access to the individual record. Results are grouped into categories:
 
-Each result identifies its source. **Preview source** opens a small preview with the source excerpt and any matching **Source analysis** in separate sections. Analysis is labelled as automated and retains its uncertainty and limitations. It belongs to the original source rather than a separate search category. Ordinary searches show no importance assessment; a query explicitly asking about importance may show a qualified assessment inside the preview. **Back to search** or Escape closes the preview, and **Open source** opens the original destination. Interface labels follow the selected language; source text stays in its original language.
+| Category | What it finds |
+|---|---|
+| **Go** | Platform sections, for example *votes* or *open recordings* |
+| **Files** | Repository files by name; longer queries also match file content |
+| **Folders** | Smart Folders |
+| **People** | Stakeholders — people and organizations |
+| **Related** | Records connected to matching people, institutions and keywords |
+| **Alerts** | Tracker alerts |
+| **Acts** | Government projects, Sejm prints, legal acts and documents, parliamentary questions, committees and legislative processes |
+| **Ministries** | Publications of ministries and other public offices |
+| **Live** | Recordings and transcript passages |
+| **Votes** | Sejm and Senate votes, decisions of the President and Constitutional Tribunal cases |
+| **Media** | Media topics, stories and posts |
 
-Select a result to open its canonical detail page. When a result represents a Repository file, Persate may open the file picker or preview in the current workflow instead of navigating away.
+An identifier — an ELI, a Sejm print number, an RCL project number, a Constitutional Tribunal case signature or a voting reference — is matched directly and placed at the top of the results. Results can also come from Persate's automated analysis of a source; they appear in the category of the source itself, not in a separate category.
 
-Search providers have different minimum query lengths and filters. If a category returns no result, refine the wording rather than assuming that the underlying module is empty. Results also respect tenant entitlements and record-level access.
+### Reading the results
+
+On a large screen, results form a cloud around the search field, with the category buttons underneath. Cards already shown stay in place while further results arrive. When there are more results than fit, **Previous results** and **Next results** page through them. On a smaller screen or with enlarged text, results are listed above the search field, and **Close search** (the arrow next to the field) closes search.
+
+The line next to the category buttons reports the state: **Searching**, the number of results shown out of those found, **No matches** or **Search incomplete**. **Some sources unavailable** means that at least one source did not answer; hovering over it lists them.
+
+Each result shows its source or key details. Repository files and alerts also show who can see them.
+
+### Filtering by category
+
+Each category button shows how many results the category returned. Select one or more buttons to show only those categories, and select a button again to remove it. A category without matches is greyed out on a large screen and hidden on a smaller one. Changing the query clears the selection.
+
+### Previewing a source
+
+**Preview source**, the information icon on a result, opens a preview without leaving search. It shows the source type, the title, the details and the source excerpt and, when available, a separate **Source analysis** section, labelled **Automated analysis of this source**, with topics and an explanation. An ordinary search shows no importance assessment. When the query itself asks about importance, for example with *important*, *significant*, *ważne* or *istotne*, the preview can add a qualified label such as **Potentially significant — automated assessment**.
+
+**Back to search** or Escape closes the preview, and **Open source** opens the result. Interface labels follow the selected language; source text keeps its original language.
+
+### Opening a result
+
+Select a result to open its page. A Repository file opens in the file preview over the current page, and a result that points outside Persate opens in a new tab.
+
+From the keyboard, the down arrow moves from the search field to the first result, the arrow keys move between results and Enter opens the highlighted one; Enter in the search field opens the first result. Escape or a click outside the results closes search. On a phone, Enter only hides the keyboard; tap a result to open it.
+
+### Asking the Advisor
+
+When the query reads like a question or an instruction, **Ask the Advisor** appears next to the search field. It starts a new Advisor conversation with the query as the first message. Ctrl+Enter (⌘+Enter on a Mac) does the same, and Enter also asks the Advisor when the query has no results.
 
 ## Announcements
 
-**Announcements** contains release and product notices. Opening the feed refreshes it. Individual notices can be marked as read, and **Mark all as read** clears the unread state for the current feed.
+**Announcements** in the header holds release notes and product news from the Persate team. The counter on the button shows unread announcements.
+
+The panel has two tabs: **Unread**, with the number of unread announcements, and **All**. Each announcement is shown in full; one that links to a page in Persate shows **Open in Persate**. **Mark as read** (the check mark) marks a single announcement, and **Mark all as read** marks every one. **Maximize panel** widens the panel for longer content, and **Restore panel size** returns it to normal.
 
 ## Messages
 
-**Messages** contains direct and system messages, not alert matches. It has two tabs:
+**Messages** in the header holds messages addressed to the account: messages from the Persate team and the notifications switched on in **Settings → Notifications**, such as alert matches, a ready daily report or a finished Advisor task. The complete history of an alert's matches stays on the alert's page in Tracker.
 
-* **Inbox** — current messages. A message can be marked as read or archived.
+The panel has two tabs:
+
+* **Inbox** — current messages, with the number of unread ones. **Mark as read** and **Archive** act on a single message; **Archive all** archives every message shown in the inbox.
 * **Archived** — archived messages. **Move to inbox** restores a message.
 
-Use **Archive all** to archive every loaded inbox message. The panel can be expanded for longer content.
+A message that links to a page in Persate shows **Open in Persate**. **Maximize panel** widens the panel for longer content.
 
-## Alert and report notifications
+## Notices and connection status
 
-Open **Settings → Notifications** to control delivery preferences. **Alert emails** are optional e-mail delivery for enabled alerts. Alert events remain available on the alert detail page even when e-mail is off. The navbar inbox is not the alert event history.
+Notices from the Persate team — information, maintenance, delays, warnings or incidents — can appear as bars above the header, either on every page or only within one module. A longer notice shows **Details** to expand its full text. **Dismiss this notice** (the cross) hides it in the current browser; it returns if the notice is updated.
 
-See [Preferences and notifications](/account-and-settings/preferences) for the full list.
+A bar also appears above the header when the browser loses its connection, as content may then be out of date, or when data loads unusually slowly. It disappears on its own when the connection recovers.
+
+## Notification settings
+
+**Settings → Notifications** controls what is delivered:
+
+* **Product updates** — email about new features and release notes.
+* **Alert emails** — an email when an enabled alert is triggered.
+* **Alert match notifications**, **Daily report notifications** and **Advisor notifications** — notifications in Persate and on the phone. **Daily report notifications** are off until switched on.
+
+Alert events remain available on the alert's page even when emails and notifications are off. See [Preferences and notifications](/account-and-settings/preferences) for details.
 
 ## Empty and error states
 
-* **All caught up** — the inbox contains no messages.
-* **Nothing archived** — no messages have been archived.
-* **Messages couldn't be loaded** — select **Try again**; no message state has been changed.
-* **Some sources unavailable** or **Search incomplete** — some sources could not return results. Available results remain usable; retry the query or open the destination module. A category with no matches may also need a longer or more specific query.
+* **All caught up** — there are no unread announcements, or the message inbox is empty.
+* **No announcements yet** — the **All** tab has no announcements.
+* **Nothing archived** — no message has been archived.
+* **Messages couldn't be loaded** — select **Try again**; no message has been changed.
+* **No matches** — nothing matched in the enabled categories. Try different wording or a longer query.
+* **Search incomplete** or **Some sources unavailable** — some sources did not answer. The results shown remain usable; repeat the query or open the module directly.

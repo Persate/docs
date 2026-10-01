@@ -1,45 +1,51 @@
 ---
 title: Uploading files
-description: Adding a controlled batch of files to Repository and assigning its audience.
+description: Adding PDF, DOCX, XLSX and CSV files to Repository in batches of up to five, choosing who can open them, and retrying failed files.
 ---
 
-Open **Upload** from the platform controls. The **Upload files** drawer displays the file list and one access setting for the entire batch.
+Files reach Repository through the **Upload files** panel. Each batch gets one access setting, and the panel reports the result for every file.
+
+## Open the upload panel
+
+* On a computer, select **Upload** at the top of the main sidebar, next to **Search**.
+* On a phone, select the upload icon in the dock at the bottom of the screen.
+
+The button appears only when Repository is enabled for the organization. The panel opens on the right, over the current page; **Cancel** closes it.
 
 ## Supported files and limits
 
-The live upload control accepts PDF, DOCX, XLSX, and CSV files. The displayed maximum is 50 MB per file. A batch can contain at most five files. Workspace storage limits and content validation still apply after the browser accepts the selection.
+The drop zone states the rules: **Supported formats: PDF, DOCX, XLSX, CSV. Max: 50 MB**. Files of other types are not added to the list. One upload can contain at most five files.
 
-## Build a batch
+## Upload a batch
 
-1. Drag files onto the drop zone or select **choose file**.
-2. Confirm each file name, type, and **pending** status.
-3. Remove any unintended item before upload. An item cannot be removed while its status is **uploading**.
-4. Set **Access for these files** to **Only me** or selected groups.
-5. Select **Add files**.
+1. Drag files onto the drop zone, or select **choose file** and pick them.
+2. Check the list below the drop zone. It shows each file's type, name and status. To leave a file out, select the bin icon (**Remove file**) in its row.
+3. Check the **Access for …** field above the list. A new batch starts as **Only me**. To share the files, select **Change**, choose **Selected groups**, pick one or more groups and select **Update**.
+4. Select **Add files**.
 
-Files are sent one at a time. Each row changes from **pending** to **uploading**, then **success** or **error**. The drawer closes automatically only when every attempted file succeeds.
+Persate sends the files one after another. While it works, the button reads **Uploading...** and **Cancel** is unavailable. The **Status** of each row changes from **Pending** to **Uploading**, then to **Success** or **Error**, and a notification confirms every uploaded file. When all files succeed, the panel closes and the Repository list refreshes.
 
-## Batch access
+## Access for the batch
 
-One audience applies to all files in the batch. When group access is selected, at least one group is required.
+The access setting applies to every file in the batch.
 
-The audience is locked as soon as the first upload attempt starts. This keeps successful files and any retried failures on the same access contract. To upload another set with a different audience, close and reopen the drawer and create a new batch.
+* **Only me** keeps the files private to the person uploading them.
+* **Selected groups** shares them with members of the chosen groups. At least one group is required; without one, the change cannot be saved and the panel shows **Choose at least one group, or select Only me.** Groups marked **Read only** cannot be chosen.
 
-## Retry failures
+Access is locked as soon as the upload starts, and the field shows **Access is locked for this upload batch and its retries.** Retried files therefore get the same audience as the files already uploaded. To upload files with a different audience, close the panel, open it again and start a new batch. Once a file has been processed, its owner can change its access in the file panel; see [Browse and manage files](/repository/view-and-organize).
 
-After a partial failure, leave the successful rows unchanged and select **Add files** again. Persate retries rows in **error** or **pending** state. It does not resend rows already marked **success**.
+## Retry failed files
 
-Before retrying, check that the file remains below the displayed limit, the extension and actual content agree, the workspace has storage capacity, the signed-in user still has Repository and selected-group access, and the network connection is stable.
+Rows marked **Error** stay in the list after a partial failure. Remove the cause — for example an extra file beyond the fifth, or a file over the size limit — and select **Add files** again. Persate sends only the rows marked **Pending** or **Error**; rows marked **Success** are not uploaded twice.
 
-## Background processing
+## After the upload
 
-A **success** upload means the original file was accepted and stored. Extraction, summary generation, and search indexing can finish later. Do not repeatedly upload the same file merely because its summary is not yet visible.
+**Success** means Persate has accepted and stored the original file. Analysis continues in the background: the **Analysis** column in Repository shows its progress, and the summary appears under **Description** when it is ready. A missing summary is not a reason to upload the same file again.
 
-## Error states
+## Troubleshooting
 
-* **You can upload a maximum of 5 files at a time** — split the selection into separate batches.
-* **Choose at least one group, or select Only me** — complete the audience before upload.
-* Unsupported file — use PDF, DOCX, XLSX, or CSV and confirm the file is not merely renamed.
-* File too large — reduce the file below 50 MB.
-* Storage allowance reached — remove unneeded files or contact an administrator.
-* **error** after a partial batch — correct the affected file and retry; successful rows are retained.
+* **You can upload a maximum of 5 files at a time.** — remove rows until five or fewer remain, then select **Add files**.
+* **Choose at least one group, or select Only me.** — pick at least one group, or switch the access to **Only me**.
+* A file does not appear in the list — it is not a PDF, DOCX, XLSX or CSV file.
+* A row shows **Error** — the notification gives the reason reported for that file. Check that the file is smaller than 50 MB and that its content really is in the format its extension indicates, then retry.
+* There is no **Upload** button — Repository is not enabled for the organization.

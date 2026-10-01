@@ -1,0 +1,60 @@
+---
+title: Advisor w Redaktorze
+description: Pytania do Advisora o otwarty dokument, praca z zaznaczonym tekstem, przegląd i stosowanie zmian Advisora, plany oraz ponumerowane źródła.
+---
+
+Advisor w Redaktorze pracuje na otwartym dokumencie: odczytuje bieżący tekst i tytuł, odpowiada na pytania o nie i proponuje konkretne zmiany. Proponowana zmiana trafia do dokumentu dopiero po jej zastosowaniu.
+
+## Pytanie do Advisora
+
+1. Wybrać **Advisor** na pasku widoków.
+2. Wpisać polecenie w polu **Poproś Advisora o edycję, sprawdzenie lub napisanie tekstu…** i nacisnąć **Enter**; **Shift+Enter** dodaje nowy wiersz.
+
+Przykłady:
+
+* *„Skróć wstęp do trzech zdań.”*
+* *„Sprawdź, czy wyniki głosowania w drugiej sekcji są poprawne.”*
+* *„Zaproponuj bardziej precyzyjny tytuł.”*
+
+Advisor odpowiada w panelu tak samo jak w głównym module Advisor — z przebiegiem analizy, odnośnikami do źródeł oraz, gdy potrzebuje doprecyzowania, krótkim formularzem do wypełnienia. Zapytanie bez cytatu dotyczy całego dokumentu.
+
+Rozmowa w Redaktorze jest związana z otwartym dokumentem: otwarcie innego dokumentu rozpoczyna nową rozmowę, a zapytania z Redaktora nie pojawiają się w historii rozmów Advisora.
+
+Advisor jest niedostępny w trakcie sprawdzania oraz podczas konfliktu zapisu. Gdy wyświetlany jest zapisany przegląd, w polu widnieje podpowiedź **Wróć do bieżącego szkicu, aby pracować z Advisorem**.
+
+## Praca z zaznaczonym tekstem
+
+Zaznaczenie tekstu w dokumencie wyświetla pasek, na którym obok przycisków formatowania znajdują się trzy działania Advisora:
+
+| Działanie | Wynik |
+| :--- | :--- |
+| **Analyze fragment** | Advisor sprawdza twierdzenia we fragmencie, wskazuje brakujące dowody i wyjaśnia, co wymaga uwagi. Tekst nie jest zmieniany. |
+| **Improve wording** | Advisor proponuje jaśniejszą wersję fragmentu, zachowującą jego sens. |
+| **Ask Advisor** | Otwiera się panel z fragmentem dołączonym jako cytat pod polem wpisywania, a w polu pojawia się podpowiedź **Zapytaj Advisora o zaznaczony tekst…**. |
+
+**Analyze fragment** i **Improve wording** otwierają panel i od razu wysyłają zapytanie; **Ask Advisor** czeka na wpisanie pytania.
+
+Cytat ogranicza zapytanie do zaznaczonego fragmentu: Advisor może zastąpić wyłącznie ten fragment i nie zmienia tytułu ani pozostałej części dokumentu. Przycisk **Usuń cytat** (lub klawisz **Escape** w polu wpisywania) odłącza cytat. Jeżeli zaznaczony tekst zmieni się przed wysłaniem zapytania, Redaktor prosi o ponowne zaznaczenie fragmentu.
+
+## Przegląd i stosowanie zmian Advisora
+
+Gdy Advisor proponuje zmianę, odpowiedź kończy się sekcją **Proponowane zmiany**. Każda zmiana jest opisana jako **Zaznaczony fragment**, **Zastąpienie tekstu**, **Tytuł dokumentu** lub **Treść dokumentu** i pokazuje tekst **Przed** oraz **Proponowane**, z oznaczeniem usuniętych i dodanych słów.
+
+* Przycisk **Zastosuj** wprowadza wszystkie wymienione zmiany naraz. Panel pokazuje wtedy komunikat **Dokument zaktualizowany** i przycisk **Cofnij zmianę**, który przywraca poprzedni tekst i tytuł, o ile dokument nie był od tego czasu edytowany.
+* **Odrzuć** pozostawia dokument bez zmian.
+
+Bez cytatu Advisor może zaproponować punktowe zastąpienia, nową treść dokumentu lub nowy tytuł; nawet prośba o usunięcie całego tekstu jest najpierw pokazywana jako propozycja. **Uwaga z przeglądu** towarzyszy zmianom, które Advisor zweryfikował tylko częściowo — przed ich zastosowaniem należy porównać je ze źródłami.
+
+Jeżeli dokument zostanie zmieniony po odpowiedzi Advisora, propozycji nie można już zastosować, a panel wyświetla komunikat **Dokument się zmienił. Poproś Advisora ponownie o aktualną sugestię.** Jeżeli tekst zmieni się w trakcie pracy Advisora, zapytanie kończy się komunikatem **Dokument zmienił się podczas pracy Advisora. Poproś ponownie o edycję bieżącej wersji.** W obu przypadkach dokument pozostaje bez zmian. Zastosowane zmiany pojawiają się w widoku **Historia** z oznaczeniem **Advisor · Zastosowane przez Ciebie**.
+
+## Plan
+
+Przy dłuższych zapytaniach Advisor może udostępnić plan działania krok po kroku. Na pasku widoków pojawia się wtedy pozycja **Plan**, która pokazuje kroki i postęp ich realizacji. Przełączanie między widokami **Advisor** i **Plan** zachowuje tekst wpisany w polu.
+
+## Źródła i przypisy
+
+Odwołania do źródeł, które Advisor umieszcza w szkicu lub w zastosowanej zmianie, są usuwane z treści i wyświetlane jako małe numerowane przypisy. Widok **Źródła** na pasku widoków wymienia je w tej samej kolejności: *Źródła ponumerowane zgodnie z przypisami w dokumencie.*
+
+Każda pozycja pokazuje nazwę źródła, numer strony (jeżeli jest znany), odnośnik do źródła i fragment tekstu; **Czytaj więcej** rozwija dłuższe fragmenty. Wybranie numeru przypisu otwiera źródło i wyróżnia odpowiadającą mu pozycję w widoku **Źródła**. Pozycja bez możliwego do ustalenia adresu jest oznaczona jako **Źródło niedostępne**. Gdy artykuł nie zawiera odwołań, lista wyświetla komunikat **Do tego dokumentu nie przypisano jeszcze źródeł.**
+
+Przypisy i lista źródeł pozostają w Redaktorze — polecenie **Kopiuj tekst** ich nie obejmuje.

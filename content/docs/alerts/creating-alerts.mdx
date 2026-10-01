@@ -1,51 +1,94 @@
 ---
 title: Create and edit alerts
-description: Build a reviewable monitoring rule, set its audience and sensitivity, and save it safely.
+description: Describe what to monitor in a conversation, review the alert contract, choose who can see the alert, and save it.
 ---
 
-Open **CORE → Tracker** and select **Create alert**.
+Select **Create alert** in the Tracker panel. The **New alert** page asks **What do you want to monitor?** Creating an alert is a conversation with Persate: it researches the request, asks clarifying questions, tests the draft against available data, and builds the alert contract in the panel on the right. Nothing is monitored until the alert is saved.
 
-## Describe the monitoring objective
+## Describe what to monitor
 
-Under **What do you want to monitor?**, describe the exact subject and the change or evidence that should count. Include distinguishing names, identifiers, jurisdiction, and exclusions when they matter.
+Type the request and press **Enter** or the send button; **Shift+Enter** starts a new line. A useful request names:
 
-The mention search can bind the alert to an exact person, organization, RCL project, or other supported object. Prefer an exact result over plain text when similarly named entities could be confused.
+* the subject — a bill, a person, an institution, a project, or an issue;
+* what should count as a match — for example a new stage, a statement, a vote, or a mention in a document;
+* what to exclude, and which sources matter when only some do.
 
-Persate researches the request and builds a draft containing the name, description, keywords or entities, structured intent, and source scope. It can ask for clarification. You can stop a running creation; completed draft progress remains available when the backend has saved it.
+Examples: *"New documents and stage changes in the government's draft act on cybersecurity"*, *"Statements by the Minister of Climate about wind farms, in the Sejm and on social media"*.
 
-## Review before saving
+## Pin exact people, institutions, and matters
 
-Check the generated draft for:
+Type `@` followed by at least two characters to search for a person, an institution, an RCL project, or a parliamentary question. Use the arrow keys and **Enter**, or the mouse, to pick a result. A pinned object binds the alert to that exact identity rather than to a name that other people or documents may share. Hover over a pinned object to see its details or to **Unpin** it.
 
-* the exact person, organization, project, question, or topic;
-* conditions that should create a match;
-* exclusions and context-only entities;
-* supported sources in the proposed scope;
-* overlap with an existing alert.
+When the text names a person, an institution, or an RCL project that Persate knows, a suggestion can appear under **Detected:** below the input. Select it to pin the object.
 
-Use the refinement input to request a correction. If Persate flags an unsupported condition, change the definition before saving instead of assuming that the label will be monitored.
+## Track a single object directly
 
-## Audience and sensitivity
+If exactly one person, institution, RCL project, or parliamentary question is pinned before the request is sent, a banner offers **Track exactly this**: the alert is then created directly, without a research run. Selecting it opens the **Alert creation** dialog, which asks for:
 
-Choose **Only me** or selected groups. At least one group is required for shared access. Selected groups can open the alert; eligible recipients receive notifications only through delivery channels enabled in their own preferences.
+* **Access** — **Only me** (the default) or **Selected groups**. Select **Change** to edit it.
+* **Sensitivity** — **Precise** (the default), **Balanced**, or **Broad**. See [Match sensitivity](/alerts/alert-detail#match-sensitivity).
+* **Notifications** — **Every event** notifies once when a new event is first detected (the default), **Escalations** notifies only when an event becomes materially more important, and **Digest** keeps immediate notifications quiet and includes events in the digest.
 
-Choose the match sensitivity appropriate to the workflow:
+Select **Start tracking** to create the alert. When the object can join an existing alert, **Tracking destination** also offers **Add this case to an existing alert**; that alert keeps its current audience, threshold, and discovery policy, and the button changes to **Add to alert**.
 
-* **Precise** — narrower main matches;
-* **Balanced** — main matches plus lower-confidence near misses;
-* **Broad** — wider capture with more review noise.
+The same dialog opens from tracking actions elsewhere in Persate, for example **Track person** on a stakeholder profile or **Track this question** on a parliamentary question.
 
-Review the preview, then select **Save** or **Create alert** as shown. A successful save opens the alert detail. Do not navigate away while the final save is running.
+## Follow the conversation
 
-## Drafts and edits
+After the request is sent, it appears as the first message. Persate shows the steps it takes and then replies. The input stays below the conversation, so answers, extra details, or scope corrections can be added at any time; `@` mentions work there too.
 
-Interrupted saved work appears under **Drafts** and can be resumed or discarded. If a draft is no longer accessible, it may have been deleted or hidden by tenant access controls.
+When Persate asks a question with fixed options, the options appear above the input. Select one, or type an answer instead.
 
-From an alert detail, **Edit** opens the same review-oriented flow with the existing definition. Access information must load before Persate permits editing, so a stale or partial alert cannot silently overwrite its audience.
+To stop a running step, select the stop button or press **Esc**. The original request returns to the input so it can be edited and sent again.
 
-## Troubleshooting
+## Review the alert contract
 
-* No exact object found — broaden the mention search, confirm the identifier, or use a well-scoped topic description.
-* Unsupported condition — refine the rule to a capability the creator confirms.
-* **Choose at least one group, or select Only me** — complete the audience before saving.
-* Save did not complete — remain on the page, retry once, and confirm that no alert was created before starting over.
+The panel on the right (on a phone, the **Alert contract** button) shows what has been established so far. It starts as **Nothing here yet** and, while Persate works, summarises **How it works**, **Recognized scope**, **Conditions**, **Monitored materials**, **Monitoring sources**, **Reviewed research sources**, and **Data validation**.
+
+When the draft is complete, the panel shows the contract that will be saved:
+
+* **Rules.** Each rule is summarised in one sentence, followed by chips for its conditions — the people, institutions, or projects it is tied to, its topics, and the material types it checks. With more than one condition, a condition can be removed with **×**; with more than one rule, a rule can be renamed or removed. **Relationship between topics** sets whether all topics (**all (AND)**) or any one of them (**any (OR)**) must apply. Conditions listed under **Priority — affects ranking but does not block a match** influence ranking only. If the contract has several rules, they run independently.
+* **Source tiles.** Each tile is a source the rule checks. Hover over a tile to see what the alert looks for there; an amber note means coverage of that source is not yet confirmed. **Excluded sources:** lists sources the rule deliberately leaves out.
+* **Still pending from the original request.** If the request covered several separate things, the parts that are not in this alert are listed here and are not dropped. Persate asks whether to handle each part next in this conversation, in a separate conversation, or inside the current alert. A part chosen for this conversation starts automatically after the alert is saved.
+* **Access.** **Only me** by default. Select **Change**, choose **Selected groups** and the groups, then **Update**. Members of the selected groups can open the alert and receive notifications according to their own settings.
+* **Examples.** The result of testing the draft against available data: confirmed example matches with their source, an **Open source** link, and the matched terms. If no example is found, a message explains why — for example the sample was too small or the check could not be completed. A missing example does not mean the alert will stay silent.
+* **Selected RCL projects.** When the draft is tied to specific RCL projects, they are listed here. Search by topic, title, RCL id, or UD number to add more, or remove a project with **×**.
+
+## Save the alert
+
+Select **Create alert** at the bottom of the panel. A short reply such as *save* in the conversation has the same effect once the contract is complete. The alert page opens after saving; its status can show **SETTING UP** until the monitoring definition is ready. Match sensitivity and access can be adjusted on the alert page later.
+
+If the alert covers part of what an existing alert already monitors, Persate shows **You already have an alert that covers part of this.** and asks **What would you like to do?**:
+
+* **Open the existing alert**;
+* **Drop the overlapping part, keep the rest** — create a new alert with only the non-overlapping parts;
+* **Create as a separate alert anyway** — both alerts run independently and may record the same events;
+* **Refine my prompt** — return to the input and adjust the request.
+
+## When the alert cannot be saved yet
+
+* **Needs refinement** or **This alert needs refinement.** — the request contains a combination of conditions that cannot be executed accurately. Clarify in the conversation which conditions must apply together and which should be monitored independently; Persate keeps the original scope and checks the alert again.
+* **The alert could not be prepared.** — the description is kept. Try again or refine the scope in the conversation.
+* **Choose at least one group, or select Only me.** — shared access needs at least one group.
+* **This alert contains an unsupported condition. Refine it before saving.** — change the condition in the conversation.
+* **Save didn't complete — the alert wasn't created. Please try again.** — stay on the page and save again; check the alert list before starting over.
+
+## Other ways to start an alert
+
+* **From the Advisor.** When a conversation with the [Advisor](/advisor) leads to a monitoring request, the Advisor can show a card that opens the creator with the request already filled in. Review it and send it.
+* **From a matched event.** When a match covers only newly added text in a project, the event offers **Track full project**. See [Alert detail](/alerts/alert-detail).
+* **From other modules.** Tracking actions on stakeholder profiles and legislative items open the **Alert creation** dialog described above.
+
+## Resume a draft
+
+The creator saves its progress as a draft. An unfinished creation appears on the **Drafts** tab of the Tracker; selecting it reopens the conversation and the contract where they stopped. See [Drafts](/alerts#drafts).
+
+## Edit an alert
+
+Select **Edit alert** on the alert page, or **Edit** in the alert list. The edit page asks what to change in the alert, and the **Current alert setup** panel shows the contract that is saved now.
+
+1. Describe the change in the conversation, for example *"also include Senate documents"* or *"exclude statements by committee staff"*.
+2. Review the updated contract in the panel. Rule names, conditions, the relationship between topics, and access can also be adjusted there.
+3. Reply with an explicit save instruction, for example *save the changes*. The alert page opens once the update is confirmed.
+
+Editing requires management rights. A shared alert shows **This alert was shared with you. Only its owner or an authorized tenant admin can edit it.**, and a system-managed alert shows **This system-managed alert cannot be edited.** If access information has not loaded, editing is blocked so that the audience cannot be changed by accident; refresh the alert and try again. If an update is not confirmed, **Save didn't complete — the alert wasn't updated. Please try again.** appears and the saved alert stays unchanged.

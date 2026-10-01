@@ -1,0 +1,60 @@
+---
+title: Advisor in Editor
+description: Asking Advisor about the open document, working with selected text, reviewing and applying Advisor's edits, plans and numbered sources.
+---
+
+Advisor in Editor works on the open document: it reads the current text and title, answers questions about them and proposes concrete edits. A proposed edit changes the document only after it is applied.
+
+## Ask Advisor
+
+1. Select **Advisor** in the rail.
+2. Type the request in the **Ask Advisor to edit, check, or write…** field and press **Enter**; **Shift+Enter** adds a new line.
+
+Examples:
+
+* *"Shorten the introduction to three sentences."*
+* *"Check whether the vote results in the second section are correct."*
+* *"Suggest a more precise title."*
+
+Advisor answers in the panel the same way as in the main Advisor — with its research activity, linked sources and, when it needs a clarification, a short form to fill in. A request without a quote concerns the whole document.
+
+The Editor conversation belongs to the open document: opening another document starts a new conversation, and Editor requests do not appear in the Advisor conversation history.
+
+Advisor is unavailable while a check is running and during a save conflict. While a saved review is displayed, the field reads **Return to the current draft to work with Advisor**.
+
+## Work with selected text
+
+Selecting text in the document shows a toolbar with three Advisor actions next to the formatting buttons:
+
+| Action | Result |
+| :--- | :--- |
+| **Analyze fragment** | Advisor checks the claims in the fragment, points out missing evidence and explains what needs attention. The text is not edited. |
+| **Improve wording** | Advisor proposes a clearer version of the fragment that keeps its meaning. |
+| **Ask Advisor** | The panel opens with the fragment attached as a quote below the input, and the field changes to **Ask Advisor about the selected text…**. |
+
+**Analyze fragment** and **Improve wording** open the panel and send the request at once; **Ask Advisor** waits for a question.
+
+A quote limits the request to the selected fragment: Advisor may replace only that fragment and cannot change the title or the rest of the document. **Remove quote** (or **Escape** in the input) detaches it. If the selected text changes before the request is sent, Editor asks for the fragment to be selected again.
+
+## Review and apply Advisor's edits
+
+When Advisor proposes an edit, the answer ends with **Suggested changes**. Each change is labeled **Selected fragment**, **Text replacement**, **Document title** or **Document body** and shows the text **Before** and **Suggested**, with removed and added words marked.
+
+* **Apply change** (**Apply changes** when there are several) applies all listed changes at once. The panel then shows **Document updated** and **Undo change**, which restores the previous text and title as long as the document has not been edited since.
+* **Dismiss** leaves the document unchanged.
+
+Without a quote, Advisor can propose targeted replacements, a new document body or a new title; even a request to remove all text is shown as a proposal first. A **Review note** accompanies changes that Advisor could verify only partly — check them against the sources before applying.
+
+If the document is edited after Advisor answers, the proposal can no longer be applied and the panel shows **The document has changed. Ask Advisor again for an updated suggestion.** If the text changes while Advisor is still working, the request ends with **The document changed while Advisor was working. Ask again to edit the current version.** In both cases the document stays as it is. Applied changes appear in **History** as **Advisor · Applied by you**.
+
+## Plan
+
+For longer requests, Advisor can share a step-by-step plan. A **Plan** entry then appears in the rail and shows the steps and their progress. Switching between **Advisor** and **Plan** keeps the text typed in the input.
+
+## Sources and footnotes
+
+References that Advisor places in a draft or in an applied edit are moved out of the text and shown as small numbered footnotes. **Sources** in the rail lists them in the same order: *References numbered to match the footnotes in your document.*
+
+Each entry shows the source name, the page when known, a link to the source and an excerpt; **Read more** expands long excerpts. Selecting a footnote number opens the source and highlights its entry in **Sources**. An entry without a recoverable address is marked **Source unavailable**. When the article has no references, the list reads **No sources linked to this document yet.**
+
+Footnotes and the source list stay in Editor — **Copy text** does not include them.

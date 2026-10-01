@@ -1,47 +1,72 @@
 ---
 title: Record details
-description: Read institution-specific voting, decision, and case records without conflating their data.
+description: Read Sejm and Senate votes, presidential decisions, and Constitutional Tribunal cases without conflating their data.
 ---
 
-Open a record from **PUBLIC → Votes**. The available sections depend on the active institution and on what its official source publishes.
+Open a record from **PUBLIC → Votes**, or from a link in a legislative journey, an Advisor answer, or search. Each institution has its own detail page; the sections shown depend on what its official source publishes. A side panel lists the page's sections for quick navigation.
 
-## Sejm voting detail
+## Sejm vote
 
-The Sejm detail page can show:
+The banner shows the title of the vote and, when published, its topic and description. The side panel contains:
 
-* result and threshold information;
-* voting time, attendance, turnout, and majority rule;
-* counts by option;
-* related official items and documents;
-* a seat-by-seat chamber map with member votes.
+* **Result** — the outcome (for example **Passed** or **Quorum missing**), the counts **Yes**, **No**, **Abstain**, **Invalid ballots**, and **Not voting** with their share of the chamber, the number of votes cast, and the number of seats represented in the result;
+* **Details** — **Chamber**, **Term**, **Proceeding**, **Voting**, **Date**, **Method** (**Electronic**, **Traditional**, or **Candidate / list vote**), and **Majority** (**Simple**, **Absolute**, **Qualified**, or **Three-fifths**, with the required number of votes when recorded).
 
-Use the club filter above the chamber map to focus on one parliamentary club; **All seats** restores the full map. Select or hover a seat where supported to inspect the member and recorded vote.
+The **Voting result** section shows the chamber map: each seat is one member, coloured by the recorded vote, with a legend of counts below. Hover over a seat to see the member and the vote. Under **Highlight parliamentary clubs**, select one or more clubs to highlight their seats; **All seats** restores the full map.
 
-## Senate voting detail
+For a vote on candidates, **Candidates / options** lists each option with its votes and share of ballots. Select a candidate to show in the chamber map who supported them; select it again to clear the selection.
 
-The Senate detail page uses the official Senate result and available counts. It can include related documents, linked legislative processes, and a Senate chamber distribution when the source provides member votes that can be matched to seats.
+If the source has not published individual ballots, the page says so and keeps the published totals in the side panel. If individual ballots are temporarily unavailable, **Retry individual ballots** loads them again.
 
-An absent senator list or chamber visualization means that the required source data is unavailable; Persate does not substitute Sejm data.
+## Senate vote
 
-## Presidential decisions
+The side panel contains:
 
-The detail opens with the decision and the act it concerns. Available sections include the automated overview, the act's legislative process, veto justification, the Sejm's reconsideration, linked Tribunal cases, earlier vetoes of an act with the same name, and source documents.
+* **Result** — **Adopted** or **Rejected**, the counts **For**, **Against**, **Abstained**, **Did not vote**, and **Absent**, the number of votes cast, and the seats represented;
+* **Details** — **Chamber**, **Term**, **Sitting**, **Voting**, **Date**, and the **Method** and **Majority** as published by the Senate.
 
-For a veto reconsideration, the page shows the recorded vote and the three-fifths threshold. The **Path of the act** panel connects recorded Sejm, Senate, President, and Tribunal events, with links to available records. Repeated print references and explicitly labelled accessible/scanned versions are combined; the accessible version is preferred.
+The Senate distinguishes senators who were absent from the sitting (**Absent**) from senators who were present but cast no vote (**Did not vote**).
 
-## Constitutional Tribunal case detail
+**Seat-by-seat distribution** shows the Senate chamber map with each senator's vote, mapped from the individual records the Senate published. Hover over a seat to see the senator and the vote; a seat without a record is labelled as having no recorded vote. Persate does not substitute Sejm data for missing Senate records.
 
-The TK detail uses the same page layout, with the outcome first and the **Path of the act** panel beside it. It can show the automated overview, named bench, unanimity or majority, separate opinions, a stated loss-of-force date, the original ruling text, and sources. Separate opinions can concern the reasoning or panel composition and do not establish an exact vote tally.
+## Presidential decision
 
-A case may exist before a ruling is published; in that state, verdict information remains unavailable. Source text stays in its original language when the interface language changes.
+The banner shows the outcome, the decision date, and the title of the act; when **Short titles** is on, the official title appears below the short one. The page can contain:
+
+* **AI overview** — an automated overview of the decision, with the sources it is based on. The official text is authoritative.
+* **The act** — the act and its bill: the print and joint prints, the term, **View legislative process**, and **Process page on sejm.gov.pl**. If the decision is not yet linked to a bill, the official sources below name the act.
+* **Veto justification** — for a veto, the President's request to reconsider the act.
+* **Reconsideration by the Sejm** — for a veto, the Sejm's vote on it: **Yes**, **No**, **Abstain**, and **Not voting**, the number of votes for against the number required to override the veto, the rule (three fifths of votes cast, with at least half of the Sejm present), and **View Sejm vote**. If no vote has been recorded yet, the section says so.
+* **Constitutional Tribunal** — for a referral, the linked Tribunal cases with their filing and decision dates.
+* **Earlier vetoes of this act** and **Earlier vetoes of acts with the same title** — earlier decisions, the second list covering other acts with the same title rather than the same act.
+* **Official sources** — the official records of the decision, each with an **Official source** link.
+* **Documents** — documents linked to the decision; open one to read the Persate copy in a preview panel.
+
+The side panel contains:
+
+* **Path of the act** — the recorded steps of the act across the Sejm, the Senate, the President, and the Tribunal, with dates, for example **Act passed**, **Senate position**, **Sent to the President**, **Vote on the veto**, or **Tribunal ruling**. Steps link to the corresponding vote, decision, or case when that record is available.
+* **Actions** — **View legislative process**, **Process page on sejm.gov.pl**, and **Open official source**, when available.
+* **Details** — **Sent to the President**, **Decision period**, **Decision**, **Date**, **Review**, **Print**, **Recorded by the Sejm**, and **Confirmed by** (the official sources that record the decision).
+
+## Constitutional Tribunal case
+
+The banner shows the signature, the outcome or waiting status, the ruling date, and **Act on hold** for a pending preventive review. When the ruling states when the challenged provision loses force, a note shows the date or the deferral period, quoting the ruling. The page can contain:
+
+* **AI overview** — an automated overview of the case.
+* **Adjudicating bench** — for a ruling: **Unanimous ruling** or **Ruling by majority** when the ruling text states it, and the judges with the **Presiding judge**, the **Rapporteur**, and each **Separate opinion** marked. Separate opinions can concern the reasoning or the bench; they are not an exact vote tally.
+* **Official ruling text** — the text of the ruling in its original language. Without a ruling, the section states that the Tribunal has not ruled yet, that the case was closed without a recorded ruling, or that the source does not record how the case ended.
+* **Sources** — the official case record, the judgment text, and the challenged act, which open in a new tab.
+
+The side panel contains **Path of the act**, **Details** (**Signature**, **Applicant**, **Filed**, **Hearing**, **Review**, and **Challenged**), and **Open official source**.
 
 ## Documents and provenance
 
-Related items may open in a Persate document panel or in a new browser tab, depending on the source and format. Treat the linked official document as the authoritative text. A missing document is displayed as unavailable and is not recreated by Persate.
+Related items open either in a Persate preview panel or in a new browser tab, depending on the source and format. On Sejm and Senate vote pages, **Related items** combines documents, linked legislative processes, and connections from the relationship graph, such as people, organizations, prints, acts, or questions. Treat the linked official document as authoritative. A document the source has not published is shown as unavailable; Persate does not recreate it.
 
 ## Troubleshooting
 
-* Record cannot be loaded — return to the institution list and open it again; the source may be temporarily unavailable.
-* No related documents — the source has not linked any documents to this record.
-* No chamber map — the institution has no chamber vote, or seat-level source data is unavailable.
-* Counts differ from a later official publication — record the URL and time and report the discrepancy; public-source corrections can arrive after the first publication.
+* **Voting details unavailable**, **Voting not found**, **Decision not found**, or **Case not found** — the record cannot be loaded or the link is out of date. Return to the list and open the record again, or select **Try again** where offered.
+* **Couldn't refresh this case.** — the case page is still shown, but a refresh failed; select **Try again**.
+* **No related items** or **No related documents** — no documents, processes, or connections are linked to the record yet.
+* No chamber map — the institution holds no chamber vote, or the source has not published seat-level data.
+* Counts differ from a later official publication — note the link and the time and report the discrepancy; public sources are sometimes corrected after first publication.

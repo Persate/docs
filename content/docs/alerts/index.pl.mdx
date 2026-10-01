@@ -1,73 +1,87 @@
 ---
-title: Alerty Trackera
-description: Tworzenie, udostępnianie, wstrzymywanie i przeglądanie alertów dla obsługiwanych źródeł.
+title: Monitorowanie
+description: Śledzenie legislacji, osób, instytucji i tematów za pomocą alertów oraz zarządzanie wszystkimi alertami z jednej listy.
 ---
 
-**GŁÓWNE → Monitorowanie** zawiera definicje alertów i zapisane dopasowania. Gdy aktywny alert spełni zapisaną regułę w obsługiwanym monitorowanym źródle, Persate rejestruje zdarzenie w tym alercie.
+**Monitorowanie** (**GŁÓWNE → Monitorowanie** w panelu bocznym) gromadzi alerty. Alert to zapisana reguła monitorowania: gdy nowy materiał w obsługiwanym źródle spełni regułę, Persate rejestruje zdarzenie w alercie i powiadamia jego odbiorców zgodnie z ustawieniami powiadomień każdej osoby. Moduł jest dostępny, gdy funkcja jest włączona dla organizacji; w przeciwnym razie pozycja w panelu bocznym jest ukryta, a otwarcie strony wyświetla komunikat **Ta funkcja nie jest częścią Twojego pakietu**.
 
-Etykiety źródeł przy alercie opisują zapisany zakres. Nie gwarantują, że każdy możliwy strumień jest włączony dla organizacji. Przed oparciem procesu na alertach sprawdź stan działania alertu i rejestr Źródła.
+## Jak powstaje alert
 
-## Kanały monitorowania
+Alerty tworzy się w rozmowie. Po opisaniu, co ma być śledzone, Persate analizuje prośbę, zadaje pytania uściślające, sprawdza szkic na dostępnych danych i przed zapisem pokazuje wynikowy **kontrakt alertu**. Szczegóły opisano na stronie [Tworzenie i edycja alertów](/pl/alerts/creating-alerts).
 
-Każdy alert może obejmować wiele rodzajów źródeł. Alert bez wskazanego zakresu źródeł nasłuchuje wszystkich kanałów (oznaczenie **Wszystkie źródła**). Platforma rozpoznaje m.in. następujące typy:
+Kontrakt składa się z jednej lub kilku reguł. Reguła może łączyć:
 
-* **Akt prawny** — opublikowane akty prawne.
-* **Legislative print** — druki sejmowe.
-* **Projekt RCL** — projekty legislacyjne w Rządowym Centrum Legislacji.
-* **Sejm speech** — transkrypty wystąpień z nagrań sejmowych.
-* **X post** — wpisy z kont X monitorowanych interesariuszy (Public Pulse).
-* **Plik** — dokumenty wgrane do repozytorium.
+* konkretne obiekty — osobę, instytucję, projekt RCL albo interpelację lub zapytanie poselskie, przypięte według tożsamości, a nie według samej nazwy;
+* tematy, których ma dotyczyć materiał;
+* źródła i rodzaje materiałów do sprawdzania, na przykład wypowiedzi i nagrania Sejmu, druki sejmowe, projekty i dokumenty RCL, publikacje urzędowe, publikacje ministerstw i urzędów, interpelacje i zapytania poselskie, wpisy w mediach społecznościowych lub pliki firmowe.
 
-## Zakładki listy
+Każda reguła działa niezależnie: aby powstało zdarzenie, materiał musi spełnić tylko jedną z nich. Zakres dostępnych źródeł zależy od organizacji; ich bieżący stan pokazuje rejestr [Źródła](/pl/sources).
 
-W górnym pasku widoku dostępne są zakładki filtrujące listę:
+## Lista alertów
 
-* **Wszystkie** — wszystkie alerty.
-* **Aktywne** — alerty aktywnie nasłuchujące.
-* **Wstrzymane** — alerty wstrzymane.
-* **Szkice** — przerwane procesy tworzenia alertów, które można wznowić.
+Pasek nad listą zawiera cztery zakładki:
 
-## Widok listy alertów
+* **Wszystkie** — wszystkie widoczne alerty.
+* **Włączone** — alerty, które prowadzą monitorowanie.
+* **Wstrzymane** — alerty, które nie rejestrują nowych zdarzeń.
+* **Szkice** — niedokończone procesy tworzenia alertów.
 
-Lista dostępna jest w dwóch trybach, przełączanych w prawym górnym rogu:
+Przełącznik po prawej stronie ustawia układ listy: **Widok kart** (domyślny) albo **Widok tabeli**. Przeglądarka zapamiętuje wybór.
 
-* **Widok tabeli** — tabela z kolumnami **Nazwa**, **Status**, **Źródła**, **Dostęp**, **Ostatnie zdarzenie** oraz **Utworzono**. Nagłówki kolumn **Nazwa**, **Status**, **Ostatnie zdarzenie** i **Utworzono** umożliwiają sortowanie. Kolumnę **Nazwa** można edytować bezpośrednio na liście.
-* **Widok kart** — układ kart z miniaturą tematyczną, statusem oraz datą ostatniego zdarzenia.
+**Widok kart** pokazuje obraz lub inicjał alertu, nazwę, opis, dostęp, status i datę ostatniego zdarzenia.
 
-Wybranie wiersza lub karty otwiera widok szczegółowy z historią wszystkich zdarzeń.
+**Widok tabeli** pokazuje nazwę z opisem, status, źródła, grupy, właściciela, datę ostatniego zdarzenia i datę utworzenia. W kolumnie źródeł widoczne są maksymalnie trzy ikony; **Dowolne włączone źródło** oznacza alert nieograniczony do konkretnych źródeł, a **Źródło wymaga sprawdzenia** — zapisany zakres ze źródłem, którego nie da się wyświetlić i które należy zweryfikować. Po najechaniu na wiersz pojawiają się polecenia **Wstrzymaj** lub **Wznów**, **Edytuj** oraz **Usuń**. Aby zmienić nazwę alertu, należy najechać na nazwę i wybrać ikonę ołówka; **Enter** zapisuje nazwę, a **Esc** anuluje zmianę.
 
-### Kolumny Źródła i Dostęp
+Wybranie karty lub wiersza otwiera [stronę alertu](/pl/alerts/alert-detail). Gdy alertów jest więcej, niż wczytano, pod listą pojawia się przycisk **Wczytaj więcej alertów**.
 
-* **Źródła** — ikony reprezentujące typy źródeł objęte alertem. Alert bez zdefiniowanego zakresu otrzymuje etykietę **Wszystkie źródła**.
-* **Dostęp** — oznaczenie **Prywatne** (tylko dla twórcy) lub **Udostępnione** (współdzielony z wybranymi grupami).
+## Status alertu
 
-### Operacje zbiorcze
+* **WŁĄCZONE** — alert monitoruje nowe materiały.
+* **KONFIGUROWANIE** — alert jest zapisany, a jego definicja monitorowania jest przygotowywana. Monitorowanie rozpoczyna się automatycznie po zakończeniu konfiguracji.
+* **WSTRZYMANE** — nowe zdarzenia nie są rejestrowane. Dotychczasowe zdarzenia pozostają dostępne.
 
-W trybie tabeli zaznaczenie wierszy (pola wyboru) wyświetla dolny pasek akcji zbiorczych: **Wznów zaznaczone** (wznów), **Wstrzymaj zaznaczone** (wstrzymaj) oraz **Usuń zaznaczone** (usuń). Akcja usuwania wymaga potwierdzenia.
+## Wyszukiwanie alertów
 
-## Panel boczny
+Panel po prawej stronie zawiera:
 
-W prawym panelu bocznym dostępne są funkcje zarządzania i filtrowania:
+* **Utwórz alert** — otwiera kreator.
+* **Wyszukiwanie** — filtruje wczytane alerty według nazwy, opisu lub słowa kluczowego.
+* **Typ źródła** — pokazuje alerty obejmujące wybrane źródło. Alert nieograniczony do konkretnych źródeł pasuje do każdego wyboru. **Dowolne źródło** usuwa filtr.
+* **Dostęp** — **Tylko ja** pokazuje alerty prywatne; **Udostępnione** pokazuje alerty udostępnione grupom i dodaje pole **Grupy** do zawężenia listy. **Dowolny dostęp** usuwa filtr.
 
-* **Utwórz alert** — otwiera formularz tworzenia nowego alertu.
-* **Wyszukiwanie** — filtruje załadowane alerty według nazwy, opisu lub słowa kluczowego.
-* **Typ źródła** — zawęża listę do alertów obejmujących wybrany typ źródła.
-* **Space** — filtruje według widoczności (**Prywatne** lub **Udostępnione**).
+## Operacje na wielu alertach
 
-## Cykl życia alertu
+W układzie **Widok tabeli** alerty zaznacza się polami wyboru. Na dole ekranu pojawia się pasek z poleceniami **Wznów zaznaczone**, **Wstrzymaj zaznaczone**, **Usuń zaznaczone** i **Wyczyść zaznaczenie**. Zaznaczyć można tylko alerty, którymi wolno zarządzać.
 
-Alert może znajdować się w jednym z trzech stanów:
+Usuwanie wymaga potwierdzenia. Trwale usuwa konfigurację monitorowania i zapisane dopasowania alertów; operacji nie można cofnąć.
 
-* **Aktywne** — platforma aktywnie szuka dopasowań w nowych danych.
-* **Wstrzymane** — nowe dopasowania nie są rejestrowane, lecz dotychczasowa historia pozostaje dostępna.
-* **Usunięte** — alert wraz z całą historią zostaje trwale i nieodwracalnie usunięty.
+## Szkice
+
+Tworzony alert jest na bieżąco zapisywany jako szkic. Jeśli kreator zostanie opuszczony przed zapisem alertu, szkic pojawia się w zakładce **Szkice** z nazwą lub pierwotną prośbą, etapem (np. **Przygotowywanie** lub **Gotowe**), liczbą zebranych dotąd wyników analizy i czasem ostatniej zmiany.
+
+* Wybranie szkicu wznawia rozmowę w miejscu przerwania.
+* Ikona kosza, widoczna po najechaniu na szkic, odrzuca go. Pojedynczy szkic jest odrzucany od razu, bez potwierdzenia.
+* Aby usunąć kilka szkiców, należy je zaznaczyć i wybrać **Usuń zaznaczone**. Ta operacja wymaga potwierdzenia.
+
+Komunikat **Brak szkiców** oznacza, że nie ma niedokończonych alertów.
+
+## Kto może zmieniać alert
+
+Właściciel alertu lub uprawniony administrator organizacji może go wstrzymać, edytować, udostępnić i usunąć. Członkowie grup, którym udostępniono alert, mogą go otworzyć i przeglądać zdarzenia; dla nich strona alertu wyświetla oznaczenie **Udostępniony alert · tylko do odczytu**. Alerty zarządzane przez system mają oznaczenie **Alert zarządzany przez system · tylko do odczytu**.
+
+## Powiadomienia
+
+To, czy zdarzenie alertu wywoła wiadomość e-mail albo powiadomienie w aplikacji i na telefonie, zależy od ustawień każdej osoby: **Alerty e-mail** i **Powiadomienia o dopasowaniach alertów** w **Ustawienia → Powiadomienia**. Szczegóły opisano na stronie [Preferencje i powiadomienia](/pl/account-and-settings/preferences). Zdarzenia pozostają na stronie alertu niezależnie od tego, czy wysłano powiadomienie.
+
+Administratorzy organizacji zarządzają uprawnieniami do zewnętrznego przetwarzania w **Ustawienia → Dostawcy zewnętrzni** (zob. [Administracja](/pl/administration)). Jeśli wyłączono uprawnienie, z którego korzysta ocena dopasowań alertów, informacja **Dostarczanie e-mailem** przy zdarzeniu może wskazywać, że wiadomości nie wysłano ze względu na ustawienia prywatności organizacji.
 
 ## Stany pustego widoku i błędu
 
-* *„No alerts found”* — na koncie nie utworzono jeszcze żadnych alertów lub filtry wyszukiwania wykluczają wszystkie pozycje.
-* *„Couldn't load alerts”* — błąd komunikacji z serwerem. Zaleca się odświeżenie strony.
+* **Nie znaleziono alertów** — nie utworzono jeszcze żadnego alertu albo wyszukiwanie i filtry wykluczają wszystkie alerty. Należy wyczyścić filtry lub utworzyć alert.
+* **Brak szkiców** — nie ma niedokończonych alertów.
+* Jeśli listy nie udało się wczytać, nad listą pojawia się komunikat o błędzie. Należy odświeżyć stronę i spróbować ponownie.
 
 ## Strony w tej sekcji
 
-* **[Tworzenie i edycja alertów](/pl/alerts/creating-alerts)** — opis asystenta AI tworzącego reguły oraz weryfikacji draftu.
-* **[Wgląd w alert](/pl/alerts/alert-detail)** — historia zdarzeń wyzwalających, czułość dopasowania, monitorowanie RCL oraz panel uprawnień.
+* **[Tworzenie i edycja alertów](/pl/alerts/creating-alerts)** — kreator oparty na rozmowie, kontrakt alertu, monitorowanie konkretnego obiektu, szkice i edycja.
+* **[Wgląd w alert](/pl/alerts/alert-detail)** — strona alertu: ustawienia, czułość, dostęp, monitorowane sprawy, zdarzenia i ocena dopasowań.

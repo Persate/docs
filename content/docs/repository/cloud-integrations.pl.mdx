@@ -1,39 +1,49 @@
 ---
 title: Integracje chmurowe
-description: Łączenie Google Drive lub Microsoft OneDrive i import plików do przetwarzania w Persate.
+description: Łączenie konta Google Drive lub Microsoft OneDrive, przeglądanie folderów i import wybranych plików do analizy w Persate.
 ---
 
-Repozytorium może łączyć się z **Google Drive** i **Microsoft OneDrive**, jeżeli integracja jest włączona dla organizacji.
+Persate może połączyć się z kontem **Google Drive** lub **Microsoft OneDrive**, wyświetlić jego foldery i pliki oraz zaimportować wybrane pliki. Zaimportowane pliki przechodzą tę samą analizę co pliki przesłane bezpośrednio, a następnie pojawiają się w Repozytorium.
 
-## Łączenie dostawcy
+## Otwieranie strony dostawcy
 
-1. Otwórz **PRZESTRZEŃ ROBOCZA → Repozytorium** i wybierz odpowiedniego dostawcę chmurowego.
-2. Wybierz akcję połączenia.
-3. Sprawdź ekran autoryzacji dostawcy i zatwierdź wyłącznie dostęp potrzebny do pracy.
-4. Wróć do Persate po przekierowaniu od dostawcy.
+Strony dostawców nie mają pozycji na pasku bocznym. Po zalogowaniu otwiera się je, wpisując adres:
 
-Persate weryfikuje odpowiedź autoryzacyjną przed otwarciem przeglądarki plików. Jeśli weryfikacja się nie powiedzie, wróć do Repozytorium i rozpocznij połączenie ponownie. Nie udostępniaj adresów callback ani kodów autoryzacyjnych.
+* Google Drive — `persate.com/integration/google-drive`
+* Microsoft OneDrive — `persate.com/integration/microsoft-onedrive`
 
-## Przeglądanie plików dostawcy
+Jeżeli konto nie jest jeszcze połączone, strona pokazuje nagłówek **Połącz z usługą Google Drive** albo **Połącz z usługą OneDrive** i przycisk **Połącz teraz**.
 
-Widok dostawcy pokazuje kolumny **Nazwa**, **Data modyfikacji** i **Rozmiar pliku**. Wybierz nazwę folderu, aby go otworzyć. Użyj ścieżki nawigacyjnej, aby wrócić do folderu nadrzędnego.
+## Łączenie konta
 
-Widoczność folderów i dostępność plików wynikają z uprawnień połączonego konta. Pliku nieudostępnionego temu kontu nie można zaimportować przez Persate.
+1. Wybrać **Połącz teraz**. Przycisk zmienia się na **Przekierowywanie…** i otwiera się ekran logowania oraz zgody dostawcy.
+2. Zalogować się na konto dostawcy, którego pliki mają być dostępne, sprawdzić zakres żądanego dostępu i go zatwierdzić.
+3. Dostawca przekierowuje przeglądarkę z powrotem do Persate, gdzie wyświetla się **Kończenie połączenia**. Po udanym połączeniu powiadomienie potwierdza je (**Połączono Dysk Google.** albo **Połączono OneDrive.**), a strona dostawcy pokazuje pliki z konta.
 
-## Import do analizy
+Persate sprawdza, czy odpowiedź dostawcy odpowiada żądaniu połączenia rozpoczętemu w Persate. Jeżeli weryfikacja się nie powiedzie, komunikat **Nie udało się połączyć** informuje, że odpowiedzi nie udało się zweryfikować, a połączenie nie zostaje zakończone. Adresu, na który dostawca przekierował przeglądarkę, nie należy używać ponownie ani nikomu przekazywać; zamiast tego trzeba rozpocząć łączenie od nowa przyciskiem **Połącz teraz**.
 
-Wybierz akcję Persate w wierszu pliku, aby go zaimportować i rozpocząć przetwarzanie. Akcja jest niedostępna, gdy element dostawcy jest już powiązany z plikiem w Persate.
+## Przeglądanie plików
 
-Import tworzy rekord pliku po stronie Persate i pobiera plik dostawcy do przetwarzania. Nie zmienia ani nie usuwa oryginału w Google Drive lub OneDrive. Funkcje zależne od przetwarzania stają się dostępne po ekstrakcji i indeksowaniu.
+Nagłówek strony pokazuje bieżącą ścieżkę, zaczynającą się od **Google Drive** albo **Microsoft Onedrive**; wybranie wcześniejszego elementu ścieżki wraca do danego folderu. Lista zawiera kolumny **Nazwa**, **Data modyfikacji** i **Rozmiar pliku**, a wybranie folderu go otwiera. Przełącznik **Widok listy** / **Widok kafelków** znajduje się nad listą, tak jak w Repozytorium.
+
+Lista obejmuje to, do czego ma dostęp połączone konto dostawcy. Pliku niedostępnego dla tego konta nie można zaimportować.
+
+## Import pliku do analizy
+
+W widoku listy każdy wiersz pliku kończy się przyciskiem z logo Persate; czytniki ekranu odczytują go jako **Analizuj:** z nazwą pliku. Wybranie przycisku importuje plik do Persate i rozpoczyna analizę, a lista się odświeża. Przycisk jest przygaszony i nieaktywny dla folderów, dla plików już zaimportowanych oraz w trakcie importu danego pliku. W widoku kafelków to samo logo jest znaczkiem na każdym kafelku i szarzeje po przeanalizowaniu pliku.
+
+Import kopiuje plik do Persate; oryginał w Google Drive lub OneDrive pozostaje bez zmian. Wyszukiwanie w treści, podsumowanie i odpowiedzi Advisora oparte na pliku są dostępne po zakończeniu analizy.
 
 ## Obecne ograniczenia
 
-Bieżące strony dostawców obsługują połączenie, przeglądanie folderów i jawny import pojedynczych plików. Po wygaśnięciu lub cofnięciu autoryzacji po stronie dostawcy połącz konto ponownie.
+* Pliki importuje się pojedynczo; nie można zaimportować całego folderu naraz.
+* Strony dostawców nie mają przycisku rozłączenia. Aby cofnąć dostęp Persate, należy usunąć go w ustawieniach bezpieczeństwa konta Google lub Microsoft.
 
 ## Rozwiązywanie problemów
 
-* **Callback could not be verified** — wróć do Repozytorium i rozpocznij połączenie ponownie; nie używaj ponownie nieudanego adresu callback.
-* Odmowa autoryzacji — połącz konto ponownie i zatwierdź wymagany zakres albo zapytaj administratora, czy integracja jest dozwolona.
-* Brak pliku na liście — sprawdź, czy połączone konto ma do niego dostęp, i potwierdź bieżący folder.
-* Niedostępna akcja importu — element jest folderem, został już powiązany albo import nadal trwa.
-* Przetwarzanie niegotowe — pobieranie od dostawcy się zakończyło, ale ekstrakcja lub indeksowanie w Persate nadal trwa.
+* **Nie udało się połączyć** z informacją, że odpowiedzi nie udało się zweryfikować — należy ponownie otworzyć stronę dostawcy i wybrać **Połącz teraz**.
+* **Nie udało się połączyć** z komunikatem **Odmowa dostępu.** — zgoda u dostawcy została odrzucona; należy ponownie otworzyć stronę dostawcy, wybrać **Połącz teraz** i zatwierdzić żądany dostęp.
+* Strona pozostaje na komunikacie **Nie udało się połączyć** — należy ponownie otworzyć stronę dostawcy, wpisując jej adres; strona nie wraca tam samoczynnie.
+* **Nie udało się wczytać Dysku Google** albo **Nie udało się wczytać OneDrive** — tekst pod nagłówkiem podaje przyczynę; należy odświeżyć stronę i spróbować ponownie.
+* Pliku nie ma na liście — należy sprawdzić, czy połączone konto ma do niego dostęp i czy otwarty jest właściwy folder.
+* Przycisk importu jest przygaszony — element jest folderem, plik został już zaimportowany albo jego import trwa.

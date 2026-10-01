@@ -1,0 +1,96 @@
+---
+title: Following the Advisor's work
+description: The activity record, the plan, research agents, notes added while the Advisor works, clarifying questions, stopping, and partial answers.
+---
+
+## Activity record
+
+While the Advisor works, its activity appears above the answer and grows as the work progresses. It is a visible record of what the Advisor does during the turn:
+
+* **Reasoning** — rows with a short heading taken from the Advisor's reasoning. Selecting a row expands its text. Reasoning is a working note, not part of the answer, but it shows *why* the Advisor reached a conclusion.
+* **Tool chips** — every search or action appears as a chip with the icon of its skill family and a label such as `Searching Polish legal acts` or `Searching tenant corpus`. A spinner marks a running call and `!` a failed one. Consecutive calls are grouped under *Using N tools…* while they run and *N tools used* afterwards, with the number of failed calls when there are any.
+* **Web searches** — while a web search runs, a chip shows the query. Pages that were found or read appear as chips with the site icon and title; they open in a new tab.
+* **Working notes** — short progress notes written by the Advisor, in ordinary text and with citation chips where sources are cited.
+* **Research agents** — buttons for the research agents the Advisor has started. See [Research agents](#research-agents).
+
+A note or plan marked **Confidential** draws on the organization's non-public material and should not be shared outside the organization.
+
+When the turn ends, the activity folds into a single line, **Worked for …**, with the time the work took. Selecting the line expands the full record again; icons next to it identify the research agents of that turn, with their names shown on hover.
+
+## Output style
+
+How much of the activity is visible while the Advisor works is set in **Settings → Preferences → Advisor output style**:
+
+* **Verbose** — expands reasoning and activity as it happens.
+* **Compact** — shows summaries and grouped tool activity. This is the default.
+* **Hidden** — shows only *Working…* until the answer is ready.
+
+Completed work stays collapsed in every style. See [Preferences and notifications](/account-and-settings/preferences).
+
+## Plan
+
+For tasks with several steps, the Advisor publishes a plan. The **Plan** control appears at the right edge of the screen (on narrow screens, a button with a list icon); a dot on it pulses while a step is in progress. The plan opens in place of the conversation list and shows:
+
+* the question the plan answers;
+* a status — **In progress**, **Paused**, **Stopped** or **Not finished**;
+* the steps, each with its status — **Next**, **In progress**, **Completed**, **Blocked** or **Skipped**;
+* **Approach** — the Advisor's explanation of how it works on the question, shown as **Updated approach** after the task changed.
+
+A step that is still open when the turn ends is marked **Unfinished** or **Stopped**, and the panel states that not every step was finished. The plan is the Advisor's own account of its progress; a completed step is not a separate verification.
+
+## Research agents
+
+Broad questions can be divided among **research agents** — separate researchers that each take on one part of the task. Each agent appears in the activity as a button with an icon for the area it mostly reads and the title it was given, and as an icon at the right edge of the screen.
+
+Selecting an agent opens its **agent session** beside the conversation; the divider between them can be dragged to resize both. The session shows:
+
+* the **Assignment from the Advisor**;
+* the agent's own activity, including messages it received from the Advisor;
+* the agent's report, with citation chips.
+
+**Close agent session** closes the split view. An agent marked **Earlier scope** worked on the task before a note changed it. The final answer draws on the agents' findings and cites the sources.
+
+## Adding a note while the Advisor works
+
+A running task can be steered without stopping it. While the Advisor works, the message field shows *Add a note while the Advisor works...* (*Add a note...* on narrow screens). Text sent with the send button (**Send note to the running turn**) goes to the running task instead of starting a new question.
+
+Only the text of a note is sent. Attached files and context tags stay in the composer for the next message, and the composer says so.
+
+Each note appears in the conversation with its delivery status:
+
+| Status | Meaning |
+| :--- | :--- |
+| *Sending…* | The note is on its way. |
+| *Accepted · the Advisor will consider it at its next decision point* | The note was stored; the Advisor reads it at the next suitable moment. |
+| *Incorporated* | The Advisor has taken the note into account. *· goal revision N* means the task was redefined. |
+| *Delivered and accepted, but the Advisor finished before using it* | The turn ended first. **Use in a new message** puts the text back into the field. |
+| *Delivery not confirmed — the Advisor may or may not have received this note* | **Retry** sends the same note again; **Move to composer** returns the text to the field. |
+| *The Advisor had already finished, so this note was not delivered.* | The note was rejected; **Move to composer** returns the text to the field. |
+
+Once a note is sent, the work done before it folds into **Work before your update**, the note appears with its status, and the Advisor's further work continues below it. A note that is too long stays in the field with a message suggesting to shorten it or to send it as a new message after the Advisor finishes. A note sent just after the task ended also returns to the field, with an explanation.
+
+## Clarifying questions
+
+When a question is ambiguous — two bills with similar names, two MPs with the same surname, an unspecified Sejm term — the Advisor may ask before it continues. The activity shows **Asking clarifying question**, and the question appears in the conversation with its options: choice cards, checkboxes, a confirmation pair or a text field. In MCP terms, this is an elicitation request.
+
+* **Continue** sends the answer, which then appears in the conversation as a reply.
+* **Skip** declines the question; the conversation records *You skipped this question*.
+
+Answer the question with its own controls. Text typed in the message field at this time is sent as a note to the running task, not as the answer to the question.
+
+## Stopping
+
+The stop button (**Stop research**) next to the send button ends the running task. What the Advisor found so far stays in the conversation, with one of the notices:
+
+* *"Stopped. What the Advisor found so far is kept above."*
+* *"Stopped before the Advisor produced an answer."*
+
+Plan steps that were still open are marked **Stopped**. If the stop request does not go through, a message asks to press stop again.
+
+## Interruptions and partial answers
+
+* **Partial answer** — the Advisor could not cover the whole question in one turn. The notice begins with *Partial answer.* and suggests a narrower follow-up, for example limited to one sitting, document, person or period. The findings so far remain above the notice.
+* **Lost connection to the task** — *"The Advisor lost its connection to this task before finishing."* What it had saved is kept; a new message continues the work.
+* **Dropped connection** — *"The connection to this task dropped."* The Advisor may still be working, and nothing above is lost. Stop and notes stay available, but a new question cannot be sent until the turn is resolved. **Reconnect** reattaches to the task; **Stop managing this turn** releases the conversation for new questions without stopping the task.
+* *"Hit a temporary snag — retrying…"* — a temporary problem that the Advisor retries on its own.
+* *"The Advisor hit a problem while finishing this answer. Please try again."* — use **Regenerate response** below the answer or ask again.

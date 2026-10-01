@@ -1,48 +1,53 @@
 ---
-title: Persate Labs
-description: Narzędzia badawcze przypisane do organizacji i grup, korzystające z wersjonowanych danych.
+title: Laboratoria
+description: Narzędzia badawcze oparte na przejrzanym, wersjonowanym wydaniu danych i przypisywane wybranym organizacjom oraz grupom.
 ---
 
-**Persate Labs** zawiera wyspecjalizowane środowiska danych włączane dla wybranych organizacji i grup. Labs nie jest uniwersalnym katalogiem produktu: dwóch użytkowników tej samej organizacji może widzieć inne narzędzia w zależności od przypisania do grup.
+**Laboratoria** (Labs) to wyspecjalizowane narzędzia badawcze. Każde laboratorium łączy jedno przejrzane wydanie danych z obszarem roboczym zaprojektowanym dla tych danych. Laboratoria są dostępne, gdy funkcja jest włączona dla organizacji, a każde z nich przypisuje się konkretnym grupom — dwaj członkowie tej samej organizacji mogą więc widzieć różne laboratoria.
 
-## Wymagania dostępu
+## Otwieranie laboratorium
 
-Laboratorium pojawia się tylko wtedy, gdy spełnione są wszystkie warunki:
+Gdy grupom użytkownika przypisano co najmniej jedno laboratorium, na dole panelu bocznego pojawia się sekcja **Laboratoria** z nazwami przypisanych laboratoriów. Wybranie nazwy otwiera laboratorium. Przypisane laboratoria można też znaleźć po nazwie w wyszukiwarce globalnej.
 
-* funkcja **Labs** jest włączona dla organizacji;
-* użytkownik należy do grupy przypisanej do laboratorium;
-* włączono wszystkie wymagane funkcje;
-* dostępne jest przejrzane wydanie danych;
-* zainstalowany klient Persate potrafi wyświetlić pakiet laboratorium.
+Wybranie nagłówka **Laboratoria** zwija lub rozwija listę; przeglądarka zapamiętuje ten wybór. Gdy lista jest zwinięta, a laboratorium jest otwarte, nagłówek pozostaje wyróżniony. Bez przypisanego laboratorium sekcja się nie pojawia.
 
-Sekcja **LABS** w panelu bocznym jest ukryta, jeżeli nie ma dostępnego przypisania. Katalog wyświetla **Your group has no labs assigned right now**, gdy dostęp do Labs istnieje, lecz bieżąca grupa nie ma przypisanego narzędzia.
+## Katalog laboratoriów
 
-## Wersjonowane dane
+Strona katalogu, **Eksperymenty danych**, przedstawia w formie kart wszystkie laboratoria przypisane grupom użytkownika. Prowadzi do niej odnośnik **Wróć do Labs** widoczny na ekranach błędów laboratorium. Każda karta zawiera:
 
-Każde laboratorium otwiera przejrzane wydanie. Wydanie jest niezmienne: recenzenci mogą zatwierdzać lub odrzucać nowe wyniki z sieci, lecz decyzje obowiązują w kolejnym wydaniu zamiast niejawnie zmieniać otwarty zbiór.
+* kanał wydania i nazwę laboratorium z oznaczeniem **zweryfikowane**;
+* krótki opis laboratorium;
+* liczby z wydania: **Węzły**, **Powiązania** i **Audyt**;
+* identyfikator wydania, które laboratorium obecnie otwiera (**Wydanie:**).
 
-Etykiety rozróżniają stan relacji lub ustalenia:
+Wybranie karty otwiera laboratorium. Komunikat **Twojej grupie nie przypisano obecnie żadnych narzędzi Labs.** oznacza, że laboratoria są włączone dla organizacji, ale żadna z grup użytkownika nie ma przypisanego laboratorium.
 
-* **Zweryfikowane** — potwierdzone przejrzanymi dowodami;
-* **Prawdopodobne** — prawdopodobne, ale nie w pełni zweryfikowane;
-* **Nierozstrzygnięte** — nierozstrzygnięte na podstawie przejrzanych materiałów.
+## Zawartość laboratorium
 
-Wyniki z bieżącego wyszukiwania sieci są wyraźnie oznaczone jako nieprzejrzane. Nie należy przedstawiać ich jako części zweryfikowanego wydania przed zatwierdzeniem w procesie laboratorium.
+Laboratorium jest dostarczane jako pakiet złożony z dwóch części:
 
-## Lab Advisor
+* **Przejrzane wydanie danych** — stała, oznaczona identyfikatorem wersja danych laboratorium. Otwarte wydanie się nie zmienia. Materiał znaleziony później, np. nowe ustalenia z otwartego internetu, można przyjąć do następnego wydania, ale nigdy nie modyfikuje on bieżącego.
+* **Obszar roboczy** — ekrany przygotowane dla danego rodzaju danych. Większość laboratoriów otwiera się we wspólnym obszarze roboczym opisanym na stronie **[Korzystanie z laboratorium](/pl/labs/workbench)**. Laboratorium wymagające innego interfejsu, jak oparte na mapie **[Telecom Lab](/pl/labs/telecom-lab)**, ma własny.
 
-Niektóre laboratoria zawierają **Lab Advisor**. Jest oddzielny od głównego Advisora i przekazuje bieżący widok laboratorium do nowej rozmowy. Na szerokim ekranie panel można zmieniać rozmiarem, a na wąskim otwiera się jako nakładka.
+Powiązania i ustalenia mają status weryfikacji. Każde laboratorium udostępnia statusy właściwe dla swoich danych — **Zweryfikowane**, **Prawdopodobne** lub **Nierozstrzygnięte** — a jego filtry określają, które z nich są wyświetlane.
 
-Dostęp do Lab Advisora wymaga przypisania do laboratorium i dostępu do Advisora. Rozmowy należą do bieżącego użytkownika. Uruchomioną odpowiedź można zatrzymać, a użycie podlega limitowi obszaru roboczego.
+Persate zapamiętuje ostatni widok i rozmowę z Lab Advisorem osobno dla każdego laboratorium, dzięki czemu ponowne otwarcie laboratorium w tej samej przeglądarce pozwala kontynuować pracę. Po opublikowaniu nowszego przejrzanego wydania laboratorium otwiera się na nim i zachowuje bieżące ustawienia widoku, takie jak filtry, wybrana grupa i wyróżniony podmiot.
 
-## Stany błędu
+## Dostęp
 
-* Laboratorium nieprzypisane — grupy użytkownika nie mają tego laboratorium.
-* Brak wymaganej funkcji — funkcja konieczna dla laboratorium nie jest włączona.
-* Brak przejrzanego wydania — dostęp jest prawidłowy, lecz laboratorium nie ma jeszcze zbioru gotowego do publikacji.
-* Dane niedostępne — nie udało się załadować przejrzanego wydania. Ponowienie nie zmienia stanu przeglądu.
-* Nieznane laboratorium — odnośnik jest nieaktualny albo klient nie potrafi wyświetlić przypisanego pakietu.
+Laboratoria przypisuje się grupom. Przypisaniami nie zarządza się w **Ustawieniach**; w sprawie dostępu do laboratorium należy zwrócić się do administratora organizacji. Dostęp wymaga, aby laboratoria były włączone dla organizacji, a jedna z grup użytkownika miała przypisane dane laboratorium.
+
+## Komunikaty i stany błędu
+
+| Komunikat | Znaczenie |
+| :--- | :--- |
+| **Ta funkcja nie jest częścią Twojego pakietu** | Laboratoria nie należą do pakietu organizacji. |
+| **Twojej grupie nie przypisano obecnie żadnych narzędzi Labs.** | Laboratoria są włączone, ale grupom użytkownika nie przypisano żadnego laboratorium. |
+| **This lab is not assigned to your group.** | Odnośnik prowadzi do laboratorium, którego nie przypisano grupom użytkownika. **Wróć do Labs** otwiera katalog. |
+| **Widok narzędzia Labs jest niedostępny** | Laboratorium jest przypisane, ale ta wersja aplikacji nie potrafi go wyświetlić. Należy odświeżyć stronę; jeśli komunikat nie zniknie, należy skontaktować się z Persate. |
+| **Nie udało się wczytać narzędzi Labs.** | Nie udało się wczytać katalogu. Należy odświeżyć stronę i spróbować ponownie. |
 
 ## Strony w tej sekcji
 
-* **[Korzystanie z laboratorium](/pl/labs/workbench)** — widoki, zaznaczanie, dowody, przegląd wyników sieci, eksport i Lab Advisor.
+* **[Korzystanie z laboratorium](/pl/labs/workbench)** — widoki, wyszukiwanie i filtry, graf, dossier i materiały źródłowe, eksport oraz Lab Advisor.
+* **[Telecom Lab](/pl/labs/telecom-lab)** — mapa gmin, tryby analizy i interpretacja wyników.

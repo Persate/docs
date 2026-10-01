@@ -1,4 +1,28 @@
 {
   "title": "Documentation",
-  "pages": ["getting-started", "using-persate", "cockpit", "advisor", "alerts", "repository", "editor", "labs", "legislation-tracker", "voting-ledger", "stakeholders", "public-pulse", "live-proceedings", "reports", "sources", "administration", "account-and-settings", "mcp", "trust-center"]
+  "pages": [
+    "getting-started",
+    "using-persate",
+    "cockpit",
+    "---Core---",
+    "advisor",
+    "alerts",
+    "---Workspace---",
+    "repository",
+    "editor",
+    "---Public---",
+    "legislation-tracker",
+    "live-proceedings",
+    "voting-ledger",
+    "stakeholders",
+    "public-pulse",
+    "---Labs and integrations---",
+    "labs",
+    "mcp",
+    "---Account and organization---",
+    "account-and-settings",
+    "sources",
+    "administration",
+    "trust-center"
+  ]
 }

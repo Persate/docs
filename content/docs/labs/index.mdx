@@ -1,48 +1,53 @@
 ---
-title: Persate Labs
-description: Tenant-specific, versioned research tools assigned to workspace groups.
+title: Labs
+description: Research tools built on a reviewed, versioned data release and assigned to selected organizations and groups.
 ---
 
-**Persate Labs** contains specialized data workbenches enabled for selected organizations and groups. Labs are not a universal product catalogue: two users in the same organization can see different tools when their group assignments differ.
+**Labs** are dedicated research tools. Each lab combines one reviewed data release with a workspace designed for that data. Labs are available when the function is enabled for the organization, and each lab is assigned to specific groups, so two members of the same organization can see different labs.
 
-## Access requirements
+## Opening a lab
 
-A lab appears only when all of the following are true:
+When at least one lab is assigned to the user's groups, a **Labs** section appears at the bottom of the sidebar and lists each assigned lab by name. Selecting a name opens the lab. Assigned labs can also be found by name in the global search.
 
-* **Labs** is enabled for the organization;
-* the user belongs to a group assigned to that lab;
-* all prerequisite features are enabled;
-* a reviewed release is available;
-* the installed Persate client can render that lab package.
+Selecting the **Labs** heading collapses or expands the list; the browser remembers the choice. While the list is collapsed and a lab is open, the heading stays highlighted. Without an assigned lab, the section does not appear.
 
-The **LABS** sidebar section is absent when there are no usable assignments. The catalogue page displays **Your group has no labs assigned right now** when access exists but the current group has no assigned tool.
+## Labs catalogue
 
-## Versioned data
+The catalogue page, **Data experiments**, shows every lab assigned to the user's groups as a card. It opens from the **Back to Labs** link on a lab's error screens. Each card shows:
 
-Each lab opens a reviewed release. The release is immutable: reviewers can promote or reject new web findings, but those decisions take effect in a later release rather than silently changing the open dataset.
+* the release channel and the lab title, with a **reviewed** label;
+* a short description of the lab;
+* release counts: **Nodes**, **Relationships** and **Audit**;
+* the identifier of the release the lab currently opens (**Release:**).
 
-Status labels distinguish the review state of a relationship or finding:
+Selecting a card opens the lab. **Your group has no labs assigned right now.** means that Labs is enabled for the organization, but none of the user's groups has a lab assigned.
 
-* **Verified** — supported by reviewed evidence;
-* **Probable** — plausible but not fully verified;
-* **Unresolved** — not resolved by the reviewed material.
+## What a lab contains
 
-Live web findings are explicitly unreviewed. They must not be presented as part of the reviewed release until promoted through the lab workflow.
+A lab is delivered as a package with two parts:
 
-## Lab Advisor
+* **A reviewed data release** — a fixed, identified version of the lab's data. The release does not change while it is open. Material found later, such as new findings from the open web, can be accepted for the next release but never alters the current one.
+* **A workspace** — the screens built for that kind of data. Most labs open in the shared lab workspace described in **[Using a lab workbench](/labs/workbench)**. A lab that needs a different interface, such as the map-based **[Telecom Lab](/labs/telecom-lab)**, has its own.
 
-Some labs include a **Lab Advisor**. It is separate from the main Advisor and carries the current lab view into a new conversation. The panel is resizable on wider screens and opens as an overlay on narrow screens.
+Relationships and findings carry a research status. Each lab offers the statuses that apply to its data — **Verified**, **Probable** or **Unresolved** — and its filters control which of them are displayed.
 
-Lab Advisor access requires both the lab assignment and Advisor access. Conversations belong to the current user. A running turn can be stopped, and use is subject to the workspace allowance.
+Persate remembers the last view and the Lab Advisor conversation for each lab, so reopening a lab in the same browser continues where the work stopped. When a newer reviewed release is published, the lab opens on it and keeps the current view settings, such as filters, the selected group and the focused entity.
 
-## Failure states
+## Access
 
-* Lab not assigned — the user's groups do not have this lab.
-* Prerequisite not entitled — a feature required by the lab is not enabled.
-* No reviewed release — access is valid, but the lab has no publishable dataset yet.
-* Data unavailable — the reviewed release could not be loaded. Retry without changing review state.
-* Unknown lab — the link is obsolete or the client cannot render the assigned package.
+Labs are assigned to groups. The assignment is not managed in **Settings**; to request access to a lab, contact the organization's administrator. Access requires both that Labs is enabled for the organization and that one of the user's groups has the lab assigned.
+
+## Messages and error states
+
+| Message | Meaning |
+| :--- | :--- |
+| **This feature is not included in your plan** | Labs is not part of the organization's package. |
+| **Your group has no labs assigned right now.** | Labs is enabled, but no lab is assigned to the user's groups. |
+| **This lab is not assigned to your group.** | The link points to a lab that is not assigned to the user's groups. **Back to Labs** opens the catalogue. |
+| **Lab renderer unavailable** | The lab is assigned, but this version of the application cannot display it. Reload the page; if the message remains, contact Persate. |
+| **Labs could not be loaded.** | The catalogue could not be loaded. Reload the page to try again. |
 
 ## Pages in this section
 
-* **[Using a lab workbench](/labs/workbench)** — views, selection, evidence, web review, export, and Lab Advisor.
+* **[Using a lab workbench](/labs/workbench)** — views, search and filters, the graph, dossiers and evidence, export and Lab Advisor.
+* **[Telecom Lab](/labs/telecom-lab)** — the municipality map, analysis modes and how to read the results.

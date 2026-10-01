@@ -1,0 +1,76 @@
+---
+title: Analysis status
+description: What the availability and analysis states of a recording mean — unavailable video, queued and running analyses, automatic recovery, empty and partial results — and which action each state offers.
+---
+
+The analysis panel of a recording always shows the current state of the analysis (**Recording Analysis**). When a result is ready, the panel shows the transcript; otherwise it explains what is happening and, where something can be done, offers the action. The same states appear as icons in the list; see [Recordings](/live-proceedings).
+
+## Recording availability
+
+Persate checks whether the original video is still available from its source. When it is not, the list shows a grey circle and the recording view shows a badge above the player:
+
+| Badge | Meaning |
+|---|---|
+| **Persate only** | The original recording is unavailable; the player plays the copy saved in Persate. |
+| **Persate only · Partial** | As above, but the saved copy covers only part of the recording. |
+| **Video unavailable** | The original recording is unavailable; Persate will check again automatically. |
+| **Video unavailable · Stale** | The original recording is unavailable and automatic retrieval has stopped. |
+
+In every case the saved analysis, including the transcript, remains accessible. When there is no video to play, the player area shows **Video unavailable** with the same explanation. The **Recording availability** filter in the list uses the corresponding states: **Persate only**, **Unavailable** and **Stale unavailable**.
+
+## Playback and loading problems
+
+* **Playback unavailable** — the video stream could not be prepared for playback. **Retry playback** tries again.
+* **Details aren't ready yet** or **Failed to load details** — the details of the recording could not be loaded. **Try again** reloads them.
+
+## Before and during the analysis
+
+| What the panel shows | Meaning and action |
+|---|---|
+| **Recording Analysis** with **Start analysis** | The recording has not been analysed yet. **Start analysis** requests the full transcript, timeline and accompanying analysis. |
+| The place in the analysis queue | The analysis is waiting for its turn and starts on its own. **Cancel analysis**, when offered, withdraws the queued request. |
+| The processing stage and a percentage | The analysis is running. Parts of the transcript appear as soon as they are ready, under the strip *Analyzing... N%*. |
+| A state such as *retry scheduled* or *waiting for recording*, with **Next retry** or **Next check** | The analysis has stopped for a reason Persate resolves on its own. The button **Automatic recovery scheduled** is inactive because no action is needed. |
+| **Recording unavailable** | The official source did not make a recording available for this event, so there is nothing to analyse. |
+| **Analysis is delayed** | The analysis is taking longer than expected. Automatic recovery continues, and the notice shows the time of the last progress. |
+
+## When the analysis gives no result
+
+| What the panel shows | Meaning and action |
+|---|---|
+| A failure message with **Retry analysis** | The analysis could not finish. **Retry analysis** starts it again. |
+| **No transcript · Needs verification** with **Re-run analysis** | The analysis finished but saved no transcript. This does not confirm that the recording had no speech. **Re-run analysis** analyses the recording again. |
+| *Analysis results are unavailable. The result files may have been lost.* with **Re-run analysis** | The analysis was completed, but its results are no longer available. **Re-run analysis** produces them again. |
+| **Analysis results could not be loaded** | The results exist but could not be loaded; Persate retries automatically. |
+| **No transcript from this event** | The content found in the recording came from another event and was removed after verification. |
+
+## When an earlier result exists
+
+A newer analysis attempt never hides the last verified result. A strip above the transcript reports the newer attempt while the earlier transcript stays readable (*Showing the last verified result.*):
+
+* *A newer analysis is queued.* — **Cancel queued attempt** withdraws it.
+* *Analyzing a newer result... N%* — the newer analysis is running.
+* An automatic retry or a failure — the strip describes it; after a failure, **Retry** starts the analysis again.
+* **No transcript · Needs verification** — **Re-run analysis** analyses the recording again.
+
+## Partial transcripts
+
+A transcript can be partial — for example when the live analysis of a broadcast was interrupted or the full analysis has not been published yet. A notice above the transcript then says so (*This is the last saved partial transcript. The recording has not been fully analyzed.*). When no speech has been found so far, the panel shows **No speech detected so far** together with the point up to which the recording has been analysed.
+
+## Live broadcasts
+
+* **Connecting to live stream** — Persate is connecting to the broadcast; the analysis starts automatically.
+* **Live stream unavailable** — the broadcast could not be reached. **Retry** tries again.
+* **Live stream is available** — the proceeding can be watched; the transcript and speaker overlays appear once the analysis is connected.
+* **Analysis failed** — the live analysis could not finish. **Retry analysis** starts it again.
+* **Scheduled** — the proceeding has not started yet; the analysis will be available once it begins.
+
+## When Persate refuses an action
+
+If Persate does not accept a start, a re-run or a cancellation, the reason appears next to the button, for example:
+
+* *Too many analysis requests. Try again in a few minutes.*
+* *The recording source is unavailable, so the analysis cannot start.*
+* *The analysis is already running or cannot start for this recording.*
+* *The attempt has already started and can no longer be cancelled.*
+* *You cannot analyze this recording.*

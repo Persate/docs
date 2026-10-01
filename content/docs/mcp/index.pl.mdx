@@ -24,7 +24,7 @@ Zestaw narzędzi to grupa powiązanych narzędzi, która jest włączana w cało
 | Zestaw | Zawartość |
 |---|---|
 | **Legislacja** | Opublikowane akty prawne, druki sejmowe, procesy legislacyjne, głosowania, interpelacje i zapytania poselskie, komisje oraz dane o osobach i organizacjach życia publicznego |
-| **Media i osoby** | Wpisy z Public Pulse, nagrania i transkrypcje posiedzeń Sejmu, wystąpienia oraz profile interesariuszy |
+| **Media i osoby** | Wpisy z modułu Media, nagrania i transkrypcje posiedzeń Sejmu, wystąpienia oraz profile interesariuszy |
 
 Oba zestawy działają tylko do odczytu: ich narzędzia wyszukują i odczytują dane, ale nie mogą niczego tworzyć, zmieniać ani usuwać w Persate.
 
@@ -38,11 +38,11 @@ Kroki opisują angielską wersję interfejsu każdej aplikacji. Nazwy menu co pe
 
 Własne aplikacje MCP wymagają trybu dewelopera w ChatGPT. O tym, w których planach jest on dostępny, decyduje OpenAI; w firmowych obszarach roboczych może być potrzebna wcześniejsza zgoda administratora. Aplikację tworzy się w ChatGPT w przeglądarce.
 
-1. Otwórz **Settings → Security and login** i włącz **Developer mode**.
-2. Otwórz **Plugins**, wybierz przycisk z plusem, a następnie **Create MCP App**.
-3. Wpisz nazwę, np. *Persate*, a w sekcji **Connection** podaj adres serwera `https://api.persate.com/mcp`. Jako metodę uwierzytelniania wybierz **OAuth**.
-4. Utwórz aplikację, zaloguj się do Persate i zatwierdź zgodę.
-5. Rozpocznij nową rozmowę i dodaj Persate z menu narzędzi w polu wiadomości.
+1. Otworzyć **Settings → Security and login** i włączyć **Developer mode**.
+2. Otworzyć **Plugins**, wybrać przycisk z plusem, a następnie **Create MCP App**.
+3. Wpisać nazwę, np. *Persate*, a w sekcji **Connection** podać adres serwera `https://api.persate.com/mcp`. Jako metodę uwierzytelniania wybrać **OAuth**.
+4. Utworzyć aplikację, zalogować się do Persate i zatwierdzić zgodę.
+5. Rozpocząć nową rozmowę i dodać Persate z menu narzędzi w polu wiadomości.
 
 ### Claude
 
@@ -50,10 +50,10 @@ Kroki dotyczą Claude w przeglądarce, Claude Desktop i aplikacji mobilnych Clau
 
 W planach Free, Pro i Max:
 
-1. Otwórz **Customize → Connectors** i wybierz **Add custom connector**.
-2. Wpisz nazwę, np. *Persate*, oraz `https://api.persate.com/mcp` jako adres zdalnego serwera MCP. Pola identyfikatora i sekretu klienta OAuth pozostaw puste. Jeżeli okno pokazuje opcje uwierzytelniania, wybierz **Sign in now** oraz **Register automatically**.
-3. Wybierz **Add**. Jeżeli logowanie nie rozpocznie się samo, wybierz **Connect** przy nowym łączniku. Zaloguj się do Persate i zatwierdź zgodę.
-4. W czacie wybierz **+ → Connectors** i włącz Persate.
+1. Otworzyć **Customize → Connectors** i wybrać **Add custom connector**.
+2. Wpisać nazwę, np. *Persate*, oraz `https://api.persate.com/mcp` jako adres zdalnego serwera MCP. Pola identyfikatora i sekretu klienta OAuth pozostawić puste. Jeżeli okno pokazuje opcje uwierzytelniania, wybrać **Sign in now** oraz **Register automatically**.
+3. Wybrać **Add**. Jeżeli logowanie nie rozpocznie się samo, wybrać **Connect** przy nowym łączniku. Zalogować się do Persate i zatwierdzić zgodę.
+4. W czacie wybrać **+ → Connectors** i włączyć Persate.
 
 W planie Free Claude pozwala na jeden własny łącznik.
 
@@ -61,13 +61,13 @@ W planach Team i Enterprise właściciel organizacji (Owner) dodaje łącznik je
 
 ### Claude Code
 
-Dodaj serwer:
+Serwer dodaje się poleceniem:
 
 ```bash
 claude mcp add --transport http persate https://api.persate.com/mcp
 ```
 
-Następnie uruchom `/mcp` w Claude Code, wybierz **persate**, a potem **Authenticate**, dokończ logowanie i zatwierdź zgodę w przeglądarce. Polecenie `claude mcp login persate` uruchamia to samo logowanie z poziomu powłoki.
+Następnie należy uruchomić `/mcp` w Claude Code, wybrać **persate**, a potem **Authenticate**, dokończyć logowanie i zatwierdzić zgodę w przeglądarce. Polecenie `claude mcp login persate` uruchamia to samo logowanie z poziomu powłoki.
 
 Domyślnie serwer jest dodawany tylko dla bieżącego projektu. Aby był dostępny we wszystkich projektach, należy dodać go z opcją `--scope user`:
 
@@ -104,24 +104,27 @@ npx @modelcontextprotocol/inspector --server-url https://api.persate.com/mcp --t
 
 Przy pierwszym połączeniu aplikacja AI otwiera w przeglądarce stronę Persate. Przed zalogowaniem należy sprawdzić, czy strona znajduje się w domenie `persate.com`.
 
-1. Zaloguj się kontem Persate i dokończ weryfikację dwuetapową. Jeżeli przeglądarka jest już zalogowana do Persate, ten krok może zostać pominięty.
-2. Sprawdź ekran zgody. Pokazuje on:
+1. Zalogować się kontem Persate i dokończyć weryfikację dwuetapową. Jeżeli przeglądarka jest już zalogowana do Persate, ten krok może zostać pominięty.
+2. Sprawdzić ekran zgody. Jego tytuł zawiera nazwę aplikacji, np. *Połącz aplikację Claude z Persate*. Ekran pokazuje:
    * nazwę aplikacji AI, która prosi o dostęp;
-   * host, do którego przeglądarka wróci po podjęciu decyzji;
-   * ostrzeżenie, gdy aplikacja zarejestrowała się samodzielnie i nie jest zweryfikowana przez Persate;
-   * zestawy narzędzi, z których aplikacja będzie mogła korzystać;
-   * tryb dostępu — w trakcie pilotażu tylko do odczytu.
-3. Zatwierdź dostęp. Przeglądarka wraca do aplikacji AI, która wyświetla narzędzia Persate.
+   * ostrzeżenie **Niezweryfikowana aplikacja**, gdy aplikacja zarejestrowała się samodzielnie i nie jest zweryfikowana przez Persate;
+   * w sekcji **Żądany dostęp** zestawy narzędzi, z których aplikacja będzie mogła korzystać;
+   * tryb dostępu — w trakcie pilotażu **Dostęp tylko do odczytu**;
+   * informację, że dane pobrane przez aplikację z Persate trafią do obsługującego ją dostawcy AI;
+   * host, do którego przeglądarka wróci po podjęciu decyzji.
+3. Wybrać **Zezwól**. Przeglądarka wraca do aplikacji AI, która wyświetla narzędzia Persate.
 
-Aplikacje dodane jako własne łączniki zwykle rejestrują się samodzielnie, dlatego ostrzeżenie może się przy nich pojawić. Dostęp należy zatwierdzić tylko wtedy, gdy nazwa odpowiada łączonej aplikacji. Nie należy zatwierdzać żądania, które nie zostało rozpoczęte celowo, np. otwartego z odnośnika przesłanego przez inną osobę.
+Aplikacje dodane jako własne łączniki zwykle rejestrują się samodzielnie, dlatego ostrzeżenie może się przy nich pojawić. Na dostęp należy zezwolić tylko wtedy, gdy nazwa odpowiada łączonej aplikacji. Nie należy zezwalać na żądanie, które nie zostało rozpoczęte celowo, np. otwarte z odnośnika przesłanego przez inną osobę.
 
-Możesz odmówić dostępu. Gdy konto nie ma uprawnień do połączenia, wybierz **Wróć do aplikacji**, aby wrócić do wyświetlonego hosta bez udzielania dostępu. Nieprawidłowe lub wygasłe żądanie trzeba rozpocząć ponownie z poziomu aplikacji AI.
+Wybranie **Odmów** odrzuca żądanie; przeglądarka wraca do aplikacji bez udzielenia dostępu. Gdy konto nie może się połączyć, strona wyświetla komunikat **Połączenie jest niedostępne** z przyczyną, a **Wróć do aplikacji** prowadzi z powrotem do wyświetlonego hosta bez udzielenia dostępu. Nieprawidłowe lub wygasłe żądanie trzeba rozpocząć ponownie z poziomu aplikacji AI.
 
 ## Rozłączanie
 
-Tokeny dostępu odnawiają się automatycznie, dlatego połączona aplikacja nie wymaga logowania przy każdym użyciu. Rozłącz lub usuń łącznik w aplikacji AI, aby przestać z niego korzystać w tej aplikacji (w Claude Code: `claude mcp remove persate`). Usunięcie lokalnej konfiguracji nie musi unieważniać danych dostępowych już wydanych aplikacji.
+Tokeny dostępu odnawiają się automatycznie, dlatego połączona aplikacja nie wymaga logowania przy każdym użyciu.
 
-W trakcie pilotażu poproś administratora organizacji o kontakt z Persate, aby unieważnić istniejące połączenie lub wyłączyć dostęp zewnętrznych aplikacji AI dla organizacji. Dostęp jest też odrzucany, gdy konto Persate utraci dostęp do organizacji.
+Aby cofnąć dostęp, należy otworzyć w Persate **Ustawienia → Bezpieczeństwo i prywatność**. Sekcja **Połączone aplikacje AI** zawiera aplikacje AI, którym pozwolono korzystać z Persate w imieniu użytkownika, wraz z datą połączenia, ostatniego użycia i wygaśnięcia połączenia; aplikacje zarejestrowane samodzielnie mają oznaczenie **Niezweryfikowane**. Należy wybrać **Odłącz** przy aplikacji albo — gdy połączonych jest kilka — **Odłącz wszystkie**, a następnie potwierdzić. Aplikacja od razu traci dostęp do Persate.
+
+Usunięcie łącznika w aplikacji AI (w Claude Code: `claude mcp remove persate`) kończy korzystanie z niego w tej aplikacji, ale nie musi cofać udzielonego już dostępu; aplikację należy też odłączyć w sekcji **Połączone aplikacje AI**. Dostęp jest również odrzucany, gdy konto Persate utraci dostęp do organizacji. Aby w trakcie pilotażu wyłączyć dostęp zewnętrznych aplikacji AI dla całej organizacji, administrator organizacji kontaktuje się z Persate.
 
 Aby połączyć się ponownie, należy powtórzyć kroki właściwe dla danej aplikacji.
 
@@ -134,10 +137,11 @@ Aby połączyć się ponownie, należy powtórzyć kroki właściwe dla danej ap
 
 ## Rozwiązywanie problemów
 
-* Strona zgody informuje, że organizacja nie ma włączonego dostępu — dostęp zewnętrznych aplikacji AI jest wyłączony dla organizacji albo nie ma dla niej dostępnego zestawu narzędzi. Zwróć się do administratora organizacji; w sprawie udziału w pilotażu skontaktuj się z Persate.
-* Żądanie wygasło — żądanie połączenia jest ważne przez ograniczony czas. Zamknij stronę i rozpocznij połączenie ponownie z poziomu aplikacji AI. Nie używaj ponownie starej strony logowania ani zakładki.
-* Strona logowania wyświetla się ponownie — dokończ weryfikację dwuetapową na persate.com; połączenie jest kontynuowane dopiero po niej. Jeżeli pętla się powtarza, najpierw zaloguj się do persate.com w tej samej przeglądarce, a następnie ponownie rozpocznij połączenie z poziomu aplikacji AI.
-* Brak oczekiwanych narzędzi — zestaw narzędzi nie został wybrany dla organizacji albo funkcja lub źródło danych nie należy do pakietu organizacji. Zwróć się do administratora organizacji. W ChatGPT i Claude sprawdź też, czy Persate jest włączone w bieżącej rozmowie.
+* **Połączenie jest niedostępne** — strona podaje przyczynę: dostęp zewnętrznych aplikacji AI nie jest włączony w organizacji, organizacja nie udostępniła zewnętrznym aplikacjom AI żadnych danych z Persate, organizacja nie pozwala temu kontu łączyć aplikacji AI albo nie dopuszcza danej aplikacji. Należy zwrócić się do administratora organizacji; w sprawie udziału w pilotażu — do Persate.
+* **Żądanie połączenia jest niedostępne** — żądanie wygasło lub jest nieprawidłowe. Żądanie połączenia jest ważne przez ograniczony czas. Należy zamknąć stronę i rozpocząć połączenie ponownie z poziomu aplikacji AI, bez ponownego używania starej strony logowania ani zakładki.
+* Strona informuje, że adres powrotny aplikacji jest niedozwolony — Persate odmówiło przekierowania przeglądarki pod adres, którego nie mogło zweryfikować. Należy rozpocząć połączenie ponownie z poziomu aplikacji AI; jeśli komunikat się powtarza, tej aplikacji nie można połączyć.
+* Strona logowania wyświetla się ponownie — należy dokończyć weryfikację dwuetapową na persate.com; połączenie jest kontynuowane dopiero po niej. Jeżeli pętla się powtarza, należy najpierw zalogować się do persate.com w tej samej przeglądarce, a następnie ponownie rozpocząć połączenie z poziomu aplikacji AI.
+* Brak oczekiwanych narzędzi — zestaw narzędzi nie został wybrany dla organizacji albo funkcja lub źródło danych nie należy do pakietu organizacji. Należy zwrócić się do administratora organizacji. W ChatGPT i Claude warto też sprawdzić, czy Persate jest włączone w bieżącej rozmowie.
 
 ## Dla agentów AI
 

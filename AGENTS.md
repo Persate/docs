@@ -60,10 +60,11 @@ Every page exists as a pair: `<page>.mdx` (English) and `<page>.pl.mdx` (Polish)
 Match the house voice — exemplar: [`content/docs/advisor/best-practices.mdx`](content/docs/advisor/best-practices.mdx) and its `.pl.mdx` sibling.
 
 - **Impersonal, factual, instructional.** Describe what the product does and how to use it. No marketing, no hype, no exclamation.
-- **Polish:** bezosobowy, rzeczowy, polski techniczny. Unikać form „Ty/Twój" i kalek z angielskiego; spójna terminologia (np. konsekwentnie „asystent", „alert", „interesariusz").
-- **English:** plain, direct, present tense. Prefer the active product as subject ("The advisor returns…", "Entering `@` opens…").
+- **Polish:** bezosobowy, rzeczowy, polski techniczny. Unikać form „Ty/Twój" i kalek z angielskiego. Terminologia jak w polskim interfejsie (`FE/packages/ui/src/i18n/messages/pl.json`): **Advisor** jako odmieniana nazwa własna (Advisora, Advisorem), „alert", „interesariusz", moduły pod nazwami z nawigacji (Kokpit, Monitorowanie, Repozytorium, Inteligentne foldery, Redaktor, Legislacja, Nagrania, Głosowania, Interesariusze, Media, Laboratoria).
+- **English:** plain, direct, present tense. Prefer the active product as subject ("Advisor returns…", "Entering `@` opens…").
 - Tables for option/comparison matrices; short paragraphs; bold for the key term, italics for example phrasings.
-- Use real UI labels and steps — verify them against FE, don't invent.
+- Use real UI labels and steps — verify them against FE, don't invent. Section titles and the root sidebar groups mirror the app's sidebar (`FE/src/components/platform/sidebar/navigation.ts`).
+- Quote labels exactly as the interface shows them, and don't add remarks that a label "is shown in English" in the Polish interface. That is an FE translation gap: report it, or describe the element in plain Polish.
 
 ---
 
@@ -102,6 +103,13 @@ When in doubt: *would this leak to a competitor's eyes?* Redact. Internal engine
 - `npm run lint` must exit 0 with no warnings and `npm run build` must pass before declaring done.
 
 
-## 9. Bilingual interface controls
+## 9. In-product screenshots
+
+- Screenshots live in `public/persate/screenshots/<area>/<name>.jpg` (English) and `<name>-pl.jpg` (Polish): 1440×900 JPEG, light theme, referenced from both pages of the pair with `<img src="/docs/persate/screenshots/…" alt="…" />` and an alt text in the page's language.
+- Regenerate them with `npm run screenshots` (all shots) or `npm run screenshots -- --only <id,…>`; ids and targets are in `scripts/screenshots.json`. A browser window opens on persate.com: sign in yourself, and the script captures every shot in both languages and signs out. It never handles credentials, and it forces language and theme only in the browser, so the account's settings stay unchanged.
+- Only screens with public data (legislation, votes, recordings, public figures, media) belong in the manifest. Screens showing an organization's alerts, files, conversations or members need a dedicated demo tenant first.
+- When a UI change makes a shot outdated, rerun the script for that id rather than editing images by hand.
+
+## 10. Bilingual interface controls
 
 The Fumadocs 16.8.5 package includes several hardcoded control labels outside its built-in translation keys. `scripts/patch-fumadocs-i18n.mjs` connects those labels to the existing locale context during `npm ci`; Polish labels live in `src/app/[lang]/layout.tsx`, with the original English fallbacks. The patch is version-checked and idempotent. Review it when upgrading Fumadocs; do not remove a failing patch without replacing its bilingual behavior. Verify sidebar, theme, search, copy and page-opening controls in both languages and at mobile widths. This is a source patch, never a runtime DOM text replacement.

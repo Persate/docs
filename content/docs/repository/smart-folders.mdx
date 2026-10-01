@@ -1,47 +1,76 @@
 ---
 title: Smart folders
-description: Virtual folders that automatically aggregate matching documents.
-hidden: true
+description: Describe a set of documents in plain language and keep the matching Repository files together in a smart folder.
 ---
 
-A smart folder is a saved query that automatically updates its contents. Every document meeting specified criteria — such as a text phrase, file type, date, or tag — appears in the folder without the need for manual transfer.
+A smart folder is a saved description of a set of files — topics, people, file types, sources, dates, or access scope — that collects the matching files from Repository. It is not a storage location: files stay where they are, and deleting a smart folder does not delete any file.
 
-A smart folder is not a physical location; files remain in the repository, and their folder membership is determined dynamically based on configured filters.
+Open **Smart Folders** in the sidebar (**WORKSPACE → Smart Folders**) when the feature is enabled for the organization. Smart folders are also listed in the Repository panel.
 
-## Example use cases
+## The Smart Folders list
 
-* Gathering all documents containing the phrase *"legislation 2025"*, ordered from newest.
-* Isolating PDF files longer than 50 pages that do not yet have assigned tags.
-* Consolidating documentation related to a specific stakeholder based on keywords.
+The list shows each folder's **Name**, **Description**, and **Last Modified** date. Select a folder to open it. Hovering over a row reveals **Edit smart folder** and **Delete smart folder**.
 
-## Creating a folder
+The panel on the right contains **Create smart folder** and **Search** for filtering the list.
 
-A new smart folder is created by describing the desired set of documents in natural language (e.g., *"Financial reports from the last quarter — PDF and Word files"*). The AI advisor automatically translates the description into a set of rules — content criteria and technical filters — and presents a preview of the matched files for confirmation. Ready-made starter suggestions are also available to ease getting started.
+To delete several folders, select them with the checkboxes and choose **Delete** in the bar at the bottom of the screen. Deleting a folder — from its row, from this bar, or from the folder page — takes effect immediately, without a confirmation step.
 
-## Configuration and editing
+## Create a smart folder
 
-Smart folders are visible in the sidebar alongside the main repository view. Selecting a folder opens its detailed view, where the rules are presented grouped:
+1. Select **Create smart folder**. The page asks **What do you want to collect in the folder?**
+2. Describe the files to collect, for example *"Quarterly financial reports from the last year — PDF and Word only"*. The tiles under **Get started with an example** fill in a sample request.
+3. Optionally, add example files: select the Repository icon in the input (**Add files from your repository**) and pick files in the **Add seed files** dialog. The selected files appear above the input and can be removed again. Persate uses them as a signal and infers the broader set they represent.
+4. Send the request. Persate examines the Repository, searches file contents, tests the filter, and replies in the conversation. Reply to adjust the result, for example *"only PDFs"* or *"include last year as well"*.
+5. Review the preview in the panel on the right and select **Create smart folder**. A reply such as *save* has the same effect. The new folder opens.
 
-* **Availability** — the visibility scope (private / shared).
-* **Technical filters** — structural restrictions regarding source, file type, dates, size, or name.
-* **Content criteria** — required, optional, and excluded phrases, along with matching by file content.
+Files selected in Repository can also start a folder: in the list view, select the files and choose **Create smart folder** in the selection bar. The creator opens with those files attached as examples.
 
-The folder criteria can be refined, and changes are confirmed by saving, which triggers an immediate refresh of the file list.
+To stop a running step, select the stop button or press **Esc**; the request returns to the input.
 
-## Presentation modes
+## Review the preview
 
-Every folder offers two data display modes:
+The panel on the right (on a phone, the **Smart folder preview** button) shows **Drafting smart folder preview…** while Persate works. When the draft is ready, it shows:
 
-* **Storage view** — a standard list or tile layout, optimal for downloading documents.
-* **Timeline view** — a file presentation on a timeline. Enables identifying documentation density within specific time periods.
+* the folder's name, description, and a short summary of its topic;
+* **Folder contents** — the number of matching files and a breakdown by **Sources**, **File types**, **People in criteria** or **Focus**, and **File owners**;
+* **Seed files** — the example files used, with a note when some were skipped because they are no longer accessible;
+* **Matching files** — the number of matches and a sample with a relevance score, source, date, and a short summary of each file;
+* **Filter** — the criteria that will be saved, such as **Access**, **Sources**, **File types**, **Date range**, **Filename**, **Must include**, **Any of**, **Exclude**, **Content search**, **Size**, or **Sort**;
+* **Refinement suggestions** — ideas for narrowing or widening the folder. To apply one, ask for it in the conversation.
 
-## Recommended workflow
+**Create smart folder** becomes available once the draft has a name and criteria. If the conversation ends without a draft, the panel shows **Smart folder preview unavailable.**; refine the request and try again.
 
-1. Describe the desired set of documents in natural language and let the advisor build the rules.
-2. Verify the preview of matched files and the generated criteria.
-3. Refine the folder by adding or removing technical filters (e.g., selecting only the PDF format).
-4. Narrow the content criteria (required, optional, or excluded phrases) to filter out irrelevant entries.
+## Open a smart folder
 
-## Empty view and error states
+The folder page lists the matching files in the same table as Repository. Select a file to open it in the file viewer. Select several files to **Download** them or **Clear** the selection.
 
-* *"No documents match this folder's criteria"* — no files in the repository meet the conditions defined in the folder configuration.
+The panel on the right contains:
+
+* **Open in Repository** — applies the folder's criteria to the Repository view: its filters, sorting, and content criteria, which the Repository panel shows under **Semantic match**. **Clear smart folder filters** in the Repository panel returns to the full list;
+* **Edit** and **Delete** — deletion takes effect immediately;
+* the folder's name and description. To rename the folder, hover over the name and select the pencil icon;
+* **What this folder collects** — the topic summary, when it adds to the description;
+* **Folder contents** — the breakdown by source, file type, people or focus, and file owner. When not every matching file is shown, a note states how many of the matching files the breakdown is based on.
+
+**No files match this smart folder.** means that no available file currently meets the criteria.
+
+## Use smart folders in Repository
+
+The Repository panel has a **Smart Folders** section with a search field and the first folders of the list. Selecting a folder there filters the Repository view by its criteria. **Manage all** opens the Smart Folders list when there are more folders.
+
+## Edit a smart folder
+
+Select **Edit** on the folder page or **Edit smart folder** in the list. The page shows **Editing** with the folder's name, and the **Current smart folder setup** panel shows the saved definition.
+
+1. Describe the change, for example *"narrow to PDFs"* or *"limit to the third quarter"*.
+2. Review the updated preview in the panel.
+3. Select **Save changes**. The folder page opens with the updated definition.
+
+If saving fails, **Failed to update the folder.** appears and the previous definition remains in place.
+
+## Empty and error states
+
+* **No smart folders yet** — no folder has been created. Select **Create smart folder**.
+* **No matching smart folders** — the search excludes every folder.
+* **Couldn't load smart folders** — the list could not be loaded. Try again in a moment.
+* **Folder not found.** or **Smart folder not found** — the folder may have been deleted, or access may no longer be available.

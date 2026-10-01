@@ -1,50 +1,100 @@
 ---
 title: Korzystanie z laboratorium
-description: Nawigacja po widokach, przegląd dowodów, eksport zakresu i używanie Lab Advisora.
+description: Widoki, wyszukiwanie i filtry, graf powiązań, dossier i materiały źródłowe, eksport oraz Lab Advisor we wspólnym obszarze roboczym laboratoriów.
 ---
 
-Dokładne etykiety i model danych zależą od przypisanego laboratorium. Wspólne środowisko udostępnia następujące widoki, jeżeli dany pakiet je obsługuje:
+Większość laboratoriów otwiera się we wspólnym obszarze roboczym. Widoki, filtry i nazewnictwo zależą od laboratorium i jego danych; ta strona opisuje elementy wspólne.
 
-* **Podsumowanie** — kontekst wydania i główne liczby;
-* **Osoby** — encje z wyszukiwaniem i bieżącym stanem przeglądu;
-* **Graph** — relacje między encjami;
-* **Oś czasu** — zdarzenia i dowody uporządkowane w czasie.
+## Układ obszaru roboczego
 
-## Wyszukiwanie i filtrowanie encji
+* **Pasek widoków** — karty u góry ekranu. Pierwsza jest zawsze karta **Summary**; pozostałe to widoki udostępniane przez laboratorium, np. **People of interest**, **Graph**, **Timeline** lub **Statements**.
+* **Obszar główny** — aktywny widok.
+* **Panel boczny** po prawej stronie — wyszukiwanie, filtry, eksport i zbiór roboczy. Na wąskich ekranach otwiera go przycisk **Sterowanie Labs** w prawym dolnym rogu.
+* **Przełącznik Advisora** na prawym końcu paska widoków — otwiera i zamyka Lab Advisora.
 
-Wyszukiwanie wymaga co najmniej dwóch znaków. Można filtrować według grupy oraz stanu **Zweryfikowane**, **Prawdopodobne** lub **Nierozstrzygnięte**. Wybranie encji ustawia na niej fokus w bieżącym widoku i, gdy to możliwe, otwiera jej dossier.
+Pasek ścieżki nad obszarem roboczym pokazuje aktywny widok, a w razie potrzeby także wybraną grupę, wyróżniony podmiot lub otwarte dossier. Wybranie wcześniejszej pozycji na pasku powraca do niej.
 
-W grafie wybranie węzła ustawia fokus. Modyfikator wskazany przez interfejs pozwala oznaczyć kilka węzłów. Wybrany zestaw roboczy można odłożyć i przywrócić bez zmiany wydania.
+## Podsumowanie
 
-## Kontrolki grafu
+Karta **Summary** opisuje wydanie, zanim pokaże jego zawartość: najważniejsze liczby w sekcji **W skrócie**, okres objęty danymi, typy powiązań, najczęściej cytowane źródła i wydawców, celowo pominięty materiał oraz szczegóły wydania. W laboratoriach opartych na wypowiedziach podsumowanie opisuje wypowiedzi — ich liczbę, motywy i aktywność w czasie.
 
-Graf pozwala zwolnić układ fokusu, rozdzielić zestaw roboczy lub ponownie pogrupować widoczne węzły. Kontrolki wpływają wyłącznie na bieżący widok. Nie dodają, nie usuwają ani nie zmieniają przejrzanych relacji.
+## Wyszukiwanie i filtry
 
-## Dossier i dowody
+* **Przeszukaj to wydanie** znajduje podmioty po nazwie. Należy wpisać co najmniej dwa znaki i wybrać wynik, aby go wyróżnić.
+* Gdy wydanie jest podzielone na grupy, pole wyboru grupy zawęża widoki do jednej grupy; **Wszystkie grupy** przywraca całe wydanie.
+* Przełączniki w sekcji **Status weryfikacji** pokazują lub ukrywają powiązania o danym statusie.
 
-Dossier osoby grupuje przejrzane relacje i ich dowody. Po otwarciu dowodu można sprawdzić źródło i stan przeglądu. Zarchiwizowany dowód jest udostępniany jako dokładnie zapisany plik; nieudany podgląd nie zmienia rekordu.
+W laboratoriach opartych na wypowiedziach panel boczny zawiera **Szukaj wypowiedzi** oraz filtry, m.in. motywu, formy wypowiedzi i **Zakres dat**. **Wyczyść filtry** przywraca ustawienia domyślne.
 
-Każdy **live web finding** należy traktować jako nieprzejrzany. Recenzent może:
+## Graf
 
-* wybrać **Promote**, aby skierować wynik do kolejnej przejrzanej transzy;
-* wybrać **Odrzuć**;
-* cofnąć oczekującą decyzję.
+Karta **Graph** przedstawia podmioty i powiązania między nimi. Linie powiązań mają kolory odpowiadające statusowi weryfikacji; legenda znajduje się w lewym dolnym rogu.
 
-Zatwierdzenie nie zmienia wydania aktualnie otwartego na ekranie.
+* Wybranie podmiotu wyróżnia go. Panel w lewym górnym rogu pokazuje jego nazwę (albo **Przegląd sieci**, gdy nic nie jest wyróżnione) oraz liczbę widocznych podmiotów i powiązań.
+* **Zachowaj** dodaje wyróżniony podmiot do zbioru zaznaczonych, a **Usuń ze zbioru** go z niego usuwa; **Odłóż** ukrywa podmiot w widoku. Kliknięcie z klawiszem ⌘/Ctrl zaznacza kilka podmiotów bez zmiany wyróżnienia.
+* **+**, **−** i **Dopasuj** zmieniają powiększenie grafu. Gdy widoczna jest tylko część wydania, **Przegrupuj** rozmieszcza widoczne podmioty osobno, a **Pełna mapa** przywraca ich położenie na pełnej mapie.
+* Wybranie linii powiązania otwiera materiały źródłowe.
+
+Część powiązań pojawia się dopiero po przybliżeniu, o czym informuje legenda. Te kontrolki zmieniają wyłącznie widok — nigdy nie dodają, nie usuwają ani nie zmieniają powiązań w wydaniu.
+
+## Zbiór roboczy
+
+Sekcja **Zbiór roboczy** w panelu bocznym pojawia się, gdy podmioty zostały zaznaczone lub odłożone albo gdy widok ograniczono do wybranych typów podmiotów:
+
+* zaznaczone podmioty są wymienione z nazwy — wybranie nazwy wyróżnia podmiot, a **×** usuwa zaznaczenie; **Wyczyść** usuwa wszystkie zaznaczenia;
+* odłożone podmioty są policzone; **Przywróć wszystko** przywraca je do widoku;
+* aktywny filtr typu podmiotu jest widoczny wraz z poleceniem **Pokaż wszystko**, które go usuwa.
+
+## Osoby
+
+Karta **People of interest** zawiera listę osób z wydania wraz z oceną w kolumnie **Znaczenie**, grupą, powiązaniami i ostatnią datą. Wybranie wiersza otwiera dossier osoby. Wybranie pozycji **People of interest** na pasku ścieżki powraca do listy.
+
+## Oś czasu
+
+Karta **Timeline** buduje chronologię wyróżnionego podmiotu. Najpierw należy otworzyć podmiot z grafu lub z listy osób. Każdy datowany wpis pozwala pokazać źródło lub cel powiązania w grafie. W laboratoriach opartych na wypowiedziach oś czasu przedstawia wypowiedzi w czasie, pogrupowane według opcji wybranej w polu **Grupuj oś czasu według**.
+
+## Dossier i materiały źródłowe
+
+Dossier zaczyna się od sekcji **Podsumowanie** z opisem osoby, a następnie grupuje jej przejrzane powiązania według typu. Przy każdym powiązaniu wymienione są źródła. Gdy wydanie przechowuje zarchiwizowaną kopię źródła, **Otwórz dokument** wyświetla ją na miejscu.
+
+Wybranie linii powiązania w grafie otwiera panel **Materiały potwierdzające powiązanie**: status, okres, wydawcę i źródło powiązania, **Otwórz źródło** oraz ewentualne **Dalsze materiały źródłowe**. Gdy wydanie nie przechowuje kopii źródła, można je cytować, ale nie można go otworzyć. Powiązania, którego materiały źródłowe są niedostępne, nie należy wywodzić wyłącznie z grafu.
+
+### Ustalenia z otwartego internetu
+
+Dossier może zawierać sekcję **Otwarty internet** z ustaleniami zebranymi w otwartym internecie. Nie należą one do wydania i nie zostały sprawdzone. Każde ustalenie pokazuje witrynę źródłową, fragment tekstu, podstawę dopasowania oraz liczbę niezależnych tekstów i witryn, które je potwierdzają.
+
+* **Przyjmij** oznacza ustalenie do następnego wydania; pojawia się wtedy opis **Przyjęte do następnego wydania**.
+* **Odrzuć** oznacza ustalenie jako **Odrzucone**.
+* **Cofnij** przywraca ustalenie do stanu bez decyzji.
+
+Przyjęcie ustalenia nigdy nie dodaje go do wydania, które jest aktualnie otwarte.
 
 ## Eksport
 
-Kontrolka eksportu pobiera skoroszyt dla bieżącego zakresu. Zależnie od laboratorium zakresem może być całe wydanie, grupa główna albo wybrane węzły, wraz ze stanami przeglądu. Eksport wymaga aktywnej autoryzowanej sesji; nieaktualny lub udostępniony odnośnik nie zastępuje dostępu do laboratorium.
+Sekcja **Eksport** w panelu bocznym pobiera skoroszyt Excel (.xlsx) dla bieżącego zakresu. Etykieta przycisku wskazuje, co zostanie wyeksportowane:
+
+* **Eksportuj całe wydanie** — nic nie jest wybrane;
+* **Eksportuj** z nazwą grupy — wybrano grupę;
+* **Eksportuj zaznaczone** z liczbą podmiotów — zaznaczono podmioty.
+
+Skoroszyt obejmuje wyłącznie statusy weryfikacji, które są aktualnie wyświetlane. W laboratoriach opartych na wypowiedziach dostępne są zamiast tego **Eksportuj wypowiedzi** i **Eksportuj oś czasu**. Jeśli pobieranie się nie powiedzie, przycisk informuje o błędzie i można go wybrać ponownie. Eksport wymaga aktywnej sesji z dostępem do laboratorium.
 
 ## Lab Advisor
 
-Należy otworzyć **Lab Advisor**, aby zadać pytanie o bieżące wydanie. Nowa rozmowa zapisuje kontekst aktualnego widoku. Późniejsza zmiana widoku nie modyfikuje wcześniejszych odpowiedzi.
+**Lab Advisor** to Advisor działający wewnątrz laboratorium. Przełącznik na prawym końcu paska widoków otwiera go obok widoku. Na szerokich ekranach szerokość panelu można zmienić, przeciągając jego krawędź; na wąskich panel zakrywa widok. Persate zapamiętuje, czy panel był otwarty.
 
-Polecenie **Zatrzymaj** anuluje uruchomioną odpowiedź. Po wyczerpaniu limitu środowisko nadal działa, lecz Advisor nie rozpocznie kolejnej odpowiedzi do czasu przywrócenia limitu.
+* Każde pytanie trafia do Advisora razem z tym, co widać na ekranie — aktywnym widokiem, wyróżnionym podmiotem lub otwartym dossier, zaznaczonymi podmiotami i aktywnymi filtrami — dlatego pytanie może dotyczyć np. *tej grupy* albo *zaznaczonych osób*.
+* Lab Advisor odpowiada na podstawie wydania laboratorium. Może też zaznaczać podmioty, zmieniać widok i przygotować plik do pobrania, który pojawia się w odpowiedzi.
+* **Zatrzymaj** przerywa trwającą odpowiedź. **Nowa rozmowa** czyści panel i rozpoczyna nową rozmowę.
+* Jeśli połączenie zostanie przerwane w trakcie odpowiedzi, **Połącz ponownie** wznawia jej odbiór. Jeśli odpowiedź zakończy się przedwcześnie, panel podaje przyczynę; zwykle pomaga węższe pytanie uzupełniające.
 
 ## Stany puste i błędy
 
-* Brak wyników wyszukiwania — należy wyczyścić filtry stanu lub grupy albo wpisać szersze zapytanie zawierające co najmniej dwa znaki.
-* Dowód niedostępny — źródła może brakować w przejrzanym wydaniu; nie należy wywodzić relacji wyłącznie z grafu.
-* Advisor niedostępny — należy potwierdzić przypisanie laboratorium oraz dostęp do Advisora.
-* Eksport nieudany — należy zachować wybrany zakres i ponowić po ponownym uwierzytelnieniu.
+| Komunikat | Co zrobić |
+| :--- | :--- |
+| **Brak osób w tym zakresie** | Należy zmienić filtr grupy lub statusu weryfikacji w panelu bocznym. |
+| **Brak powiązań w tym widoku.** | Bieżące filtry ukrywają wszystkie powiązania; należy je poszerzyć. |
+| **Brak zdarzeń z datą** | Wydanie nie zawiera datowanych powiązań dla wybranego zakresu. |
+| **Nie udało się wczytać podsumowania tego narzędzia Labs.** | Należy odświeżyć stronę. |
+| **Nie udało się otworzyć tego narzędzia Labs. Odśwież stronę, aby spróbować ponownie.** | Lab Advisor nie mógł otworzyć rozmowy; należy odświeżyć stronę. |
+| Błąd w prawym dolnym rogu widoku | Żądanie nie powiodło się. Należy zamknąć komunikat przyciskiem **×** i powtórzyć czynność. |

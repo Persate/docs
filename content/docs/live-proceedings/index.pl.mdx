@@ -1,42 +1,73 @@
 ---
-title: Posiedzenia na żywo
-description: Punkt dostępu do transmisji parlamentarnych — śledzenie bieżących obrad, przegląd archiwum nagrań oraz wgląd w harmonogram prac Sejmu.
+title: Nagrania
+description: Nagrania wideo z obrad Sejmu wraz z analizą Persate — trzy listy, układ listy i kafelków, ikony statusu, filtry oraz inne sposoby otwierania nagrań.
 ---
 
-**Posiedzenia na żywo** to moduł umożliwiający dostęp do oficjalnych kanałów wideo Sejmu. Platforma pozwala śledzić transmisje w czasie rzeczywistym, analizować nagrania archiwalne oraz przeglądać kalendarz nadchodzących zgromadzeń (komisji, sesji plenarnych, konferencji).
+Moduł **Nagrania** zapewnia dostęp do nagrań wideo z obrad Sejmu — posiedzeń plenarnych, posiedzeń komisji i podkomisji, konferencji oraz innych wydarzeń — wraz z analizą każdego nagrania przygotowaną przez Persate: transkrypcją z rozpoznanymi mówcami, a w przypadku nagrań zakończonych także osią czasu, opracowaną transkrypcją i oficjalnym stenogramem Sejmu, o ile są dostępne.
 
-Otwórz widok przez **PUBLICZNE → Nagrania** w panelu bocznym.
+Moduł jest dostępny w sekcji **PUBLICZNE → Nagrania**, gdy funkcja jest włączona dla organizacji. W przeciwnym razie strona wyświetla komunikat **Ta funkcja nie jest częścią Twojego pakietu**.
 
-## Widoki podrzędne
+## W toku, Poprzednie i Zaplanowane
 
-Interfejs pozwala na przełączanie się między trzema listami:
+Górny pasek przełącza między trzema listami:
 
-* **W toku** — sesje transmitowane na żywo w danej chwili.
-* **Poprzednie** — archiwum zakończonych nagrań dostępnych do analizy.
-* **Zaplanowane** — sesje zapowiedziane, uporządkowane chronologicznie według daty rozpoczęcia.
+* **W toku** — posiedzenia transmitowane w tej chwili.
+* **Poprzednie** — posiedzenia zakończone. Ta lista otwiera się domyślnie.
+* **Zaplanowane** — zapowiedziane posiedzenia, które jeszcze się nie rozpoczęły.
 
-## Karta posiedzenia
+Listy **W toku** i **Poprzednie** pokazują najpierw najnowsze posiedzenia, a lista **Zaplanowane** — najbliższe. Posiedzenie znajduje się tylko na jednej z trzech list i przechodzi na kolejną, gdy się rozpoczyna i gdy się kończy.
 
-Posiedzenia są grupowane miesiącami. Każde jest reprezentowane przez kartę zawierającą tytuł sesji, czas rozpoczęcia oraz typ (**Sesja**, **Komisja**, **Podkomisja**, **Konferencja** lub **Inne**). Ikony w prawej części karty informują o stanie procesów analitycznych w dwóch torach — **Analiza nagrania** (analiza w czasie rzeczywistym) oraz **Opracowanie nagrania** (analiza pogłębiona). Kolor ikony oznacza stan:
+## Lista i kafelki
 
-* **Niebieska** — wynik analizy jest gotowy.
-* **Pomarańczowa** — analiza jest w toku lub w kolejce (przy analizie pogłębionej wyświetlany jest procent postępu).
-* **Czerwona** — wystąpił błąd serwera w trakcie analizy.
-* **Szary znak zapytania** — *Brak transkrypcji · Wymaga weryfikacji*: analiza zakończyła się, ale nie zapisała transkrypcji. Nie oznacza to, że nagranie nie zawierało mowy; otwórz nagranie, aby uruchomić analizę ponownie.
+Przełącznik po prawej stronie górnego paska zmienia układ widoku. Przeglądarka zapamiętuje wybór.
 
-## Narzędzia filtrowania
+* **Lista** — wiersze pogrupowane według miesięcy, z kolumnami **Nagranie**, **Data**, **Typ** i **Status**.
+* **Kafelki** — karta każdego nagrania z jego pierwszą klatką, typem, godziną rozpoczęcia i salą.
 
-Filtry oraz panel wyszukiwania, dostępne w panelu bocznym, pozwalają zawęzić listę posiedzeń:
+Wybranie wiersza lub kafelka otwiera nagranie — zob. [Otwieranie posiedzenia](/pl/live-proceedings/analysis).
 
-* **Wyszukiwanie** — w tytułach sesji.
-* **Zakres dat** — ograniczenie listy do wybranego przedziału czasowego.
-* **Typ posiedzenia** — selektor wielokrotnego wyboru dla rodzajów zgromadzeń.
+## Ikony statusu
 
-## Stany pustego widoku i błędu
+Kolumna **Status** — a w kafelkach prawy górny róg karty — pokazuje najwyżej jedną ikonę dla każdego nagrania. Po najechaniu kursorem na ikonę wyświetla się jej znaczenie.
 
-* *„No proceedings found”* — aktywne filtry wykluczają wszystkie pozycje z listy.
-* *„Failed to load proceedings”* — błąd połączenia z serwerem. Zaleca się odświeżenie strony.
+| Ikona | Znaczenie |
+|---|---|
+| Brak ikony | Nagranie nie ma jeszcze analizy. |
+| Znacznik wyboru | **Analiza nagrania** jest zakończona. |
+| Obracające się kółko | Analiza trwa lub czeka w kolejce; w trakcie analizy podpowiedź pokazuje procent postępu. |
+| Czerwony krzyżyk | Analiza nie powiodła się albo została wstrzymana i czeka na samoczynne wznowienie. Podpowiedź podaje stan — np. *zaplanowano ponowną próbę* lub *oczekiwanie na nagranie* — oraz, jeśli jest znany, termin kolejnej próby lub sprawdzenia. |
+| Szary znak zapytania | **Brak transkrypcji · Wymaga weryfikacji** — analiza się zakończyła, ale nie zapisała transkrypcji. Nie oznacza to, że nikt nie zabierał głosu; analizę można uruchomić ponownie w widoku nagrania. |
+| Szare kółko | Oryginalne wideo nie jest już dostępne u źródła: **Tylko w Persate** (odtwarzana jest kopia zapisana w Persate) albo **Wideo jest niedostępne**. Zapisana analiza pozostaje dostępna. |
+
+Znaczenie poszczególnych stanów i dostępne działania opisuje strona [Status analizy](/pl/live-proceedings/status).
+
+## Zawężanie listy
+
+Panel boczny filtruje aktualnie otwartą listę:
+
+* **Wyszukiwanie** — przeszukuje tytuł, nazwę komisji i salę (*Szukaj posiedzeń...*).
+* **Zakres dat** — ogranicza listę do wybranego okresu.
+* **Typ posiedzenia** — **Sesja**, **Komisja**, **Podkomisja**, **Konferencja** lub **Inne**; można zaznaczyć kilka typów jednocześnie.
+* **Dostępność nagrania** — pokazuje tylko nagrania oznaczone jako **Tylko w Persate**, **Niedostępne** lub **Trwale niedostępne**. Bez zaznaczenia (**Dowolna dostępność**) lista obejmuje wszystkie nagrania.
+* **Partia polityczna** — pokazuje nagrania, których tytuł wskazuje klub parlamentarny lub partię, np. konferencje prasowe klubów.
+
+Wybrane filtry pozostają aktywne po przełączeniu na inną listę i są zachowywane do końca sesji przeglądarki.
+
+## Inne sposoby otwarcia nagrania
+
+Nagrania można otwierać także z innych części Persate, zwykle od właściwego momentu:
+
+* **Wyszukiwanie** — wyniki obejmują nagrania oraz pasujące fragmenty ich transkrypcji; wybranie fragmentu transkrypcji otwiera nagranie od tego momentu. Zob. [Wyszukiwanie i powiadomienia](/pl/using-persate/search-and-notifications).
+* **Advisor** — cytowanie wypowiedzi w odpowiedzi Advisora otwiera nagranie od cytowanego momentu.
+* **Monitorowanie** — dopasowania alertów znalezione w wypowiedziach w Sejmie mają odnośnik **Odtwórz od**, prowadzący do dopasowanego momentu.
+* **Legislacja** — strony komisji prowadzą do nagrań ich posiedzeń (**Otwórz nagranie**).
+
+## Pusty widok i błędy
+
+* **Nie znaleziono posiedzeń** — lista jest pusta albo żadne nagranie na niej nie spełnia aktywnych filtrów.
+* **Nie udało się wczytać posiedzeń** — nie udało się wczytać listy; zaleca się ponowną próbę później.
 
 ## Strony w tej sekcji
 
-* **[Otwieranie posiedzenia](/pl/live-proceedings/analysis)** — widok szczegółowy z odtwarzaczem wideo oraz trybami analizy **Analiza nagrania** i **Opracowanie nagrania**.
+* **[Otwieranie posiedzenia](/pl/live-proceedings/analysis)** — odtwarzacz, transkrypcja i jej widoki, oficjalny stenogram Sejmu, podsumowanie oraz analiza na żywo.
+* **[Status analizy](/pl/live-proceedings/status)** — znaczenie stanów analizy i dostępności nagrania oraz działania dostępne w każdym z nich.

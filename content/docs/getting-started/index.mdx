@@ -1,30 +1,40 @@
 ---
 title: Getting started
-description: Account creation, two-factor authentication setup, and the first sign-in procedure.
+description: How access to Persate works and the steps from an invitation to the first working session.
 ---
 
-To begin working with the Persate platform, complete three steps: create an account, secure it, and sign in for the first time. The entire procedure takes approximately five minutes and requires access to a mobile device to configure security.
+Persate is used within an organization. An account opens the platform only once it belongs to an organization; the organization's administrators add members, choose their role and assign them to groups.
 
-## Prerequisites
+## Ways to get access
 
-* An active email address (used for verification and communication).
-* A mobile device with an installed authenticator application supporting the TOTP standard (e.g., Google Authenticator, Authy, Microsoft Authenticator).
+* **Invitation from an administrator** — the usual route. The invitation email leads to a page where the password is set. See [Account creation](/getting-started/create-account).
+* **Invitation for an existing account** — an account that already exists but belongs to no organization receives a link to join the inviting organization.
+* **Account set up by an administrator** — an administrator can also create the account with a password; no invitation email is sent then, and the sign-in details come from the administrator.
+* **Book a demo** — an organization that does not use Persate yet can select **Book a demo** on persate.com. The request form asks for a name, a work email, the organization, a role and a short description of the goal; a member of the Persate team then replies by email to arrange a time. Sending the form does not book a meeting.
 
-Access to the platform does not require an invitation code or payment information during registration.
+**Sign up** under the sign-in form creates an account, but Persate does not open the platform for it until an administrator adds it to an organization: signing in is refused or ends on **Access Denied** with the message *Your account is not assigned to a Persate organization.*
 
-## Implementation stages
+## Before you start
 
-1. **[Account creation](/getting-started/create-account)** — choose an authentication method (email or SSO).
-2. **[Two-factor authentication](/getting-started/set-up-two-factor)** — pair an authenticator application to secure the profile.
-3. **[First sign-in](/getting-started/first-login)** — introduction to the main dashboard (Cockpit).
+* Access to the mailbox of the account's email address.
+* A phone or another device with an authenticator app that generates six-digit codes. Two-step verification is required for every Persate account.
 
-## Empty view and error states
+## Steps
 
-* *"Verification link expired"* — the link sent in the email is no longer valid. Repeat the registration process or use the password reset option.
-* *"Account already exists"* — attempt to register with an email address already in the database. In this case, use the sign-in screen.
+1. **[Account creation](/getting-started/create-account)** — accept the invitation and set a password, or sign up.
+2. **[Two-factor authentication](/getting-started/set-up-two-factor)** — pair the authenticator app during the first sign-in.
+3. **[First sign-in](/getting-started/first-login)** — sign in and open the Cockpit.
+
+[Using Persate](/using-persate) then explains navigation, search and notifications, and [Cockpit](/cockpit) the start screen.
+
+## Common problems
+
+* **This sign-in link expired** or **We couldn't sign you in** — links in Persate emails work only once and expire after a short time. Ask the administrator for a new invitation, or request a new password reset as described in [First sign-in](/getting-started/first-login). When several emails arrive, use only the newest link.
+* **Access Denied** after signing in — the account is not assigned to an organization. Open the invitation link from the email, or ask an organization administrator for an invitation.
+* **Request received** after signing up, but no email arrives — check the address and the spam folder. The message is the same whether or not the address already has an account.
 
 ## Pages in this section
 
-* **[Account creation](/getting-started/create-account)** — email registration and single sign-on (Google/Microsoft).
-* **[Two-factor authentication](/getting-started/set-up-two-factor)** — procedure for scanning the QR code and verifying the TOTP key.
-* **[First sign-in](/getting-started/first-login)** — navigating the Cockpit, global search, and file upload.
+* **[Account creation](/getting-started/create-account)** — accepting an invitation, joining an organization with an existing account and signing up.
+* **[Two-factor authentication](/getting-started/set-up-two-factor)** — pairing an authenticator app and confirming it with a code.
+* **[First sign-in](/getting-started/first-login)** — signing in with a password or a Google or Microsoft account, resetting a password and the first screen.

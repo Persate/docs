@@ -1,50 +1,100 @@
 ---
 title: Using a lab workbench
-description: Navigating lab views, reviewing evidence, exporting a scope, and using Lab Advisor.
+description: Views, search and filters, the relationship graph, dossiers and evidence, export and Lab Advisor in the shared lab workspace.
 ---
 
-The exact labels and data model depend on the assigned lab. The common workbench provides the following views when the package supports them:
+Most labs open in a shared workspace. The views, filters and wording depend on the lab and its data; this page describes the controls they have in common.
 
-* **Summary** — release context and high-level counts;
-* **People** — searchable entities and their current review status;
-* **Graph** — relationships between entities;
-* **Timeline** — dated events and evidence.
+## Workspace layout
 
-## Find and filter entities
+* **View strip** — tabs across the top. **Summary** is always first; the other tabs are the views the lab offers, for example **People of interest**, **Graph**, **Timeline** or **Statements**.
+* **Main area** — the active view.
+* **Sidebar** on the right — search, filters, export and the working set. On narrow screens it opens from the **Lab controls** button in the bottom-right corner.
+* **Advisor switch** at the right end of the view strip — opens and closes Lab Advisor.
 
-Use search with at least two characters. Filter by group and by **Verified**, **Probable**, or **Unresolved** status. Selecting an entity focuses it in the active view and opens its dossier when available.
+The breadcrumb bar above the workspace shows the active view and, where applicable, the selected group, the focused entity or the open dossier. Selecting an earlier item in the bar returns to it.
 
-In the graph, select a node to focus it. Use the platform modifier shown by the interface to mark several nodes. The selected working set can be set aside and restored without changing the release.
+## Summary
 
-## Graph controls
+**Summary** describes the release before its contents: the key counts under **At a glance**, the period covered, the relationship types, the most cited sources and publishers, what was deliberately left out, and the details of the release. In labs built on statements, the summary describes the statements instead — their number, themes and activity over time.
 
-The graph can release a focused layout, fragment a working set, or regroup the visible nodes. These controls affect only the current view. They do not add, remove, or rewrite reviewed relationships.
+## Search and filters
+
+* **Search this release** finds entities by name. Type at least two characters and select a result to focus it.
+* When the release is divided into groups, a group selector narrows the views to one group; **All groups** returns to the whole release.
+* **Research status** switches show or hide relationships with a given status.
+
+In labs built on statements, the sidebar offers **Search statements** and filters such as theme, statement form and **Date range**. **Clear filters** resets them.
+
+## Graph
+
+**Graph** shows entities and their relationships. Relationship lines are coloured by research status; the legend sits at the bottom left.
+
+* Select an entity to focus it. The panel at the top left shows its name (or **Network overview** when nothing is focused) and how many entities and relationships are visible.
+* **Keep** adds the focused entity to the marked set and **Remove from set** takes it out; **Set aside** hides it from the view. ⌘/Ctrl-click marks several entities without moving the focus.
+* **+**, **−** and **Fit** zoom the graph. When only part of the release is visible, **Regroup** lays out the visible entities on their own, and **Full map** returns them to their places on the full map.
+* Select a relationship line to open its evidence.
+
+Some relationships appear only after zooming in; the legend says so. These controls change only the view — they never add, remove or rewrite relationships in the release.
+
+## Working set
+
+The **Working set** section of the sidebar appears when entities are marked or set aside, or when the view is limited to some entity types:
+
+* marked entities are listed by name — select a name to focus it or **×** to unmark it; **Clear** unmarks all;
+* entities that were set aside are counted; **Restore all** brings them back;
+* an active filter by entity type is shown with **Show all**, which removes it.
+
+## People of interest
+
+**People of interest** lists the people in the release with an **Interest** rating, their group, their relationships and the latest date. Selecting a row opens the person's dossier. Selecting **People of interest** in the breadcrumb bar returns to the list.
+
+## Timeline
+
+**Timeline** builds the chronology of the focused entity. Open an entity from the graph or the people list first. Each dated entry can show its source or target in the graph. In labs built on statements, the timeline places statements on a time axis, grouped by the option chosen in **Group timeline by**.
 
 ## Dossiers and evidence
 
-A person dossier groups reviewed relationships and their evidence. Open an evidence item to inspect its source and review state. Archived evidence is served as the exact stored file; a failed preview does not change the evidence record.
+A dossier opens with a **Summary** of the person and then groups their reviewed relationships by type. Each relationship lists its sources. When the release stores an archived copy of a source, **Open document** displays it in place.
 
-Treat every **live web finding** as unreviewed. Reviewers may:
+Selecting a relationship line in the graph opens **Relationship evidence**: the status, period, publisher and source of the relationship, **Open source**, and any **Further evidence**. When the release does not store a snapshot of a source, the source can be cited but not opened. A relationship whose evidence is unavailable should not be inferred from the graph alone.
 
-* **Promote** the finding for inclusion in the next reviewed tranche;
-* **Reject** it;
-* undo the pending review decision.
+### Findings from the open web
 
-Promotion does not modify the release currently open on screen.
+A dossier can include an **Open web** section with findings collected from the open web. They are not part of the release and have not been reviewed. Each finding shows its source site, an excerpt, what it was matched on, and how many independent texts and sites support it.
+
+* **Accept** marks the finding for the next release; it then reads **Accepted for the next release**.
+* **Reject** marks the finding as **Rejected**.
+* **Undo** returns a decided finding to undecided.
+
+Accepting a finding never adds it to the release that is currently open.
 
 ## Export
 
-Use the export control to download a workbook for the current scope. Depending on the lab, the scope can be the whole release, a root group, or the selected nodes, with review statuses included. Export requires an active authorized session; a stale or shared download link is not a substitute for lab access.
+The **Export** section of the sidebar downloads an Excel workbook (.xlsx) for the current scope. The label shows what will be exported:
+
+* **Export whole release** — nothing is selected;
+* **Export** followed by the group name — a group is selected;
+* **Export** with the number of marked entities — entities are marked.
+
+The workbook includes only the research statuses that are currently displayed. Labs built on statements offer **Export statements** and **Export timeline** instead. If a download fails, the control reports the failure and can be selected again. Export requires an active session with access to the lab.
 
 ## Lab Advisor
 
-Open **Lab Advisor** to ask about the current release. Starting a new conversation captures the current view context. Changing the view later does not retroactively rewrite earlier turns.
+**Lab Advisor** is the Advisor working inside the lab. The switch at the right end of the view strip opens it next to the view. On wide screens the panel can be resized by dragging its edge; on narrow screens it covers the view. Persate remembers whether the panel was open.
 
-Use **Stop** to cancel a running turn. If the turn allowance is exhausted, the workbench remains available but the Advisor cannot start a new response until access is restored.
+* Each question is sent together with what is on screen — the active view, the focused entity or open dossier, marked entities and active filters — so questions can refer to *this group* or *the marked people*.
+* Lab Advisor answers from the lab's release. It can also mark entities, move the view and prepare a download, which appears in its answer.
+* **Stop** cancels the running answer. **New conversation** clears the panel and starts a new conversation.
+* If the connection drops during an answer, **Reconnect** resumes it. If an answer stops early, the panel says why; a narrower follow-up question usually completes it.
 
 ## Empty and error states
 
-* No search results — clear status/group filters or enter a broader query of at least two characters.
-* Evidence unavailable — the source may be missing from the reviewed release; do not infer the relationship from the graph alone.
-* Advisor unavailable — confirm both the lab assignment and Advisor entitlement.
-* Export failed — keep the selected scope and retry after re-authenticating.
+| Message | What to do |
+| :--- | :--- |
+| **No people in this scope** | Change the group or research-status filters in the sidebar. |
+| **No relationships in this view.** | The current filters hide every relationship; widen them. |
+| **No dated events** | The release has no dated relationships for the selected scope. |
+| **This lab's summary could not be loaded.** | Reload the page. |
+| **This lab could not be opened — reload to try again.** | Lab Advisor could not open its conversation; reload the page. |
+| Error in the bottom-right corner of the view | A request failed. Close the message with **×** and repeat the action. |

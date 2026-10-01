@@ -1,75 +1,82 @@
 ---
 title: Wgląd w alert
-description: Widok szczegółowy alertu — banner tytułowy, dziennik zdarzeń wyzwalających, czułość dopasowania oraz zarządzanie uprawnieniami.
+description: Strona alertu — ustawienia, dostęp, czułość dopasowania, monitorowane sprawy, zarejestrowane zdarzenia i ocena dopasowań.
 ---
 
-**Widok szczegółowy** pozwala na analizę zarejestrowanych zdarzeń oraz zarządzanie stanem, czułością i widocznością alertu. Składa się z bannera tytułowego, wiersza akcji, dziennika zdarzeń oraz panelu referencyjnego.
+Wybranie alertu w module Monitorowanie otwiera jego stronę. Pasek u góry pokazuje ilustrację alertu, jeśli została wygenerowana; gdy dostępna jest informacja o autorstwie obrazu, wyświetla ją ikona informacji na ilustracji. Poniżej kolumna treści dzieli się na sekcje **Sprawy**, **Aktywność** i **Niepowiązane**, między którymi można przechodzić za pomocą spisu treści. Panel po prawej stronie zawiera polecenia i ustawienia alertu; na małych ekranach otwiera go przycisk **Ustawienia alertu**.
 
-## Banner tytułowy
+## Polecenia
 
-Banner zawiera kluczowe metadane alertu:
+Właściciel i uprawnieni administratorzy widzą u góry panelu trzy polecenia:
 
-* **Nazwa i status** — nagłówek z informacją o stanie: **Aktywne** (aktywny) lub **Wstrzymane** (wstrzymany).
-* **Widoczność** — oznaczenie **Prywatne** (tylko dla twórcy) lub **Udostępnione** (współdzielony z wybranymi grupami).
-* **Data utworzenia** — znacznik czasu prezentowany obok ikony zegara.
-* **Ilustracja AI** — tematyczny obraz dopasowywany automatycznie do każdego alertu.
+* **Edytuj alert** — otwiera edycję w formie rozmowy. Szczegóły opisano w sekcji [Edycja alertu](/pl/alerts/creating-alerts#edycja-alertu).
+* **Wstrzymaj** / **Wznów** — zatrzymuje lub wznawia rejestrowanie nowych zdarzeń. Dotychczasowe zdarzenia pozostają dostępne.
+* **Usuń alert** — po potwierdzeniu trwale usuwa konfigurację monitorowania i zapisane dopasowania alertu. Operacji nie można cofnąć.
 
-## Przyciski akcji
+Pozostałe osoby widzą w tym miejscu oznaczenie **Udostępniony alert · tylko do odczytu** albo **Alert zarządzany przez system · tylko do odczytu**.
 
-Pod bannerem znajdują się przyciski umożliwiające modyfikację stanu:
+## Definicja i szczegóły
 
-* **Make Shared / Make Private** — zmienia zakres widoczności. Przełączenie na status współdzielony wymaga wskazania przynajmniej jednej grupy użytkowników w oknie dialogowym. Powrót do statusu prywatnego odbiera dostęp wszystkim grupom.
-* **Pause / Resume** — wstrzymuje lub wznawia monitorowanie treści. W stanie wstrzymania nowe zdarzenia nie są rejestrowane.
-* **Edytuj** (ikona ołówka) — otwiera formularz edycji parametrów alertu.
-* **Usuń** (ikona kosza) — trwale usuwa alert wraz z całą historią zdarzeń. Operacja wymaga potwierdzenia i jest nieodwracalna.
+Pod poleceniami panel pokazuje nazwę i opis alertu, a w przypadku alertów z kontraktem reguł — wykonywane reguły. Każda reguła jest streszczona jednym zdaniem, z oznaczeniami warunków i kafelkami sprawdzanych źródeł; przy kilku regułach panel przypomina: **Każda reguła działa niezależnie. Wystarczy, że materiał spełni jedną z nich.**
 
-## Historia zdarzeń
+Sekcja **Szczegóły** zawiera:
 
-Sekcja **Trigger History** zawiera chronologiczny dziennik dopasowań. Każdy wpis prezentuje:
+* **Status** — **Włączone**, **Wstrzymane** albo **Konfigurowanie**;
+* **Definicja gotowa** — czas ostatniego przygotowania definicji monitorowania;
+* **Utworzono** — czas utworzenia alertu.
 
-* **Źródło** — typ treści, w której znaleziono dopasowanie (np. **Sejm speech**, **X post**). Gdy dostępny jest odnośnik do materiału źródłowego, etykieta typu jest klikalna.
-* **Trafność** — etykieta **Bezpośrednie**, **Silne** lub **Słabe**, określająca pewność dopasowania.
-* **Znacznik czasu** — moment wykrycia zdarzenia.
-* **Tytuł i podsumowanie** — wygenerowany opis zdarzenia.
-* **„Dlaczego ten alert?”** — krótkie uzasadnienie, dlaczego treść uznano za dopasowanie.
-* **Cytaty** — zweryfikowane fragmenty źródła, rozwijane opcją **Pokaż cytaty**.
-* **Oryginał** — oryginalny fragment kontekstowy treści.
-* **Dopasowano** — dopasowane terminy.
+## Dostęp
 
-Przy każdym zdarzeniu dostępne są przyciski oceny **Trafne** / **Nietrafne**, którymi można przekazać informację zwrotną wpływającą na jakość przyszłych dopasowań.
+Sekcja **Dostęp** określa, kto może otworzyć alert: **Tylko ja** albo **Wybrane grupy**. Po wybraniu grup zmianę zapisuje przycisk **Zaktualizuj dostęp**, a **Anuluj** przywraca zapisanych odbiorców. Przełączenie udostępnionego alertu na **Tylko ja** najpierw pokazuje, ile grup utraci dostęp. Członkowie wybranych grup mogą otworzyć alert i otrzymywać powiadomienia zgodnie z własnymi ustawieniami.
 
-W przypadku braku dopasowań wyświetlany jest komunikat *„No trigger events yet”*.
-
-### Blisko progu
-
-Pod główną listą może pojawić się rozwijana sekcja **Blisko progu**, gromadząca dopasowania o niższej pewności, które nie trafiły do głównego dziennika. Sekcja pojawia się tylko wtedy, gdy takie dopasowania istnieją.
+Osoby bez uprawnień do zarządzania alertem widzą tylko podsumowanie, na przykład **Tylko właściciel** albo **Udostępniono przez** wraz z nazwami grup.
 
 ## Czułość dopasowania
 
-W prawym panelu dostępny jest przełącznik **Czułość dopasowania**, decydujący o tym, jak szeroko alert wyłapuje treści:
+**Czułość dopasowania** określa, jak szeroko alert przyjmuje dopasowania:
 
-* **Precyzyjny** — tylko trafienia wprost o temacie alertu, najmniej szumu.
-* **Zrównoważony** — trafienia wprost i silne; słabsze trafiają do sekcji „Blisko progu”.
-* **Szeroki** — pokazuje również słabe dopasowania (oznaczone, bez powiadomień e-mail).
+* **Precyzyjna** — tylko dopasowania bezpośrednio dotyczące tematu alertu; najmniej szumu.
+* **Zrównoważony** — dopasowania bezpośrednie i silne; słabsze pozostają blisko progu.
+* **Szeroka** — także dopasowania słabe, wyraźnie oznaczone i bez powiadomień e-mail.
 
-Jeśli automatyczna analiza kalibracyjna uzna, że alert jest zbyt szeroki lub zbyt wąski, nad przełącznikiem może pojawić się dymek z sugestią zmiany czułości, którą można jednym kliknięciem zastosować lub odrzucić.
+Poziom mogą zmienić tylko osoby uprawnione do zarządzania alertem, a zmiana zapisuje się od razu. Jeśli kalibracja Persate sugeruje inny poziom, nad ustawieniem pojawia się informacja **Ten alert może mieć zbyt szeroki zakres. Rozważ czułość „…”.** Przycisk **Ustaw „…”** stosuje sugestię, a **Odrzuć** ją ukrywa.
 
-## Plan monitorowania
+## Sprawy
 
-Dla alertów o ustrukturyzowanej regule prawa panel **Monitoring plan** podsumowuje sposób działania alertu: tryb, główny temat, monitorowane i kontekstowe podmioty, objęte źródła, wymagane dowody oraz wykluczenia. Dla pozostałych alertów panel ten zastępuje lista aktywnych **słów kluczowych**.
+Sekcja **Sprawy** zawiera sprawy śledzone przez alert — na przykład sprawy legislacyjne, interpelacje i zapytania poselskie, osoby lub organizacje — znalezione przez alert albo do niego przypisane. Liczba śledzonych spraw jest widoczna obok nagłówka. Wybranie sprawy pokazuje jej podsumowanie, rodzaj, pochodzenie i datę ostatniej aktywności oraz odnośnik **Otwórz źródło**. Komunikat **Brak monitorowanych spraw** oznacza, że dotąd niczego nie znaleziono ani nie przypisano.
 
-## RCL Watchlist
+Jeśli do alertu przypisano projekty RCL, pod sprawami pojawia się sekcja **Obserwowane projekty RCL** z ostatnim etapem, ostatnim dokumentem i identyfikatorami każdego projektu. Aby zmienić listę, należy wyszukać projekty według tematu, tytułu lub identyfikatora RCL i dodać pasujące pozycje albo usunąć projekt symbolem **×**. Zmiany są oznaczone jako **Niezapisane** do czasu wybrania przycisku **Zapisz obserwowane projekty RCL**.
 
-Sekcja **RCL Watchlist** pozwala obserwować konkretne projekty legislacyjne z Rządowego Centrum Legislacji. Wpisanie tematu, tytułu lub identyfikatora RCL wyszukuje pasujące projekty, które można dodać do listy obserwowanych i zapisać przyciskiem **Zapisz obserwowane projekty RCL**.
+## Zdarzenia
 
-## Panel uprawnień
+Zarejestrowane dopasowania są widoczne w dwóch sekcjach:
 
-Dla alertów o statusie **Udostępnione** dostępna jest sekcja **Shared with**. Umożliwia ona:
+* **Aktywność** — zdarzenia powiązane ze śledzoną sprawą.
+* **Niepowiązane** — dopasowania niepowiązane z żadną sprawą.
 
-* **Dodawanie grup** — przycisk **Add group** pozwala wybrać nowe grupy z listy.
-* **Usuwanie dostępu** — wybranie ikony **X** przy nazwie grupy natychmiast odbiera jej uprawnienia do podglądu alertu.
+Każdy wiersz pokazuje typ źródła, czas wykrycia, osobę mówiącą w przypadku wypowiedzi w Sejmie, identyfikator (np. paragraf lub numer druku) albo stopień pewności co do osoby mówiącej (**potwierdzono**, **prawdopodobne** lub **niezidentyfikowane**) oraz nagłówek. Jeśli na jedno zdarzenie składa się kilka obserwacji, wiersz pokazuje liczbę obserwacji i źródeł. Przycisk **Wczytaj więcej** wczytuje kolejne zdarzenia.
+
+Wybranie wiersza rozwija zdarzenie. W zależności od źródła rozwinięte zdarzenie zawiera:
+
+* odnośnik do źródła — na przykład **Otwórz akt prawny**, **Otwórz druk**, **Otwórz projekt**, **Otwórz na X**, **Odtwórz od** wskazanego momentu nagrania, **Otwórz plik** (otwiera plik w podglądzie Repozytorium) lub **Otwórz źródło**;
+* **Dlaczego ten alert?** — krótkie wyjaśnienie, dlaczego materiał został przyjęty;
+* **Cytat** lub **Cytaty** — fragmenty źródła przytoczone jako uzasadnienie dopasowania;
+* **Fragment** lub **Dopasowane fragmenty** — istotne części tekstu. Fragmenty są uporządkowane według stopnia dopasowania, a nie według kolejności w dokumencie; przycisk pod nimi odsłania pozostałe. Jeśli minął okres przechowywania fragmentu, komunikat odsyła do źródła;
+* oznaczenia, czy zdarzenie jest powiązane ze sprawą (**Powiązane ze sprawą** lub **Niepowiązany sygnał**) oraz czy rozpoczyna zdarzenie, czy aktualizuje istniejące (**Zdarzenie źródłowe** lub **Zbiorcza aktualizacja**);
+* **Kontynuuj monitorowanie** z poleceniem **Monitoruj cały projekt** — gdy dopasowanie obejmuje tylko nowo dodany tekst projektu, polecenie przygotowuje osobny alert dla całego projektu;
+* **Obserwacje zdarzenia** — poszczególne obserwacje zgrupowane w zdarzeniu;
+* **Dostarczanie e-mailem** — informacja, czy wiadomość wysłano, czy oczekuje na wysłanie, czy wysyłka się nie powiodła, albo dlaczego jej nie wysłano, na przykład z powodu wyłączonych powiadomień e-mail, braku odbiorcy z włączonymi alertami e-mail lub ustawień prywatności organizacji.
+
+## Ocena dopasowania
+
+Każde rozwinięte zdarzenie kończy sekcja **Ocena dopasowania**, która pokazuje siłę dopasowania (np. **Bezpośrednie**) i pyta, czy jest ono trafne. Należy wybrać **Trafne** albo **Nietrafne**. Przy ocenie **Nietrafne** można wskazać przyczynę — **Niewłaściwy temat**, **Duplikat**, **Zbyt mało istotne**, **Niewłaściwe źródło** lub **Przeciwny kierunek** — oraz dodać opcjonalny komentarz wysyłany przyciskiem **Wyślij szczegóły**. Persate zapisuje ocenę razem ze zdarzeniem.
+
+## Konfigurowanie
+
+Bezpośrednio po zapisaniu alert może wyświetlać komunikat **Ten alert jest konfigurowany** z informacją, że monitorowanie rozpocznie się automatycznie po zakończeniu konfiguracji. Nie jest wymagane żadne działanie.
 
 ## Stany pustego widoku i błędu
 
-* *„No trigger events yet”* — dla tego alertu nie zarejestrowano jeszcze żadnych dopasowań.
-* *„Alert not found”* — rekord nie istnieje lub brak uprawnień do jego wyświetlenia. Należy wrócić do listy głównej.
+* **Brak zdarzeń wywołujących alert** — alert nie zarejestrował jeszcze żadnego dopasowania. Dopasowania pojawiają się w tym miejscu w miarę ich wykrywania.
+* **Brak zdarzeń pasujących do tego filtra.** — alert ma zdarzenia, ale żadne nie należy do tej sekcji. Należy sprawdzić drugą sekcję.
+* **Nie znaleziono alertu** — nie udało się wczytać alertu: mógł zostać usunięty lub odnośnik jest nieaktualny. Należy wrócić do listy w module Monitorowanie.

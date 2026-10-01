@@ -1,43 +1,56 @@
 ---
 title: Connections
-description: Build and inspect an evidence-backed graph of people, organizations, legislation, and topics.
+description: Research how people, organizations, legal acts and topics connect, read the graph with its clusters and sources, and save, refine or discard the result.
 ---
 
-Open **PUBLIC → Stakeholders**, then select the **Connections** tab. Connections is an exploratory workspace: it researches a described subject and presents related entities in an interactive graph.
+Open **PUBLIC → Stakeholders** and select the **Connections** tab. Connections researches a described subject and presents the people, organizations, legal acts and keywords involved as an interactive graph.
 
-## Start a graph
+## Start research
 
-Describe a topic, person, organization, or legislative matter. Specific names and identifiers produce a more focused result than a broad abstract topic. When submitted, Persate researches the subject, groups the result into thematic clusters, and retains supporting source fragments when available.
+1. Describe a topic, person, organization or draft bill in the field (*Topic, person, organization, draft bill…*). The examples under **Get started with an example** fill the field with a sample request.
+2. Submit the request.
 
-Keep the page open while research is running. A generated connection is a research aid, not proof by itself; inspect the cited evidence before using a relationship in a briefing.
+Persate breaks the subject down into threads, searches for the people and organizations involved and groups the connections into two to five clusters. The **Connection research notes** panel on the right shows progress: the clusters found so far, the number of mapped entities and connections, and the number of reviewed sources. **Stop** ends a running research.
 
-## Read the graph
+Specific names, organizations or legal acts give a more focused graph than an abstract topic.
 
-* Node color distinguishes entity types such as people, organizations, legislation, and keywords.
-* Node size indicates relative connectivity or mentions in this generated result.
-* Edges represent relationships found within the researched context.
-* **Clusters** explains the identified themes and why entities matter.
-* **Sources** lists supporting fragments when the research result includes them.
+## Read the result
 
-The graph reflects this research run and its available sources. It is not a complete register of every legal, financial, or personal relationship.
+The result card shows a title and a summary of the research, followed by three collapsible sections:
 
-## Interact with the result
+* **Connection graph** — the graph, with the number of entities and connections. Node color distinguishes people, organizations, legal acts and keywords; larger nodes have more connections or mentions. Edges join entities connected within a cluster.
+* **Clusters** — each thematic thread with its summary. **Show entities** lists the people and organizations in the cluster, with their role and why they matter.
+* **Sources** — supporting source fragments with their cluster and, where available, **Open source**. The section appears only when the research returned fragments.
 
-Pan and zoom the canvas or fit the graph to the view. Select a node to inspect its role and rationale. Canonical entities can provide a link to their Stakeholder profile.
+The graph reflects one research run and the sources it found; it is not a complete register of relationships. Check the sources before using a connection in a briefing.
 
-Removing a node hides it from the current view; it does not delete the underlying public record. Use the restore action to bring hidden nodes back.
+## Work with the graph
 
-## Refine or save
+* Drag the canvas to move around and zoom with the scroll wheel or the **Zoom in**, **Zoom out** and **Fit graph** buttons. Nodes can be dragged.
+* Select a node to see its type, role and why it matters. **Open profile →** opens the person's profile or the organization page when the entity is linked to a Persate record.
+* **Remove from graph** hides a node; **Undo all removals** brings hidden nodes back. Hiding changes only the view — a saved graph keeps every entity.
 
-After generation, use the review controls to:
+## Save, refine or discard
 
-* save the graph as a draft for later review;
-* refine it by narrowing or widening the scope, requesting sources, or reducing noise;
-* discard it and return to the starting state.
+When the research ends, a review panel offers these options:
+
+* save the graph as a draft;
+* refine it with **Narrow scope**, **Expand connections**, **More sources** or **Remove noise**;
+* describe the change in free text;
+* discard the draft and return to the start.
+
+Confirm the choice with the button below the options. A refinement runs another research round on the same graph.
+
+The page address identifies the graph, so the address (for example a bookmark) reopens it later. Connections does not list saved graphs.
+
+If the research ends without a graph, *The agent didn't complete the analysis* appears. Discard the draft and try a more specific request, such as a named person, organization or legal act.
+
+## Start from Advisor
+
+When Advisor hands a request over to Connections, its answer shows a card that leads to Connections. Selecting the card opens Connections with the request already in the field; submit it to start the research.
 
 ## Troubleshooting
 
-* Sparse graph — use a more specific subject or identifier and request the missing relationship explicitly.
-* No Sources section — the result did not return supporting fragments; do not treat uncited edges as verified facts.
-* Profile link absent — the node is not linked to a canonical Stakeholder record.
-* Generation failed — retry once with a shorter, more specific request.
+* Sparse graph — name specific people, organizations or legal acts, or choose **Expand connections**.
+* No **Sources** section — the research returned no supporting fragments; treat its connections as unverified.
+* No **Open profile →** on a node — the entity is not linked to a Persate record.

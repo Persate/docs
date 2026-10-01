@@ -1,0 +1,81 @@
+---
+title: Proces i przebieg legislacyjny
+description: Wyszukiwanie rządowych projektów legislacyjnych, filtrowanie ich według etapu i atrybutów oraz śledzenie drogi ustawy od projektu do publikacji.
+---
+
+Zakładka **Proces** zawiera listę rządowych projektów legislacyjnych (RCL) i prowadzi do przebiegu procesu każdego z nich. Strona przebiegu łączy cały proces w jednym miejscu: projekt rządowy, Sejm, Senat, Prezydenta, weto lub skierowanie do Trybunału Konstytucyjnego, jeśli do nich doszło, oraz publikację.
+
+## Lista projektów
+
+Tabela zawiera kolumny **Tytuł**, **Typ**, **Status**, **Wnioskodawca** i **Zaktualizowano**; na wąskim ekranie część kolumn jest ukryta, a identyfikator i data pojawiają się pod tytułem. Status oznacza postęp projektu w rządowym wykazie: projekt w toku, przyjęty albo zarchiwizowany. Wybranie wiersza otwiera przebieg procesu projektu.
+
+## Filtry
+
+* **Bieżący etap** — instytucja, w której proces znajduje się obecnie: **Prace rządowe**, **Sejm**, **Senat**, **Prezydent** albo **Trybunał Konstytucyjny**. Można wybrać kilka etapów.
+* **Szukaj projektów** — wyszukiwanie tekstowe w projektach.
+* **Typ projektu** — na przykład **Akt prawny** lub **Rozporządzenie**, wraz z liczbą projektów danego typu.
+* **Wnioskodawca** — organ, który zgłosił projekt, wraz z liczbą jego projektów.
+* **Utworzono** — zakres dat utworzenia.
+* **Nr wykazu prac** — numer w rządowym wykazie prac, na przykład `RD456`.
+* **Postęp** — **W toku** albo **Przyjęte**.
+* **Atrybuty** — **Wdraża prawo UE**, **Wykonuje orzeczenie Trybunału Konstytucyjnego**, **Oparte na założeniach projektu ustawy**, **Odrębny tryb legislacyjny**, **Ogłoszone w Dzienniku Ustaw** i **Skierowane do Sejmu**. Wybranie atrybutów zawęża listę do projektów, które je mają.
+
+Przełączniki **Krótkie tytuły** i **Przypnij śledzone projekty** oraz przycisk **Wyczyść filtry** opisuje strona [Legislacja](/pl/legislation-tracker). Gdy żaden projekt nie spełnia kryteriów, pojawia się komunikat **Nie znaleziono projektów**; należy zmienić wyszukiwanie lub filtry. Komunikat **Nie udało się wczytać projektów** oznacza, że listy nie udało się pobrać; należy odświeżyć stronę.
+
+## Przebieg procesu legislacyjnego
+
+Stronę przebiegu otwiera się z listy projektów, z odnośników w odpowiedziach Advisora, z wyników wyszukiwania oraz z rekordów w module [Głosowania](/pl/voting-ledger). Ścieżka nawigacji prowadzi z powrotem do listy **Projekty**.
+
+### Status
+
+Oznaczenie nad tytułem wskazuje stan procesu:
+
+| Oznaczenie | Znaczenie |
+|---|---|
+| **W toku** | Proces trwa. |
+| **Uchwalone** | Proces zakończył się uchwaleniem ustawy. |
+| **Zawetowane** | Prezydent zawetował ustawę, a Sejm nie głosował jeszcze nad wetem. |
+| **Weto odrzucone** | Sejm ponownie uchwalił ustawę po wecie. |
+| **Weto podtrzymane** | Sejm nie odrzucił weta; proces został zamknięty. |
+| **W Trybunale Konstytucyjnym** | Ustawa została skierowana do Trybunału Konstytucyjnego. |
+| **Odrzucone** | Projekt odrzucono. |
+| **Wycofane** | Wnioskodawca wycofał projekt. |
+| **Wygasło z końcem kadencji** | Postępowanie zakończyło się wraz z upływem kadencji. |
+| **Porzucone** | Proces zakończył się bez uchwalenia ustawy z innego powodu. |
+| **Status nieznany** | Dostępne dane nie pozwalają ustalić stanu procesu. |
+
+Gdy dla projektu dostępne są tylko dane z rządowego wykazu, oznaczenie pokazuje postęp w wykazie: **W toku**, **Przyjęte** albo **Zarchiwizowane**.
+
+### Podsumowanie
+
+Jeśli jest dostępne, stronę otwiera automatyczne podsumowanie podzielone na własne śródtytuły. Odnośniki do dokumentów w podsumowaniu otwierają cytowany dokument projektu w panelu podglądu. Podsumowanie ułatwia lekturę, ale wiążące pozostają dokumenty.
+
+### Przebieg procesu
+
+Sekcja **Przebieg procesu** grupuje etapy w fazy w kolejności, w jakiej proces do nich dotarł: **Wykaz projektów**, **Sejm**, **Senat**, **Rozpatrzenie stanowiska Senatu przez Sejm**, **Prezydent**, **Ponowne rozpatrzenie po wecie**, **Trybunał Konstytucyjny**, **Dostosowanie do wyroku Trybunału Konstytucyjnego** oraz dziennik publikacji, na przykład **Dziennik Ustaw**. Powrót procesu do tej samej instytucji, na przykład po wecie, jest pokazywany jako nowa faza. Każda faza podaje liczbę etapów i najnowszą datę. Domyślnie rozwinięta jest najnowsza faza; wybranie fazy lub etapu rozwija jego zawartość. Etapy, które jeszcze nie nastąpiły, są widoczne, ale nie można ich otworzyć.
+
+Rozwinięty etap może zawierać:
+
+* komisję, do której skierowano projekt;
+* oficjalne rozstrzygnięcia, na przykład **Senat wprowadził poprawki**, **Podpisana przez Prezydenta**, **Zawetowana przez Prezydenta**, **Weto odrzucone — ustawa uchwalona ponownie** albo **Zgodna z Konstytucją**, każde z datą i odnośnikiem **Oficjalne źródło**;
+* wynik głosowania przeprowadzonego na tym etapie: głosy za, przeciw i wstrzymujące się;
+* dokumenty etapu: dokumenty projektu rządowego otwierają się w panelu podglądu, a druki sejmowe prowadzą do własnego przebiegu procesu albo do oficjalnego pliku;
+* w przypadku opublikowanego aktu — jego nazwę i identyfikator publikacji.
+
+Głosowania, których nie da się przypisać do etapu, są wymienione w sekcji **Inne głosowania**. Jeśli otwarty druk należy do procesu innego druku, strona informuje o tym i pokazuje pełny przebieg tego procesu.
+
+### Podgląd dokumentu
+
+Dokument projektu rządowego otwiera się w panelu po prawej stronie. Plik PDF jest wyświetlany w całości. W przypadku innych formatów sekcja **Odczytany tekst** pokazuje treść, jeśli jest dostępna; przy długich dokumentach wyświetlana jest pierwsza część. Gdy żadna z tych form nie jest dostępna, pojawia się komunikat **Podgląd jest niedostępny**. Boczna część panelu zawiera **Podsumowanie** dokumentu, jeśli istnieje, sekcję **Informacje** oraz przycisk **Pobierz oryginalny plik**.
+
+### Historia zmian
+
+W przypadku projektów rządowych sekcja **Historia zmian** zestawia oficjalne zdarzenia z wykazu oraz automatyczne analizy zmian przygotowane przez Persate w tabeli z kolumnami **Data**, **Autor** i **Zdarzenie**. Autorem analiz jest **Persate**; analiza może mieć oznaczenie **Istotna zmiana** i wskazywać grupy, których dotyczy, po słowie **Dotyczy:**. Przycisk **Wczytaj więcej** pokazuje starsze wpisy. Komunikat **Nie zapisano zmian** oznacza, że nie ma jeszcze zdarzeń ani analiz.
+
+### Panel boczny
+
+* **Działania** — **Śledź ten projekt** (po rozpoczęciu monitorowania **Zobacz alert**), **Otwórz w RCL**, a w przypadku opublikowanego aktu — odnośnik do oficjalnej publikacji.
+* **Szczegóły** — status, moc prawna opublikowanego aktu (na przykład **Obowiązujące** lub **Uchylone**), numery druku i projektu, identyfikator publikacji, identyfikator RCL, pozycja w wykazie prac, typ, rodzaj zgłoszenia, wnioskodawca, najważniejsze daty oraz oznaczenia, takie jak **Związane z UE** lub **Konsultacje publiczne**. Wyświetlane są tylko wartości obecne w danych.
+* **Podstawa prawna** i **Komentarz** — podstawa prawna i komentarz z wykazu dla projektu rządowego, jeśli zostały opublikowane.
+
+Komunikat **Nie znaleziono przebiegu procesu legislacyjnego** oznacza, że odnośnik nie prowadzi już do procesu; należy wrócić do listy projektów. Komunikat **Brak etapów procesu** oznacza, że dla projektu nie ma jeszcze zdarzeń na osi czasu.

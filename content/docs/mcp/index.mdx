@@ -24,7 +24,7 @@ A toolset is a group of related tools that is enabled as a whole. During the pil
 | Toolset | Contents |
 |---|---|
 | **Legislation** | Published acts, Sejm prints, legislative processes, votes, parliamentary interpellations and questions, committees, and civic data on people and organizations |
-| **Media and people** | Public Pulse posts, Sejm recordings and transcripts, speeches, and stakeholder profiles |
+| **Media and people** | Posts from the Media module, Sejm recordings and transcripts, speeches, and stakeholder profiles |
 
 Both toolsets are read-only: their tools search and read data and cannot create, change, or delete anything in Persate.
 
@@ -105,23 +105,26 @@ npx @modelcontextprotocol/inspector --server-url https://api.persate.com/mcp --t
 When an AI assistant connects for the first time, it opens a Persate page in the browser. Check that the address is on `persate.com` before signing in.
 
 1. Sign in with the Persate account and complete two-step verification. If the browser is already signed in to Persate, this step can be skipped.
-2. Review the consent screen. It shows:
+2. Review the consent screen. Its title names the assistant, for example *Connect Claude to Persate*. It shows:
    * the name of the AI assistant requesting access;
-   * the host the browser will return to after the decision;
-   * a warning when the assistant registered itself and is not verified by Persate;
-   * the toolsets the assistant will be able to use;
-   * the access mode, which is read-only during the pilot.
-3. Approve the access. The browser returns to the AI assistant, which then lists the Persate tools.
+   * an **Unverified app** warning when the assistant registered itself and is not verified by Persate;
+   * under **Access requested**, the toolsets the assistant will be able to use;
+   * the access mode, **Read-only access** during the pilot;
+   * a note that data the assistant requests from Persate is sent to the AI provider behind it;
+   * the host the browser will return to after the decision.
+3. Select **Allow**. The browser returns to the AI assistant, which then lists the Persate tools.
 
-Assistants added as custom connectors usually register themselves, so the warning can appear for them. Approve only when the name matches the assistant being connected. Do not approve a request that was not started intentionally, for example one opened from a link sent by someone else.
+Assistants added as custom connectors usually register themselves, so the warning can appear for them. Allow access only when the name matches the assistant being connected. Do not allow a request that was not started intentionally, for example one opened from a link sent by someone else.
 
-You can decline access. If the account is not eligible to connect, select **Return to app** to return to the displayed host without granting access. An invalid or expired request must be started again from the AI assistant.
+Select **Deny** to refuse access; the browser returns to the assistant without granting it. If the account is not eligible to connect, the page shows **Connection not available** with the reason, and **Return to app** returns to the displayed host without granting access. An invalid or expired request must be started again from the AI assistant.
 
 ## Disconnecting
 
-Access tokens refresh automatically, so a connected assistant does not ask for sign-in on every use. Disconnect or remove the connector in the AI assistant to stop using it there (in Claude Code: `claude mcp remove persate`). Removing a local configuration does not necessarily revoke credentials already issued to the application.
+Access tokens refresh automatically, so a connected assistant does not ask for sign-in on every use.
 
-During the pilot, ask the organization's administrator to contact Persate to revoke an existing connection or disable external AI access for the organization. Access is also refused when the Persate account loses access to the organization.
+To revoke access, open **Settings → Security & Privacy** in Persate. **Connected AI apps** lists the AI assistants allowed to use Persate on the user's behalf, with the dates they were connected, last used and when the connection expires; self-registered assistants carry an **Unverified** label. Select **Disconnect** next to an assistant, or **Disconnect all** when more than one is connected, and confirm. The assistant loses access to Persate at once.
+
+Removing the connector in the AI assistant (in Claude Code: `claude mcp remove persate`) stops using it there, but does not necessarily revoke the access already granted; disconnect it in **Connected AI apps** as well. Access is also refused when the Persate account loses access to the organization. To disable external AI access for the whole organization during the pilot, the organization's administrator contacts Persate.
 
 To connect again, repeat the steps for the assistant.
 
@@ -134,8 +137,9 @@ To connect again, repeat the steps for the assistant.
 
 ## Troubleshooting
 
-* The consent page says the organization is not enabled — external AI access is off for the organization, or no toolset is available to it. Ask the organization's administrator; to join the pilot, contact Persate.
-* The request has expired — a connection request is valid for a limited time. Close the page and start the connection again from the AI assistant. Do not reuse an old sign-in page or bookmark.
+* **Connection not available** — the page states the reason: external AI access is not enabled for the organization, the organization has not made any Persate data available to external AI apps, the organization does not allow this account to connect, or it does not allow this AI app. Ask the organization's administrator; to join the pilot, contact Persate.
+* **Connection request unavailable** — the request has expired or is invalid. A connection request is valid for a limited time. Close the page and start the connection again from the AI assistant. Do not reuse an old sign-in page or bookmark.
+* The page says the app's return address is not allowed — Persate refused to send the browser back to an address it could not verify. Start the connection again from the AI assistant; if the message repeats, that assistant cannot be connected.
 * The sign-in page keeps returning — complete two-step verification on persate.com; the connection continues only after it. If the loop continues, sign in to persate.com in the same browser first, then start the connection again from the AI assistant.
 * Expected tools are missing — the toolset is not selected for the organization, or the function or data source is not part of the organization's package. Ask the organization's administrator. In ChatGPT and Claude, also check that Persate is turned on for the current conversation.
 

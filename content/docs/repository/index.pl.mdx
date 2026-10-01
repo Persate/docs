@@ -1,46 +1,50 @@
 ---
 title: Repozytorium
-description: Biblioteka dokumentów organizacji do przechowywania, udostępniania, wyszukiwania, podglądu i pobierania plików.
+description: Biblioteka dokumentów organizacji — przesyłanie plików, decydowanie o dostępie, wyszukiwanie i podgląd oraz wykorzystanie plików w Advisorze, Monitorowaniu i inteligentnych folderach.
 ---
 
-**PRZESTRZEŃ ROBOCZA → Repozytorium** zawiera pliki należące do bieżącego użytkownika oraz pliki udostępnione przez jego grupy. Funkcja Repository musi być włączona dla organizacji.
+**PRZESTRZEŃ ROBOCZA → Repozytorium** pokazuje pliki należące do zalogowanego użytkownika oraz pliki udostępnione grupom, do których należy. Strona jest dostępna, gdy funkcja jest włączona dla organizacji; w przeciwnym razie wyświetla komunikat **Ta funkcja nie jest częścią Twojego pakietu**.
 
-## Możliwości Repozytorium
+## Do czego służy Repozytorium
 
-* Wgrywanie plików PDF, DOCX, XLSX i CSV z komputera.
-* Prywatny lub grupowy zakres dostępu do każdego pliku.
-* Widok listy i kafelków z wyszukiwaniem, filtrami, sortowaniem, podglądem i metadanymi.
-* Pobieranie pojedyncze i zbiorcze.
-* Usuwanie pojedyncze i zbiorcze.
-* Materiał źródłowy dla głównego Advisora i innych uprawnionych procesów.
-* [Połączenia z Google Drive i Microsoft OneDrive](/pl/repository/cloud-integrations).
-* [Smart Folders](/pl/repository/smart-folders) zbierające pliki według kryteriów semantycznych i technicznych.
+* Przechowywanie dokumentów roboczych — plików PDF, DOCX, XLSX i CSV — w jednym miejscu.
+* Ustalanie dla każdego pliku z osobna, kto może go otworzyć: tylko właściciel albo członkowie wybranych grup.
+* Wyszukiwanie plików po nazwie lub treści, podgląd oraz pobieranie pojedynczego pliku albo kilku plików w archiwum ZIP.
+* Analiza dokumentów: przetworzone pliki otrzymują podsumowanie, są indeksowane na potrzeby wyszukiwania i trafiają do Advisora, Monitorowania oraz inteligentnych folderów.
 
-Repozytorium nie jest tradycyjnym drzewem folderów. Zakres pliku steruje dostępem, a Smart Folders są zapisanymi regułami dopasowania i nie przenoszą ani nie powielają plików źródłowych.
+Repozytorium nie jest drzewem folderów. Wszystkie pliki znajdują się na jednej liście, a dostęp ustawia się dla każdego pliku osobno. Inteligentne foldery są zapisanymi zbiorami, które wskazują pliki Repozytorium, nie przenosząc ich ani nie kopiując.
 
-## Model dostępu
+## Dostęp do plików
 
-Każdy plik Repozytorium ma jeden zakres:
+Każdy plik ma właściciela i jeden zakres odbiorców:
 
-* **Tylko ja** — wyłącznie właściciel;
-* wybrane grupy — bieżący członkowie tych grup.
+* **Tylko ja** — plik widzi wyłącznie właściciel;
+* **Wybrane grupy** — plik widzą także członkowie wskazanych grup. Jeżeli organizacja ma grupę obejmującą wszystkich członków, występuje ona na liście jako **Wszyscy w** z nazwą organizacji.
 
-Właściciel lub uprawniony administrator może później zmienić zakres. Usunięcie grupy z pliku odbiera dostęp przez tę grupę, ale nie usuwa pliku.
+Zakres odbiorców zmienia właściciel w panelu pliku. Administratorzy organizacji udostępniają pliki grupom w **Ustawienia → Grupy i uprawnienia**, zgodnie z opisem w [Użytkownicy i grupy](/pl/administration/users-and-groups). Usunięcie grupy z pliku kończy dostęp przez tę grupę; sam plik pozostaje w Repozytorium.
 
-## Stan przetwarzania
+## Analiza po przesłaniu
 
-Po udanym wgraniu pliki pojawiają się na liście. Ekstrakcja treści, tworzenie podsumowania, wykrywanie języka i indeksowanie wyszukiwania trwają w tle. Funkcje zależne od wydobytego tekstu są niedostępne do osiągnięcia wymaganego stanu.
+Plik pojawia się na liście zaraz po udanym przesłaniu. Następnie Persate analizuje go w tle: wyodrębnia tekst, tworzy podsumowanie, rozpoznaje język, przygotowuje podgląd i indeksuje treść na potrzeby wyszukiwania.
 
-## Stany puste i dostęp
+Kolumna **Analiza** pokazuje obracającą się ikonę w trakcie przetwarzania, znacznik po jego zakończeniu i ikonę błędu, gdy analiza się nie powiodła. Dopóki jakikolwiek plik jest przetwarzany, lista odświeża się samoczynnie. Wyszukiwanie w treści, podsumowanie w kolumnie **Opis**, podgląd plików innych niż PDF oraz odpowiedzi Advisora oparte na pliku wymagają zakończonej analizy.
 
-* **Nie znaleziono plików** — Repozytorium jest puste albo wyszukiwanie i filtry wykluczają wszystkie widoczne pliki.
-* Przetwarzanie lub podsumowanie niegotowe — wgrywanie zakończyło się, ale analiza nadal trwa.
-* Podgląd niedostępny — należy pobrać oryginał i sprawdzić obsługę formatu przez przeglądarkę.
-* Feature locked — Repository nie jest włączone dla organizacji.
+## Repozytorium w innych modułach
+
+* **Advisor** — przeszukuje przetworzone pliki i przyjmuje je jako załączniki. Wpisanie `@` w polu pytania otwiera wyszukiwarkę obejmującą Repozytorium i korpus publiczny; szczegóły zawiera [opis interfejsu Advisora](/pl/advisor/conversations). Gdy odpowiedź cytuje plik z Repozytorium, cytowanie otwiera go tutaj wraz z sekcją **Cytowany fragment**.
+* **Monitorowanie** — alerty mogą obejmować pliki firmowe jako jedno ze źródeł. Dopasowanie znalezione w pliku otwiera ten plik w Repozytorium.
+* **Inteligentne foldery** — zapisane zbiory plików Repozytorium, widoczne także na pasku bocznym Repozytorium; szczegóły zawiera strona [Inteligentne foldery](/pl/repository/smart-folders).
+* **Redaktor** — zaimportowany dokument można zapisać w Repozytorium jako zwykły plik; szczegóły zawiera strona [Import i szkic](/pl/editor/import-and-draft).
+
+## Najczęstsze stany
+
+* **Nie znaleziono plików** — Repozytorium jest puste albo bieżące wyszukiwanie, filtry lub inteligentny folder wykluczają wszystkie pliki.
+* **Błąd wczytywania plików** — nie udało się wczytać listy; należy odświeżyć stronę.
+* **Ta funkcja nie jest częścią Twojego pakietu** — Repozytorium nie jest włączone dla organizacji; przycisk **Prześlij** również jest wtedy ukryty.
 
 ## Strony w tej sekcji
 
-* **[Wgrywanie plików](/pl/repository/upload)** — formaty, limity partii, dostęp, ponawianie i przetwarzanie.
-* **[Przeglądanie i porządkowanie](/pl/repository/view-and-organize)** — widoki, wyszukiwanie, podgląd, dostęp, pobieranie i usuwanie.
-* **[Integracje chmurowe](/pl/repository/cloud-integrations)** — połączenie i import z Google Drive lub Microsoft OneDrive.
-* **[Smart Folders](/pl/repository/smart-folders)** — wielokrotnego użytku kolekcje semantyczne.
+* **[Wgrywanie plików](/pl/repository/upload)** — panel przesyłania, obsługiwane formaty, dostęp dla partii plików i ponawianie.
+* **[Przeglądanie i zarządzanie plikami](/pl/repository/view-and-organize)** — wyszukiwanie, filtry, panel pliku, zmiana dostępu, pobieranie, zaznaczanie i usuwanie.
+* **[Integracje chmurowe](/pl/repository/cloud-integrations)** — łączenie z Google Drive lub Microsoft OneDrive i import plików do analizy.
+* **[Inteligentne foldery](/pl/repository/smart-folders)** — zapisane, samoczynnie aktualizowane zbiory plików.
