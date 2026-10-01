@@ -1,52 +1,72 @@
 ---
 title: Bezpieczeństwo i prywatność
-description: Zarządzanie hasłem, weryfikacją dwuetapową, sesjami, zaufanymi przeglądarkami i historią logowań.
+description: Hasło, weryfikacja dwuetapowa, sesje, zaufane urządzenia, połączone aplikacje AI, historia logowania, analityczne pliki cookie i eksport danych osobowych.
 ---
 
-Otwórz **Ustawienia → Bezpieczeństwo i prywatność**. Nieznane urządzenie lub aktywność traktuj jako incydent bezpieczeństwa i natychmiast zgłoś administratorowi.
+Stronę otwiera się przez **Ustawienia → Bezpieczeństwo i prywatność**. Nieznane urządzenie, logowanie lub połączoną aplikację należy traktować jako incydent bezpieczeństwa: odebrać dostęp na tej stronie i zgłosić zdarzenie administratorowi organizacji.
 
 ## Hasło
 
-Dla kont z hasłem wybierz **Zmień hasło**. Nowe hasło musi mieć co najmniej osiem znaków, jedną cyfrę i jeden znak specjalny.
+W przypadku kont z hasłem Persate przycisk **Zmień hasło** otwiera okno **Ustaw hasło** z polami **Obecne hasło**, **Nowe hasło** i **Powtórz nowe hasło**. Nowe hasło musi mieć co najmniej osiem znaków, jedną cyfrę i jeden znak specjalny.
 
-Konta zarządzane przez Google lub Microsoft pokazują **Zarządzane przez dostawcę**. Hasło zmień u dostawcy tożsamości.
+Konta logujące się kontem Google lub Microsoft pokazują zamiast tego **Zarządzane przez dostawcę**. Hasło takiego konta zmienia się u tego dostawcy.
 
 ## Weryfikacja dwuetapowa
 
-Weryfikacja dwuetapowa jest wymagana dla kont Persate. Po skonfigurowaniu aplikacji uwierzytelniającej wiersz pokazuje stan **Na żywo** i akcję **Zmień aplikację uwierzytelniającą**.
+Weryfikacja dwuetapowa jest wymagana dla wszystkich kont Persate. Wiersz wskazuje aplikację uwierzytelniającą, która chroni konto, i pokazuje stan **Aktywne**.
 
-Podczas wymiany dotychczasowa aplikacja pozostaje aktywna do chwili skonfigurowania nowej. Miej nowe urządzenie przy sobie i zakończ potwierdzanie przed opuszczeniem procesu.
+Aby przenieść weryfikację na nowe urządzenie, należy wybrać **Zmień aplikację uwierzytelniającą**. Dotychczasowa aplikacja pozostaje aktywna do czasu skonfigurowania nowej, dlatego przed potwierdzeniem warto mieć nowe urządzenie pod ręką. Po wybraniu **Tak, zmień** Persate prosi o potwierdzenie tożsamości, a następnie otwiera konfigurację nowej aplikacji. **Anuluj** pozostawia dotychczasową.
+
+Konto bez aplikacji uwierzytelniającej pokazuje przycisk **Skonfiguruj**, który rozpoczyna konfigurację.
 
 ## Aktywne sesje
 
-Sprawdzaj urządzenia aktualnie zalogowane do konta. Wyloguj sesje, których nie rozpoznajesz. Wylogowanie innej sesji może zacząć obowiązywać, gdy tamten klient ponownie sprawdzi stan sesji.
+Sekcja **Aktywne sesje** zawiera urządzenia zalogowane na koncie wraz z przeglądarką i urządzeniem, adresem IP (jeśli jest dostępny) oraz **Ostatnią aktywnością**. Bieżąca sesja ma oznaczenie **To urządzenie**.
+
+Przycisk **Wyloguj się** przy nierozpoznanej sesji kończy ją, a **Wyloguj pozostałe urządzenia** kończy wszystkie sesje poza bieżącą.
 
 ## Zaufane urządzenia
 
-Jeżeli panel jest dostępny, pokazuje przeglądarki, które mogą pomijać kod z aplikacji uwierzytelniającej przy logowaniu przez maksymalnie 30 dni. Zaufanie dotyczy konkretnej przeglądarki, nie całego komputera, a działania wrażliwe nadal wymagają weryfikacji.
+Sekcja **Zaufane urządzenia** zawiera przeglądarki, w których przez maksymalnie 30 dni można logować się bez kodu z aplikacji uwierzytelniającej. Zaufanie dotyczy jednej przeglądarki, a nie całego komputera, a działania wymagające szczególnej ochrony nadal wymagają weryfikacji. Przeglądarka pojawia się na liście po logowaniu z kodem uwierzytelniającym, podczas którego wybrano zaufanie do niej.
 
-Zarządzanie zaufanymi urządzeniami wymaga bieżącego kodu. Cofnij zaufanie pojedynczej przeglądarce lub wszystkim pozostałym, gdy urządzenie zaginęło, jest współdzielone albo nie masz już nad nim kontroli.
+Zarządzanie zaufanymi urządzeniami może wymagać bieżącego kodu: komunikat **Potwierdź tożsamość, aby zarządzać zaufanymi urządzeniami** prosi o **6-cyfrowy kod uwierzytelniający**, zatwierdzany przyciskiem **Zweryfikuj**. Lista pokazuje następnie każdą przeglądarkę z datą pierwszego zaufania, ostatniego użycia i wygaśnięcia zaufania; bieżąca przeglądarka ma oznaczenie **Ta przeglądarka**.
 
-## Historia logowań
+* **Cofnij zaufanie** odbiera zaufanie jednej przeglądarce.
+* **Cofnij zaufanie do pozostałych urządzeń** odbiera zaufanie wszystkim przeglądarkom poza bieżącą.
+* **Wyloguj i zapomnij to urządzenie** kończy bieżącą sesję; przy następnym logowaniu ta przeglądarka będzie wymagać kodu uwierzytelniającego.
 
-Sprawdzaj ostatnie logowania wraz z czasem i informacjami o urządzeniu dostępnymi dla Persate. Jeżeli lista się nie ładuje, odśwież stronę raz; pusty ekran nie dowodzi braku aktywności.
+Każda z tych czynności wymaga potwierdzenia. Cofnięcie zaufania działa natychmiast, a sesje nawiązane dzięki temu zaufaniu również zostają zakończone.
 
-## Dane i eksport
+## Połączone aplikacje AI
 
-**Dane i eksport** pobiera kopię danych osobowych w ustrukturyzowanym, nadającym się do odczytu maszynowego pliku JSON (art. 15 i 20 RODO). Plik zawiera dane konta, profil i preferencje, przynależność do organizacji, wykaz posiadanych plików, aktywne sesje oraz historię logowań.
+Sekcja **Połączone aplikacje AI** zawiera aplikacje AI, którym pozwolono korzystać z Persate w imieniu użytkownika przez połączenie zewnętrzne, np. ChatGPT lub Claude. Każdy wpis pokazuje datę połączenia, ostatniego użycia i wygaśnięcia połączenia; aplikacje zarejestrowane samodzielnie mają oznaczenie **Niezweryfikowane**.
 
-Wybierz **Zamów eksport**, a następnie potwierdź. Konta z hasłem potwierdzają bieżącym hasłem; konta zarządzane przez Google lub Microsoft potwierdzają weryfikacją dwuetapową. Przeglądarka pobiera plik bezpośrednio — nic nie jest wysyłane e-mailem.
+Należy wybrać **Odłącz** przy aplikacji albo — gdy połączonych jest kilka — **Odłącz wszystkie**, a następnie potwierdzić. Aplikacja od razu traci dostęp do Persate; aby znów z niej korzystać, trzeba połączyć ją ponownie z poziomu aplikacji. Komunikat **Brak połączonych aplikacji AI.** oznacza, że nie ma żadnych połączeń. Sposób łączenia opisuje strona **[Aplikacje AI (MCP)](/pl/mcp)**.
 
-Eksport nie zawiera treści plików; pobierz je z Repozytorium. W sprawach, których eksport nie obejmuje, w tym trwałego usunięcia konta, użyj zatwierdzonego kanału wsparcia w swojej organizacji.
+## Historia logowania
+
+Sekcja **Historia logowania** zawiera ostatnie zdarzenia na koncie — np. logowania, logowania przez SSO, wylogowania, zmiany hasła i adresu e-mail — wraz z czasem, urządzeniem i, jeśli jest dostępny, adresem IP. Powtarzająca się aktywność sesji jest pokazywana jako jeden wpis z czasem ostatniej aktywności.
+
+Jeżeli lista się nie wczytuje, należy odświeżyć stronę; pusta lista sama w sobie nie dowodzi braku aktywności.
 
 ## Analityczne pliki cookie
 
-**Analityczne pliki cookie** pokazuje wybór zapisany w tej przeglądarce: zgodę, odmowę albo brak wyboru. Analityka działa wyłącznie po wybraniu **Przyjmij** w komunikacie o plikach cookie. Przed dokonaniem wyboru i po wybraniu **Odrzuć** analityka nie działa, a analityczne pliki cookie nie są zapisywane.
+Wiersz **Analityczne pliki cookie** pokazuje wybór zapisany w tej przeglądarce: zgodę, odmowę albo brak wyboru. Analityka działa wyłącznie po wybraniu **Przyjmij** w komunikacie o plikach cookie. Przed dokonaniem wyboru i po wybraniu **Odrzuć** analityka nie działa, a analityczne pliki cookie nie są zapisywane.
 
-Wybierz **Ustawienia plików cookie**, aby zmienić lub wycofać zgodę. Analityka zatrzymuje się natychmiast, jej pliki cookie są usuwane, a komunikat o plikach cookie pojawia się ponownie. Ten sam odnośnik **Ustawienia plików cookie** znajduje się pod formularzem logowania i w stopce strony. Wybór dotyczy jednej przeglądarki; w innych przeglądarkach i na innych urządzeniach trzeba go powtórzyć.
+Przycisk **Ustawienia plików cookie** pozwala zmienić lub wycofać zgodę. Analityka zatrzymuje się natychmiast, jej pliki cookie są usuwane, a komunikat o plikach cookie pojawia się ponownie. Ten sam odnośnik **Ustawienia plików cookie** znajduje się pod formularzem logowania i w stopce strony. Wybór dotyczy jednej przeglądarki; w innych przeglądarkach i na innych urządzeniach trzeba go powtórzyć.
+
+## Dane i eksport
+
+Wiersz **Dane i eksport** pobiera kopię danych osobowych użytkownika w uporządkowanym pliku JSON nadającym się do odczytu maszynowego (art. 15 i 20 RODO). Plik zawiera dane konta, profil i preferencje, przynależność do organizacji, wykaz plików należących do użytkownika, aktywne sesje oraz historię logowania.
+
+1. Wybrać **Zamów eksport**.
+2. Konta z hasłem Persate wpisują **Obecne hasło**; konta logujące się kontem Google lub Microsoft potwierdzają operację weryfikacją dwuetapową, jeśli Persate o nią poprosi.
+3. Wybrać **Pobierz moje dane**. Przeglądarka pobiera plik bezpośrednio; nic nie jest wysyłane e-mailem.
+
+Eksport nie obejmuje treści plików — pobiera się je z Repozytorium. W sprawach, których eksport nie obejmuje, w tym trwałego usunięcia konta, należy skorzystać z zatwierdzonego w organizacji kanału wsparcia.
 
 ## Rozwiązywanie problemów
 
-* Odrzucony kod — użyj bieżącego kodu sześciocyfrowego i sprawdź zegar urządzenia.
-* Brak panelu zaufanych urządzeń — konto nie ma skonfigurowanej aplikacji uwierzytelniającej albo obsługa bezpieczeństwa nie jest włączona.
-* Nieznana sesja lub logowanie — wyloguj sesję, jeśli to możliwe, zmień hasło konta z hasłem i zgłoś zdarzenie.
+* Odrzucony kod uwierzytelniający — należy użyć bieżącego kodu sześciocyfrowego i sprawdzić, czy zegar urządzenia jest ustawiony poprawnie.
+* Sekcja **Zaufane urządzenia** ponownie prosi o kod — zarządzanie zaufanymi urządzeniami wymaga świeżego kodu uwierzytelniającego; zapamiętana przeglądarka nie wystarcza.
+* Nieznana sesja, logowanie lub połączona aplikacja — należy ją wylogować lub odłączyć, zmienić hasło, jeśli konto je ma, i zgłosić zdarzenie.

@@ -1,52 +1,51 @@
 ---
 title: Sources
-description: Reading Persate's source capability, coverage, freshness, and alert-readiness ledger.
+description: Check which data sources Persate covers, how complete their data is, and where each source is used.
 ---
 
-**PUBLIC → Sources** is a read-only capability ledger. It shows which source families Persate knows about and the current availability reported for the organization. It is not a cloud-drive connector and does not modify source configuration.
+The source catalogue is a read-only overview of the data sources Persate works with: what each source contains, whether it is currently available, how much of it is covered, and which parts of the platform use it. Open **Settings**, then select **Sources** under **PLATFORM**. The catalogue is available to every member of the organization. It does not connect cloud drives and does not change how sources are configured.
 
-## Table columns
+## Reading the table
 
-Each row can include:
+Each row describes one source:
 
-* **Source** — the customer-facing source name and category;
-* **Status** — the current capability state;
-* **Availability** — which Persate areas can use the source;
-* **Coverage** — the time or content scope represented by current data;
-* **Refresh** — the expected or observed update pattern;
-* **Alerts** — whether the source can participate in alert monitoring;
-* **Last update** — the latest reported refresh time, when telemetry is available.
+* **Source** — the source name and a short description of its content.
+* **Status** — **Available** when the source works normally, or its current reported state.
+* **Availability** — icons for the parts of Persate that use the source, such as **Repository**, **Stakeholders**, **Legislation**, **Ledger**, **Recordings**, **Search**, **Advisor**, **Alerts**, or **Media**. An icon links to that part of the platform when it has its own page.
+* **Coverage** — the scope of the current data, such as the number of documents, votes, or posts. For searchable sources, a bar shows the share of records ready for full search.
+* **Importance** and **Labels** — whether automated importance assessment and labeling are processing the source's items. Hover over the icon to see when an item was last analyzed, how long no item has been analyzed, or that the analysis does not apply to the source.
+* **Refresh** — how often the source is updated.
+* **Alerts** — whether and how the source feeds alert monitoring. Hover over the value for details of the alert coverage.
+* **Last update** — the latest reported update, when available.
 
-Availability icons link to the corresponding Persate feature when a navigable destination exists.
+On narrower windows, secondary columns are hidden. On a phone, the status comes first and **Importance** and **Labels** are combined in **Analysis**.
 
-## Filter the catalogue
+## Filtering the catalogue
 
-Use the sidebar to:
+The sidebar offers:
 
-* search by source name or description;
-* filter by source category;
-* show only alert-enabled sources;
-* show only rows available as raw data.
+* **Search sources** — search by name or description, for example *RCL*, *recordings*, or *journal*;
+* **Category** — **All sources** or a single category;
+* **Alerts enabled only** — only sources that feed alerts;
+* **Show raw-only sources** — on by default; switch it off to hide sources available only as raw data.
 
-Filters affect the catalogue view only. They do not enable, disable, or resynchronize a source.
+The two switches become active once live source status has loaded. Filters change only the view; they do not enable, disable, or resynchronize a source. **No sources match these filters** means the search or filters exclude every source; clear them to see the complete catalogue.
 
-## Catalogue fallback
+## When live status is unavailable
 
-If live source telemetry cannot be loaded, Persate keeps a baseline catalogue visible and displays an error banner. In that state, source names and intended capabilities remain useful for orientation, but freshness, coverage, and status values may not represent the latest run.
+If live source status cannot be loaded, the catalogue stays visible with the banner **Live telemetry is unavailable. The source catalog remains available.** and a **Retry** button. In that state the rows still show the names and descriptions, but status, availability, alerts, refresh, and last update show a dash. Use such a row for orientation only; open the relevant part of the platform to confirm what is available. If the catalogue itself cannot be loaded, **Couldn't load sources** is shown with **Try again**.
 
-Do not interpret a baseline row as confirmation that data is currently available for an alert, report, or search. Open the linked feature and confirm its own state.
+## Interpreting status
 
-## Status interpretation
+Status, availability, and coverage answer different questions:
 
-Status and availability are separate:
+* a source can be listed but temporarily unavailable;
+* a source can be used in one part of the platform but not feed alerts;
+* coverage can be partial even when the status is **Available**;
+* a missing last-update value means no update was reported, not that the source was never updated.
 
-* a source may be known but temporarily unavailable;
-* a source may be usable in one feature but not alert-enabled;
-* coverage can be partial even when status is operational;
-* the absence of a last-update value means no telemetry value is available, not that the source has never been refreshed.
+## Source passages
 
-## Error states
+An Advisor citation of a recording transcript, or a **Transcript** result in search, opens the exact cited passage on a separate page. The page shows **Transcript excerpt** and the **Original source passage** as quoted text. Cited fragments of legislative documents open in the legislation reader instead, with the passage highlighted; see [Published acts and publications](/legislation-tracker/published-acts).
 
-* Catalogue remains available — live telemetry failed and the baseline catalogue is being shown.
-* No rows match — clear search, category, alert, or raw-data filters.
-* Linked feature is locked — the source exists, but the current organization is not entitled to that destination.
+**Source passage unavailable** means the passage could not be opened: it may no longer be available, or the account may no longer have access to it.

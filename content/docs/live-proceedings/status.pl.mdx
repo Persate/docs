@@ -1,0 +1,76 @@
+---
+title: Status analizy
+description: Znaczenie stanów dostępności i analizy nagrania — niedostępne wideo, analizy w kolejce i w toku, automatyczne wznawianie, wyniki puste i częściowe — oraz działania dostępne w każdym z nich.
+---
+
+Panel analizy nagrania zawsze pokazuje bieżący stan analizy (**Analiza nagrania**). Gdy wynik jest gotowy, panel wyświetla transkrypcję; w przeciwnym razie wyjaśnia, co się dzieje, a jeśli można coś zrobić — udostępnia odpowiednie działanie. Te same stany sygnalizują ikony na liście — zob. [Nagrania](/pl/live-proceedings).
+
+## Dostępność nagrania
+
+Persate sprawdza, czy oryginalne wideo jest nadal dostępne u źródła. Jeśli nie jest, lista pokazuje szare kółko, a widok nagrania — oznaczenie nad odtwarzaczem:
+
+| Oznaczenie | Znaczenie |
+|---|---|
+| **Tylko w Persate** | Oryginalne nagranie jest niedostępne; odtwarzacz odtwarza kopię zapisaną w Persate. |
+| **Tylko w Persate · Częściowe** | Jak wyżej, ale zapisana kopia obejmuje tylko część nagrania. |
+| **Wideo jest niedostępne** | Oryginalne nagranie jest niedostępne; Persate sprawdzi je ponownie automatycznie. |
+| **Wideo niedostępne · Nieaktualne źródło** | Oryginalne nagranie jest niedostępne, a automatyczne pobieranie zostało zakończone. |
+
+W każdym przypadku zapisana analiza, w tym transkrypcja, pozostaje dostępna. Gdy nie ma wideo do odtworzenia, w miejscu odtwarzacza pojawia się komunikat **Wideo jest niedostępne** z tym samym wyjaśnieniem. Filtr **Dostępność nagrania** na liście korzysta z odpowiadających im stanów: **Tylko w Persate**, **Niedostępne** i **Trwale niedostępne**.
+
+## Problemy z odtwarzaniem i wczytywaniem
+
+* **Odtwarzanie jest niedostępne** — nie udało się przygotować strumienia wideo do odtwarzania. Przycisk **Ponów odtwarzanie** ponawia próbę.
+* **Szczegóły nie są jeszcze gotowe** lub **Nie udało się wczytać szczegółów** — nie udało się wczytać szczegółów nagrania. Przycisk **Spróbuj ponownie** wczytuje je ponownie.
+
+## Przed analizą i w jej trakcie
+
+| Co pokazuje panel | Znaczenie i działanie |
+|---|---|
+| **Analiza nagrania** z przyciskiem **Uruchom analizę** | Nagranie nie zostało jeszcze przeanalizowane. **Uruchom analizę** zleca przygotowanie pełnej transkrypcji, osi czasu i dodatkowego opracowania. |
+| Miejsce w kolejce analiz | Analiza czeka na swoją kolej i rozpocznie się samoczynnie. Przycisk **Anuluj analizę**, jeśli jest dostępny, wycofuje zlecenie z kolejki. |
+| Etap przetwarzania i procent postępu | Analiza trwa. Części transkrypcji pojawiają się, gdy tylko są gotowe, pod paskiem *Analizowanie... N%*. |
+| Stan taki jak *zaplanowano ponowną próbę* lub *oczekiwanie na nagranie*, z informacją **Kolejna próba** lub **Kolejne sprawdzenie** | Analiza została wstrzymana z powodu, który Persate rozwiązuje samodzielnie. Przycisk **Zaplanowano automatyczne przywrócenie działania** jest nieaktywny, ponieważ nie jest wymagane żadne działanie. |
+| **Nagranie jest niedostępne** | Oficjalne źródło nie udostępniło nagrania z tego wydarzenia, więc nie ma czego analizować. |
+| **Analiza jest opóźniona** | Analiza trwa dłużej, niż przewidywano. Automatyczne przywracanie działania jest kontynuowane, a komunikat podaje czas ostatniego postępu. |
+
+## Gdy analiza nie daje wyniku
+
+| Co pokazuje panel | Znaczenie i działanie |
+|---|---|
+| Komunikat o niepowodzeniu z przyciskiem **Ponów analizę** | Nie udało się zakończyć analizy. **Ponów analizę** uruchamia ją ponownie. |
+| **Brak transkrypcji · Wymaga weryfikacji** z przyciskiem **Uruchom analizę ponownie** | Analiza się zakończyła, ale nie zapisała transkrypcji. Nie oznacza to, że nagranie nie zawierało mowy. **Uruchom analizę ponownie** analizuje nagranie jeszcze raz. |
+| *Wyniki analizy są niedostępne. Pliki wynikowe mogły zostać utracone.* z przyciskiem **Uruchom analizę ponownie** | Analiza została ukończona, ale jej wyniki nie są już dostępne. **Uruchom analizę ponownie** przygotowuje je od nowa. |
+| **Nie udało się wczytać wyników analizy** | Wyniki istnieją, ale nie udało się ich wczytać; Persate automatycznie ponawia próbę. |
+| **Brak transkrypcji z tego wydarzenia** | Treść znaleziona w nagraniu pochodziła z innego wydarzenia i została usunięta po weryfikacji. |
+
+## Gdy istnieje wcześniejszy wynik
+
+Nowsza próba analizy nigdy nie ukrywa ostatniego zweryfikowanego wyniku. Pasek nad transkrypcją informuje o nowszej próbie, a wcześniejsza transkrypcja pozostaje dostępna (*Wyświetlany jest ostatni zweryfikowany wynik.*):
+
+* *Nowsza analiza jest w kolejce.* — przycisk **Anuluj próbę w kolejce** ją wycofuje.
+* *Analizowanie nowszego wyniku... N%* — nowsza analiza trwa.
+* Automatyczne ponowienie lub niepowodzenie — pasek je opisuje; po niepowodzeniu przycisk **Ponów** uruchamia analizę ponownie.
+* **Brak transkrypcji · Wymaga weryfikacji** — **Uruchom analizę ponownie** analizuje nagranie jeszcze raz.
+
+## Transkrypcje częściowe
+
+Transkrypcja może być częściowa — np. gdy analiza transmisji na żywo została przerwana albo pełna analiza nie została jeszcze opublikowana. Informuje o tym komunikat nad transkrypcją (*To ostatnia zapisana częściowa transkrypcja. Nagranie nie zostało w pełni przeanalizowane.*). Jeśli dotąd nie znaleziono mowy, panel pokazuje komunikat **Dotąd nie wykryto mowy** wraz z momentem, do którego nagranie zostało przeanalizowane.
+
+## Transmisje na żywo
+
+* **Łączenie z transmisją na żywo** — Persate łączy się z transmisją; analiza rozpocznie się automatycznie.
+* **Transmisja na żywo jest niedostępna** — nie udało się połączyć z transmisją. Przycisk **Ponów** ponawia próbę.
+* **Transmisja na żywo jest dostępna** — posiedzenie można oglądać; transkrypcja i oznaczenia mówców pojawią się po uruchomieniu analizy.
+* **Analiza nie powiodła się** — nie udało się zakończyć analizy na żywo. **Ponów analizę** uruchamia ją ponownie.
+* **Zaplanowane** — posiedzenie jeszcze się nie rozpoczęło; analiza będzie dostępna po jego rozpoczęciu.
+
+## Gdy Persate odmawia wykonania działania
+
+Jeśli Persate nie przyjmie uruchomienia, ponownego uruchomienia lub anulowania analizy, powód pojawia się obok przycisku, np.:
+
+* *Zbyt wiele próśb o analizę. Spróbuj ponownie za kilka minut.*
+* *Źródło nagrania jest niedostępne, więc analiza nie może się rozpocząć.*
+* *Analiza już trwa albo nie może się rozpocząć dla tego nagrania.*
+* *Próba już się rozpoczęła i nie można jej anulować.*
+* *Nie możesz analizować tego nagrania.*

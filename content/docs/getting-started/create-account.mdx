@@ -1,31 +1,45 @@
 ---
 title: Account creation
-description: Registration methods on the platform — the traditional form and single sign-on (SSO).
+description: Activating an account from an invitation, joining an organization with an existing account and signing up from the sign-in page.
 ---
 
-Registration can be started on the [persate.com](https://persate.com) homepage by selecting **Sign up**. Two registration paths are available.
+Most Persate accounts start with an invitation from an organization administrator. An account can also be created with **Sign up** on the sign-in page, but the platform opens only for accounts that belong to an organization.
 
-## Email and password form
+## Accepting an invitation
 
-Traditional registration requires completing the following fields:
+1. Open the link in the invitation email. A page titled **Set your Persate password** opens; its language can be switched between English and Polski.
+2. Select **Continue to Persate**. The link is used only at this step, so an email security scanner that opens links in advance does not use it up.
+3. On **Set your password**, enter a **New password** and type it again in **Repeat password**. The password needs at least 8 characters, including a number and a special character.
+4. Select **Activate account**. While the link is still being verified, the button reads **Waiting for session…**.
+5. After **Account activated! Redirecting…**, continue with the [first sign-in](/getting-started/first-login) and the [two-factor authentication](/getting-started/set-up-two-factor) setup.
 
-* **Email address** — the account address.
-* **Password** — a minimum of eight characters, including at least one digit and at least one special character. While the password is being entered, a list of requirements appears below the field, and the criteria that have been met are marked in real time.
-* **Password confirmation** — to ensure it is entered without typos.
-* **Acknowledgements** — two separate checkboxes: acceptance of the **Privacy Policy** and the **Terms of Service**. The registration button remains inactive until both boxes are selected.
+## Joining an organization with an existing account
 
-After the form is submitted, the interface displays a general message confirming that the request has been received — *"Request received"* — along with the information that if the address requires verification, a link will arrive shortly, and that if the account already exists, the user should sign in or reset the password. The message is intentionally neutral and does not reveal whether a given address is already registered.
+When an administrator invites an address that already has a Persate account outside any organization, the email links to **Join your organization**. Select **Accept & join**. After **You've joined the organization! Please sign in to continue.**, sign in with the existing password.
 
-**Note:** If the address requires verification, the message containing the link may be delivered to the spam folder. If the link does not arrive within a few minutes, verifying the correctness of the entered address is recommended.
+## Account set up by an administrator
 
-## Single sign-on (SSO)
+An administrator can also create the account with a password instead of sending an invitation. In that case no email arrives: sign in with the email address and password received from the administrator, then set up [two-factor authentication](/getting-started/set-up-two-factor).
 
-An account can also be created by selecting **Continue using Google Account** or **Continue using Microsoft Account**. After signing in, the account is created automatically. This method bypasses the email address verification step.
+## Signing up
+
+The persate.com homepage offers **Log in** and **Book a demo**. To sign up, select **Log in**, then **Sign up** under the sign-in form, and complete **Create your Account**:
+
+* **Email address** — the address of the account.
+* **Password** — at least 8 characters, including at least 1 number and at least 1 special character. While the password is being entered, **Your password must include:** lists the rules and ticks each one that is met.
+* **Confirm Password** — the same password again.
+* **I agree to the Privacy Policy** and **I agree to the Terms of Service** — **Sign Up** becomes available only when both boxes are ticked.
+
+After **Sign Up**, Persate shows **Request received**: if the address needs verification, a link arrives by email; if the address already has an account, sign in or reset the password instead. The message is the same in both cases, so it does not reveal whether an address is registered. The verification link opens **Confirm your Persate email**; select **Continue to Persate** to confirm the address.
+
+A signed-up account opens the platform only after an organization administrator adds it to the organization. Until then, signing in is refused or ends on **Access Denied**.
+
+The sign-in and sign-up pages have an **EN** / **PL** language switch at the top, and links to the **Privacy Policy**, the **Terms of Service** and **Cookie settings** under the form. The Google and Microsoft options on the sign-in page are described in [First sign-in](/getting-started/first-login).
 
 ## Error states
 
-* *"Passwords do not match"* — the values in the password and confirmation fields differ.
-* *"Sign-up Failed"* with the description *"Password must be at least 8 characters long"* — the password is too short.
-* *"Sign-up Failed"* with the description *"Password must include at least 1 number"* — the password does not contain a digit.
-* *"Sign-up Failed"* with the description *"Password must include at least 1 special character"* — the password does not contain a special character.
-* *"Sign-up Failed"* with a description of an unexpected error — the request could not be processed; try again.
+* **Passwords do not match.** — the password and its confirmation differ.
+* **Sign-up Failed** with **Password must be at least 8 characters long.**, **Password must include at least 1 number.** or **Password must include at least 1 special character.** — the password does not meet the rules.
+* **Sign-up Failed** with **An unexpected error occurred. Please try again.** — the request could not be processed; try again.
+* **The passwords do not match.** or **Please repeat the password.** on **Set your password** — the second field differs from the first or is empty.
+* **This sign-in link expired** or **We couldn't sign you in** — the email link has already been used or is no longer valid; ask for a new invitation and use only the newest email.

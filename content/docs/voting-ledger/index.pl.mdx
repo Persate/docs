@@ -1,55 +1,70 @@
 ---
-title: Głosowania i decyzje
+title: Głosowania
 description: Przeglądanie głosowań Sejmu i Senatu, decyzji Prezydenta oraz spraw Trybunału Konstytucyjnego.
 ---
 
-Otwórz **PUBLICZNE → Głosowania**. Górna nawigacja rozdziela cztery publiczne rejestry instytucjonalne:
+Moduł otwiera się przez **PUBLICZNE → Głosowania** w panelu bocznym, gdy funkcja jest włączona dla organizacji. Zakładki u góry rozdzielają cztery rejestry publiczne:
 
-* **Sejm** — wyniki głosowań i głosy poszczególnych posłów;
-* **Senat** — wyniki głosowań Senatu i, gdy zostały opublikowane, głosy senatorów;
-* **Prezydent** — decyzje dotyczące ustaw; są to decyzje, a nie głosowania izby;
-* **TK** — sprawy i orzeczenia Trybunału Konstytucyjnego; nie są to głosowania.
+* **Sejm** — głosowania Sejmu oraz, jeśli zostały opublikowane, głosy poszczególnych posłów;
+* **Senat** — głosowania Senatu oraz, jeśli zostały opublikowane, głosy poszczególnych senatorów;
+* **Prezydent** — decyzje Prezydenta dotyczące ustaw; są to decyzje, a nie głosowania izby;
+* **TK** — sprawy i orzeczenia Trybunału Konstytucyjnego; są to sprawy, a nie głosowania.
 
-Nie łącz wskaźników z różnych zakładek. Każda instytucja publikuje inne pola i działa według innej procedury.
+Liczba na zakładce **Prezydent** wskazuje ustawy czekające na decyzję, dla których termin jeszcze nie upłynął.
+
+Każda instytucja publikuje inne dane i działa według innej procedury, dlatego wartości należy porównywać w obrębie jednej zakładki, a nie między zakładkami. Wszystkie cztery listy doładowują kolejne pozycje podczas przewijania; na wąskim ekranie pokazują mniej kolumn. Wybranie wiersza otwiera rekord; opis stron rekordów zawiera [Szczegóły rekordu](/pl/voting-ledger/voting-detail).
 
 ## Sejm
 
-Tabela Sejmu pokazuje wynik, wniosek, temat, rozkład głosów, przewagę, datę i numer posiedzenia/głosowania. Wybierz wiersz, aby otworzyć pełny rekord.
+Tabela zawiera kolumny **Wynik**, **Wniosek**, **Temat**, **Głosowanie**, **Przewaga**, **Data** i **Nr** (numer posiedzenia i głosowania). Kolumna **Głosowanie** pokazuje liczbę głosów za i przeciw oraz pasek uwzględniający również głosy wstrzymujące się; posłowie, którzy nie głosowali, nie są w niej liczeni.
 
-**Przeszukaj bieżącą stronę** filtruje już załadowane rekordy po tytule, temacie lub numerze. Preferencja **Głosowania proceduralne w rejestrze** decyduje, czy pokazywać zmiany porządku obrad, przerwy, kontrole kworum i podobne głosowania proceduralne; domyślnie są ukryte.
+Wynik ma postać **Przyjęte**, **Odrzucone**, **Kworum osiągnięte** albo **Brak kworum**. Głosowanie nad kandydatami ma wynik **Głosowanie imienne na kandydatów** i wskazuje wiodącą opcję; sprawdzenie kworum pokazuje liczbę obecnych posłów. Jeśli zapisano wymaganą większość, to ona rozstrzyga o wyniku.
 
-Wynik może mieć m.in. etykietę **Przyjęte**, **Odrzucone**, **Kworum osiągnięte**, **Brak kworum** albo wynik głosowania imiennego. Gdy ma to zastosowanie, o wyniku decyduje zapisana reguła większości.
+Panel boczny udostępnia:
+
+* **Przeszukaj bieżącą stronę** — filtruje już wczytane głosowania według tytułu, tematu, opisu lub numeru;
+* **Pokaż głosowania proceduralne** — zmiany porządku obrad, przerwy, sprawdzanie kworum i podobne głosowania proceduralne są domyślnie ukryte. Przełącznik odpowiada ustawieniu **Głosowania proceduralne w rejestrze** w **Ustawienia → Preferencje**.
 
 ## Senat
 
-Tabela Senatu pokazuje oficjalny wynik, sprawę, temat, rozkład głosów, przewagę, datę i numer głosowania udostępnione przez źródło. Wyszukiwanie filtruje już pobrane rekordy. Wybierz wiersz, aby otworzyć szczegóły.
+Tabela Senatu ma te same kolumny co tabela Sejmu. Wynik ma postać **Przyjęte** albo **Odrzucone**, zgodnie z publikacją Senatu. Pole **Przeszukaj bieżącą stronę** filtruje już wczytane głosowania.
 
-Dane Senatu nie są wyprowadzane z rekordu sejmowego. Jeżeli źródło nie opublikowało pola lub listy senatorów, Persate pozostawia tę informację jako niedostępną.
+Dane Senatu pochodzą z publikacji Senatu i nie są wyprowadzane z rekordu sejmowego. Pole lub lista senatorów, których źródło nie opublikowało, pozostają niedostępne.
 
 ## Prezydent
 
-Sekcja **Czeka na decyzję** pokazuje ustawy przekazane Prezydentowi w bieżącej kadencji Sejmu, termin decyzji i dostępne dane o poparciu w Sejmie. Łącznie rozpatrywane druki tworzą jeden wpis. Licznik na zakładce Prezydenta wskazuje liczbę ustaw oczekujących na zarejestrowaną decyzję. Wybranie ustawy otwiera jej proces legislacyjny.
+Zakładka **Prezydent** zawiera dwie tabele.
 
-Sekcja **Podjęte decyzje** grupuje decyzje według dni. Weta i skierowania pokazują dalszy wynik w Sejmie lub stan sprawy w TK, jeżeli jest dostępny; podpisy mają postać zwartych przycisków. Wybranie decyzji otwiera jej szczegóły. Podpis i skierowanie tej samej ustawy do TK tego samego dnia są pokazane razem. Wyszukiwanie filtruje pobrane decyzje i oczekujące ustawy; filtr **Rozstrzygnięcie** zawęża podjęte decyzje.
+Tabela **Czeka na decyzję** obejmuje ustawy przekazane Prezydentowi, dla których nie zarejestrowano decyzji. Każdy wiersz pokazuje **Termin** decyzji (po wskazaniu kursorem widoczna jest długość terminu), ustawę, **Głosowanie w Sejmie** (głosy za i przeciw) oraz numery w kolumnie **Druk**, łącznie z drukami rozpatrywanymi wspólnie. Wybranie ustawy otwiera przebieg jej procesu legislacyjnego. Oznaczenie **Po terminie** wskazuje ustawę, której termin upłynął, a decyzja nie została jeszcze zarejestrowana; takie ustawy nie są wliczane do licznika na zakładce. Gdy żadna ustawa nie czeka na decyzję, tabela jest ukryta.
 
-Prezydent działa jednoosobowo, dlatego ta zakładka nie ma rozkładu głosów ani mapy sali.
+Tabela **Podjęte decyzje** grupuje decyzje według dni. Nagłówek podsumowuje bieżący rok: liczbę podpisów, wet i skierowań do TK. Każdy wiersz zawiera:
+
+* **Decyzja** — **Podpisane**, **Zawetowane**, **Do TK przed podpisaniem** albo **Do TK po podpisaniu**;
+* ustawę — jej wybranie otwiera decyzję;
+* **Dalszy bieg** — przy wecie wynik głosowania Sejmu nad wetem (**Weto podtrzymane**, **Weto odrzucone — ustawa uchwalona ponownie** albo **Nie zarejestrowano głosowania Sejmu**), przy skierowaniu sygnaturę sprawy w TK i jej stan z odnośnikiem do sprawy;
+* **Druk** — numery druków z odnośnikiem do przebiegu procesu legislacyjnego ustawy, jeśli decyzja jest powiązana z projektem.
+
+Gdy tego samego dnia podpisano co najmniej dwie ustawy, są one pokazane jako jeden wiersz z etykietami; przycisk **+N więcej** pokazuje pozostałe, a **Pokaż mniej** ponownie je zwija.
+
+Panel boczny udostępnia pole **Przeszukaj bieżącą stronę** (ustawa, projekt lub numer druku; filtruje również ustawy czekające na decyzję), przełącznik **Krótkie tytuły** oraz filtr **Rozstrzygnięcie**, który zawęża podjęte decyzje do jednego rozstrzygnięcia. Prezydent działa jednoosobowo, dlatego zakładka nie pokazuje rozkładu głosów ani mapy sali.
 
 ## TK
 
-Sprawy oczekujące są pokazane przed orzeczeniami. Wpisy oczekujące podają czas oczekiwania; sprawy kontroli prewencyjnej mają oznaczenie **Ustawa wstrzymana**. Orzeczenia pokazują wynik i skład sędziowski, jeżeli został wymieniony w sentencji. Pomarańczowe miejsca oznaczają zdania odrębne.
+Panel boczny udostępnia:
 
-Pole **Szukaj we wszystkich sprawach** przeszukuje zapisane sygnatury, przedmioty spraw, wnioskodawców i oznaczenia zaskarżonych przepisów. Filtr **Status** pozwala wybrać sprawy oczekujące albo orzeczenia, a **Rodzaj sprawy** — rodzinę sygnatur. Każda sekcja ma osobny przycisk wczytywania kolejnych wyników.
+* **Szukaj we wszystkich sprawach** — przeszukuje wszystkie zapisane sprawy według sygnatury, przedmiotu, wnioskodawcy lub zaskarżonego przepisu, a nie tylko wczytane wiersze;
+* **Krótkie tytuły**;
+* **Status** — **Wszystkie sprawy**, **Oczekuje na orzeczenie** albo **Orzeczenia**;
+* **Rodzaj sprawy** — rodzina sygnatur wraz z liczbą spraw.
 
-Wybierz sprawę, aby otworzyć jej rekord i powiązane materiały urzędowe.
+Przy ustawieniu **Wszystkie sprawy** pierwsze sprawy **Oczekuje na orzeczenie** są widoczne nad tabelą **Orzeczenia**; przycisk **Pokaż wszystkie** z liczbą oczekujących spraw przełącza listę na **Oczekuje na orzeczenie**. Nagłówek tabeli **Orzeczenia** podsumowuje bieżący rok: liczbę orzeczeń, orzeczeń wydanych większością głosów i orzeczeń ze zdaniami odrębnymi.
 
-## Dane i puste stany
+Sprawy oczekujące pokazują liczbę dni oczekiwania, datę rozprawy, jeśli ją wyznaczono, oraz datę wpływu. Oczekująca sprawa kontroli prewencyjnej ma oznaczenie **Ustawa wstrzymana**: ustawa pozostaje wstrzymana do czasu orzeczenia Trybunału. Orzeczenia pokazują rozstrzygnięcie (**Zgodne z Konstytucją**, **Niezgodne z Konstytucją**, **Częściowo niezgodne z Konstytucją**, **Postępowanie umorzone** albo **Orzeczenie wydane**), skład orzekający, jeśli wymienia go tekst orzeczenia, oraz datę orzeczenia. W składzie pomarańczowe kwadraty oznaczają sędziów, którzy złożyli zdanie odrębne. Oznaczenia **Sprawa zakończona** i **Status nieznany** dotyczą spraw zakończonych bez zarejestrowanego orzeczenia albo takich, których zakończenia źródło nie podaje.
+
+## Dane i puste widoki
 
 Persate pokazuje pola opublikowane przez właściwe źródło publiczne. Brakujące wartości są oznaczane jako niedostępne, a nie szacowane.
 
-* Brak wyników po wyszukiwaniu — wyczyść zapytanie i filtry właściwe dla instytucji.
-* Niedostępne źródło — odśwież i spróbuj ponownie; zgłaszając problem, podaj instytucję i numer rekordu.
-* Niedostępny szczegół — źródło mogło jeszcze nie opublikować rekordu albo identyfikator przestał działać.
-
-## Powiązany przewodnik
-
-* **[Szczegóły rekordu](/pl/voting-ledger/voting-detail)** — strony szczegółów, dokumenty i mapy izb właściwe dla instytucji.
+* **Brak głosowań pasujących do wyszukiwania**, **Brak decyzji pasujących do wyszukiwania** albo **Brak spraw pasujących do wyszukiwania** — należy wyczyścić wyszukiwanie, a na zakładkach Prezydenta i TK sprawdzić też filtry **Rozstrzygnięcie**, **Status** i **Rodzaj sprawy**.
+* **Nie udało się wczytać głosowań**, **Nie udało się wczytać decyzji** albo **Nie udało się wczytać spraw** — należy wybrać **Spróbuj ponownie**. Komunikat o braku uprawnień oznacza, że konto nie ma dostępu do danego rejestru.
+* Wiersz, który się nie otwiera, lub niedostępna strona szczegółów — zob. [Szczegóły rekordu](/pl/voting-ledger/voting-detail).

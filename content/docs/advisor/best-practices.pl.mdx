@@ -1,67 +1,81 @@
 ---
 title: Dobre praktyki
-description: Praktyczne wskazówki do efektywnej pracy z Asystentem AI — formułowanie pytań, załączanie plików, obsługa cytowań oraz rozpoznawanie sygnałów wyczerpania budżetu.
+description: Praktyczne wskazówki do efektywnej pracy z Advisorem — formułowanie pytań, dobór głębokości analizy, załączanie kontekstu, czytanie cytowań, ukierunkowywanie trwającego zadania i obsługa odpowiedzi częściowych.
 ---
 
 ## Formułowanie pytania w terminach korpusu
 
-Asystent dysponuje konkretnymi umiejętnościami — analiza i przeszukiwanie postępowań sejmowych, interesariuszy, klubów, głosowań, plików. Pytania sformułowane precyzyjnie w odniesieniu do tych terminów pozwalają uzyskać lepsze i bardziej trafne odpowiedzi.
+Advisor dysponuje konkretnymi umiejętnościami — analizą i przeszukiwaniem prac Sejmu, procesów legislacyjnych, interesariuszy, klubów, głosowań, nagrań, Mediów i plików. Pytania sformułowane precyzyjnie w odniesieniu do tych terminów pozwalają uzyskać lepsze i bardziej trafne odpowiedzi.
 
 * **Mniej skuteczne:** *„Co się dzieje z polityką energetyczną?”* — zakres pozostaje nieokreślony.
-* **Bardziej skuteczne:** *„Streszcz najnowszą aktywność w sali nad ustawą o energetyce odnawialnej z ostatnim głosowaniem i działaniami komisji w ostatnim tygodniu.”*
+* **Bardziej skuteczne:** *„Streść najnowsze prace nad ustawą o odnawialnych źródłach energii, z ostatnim głosowaniem i działaniami komisji w ostatnim tygodniu.”*
 
-Nie każde pytanie musi być rozbudowane. Wystarczy zawarcie **przynajmniej jednej konkretnej informacji** — nazwy ustawy, interesariusza, klubu, zakresu dat, komisji lub pliku.
+Nie każde pytanie musi być rozbudowane. Wystarczy zawarcie **przynajmniej jednej konkretnej informacji** — nazwy ustawy, numeru druku, interesariusza, klubu, zakresu dat, komisji lub pliku.
 
-## Załączenie pliku zamiast opisywania go
+## Dobór głębokości analizy
 
-Gdy odpowiedź znajduje się w dokumencie, który jest już dostępny w repozytorium, jego załączenie jest szybsze i dokładniejsze niż proszenie asystenta o wyszukiwanie.
+Przełącznik głębokości w polu wiadomości dotyczy jednej wiadomości:
 
-Wpisanie `@` w polu wprowadzania otwiera selektor plików. Wyszukiwanie odbywa się po nazwie lub — po przełączeniu trybu — po treści dokumentu. Możliwe jest załączenie wielu plików jednocześnie.
+* **Podstawowo** — wyszukiwanie faktów z oczywistą odpowiedzią i krótkie pytania uzupełniające do udzielonej już odpowiedzi.
+* **Zrównoważony** — codzienne pytania; ustawienie standardowe.
+* **Dogłębnie** — wieloźródłowe briefingi, porównania i pytania, w których kompletność jest ważniejsza niż szybkość.
 
-Asystent traktuje załączony plik jako pierwszorzędne odniesienie i pomija krok wyszukiwania po zbiorze wszystkich plików.
+Głębokość ustawia się dla każdej wiadomości osobno, więc w jednej rozmowie można je łączyć: pytanie z ustawieniem **Dogłębnie** dla briefingu, a następnie pytania uzupełniające z ustawieniem **Podstawowo**.
 
-Kiedy **nie** warto załączać pliku: gdy celem jest *znalezienie* właściwego dokumentu. Pytanie *„Który z naszych briefingów omawia zmiany w prawie zamówień publicznych?”* powinno być zadane bez załącznika, by uruchomić wyszukiwanie hybrydowe asystenta.
+## Załączenie kontekstu zamiast opisywania go
+
+Gdy odpowiedź znajduje się w dokumencie, który jest już dostępny w Repozytorium, jego załączenie jest szybsze i dokładniejsze niż proszenie Advisora o wyszukiwanie.
+
+Wpisanie `@` w polu wiadomości lub wybranie przycisku **Dodaj kontekst z wyszukiwania globalnego** otwiera wyszukiwanie platformy. Wybrane w nim pliki zostają załączone do wiadomości, a pozostałe wyniki — głosowanie, druk, profil — dodane jako znaczniki kontekstu. Możliwe jest załączenie wielu elementów jednocześnie.
+
+Advisor otrzymuje identyfikator każdego załączonego elementu, dzięki czemu może odczytać plik lub rekord bezpośrednio i pomija krok wyszukiwania po zbiorze wszystkich plików.
+
+Kiedy **nie** warto załączać pliku: gdy celem jest *znalezienie* właściwego dokumentu. Pytanie *„Który z naszych briefingów omawia zmiany w prawie zamówień publicznych?”* powinno być zadane bez załącznika, aby Advisor sam przeszukał pliki.
 
 ## Czytanie cytowań, nie wyłącznie treści odpowiedzi
 
-Każde źródło danych asystenta eksponowane jest jako weryfikowalny odnośnik. Pozwala to zweryfikować wygenerowane i zawarte w nich dane:
+Każde źródło danych Advisora jest dostępne jako weryfikowalny znacznik cytowania. Jego wybranie pozwala zweryfikować:
 
-* Liczby głosów i rozstrzygnięcia per klub.
-* Tożsamości posła.
-* Treści cytowanego wpisu.
-* Dokumentu źródłowego w cytowanym fragmencie.
+* Liczby głosów i rozstrzygnięcia w podziale na kluby.
+* Tożsamość posła.
+* Treść cytowanego wpisu.
+* Dokument źródłowy w cytowanym fragmencie — pliki otwierają się w przeglądarce plików z panelem **Cytowany fragment**, a teksty prawne w czytniku, w miejscu cytowanego fragmentu.
 
-Generowane odpowiedzi przeważnie pokrywają się ze stanem faktycznym, natomiast gdy odpowiedź wydaje się błędna, warto poprosić o jej ponowne wygenerowanie, wybierając ikonę strzałki pod odpowiedzią. Drugi przebieg często zwraca poprawnie ugruntowane cytowania.
+Tarcza pod odpowiedzią podsumowuje weryfikację źródeł, a jej szczegóły wymieniają punkty wymagające ostrożności. Generowane odpowiedzi przeważnie pokrywają się ze stanem faktycznym, natomiast gdy odpowiedź wydaje się błędna, warto uruchomić ją ponownie przyciskiem **Wygeneruj odpowiedź ponownie** pod odpowiedzią. Drugi przebieg często zwraca poprawnie ugruntowane cytowania.
 
 ## Wykorzystanie ciągłości konwersacji
 
-Asystent zachowuje pełną konwersację jako kontekst dla pytań uzupełniających. Trzy skuteczne wzorce:
+Advisor zachowuje pełną konwersację jako kontekst dla pytań uzupełniających. Trzy skuteczne wzorce:
 
-* **Doprecyzowanie w toku** — *„Teraz rozbij to samo porównanie według województwa zamiast po klubie.”* — asystent ponownie wykorzystuje wcześniejszy wynik.
-* **Pogłębienie w konkretne ustalenie** — *„Powiedz więcej o rozbieżności w poprawce 14.”*
-* **Przejście do działania** — *„Skonfiguruj alert obejmujący ustawy, które właśnie zbriefingowałeś.”* — asystent wyciąga identyfikatory z wcześniejszej odpowiedzi.
+* **Doprecyzowanie w toku** — *„Teraz rozbij to samo porównanie według województw zamiast klubów.”* — Advisor ponownie wykorzystuje wcześniejszy wynik.
+* **Pogłębienie konkretnego ustalenia** — *„Powiedz więcej o rozbieżności w poprawce 14.”*
+* **Przejście do działania** — *„Przygotuj alert obejmujący ustawy omówione w tym briefingu.”* — Advisor przejmuje identyfikatory z wcześniejszej odpowiedzi i przygotowuje nieaktywny szkic alertu do przejrzenia w module Monitorowanie.
 
-Zaleca się unikanie przeskakiwania między niezwiązanymi wątkami w jednej konwersacji. Dla różnych tematów warto otworzyć nowe sesje — historia czatu sprawia, że jest to efektywne.
+Zaleca się unikanie przeskakiwania między niezwiązanymi wątkami w jednej konwersacji. Dla różnych tematów warto otwierać nowe sesje — historia rozmów sprawia, że jest to efektywne, a wcześniejsze rozmowy można przeszukiwać.
 
-## Rozpoznawanie sygnału wyczerpania budżetu
+## Ukierunkowywanie trwającego zadania
 
-Gdy pytanie przekracza budżet jednokrotnego zapytania — zazwyczaj pytanie wieloźródłowe o bardzo szerokim zakresie — odpowiedź kończy się notą o nieukończonej części:
+Aby zmienić kierunek trwającego zadania, nie trzeba go zatrzymywać. Podczas pracy Advisora tekst wysłany z pola wiadomości trafia do trwającego zadania jako uwaga — np. *„Ogranicz to do bieżącej kadencji”* albo *„Pomiń głosowania w Senacie”*. Status pod uwagą pokazuje, czy Advisor ją uwzględnił.
 
-> *„...Spośród jedenastu ustaw, o które pytałeś, omówiłem dziewięć szczegółowo, dla ustaw 10 i 11 zabrakło budżetu zapytania. Powtórz pytanie zawężone do tych dwóch konkretnie.”*
+Przycisku zatrzymania (**Zatrzymaj analizę**) warto używać tylko wtedy, gdy kierunek pracy jest całkowicie błędny. Dotychczasowe ustalenia Advisora pozostają w rozmowie i można je wykorzystać w nowym, precyzyjniejszym pytaniu. Zob. [Śledzenie pracy Advisora](/pl/advisor/activity).
 
-Jest to poprawny wynik. Zalecana reakcja to przyjęcie częściowej odpowiedzi i ponowne zadanie węższego pytania uzupełniającego. Jeśli wyczerpanie budżetu pojawia się regularnie przy danym typie pytania, pytanie jest prawdopodobnie zbyt szerokie — dwa węższe pytania dają lepszy łączny wynik niż jedno bardzo szerokie.
+## Obsługa odpowiedzi częściowych
 
-## Odpowiadanie na formularze elicytacji
+Gdy pytanie jest zbyt szerokie, by objąć je w jednej turze — zazwyczaj pytanie wieloźródłowe o bardzo szerokim zakresie — odpowiedź obejmuje to, co się udało, i kończy się komunikatem *Częściowa odpowiedź.*, który wskazuje brakującą część i podpowiada, jak zawęzić pytanie.
 
-Gdy narzędzie potrzebuje rozstrzygnięcia (np. *„Która kadencja Sejmu?”*, *„Który z dwóch posłów o nazwisku Kowalski?”*), asystent wyświetla formularz. Należy go wypełnić bezpośrednio — wpisanie odpowiedzi w polu czatu pozostawia formularz nierozstrzygnięty i inicjuje nową turę, zamiast kontynuować bieżącą.
+Jest to poprawny wynik. Zalecana reakcja to przyjęcie częściowej odpowiedzi i zadanie węższego pytania uzupełniającego, np. ograniczonego do jednego posiedzenia, dokumentu, osoby lub okresu. Jeśli odpowiedzi częściowe pojawiają się regularnie przy danym typie pytania, pytanie jest prawdopodobnie zbyt szerokie — dwa węższe pytania dają lepszy łączny wynik niż jedno bardzo szerokie.
 
-## Kiedy asystent jest niewłaściwym narzędziem
+## Odpowiadanie na pytania uściślające
 
-Asystent odsuwa od kilku klas pytań:
+Gdy narzędzie potrzebuje rozstrzygnięcia (np. *„Która kadencja Sejmu?”*, *„Który z dwóch posłów o nazwisku Kowalski?”*), Advisor zadaje pytanie w rozmowie i przedstawia opcje. Należy odpowiedzieć za pomocą tych opcji i przycisku **Dalej** albo pominąć pytanie przyciskiem **Pomiń**. Tekst wpisany w polu wiadomości, gdy pytanie pozostaje otwarte, trafia jako uwaga do trwającego zadania i nie stanowi odpowiedzi na pytanie.
 
-* **Ogólnodostępna konwersacja** — pytania o opinie i oceny spoza korpusu legislacyjnego.
-* **Analiza spoza zakresu** — stosunki międzynarodowe, prognozy rynkowe, sondaże wyborcze. Asystent odnotuje ograniczenie i odpowie na to, co jest dostępne z korpusu.
-* **Tworzenie treści** — asystent streści, przygotuje briefing i porówna, lecz nie pisze komunikatów prasowych ani pism prawnych.
-* **Operacje masowe** — asystent wykonuje zapytania, nie akcje. Istniejące akcje (tworzenie alertów, wgrywanie plików) są jawne i potwierdzane.
+## Kiedy Advisor jest niewłaściwym narzędziem
 
-W tych przypadkach asystent wyjaśnia ograniczenie i wskazuje właściwą część platformy, gdy to możliwe.
+Advisor odsuwa od siebie kilka klas pytań:
+
+* **Ogólna rozmowa** — pytania o opinie i oceny wykraczające poza dane platformy.
+* **Analiza spoza zakresu** — stosunki międzynarodowe, prognozy rynkowe, sondaże wyborcze. Advisor odnotuje ograniczenie i odpowie na to, co jest dostępne w korpusie.
+* **Gotowe treści** — Advisor streszcza, przygotowuje briefingi i porównuje. Na prośbę zapisuje szkic artykułu w Redaktorze, gdy funkcja jest włączona dla organizacji, ale niczego nie publikuje ani nie wysyła, a jego szkice wymagają przejrzenia.
+* **Działania niezlecone lub masowe** — Advisor prowadzi analizę; jego działania są ograniczone i jawne. Przygotowuje szkice do przejrzenia (alerty, inteligentne foldery, artykuły w Redaktorze), a istniejący alert zmienia lub usuwa wyłącznie na wyraźną prośbę, przy czym przed usunięciem prosi o potwierdzenie. Nie wgrywa plików.
+
+W tych przypadkach Advisor wyjaśnia ograniczenie i wskazuje właściwą część platformy, gdy to możliwe.

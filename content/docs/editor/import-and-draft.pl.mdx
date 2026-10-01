@@ -1,42 +1,59 @@
 ---
-title: Import i draft
-description: Rozpoczęcie artykułu w Editorze od pustej strony lub zaimportowanego dokumentu.
+title: Import i szkic
+description: Tworzenie, import i pisanie artykułów w Redaktorze, szkice przygotowane przez Advisora, autozapis oraz kopiowanie tekstu.
 ---
 
-## Tworzenie pustego artykułu
+## Tworzenie artykułu
 
-1. Otworzyć **Redaktor**.
-2. Wybrać **Utwórz artykuł**.
-3. Wpisać lub wkleić treść artykułu.
-4. Dodać tytuł i sformatować dokument paskiem narzędzi.
-
-Persate wykrywa strukturę artykułu we wklejonym tekście. Autozapis rozpoczyna się po utworzeniu artykułu.
+1. Otworzyć **PRZESTRZEŃ ROBOCZA → Redaktor**.
+2. Wybrać **Utwórz artykuł**. Otworzy się nowy artykuł o nazwie **Dokument bez tytułu**.
+3. Kliknąć tytuł, aby zmienić nazwę artykułu; klawisz **Enter** zatwierdza nowy tytuł.
+4. Wpisać lub wkleić tekst.
 
 ## Import dokumentu
 
-Należy wybrać **Importuj dokument** w bibliotece lub panelu przeglądu. Editor przyjmuje pliki PDF, DOCX, JPG, JPEG, PNG i TIFF.
+Import tworzy nowy artykuł z pliku PDF, DOCX, JPG, JPEG, PNG lub TIFF. Polecenie znajduje się na pasku narzędzi otwartego artykułu:
 
-Jeżeli organizacja ma również dostęp do Repozytorium, należy wybrać tryb importu:
+1. Otworzyć artykuł (lub utworzyć nowy) i wybrać **Więcej opcji formatowania** (**…**) na końcu paska narzędzi.
+2. Wybrać **Importuj dokument** i wskazać plik.
+3. Jeżeli dla organizacji włączono Repozytorium, określić, co ma się stać z przesłanym plikiem:
+   * **Zapisz w repozytorium** — oryginał pozostaje w Repozytorium i można go wyszukiwać razem z innymi dokumentami;
+   * **Użyj tylko w tym dokumencie** — oryginalny plik zostaje usunięty po odczytaniu jego tekstu.
+4. Wybrać **Kontynuuj**.
 
-* **Zapisz w repozytorium** — zapisuje oryginał jako zwykły plik Repozytorium i wykorzystuje go do utworzenia draftu w Editorze.
-* **Użyj tylko w tym dokumencie** — wyodrębnia treść dla draftu bez zachowywania przesłanego pliku w Repozytorium.
+Opcja **Zapamiętaj mój wybór** pomija to pytanie przy kolejnych importach. Ustawienie domyślne można zmienić w **Ustawienia → Preferencje → Przesyłanie dokumentów do Redaktora** (**Zawsze pytaj**, **Zapisz w repozytorium** albo **Użyj tylko w Redaktorze**). Bez Repozytorium importowane pliki są zawsze wykorzystywane wyłącznie w artykule.
 
-Wybór można zapamiętać dla kolejnych importów. Bez dostępu do Repozytorium tryb tymczasowy jest wybierany automatycznie.
+Zaimportowany tekst otwiera się jako osobny artykuł; artykuł, z którego uruchomiono import, pozostaje bez zmian. Podczas odczytywania tekstu artykuł wyświetla komunikat **Odczytywanie dokumentu…**, a biblioteka pokazuje status **Importowanie**. Odczyt wielostronicowego skanu może zająć kilka minut.
 
-Import tymczasowy jest prywatny. Persate usuwa przesłane źródło po ekstrakcji, natomiast artykuł pozostaje. Import zapisany w Repozytorium podlega zakresowi dostępu i regułom przechowywania tego pliku.
+Jeżeli nie da się odczytać tekstu, artykuł wyświetla komunikat **Nie udało się odczytać dokumentu.**, a biblioteka oznacza go statusem **Wymaga uwagi**. Przycisk **Nowy dokument** prowadzi z powrotem do biblioteki. Należy wtedy spróbować innego pliku PDF, DOCX lub obrazu albo wkleić tekst do nowego artykułu.
 
-## Przetwarzanie importu
+## Szkice przygotowane przez Advisora
 
-Biblioteka wyświetla stan **Importowanie** podczas wydobywania tekstu. Editor okresowo sprawdza stan. Skany mogą wymagać kilku minut, ponieważ strony muszą zostać rozpoznane.
+W rozmowie Advisor może przygotować artykuł i zapisać go jako szkic w Redaktorze. Odpowiedź zawiera wtedy kartę **Szkic artykułu** z miejscem docelowym **Redaktor** i statusem: **Przygotowywanie szkicu**, **Szkic zapisany**, **Wymaga przeglądu · Twoje zmiany zostały zachowane** albo **Przygotowywanie przerwane**. Wybranie karty otwiera szkic; Advisor może też otworzyć zapisany szkic bezpośrednio.
 
-Jeżeli ekstrakcja nie powiedzie się, należy wypróbować inny obsługiwany plik PDF, DOCX lub obraz albo utworzyć pusty artykuł i wkleić tekst. Formaty arkuszy kalkulacyjnych przyjmowane przez Repozytorium nie są formatami importu Editora.
+Gdy szkic zostanie otwarty z karty, panel Advisora w Redaktorze pokazuje sekcję **Historia szkicu**: stan przygotowania, wyniki pracy agentów badawczych Advisora oraz odnośnik **Oryginalna rozmowa** prowadzący z powrotem do czatu. Jeżeli Advisor przygotuje kolejną wersję po zmianach wprowadzonych w szkicu, zmiany zostają zachowane, a nowa wersja czeka obok nich — **Podgląd propozycji** pokazuje jej treść, a **Zastąp tą propozycją** zastępuje nią bieżący tekst. W widoku **Historia** pochodzenie dokumentu jest wtedy opisane jako **Szkic utworzony przez Advisora**.
 
-## Restructure document
+## Pisanie i formatowanie
 
-**Restructure document** porządkuje nagłówki, akapity i listy bez uruchamiania pełnego przeglądu faktów i języka.
+Pasek narzędzi nad tekstem zawiera:
 
-Działanie wymaga co najmniej 80 znaków i dwóch wykrytych bloków. Jeżeli istnieją oczekujące sugestie przeglądu, Editor prosi o potwierdzenie, ponieważ zmiana struktury usuwa te adnotacje. Zmianę można cofnąć z historii edytora.
+* menu **Styl tekstu**, które pokazuje styl bieżącego bloku: **Akapit**, **Tytuł**, **Nagłówek**, **Podtytuł**, **Nagłówek sekcji**, **Nagłówek niższego poziomu**, **Mały nagłówek**, **Cytat**, **Lista punktowana**, **Lista numerowana** lub **Blok kodu**;
+* przyciski **Pogrubienie**, **Kursywa**, **Podkreślenie**, **Przekreślenie**, **Lista punktowana**, **Lista numerowana**, **Cytat**, **Dodaj odnośnik** (**Edytuj odnośnik** przy istniejącym odnośniku), **Cofnij** i **Ponów** — przyciski, które się nie mieszczą, trafiają do menu **Więcej opcji formatowania**;
+* menu **Więcej opcji formatowania** (**…**) z działaniami na dokumencie **Sprawdź dokument**, **Opcje przeglądu**, **Kopiuj tekst** i **Importuj dokument**, a pod nimi **Kod w tekście**, **Blok kodu**, **Separator** i **Wyczyść formatowanie**.
 
-## Konflikty zapisu
+**Dodaj odnośnik** prosi o adres strony; pusty adres usuwa odnośnik. Zaznaczenie tekstu wyświetla mały pasek z przyciskami **Pogrubienie**, **Kursywa**, **Podkreślenie**, **Dodaj odnośnik** oraz trzema działaniami Advisora opisanymi na stronie [Advisor w Redaktorze](/pl/editor/advisor-in-editor).
 
-Autozapis wykorzystuje rewizje dokumentu. Jeżeli ten sam artykuł został zmieniony w innym miejscu, Editor odrzuca nieaktualny zapis i wyświetla **This document changed in another tab. Reload**. W razie potrzeby należy skopiować niezapisany tekst, przeładować stronę i ponowić edycję na bieżącej rewizji.
+Skróty Markdown na początku wiersza: `#` do `######` ze spacją tworzą nagłówki, `-` ze spacją rozpoczyna listę punktowaną, `1.` listę numerowaną, a `>` cytat. Zwykły tekst wklejony ze strukturą Markdown (nagłówki, listy, cytaty, bloki kodu) zamienia się w formatowanie; treść skopiowana ze stron internetowych i edytorów tekstu zachowuje formatowanie obsługiwane przez Redaktor. Adresy stron wpisane w tekście stają się odnośnikami.
+
+Na szerokich ekranach obok tekstu pojawia się spis nagłówków artykułu; wybranie pozycji przewija dokument do danej sekcji.
+
+## Autozapis i konflikty zapisu
+
+Redaktor zapisuje zmiany automatycznie chwilę po zakończeniu pisania oraz wtedy, gdy okno przeglądarki traci aktywność. Nie ma przycisku zapisu.
+
+* **Nie udało się zapisać Twoich zmian.** — należy wybrać **Ponów zapis**.
+* **Dokument został zmieniony w innej karcie. Wczytaj go ponownie, aby kontynuować.** — w międzyczasie artykuł został zapisany w innej karcie lub na innym urządzeniu. Edycja i Advisor pozostają zablokowane do wybrania **Wczytaj ponownie**. Przed ponownym wczytaniem należy zaznaczyć i skopiować fragmenty, które nie mogą przepaść.
+
+## Kopiowanie tekstu
+
+**Więcej opcji formatowania → Kopiuj tekst** kopiuje treść artykułu jako zwykły tekst, z pustym wierszem między akapitami; polecenie na chwilę zmienia się w **Skopiowano**. Tytuł, numery przypisów i lista źródeł nie są kopiowane. **Kopiuj tekst** to sposób na przeniesienie artykułu poza Redaktor — eksport do pliku nie jest dostępny.

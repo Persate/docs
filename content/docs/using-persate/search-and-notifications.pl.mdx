@@ -1,42 +1,96 @@
 ---
 title: Wyszukiwanie i powiadomienia
-description: Wyszukiwanie rekordów w Persate i obsługa dwóch kanałów na górnym pasku.
+description: Wyszukiwanie globalne z podglądem źródeł, kanały Ogłoszenia i Wiadomości, komunikaty nad górnym paskiem oraz ustawienia powiadomień.
 ---
 
 ## Wyszukiwanie globalne
 
-Należy otworzyć **Wyszukiwanie** w kontrolkach platformy i wpisać słowo, frazę, temat, pytanie lub identyfikator w polu **Przeszukaj platformę…**. Wyniki mogą obejmować legislację, głosowania, interesariuszy, pliki Repozytorium, inteligentne foldery, alerty, nagrania, historie i wpisy w Mediach oraz Źródła. Przy pytaniach wymagających szerszego wyjaśnienia dostępne jest również polecenie **Zapytaj Advisora**.
+Wyszukiwanie otwiera przycisk **Wyszukiwanie** na górze panelu bocznego lub przycisk wyszukiwania w dolnym pasku na telefonie. Zapytanie wpisuje się w polu **Przeszukaj platformę…**. Wyniki pojawiają się od dwóch znaków i aktualizują w trakcie pisania. Niektóre źródła wymagają dłuższego zapytania, więc krótka fraza może pominąć wyniki, które znajdzie pełniejsza.
 
-Na szerokim ekranie wyniki tworzą chmurę wokół pola wyszukiwania. Wyświetlone karty pozostają na swoich miejscach podczas pobierania kolejnych wyników. Przyciski kategorii zawężają wyszukiwanie do wybranego obszaru, a strzałki **Poprzednie wyniki** i **Następne wyniki** udostępniają pozostałe pobrane wyniki. Na mniejszych ekranach lub przy powiększonym tekście wyniki mają postać zwartych, przewijanych wierszy.
+Wyszukiwanie obejmuje moduły włączone dla organizacji, a każdy wynik uwzględnia dostęp do konkretnego rekordu. Wyniki są pogrupowane w kategorie:
 
-Każdy wynik wskazuje źródło. **Podgląd źródła** otwiera niewielki podgląd z fragmentem treści i ewentualną **Analizą źródła** w oddzielnych sekcjach. Analiza jest oznaczona jako automatyczna i zachowuje zastrzeżenia oraz ograniczenia. Jest przypisana do oryginalnego źródła, a nie do osobnej kategorii wyszukiwania. Zwykłe wyszukiwanie nie pokazuje oceny istotności; przy zapytaniu wprost o znaczenie może pojawić się ocena z zastrzeżeniem w podglądzie. **Powrót do wyszukiwania** lub Escape zamyka podgląd, a **Otwórz źródło** otwiera właściwą stronę źródłową. Etykiety interfejsu odpowiadają wybranemu językowi; treść źródła zachowuje język oryginału.
+| Kategoria | Co obejmuje |
+|---|---|
+| **Przejdź** | Sekcje platformy, np. *głosowania* lub *otwórz nagrania* |
+| **Pliki** | Pliki Repozytorium według nazwy; dłuższe zapytania obejmują także treść plików |
+| **Foldery** | Inteligentne foldery |
+| **Osoby** | Interesariusze — osoby i organizacje |
+| **Powiązania** | Rekordy powiązane z pasującymi osobami, instytucjami i słowami kluczowymi |
+| **Alerty** | Alerty z modułu Monitorowanie |
+| **Akty** | Projekty rządowe, druki sejmowe, akty prawne i dokumenty, interpelacje i zapytania, komisje oraz procesy legislacyjne |
+| **Ministerstwa** | Publikacje ministerstw i innych urzędów |
+| **Na żywo** | Nagrania i fragmenty transkrypcji |
+| **Głosowania** | Głosowania w Sejmie i Senacie, decyzje Prezydenta oraz sprawy Trybunału Konstytucyjnego |
+| **Media** | Tematy, historie i wpisy z modułu Media |
 
-Wybranie wyniku otwiera jego właściwą stronę szczegółową. Jeżeli wynik jest plikiem Repozytorium, Persate może otworzyć selektor plików lub podgląd w bieżącym procesie zamiast przechodzić na inną stronę.
+Identyfikator — ELI, numer druku sejmowego, numer projektu RCL, sygnatura sprawy Trybunału Konstytucyjnego lub odwołanie do głosowania — jest rozpoznawany bezpośrednio i umieszczany na początku wyników. Wyniki mogą też pochodzić z automatycznej analizy źródła prowadzonej przez Persate; trafiają wtedy do kategorii samego źródła, a nie do osobnej kategorii.
 
-Poszczególne źródła wyszukiwania mają różne minimalne długości zapytania i filtry. Brak wyniku w jednej kategorii nie oznacza, że moduł jest pusty; warto doprecyzować sformułowanie. Wyniki uwzględniają również funkcje organizacji i dostęp do poszczególnych rekordów.
+### Odczytywanie wyników
 
-## Announcements
+Na dużym ekranie wyniki tworzą chmurę wokół pola wyszukiwania, a przyciski kategorii znajdują się pod nim. Wyświetlone karty pozostają na miejscu, gdy pojawiają się kolejne wyniki. Jeśli wyników jest więcej, niż mieści ekran, strzałki **Poprzednie wyniki** i **Następne wyniki** przełączają kolejne strony. Na mniejszym ekranie lub przy powiększonym tekście wyniki tworzą listę nad polem wyszukiwania, a **Zamknij wyszukiwanie** (strzałka obok pola) zamyka wyszukiwanie.
 
-Kanał **Ogłoszenia** zawiera informacje o wydaniach i produkcie. Otwarcie kanału odświeża jego zawartość. Poszczególne wpisy można oznaczyć jako przeczytane, a **Oznacz wszystkie jako przeczytane** usuwa stan nieprzeczytany z bieżącego kanału.
+Wiersz przy przyciskach kategorii pokazuje stan: **Wyszukiwanie**, liczbę wyświetlonych wyników spośród znalezionych, **Brak dopasowań** lub **Wyszukiwanie niepełne**. **Niektóre źródła są niedostępne** oznacza, że co najmniej jedno źródło nie odpowiedziało; po wskazaniu komunikatu widać ich listę.
 
-## Messages
+Każdy wynik pokazuje źródło lub najważniejsze szczegóły. Przy plikach Repozytorium i alertach widać również, kto ma do nich dostęp.
 
-Kanał **Wiadomości** zawiera wiadomości bezpośrednie i systemowe, a nie dopasowania alertów. Obejmuje dwie zakładki:
+### Filtrowanie według kategorii
 
-* **Skrzynka odbiorcza** — bieżące wiadomości. Wiadomość można oznaczyć jako przeczytaną lub zarchiwizować.
-* **Zarchiwizowane** — wiadomości zarchiwizowane. Polecenie **Przenieś do skrzynki odbiorczej** przywraca wiadomość.
+Przycisk kategorii pokazuje liczbę jej wyników. Wybranie jednego lub kilku przycisków pozostawia tylko te kategorie, a ponowne wybranie przycisku usuwa go z wyboru. Kategoria bez dopasowań jest wyszarzona na dużym ekranie i ukryta na mniejszym. Zmiana zapytania czyści wybór.
 
-Polecenie **Archiwizuj wszystkie** archiwizuje wszystkie załadowane wiadomości ze skrzynki odbiorczej. Panel można powiększyć dla dłuższej treści.
+### Podgląd źródła
 
-## Powiadomienia o alertach i raportach
+**Podgląd źródła**, czyli ikona informacji przy wyniku, otwiera podgląd bez opuszczania wyszukiwania. Podgląd zawiera typ źródła, tytuł, szczegóły i fragment źródła, a jeśli jest dostępna — osobną sekcję **Analiza źródła** z adnotacją **Automatyczna analiza tego źródła**, tematami i wyjaśnieniem. Zwykłe wyszukiwanie nie pokazuje oceny istotności. Gdy samo zapytanie dotyczy znaczenia, np. zawiera słowa *ważne*, *istotne*, *important* lub *significant*, podgląd może dodać etykietę z zastrzeżeniem, taką jak **Potencjalnie istotne — ocena automatyczna**.
 
-Preferencje dostarczania znajdują się w **Ustawienia → Powiadomienia**. **Alerty e-mail** to opcjonalna wysyłka wiadomości e-mail dla włączonych alertów. Zdarzenia pozostają dostępne na stronie szczegółów alertu również po wyłączeniu e-maili. Skrzynka na górnym pasku nie jest historią zdarzeń alertu.
+**Powrót do wyszukiwania** lub klawisz Escape zamyka podgląd, a **Otwórz źródło** otwiera wynik. Etykiety interfejsu odpowiadają wybranemu językowi; treść źródła zachowuje język oryginału.
 
-Pełną listę opisano na stronie [Preferencje i powiadomienia](/pl/account-and-settings/preferences).
+### Otwieranie wyniku
+
+Wybranie wyniku otwiera jego stronę. Plik Repozytorium otwiera się w podglądzie pliku nad bieżącą stroną, a wynik prowadzący poza Persate — w nowej karcie.
+
+Z klawiatury strzałka w dół przenosi z pola wyszukiwania do pierwszego wyniku, strzałki przełączają wyniki, a Enter otwiera zaznaczony; Enter w polu wyszukiwania otwiera pierwszy wynik. Escape lub kliknięcie poza wynikami zamyka wyszukiwanie. Na telefonie Enter jedynie chowa klawiaturę; wynik otwiera się dotknięciem.
+
+### Pytanie do Advisora
+
+Gdy zapytanie ma postać pytania lub polecenia, obok pola wyszukiwania pojawia się przycisk **Zapytaj Advisora**. Rozpoczyna on nową rozmowę z Advisorem, w której zapytanie jest pierwszą wiadomością. To samo robi skrót Ctrl+Enter (⌘+Enter na Macu), a Enter również przekazuje zapytanie Advisorowi, jeśli nie ma wyników.
+
+## Ogłoszenia
+
+Kanał **Ogłoszenia** na górnym pasku zawiera informacje o wydaniach i nowościach od zespołu Persate. Licznik na przycisku pokazuje nieprzeczytane ogłoszenia.
+
+Panel ma dwie zakładki: **Nieprzeczytane**, z liczbą nieprzeczytanych ogłoszeń, oraz **Wszystkie**. Każde ogłoszenie jest widoczne w całości; ogłoszenie prowadzące do strony w Persate zawiera przycisk **Otwórz w Persate**. **Oznacz jako przeczytane** (znacznik wyboru) dotyczy jednego ogłoszenia, a **Oznacz wszystkie jako przeczytane** — wszystkich. **Maksymalizuj panel** poszerza panel dla dłuższej treści, a **Przywróć rozmiar panelu** przywraca zwykły rozmiar.
+
+## Wiadomości
+
+Kanał **Wiadomości** na górnym pasku zawiera wiadomości skierowane do konta: wiadomości od zespołu Persate oraz powiadomienia włączone w **Ustawienia → Powiadomienia**, np. o dopasowaniach alertów, gotowym raporcie dziennym lub zakończonym zadaniu Advisora. Pełna historia dopasowań alertu pozostaje na stronie alertu w module Monitorowanie.
+
+Panel ma dwie zakładki:
+
+* **Skrzynka odbiorcza** — bieżące wiadomości z liczbą nieprzeczytanych. **Oznacz jako przeczytane** i **Archiwizuj** dotyczą jednej wiadomości; **Archiwizuj wszystkie** archiwizuje wszystkie wiadomości widoczne w skrzynce.
+* **Zarchiwizowane** — wiadomości zarchiwizowane. **Przenieś do skrzynki odbiorczej** przywraca wiadomość.
+
+Wiadomość prowadząca do strony w Persate zawiera przycisk **Otwórz w Persate**. **Maksymalizuj panel** poszerza panel dla dłuższej treści.
+
+## Komunikaty i stan połączenia
+
+Komunikaty zespołu Persate — informacje, prace techniczne, opóźnienia, ostrzeżenia lub incydenty — mogą pojawiać się jako paski nad górnym paskiem, na każdej stronie albo tylko w jednym module. Dłuższy komunikat ma przycisk **Szczegóły**, który rozwija pełną treść. **Zamknij ten komunikat** (krzyżyk) ukrywa go w bieżącej przeglądarce; komunikat wraca po aktualizacji treści.
+
+Pasek nad górnym paskiem pojawia się również wtedy, gdy przeglądarka traci połączenie, ponieważ treści mogą być wtedy nieaktualne, lub gdy dane wczytują się wyjątkowo wolno. Znika samoczynnie po przywróceniu połączenia.
+
+## Ustawienia powiadomień
+
+**Ustawienia → Powiadomienia** określają, co jest dostarczane:
+
+* **Aktualności o produkcie** — wiadomości e-mail o nowych funkcjach i wydaniach.
+* **Alerty e-mail** — wiadomość e-mail, gdy włączony alert zostanie uruchomiony.
+* **Powiadomienia o dopasowaniach alertów**, **Powiadomienia o raporcie dziennym** i **Powiadomienia Advisora** — powiadomienia w Persate i na telefonie. **Powiadomienia o raporcie dziennym** są wyłączone, dopóki nie zostaną włączone.
+
+Zdarzenia alertu pozostają dostępne na stronie alertu także przy wyłączonych wiadomościach e-mail i powiadomieniach. Szczegóły na stronie [Preferencje i powiadomienia](/pl/account-and-settings/preferences).
 
 ## Stany puste i błędy
 
-* **Jesteś na bieżąco** — skrzynka odbiorcza nie zawiera wiadomości.
-* **Brak zarchiwizowanych wiadomości** — nie zarchiwizowano żadnej wiadomości.
-* **Nie udało się wczytać wiadomości** — należy wybrać **Spróbuj ponownie**; stan wiadomości nie został zmieniony.
-* **Niektóre źródła są niedostępne** lub **Wyszukiwanie niepełne** — część źródeł nie zwróciła wyników. Dostępne wyniki nadal działają; można ponowić zapytanie lub otworzyć moduł docelowy. Kategoria bez dopasowań może również wymagać dłuższego lub dokładniejszego zapytania.
+* **Jesteś na bieżąco** — brak nieprzeczytanych ogłoszeń albo pusta skrzynka odbiorcza.
+* **Brak ogłoszeń** — zakładka **Wszystkie** nie zawiera ogłoszeń.
+* **Brak zarchiwizowanych wiadomości** — żadna wiadomość nie została zarchiwizowana.
+* **Nie udało się wczytać wiadomości** — należy wybrać **Spróbuj ponownie**; żadna wiadomość nie została zmieniona.
+* **Brak dopasowań** — we włączonych kategoriach nic nie pasuje do zapytania. Warto zmienić sformułowanie lub wydłużyć zapytanie.
+* **Wyszukiwanie niepełne** lub **Niektóre źródła są niedostępne** — część źródeł nie odpowiedziała. Z wyświetlonych wyników można nadal korzystać; można też powtórzyć zapytanie lub otworzyć moduł bezpośrednio.

@@ -1,52 +1,72 @@
 ---
 title: Security and privacy
-description: Manage passwords, two-step verification, sessions, trusted browsers, and login history.
+description: Password, two-step verification, sessions, trusted devices, connected AI apps, login history, analytics cookies and personal data export.
 ---
 
-Open **Settings → Security & Privacy**. Treat unexpected devices or activity as a security incident and contact your administrator immediately.
+Open **Settings → Security & Privacy**. Treat an unfamiliar device, sign-in or connected app as a security incident: remove its access on this page and report it to the organization's administrator.
 
 ## Password
 
-For password-based accounts, select **Change password**. A new password must contain at least eight characters, one number, and one special character.
+For accounts with a Persate password, **Change password** opens the **Set a password** dialog with **Current password**, **New password** and **Repeat new password**. A new password needs at least eight characters, one number and one special character.
 
-Google- or Microsoft-managed accounts show **Managed by provider**. Change that password through the identity provider.
+Accounts that sign in with a Google or Microsoft account show **Managed by provider** instead. Their password is changed with that provider.
 
 ## Two-step verification
 
-Two-step verification is required for Persate accounts. When an authenticator is enrolled, the row shows a **Live** status and **Replace authenticator**.
+Two-step verification is required for all Persate accounts. The row names the authenticator that protects the account and shows the status **Active**.
 
-Replacement keeps the current authenticator active while the new one is enrolled. Have the new device available and finish the confirmation before leaving the flow.
+To move to a new device, select **Replace authenticator**. The current authenticator stays active until the new one is set up, so keep the new device at hand before confirming. Select **Yes, replace**; Persate asks to confirm the user's identity and then opens the setup of the new authenticator. **Cancel** keeps the current one.
+
+An account without an authenticator shows **Set up**, which starts the setup.
 
 ## Active sessions
 
-Review the devices currently signed in. Sign out sessions that you do not recognize. Signing out another session may take effect when that client next checks its session.
+**Active sessions** lists the devices signed in to the account, with the browser and device, the IP address where available, and **Last active**. The current session is marked **This device**.
+
+Select **Sign out** next to a session that is not recognized, or **Sign out all other devices** to end every session except the current one.
 
 ## Trusted devices
 
-When this panel is available, it lists browsers that may skip the authenticator challenge at sign-in for up to 30 days. Trust applies to that browser, not to the whole computer, and sensitive actions still require verification.
+**Trusted devices** lists browsers allowed to skip the authenticator code at sign-in for up to 30 days. Trust applies to one browser, not to the whole computer, and actions that need extra protection still require verification. A browser appears here after a sign-in with the authenticator code in which the user chose to trust it.
 
-Managing trusted devices requires a current authenticator code. Revoke an individual browser or all other trusted browsers if a device is lost, shared, or no longer controlled by you.
+Managing trusted devices can require a current code: **Verify before managing trusted devices** asks for the **6-digit authenticator code**, confirmed with **Verify**. The list then shows each browser with the dates it was first trusted, last used and when the trust expires; the current browser is marked **This browser**.
+
+* **Revoke trust** removes trust from one browser.
+* **Revoke all other trusted devices** removes trust from every browser except the current one.
+* **Log out and forget this device** ends the current session; this browser needs an authenticator code at its next sign-in.
+
+Each action asks for confirmation. Revocation takes effect immediately, and sessions established through that trust are ended too.
+
+## Connected AI apps
+
+**Connected AI apps** lists the AI apps allowed to use Persate on the user's behalf through an external connection, such as ChatGPT or Claude. Each entry shows when the app was connected, when it was last used and when the connection expires; apps that registered themselves are marked **Unverified**.
+
+Select **Disconnect** next to an app, or **Disconnect all** when more than one is connected, and confirm. The app loses access to Persate at once; to use it again, connect it from the app. **No AI apps are connected.** means there are no connections. See **[AI assistants (MCP)](/mcp)** for how connections are made.
 
 ## Login history
 
-Review recent sign-in activity, including the time and device information made available to Persate. If the list fails to load, refresh once; do not assume an empty screen means there was no activity.
+**Login history** lists recent account events — for example sign-ins, sign-ins through single sign-on, sign-outs, password and email changes — with the time, device and, where available, the IP address. Repeated session activity appears as one entry with its latest time.
 
-## Data and export
-
-**Data & export** downloads a copy of your personal data as a structured, machine-readable JSON file (GDPR Articles 15 and 20). The file contains account details, profile and preferences, organization membership, a manifest of files you own, active sessions, and login history.
-
-Select **Request export**, then confirm. Password-based accounts confirm with the current password; Google- or Microsoft-managed accounts confirm through two-step verification. The browser then downloads the file directly — nothing is sent by email.
-
-File contents are not included in the export file; download them from the Repository. For requests the export does not cover, including permanent account deletion, use your organization's approved support channel.
+If the list does not load, refresh the page; an empty list does not by itself prove that there was no activity.
 
 ## Analytics cookies
 
-**Analytics cookies** shows the choice stored in this browser: allowed, declined, or not made yet. Persate runs analytics only after **Accept** in the cookie notice. Before a choice, and after **Decline**, no analytics run and no analytics cookies are stored.
+**Analytics cookies** shows the choice stored in this browser: allowed, declined, or not made yet. Persate runs analytics only after **Accept** in the cookie notice. Before a choice is made, and after **Decline**, no analytics run and no analytics cookies are stored.
 
-Select **Cookie settings** to change or withdraw the choice. Analytics stop immediately, their cookies are deleted, and the cookie notice opens again. The same **Cookie settings** link sits under the sign-in form and in the website footer. The choice applies to one browser; repeat it in other browsers and on other devices.
+Select **Cookie settings** to change or withdraw the choice. Analytics stop immediately, their cookies are deleted, and the cookie notice opens again. The same **Cookie settings** link is under the sign-in form and in the website footer. The choice applies to one browser; repeat it in other browsers and on other devices.
+
+## Data and export
+
+**Data & export** downloads a copy of the user's personal data as a structured, machine-readable JSON file (GDPR Articles 15 and 20). The file contains account details, profile and preferences, organization membership, a list of the files the user owns, active sessions and login history.
+
+1. Select **Request export**.
+2. Accounts with a Persate password enter the **Current password**; accounts that sign in with Google or Microsoft confirm through two-step verification when asked.
+3. Select **Download my data**. The browser downloads the file directly; nothing is sent by email.
+
+File contents are not part of the export; download them from the Repository. For requests the export does not cover, including permanent account deletion, use the organization's approved support channel.
 
 ## Troubleshooting
 
-* Authenticator code rejected — use the current six-digit code and confirm the device clock is accurate.
-* Trusted-devices panel unavailable — the account has no enrolled authenticator or this security backend is not enabled.
-* Unknown session or sign-in — sign it out if possible, change the password for password accounts, and report it.
+* Authenticator code rejected — use the current six-digit code and check that the device clock is accurate.
+* **Trusted devices** asks for a code again — managing trusted devices requires a fresh authenticator code; a remembered browser is not enough.
+* Unknown session, sign-in or connected app — sign it out or disconnect it, change the password if the account has one, and report it.

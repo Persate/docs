@@ -1,67 +1,81 @@
 ---
 title: Best practices
-description: Practical guidelines for effective work with the AI Advisor — formulating questions, attaching files, handling citations, and recognizing budget exhaustion signals.
+description: Practical guidelines for effective work with the Advisor — formulating questions, choosing a depth, attaching context, reading citations, steering a running task, and handling partial answers.
 ---
 
 ## Formulating questions using corpus terms
 
-The advisor is designed with specific skills — analyzing and searching Sejm proceedings, stakeholders, clubs, votes, and files. Questions formulated precisely using these terms generate better and more accurate responses.
+The Advisor is designed with specific skills — analyzing and searching Sejm proceedings, legislative processes, stakeholders, clubs, votes, recordings, Media and files. Questions formulated precisely using these terms generate better and more accurate responses.
 
 * **Less effective:** *"What is happening with energy policy?"* — the scope remains undefined.
 * **More effective:** *"Summarize recent floor activity on the renewable energy bill, including the last vote and committee actions from the past week."*
 
-Not every question needs to be elaborate. Including **at least one specific piece of information** — a bill name, stakeholder, club, date range, committee, or file — is sufficient.
+Not every question needs to be elaborate. Including **at least one specific piece of information** — a bill name, print number, stakeholder, club, date range, committee, or file — is sufficient.
 
-## Attaching a file instead of describing it
+## Choosing the thinking depth
 
-When the answer resides in a document already available in the repository, attaching it is faster and more accurate than asking the advisor to search for it.
+The depth control in the composer applies to a single message:
 
-Entering `@` in the input field opens the file selector. Searching is performed by name or — after switching the mode — by document content. Multiple files can be attached simultaneously.
+* **Surface** — lookups with an obvious single answer and short follow-ups to an answer already given.
+* **Balanced** — everyday questions; the standard setting.
+* **Deep** — multi-source briefings, comparisons and questions where completeness matters more than speed.
 
-The advisor treats the attached file as a primary reference and skips the step of searching across all files.
+Because the depth is set per message, one conversation can mix them: a **Deep** question for the briefing, then **Surface** follow-ups on its details.
 
-When **not** to attach a file: when the goal is to *find* the correct document. A query like *"Which of our briefings discusses changes in public procurement law?"* should be submitted without an attachment to trigger the advisor's hybrid search.
+## Attaching context instead of describing it
+
+When the answer resides in a document already available in the Repository, attaching it is faster and more accurate than asking the Advisor to search for it.
+
+Typing `@` in the message field, or selecting **Add context from global search**, opens the platform search. Files picked there are attached to the message; other results — a vote, a print, a profile — are added as context tags. Several items can be attached at once.
+
+The Advisor receives the identity of each attached item, so it can read the file or record directly and skips the step of searching across all files.
+
+When **not** to attach a file: when the goal is to *find* the correct document. A query like *"Which of our briefings discusses changes in public procurement law?"* should be submitted without an attachment, so that the Advisor searches the files itself.
 
 ## Reading citations, not just response content
 
-Every advisor data source is exposed as a verifiable link. This enables verifying the generated data:
+Every data source the Advisor uses is exposed as a verifiable citation chip. Selecting it allows verification of:
 
 * Vote counts and results per club.
 * Stakeholder identities.
 * The content of a cited post.
-* The source document at the cited fragment.
+* The source document at the cited passage — files open in the file viewer with the **Cited passage** shown, and legal texts open in the reader at that passage.
 
-Generated responses generally align with facts, but if a generated response appears incorrect, regenerate it by selecting the arrow icon below the response. The second pass often returns correctly grounded citations.
+The shield below an answer summarizes the source check; its details list the points that need caution. Generated responses generally align with facts, but if a response appears incorrect, run it again with **Regenerate response** below the answer. The second pass often returns correctly grounded citations.
 
 ## Utilizing conversation continuity
 
-The advisor retains the full conversation as context for follow-up questions. Three effective patterns:
+The Advisor retains the full conversation as context for follow-up questions. Three effective patterns:
 
-* **In-progress refinement** — *"Now break down that same comparison by voivodeship instead of club."* — the advisor reuses the previous result.
+* **In-progress refinement** — *"Now break down that same comparison by voivodeship instead of club."* — the Advisor reuses the previous result.
 * **Deepening a specific finding** — *"Tell me more about the discrepancy in amendment 14."*
-* **Transitioning to action** — *"Configure an alert covering the bills you just briefed."* — the advisor extracts identifiers from the previous response.
+* **Transitioning to action** — *"Prepare an alert covering the bills you just briefed."* — the Advisor takes the identifiers from the previous response and prepares an inactive alert draft for review in the Tracker.
 
-Avoid jumping between unrelated threads in a single conversation. For different topics, open new sessions — the chat history makes this efficient.
+Avoid jumping between unrelated threads in a single conversation. For different topics, open new sessions — the conversation history makes this efficient, and earlier conversations remain searchable.
 
-## Recognizing the budget exhaustion signal
+## Steering a running task
 
-When a query exceeds the single-request budget — usually a multi-source question with a very broad scope — the response concludes with a note regarding the incomplete portion:
+A running task does not need to be stopped to change its direction. While the Advisor works, text sent from the message field reaches the running task as a note — for example *"Limit it to the current term"* or *"Leave out the Senate votes"*. The status below the note shows whether the Advisor has taken it into account.
 
-> *"...Out of the eleven bills you asked about, I discussed nine in detail; the query budget was insufficient for bills 10 and 11. Repeat the query narrowed down to those two specifically."*
+Use the stop button (**Stop research**) only when the direction is wrong altogether. What the Advisor has found so far stays in the conversation and can be used in a new, more precise question. See [Following the Advisor's work](/advisor/activity).
 
-This is a valid result. The recommended action is to accept the partial response and submit a narrower follow-up query. If budget exhaustion occurs regularly for a given question type, the question is likely too broad — two narrower questions yield a better combined result than one very broad one.
+## Handling partial answers
 
-## Responding to elicitation forms
+When a question is too broad to cover in one turn — usually a multi-source question with a very wide scope — the answer covers what it can and ends with a *Partial answer.* notice that names the gap and suggests how to narrow the question.
 
-When a tool requires a resolution (e.g., *"Which Sejm term?"*, *"Which of the two stakeholders named Kowalski?"*), the advisor displays a form. Fill it out directly — entering the answer in the chat field leaves the form unresolved and initiates a new turn instead of continuing the current one.
+This is a valid result. The recommended action is to accept the partial answer and submit a narrower follow-up query, for example limited to one sitting, document, person or period. If partial answers occur regularly for a given question type, the question is likely too broad — two narrower questions yield a better combined result than one very broad one.
 
-## When the advisor is the wrong tool
+## Answering clarifying questions
 
-The advisor deflects several classes of questions:
+When a tool needs a decision (e.g., *"Which Sejm term?"*, *"Which of the two MPs named Kowalski?"*), the Advisor asks in the conversation and offers options. Answer with those options and **Continue**, or **Skip** the question. Text typed in the message field while the question is open is sent as a note to the running task and does not answer the question.
 
-* **General conversation** — questions about opinions and evaluations outside the legislative corpus.
-* **Out-of-scope analysis** — international relations, market forecasts, election polls. The advisor will note the limitation and answer what is available from the corpus.
-* **Content creation** — the advisor summarizes, briefs, and compares, but does not write press releases or legal documents.
-* **Bulk operations** — the advisor executes queries, not actions. Existing actions (creating alerts, uploading files) are explicit and confirmed.
+## When the Advisor is the wrong tool
 
-In these cases, the advisor explains the limitation and points to the appropriate part of the platform when possible.
+The Advisor deflects several classes of questions:
+
+* **General conversation** — questions about opinions and evaluations outside the platform's data.
+* **Out-of-scope analysis** — international relations, market forecasts, election polls. The Advisor notes the limitation and answers what is available from the corpus.
+* **Finished content** — the Advisor summarizes, briefs and compares. On request it writes an article draft into the Editor, when the Editor is enabled, but it never publishes or sends anything, and its drafts require review.
+* **Unrequested or bulk actions** — the Advisor researches; its actions are limited and explicit. It prepares drafts for review (alerts, Smart Folders, Editor articles) and changes or deletes an existing alert only on an explicit request, asking for confirmation before a deletion. It does not upload files.
+
+In these cases, the Advisor explains the limitation and points to the appropriate part of the platform when possible.

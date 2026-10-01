@@ -1,47 +1,76 @@
 ---
 title: Inteligentne foldery
-description: Wirtualne foldery, automatycznie agregujące pasujące dokumenty.
-hidden: true
+description: Opisanie zbioru dokumentów zwykłym językiem i gromadzenie pasujących plików z Repozytorium w inteligentnym folderze.
 ---
 
-Smart folder to zapisane zapytanie, które automatycznie aktualizuje swoją zawartość. Każdy dokument spełniający określone kryteria — takie jak fraza tekstowa, typ pliku, data czy tag — pojawia się w folderze bez konieczności ręcznego przenoszenia.
+Inteligentny folder to zapisany opis zbioru plików — tematów, osób, typów plików, źródeł, dat lub zakresu dostępu — który gromadzi pasujące pliki z Repozytorium. Nie jest miejscem przechowywania: pliki pozostają na swoim miejscu, a usunięcie inteligentnego folderu nie usuwa żadnego pliku.
 
-Smart folder nie jest fizyczną lokalizacją; pliki pozostają w repozytorium, a ich przynależność do folderu jest wyznaczana dynamicznie na podstawie skonfigurowanych filtrów.
+Moduł otwiera pozycja **Inteligentne foldery** w panelu bocznym (**PRZESTRZEŃ ROBOCZA → Inteligentne foldery**), gdy funkcja jest włączona dla organizacji. Inteligentne foldery są dostępne także w panelu Repozytorium.
 
-## Przykłady zastosowań
+## Lista inteligentnych folderów
 
-*   Gromadzenie wszystkich dokumentów zawierających frazę *„legislacja 2025”*, uszeregowanych od najnowszych.
-*   Wyodrębnienie plików PDF dłuższych niż 50 stron, które nie mają jeszcze przypisanych tagów.
-*   Konsolidacja dokumentacji dotyczącej konkretnego interesariusza na podstawie słów kluczowych.
+Lista zawiera kolumny **Nazwa**, **Opis** i **Ostatnia zmiana**. Wybranie folderu otwiera go. Po najechaniu na wiersz pojawiają się polecenia **Edytuj inteligentny folder** i **Usuń inteligentny folder**.
 
-## Tworzenie folderu
+Panel po prawej stronie zawiera przycisk **Utwórz inteligentny folder** oraz pole **Wyszukiwanie**, które filtruje listę.
 
-Nowy smart folder tworzy się przez opisanie poszukiwanego zbioru dokumentów w języku naturalnym (np. *„Raporty finansowe z ostatniego kwartału — pliki PDF i Word”*). Asystent AI automatycznie przekłada opis na zestaw reguł — kryteria treściowe oraz filtry techniczne — i prezentuje podgląd dopasowanych plików do zatwierdzenia. Dostępne są również gotowe sugestie startowe ułatwiające rozpoczęcie.
+Aby usunąć kilka folderów, należy zaznaczyć je polami wyboru i wybrać **Usuń** na pasku u dołu ekranu. Usunięcie folderu — z wiersza, z tego paska lub ze strony folderu — następuje od razu, bez dodatkowego potwierdzenia.
 
-## Konfiguracja i edycja
+## Tworzenie inteligentnego folderu
 
-Smart foldery są widoczne w panelu bocznym obok głównego widoku repozytorium. Wybranie folderu otwiera jego widok szczegółowy, w którym prezentowane są pogrupowane reguły:
+1. Wybrać **Utwórz inteligentny folder**. Strona wyświetla pytanie **Co chcesz zbierać w folderze?**
+2. Opisać pliki do zebrania, na przykład *„Kwartalne raporty finansowe z ostatniego roku — tylko PDF i Word”*. Kafelki w sekcji **Zacznij od przykładu** wpisują przykładową prośbę.
+3. Opcjonalnie dodać pliki wzorcowe: wybrać ikonę Repozytorium w polu wprowadzania (**Dodaj pliki z repozytorium**) i wskazać pliki w oknie **Dodaj pliki wzorcowe**. Wybrane pliki pojawiają się nad polem i można je usunąć. Persate traktuje je jako wskazówkę i wyprowadza z nich szerszy zbiór, który reprezentują.
+4. Wysłać prośbę. Persate analizuje Repozytorium, przeszukuje treść plików, sprawdza filtr i odpowiada w rozmowie. Wynik można korygować kolejnymi odpowiedziami, na przykład *„tylko pliki PDF”* albo *„uwzględnij też zeszły rok”*.
+5. Sprawdzić podgląd w panelu po prawej stronie i wybrać **Utwórz inteligentny folder**. Ten sam efekt daje odpowiedź *zapisz*. Nowy folder otwiera się automatycznie.
 
-*   **Dostępność** — zakres widoczności (private / shared).
-*   **Filtry techniczne** — strukturalne ograniczenia dotyczące źródła, typu pliku, dat, rozmiaru lub nazwy.
-*   **Kryteria treściowe** — wymagane, opcjonalne i wykluczone frazy oraz dopasowanie po zawartości pliku.
+Folder można też rozpocząć od plików wybranych w Repozytorium: w widoku listy należy zaznaczyć pliki i wybrać **Utwórz inteligentny folder** na pasku zaznaczenia. Kreator otwiera się z tymi plikami dołączonymi jako wzorce.
 
-Kryteria folderu można doprecyzowywać, a zmiany zatwierdza się zapisem, co powoduje natychmiastowe odświeżenie listy plików.
+Trwający krok zatrzymuje przycisk zatrzymania lub klawisz **Esc**; prośba wraca wtedy do pola wprowadzania.
 
-## Tryby prezentacji
+## Sprawdzanie podglądu
 
-Każdy folder oferuje dwa sposoby wyświetlania danych:
+Panel po prawej stronie (na telefonie przycisk **Podgląd inteligentnego folderu**) w trakcie pracy wyświetla **Przygotowywanie podglądu inteligentnego folderu…**. Gdy szkic jest gotowy, panel pokazuje:
 
-*   **Storage view** — standardowy układ listy lub kafelków, optymalny do pobierania dokumentów.
-*   **Widok osi czasu** — prezentacja plików na osi czasu. Pozwala zidentyfikować natężenie dokumentacji w określonych przedziałach czasowych.
+* nazwę i opis folderu oraz krótkie podsumowanie jego tematu;
+* **Zawartość folderu** — liczbę pasujących plików i zestawienie według kategorii **Źródła**, **Typy plików**, **Osoby w kryteriach** lub **Zakres** oraz **Właściciele plików**;
+* **Pliki wzorcowe** — użyte pliki wzorcowe wraz z informacją o plikach pominiętych z powodu braku dostępu;
+* **Pasujące pliki** — liczbę dopasowań i próbkę plików z oceną trafności, źródłem, datą i krótkim streszczeniem;
+* **Filtr** — kryteria, które zostaną zapisane, takie jak **Dostęp**, **Źródła**, **Typy plików**, **Zakres dat**, **Nazwa pliku**, **Musi zawierać**, **Dowolny z**, **Wyklucz**, **Wyszukiwanie w treści**, **Rozmiar** lub **Sortuj**;
+* **Propozycje doprecyzowania** — pomysły na zawężenie lub poszerzenie folderu. Aby zastosować propozycję, należy poprosić o nią w rozmowie.
 
-## Zalecany sposób pracy
+Przycisk **Utwórz inteligentny folder** staje się dostępny, gdy szkic ma nazwę i kryteria. Jeśli rozmowa zakończy się bez szkicu, panel wyświetla **Podgląd inteligentnego folderu jest niedostępny.**; należy doprecyzować prośbę i spróbować ponownie.
 
-1.  Opisać poszukiwany zbiór dokumentów w języku naturalnym i pozwolić asystentowi zbudować reguły.
-2.  Zweryfikować podgląd dopasowanych plików oraz wygenerowane kryteria.
-3.  Doprecyzować folder, dodając lub usuwając filtry techniczne (np. wybierając wyłącznie format PDF).
-4.  Zawęzić kryteria treściowe (frazy wymagane, opcjonalne lub wykluczone), aby odsiać nieistotne pozycje.
+## Otwieranie inteligentnego folderu
+
+Strona folderu wyświetla pasujące pliki w tej samej tabeli co Repozytorium. Wybranie pliku otwiera go w podglądzie. Po zaznaczeniu kilku plików pasek u dołu ekranu oferuje polecenia **Pobierz** i **Wyczyść**.
+
+Panel po prawej stronie zawiera:
+
+* **Otwórz w Repozytorium** — stosuje kryteria folderu w widoku Repozytorium: jego filtry, sortowanie i kryteria treściowe, które panel Repozytorium pokazuje w sekcji **Dopasowanie semantyczne**. Przycisk **Wyczyść filtry inteligentnego folderu** w panelu Repozytorium przywraca pełną listę;
+* **Edytuj** i **Usuń** — usunięcie następuje od razu;
+* nazwę i opis folderu. Aby zmienić nazwę, należy najechać na nią i wybrać ikonę ołówka;
+* **Co zbiera ten folder** — podsumowanie tematu, jeśli uzupełnia opis;
+* **Zawartość folderu** — zestawienie według źródła, typu pliku, osób lub zakresu oraz właściciela pliku. Jeśli nie wszystkie pasujące pliki są wyświetlone, adnotacja podaje, na podstawie ilu z nich przygotowano zestawienie.
+
+Komunikat **Żaden plik nie pasuje do tego inteligentnego folderu.** oznacza, że żaden dostępny plik nie spełnia obecnie kryteriów.
+
+## Inteligentne foldery w Repozytorium
+
+Panel Repozytorium zawiera sekcję **Inteligentne foldery** z polem wyszukiwania i pierwszymi folderami z listy. Wybranie folderu filtruje widok Repozytorium według jego kryteriów. Gdy folderów jest więcej, polecenie **Zarządzaj wszystkimi** otwiera pełną listę inteligentnych folderów.
+
+## Edycja inteligentnego folderu
+
+Edycję otwiera przycisk **Edytuj** na stronie folderu albo polecenie **Edytuj inteligentny folder** na liście. Strona wyświetla nagłówek **Edycja** z nazwą folderu, a panel **Bieżąca konfiguracja inteligentnego folderu** pokazuje zapisaną definicję.
+
+1. Opisać zmianę, na przykład *„ogranicz do plików PDF”* albo *„zawęź do III kwartału”*.
+2. Sprawdzić zaktualizowany podgląd w panelu.
+3. Wybrać **Zapisz zmiany**. Otwiera się strona folderu ze zaktualizowaną definicją.
+
+Jeśli zapis się nie powiedzie, pojawia się komunikat **Nie udało się zaktualizować folderu.**, a dotychczasowa definicja pozostaje bez zmian.
 
 ## Stany pustego widoku i błędu
 
-*   *„No documents match this folder's criteria”* — żadne pliki w repozytorium nie spełniają warunków zdefiniowanych w konfiguracji folderu.
+* **Brak inteligentnych folderów** — nie utworzono jeszcze żadnego folderu. Należy wybrać **Utwórz inteligentny folder**.
+* **Brak pasujących inteligentnych folderów** — wyszukiwanie wyklucza wszystkie foldery.
+* **Nie udało się wczytać inteligentnych folderów** — nie udało się wczytać listy. Należy spróbować ponownie za chwilę.
+* **Nie znaleziono folderu.** lub **Nie znaleziono inteligentnego folderu** — folder mógł zostać usunięty albo dostęp do niego nie jest już możliwy.

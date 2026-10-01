@@ -1,140 +1,148 @@
 ---
 title: Working examples
-description: Representative queries with a description of the expected advisor behavior.
+description: Representative queries with a description of the expected Advisor behavior.
 ---
 
 Every example contains:
 
 * **Query** — the content of the entered message.
-* **What the advisor does** — the skills appearing in the message timeline.
-* **Response** — the structure and type of citations.
+* **What the Advisor does** — the skill families and tool chips that appear in the activity.
+* **What the response looks like** — the structure of the answer and its citations.
 
-The actual content of every response may vary. These are only examples; however, the general shape of the response and the invoked tools generally remain similar.
+The actual content of every response varies, and chip labels can change as tools are updated. These are only examples; the general shape of the response and the tools used generally remain similar. In the sample responses, a resource URI in square brackets stands for a citation chip — in the product, the chip shows the source's title and opens the source.
 
 ## Example 1 — Votes
 
 **Query:**
 
-> Which Civic Coalition stakeholders voted against the proposed amendment to the energy bill at the last Sejm session? Show the resolution result and link to the vote.
+> Which Civic Coalition MPs voted against the proposed amendment to the energy bill at the last Sejm sitting? Show the result and link the vote.
 
-**What the advisor does:**
+**What the Advisor does:**
 
-1. **Legislation** — `List votings` — enumeration of recent votes; filters down to votes concerning the energy bill and the amendment.
-2. **Legislation** — `Get voting` — retrieval of the per-mandate distribution and metadata.
-3. **Stakeholders** — `Get stakeholder` — matching names to identifiers for voting Civic Coalition members.
+1. **`legislation`** — lists the votes of the last sitting and selects those on the energy bill and the amendment (`Listing votings`).
+2. **`legislation`** — reads the selected vote: its result and how each MP voted (`Reading voting`).
+3. **`stakeholders`** — matches the names to MP profiles (`Searching legislators`).
 
 **What the response looks like:**
 
-> The amendment was **rejected** in *Voting 47 of Proceeding 12* on 28 March 2026, with a result of 198 for / 232 against — see [legislation://voting/12/47]. The following Civic Coalition members voted against: [feature://stakeholder/abc-123], [feature://stakeholder/def-456], [feature://stakeholder/ghi-789] (3 out of 134 club members).
+> The amendment was **rejected** in vote 47 at sitting 12 on 28 March 2026, by 198 for and 232 against — see [legislation://voting/12/47]. The following Civic Coalition MPs voted against: [feature://stakeholder/abc-123], [feature://stakeholder/def-456], [feature://stakeholder/ghi-789] (3 of the club's 134 members).
 
 ## Example 2 — Public stance versus voting record
 
 **Query:**
 
-> The Climate Coalition has recently been vocal publicly regarding the coal phase-out. How did its members actually vote in the plenum on coal-related resolutions in the last month? Are there any discrepancies?
+> The Climate Coalition has recently been vocal about phasing out coal. How did its members actually vote on coal-related amendments in the last month? Are there any discrepancies?
 
-**What the advisor does:**
+**What the Advisor does:**
 
-1. **Stakeholders** — `Search legislators` — filtering by Climate Coalition affiliation.
-2. **Public pulse** — `Search tweets` — searching posts from the last month containing coal phase-out terms.
-3. **Legislation** — `List votings` — filtering to the same date range.
-4. **Legislation** — `Get voting` — details of each candidate vote.
-5. **Legislation** — `Votes by legislator` — cross-verification by club membership.
+1. **`stakeholders`** — finds the club's MPs (`Searching legislators`).
+2. **`public_pulse`** — searches the club's posts from the last month on the coal phase-out (`Searching tweets`).
+3. **`civic`** — finds coal-related votes in the same period (`Searching votings by topic`).
+4. **`legislation`** — reads each candidate vote (`Reading voting`).
+5. **`legislation`** — cross-checks the individual MPs' votes (`Votes by legislator`).
 
 **What the response looks like:**
 
-> Out of nine plenary votes on coal amendments in the last 30 days, the Coalition was united in six. Three discrepancies:
+> Out of nine votes on coal amendments in the last 30 days, the Coalition voted together in six. Three discrepancies:
 >
-> * **Stakeholder Kowalska** ([feature://stakeholder/...]) wrote publicly about the proposed transformation fund ([feature://public_pulse/tweet/...]), but voted **abstain** in the funding amendment ([legislation://voting/12/52]).
+> * **MP Kowalska** ([feature://stakeholder/...]) wrote publicly in favor of the proposed transformation fund ([feature://public_pulse/tweet/...]), but **abstained** on the funding amendment ([legislation://voting/12/52]).
 > * The Coalition split 7–2 on the mine closure schedule amendment ([legislation://voting/12/61]).
-> * **Stakeholder Nowak** ([feature://stakeholder/...]) was absent for three of the nine votes.
+> * **MP Nowak** ([feature://stakeholder/...]) was absent for three of the nine votes.
 
-## Example 3 — Document analysis with an attached file
+## Example 3 — Analysis of an attached file
 
-**Query:** 
-> Summarize the regulatory recommendations in this briefing and check if any of them were passed at recent Sejm sessions *(with attached `Q1-2026-renewables-briefing.pdf`)*.
+**Query:**
 
-**What the advisor does:**
+> Summarize the regulatory recommendations in this briefing and check whether any of them has progressed in Parliament. *(with `Q1-2026-renewables-briefing.pdf` attached through `@`)*
 
-1. **Documents** — `Read file` — reading recommendations directly from the attached file (without a search step — the file identifier is provided).
-2. **Legislation** — `List votings` — filtering by topics covering each recommendation.
-3. **Legislation** — `Get voting` — details of matching votes.
+**What the Advisor does:**
+
+1. **`documents`** — reads the attached file directly; no search is needed because the file is identified in the message (`Reading file`).
+2. **`civic`** — looks for bills and prints that match each recommendation (`Search processes`, `Searching parliamentary prints`).
+3. **`legislation`** — reads the related votes (`Reading voting`).
 
 **What the response looks like:**
 
-> The briefing contains five recommendations [Q1-2026-renewables-briefing.pdf, c1]. Among them:
+> The briefing contains five recommendations [documents://chunk/.../...]. Among them:
 >
-> * **Recommendation 2** (simplification of the connection permit process) corresponds to amendment 14 in the energy bill, *passed* on 22 March — see [legislation://voting/12/41].
-> * **Recommendation 4** (expansion of the contract for difference limit) was proposed but *withdrawn* before the vote [Q1-2026-renewables-briefing.pdf, c4].
-> * The remaining three recommendations have not appeared in proposed legislation so far.
+> * **Recommendation 2** (simplifying the grid connection permit process) corresponds to amendment 14 to the energy bill, *passed* on 22 March — see [legislation://voting/12/41].
+> * **Recommendation 4** (raising the contract-for-difference limit) was tabled but *withdrawn* before the vote [documents://chunk/.../...].
+> * The remaining three recommendations have not appeared in any bill so far.
 
-## Example 4 — Alert configuration with elicitation
+The file chips open the briefing in the file viewer at the cited passage.
 
-**Query:**
-
-> Configure an alert tracking any reference to the new pharmaceutical reform in plenary speeches and uploaded documents.
-
-**What the advisor does:**
-
-1. **Legislation** — `List votings` — searching for the bill referenced in the question.
-2. The match returns two candidate bills — the tool emits an **elicitation** requesting a selection.
-3. *(selection from the embedded form)*
-4. **Alerts** — `Create alert` — creating an alert with the specific bill, description, and narrow keywords.
-
-**What the response looks like:**
-
-> Alert **Pharmaceuticals Reform 2026** ([feature://alert/...]) has been created. It tracks plenary speeches and uploaded documents. Status: **Active**, visibility: **Private** — this can be modified in the alert detail view.
-
-## Example 5 — Extracting a document fragment
+## Example 4 — Preparing an alert with a clarifying question
 
 **Query:**
 
-> Find the fragment in the latest Justice Committee transcript where the chairman announced the schedule for the public procurement bill amendment.
+> Prepare an alert for new developments on the pharmaceutical reform bill.
 
-**What the advisor does:**
+**What the Advisor does:**
 
-1. **Documents** — `Hybrid search` — searching committee transcripts for terms related to the procurement bill.
-2. **Documents** — returning a link for the matching fragment.
+1. **`civic`** — looks for the bill the request refers to (`Search processes`).
+2. Two bills match the description, so the Advisor asks which one is meant (`Asking clarifying question`); the candidates appear in the conversation as options.
+3. *(one option is chosen and confirmed with **Continue**)*
+4. **`alerts`** — checks whether an existing alert already covers the bill (`Listing alerts`).
+5. **`agent`** — saves an inactive alert draft for the Tracker (`Prepare workspace`).
 
 **What the response looks like:**
 
-> The chairman announced the schedule in the transcript from 30 March 2026 ([documents://chunk/.../...]). Cited fragment:
+> I prepared an alert draft, **Pharmaceutical reform**, for the bill selected above. Monitoring has not started: review the scope and sources in the Tracker and save the alert to activate it.
+
+Below the answer, a **Monitoring setup** card with the status **Setup required · Monitoring is not active** opens the alert creator with the draft. If the conversation is still open when the draft is ready, Persate opens the creator automatically.
+
+## Example 5 — What was said at a sitting
+
+**Query:**
+
+> At the latest Justice Committee sitting, where did the chair announce the schedule for the public procurement amendment? Quote the exact words.
+
+**What the Advisor does:**
+
+1. **`recordings`** — finds the latest analyzed recording of the committee (`Searching recordings catalog`).
+2. **`recordings`** — searches the statements about the procurement amendment (`Searching speeches in recordings`).
+3. **`recordings`** — reads the transcript around the matching statement (`Reading recording transcript`).
+
+**What the response looks like:**
+
+> The chair announced the schedule towards the end of the sitting [recordings://speech/.../...]. Quoted passage:
 >
 > *"The procurement-law amendment will be considered in second reading at the next sitting on 5 April."*
->
-> The button opens the file scrolled to the cited fragment.
+
+The chip opens the recording in **Recordings** at the cited moment.
 
 ## Example 6 — Multi-source legislative briefing
 
 **Query:**
 
-> I need a one-page brief on the state of the renewable energy bill: legislative status, recent committee actions, public party positioning, projected voting outcome, and stakeholder concerns.
+> I need a one-page brief on the renewable energy bill: legislative status, recent committee work, how the clubs have voted on it so far, and what they say publicly.
 
-**What the advisor does:**
+**What the Advisor does:**
 
-1. **Legislation** — `List votings`, `Get voting` — the legislative trajectory of the bill.
-2. **Documents** — `Hybrid search` — committee discussions over the last three weeks.
-3. **Public pulse** — `Search tweets` — positioning of every major club over the last two weeks.
-4. **Legislation** — `Votes by legislator` — projecting the vote outcome based on previous alignments.
-5. **Documents** — `Hybrid search` — internal briefings regarding this bill.
-6. **Alerts** — `List alerts` — verifying whether an alert covering this bill exists.
+1. **`agent`** — publishes a plan; its steps appear in the **Plan** panel (`Updating plan`).
+2. **`agent`** — starts research agents for parts of the brief; each appears as a chip that opens its own session (`Research agents`).
+3. **`civic`** — the bill's stages and prints (`Legislative process`, `Print history`).
+4. **`recordings`** — committee discussions of the bill (`Searching speeches in recordings`).
+5. **`legislation`** — how each club voted at earlier stages (`Reading voting`, `Votes by legislator`).
+6. **`public_pulse`** — the public positions of the main clubs (`Searching tweets`).
+7. **`alerts`** — whether an alert already covers the bill (`Listing alerts`).
 
 **What the response looks like:**
 
-> *Status.* The bill is in its second reading. The Energy Committee reported positively on 28 March ([legislation://voting/12/38]).
+> *Status.* The bill is in second reading; the committee report is available as a Sejm print ([legislation://print/10/1234]).
 >
-> *Recent committee actions.* The chairman announced 5 April as the voting date ([documents://chunk/.../...]).
+> *Recent committee work.* At the last committee sitting, the chair set the date of the next reading ([recordings://speech/.../...]).
 >
-> *Public positioning.* The Civic Coalition supports it with reservations ([feature://public_pulse/tweet/...]). PiS opposes it, citing industrial costs ([feature://public_pulse/tweet/...]).
+> *Votes so far.* Votes on the amendments at earlier stages, broken down by club ([legislation://voting/12/38]).
 >
-> *Projected outcome.* The bill will likely pass with a margin of 30–45 votes.
+> *Public positioning.* The position of each main club, with its posts ([feature://public_pulse/tweet/...]).
 >
-> No alert covers this bill — an option to create one is available.
+> No alert covers this bill yet — one can be prepared on request.
 
 ## Recurring patterns in the examples
 
 Three patterns recur in the examples above:
 
-* **The advisor starts with structural searches.** Voting records, stakeholder identities, and committees provide an anchor — text searching is narrowed by what the structural tools found.
-* **Multi-source citations are the norm.** Even simple queries produce several URI badges, enabling verification of every claim.
-* **The advisor gracefully closes its work at turn limits.** A broad query ending at the limit returns a full response for the covered portion and a single-line note regarding the deferred scope.
+* **The Advisor starts with structured records.** Votes, legislative processes and MP identities provide an anchor — text searches are narrowed by what the structured tools found.
+* **Multi-source citations are the norm.** Even simple queries produce several citation chips, so every claim can be verified.
+* **Large questions are planned and divided.** A broad request gets a plan and may be split among research agents; if the whole question cannot be covered in one turn, the answer says which part remains and suggests a narrower follow-up.

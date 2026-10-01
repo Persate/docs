@@ -1,51 +1,64 @@
 ---
 title: Redaktor
-description: Tworzenie, porządkowanie i przegląd artykułów w Persate.
+description: Przestrzeń do pisania artykułów z dokumentem w centrum — edycje Advisora, sprawdzanie faktów i języka, ponumerowane źródła oraz historia dokumentu.
 ---
 
-Oznaczony jako beta **Redaktor** łączy prywatną bibliotekę dokumentów, edytor tekstu sformatowanego i prowadzony przegląd. Jest dostępny wyłącznie po włączeniu funkcji **Redaktor** dla organizacji.
+**Redaktor** służy do pisania artykułów, notatek i stanowisk. Otwarty dokument zajmuje środek strony, a pasek widoków po prawej stronie przełącza między tekstem, jego historią, źródłami i Advisorem. Advisor odpowiada na pytania o tekst i proponuje zmiany, które trafiają do dokumentu dopiero po ich zastosowaniu. Polecenie **Sprawdź dokument** przegląda fakty i język fragment po fragmencie.
 
-## Biblioteka Editora
+Redaktor jest dostępny w sekcji **PRZESTRZEŃ ROBOCZA → Redaktor**, gdy funkcja jest włączona dla organizacji. W przeciwnym razie strona wyświetla komunikat **Ta funkcja nie jest częścią Twojego pakietu**.
 
-Należy otworzyć **PRZESTRZEŃ ROBOCZA → Redaktor**. Biblioteka prezentuje artykuły bieżącego użytkownika i pozwala:
+## Biblioteka
 
-* utworzyć pusty artykuł;
-* zaimportować dokument;
-* wyszukiwać po tytule artykułu;
-* filtrować między **Szkice** i **Po przeglądzie**;
-* zaznaczyć jeden lub więcej artykułów do trwałego usunięcia.
+Po otwarciu Redaktora wyświetla się biblioteka — tabela artykułów zalogowanego użytkownika z kolumnami **Nazwa**, **Status** i **Zaktualizowano**. Wybranie wiersza otwiera artykuł. Artykuły nie są udostępniane innym członkom organizacji.
 
-Artykuły są prywatne dla właściciela, z wyjątkiem wyraźnie uzasadnionego dostępu administracyjnego. Usunięcie artykułu usuwa również historię przeglądów w Editorze.
+Panel boczny zawiera:
 
-## Obszar pisania
+* **Utwórz artykuł** — tworzy pusty artykuł o nazwie **Dokument bez tytułu** i od razu go otwiera;
+* **Wyszukiwanie** — filtruje po tytule, treści i nazwie zaimportowanego pliku;
+* **Status** — **Wszystkie artykuły**, **Szkice** albo **Po przeglądzie**.
 
-Pasek narzędzi obejmuje akapity, nagłówki, cytaty, listy punktowane i numerowane, bloki kodu, pogrubienie, kursywę, podkreślenie, przekreślenie, odnośniki, cofanie i ponawianie. Zmiany są zapisywane automatycznie po krótkim opóźnieniu.
+| Status | Znaczenie |
+| :--- | :--- |
+| **Importowanie** | Tekst z zaimportowanego pliku jest jeszcze odczytywany. |
+| **Szkic** | Żadne sprawdzenie artykułu nie zostało jeszcze ukończone. |
+| **Przegląd w toku** | Trwa sprawdzanie. |
+| **Po przeglądzie** | Co najmniej jedno sprawdzenie zostało ukończone w całości lub częściowo. |
+| **Wymaga uwagi** | Nie udało się odczytać zaimportowanego pliku. |
 
-Prawy obszar przełącza się między kontrolkami **Tekst** i modułem przeglądu **Advisor**. Na wąskich ekranach przegląd otwiera się w wysuwanym panelu.
+Aby usunąć artykuły, należy zaznaczyć ich pola wyboru i wybrać **Usuń zaznaczone** na pasku u dołu ekranu. Po potwierdzeniu zapisany tekst, zapisane przeglądy i analizy zostają trwale usunięte; operacji nie można cofnąć.
 
-## Główne procesy
+Na wąskich ekranach panel boczny otwiera się przyciskiem **Artykuły**.
 
-1. [Utworzyć lub zaimportować draft](/pl/editor/import-and-draft).
-2. Zredagować tekst i w razie potrzeby wybrać **Restructure document**.
-3. [Uruchomić pełny przegląd](/pl/editor/review-and-versions), wybierając co najmniej jeden moduł.
-4. Zastosować, odrzucić lub przywrócić poszczególne sugestie.
-5. Użyć **Versions**, aby sprawdzić lub przywrócić wcześniejszą przejrzaną wersję.
+## Obszar dokumentu
 
-## Limity i wymagania
+Ścieżka nawigacji pokazuje tytuł artykułu, a znajdująca się w niej pozycja **Redaktor** prowadzi z powrotem do biblioteki. W obszarze dokumentu znajdują się edytowalny tytuł, pasek formatowania i tekst. Pasek widoków po prawej stronie przełącza widoki:
 
-* Draft artykułu może zawierać maksymalnie 250 000 znaków.
-* **Restructure document** i pełny przegląd obsługują maksymalnie 60 000 znaków.
-* Zmiana struktury wymaga co najmniej 80 znaków i więcej niż jednego wykrytego bloku treści.
-* Pełny przegląd wykorzystuje limit Advisora organizacji i może zostać zablokowany po jego wyczerpaniu.
+| Pozycja paska | Otwiera |
+| :--- | :--- |
+| **Tekst** | Dokument. |
+| **Historia** | Ostatnie zmiany, pochodzenie dokumentu i zapisane przeglądy. |
+| **Źródła** | Ponumerowane źródła odpowiadające przypisom w tekście. |
+| **Advisor** | Panel Advisora dla otwartego dokumentu. |
+| **Plan** | Plan kroków udostępniony przez Advisora dla bieżącego zapytania; pozycja jest widoczna tylko wtedy, gdy taki plan istnieje. |
 
-## Błędy i konflikty współbieżności
+Panele boczne — Advisor, Źródła i ustalenia przeglądu — otwierają się obok tekstu; można je poszerzyć, przeciągając ich lewą krawędź. Na wąskich ekranach pasek widoków zamienia się w rząd opisanych ikon nad dokumentem, a panele wysuwają się od dołu ekranu.
 
-* **This document changed in another tab. Reload** — zapisana rewizja jest nowsza niż otwarty edytor. Przed dalszą pracą należy przeładować stronę.
-* **Review in progress** — edycja jest zablokowana podczas pełnego przeglądu. Polecenie **Zatrzymaj pełny przegląd** kończy proces; ukończone wyniki częściowe pozostają dostępne.
-* **Przegląd nie powiódł się** lub **Przegląd przerwany** — wynik może być częściowy. Przed ponowieniem należy sprawdzić zapisany draft.
-* **Feature locked** — organizacja nie ma dostępu do Editora.
+## Typowy przebieg pracy
+
+1. [Utworzyć artykuł lub zaimportować dokument](/pl/editor/import-and-draft) albo zlecić przygotowanie szkicu Advisorowi w rozmowie.
+2. Pisać tekst i [prosić Advisora](/pl/editor/advisor-in-editor) o sprawdzenie, przeredagowanie lub rozwinięcie fragmentów; stosować pasujące propozycje zmian.
+3. [Uruchomić polecenie Sprawdź dokument](/pl/editor/review-and-versions) dla faktów i języka, a następnie rozstrzygnąć punkty przeglądu.
+4. W widoku **Historia** sprawdzić, co się zmieniło, i w razie potrzeby wrócić do zapisanego przeglądu.
+5. Wybrać **Kopiuj tekst**, aby przenieść gotowy artykuł do innego narzędzia.
+
+## Ograniczenia
+
+* Sprawdzanie i zapytania do Advisora obejmują dokumenty liczące do 60 000 znaków.
+* W trakcie sprawdzania dokument jest tylko do odczytu, a Advisor jest niedostępny.
+* Redaktor zapisuje zmiany automatycznie; nie ma przycisku zapisu ani eksportu do pliku — **Kopiuj tekst** kopiuje treść artykułu jako zwykły tekst.
 
 ## Strony w tej sekcji
 
-* **[Import i draft](/pl/editor/import-and-draft)** — puste artykuły, import plików, zapis w Repozytorium, zmiana struktury i autozapis.
-* **[Przegląd i wersje](/pl/editor/review-and-versions)** — moduły przeglądu, werdykty, działania, zatrzymywanie i przywracanie wersji.
+* **[Import i szkic](/pl/editor/import-and-draft)** — tworzenie i import artykułów, szkice przygotowane przez Advisora, formatowanie, autozapis i kopiowanie tekstu.
+* **[Advisor w Redaktorze](/pl/editor/advisor-in-editor)** — pytania o tekst, praca z zaznaczonym fragmentem, przegląd i stosowanie zmian, plany i źródła.
+* **[Przegląd i wersje](/pl/editor/review-and-versions)** — uruchamianie sprawdzania, odczytywanie i rozstrzyganie punktów przeglądu, historia dokumentu i przywracanie zapisanych przeglądów.

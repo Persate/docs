@@ -1,63 +1,87 @@
 ---
-title: AI Advisor
-description: Persate's specialized analytical assistant for working with the legislative corpus and proprietary documents.
+title: Advisor
+description: Persate's analytical assistant for research across legislation, votes, recordings, Media, stakeholders and the organization's documents, with answers linked to their sources.
 ---
 
-The **AI Advisor** is a specialized analytical tool designed for exploratory work within the legislative corpus and proprietary documents. It is not a free-form chatbot — every response is anchored in actual searches, and every reference constitutes a citation with a link to the source.
+The **Advisor** is Persate's analytical assistant for research across the platform's public data and the organization's own documents. It is not a free-form chatbot: it answers by running searches through the platform's MCP layer, and every reference in an answer is a citation that opens the source.
 
-Open the Advisor from **CORE → Advisor** in the sidebar.
+Open the Advisor from **CORE → Advisor** in the sidebar. The entry is shown when the Advisor is enabled for the organization.
 
 ## Scope of applications
 
-The advisor automates research processes that require manual searching across multiple sources, including:
+The Advisor automates research that would otherwise require searching several modules by hand:
 
-* **Complex correlational search** — linking data from various sources. Example: *"Which committee reviewed the latest energy prices bill and who voted against it?"*
-* **Multi-source data synthesis** — comparing declarations with facts. Example: *"Compile the parliamentary club's public statements on phasing out coal with their voting records from the last six months."*
+* **Correlational search** — linking records kept in different modules. Example: *"Which committee handled the latest energy prices bill, and how did each club vote on it?"*
+* **Multi-source synthesis** — setting statements against records. Example: *"Compare the club's public statements on phasing out coal with its voting record over the last six months."*
+* **Work with the organization's files** — reading, summarizing and comparing Repository documents and checking them against public records.
+* **Preparing work in other modules** — on request, an alert draft for the Tracker, a Smart Folder, or an article draft for the Editor. The Advisor never activates or publishes anything; drafts are reviewed and completed in the destination module.
 
-**Note:** The advisor is not intended for generating creative content, writing code, or conducting conversations unrelated to the legislative corpus.
+**Note:** The Advisor is not intended for general conversation, creative writing, code or forecasts unrelated to the platform's data.
 
 ## Key system features
 
-* **Grounded responses** — every piece of information is preceded by an analysis of platform data: voting records, stakeholder profiles, transcripts, and uploaded documents.
-* **Interactive citations** — every claim features a footnote in the form of a clickable badge that opens the source record directly in the platform interface.
-* **Turn-based structure** — communication occurs within closed working turns, which guarantees response precision.
+* **Grounded answers** — every answer is based on searches run during the turn; the work is visible above the answer.
+* **Interactive citations** — claims carry source chips that open the vote, profile, document passage, recording moment or post.
+* **Visible work** — reasoning, tool calls, the plan and research agents appear while the Advisor works and fold into a single line when it finishes.
+* **Source check** — many answers carry a shield icon that summarizes whether the key points are supported by sources.
+* **Collaboration while it works** — a note can be added to a running task, and the task can be stopped at any time.
 
 ## Areas of competence
 
-The advisor operates within six specialized data modules:
+The Advisor's tools are grouped into **skill families**, each a namespace of the MCP layer (for example `legislation`, `civic`, `stakeholders`, `public_pulse`, `recordings`, `documents`, `alerts`, `chat_context`). The tools available depend on the modules enabled for the organization.
 
-| Module | Analysis scope |
+| Area | Analysis scope |
 | :--- | :--- |
-| **Legislation** | Voting results, motion metadata, stakeholder legislative activity history. |
-| **Stakeholders** | Stakeholder database: biographies, parliamentary club affiliations, attendance. |
-| **Public Pulse** | Monitoring social media activity of tracked stakeholders. |
-| **Alerts** | Managing existing alerts and creating new rules. |
-| **Documents** | Searching uploaded files and the public Persate corpus. |
-| **Context** | Utilizing the current conversation history to refine the analysis. |
+| **Legislation and votes** | Sejm and Senate votes, legislative processes and RCL projects, Sejm prints, published legal acts, parliamentary questions, committees, presidential decisions and Constitutional Tribunal cases. |
+| **Stakeholders** | Profiles of politicians and organizations, club membership, constituency, voting attendance and activity. |
+| **Recordings** | Analyzed recordings of sittings and committees: summaries, transcripts and speeches. |
+| **Media** | Archived X posts of tracked accounts, plus the events, stories and topics of the Media module. |
+| **Documents** | Repository files and the public Persate corpus. |
+| **Tracker** | The user's alerts and their matches; alert drafts on request. |
+| **Web** | Public web pages, when a question calls for them. |
+| **Conversations** | The user's earlier Advisor conversations. |
 
-These competencies are detailed in the [Advisor skills](/advisor/skills) section.
+The families, typical questions and citation types are described in [Advisor skills](/advisor/skills).
 
-## Analysis scope
+## Thinking depth
 
-The advisor selects the scope of analysis to match the content of the question on its own — it resolves short factual searches quickly, while questions spanning multiple sources (comparisons, briefings, identifying discrepancies) are searched more broadly. This selection happens automatically and requires no setting on the user's part; the only input is a precisely formulated question. Guidance on how to formulate questions is provided in the [Best practices](/advisor/best-practices) section.
+The depth control in the composer sets how thoroughly the Advisor works on a message:
+
+* **Surface** — fast, direct references only; suited to lookups and short follow-ups.
+* **Balanced** — the standard setting, recommended for most questions.
+* **Deep** — the most thorough option, for multi-source briefings and comparisons.
+
+The choice applies to one message. After sending, the control returns to the default. Guidance on choosing a depth is provided in [Best practices](/advisor/best-practices).
 
 ## Conversation history
 
-The right interface panel contains a chronologically ordered list of sessions assigned to the account. Every conversation is automatically titled based on the subject of the first message.
+The list of conversations sits on the right; the **Conversations** control on the right edge shows or hides it. Each conversation is listed under a title derived from its opening question.
 
-* **New conversation** — select **New conversation** to reset the workspace.
-* **Resuming sessions** — select any entry from the history list to restore the full conversation record.
-* **Deleting data** — select the trash icon next to the session title to permanently delete the conversation.
+* **New conversation** — clears the workspace.
+* **Search conversations** — filters the list.
+* **Resuming** — selecting an entry restores the full record, including the activity and citations.
+* **Deleting** — the trash icon permanently deletes the conversation without a confirmation step.
 
-Conversation history is tied to the individual account and is not shared within the organization.
+Conversation history belongs to the individual account and is not shared within the organization.
 
 ## Workflow continuity
 
-Active analysis is not interrupted upon leaving the view or refreshing the browser — the advisor continues working in the background. Upon reopening the conversation, the system automatically restores progress. The same conversation can be opened in multiple browser tabs — all display the same progress in real time.
+A running task is not interrupted when the view is closed or the browser is refreshed — the Advisor continues in the background. Reopening the conversation in the same browser reconnects to it and restores the progress so far. When **Advisor notifications** are enabled in [Settings → Notifications](/account-and-settings/preferences), a notification arrives when a task left in the background finishes.
+
+## Other entry points
+
+* **Global search** — a query phrased as a question offers **Ask the Advisor**, which starts a new conversation with that question. See [Search and notifications](/using-persate/search-and-notifications).
+* **Editor** — the Editor has its own Advisor panel for the article being written; those sessions do not appear in the Advisor history. See [Editor](/editor).
+* **Labs** — some labs include a separate **Lab Advisor**. See [Labs](/labs).
+
+## Availability and organization settings
+
+* Administrators allow or block the external processing the Advisor relies on in **Settings → Organization → External providers**. While it is blocked, the Advisor cannot start new work; existing conversations are kept. See [Administration](/administration).
 
 ## Pages in this section
 
-* **[Interface and advisor workflow](/advisor/conversations)** — message composition, file tagging, message timeline, citations, copying, and history.
-* **[Advisor skills](/advisor/skills)** — description of competencies and example queries.
-* **[Working examples](/advisor/examples)** — ready-made queries with a description of the expected advisor behavior.
-* **[Best practices](/advisor/best-practices)** — formulating questions, file attachment, citation handling, and pitfalls of overly general questions.
+* **[Interface and Advisor workflow](/advisor/conversations)** — starting a conversation, the composer, answers and citations, drafts in other modules, and history.
+* **[Following the Advisor's work](/advisor/activity)** — the activity record, plan, research agents, notes added during work, clarifying questions and stopping.
+* **[Advisor skills](/advisor/skills)** — skill families, typical questions and citation URIs.
+* **[Working examples](/advisor/examples)** — ready-made queries with a description of the expected behavior.
+* **[Best practices](/advisor/best-practices)** — formulating questions, choosing a depth, attaching context, reading citations, and handling partial answers.

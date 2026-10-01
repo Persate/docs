@@ -1,73 +1,70 @@
 ---
-title: Media — Public Pulse
-description: Aktywność monitorowanych interesariuszy w serwisie X prezentowana jako mapa tematów, lista wpisów lub zestawienie tematów.
+title: Media
+description: Publiczne wpisy obserwowanych interesariuszy w serwisie X pogrupowane w wydarzenia, wątki i tematy, z chronologicznym strumieniem i filtrami.
 ---
 
-**Public Pulse** gromadzi aktywność interesariuszy w serwisie X. Każdy wpis, odpowiedź czy podanie dalej trafia do wspólnego strumienia, który można filtrować i analizować w kilku trybach.
+Moduł **Media** śledzi publiczne wpisy w serwisie X publikowane przez interesariuszy obserwowanych w Persate. Wpisy są grupowane w wydarzenia i wątki, łączone w tematy i wyświetlane w chronologicznym strumieniu. Moduł otwiera się przez **PUBLICZNE → Media** w panelu bocznym. Jest dostępny, gdy funkcja jest włączona dla organizacji.
 
-Otwórz widok przez **PUBLICZNE → Media** w panelu bocznym.
+## Zakładki
 
-## Tryby prezentacji
+* **Wydarzenia** — widok domyślny. Pokazuje bieżące wydarzenia pogrupowane w wątki, na osi czasu lub na tablicy kategorii. Opis w sekcji [Wydarzenia i wątki](/pl/public-pulse/events).
+* **Strumień** — najnowsze wpisy w postaci kart, od najnowszego.
+* **Tematy** — tabela tematów ze wskaźnikami aktywności; każdy wiersz otwiera stronę tematu.
 
-W górnej części ekranu można przełączać się między trzema trybami:
+Wybrana zakładka jest częścią adresu strony, więc odnośnik do zakładki można udostępnić.
 
-* **Mapa** — mapa tematów wypełniająca cały obszar roboczy, prezentująca zgrupowaną aktywność.
-* **Strumień** — chronologiczna lista kart wpisów, optymalna do szybkiego przeglądu najnowszej aktywności.
-* **Tematy** — tabela tematów z metrykami i sortowaniem.
+## Filtry
 
-## Mapa tematów
+Filtry znajdują się w prawym panelu (na telefonie przycisk **Filtry**). Pozostają ustawione podczas pracy w tej samej karcie przeglądarki.
 
-Tryb **Mapa** prezentuje wpisy jako chmury punktów. Pokrewne wpisy są grupowane w tematy (klastry). Każdy punkt odpowiada pojedynczemu wpisowi, a jego umiejscowienie wynika z bliskości tematycznej. Najechanie kursorem na punkt otwiera podgląd wpisu z awatarem i nazwą interesariusza, charakterem wpisu (np. *„Replying to…”*, *„Quoting…”*, *„Repost by…”*), treścią oraz licznikami polubień, podań dalej i odpowiedzi. Wybranie chmury przenosi do szczegółu danego tematu.
+| Filtr | Zakładka | Działanie |
+|---|---|---|
+| **Wyszukiwanie** | Strumień, Tematy | Wyszukiwanie tekstu we wpisach. |
+| **Zakres osi czasu** | Wydarzenia | **6 godz.**, **24 godz.** (domyślnie), **7 dni**, **30 dni** lub **90 dni**. |
+| **Własny okres** | Wydarzenia | Zakres dat zamiast gotowego ustawienia; **Zakres osi czasu** pokazuje wtedy **Własny okres**. Wybranie gotowego ustawienia usuwa zakres dat. |
+| **Zakres dat** | Strumień, Tematy | Ten sam zakres dat co **Własny okres**, pod nazwą używaną w zakładkach Strumień i Tematy. |
+| **Kategorie** | Wydarzenia | Ogranicza widok do wybranych kategorii; brak wyboru oznacza **Wszystkie kategorie**. |
+| **Sortuj wydarzenia** | Wydarzenia | **Najnowsza aktywność** (domyślnie), **Najwięcej wyświetleń**, **Najwięcej polubień**, **Najwięcej udostępnień** lub **Największe zaangażowanie**. |
+| **Sortuj według**, **Kolejność** | Tematy | **Polubienia i wyświetlenia** (domyślnie), **Aktywne osoby**, **Wpisy**, **Dynamika** lub **Nazwa tematu**; **Malejąco** lub **Rosnąco**. |
 
-W lewym górnym rogu mapy widoczny jest nagłówek **Mapa tematów** wraz z informacją o czasie ostatniego przeliczenia (*„Updated…”*).
+**Wyczyść wszystkie filtry** pojawia się, gdy wyszukiwanie, daty, kategorie lub sortowanie wydarzeń różnią się od ustawień domyślnych, i przywraca te ustawienia.
 
-### Oś czasu
+Na dole panelu komunikat *„Ostatnia synchronizacja …”* informuje, kiedy ostatnio zebrano wpisy. Kropka obok wskazuje, czy widok jest aktualny, czy dostępne są nowe treści.
 
-Na dole strony znajduje się oś czasu. Przeciągnięcie suwaka — lub uruchomienie odtwarzania przyciskiem **Play** — przesuwa okno czasowe po ostatnich kilkunastu dniach, a mapa na bieżąco przelicza aktywność z wybranego zakresu: chmury rosną, kurczą się i przemieszczają w miarę narastania i wygasania tematów. Szerokość okna można ustawić na **1d**, **3d** lub **7 dni**. Oś czasu reaguje wyłącznie na działania użytkownika i nie nadpisuje zakresu dat wybranego w panelu bocznym, dopóki nie zostanie przesunięta.
+## Strumień
 
-## Widok Topics
+Zakładka **Strumień** wyświetla wpisy od najnowszego. Kolejne wpisy wczytują się podczas przewijania; komunikat *„To na razie wszystko.”* oznacza koniec listy.
 
-Tryb **Tematy** to stabularyzowana lista tematów. Wybranie wiersza otwiera **szczegół tematu** — osobny widok na który składają się:
+Każda karta pokazuje zdjęcie autora, imię i nazwisko, klub, nazwę konta i czas publikacji, a pod nimi treść, załączone multimedia oraz, w przypadku cytatów i ponownych udostępnień, wpis źródłowy. Etykieta nad autorem określa rodzaj wpisu: **Ponowne udostępnienie**, **Odpowiedź** (*„Odpowiedź dla @…”*) lub **Cytat** (*„Cytowanie @…”*); wpisy oryginalne nie mają etykiety. Liczniki pod treścią pokazują odpowiedzi, udostępnienia i cytowania, polubienia oraz wyświetlenia. **Otwórz w X →** otwiera wpis w serwisie X.
 
-* **Nagłówek ze statystykami** — nazwa tematu, zakres dat, łączna liczba wpisów, liczba aktywnych osób, wskaźnik dynamiki (**Dynamika**) oraz — gdy są dostępne — dominujący hashtag i dominujący klub.
-* **Reakcje** — zestawienie zaangażowania w kafelkach: odpowiedzi, podania dalej, polubienia, cytowania i wyświetlenia, każde z wartością łączną oraz średnią na wpis.
-* **Aktywność w czasie** — wykres słupkowy pokazujący natężenie aktywności w czasie w obrębie tematu.
-* **Aktywne osoby** — tabela najaktywniejszych osób w temacie z klubem, liczbą wpisów i wkładem w zaangażowanie; tabelę można sortować.
-* **Lista wpisów** — wpisy składające się na dany temat.
+Persate zachowuje wpisy, które później usunięto:
 
-Gdy temat wygasł, szczegół wyświetla komunikat *„This topic is no longer active”* z możliwością powrotu do listy tematów.
+* **Zarchiwizowane** — wpis został usunięty z serwisu X. Karta pokazuje, kiedy go usunięto i po jakim czasie od publikacji.
+* **Sprawdzanie statusu w X** — serwis X nie zwrócił wpisu podczas ostatniego sprawdzenia i trwa potwierdzanie usunięcia.
 
-## Powiązania z Persate
+## Tematy
 
-Szczegóły tematów zestawiane są z resztą platformy w sekcji **Related in Persate**, grupując dopasowania w kategorie: **Legislacja**, **Interesariusze**, **Alerty** oraz **Smart folders**. Każda pozycja jest odnośnikiem prowadzącym do odpowiedniego miejsca w platformie.
+Zakładka **Tematy** zawiera tabelę z kolumnami **Temat**, **Wpisy**, **Aktywne osoby**, **Polubienia i wyświetlenia**, **Dynamika** (zmiana aktywności w procentach) oraz **Główny tag / klub**. Tabelę sortuje się w panelu polami **Sortuj według** i **Kolejność**. Wybranie wiersza otwiera stronę tematu dla bieżącego zakresu dat.
 
-## Karta wpisu
+Strona tematu pokazuje nazwę i opis tematu, a pod nimi cztery sekcje:
 
-Każdy wpis jest opatrzony etykietą określającą jego charakter: **Oryginał** (wpis własny), **Odpowiedź** (odpowiedź), **Retweet** (podanie dalej) lub **Cytat** (podanie z komentarzem). Wpisy usunięte z serwisu X, lecz wcześniej przechwycone, są oznaczone jako *Archived*.
+* **Aktywność** — liczba wpisów w wybranym okresie wraz z wartością szczytową.
+* **Aktywne wątki** — wątki z zakładki **Wydarzenia** powiązane z tematem w wybranym okresie, z liczbą aktywnych wydarzeń, pasujących wpisów i czasem ostatniej aktywności. **Otwórz temat** otwiera stronę wątku.
+* **Aktywne osoby** — osoby publikujące w temacie, z kolumnami **Klub**, **Wpisy** i **Zaangażowanie**, uporządkowane według zaangażowania.
+* **Wpisy** — wpisy w temacie; **Wczytaj więcej** pokazuje kolejne.
 
-## Sortowanie tematów
+Prawy panel (na telefonie przycisk **Szczegóły**) pokazuje grupę **W skrócie** — **Okres**, **Wpisy**, **Aktywne osoby**, **Dynamika**, **Najpopularniejszy hashtag** i **Wiodący klub** — oraz **Reakcje**: **Odpowiedzi**, **Udostępnienia**, **Polubienia**, **Cytowania** i **Wyświetlenia**.
 
-W trybie **Tematy** panel boczny udostępnia sekcję **Sortuj według**, pozwalającą uporządkować listę tematów według: **Polubienia i wyświetlenia**, **Aktywne osoby**, **Wpisy**, **Dynamika** lub **Nazwa tematu**. Ponowne wybranie aktywnego kryterium odwraca kierunek sortowania.
-
-## Filtrowanie
-
-W panelu bocznym dostępne są narzędzia do zawężania strumienia:
-
-* **Wyszukiwanie** — wyszukiwanie tekstowe w treści wpisów.
-* **Zakres dat** — ograniczenie wyników do wybranego przedziału czasowego.
-* **Wyczyść wszystkie filtry** — wyczyszczenie wszystkich aktywnych filtrów.
-
-## Status synchronizacji
-
-Wskaźnik w stopce paska bocznego informuje o stanie wyświetlanych danych:
-
-* **Niebieska kropka** — dane są aktualne.
-* **Pomarańczowa kropka** — dostępne są nowe wpisy w trakcie przetwarzania.
-
-*„Last synced…”* podaje czas ostatniej udanej aktualizacji.
+Gdy temat wygasł, jego strona pokazuje komunikat *„Ten temat nie jest już aktywny.”* z przyciskami **Przeglądaj bieżące tematy** i **Otwórz oś czasu wydarzeń**. Jeśli temat ma kontynuację w postaci wątku, zamiast tego otwiera się strona wątku.
 
 ## Stany pustego widoku i błędu
 
-* *„No tweets match your filters”* — aktywne filtry wykluczają wszystkie wpisy.
-* *„No tweets yet”* — brak nowych wpisów w monitorowanym strumieniu.
-* *„Couldn't load Public Pulse”* — błąd połączenia z serwerem. Zaleca się odświeżenie strony.
+* *„Brak wpisów pasujących do filtrów”* — filtry wykluczają wszystkie wpisy w zakładce **Strumień**; należy rozszerzyć zakres dat lub wyczyścić wyszukiwanie.
+* *„Nie ma jeszcze wpisów”* — nie zebrano jeszcze wpisów obserwowanych interesariuszy.
+* *„Nie udało się wczytać mediów”* — strumień nie wczytał się; **Ponów** wczytuje go ponownie. Jeśli konto nie ma uprawnień do strumienia, komunikat to wskazuje.
+* *„Brak tematów pasujących do bieżących filtrów. Spróbuj rozszerzyć zakres dat.”* — tabela w zakładce **Tematy** jest pusta dla bieżących filtrów.
+* *„Brak wydarzeń w tym zakresie”* — zakładka **Wydarzenia** nie ma nic do pokazania; należy wybrać szerszy okres lub inną kategorię.
+
+## Strony w tej sekcji
+
+* **[Wydarzenia i wątki](/pl/public-pulse/events)** — oś czasu wydarzeń, tablica wątków, szczegóły wydarzeń i strony wątków.

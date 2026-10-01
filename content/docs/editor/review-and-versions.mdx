@@ -1,53 +1,64 @@
 ---
 title: Review and versions
-description: Running a full Editor review and resolving its findings safely.
+description: Checking facts and language with Check document, resolving review points, and working with document history and saved reviews.
 ---
 
-## Start a full review
+**Check document** reviews the article passage by passage and marks its findings in the text. Before each check, Editor saves a snapshot of the article, which **History** keeps as a saved review.
 
-Open **Review**, choose at least one module, and start the full review:
+## Run a check
 
-* **Facts & sources** — checks factual claims and provides supporting or contradicting evidence when available.
-* **Language & clarity** — proposes editorial improvements for clarity and style.
+1. In the toolbar, open **More formatting** (**…**) → **Review options** and choose the modules:
+   * **Facts & sources** — checks factual statements and links the evidence found for them;
+   * **Language & clarity** — suggests corrections of grammar and typos, clarity, precision and style.
+2. Select **Check document**.
 
-Review supports articles up to 60,000 characters. The document is read-only while the review runs. Progress moves through context, claim, tool, and language stages according to the selected modules.
+Both modules are selected by default, and the selection is remembered for later checks. **Check document** is unavailable when no module is selected and for documents longer than 60,000 characters (**Up to 60,000 characters per check.**). The article is saved before the check starts.
+
+During the check, the document is read-only and a status line above the text shows the stage — for example **Building context**, **Mapping statements**, **Checking facts · 3/12** or **Reviewing language**. Points appear in the text as they are produced. **Stop checking** ends the check; points already returned remain. If the page is reloaded or the connection drops, Editor reconnects to the running check.
+
+When a check does not finish, the status line says so, for example **The check did not finish. Retry from the toolbar menu.** Run **Check document** again.
 
 ## Read review points
 
-Review points are linked to highlighted passages in the article. A point can be labeled:
+Each point marks a passage with a colored underline and a number in the right margin; the numbers are hidden when the document area is narrow. Numbering follows the order of the text.
 
-* **Confirmed**;
-* **Contradicted**;
-* **Potentially misleading**;
-* **Unverified**;
-* **Suggested improvement**.
+| Result | Color |
+| :--- | :--- |
+| **Confirmed** | blue |
+| **Contradicted**, **Potentially misleading** | red |
+| **Unverified** | grey |
+| Language suggestion (grammar or typo, clarity, precision, style) | red |
+| Applied change | green |
 
-These labels describe the review result for that passage; they do not replace editorial judgment. Open the listed sources and compare them with the exact claim before publishing.
+Hovering a passage shows the point's summary, and faint lines connect it with related points — nearby or about the same subject. Selecting the passage or its number opens quick actions: the proposed change (**Before** and **After**), **Apply suggestion**, **Undo change** for an applied point, and **Explanation**.
+
+**Explanation** opens the finding in the side panel with its label, summary, the quoted passage, the reasoning, the proposed change and — for **Facts & sources** — links to the sources used. The label gives the result (**Confirmed**, **Contradicted**, **Potentially misleading**, **Unverified** or **Suggested improvement**) or the point's state (**Applied**, **Dismissed** or **Changed manually**). **Could not review** marks a passage the check could not assess.
+
+Labels support editorial judgment but do not replace it. Before publishing, open the sources and compare them with the exact wording of the claim.
 
 ## Resolve a point
 
-* **Apply** replaces the linked passage with the proposed text.
-* **Dismiss** records that the suggestion will not be used.
-* **Restore** reverses an applied replacement and returns the prior passage.
-* **Explain** opens the Advisor context for the selected point when that control is available.
+Points can be resolved once the check has finished. In the side panel:
 
-Actions are saved immediately. Editing the affected passage manually can make a point stale because its original text range no longer exists.
+* **Apply** replaces the passage with the proposed text; it is available only when the point proposes one.
+* **Dismiss** keeps the passage unchanged and marks the point **Dismissed**.
+* **Restore** reopens an applied or dismissed point; for an applied point, the original wording returns.
 
-## Stop or resume a review
+Decisions are saved immediately. Editing a passage that has an open point by hand marks the point **Changed manually**. Dismissed and manually changed points no longer mark the text, and the remaining points are renumbered.
 
-Select **Stop full review** to cancel the running work. Points already completed remain visible. If the connection is interrupted, Editor checks the saved run and can resume receiving available results.
+## Document history
 
-Starting another review while one is already active is rejected. Wait for completion, stop the current review, or reopen the saved article state.
+**History** in the rail opens **Document history**:
 
-## Versions
+* **Current draft** — **Continue writing →** returns to the text.
+* **Changes since the latest review** — what changed in the text since the most recent saved review, before and after.
+* **Recent changes** — the 50 most recent changes: typing, formatting, title changes, applied review points and applied Advisor changes. Each entry shows the author (**You** or **Advisor · Applied by you**), the time and the text before and after; consecutive typing is grouped into one entry. Edits made before this list was introduced were not recorded.
+* **Document origin** — how the article started (**Original document**, **Document imported by you** with the file name, or **Draft created by Advisor**), when it was created and the beginning of the original text.
+* **Saved reviews** — the snapshot taken before each check, newest first. Snapshots are numbered in the order they were taken (**Review 1** is the oldest) and show the modules, the time, the check status (for example **Complete**, **Partially complete**, **Stopped**, **Failed** or **Interrupted**) and the difference from the preceding snapshot. Before the first check, the list shows **No previous reviews**.
 
-Every completed review creates a version entry. Select a version to inspect its read-only article snapshot and findings. **Restore this version** replaces the current draft with that snapshot and its saved review points after confirmation.
+## Open or restore a saved review
 
-Restoring a version creates a new current revision; it does not rewrite the historical entry. Copy the current text first if it must be preserved separately.
+Selecting a saved review opens its snapshot read-only, with **Viewing a saved review** above the text. Unsaved changes in the current draft are saved first. Review points are not shown on a snapshot, and Advisor is unavailable while it is displayed.
 
-## Failure states
-
-* **Review supports documents up to 60,000 characters** — shorten the article or review sections separately.
-* Allowance exhausted — wait for the workspace allowance to reset or contact an administrator.
-* **Review failed** — the request did not complete. The article remains saved; retry from the review panel.
-* Revision conflict — reload the current article before applying or restoring another change.
+* **Return to current draft** goes back to the current text.
+* **Restore this version** replaces the current draft with the snapshot at once, without a confirmation step, and clears the review points of the current draft. To keep the current wording, copy it with **Copy text** before opening the snapshot.

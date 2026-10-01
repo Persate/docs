@@ -1,51 +1,44 @@
 ---
-title: Legislation Tracker
-description: Śledzenie procesu legislacyjnego — opublikowane akty, projekty RCL oraz interpelacje i zapytania poselskie.
+title: Legislacja
+description: Projekty rządowe, pytania parlamentarne, opublikowane akty i publikacje instytucji w jednym module.
 ---
 
-**Monitor legislacji** zapewnia dostęp do procesu legislacyjnego: opublikowanych aktów prawnych, projektów prowadzonych w Rządowym Centrum Legislacji oraz interpelacji i zapytań poselskich.
-
-Otwórz moduł przez **PUBLICZNE → Legislacja** w panelu bocznym.
+Moduł **Legislacja** obejmuje proces legislacyjny od projektu rządowego do publikacji aktu, a także pytania parlamentarne i publikacje urzędowe. Moduł otwiera się przez **PUBLICZNE → Legislacja** w panelu bocznym, gdy funkcja jest włączona dla organizacji. Domyślnie otwiera się zakładka **Proces**.
 
 ## Zakładki
 
-W górnym pasku widoku dostępne są trzy zakładki:
+* **Proces** — rządowe projekty legislacyjne (RCL) wraz z przebiegiem procesu: od prac rządowych przez Sejm, Senat i Prezydenta do publikacji. Szczegóły: [Proces i przebieg legislacyjny](/pl/legislation-tracker/process).
+* **Interpelacje** — interpelacje i zapytania poselskie wraz z oficjalnymi odpowiedziami. Szczegóły: [Interpelacje i zapytania](/pl/legislation-tracker/interpellations).
+* **Opublikowane akty** — dzienniki urzędowe oraz, jeśli obejmuje je pakiet organizacji, publikacje ministerstw i urzędów. Szczegóły: [Opublikowane akty i publikacje](/pl/legislation-tracker/published-acts).
 
-* **Opublikowane akty** — przeglądarka opublikowanych aktów uporządkowana według źródeł (dzienników publikacyjnych).
-* **Proces** — projekty legislacyjne prowadzone w RCL.
-* **Interpelacje** — interpelacje i zapytania poselskie.
+Komisje sejmowe i ich skład są prezentowane w module [Interesariusze](/pl/stakeholders). Głosowania Sejmu i Senatu, decyzje Prezydenta oraz sprawy Trybunału Konstytucyjnego znajdują się w module [Głosowania](/pl/voting-ledger).
 
-## Published acts
+## Listy i filtry
 
-Widok prezentuje źródła publikacji w układzie kafelkowym. Panel boczny udostępnia pole **Szukaj źródeł** do odnalezienia konkretnego dziennika. Wybranie kafelka otwiera listę dokumentów danego źródła, a wybranie dokumentu — jego widok szczegółowy.
+Filtry każdej zakładki znajdują się w panelu bocznym. Filtry tekstowe działają po krótkiej przerwie w pisaniu, pozostałe — od razu. Kolejne pozycje doładowują się podczas przewijania listy.
 
-## Ministerstwa i urzędy
+* **Krótkie tytuły** zastępuje oficjalny tytuł projektu lub pytania jego krótką nazwą. Oficjalny tytuł pojawia się po wskazaniu skróconego wiersza kursorem. Wybór jest zapamiętywany i obowiązuje na wszystkich listach, które oferują ten przełącznik, w tym na zakładkach Prezydenta i TK w module **Głosowania**.
+* **Wyczyść filtry** na zakładkach **Proces** i **Interpelacje** przywraca domyślne wyszukiwanie i filtry. Przełączniki wyświetlania, takie jak **Krótkie tytuły** i przełączniki przypinania, pozostają bez zmian. Strony źródeł w zakładce **Opublikowane akty** mają zamiast tego przycisk **Resetuj filtry**.
 
-W wyborze źródeł dostępna jest również grupa **Ministerstwa i urzędy**. Wybranie instytucji otwiera jej publikacje z filtrami tekstu, kategorii i daty publikacji. Ogłoszenia o rekrutacji i zamówieniach są domyślnie ukryte; przełącznik **Pokaż wszystkie kategorie** umożliwia ich wyświetlenie.
+## Monitorowanie projektów i pytań
 
-Wybranie publikacji otwiera jej tekst i załączniki. Wybranie pliku pokazuje jego treść, a opcja **Otwórz stronę źródłową** prowadzi do strony wydawcy. Profile instytucji zawierają również sekcję **Najnowsze publikacje** z odnośnikami do tego samego czytnika. Treść źródłowa pozostaje w oryginalnym języku.
+Projekty i pytania można monitorować bezpośrednio z list albo z ich stron. Monitorowanie tworzy alert w module **Monitorowanie**.
 
-Dostępność jest rozszerzana stopniowo. Lista pokazuje aktualnie dostępne instytucje; alerty dotyczące ich publikacji są jeszcze w pilotażu. Po włączeniu pomijają rekrutacje i zamówienia, chyba że wskazano te kategorie wprost w opisie alertu. Przykład: *Ogłoszenia rekrutacyjne publikowane przez tę instytucję*.
+1. Na szerszym ekranie zaznaczyć co najmniej jeden wiersz polem wyboru. U dołu ekranu pojawia się pasek z liczbą zaznaczonych pozycji.
+2. Wybrać **Monitoruj zaznaczone**. Okno **Tworzenie alertu** pozwala określić, kto widzi alert i jaką ma on czułość.
+3. Potwierdzić przyciskiem **Rozpocznij monitorowanie**.
 
-## Process
+Na stronie projektu lub pytania to samo okno otwiera się przyciskiem **Śledź ten projekt** albo **Śledź to pytanie** w sekcji **Działania**. Po rozpoczęciu monitorowania przycisk zmienia się na **Zobacz alert** i prowadzi do alertu.
 
-Zakładka **Proces** prezentuje projekty legislacyjne RCL w formie tabeli. W panelu bocznym dostępne są filtry, m.in.:
+Monitorowane wiersze są wyróżnione. Gdy przełącznik **Przypnij śledzone projekty** lub **Przypnij śledzone pytania** jest włączony, pozostają na początku listy niezależnie od filtrów. Po wyłączeniu przełącznika monitorowane wiersze zwrócone przez bieżące filtry zajmują zwykłe miejsce na liście, a pozostałe monitorowane wiersze zostają na jej początku. Pozycja, której alert wstrzymano, ma oznaczenie **Wstrzymane**. Po zaznaczeniu monitorowanych wierszy pasek udostępnia także **Wznów zaznaczone alerty**, **Wstrzymaj zaznaczone alerty** i **Usuń zaznaczone alerty**. Ustawienia i dopasowania alertów opisuje sekcja [Monitorowanie](/pl/alerts).
 
-* **Wyszukiwanie** — wyszukiwanie po tytule projektu.
-* **Work register number** — numer w wykazie prac.
-* **Typ dokumentu** oraz **Wnioskodawca** — typ dokumentu i wnioskodawca.
-* **Postęp** — etap procesu.
-* **Created from / to** — zakres dat utworzenia.
-* przełączniki dodatkowe (m.in. projekty implementujące prawo UE).
+## Otwieranie legislacji z innych modułów
 
-Lista doładowuje kolejne pozycje w miarę przewijania.
+* **Advisor** — odnośniki do projektów rządowych, dokumentów projektów, interpelacji, druków sejmowych i aktów otwierają odpowiednie strony tego modułu. Cytowany fragment otwiera się w czytniku dokumentu z wyróżnionym miejscem cytatu. Jeśli cytowany druk sejmowy zawiera kilka dokumentów, strona **Dokumenty druku** wyświetla ich listę; należy wybrać dokument do przeczytania. Gdy dokumentu nie da się otworzyć, pojawia się komunikat **Dokument niedostępny**.
+* **Wyszukiwanie** — wyniki z kategorii **Legislacja** oraz **Ministerstwa i urzędy** prowadzą do tych samych stron.
+* **Głosowania** — ustawy czekające na decyzję Prezydenta, decyzje Prezydenta oraz powiązane elementy głosowań Sejmu i Senatu prowadzą do przebiegu procesu legislacyjnego.
+* **Interesariusze** — profile instytucji zawierają sekcję **Najnowsze publikacje** z odnośnikami do publikacji instytucji, a strony pytań prowadzą do profili autorów i adresatów.
 
-## Interpellations
+## Treści źródłowe
 
-Zakładka **Interpelacje** prezentuje interpelacje i zapytania poselskie w formie tabeli. Panel boczny udostępnia filtry, m.in. wyszukiwanie po tytule, kadencję (**Kadencja**), rodzaj (**Rodzaj**), status, ministerstwo (**Ministry**) oraz skrót **odpowiedziane**.
-
-## Stany pustego widoku i błędu
-
-* *„No matching sources”* — żadne źródło nie pasuje do wyszukiwania.
-* *„No projects found”* / *„No questions found”* — żadna pozycja nie pasuje do bieżących filtrów. Należy zmienić wyszukiwanie lub filtry.
-* *„Couldn't load projects”* / *„Couldn't load questions”* — błąd połączenia z usługą. Zaleca się ponowienie próby.
+Tytuły, dokumenty i teksty urzędowe zachowują oryginalny język po zmianie języka interfejsu. Automatyczne podsumowania ułatwiają lekturę, ale nie zastępują tekstu urzędowego; istotne szczegóły należy sprawdzić w podlinkowanym źródle.

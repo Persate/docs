@@ -3,53 +3,68 @@ title: Votes
 description: Browse Sejm and Senate votes, presidential decisions, and Constitutional Tribunal cases.
 ---
 
-Open **PUBLIC → Votes**. The top navigation separates four public institutional records:
+Open **PUBLIC → Votes** in the sidebar when the module is enabled for the organization. The tabs at the top separate four public records:
 
-* **Sejm** — vote outcomes and per-member voting records;
-* **Senat** — Senate vote outcomes and, where published, per-senator voting records;
-* **Prezydent** — presidential decisions on legislation; these are decisions, not chamber votes;
-* **TK** — Constitutional Tribunal cases and rulings; these are cases and judgments, not votes.
+* **Sejm** — Sejm votes and, where published, the vote of each member;
+* **Senate** — Senate votes and, where published, the vote of each senator;
+* **President** — presidential decisions on acts; these are decisions, not chamber votes;
+* **CT** — Constitutional Tribunal cases and rulings; these are cases, not votes.
 
-Do not combine metrics across tabs. Each institution publishes different fields and follows a different decision process.
+The number on the **President** tab counts acts awaiting a decision that are still within their decision period.
+
+Each institution publishes different data and follows a different procedure, so compare figures within one tab rather than across tabs. All four lists load further entries while scrolling; on narrow screens they fold into fewer columns. Select a row to open the record; see [Record details](/voting-ledger/voting-detail).
 
 ## Sejm
 
-The Sejm table shows the result, motion, topic, vote distribution, margin, date, and proceeding/vote number. Select a row to open the complete record.
+The table shows **Result**, **Motion**, **Topic**, **Vote**, **Margin**, **Date**, and **No.** (sitting and vote number). **Vote** shows the votes for and against with a bar that also includes abstentions; members who did not vote are not counted there.
 
-**Search current page** filters records already loaded by title, topic, or number. The **Procedural votes in Ledger** preference controls whether agenda changes, recesses, quorum checks, and similar procedural votes are shown; they are hidden by default.
+The result reads **Passed**, **Rejected**, **Quorum present**, or **Quorum missing**. A vote on candidates shows **List vote** and its leading option; a presence check shows the number of members present. Where the majority required is recorded, it determines the result.
 
-Result labels can include **Passed**, **Rejected**, **Quorum present**, **Quorum missing**, and list-vote outcomes. The recorded majority rule determines the result where applicable.
+The sidebar offers:
 
-## Senat
+* **Search current page** — filters the votes already loaded by title, topic, description, or number;
+* **Show procedural votes** — agenda changes, recesses, quorum checks, and similar procedural votes are hidden by default. The switch is the same setting as **Procedural votes in Ledger** in **Settings → Preferences**.
 
-The Senate table presents the official Senate result, subject, topic, distribution, margin, date, and vote number made available by the source. Search filters the records already fetched. Select a row to open its details.
+## Senate
 
-Senate records are not inferred from the Sejm record. If the source has not published a field or a member list, Persate leaves that information unavailable.
+The Senate table uses the same columns as the Sejm table. The result reads **Adopted** or **Rejected**, as published by the Senate. **Search current page** filters the votes already loaded.
 
-## Prezydent
+Senate records come from the Senate's own publications and are not derived from the Sejm record. A field or a list of senators that the source has not published remains unavailable.
 
-**Awaiting decision** lists acts sent to the President during the current Sejm term, with their decision deadline and available Sejm support. Joint prints appear as one act. The badge on the President tab shows the number awaiting a recorded decision. Select an act to open its legislative process.
+## President
 
-**Recorded decisions** groups decisions by day. Vetoes and referrals show their subsequent Sejm or Tribunal status when available; signatures appear as compact buttons. Select a decision to open its detail. A signature and same-day referral of the same act appear together. Search filters loaded decisions and the awaiting acts; the **Outcome** filter narrows recorded decisions.
+The **President** tab has two tables.
 
-The President acts individually, so Persate does not show a vote distribution or chamber map for this tab.
+**Awaiting decision** lists acts sent to the President without a recorded decision. Each row shows the **Deadline** for the decision (hover over it for the length of the period), the act, the **Sejm vote** for and against, and the **Print** numbers, including prints considered jointly. Select the act to open its legislative journey. **Overdue** marks an act whose period has passed with no decision recorded yet; such acts are not counted on the tab badge. The table is hidden when no act is waiting.
 
-## TK
+**Recorded decisions** groups decisions by day. The header summarizes the current year: acts signed, vetoed, and referred to the Tribunal. Each row shows:
 
-Pending cases appear before rulings. Pending cases show their waiting time; preventive cases carry an **Act on hold** label. Rulings show their outcome and, when the ruling text names them, the judges on the bench. Orange seats mark separate opinions.
+* **Decision** — **Signed**, **Vetoed**, **To TK before signing**, or **To TK after signing**;
+* the act — select it to open the decision;
+* **Follow-up** — for a veto, the Sejm's vote on it (**Veto upheld**, **Veto overridden — act passed again**, or **No Sejm vote recorded**); for a referral, the Tribunal case signature and its status, linking to the case;
+* **Print** — the print numbers, linking to the act's legislative journey when the decision is linked to a bill.
 
-**Search all cases** searches stored signatures, subjects, applicants, and challenged references. Use **Status** to choose pending cases or rulings, and **Case type** to filter by signature family. Each section has its own **Load more** control.
+When two or more acts were signed on the same day, they appear as one row of chips; **+N more** shows the remaining chips and **Show fewer** folds them again.
 
-Select a case to open its record and related official material.
+The sidebar offers **Search current page** (act, bill, or print number; it also filters the acts awaiting a decision), **Short titles**, and **Outcome**, which narrows the recorded decisions to one outcome. The President acts alone, so the tab shows no vote distribution or chamber map.
+
+## CT
+
+The sidebar offers:
+
+* **Search all cases** — searches every stored case by signature, subject, applicant, or challenged provision, not only the loaded rows;
+* **Short titles**;
+* **Status** — **All cases**, **Awaiting a ruling**, or **Rulings**;
+* **Case type** — the signature family, with the number of cases.
+
+With **All cases**, the first cases **Awaiting a ruling** appear above the **Rulings**; **Show all**, followed by the number of pending cases, switches the list to **Awaiting a ruling**. The **Rulings** header summarizes the current year: the number of rulings, rulings by majority, and rulings with separate opinions.
+
+Pending cases show how many days they have been waiting, the hearing date when one is set, and the filing date. A pending preventive review carries **Act on hold**: the act is suspended until the Tribunal rules. Rulings show the outcome (**Constitutional**, **Unconstitutional**, **Partly unconstitutional**, **Proceedings discontinued**, or **Ruling recorded**), the bench when the ruling text names it, and the ruling date. In the bench, orange squares mark judges who filed a separate opinion. **Case closed** and **Status unknown** describe cases that ended without a recorded ruling or whose ending the source does not record.
 
 ## Data and empty states
 
-Persate presents fields published by the relevant public source. Missing values are shown as unavailable; they are not estimated.
+Persate presents the fields published by each public source. Missing values are shown as unavailable; they are not estimated.
 
-* No results after search — clear the current-page query and institution-specific filters.
-* Source unavailable — retry after refreshing; keep the institution and record number when reporting the problem.
-* Detail unavailable — the public source may not expose the record yet, or the identifier may no longer resolve.
-
-## Related guide
-
-* **[Record details](/voting-ledger/voting-detail)** — institution-specific detail pages, documents, and chamber maps.
+* **No votings match your search**, **No decisions match your search**, or **No cases match your search** — clear the search; on the President and CT tabs also check **Outcome**, **Status**, and **Case type**.
+* **Couldn't load votings**, **Couldn't load decisions**, or **Couldn't load cases** — select **Try again**. A message about missing permissions means the account has no access to that record.
+* A row that does not open, or a detail page that is unavailable — see [Record details](/voting-ledger/voting-detail).

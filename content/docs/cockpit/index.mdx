@@ -1,36 +1,61 @@
 ---
 title: Cockpit
-description: Review important alert developments, project stages, and consultation positions in one dashboard.
+description: The start screen after sign-in — ranked developments from alerts, project stages and consultation positions in one view.
 ---
 
-The **Cockpit** is the startup dashboard after signing in. Open **Cockpit** in the sidebar to review developments on the alerts available to the account. This view requires access to alerts.
+The **Cockpit** is the start screen after signing in. **Cockpit**, the first entry in the sidebar, returns to it; on a phone, it is the first button in the bottom dock. The view is built from the alerts available to the account, so it is available when alerts are enabled for the organization. Otherwise the page shows **This feature is not included in your plan**.
+
+The page has two parts: a mosaic of development cards and a rail with three summaries. On a wide screen the rail sits to the right of the mosaic; in a narrower window and on a phone, the summaries appear above the cards.
 
 ## Development cards
 
-The mosaic ranks alert developments by assessed significance, the number of grouped events, and recency. **Potentially major** items come first. An item without an assessment is not treated as unimportant.
+The mosaic shows up to eight cards. They are ranked by assessed significance, then by the number of grouped events, then by recency: **Potentially major** items come first, followed by noteworthy items, items without an assessment and routine items. A missing assessment is normal and does not mean that an item is unimportant.
 
-The largest card shows the leading development. If positions are available for its project, coloured letter tiles show the organisations and their assessed stances. Posts on X about the same Public Pulse event or theme appear as one card. When your alerts leave room, the remaining cards show potentially major public developments from the last two days that your alerts did not match, including a key figure when one is available. The mosaic shows only cards with content: with fewer items, the cards grow to fill the space.
+* **Leading card** — the largest card shows the top-ranked development. When organizations have filed consultation letters on its project, letter tiles show each organization with its assessed stance, together with the number of letters and a count per stance, marked **Automated reading**.
+* **Second card** — goes to the strongest potentially major item from the last seven days, preferably from a different alert than the leading card. Without such an item, it holds the next card in the ranking.
+* **Other cards** — show the source type, the alert name, the title, the source or author with the time and, when it is known, the current stage of the related government project. Side by side, the mosaic prefers cards from different alerts.
 
-Selecting a card opens its details. **Why it matters** shows the automated rationale and up to two topics when available. Assessments can be incomplete or incorrect; check the linked source before relying on them. Source text and rationales retain their original language.
+A development matched by several alerts appears only once. X posts about the same Media event or theme are combined into one card; a post without a usable title is not shown.
 
-## Dashboard summaries
+When the alerts do not fill every square, the remaining cards show Poland-wide developments from the last two days that were assessed as potentially major, with a key figure when one is available. A development about a project already shown on an alert card is not repeated. The mosaic shows only cards with content: with fewer items, rows collapse and the cards widen to fill the space.
 
-* **Since your last visit** — new activity grouped by alert, with a headline and a new-item count. Select an alert to open its matches.
-* **Your projects in the process** — government (RCL) projects linked to your alert activity in the last seven days, their current stage, and the next step. The track distinguishes stages containing documents from earlier empty and upcoming stages. The current stage is inferred from the available documents, so it may lag the official process.
-* **Who's weighing in** — positions on linked projects, grouped by organisation and stance: **Objects**, **Asks for changes**, or **No objections**. These are automated readings of assessed letters, not verified legal conclusions. The date label states the available coverage; absence from the card does not establish that an organisation filed no position.
+## Card details
 
-All three summaries are always shown. Positions already shown on the leading card are not repeated in the summary.
+Selecting a card opens its detail panel on the right side of the page. Depending on the item, the panel shows:
+
+* a link to the source, its author and the detection time;
+* a summary of the development;
+* **Why it matters** — the significance label, the automated rationale and up to two topics, marked **Automated assessment, not verified.** The rationale is written in Polish and is not translated;
+* **Original** — an excerpt from the source;
+* **Matched** — the terms that matched the alert;
+* **Triggered by alert** — a link to the alert that found the item.
+
+Assessments can be incomplete or wrong. Check the source before relying on them. Source text keeps its original language.
+
+## Summaries
+
+The rail always shows the same three summaries. Each one loads, stays empty or fails on its own, without changing the rest of the page.
+
+* **Since your last visit** — new items grouped by alert. Each row shows the alert name, the leading headline and the number of new items; selecting a row opens that alert, and **See all** opens Tracker. A visit counts only once the summary has actually been visible on screen. With nothing new, the summary reads **Nothing new since your last visit.**
+* **Your projects in the process** — government (RCL) draft projects linked to alert activity in the last seven days. Each row shows the project title, a stage track, the current stage with its date and the next step (**Next:**). On the track, solid segments are stages with documents, dimmed segments are earlier stages without documents, the larger segment is the current stage and outlined segments lie ahead; hovering over a segment shows the stage name and dates. For a draft bill, the track also outlines the later parliamentary steps; they show the path ahead, not the bill's actual parliamentary status. The current stage is inferred from published documents and can lag behind the official process. **All projects** opens the list of government projects. With no linked project, the summary reads **No government drafts from your alerts this week.** and offers **Review your alerts**.
+* **Who's weighing in** — consultation positions on the linked projects. Each project shows the number of positions, a bar divided by stance and chips for the organizations, coloured by stance: **Objects**, **Asks for changes** or **No objections**. The **Letters since** label gives the start of the available coverage. Stances are automated readings of the letters, not verified legal conclusions, and an organization missing from the summary may still have filed a position. On a wider screen the leading card's project is not repeated here, and when it is the only project with letters, the summary reads **On the featured card**; on a phone, where the leading card has no letter tiles, the project is listed. With no letters, the summary reads **No consultation letters on your drafts yet.** and offers **Browse projects**.
 
 ## Recommended workflow
 
-1. Review the leading developments and potentially major items.
-2. Open a card to read the rationale and verify its source.
-3. Check project stages and consultation positions, then open the relevant alert or project to continue working.
+1. Review the leading card and the potentially major items.
+2. Open a card, read **Why it matters** and verify the source.
+3. Check **Since your last visit** for alerts with new items, then the project stages and the consultation positions.
+4. Continue in the alert or the project page.
+
+## Empty, loading and error states
+
+* While the page loads, placeholders hold the layout. Cards are placed once the alert data has arrived; squares still waiting for Poland-wide developments remain placeholders until those arrive.
+* **No alerts triggered yet** — the alerts have produced no matches to show. When Poland-wide developments are available, this message takes the leading square with **Create alert**, and the developments fill the remaining squares. Without them, the message fills the mosaic.
+* **No titled events yet** — recent matches are still waiting for a display title. **View alerts** opens Tracker.
+* **Couldn't load your alerts' news.** — the cards could not be loaded; select **Try again**. **Couldn't load Poland-wide news.** appears in a single square with its own **Try again**.
+* **Couldn't load this section.** — one summary could not be loaded; its **Try again** reloads only that summary.
+* **Couldn't load the Cockpit.** — no part of the page could be loaded; **Try again** reloads all of them.
 
 ## Appearance
 
-Light mode is the default when no theme has been chosen. Change it under **Settings → Preferences → Appearance** using **Sunny mode**, **Moonlit night**, or **Follow system**. An existing choice remains in effect.
-
-## Empty and loading states
-
-**No alerts triggered yet** means no alert matches are ready to display. Create an alert or open the existing alerts. **No titled events yet** means recent matches are still waiting for a display title. Placeholders are replaced as data arrives. A summary with nothing to show says so in one line, and one that cannot be loaded offers **Try again**.
+Light mode is the default when no theme has been chosen. The theme switch in the header toggles between light and dark and saves the choice to the account. **Settings → Preferences → Appearance** offers **Sunny mode**, **Moonlit night** and **Follow system**. See [Preferences and notifications](/account-and-settings/preferences).

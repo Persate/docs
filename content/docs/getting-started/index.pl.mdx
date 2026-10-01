@@ -1,30 +1,40 @@
 ---
 title: Pierwsze kroki
-description: Proces zakładania konta, konfiguracja weryfikacji dwuetapowej oraz procedura pierwszego logowania na platformę.
+description: Zasady dostępu do Persate i kolejne kroki od zaproszenia do pierwszej sesji pracy.
 ---
 
-Aby rozpocząć pracę z platformą Persate, należy wykonać trzy kroki: założyć konto, zabezpieczyć je i zalogować się po raz pierwszy. Cała procedura zajmuje około pięciu minut i wymaga dostępu do urządzenia mobilnego w celu konfiguracji zabezpieczeń.
+Z Persate korzysta się w ramach organizacji. Konto otwiera platformę dopiero wtedy, gdy należy do organizacji; administratorzy organizacji dodają członków, nadają im role i przypisują ich do grup.
 
-## Wymagania wstępne
+## Sposoby uzyskania dostępu
 
-* Aktywny adres e-mail (służący do weryfikacji i komunikacji).
-* Urządzenie mobilne z zainstalowaną aplikacją uwierzytelniającą obsługującą standard TOTP (np. Google Authenticator, Authy, Microsoft Authenticator).
+* **Zaproszenie od administratora** — standardowa ścieżka. Wiadomość z zaproszeniem prowadzi do strony ustawiania hasła. Opis na stronie [Zakładanie konta](/pl/getting-started/create-account).
+* **Zaproszenie dla istniejącego konta** — konto, które już istnieje, ale nie należy do żadnej organizacji, otrzymuje link umożliwiający dołączenie do zapraszającej organizacji.
+* **Konto założone przez administratora** — administrator może też utworzyć konto z ustawionym hasłem; wiadomość z zaproszeniem nie jest wtedy wysyłana, a dane logowania przekazuje administrator.
+* **Umów prezentację** — organizacja, która nie korzysta jeszcze z Persate, może wybrać **Umów prezentację** na stronie persate.com. Formularz prosi o imię i nazwisko, służbowy adres e-mail, nazwę organizacji, rolę oraz krótki opis celu; następnie osoba z zespołu Persate odpowiada e-mailem, aby ustalić termin. Wysłanie formularza nie rezerwuje spotkania.
 
-Dostęp do platformy nie wymaga kodu zaproszenia ani podawania danych płatniczych na etapie rejestracji.
+Odnośnik **Zarejestruj się** pod formularzem logowania tworzy konto, ale Persate nie otwiera dla niego platformy, dopóki administrator nie doda go do organizacji: logowanie zostaje odrzucone albo kończy się stroną **Brak dostępu** z komunikatem *Twoje konto nie jest przypisane do organizacji w Persate.*
 
-## Etapy wdrożenia
+## Przed rozpoczęciem
 
-1. **[Założenie konta](/pl/getting-started/create-account)** — wybór metody uwierzytelniania (e-mail lub SSO).
-2. **[Weryfikacja dwuetapowa](/pl/getting-started/set-up-two-factor)** — sparowanie aplikacji uwierzytelniającej w celu zabezpieczenia profilu.
-3. **[Pierwsze logowanie](/pl/getting-started/first-login)** — wprowadzenie do głównego pulpitu startowego (Cockpit).
+* Dostęp do skrzynki pocztowej adresu e-mail konta.
+* Telefon lub inne urządzenie z aplikacją uwierzytelniającą, która generuje sześciocyfrowe kody. Weryfikacja dwuetapowa jest obowiązkowa dla każdego konta w Persate.
 
-## Stany pustego widoku i błędu
+## Kolejne kroki
 
-* *„Verification link expired”* — link wysłany w wiadomości e-mail stracił ważność. Należy ponowić proces rejestracji lub skorzystać z opcji przypomnienia hasła.
-* *„Account already exists”* — próba rejestracji na adres, który jest już w bazie. W takim przypadku należy skorzystać z ekranu logowania.
+1. **[Zakładanie konta](/pl/getting-started/create-account)** — przyjęcie zaproszenia i ustawienie hasła albo rejestracja.
+2. **[Weryfikacja dwuetapowa](/pl/getting-started/set-up-two-factor)** — sparowanie aplikacji uwierzytelniającej podczas pierwszego logowania.
+3. **[Pierwsze logowanie](/pl/getting-started/first-login)** — logowanie i otwarcie Kokpitu.
+
+Nawigację, wyszukiwanie i powiadomienia opisuje następnie strona [Korzystanie z Persate](/pl/using-persate), a ekran startowy — strona [Kokpit](/pl/cockpit).
+
+## Najczęstsze problemy
+
+* **Link logowania wygasł** lub **Nie udało się zalogować** — linki w wiadomościach od Persate działają jednorazowo i wygasają po krótkim czasie. Należy poprosić administratora o nowe zaproszenie albo ponownie zresetować hasło w sposób opisany na stronie [Pierwsze logowanie](/pl/getting-started/first-login). Jeśli przyszło kilka wiadomości, należy użyć tylko najnowszego linku.
+* **Brak dostępu** po zalogowaniu — konto nie jest przypisane do organizacji. Należy otworzyć link z wiadomości z zaproszeniem albo poprosić administratora organizacji o zaproszenie.
+* **Otrzymaliśmy zgłoszenie** po rejestracji, ale wiadomość nie dociera — należy sprawdzić adres i folder spamu. Komunikat jest taki sam niezależnie od tego, czy adres ma już konto.
 
 ## Strony w tej sekcji
 
-* **[Założenie konta](/pl/getting-started/create-account)** — rejestracja e-mail oraz logowanie jednokrotne (Google/Microsoft).
-* **[Weryfikacja dwuetapowa](/pl/getting-started/set-up-two-factor)** — procedura skanowania kodu QR i weryfikacji klucza TOTP.
-* **[Pierwsze logowanie](/pl/getting-started/first-login)** — nawigacja po Cockpicie oraz globalne wyszukiwanie i wgrywanie plików.
+* **[Zakładanie konta](/pl/getting-started/create-account)** — przyjęcie zaproszenia, dołączenie do organizacji z istniejącym kontem i rejestracja.
+* **[Weryfikacja dwuetapowa](/pl/getting-started/set-up-two-factor)** — sparowanie aplikacji uwierzytelniającej i potwierdzenie kodem.
+* **[Pierwsze logowanie](/pl/getting-started/first-login)** — logowanie hasłem lub kontem Google albo Microsoft, resetowanie hasła i pierwszy ekran.

@@ -1,35 +1,39 @@
 ---
 title: Account
-description: Manage the profile details shown across Persate and inspect your workspace access.
+description: Profile photo, display name, email address, role and group memberships of the signed-in user.
 ---
 
-Open **Settings → Account**.
+Open **Settings → Account**: select the avatar in the top-right corner and choose **Account settings**.
 
 ## Profile photo
 
-Select the avatar or **Upload photo**. Persate accepts JPG, PNG, and WebP images up to 2 MB. **Remove custom photo** restores the generated avatar or the image supplied by the identity provider.
+Select the avatar or **Upload photo** and choose an image. Persate accepts JPG, PNG and WebP files up to 2 MB. The photo is shown on the user's avatar across the platform, for example in comments and member lists, so use an image approved for professional use.
 
-Use only an approved professional image. The photo can appear in shared briefings, comments, and collaborator lists.
+When a custom photo is set, **Remove custom photo** removes it and restores the default avatar.
 
 ## Display name
 
-Enter the name that Persate should show to collaborators, then select **Save**. If the field is blank, Persate falls back to the identity-provider name or email address.
+Enter the name Persate should show to other members and select **Save**; the button becomes active once the name has changed. The display name appears in comments and user lists. If the field is left blank, Persate uses the name from the sign-in provider or the email address.
 
 ## Email
 
-Select **Change email**, enter the requested credentials and new address, then follow the confirmation links sent to both the old and new addresses. The address does not change until the confirmation flow completes.
+1. Select **Change email**. The **Set a new email** dialog opens.
+2. Enter the **Current password**, the **New email** and, in **Repeat new email**, the same address again.
+3. Select **Set new email**. Persate sends a confirmation link to both the old and the new address.
 
-For provider-managed sign-in, account credentials may have to be changed with the provider.
+The address changes only after the confirmation is completed. For accounts that sign in with a Google or Microsoft account, the sign-in details are managed by that provider.
 
 ## Role and groups
 
-**Role** is read-only and shows the workspace-level permission assigned to the account. **Groups** lists the user's current memberships and group role. Groups control access to shared documents, analyses, channels, and assigned Labs.
+**Role** shows the account's permission level in the organization, for example **Administrator** or **Member**. It is read-only on this page.
 
-Only a workspace administrator can change roles or memberships. An empty group list is valid, but group-scoped content will not be available.
+**Groups** shows how many groups the user belongs to and lists each group with the user's role in it. Groups control which shared documents, analyses and channels the user can see; labs are also assigned to groups. When the user belongs to no group, the row says so — content shared only with groups is then not available. If the list cannot be loaded, **Try again** reloads it.
+
+Only an organization administrator can change a role or group membership — see **[Users and groups](/administration/users-and-groups)**.
 
 ## Troubleshooting
 
-* Photo upload rejected — confirm the format and 2 MB limit.
-* **Save** disabled — the display name has not changed.
-* Confirmation email missing — check both old and new inboxes and the spam folders.
-* Incorrect role or group — contact a workspace administrator; the Account page cannot change it.
+* Photo rejected — check the file format and the 2 MB limit.
+* **Save** is inactive — the display name has not changed.
+* No confirmation email — check both the old and the new inbox, including spam folders.
+* Wrong role or group — contact the organization's administrator; the **Account** page cannot change them.

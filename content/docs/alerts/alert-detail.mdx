@@ -1,75 +1,82 @@
 ---
 title: Alert detail
-description: Detailed alert view — title banner, trigger event log, match sensitivity, and permissions management.
+description: The alert page — settings, access, match sensitivity, tracked cases, recorded events, and match feedback.
 ---
 
-The **Detailed view** enables analyzing recorded events and managing the alert's state, sensitivity, and visibility. It consists of a title banner, action row, event log, and reference panel.
+Selecting an alert in the Tracker opens its page. A strip at the top shows the alert's illustration when one has been generated; when attribution is available, the information icon on the image shows it. Below it, the content column is divided into **Cases**, **Activity**, and **Unlinked**, with a contents list for jumping between them. The panel on the right holds the alert's actions and settings; on small screens it opens with the **Alert settings** button.
 
-## Title banner
+## Actions
 
-The banner contains key alert metadata:
+Owners and authorized administrators see three actions at the top of the panel:
 
-* **Name and status** — header with state information: **Active** or **Paused**.
-* **Visibility** — designated as **Private** (creator only) or **Shared** (shared with selected groups).
-* **Creation date** — timestamp presented next to a clock icon.
-* **AI illustration** — a thematic image automatically matched to every alert.
+* **Edit alert** — opens the conversation-based editor. See [Create and edit alerts](/alerts/creating-alerts#edit-an-alert).
+* **Pause** / **Resume** — stops or restarts the recording of new events. Existing events stay available.
+* **Delete alert** — asks for confirmation, then permanently deletes the alert's monitoring configuration and saved matches. This cannot be undone.
 
-## Action buttons
+Other viewers see **Shared alert · read-only** or **System-managed alert · read-only** instead.
 
-Buttons enabling state modification are located below the banner:
+## Definition and details
 
-* **Make Shared / Make Private** — changes the visibility scope. Switching to shared status requires designating at least one user group in the dialog window. Returning to private status revokes access from all groups.
-* **Pause / Resume** — pauses or resumes content monitoring. In the paused state, new events are not recorded.
-* **Edit** (pencil icon) — opens the alert parameter editing form.
-* **Delete** (trash icon) — permanently deletes the alert along with its entire event history. The operation requires confirmation and is irreversible.
+Below the actions, the panel shows the alert's name and description and, for alerts with a rule contract, the rules it runs. Each rule is summarised in a sentence, with chips for its conditions and tiles for the sources it checks; when there are several rules, the panel notes that **Each rule runs independently. A material only needs to match one of them.**
 
-## Trigger history
+**Details** lists:
 
-The **Trigger History** section contains a chronological log of matches. Every entry presents:
+* **Status** — **Enabled**, **Paused**, or **Setting up**;
+* **Definition ready** — when the monitoring definition was last prepared;
+* **Created** — when the alert was created.
 
-* **Source** — the type of content where the match was found (e.g., **Sejm speech**, **X post**). When a link to the source material is available, the type label is clickable.
-* **Relevance** — a **Bezpośrednie**, **Silne**, or **Słabe** label indicating the confidence of the match.
-* **Timestamp** — the moment the event was detected.
-* **Title and summary** — a generated description of the event.
-* **"Dlaczego ten alert?"** — a brief explanation of why the content was considered a match.
-* **Citations** — verified source fragments, expanded with the **Pokaż cytaty** option.
-* **Original** — the original contextual fragment of the content.
-* **Matched** — the matched terms.
+## Access
 
-Each event also offers **Trafne** / **Nietrafne** rating buttons, which provide feedback that influences the quality of future matches.
+The **Access** section sets who can open the alert: **Only me** or **Selected groups**. After choosing groups, select **Update** to save the change, or **Cancel** to return to the saved audience. Switching a shared alert to **Only me** first shows how many groups will lose access. Members of the selected groups can open the alert and receive notifications according to their own settings.
 
-When no matches exist, the message *"No trigger events yet"* is displayed.
-
-### Near threshold
-
-Below the main list, an expandable **Blisko progu** section may appear, collecting lower-confidence matches that did not reach the main log. The section appears only when such matches exist.
+Viewers who cannot manage the alert see a summary instead, such as **Owner only** or **Shared via** followed by the group names.
 
 ## Match sensitivity
 
-The right panel offers a **Czułość dopasowania** control that determines how broadly the alert captures content:
+**Matching sensitivity** controls how widely the alert accepts matches:
 
-* **Precyzyjny** — only hits explicitly about the alert's topic, with the least noise.
-* **Zrównoważony** — explicit and strong hits; weaker ones go to the "Blisko progu" section.
-* **Szeroki** — also shows weak matches (flagged, without email notifications).
+* **Precise** — only matches directly about the alert's topic; the least noise.
+* **Balanced** — direct and strong matches; weaker matches are held back near the threshold.
+* **Broad** — also weak matches, clearly marked and without email notifications.
 
-If automatic calibration analysis determines that the alert is too broad or too narrow, a tooltip may appear above the control suggesting a sensitivity change that can be applied or dismissed with a single click.
+Only viewers who can manage the alert can change the level, and the change is saved immediately. When Persate's calibration suggests a different level, a note above the control reads **This alert may be too broad. Consider the “…” sensitivity.** Select **Set “…”** to apply the suggestion or **Dismiss** to hide it.
 
-## Monitoring plan
+## Cases
 
-For alerts with a structured legal rule, the **Monitoring plan** panel summarizes how the alert operates: mode, main topic, monitored and contextual entities, covered sources, required evidence, and exclusions. For other alerts, this panel is replaced by a list of active **keywords**.
+**Cases** lists the matters the alert follows — for example legislative matters, parliamentary questions, people, or organizations — that were discovered by the alert or attached to it. The number of tracked cases appears next to the heading. Select a case to see its summary, type, origin, and latest activity date, and **Open source** to go to the source. **No tracked cases yet** means nothing has been discovered or attached so far.
 
-## RCL Watchlist
+When RCL projects are attached to the alert, an **RCL watchlist** appears below the cases with each project's latest stage, latest document, and identifiers. To change the list, search by topic, title, or RCL id and add the matching projects, or remove a project with **×**. Changes are marked **Unsaved** until **Save RCL watchlist** is selected.
 
-The **RCL Watchlist** section allows tracking specific legislative projects from the Government Legislation Centre. Entering an RCL topic, title, or identifier searches for matching projects, which can be added to the watchlist and saved with the **Save RCL watchlist** button.
+## Events
 
-## Permissions panel
+Recorded matches appear in two sections:
 
-For alerts with **Shared** status, the **Shared with** section is available. It enables:
+* **Activity** — events linked to a tracked case.
+* **Unlinked** — matches that are not linked to a case.
 
-* **Adding groups** — the **Add group** button allows selecting new groups from the list.
-* **Removing access** — selecting the **X** icon next to a group name immediately revokes its permission to view the alert.
+Each row shows the source type, the time of detection, the speaker for Sejm speeches, an identifier (such as a paragraph or a print number) or a confidence label for the speaker (**verified**, **probable**, or **unidentified**), and a headline. When several observations belong to the same event, the row shows how many observations and sources it combines. **Load more** loads further events.
 
-## Empty view and error states
+Select a row to expand it. Depending on the source, the expanded event contains:
 
-* *"No trigger events yet"* — no matches have been recorded for this alert yet.
-* *"Alert not found"* — the record does not exist or permissions to view it are missing. Return to the main list.
+* a link to the source — for example **Open act**, **Open print**, **Open project**, **Open on X**, **Play from** a timestamp in the recording, **Open file** (opens the file in the Repository viewer), or **Open source**;
+* **Why this alert?** — a short explanation of why the material was accepted;
+* **Quote** or **Quotes** — passages from the source quoted as evidence for the match;
+* **Excerpt** or **Matched fragments** — the relevant parts of the text. Fragments are ordered by how well they match, not by their position in the document; a button below them reveals any remaining fragments. When an excerpt is past its retention period, a note asks you to open the source instead;
+* labels showing whether the event is linked to a case (**Case-linked** or **Unlinked signal**) and whether it starts an event or updates an existing one (**Event root** or **Grouped update**);
+* **Continue tracking** with **Track full project** — when a match covers only newly introduced text in a project, this sets up a separate alert for the whole project;
+* **Event observations** — the individual observations grouped into the event;
+* **Email delivery** — whether an email was sent, queued, or failed, or why it was withheld, for example because email notifications were off, no recipient has alert emails enabled, or the organization's privacy setting prevented it.
+
+## Match feedback
+
+Each expanded event ends with **Match assessment**, which shows the strength of the match (for example **Direct**) and asks whether it is relevant. Select **Relevant** or **Not relevant**. For **Not relevant**, a reason can be added — **Wrong topic**, **Duplicate**, **Too minor**, **Wrong source**, or **Opposite direction** — together with an optional comment sent with **Send detail**. Persate records the assessment with the event.
+
+## Setting up
+
+Right after saving, an alert can show **This alert is being set up** with the note that tracking starts automatically when setup is complete. No action is needed.
+
+## Empty and error states
+
+* **No trigger events yet** — the alert has not recorded any match yet. Matches appear here as they are found.
+* **No activity matches this filter.** — the alert has events, but none in this section. Check the other section.
+* **Alert not found** — the alert could not be loaded: it may have been deleted or the link may be outdated. Return to the Tracker list.

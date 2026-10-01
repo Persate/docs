@@ -1,84 +1,130 @@
 ---
-title: Interface and advisor workflow
-description: Message composition, file tagging, timeline, citations, and conversation history.
+title: Interface and Advisor workflow
+description: Starting a conversation, composing messages, reading answers and citations, drafts in other modules, and conversation history.
 ---
 
-## Query composition area
+## Screen layout
 
-The message input panel is located at the bottom of the screen:
+The conversation fills the center of the screen and the message composer sits at the bottom. The right edge of the screen holds the Advisor controls:
 
-* **Suggestion lightbulb** — in a new conversation, opens a list of recent topics. Focusing the empty text field also shows the list. An alert-related event appears first with the alert name in blue when one is available. Selecting a topic fills the draft and adds a source chip; review the draft before sending it.
-* **Text field** — supports multi-line text input (`Shift + Enter`). The `Enter` key submits the query.
-* **Repository button** — appears in the expanded input controls and opens search across the Repository and public corpus. The `@` symbol opens the same search.
-* **Send button** — inactive when the text field is empty or when the advisor is generating a response to the previous question.
+* **Conversations** — shows or hides the list of conversations. The browser remembers the choice.
+* **Plan** — appears when the current answer has a plan; opens it in place of the conversation list. See [Following the Advisor's work](/advisor/activity).
+* **Research agents** — one icon per research agent of the conversation; each opens that agent's session beside the chat.
 
-## File tagging (`@`)
+On narrow screens, **New conversation** and **History** buttons sit in the top right corner and shrink to icons once a conversation has started. History opens as a panel from the bottom of the screen; a list button opens the plan when one exists.
 
-Entering the `@` symbol in the text field opens the document search engine covering the Repository and the public corpus:
+## Starting a conversation
 
-* **Search by name** — a quick mode for files with known titles.
-* **Hybrid search** — a toggle on the right side of the search field enables searching documents based on their content.
-* **Context chips** — appear above the text field for selected files and sources. Multiple items can be attached simultaneously; a source chip links to its material when a direct link is available.
+An empty conversation shows a greeting and the question *"Can I help you with anything?"*. Ready-made starting points are available:
 
-Attach a file directly when it contains the sought answer. If the information location is unknown, allow the advisor to search the resources independently.
+* **Topic suggestions** — the lightbulb button (**Show topic suggestions**) at the start of the field, or selecting the empty field, opens a list of recent developments from the platform's sources, each marked with an icon of its subject area. The button is shown only in a new conversation when suggestions are available.
+* **Alert tip** — when an alert has recently found a match, it appears first in the list, with the alert name in blue and an **Open alert** link to the alert detail.
 
-## Message timeline
+Selecting a suggestion fills the field with a draft question — *Investigate “…”. What do the sources confirm, and why does it matter?*, prefixed with *For alert “…”:* for an alert tip — and attaches the source as a context tag. The draft can be edited before sending.
 
-Every turn produces a **message timeline** streamed before the response content. It constitutes a visible record of the advisor's actions during operation.
+A question can also be sent from the platform search: a query phrased as a question offers **Ask the Advisor**, which opens a new conversation and sends the question.
 
-### Reasoning blocks
+## Composing a message
 
-Fragments of the model's chain of thought appear as collapsible rows labeled *"Thinking…"* (in progress) or *"Working through the request"* (completed). Upon turn completion, blocks are automatically collapsed — any of them can be reopened for inspection.
+The field (*Type a message...*) expands when selected and shows the message tools:
 
-Reasoning blocks represent the model's working notes, not part of the final response. They are useful for understanding *why* the advisor reached a given conclusion.
+* **Enter** sends the message; **Shift + Enter** starts a new line.
+* **Thinking depth** — the depth control (**Surface**, **Balanced**, **Deep**) applies to this message only. See [Thinking depth](/advisor#thinking-depth).
+* **Add context from global search** — the button with the Repository icon opens the platform search. Typing `@` opens the same search; the character is not inserted into the text.
+* **Send message** — inactive when the field is empty or while the Advisor is working on the previous question.
 
-### Tool call badges
+While the Advisor works, the send button is joined by a stop button (**Stop research**), and text typed in the field is sent as a note to the running task rather than as a new question. See [Following the Advisor's work](/advisor/activity).
 
-Every external search executed by the advisor becomes a badge in the timeline. It contains:
+## Attaching context
 
-* **Icon** identifying the skill family (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
-* **Tool name**.
-* **Status** — icons corresponding to successive stages of operation. Completed calls display the execution time (e.g., `1.2s`).
+The platform search opened from the composer covers the same areas as the global search. Results are picked one after another and stay highlighted; selecting a highlighted result again removes it.
 
-Adjacent tool calls are grouped into a collapsible set (*"Using N tools…"* in progress, *"N tools used"* completed).
+* **Files** from the Repository appear above the field as previews.
+* **Other results** — for example a vote, a Sejm print, a profile or a recording — appear as context tags with their source icon. The source tag added by a topic suggestion opens that material in a new tab.
+* The **×** on a preview or tag removes it from the message.
 
-### Elicitation forms
+Several items can be attached to one message, and a message may consist of attachments alone. Attach material when it contains the answer; when the location of the information is unknown, let the Advisor search on its own.
 
-Certain tools require structural input during the turn — e.g., selecting a Sejm term or indicating a stakeholder in case of a name collision. The tool then emits an **elicitation request**: the process remains in the *running* state, and a form appears below it.
+## Reading the answer
 
-Confirm or skip the form (skipped requests use the tool's default value). Upon resolution, the tool call resumes.
+The answer appears under the activity summary (*Worked for …*), which can be expanded to show the work behind it. References in the answer are **citation chips** — a source icon with a title. Selecting a chip opens the source:
 
-## Links in responses
+* Votes, acts, prints, RCL projects, parliamentary questions, profiles, committees, alerts, Media events and stories, recordings and earlier conversations open in the platform.
+* Posts on X, web pages and the official Sejm stenogram open in a new tab.
+* Legislative chips also show a short excerpt of the cited passage; Media event chips show the account and the post text.
 
-Response content may include links providing quick access to source materials. These are direct links to specific system elements. Selecting them opens a new tab:
-   * Votes in the Voting ledger.
-   * Stakeholder profiles and alert details.
-   * Original posts on X.
-   * Specific files or their fragments in the Repository.
+Citations point to the exact passage where one is available:
 
-## Per-message buttons
+* A cited file opens in the file viewer with the **Cited passage** shown alongside the document.
+* A cited passage of a legal text opens the document reader at that passage.
+* A cited Sejm print opens its document; when the print contains several documents, a list asks which one to read.
+* A cited transcript passage opens on a separate page with the **Original source passage**.
 
-Icons are available below every completed advisor message:
+If the exact passage cannot be opened, a message says so; in the file viewer the document itself stays open. The complete list of citation types is in [Advisor skills](/advisor/skills#citation-uris).
 
-* **Copy** — copies the response content to the clipboard. Citation badges are replaced by their textual representation.
-* **Restart arrow** — resubmits the previous query and replaces the current response with a new one.
+## Answer controls
+
+Icons below every completed answer:
+
+* **Shield** — appears when the answer has a source check. Hovering shows the result; selecting the shield opens the details. See below.
+* **Copy response** — copies the answer text to the clipboard.
+* **Regenerate response** — runs the same question again and replaces this answer.
+
+The shield's color deepens as more of the key points are confirmed; it is red when the check could not be completed. Possible results:
+
+| Result | Meaning |
+| :--- | :--- |
+| **Key points supported by sources** | The key answer points match the collected sources. |
+| **Some key points need caution** | Only the points that need clarification are listed in the details. |
+| **Answer reviewed** | The answer was reviewed in the context of the question and the available sources. |
+| **Answer reviewed with limitations** | As above, with limitations listed in the details. |
+| **Confirmed by live workspace read** | The answer comes directly from the workspace's live data, read during this turn. |
+| **Answer not verified** | The answer was not checked against sources. |
+| **Verification unavailable** | The independent source check could not be completed. |
+
+The details list **Relevant cautions** — a few passages not confirmed by the sources, each with a reason — and, after a failed check, a hint to repeat or narrow the question.
+
+## Drafts in other modules
+
+On request, the Advisor prepares work that is finished in another module. A card below the answer opens the draft:
+
+| Card | Destination | Statuses |
+| :--- | :--- | :--- |
+| **Monitoring setup** (or the alert name) | Tracker | **Setup required · Monitoring is not active** |
+| **Article draft** (or the article title) | Editor | **Preparing draft**, **Draft saved**, **Needs review · Your edits are preserved**, **Preparation interrupted** |
+
+If the conversation is still open when an alert draft or an article draft is ready, Persate opens the destination automatically; the card opens it again later. Alert drafts stay inactive until they are reviewed and saved in the Tracker, and article drafts are never published by the Advisor. The destination shows the research behind the draft and a link back to the original conversation.
+
+A request to create a Smart Folder or to explore connections between people and organizations produces a card that opens the Smart Folders creator or the **Connections** tab of Stakeholders with the request filled in.
+
+The Editor is available when it is enabled for the organization. See [Creating and editing alerts](/alerts/creating-alerts), [Editor](/editor), [Smart Folders](/repository/smart-folders) and [Connections](/stakeholders/connections).
 
 ## Conversation history
 
-The right interface column contains a list of all conversations on the account:
+The conversation list shows the account's conversations, newest first:
 
-* **New conversation** — clears the workspace and initiates a new session.
-* Previous conversations are displayed under a subject derived from their first messages.
-* Selecting a conversation opens it with the full record — reasoning blocks, tool badges, and citations are reconstructed.
-* The trash icon next to an entry permanently deletes the conversation along with its history.
+* **New conversation** — clears the workspace and starts a new session.
+* **Search conversations** — the magnifier beside **New conversation** opens a search field; the cross or Escape closes it and clears the query.
+* **Show more** — loads older conversations at the end of the list.
+* Selecting a conversation opens it with the full record — activity, citations and cards are reconstructed. The page address identifies the open conversation, so a refresh keeps it open.
+* **Delete conversation** — the trash icon next to an entry deletes the conversation permanently. There is no confirmation step.
 
-On narrow screens, the history column is accessible via the **History** button in the top right corner.
+A conversation without a title is listed as **New conversation**. Sessions held in the Editor's Advisor panel do not appear in this list.
+
+Messages:
+
+* *"No history yet"* — the account has no conversations.
+* *"No conversations found"* — nothing matches the search; try a different term.
+* *"Could not load conversations"* — the list could not be loaded; refresh the page.
+
+## Long conversations
+
+Older messages load when the conversation is scrolled to the top. From the second question onwards, a thin rail of markers appears at the left of the conversation, one marker per question. Hovering a marker shows the question and the start of its answer; selecting it scrolls to that point.
 
 ## Refresh and resume
 
-An active turn is not lost upon leaving the view, refreshing the browser, or experiencing a temporary connection loss. The advisor executes the turn as a detached task and transmits events to clients connected at the time of their triggering. Reopening the conversation reconnects to the live stream and restores the progress to date.
+A running task is not lost when the view is closed, the browser is refreshed or the connection drops for a moment — the Advisor continues in the background. Reopening the conversation in the same browser reconnects to the task and restores the progress so far.
 
-## Empty view and error states
+When a conversation is left while the Advisor is still working, a notification arrives once the task finishes, provided **Advisor notifications** are enabled in **Settings → Notifications**. Returning to the conversation before the task finishes withdraws that request.
 
-* *"No conversation selected"* — the workspace is empty; select an existing session or create a new one.
-* Error block with a code — appears below a partial response when a turn fails. Restarting the turn is the recommended first action.
+Stopped tasks, partial answers and connection problems are described in [Following the Advisor's work](/advisor/activity#interruptions-and-partial-answers).

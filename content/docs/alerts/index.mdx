@@ -1,73 +1,87 @@
 ---
-title: Tracker alerts
-description: Create, share, pause, and review alerts for supported monitored sources.
+title: Tracker
+description: Monitor legislation, people, institutions, and topics with alerts, and manage every alert from one list.
 ---
 
-**CORE → Tracker** contains alert definitions and their recorded matches. When an active alert meets its stored rule on a supported monitored source, Persate records an event under that alert.
+**Tracker** (**CORE → Tracker** in the sidebar) holds the alerts available to the account. An alert is a saved monitoring rule: when new material in a supported source meets the rule, Persate records an event on the alert and notifies its audience according to each person's notification settings. Tracker is available when it is enabled for the organization; otherwise the sidebar item is hidden and opening the page shows **This feature is not included in your plan**.
 
-The source labels shown on an alert describe its saved scope. They do not guarantee that every conceivable feed is enabled for the organization. Check the alert runtime state and Sources ledger before relying on a monitoring workflow.
+## How an alert is built
 
-## Monitoring channels
+Alerts are created in a conversation. Describe what to follow, and Persate researches the request, asks clarifying questions, tests the draft against available data, and shows the resulting **alert contract** before anything is saved. See [Create and edit alerts](/alerts/creating-alerts).
 
-Each alert can cover multiple source types. An alert with no defined source scope listens to all channels (labeled **All sources**). The platform recognizes the following types, among others:
+A contract consists of one or more rules. A rule can combine:
 
-* **Legal act** — published legal acts.
-* **Legislative print** — Sejm prints.
-* **RCL project** — legislative projects in the Government Legislation Centre.
-* **Sejm speech** — speech transcripts from Sejm recordings.
-* **X post** — posts from the X accounts of monitored stakeholders (Public Pulse).
-* **File** — documents uploaded to the repository.
+* exact objects — a person, an institution, an RCL project, or a parliamentary question pinned by identity rather than by name;
+* topics the material must concern;
+* the sources and material types to check, for example Sejm speeches and recordings, legislative prints, RCL projects and documents, official publications, ministry and office publications, parliamentary questions, social media posts, or company files.
 
-## List tabs
+Each rule runs independently: material needs to match only one rule to create an event. Which sources are available depends on the organization; the [Sources](/sources) ledger shows their current state.
 
-The top bar of the view offers tabs that filter the list:
+## The alert list
 
-* **All** — all alerts.
-* **Active** — alerts actively listening.
-* **Paused** — paused alerts.
-* **Drafts** — interrupted alert creation processes that can be resumed.
+The bar above the list has four tabs:
 
-## Alert list view
+* **All** — every alert you can see.
+* **Enabled** — alerts that are monitoring.
+* **Paused** — alerts that are not recording new events.
+* **Drafts** — alert creations that were not finished.
 
-The list is available in two modes, toggled in the top right corner:
+The toggle on the right switches between **Card view** (the default) and **Table view**. The browser remembers the choice.
 
-* **Table view** — a table with the columns **Name**, **Status**, **Sources**, **Access**, **Last event**, and **Created**. The **Name**, **Status**, **Last event**, and **Created** column headers support sorting. The **Name** column can be edited directly in the list.
-* **Card view** — a card layout with a thematic thumbnail, status, and the date of the last event.
+**Card view** shows the alert's image or initial, name, description, access, status, and the date of the last event.
 
-Selecting a row or card opens the detailed view with the history of all events.
+**Table view** shows the name and description, status, sources, groups, owner, date of the last event, and creation date. In the sources column, up to three source icons are shown; **Any enabled source** means the alert is not limited to particular sources, and **Source needs review** means the saved scope contains a source that cannot be displayed and should be checked. Hovering over a row reveals **Pause** or **Resume**, **Edit**, and **Delete**. To rename an alert, hover over its name and select the pencil icon; **Enter** saves the name and **Esc** cancels.
 
-### Sources and Access columns
+Selecting a card or row opens the [alert page](/alerts/alert-detail). When more alerts exist than are loaded, **Load more alerts** appears below the list.
 
-* **Sources** — icons representing the source types covered by the alert. An alert with no defined scope receives the **All sources** label.
-* **Access** — designated as **Private** (creator only) or **Shared** (shared with selected groups).
+## Alert status
 
-### Bulk operations
+* **ENABLED** — the alert is monitoring new material.
+* **SETTING UP** — the alert is saved and its monitoring definition is being prepared. Monitoring starts automatically when setup is complete.
+* **PAUSED** — new events are not recorded. Existing events remain available.
 
-In table mode, selecting rows (checkboxes) displays a bottom bar of bulk actions: **Resume selected**, **Pause selected**, and **Delete selected**. The delete action requires confirmation.
+## Find alerts
 
-## Sidebar
+The panel on the right contains:
 
-The right sidebar provides management and filtering functions:
+* **Create alert** — opens the creator.
+* **Search** — filters the loaded alerts by name, description, or keyword.
+* **Source type** — shows alerts that cover the selected source. An alert that is not limited to particular sources matches every selection. **Any source** clears the filter.
+* **Access** — **Only me** shows private alerts; **Shared** shows alerts shared with groups and adds a **Groups** field for narrowing the list. **Any access** clears the filter.
 
-* **Create alert** — opens the form to create a new alert.
-* **Search** — filters loaded alerts by name, description, or keyword.
-* **Source type** — narrows the list to alerts covering a selected source type.
-* **Space** — filters by visibility (**Private** or **Shared**).
+## Work with several alerts
 
-## Alert lifecycle
+In **Table view**, select alerts with the checkboxes. A bar at the bottom of the screen offers **Resume selected**, **Pause selected**, **Delete selected**, and **Clear selection**. Only alerts the account is allowed to manage can be selected.
 
-An alert can be in one of three states:
+Deleting asks for confirmation. It permanently removes the alerts' monitoring configuration and saved matches and cannot be undone.
 
-* **Active** — the platform actively searches for matches in new data.
-* **Paused** — new matches are not recorded, but the existing history remains available.
-* **Deleted** — the alert, along with its entire history, is permanently and irreversibly removed.
+## Drafts
 
-## Empty view and error states
+An alert creation is saved as a draft while it is in progress. If the creator is left before the alert is saved, the draft appears on the **Drafts** tab with its name or original request, its stage (for example **Drafting** or **Ready**), counts of the research collected so far, and the time of the last update.
 
-* *"No alerts found"* — no alerts have been created on the account yet, or search filters exclude all entries.
-* *"Couldn't load alerts"* — server communication error. Refreshing the page is recommended.
+* Select a draft to continue the conversation where it stopped.
+* Hover over a draft and select the trash icon to discard it. A single draft is discarded immediately.
+* To delete several drafts, select them and choose **Delete selected**. This asks for confirmation.
+
+**No drafts** means there are no unfinished alert creations.
+
+## Who can change an alert
+
+The owner of an alert, or an authorized organization administrator, can pause, edit, share, and delete it. Members of the groups an alert is shared with can open it and see its events; for them the alert page shows **Shared alert · read-only**. Alerts managed by the system are marked **System-managed alert · read-only**.
+
+## Notifications
+
+Whether an alert event triggers an email or an in-app and phone notification depends on each person's own settings: **Alert emails** and **Alert match notifications** under **Settings → Notifications**. See [Preferences and notifications](/account-and-settings/preferences). Events remain on the alert page whether or not a notification was sent.
+
+Organization administrators manage external processing permissions under **Settings → External providers** (see [Administration](/administration)). When a permission that alert evaluation relies on is turned off, an event's **Email delivery** note can show that the email was withheld by the organization's privacy setting.
+
+## Empty and error states
+
+* **No alerts found** — no alert exists yet, or the search and filters exclude every alert. Clear the filters or create an alert.
+* **No drafts** — there are no unfinished alert creations.
+* If the list cannot be loaded, an error message appears above the list. Refresh the page to try again.
 
 ## Pages in this section
 
-* **[Creating and editing alerts](/alerts/creating-alerts)** — description of the AI advisor that builds rules and verification of the draft.
-* **[Alert detail](/alerts/alert-detail)** — trigger event history, match sensitivity, RCL monitoring, and the permissions panel.
+* **[Create and edit alerts](/alerts/creating-alerts)** — the conversation-based creator, the alert contract, exact-object tracking, drafts, and editing.
+* **[Alert detail](/alerts/alert-detail)** — the alert page: settings, sensitivity, access, tracked cases, events, and match feedback.

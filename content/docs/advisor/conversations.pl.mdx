@@ -1,84 +1,130 @@
 ---
-title: Interfejs i praca z asystentem
-description: Kompozycja wiadomości, oznaczanie plików, oś czasu, cytowania oraz historia konwersacji.
+title: Interfejs i praca z Advisorem
+description: Rozpoczynanie rozmowy, tworzenie wiadomości, odpowiedzi i cytowania, szkice w innych modułach oraz historia konwersacji.
 ---
 
-## Strefa kompozycji zapytania
+## Układ ekranu
 
-Panel wprowadzania wiadomości znajduje się w dolnej części ekranu:
+Środek ekranu zajmuje rozmowa, a pole wiadomości znajduje się na dole. Przy prawej krawędzi ekranu umieszczone są kontrolki Advisora:
 
-* **Żarówka sugestii** — w nowej konwersacji otwiera listę aktualnych tematów. Kliknięcie pustego pola tekstowego również pokazuje listę. Jeżeli dostępne jest zdarzenie powiązane z alertem, pojawia się na początku z niebieską nazwą alertu. Wybranie tematu uzupełnia szkic pytania i dodaje znacznik źródła; przed wysłaniem można sprawdzić lub zmienić treść.
-* **Pole tekstowe** — obsługuje wprowadzanie wielu linii tekstu (`Shift + Enter`). Klawisz `Enter` wysyła zapytanie.
-* **Przycisk Repozytorium** — pojawia się po rozwinięciu pola i otwiera wyszukiwarkę Repozytorium oraz korpusu publicznego. Symbol `@` otwiera tę samą wyszukiwarkę.
-* **Przycisk wysyłania** — nieaktywny, gdy pole tekstowe jest puste lub gdy asystent generuje odpowiedź na poprzednie pytanie.
+* **Rozmowy** — pokazuje lub ukrywa listę rozmów. Przeglądarka zapamiętuje ten wybór.
+* **Plan** — pojawia się, gdy bieżąca odpowiedź ma plan; otwiera go w miejscu listy rozmów. Zob. [Śledzenie pracy Advisora](/pl/advisor/activity).
+* **Agenci badawczy** — po jednej ikonie na każdego agenta badawczego w rozmowie; każda otwiera sesję danego agenta obok czatu.
 
-## Oznaczanie plików (`@`)
+Na wąskich ekranach przyciski **Nowa rozmowa** i **Historia** znajdują się w prawym górnym rogu i po rozpoczęciu rozmowy zwijają się do ikon. Historia otwiera się jako panel wysuwany od dołu ekranu; jeżeli istnieje plan, otwiera go przycisk z ikoną listy.
 
-Wpisanie symbolu `@` w polu tekstowym otwiera wyszukiwarkę dokumentów z Repozytorium oraz korpusu publicznego:
+## Rozpoczynanie rozmowy
 
-* **Wyszukiwanie po nazwie** — szybki tryb dla plików o znanych tytułach.
-* **Wyszukiwanie hybrydowe** — przełącznik w prawej części pola wyszukiwania umożliwia szukanie dokumentów na podstawie ich treści.
-* **Znaczniki kontekstu** — pojawiają się nad polem tekstowym dla wybranych plików i źródeł. Można dołączyć kilka elementów jednocześnie; znacznik źródła prowadzi do materiału, jeżeli dostępny jest bezpośredni odnośnik.
+Pusta rozmowa wyświetla powitanie i pytanie *„W czym mogę pomóc?”*. Dostępne są gotowe punkty wyjścia:
 
-Plik warto załączyć bezpośrednio, gdy zawiera on szukaną odpowiedź. Jeśli lokalizacja informacji jest nieznana, lepiej pozwolić asystentowi samodzielnie przeszukać zasoby.
+* **Podpowiedzi tematów** — przycisk z żarówką (**Pokaż podpowiedzi tematów**) na początku pola lub kliknięcie pustego pola otwiera listę najnowszych zdarzeń ze źródeł platformy, oznaczonych ikoną dziedziny. Przycisk jest widoczny tylko w nowej rozmowie, gdy dostępne są podpowiedzi.
+* **Podpowiedź alertu** — jeżeli alert niedawno znalazł dopasowanie, pojawia się na początku listy z nazwą alertu w kolorze niebieskim i odnośnikiem **Otwórz alert** prowadzącym do szczegółów alertu.
 
-## Oś czasu wiadomości
+Wybranie podpowiedzi wstawia do pola szkic pytania — *Zbadaj „…”. Co potwierdzają źródła i dlaczego to istotne?*, a w przypadku podpowiedzi alertu z przedrostkiem *W kontekście alertu „…”:* — oraz dołącza źródło jako znacznik kontekstu. Szkic można zmienić przed wysłaniem.
 
-Każda tura generuje **oś czasu wiadomości**, wyświetlaną strumieniowo przed treścią odpowiedzi. Stanowi ona widoczny zapis działań asystenta w trakcie pracy.
+Pytanie można też wysłać z wyszukiwania platformy: zapytanie sformułowane jak pytanie udostępnia polecenie **Zapytaj Advisora**, które otwiera nową rozmowę i wysyła pytanie.
 
-### Bloki rozumowania
+## Tworzenie wiadomości
 
-Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *„Thinking…”* (w trakcie pracy) lub *„Working through the request”* (po zakończeniu). Po zakończeniu tury bloki są automatycznie zwijane — dowolny z nich można ponownie otworzyć, aby go sprawdzić.
+Pole (*Napisz wiadomość…*) rozwija się po kliknięciu i pokazuje narzędzia wiadomości:
 
-Bloki rozumowania stanowią robocze notatki modelu, nie część ostatecznej odpowiedzi. Są przydatne do zrozumienia, *dlaczego* asystent doszedł do danego wniosku.
+* **Enter** wysyła wiadomość; **Shift + Enter** rozpoczyna nowy wiersz.
+* **Głębokość analizy** — przełącznik (**Podstawowo**, **Zrównoważony**, **Dogłębnie**) dotyczy tylko tej wiadomości. Zob. sekcję *Głębokość analizy* na stronie [Advisor](/pl/advisor).
+* **Dodaj kontekst z wyszukiwania globalnego** — przycisk z ikoną Repozytorium otwiera wyszukiwanie platformy. Wpisanie `@` otwiera to samo wyszukiwanie; znak nie trafia do treści.
+* **Wyślij wiadomość** — nieaktywny, gdy pole jest puste lub gdy Advisor pracuje nad poprzednim pytaniem.
 
-### Znaczniki wywołań narzędzi
+Podczas pracy Advisora obok przycisku wysyłania pojawia się przycisk zatrzymania (**Zatrzymaj analizę**), a tekst wpisany w pole trafia jako uwaga do trwającego zadania, a nie jako nowe pytanie. Zob. [Śledzenie pracy Advisora](/pl/advisor/activity).
 
-Każde zewnętrzne wyszukiwanie wykonywane przez asystenta staje się znacznikiem w osi czasu. Zawiera on:
+## Dołączanie kontekstu
 
-* **Ikonę** identyfikującą rodzinę umiejętności (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
-* **Nazwę narzędzia**.
-* **Status** — ikony odpowiadające kolejnym etapom pracy. Zakończone wywołania prezentują czas wykonania (np. `1.2s`).
+Wyszukiwanie platformy otwierane z pola wiadomości obejmuje te same obszary co wyszukiwanie globalne. Wyniki wybiera się kolejno i pozostają one wyróżnione; ponowne wybranie wyróżnionego wyniku usuwa go.
 
-Sąsiednie wywołania narzędzi są składane w zwijaną grupę (*„Using N tools…”* w trakcie, *„N tools used”* po zakończeniu).
+* **Pliki** z Repozytorium pojawiają się nad polem jako miniatury.
+* **Pozostałe wyniki** — np. głosowanie, druk sejmowy, profil lub nagranie — pojawiają się jako znaczniki kontekstu z ikoną źródła. Znacznik źródła dodany z podpowiedzi tematu otwiera dany materiał w nowej karcie.
+* **×** na miniaturze lub znaczniku usuwa element z wiadomości.
 
-### Formularze elicytacji
+Do jednej wiadomości można dołączyć kilka elementów, a wiadomość może składać się wyłącznie z załączników. Materiał warto dołączyć, gdy zawiera odpowiedź; jeżeli położenie informacji jest nieznane, lepiej pozwolić Advisorowi samodzielnie przeszukać zasoby.
 
-Niektóre narzędzia wymagają strukturalnego wkładu w trakcie tury — np. wyboru kadencji Sejmu lub wskazania posła przy kolizji nazwisk. Narzędzie emituje wówczas **żądanie elicytacji**: proces pozostaje w stanie *running*, a pod nim pojawia się formularz.
+## Czytanie odpowiedzi
 
-Formularz należy zatwierdzić lub pominąć (pominięte żądania korzystają z domyślnej wartości narzędzia). Po rozstrzygnięciu wywołanie narzędzia wznawia się.
+Odpowiedź pojawia się pod podsumowaniem pracy (*Czas pracy: …*), które można rozwinąć, aby zobaczyć przebieg pracy. Odniesienia w odpowiedzi mają postać **znaczników cytowań** — ikony źródła z tytułem. Wybranie znacznika otwiera źródło:
 
-## Odnośniki w odpowiedziach
+* Głosowania, akty prawne, druki, projekty RCL, interpelacje i zapytania, profile, komisje, alerty, wydarzenia i wątki z Mediów, nagrania oraz wcześniejsze rozmowy otwierają się w platformie.
+* Wpisy w serwisie X, strony internetowe i oficjalny stenogram Sejmu otwierają się w nowej karcie.
+* Znaczniki legislacyjne pokazują dodatkowo krótki wyimek cytowanego fragmentu, a znaczniki wydarzeń z Mediów — konto i treść wpisu.
 
-W treści odpowiedzi mogą znaleźć się odnośniki, które pozwalają na szybki dostęp do materiałów źródłowych. Są to bezpośrednie linki do konkretnych elementów systemu. Kliknięcie ich otwiera w nowej karcie:
-   * Głosowania w Rejestrze głosowań.
-   * Profile interesariuszy oraz szczegóły alertów.
-   * Oryginalne wpisy w serwisie X.
-   * Konkretne pliki lub ich fragmenty w Repozytorium.
+Cytowania prowadzą do dokładnego fragmentu, jeżeli jest dostępny:
 
-## Przyciski per wiadomość
+* Cytowany plik otwiera się w przeglądarce plików z panelem **Cytowany fragment** obok dokumentu.
+* Cytowany fragment tekstu prawnego otwiera czytnik dokumentu w tym miejscu.
+* Cytowany druk sejmowy otwiera swój dokument; gdy druk zawiera kilka dokumentów, lista pozwala wybrać dokument do przeczytania.
+* Cytowany fragment transkrypcji otwiera się na osobnej stronie jako **Oryginalny fragment źródła**.
 
-Pod każdą ukończoną wiadomością asystenta dostępne są ikony:
+Jeżeli dokładnego fragmentu nie da się otworzyć, wyświetla się stosowny komunikat; w przeglądarce plików sam dokument pozostaje otwarty. Pełną listę rodzajów cytowań zawiera strona [Umiejętności Advisora](/pl/advisor/skills).
 
-* **Kopiowanie** — kopiuje treść odpowiedzi do schowka. Znaczniki cytowań zastępowane są ich tekstową reprezentacją.
-* **Strzałka restartu** — ponownie wysyła poprzednie zapytanie i zastępuje bieżącą odpowiedź nową.
+## Przyciski pod odpowiedzią
+
+Pod każdą ukończoną odpowiedzią dostępne są ikony:
+
+* **Tarcza** — pojawia się, gdy odpowiedź ma wynik weryfikacji źródeł. Najechanie kursorem pokazuje wynik, a kliknięcie tarczy otwiera szczegóły. Opis poniżej.
+* **Kopiuj odpowiedź** — kopiuje tekst odpowiedzi do schowka.
+* **Wygeneruj odpowiedź ponownie** — ponownie uruchamia to samo pytanie i zastępuje bieżącą odpowiedź.
+
+Kolor tarczy jest tym intensywniejszy, im więcej kluczowych informacji zostało potwierdzonych; czerwony oznacza, że sprawdzenia nie udało się dokończyć. Możliwe wyniki:
+
+| Wynik | Znaczenie |
+| :--- | :--- |
+| **Źródła potwierdzają kluczowe informacje** | Kluczowe informacje odpowiadają zebranym źródłom. |
+| **Część kluczowych informacji wymaga ostrożności** | Szczegóły wymieniają tylko punkty wymagające doprecyzowania. |
+| **Odpowiedź po recenzji** | Odpowiedź oceniono w kontekście pytania i dostępnych źródeł. |
+| **Odpowiedź po recenzji, z ograniczeniami** | Jak wyżej, a ograniczenia ustaleń wymieniono w szczegółach. |
+| **Potwierdzone odczytem na żywo** | Odpowiedź pochodzi wprost z bieżących danych przestrzeni roboczej, odczytanych w tej turze. |
+| **Odpowiedź niezweryfikowana** | Odpowiedź nie została sprawdzona względem źródeł. |
+| **Weryfikacja niedostępna** | Niezależnego sprawdzenia źródeł nie udało się dokończyć. |
+
+Szczegóły zawierają sekcję **Istotne zastrzeżenia** — kilka fragmentów niepotwierdzonych w źródłach, każdy z podaną przyczyną — a po nieudanym sprawdzeniu wskazówkę, aby ponowić lub zawęzić pytanie.
+
+## Szkice w innych modułach
+
+Na prośbę Advisor przygotowuje pracę, którą kończy się w innym module. Karta pod odpowiedzią otwiera szkic:
+
+| Karta | Moduł docelowy | Statusy |
+| :--- | :--- | :--- |
+| **Konfiguracja monitorowania** (lub nazwa alertu) | Monitorowanie | **Wymaga konfiguracji · Monitorowanie jest nieaktywne** |
+| **Szkic artykułu** (lub tytuł artykułu) | Redaktor | **Przygotowywanie szkicu**, **Szkic zapisany**, **Wymaga przeglądu · Twoje zmiany zostały zachowane**, **Przygotowywanie przerwane** |
+
+Jeżeli rozmowa jest nadal otwarta, gdy szkic alertu lub artykułu jest gotowy, Persate samodzielnie otwiera moduł docelowy; karta pozwala wrócić do szkicu później. Szkic alertu pozostaje nieaktywny do czasu przejrzenia i zapisania go w Monitorowaniu, a Advisor nigdy nie publikuje szkiców artykułów. Moduł docelowy pokazuje materiały, na których oparto szkic, oraz odnośnik do pierwotnej rozmowy.
+
+Prośba o utworzenie inteligentnego folderu lub o zbadanie powiązań między osobami i organizacjami kończy się kartą, która otwiera kreator inteligentnych folderów albo zakładkę **Powiązania** w module Interesariusze z uzupełnionym zapytaniem.
+
+Redaktor jest dostępny, gdy funkcja jest włączona dla organizacji. Zob. [Tworzenie i edycja alertów](/pl/alerts/creating-alerts), [Redaktor](/pl/editor), [Inteligentne foldery](/pl/repository/smart-folders) i [Powiązania](/pl/stakeholders/connections).
 
 ## Historia konwersacji
 
-Prawa kolumna interfejsu zawiera listę wszystkich konwersacji na koncie:
+Lista rozmów pokazuje rozmowy przypisane do konta, od najnowszej:
 
-* **Nowa rozmowa** — czyści przestrzeń roboczą i inicjuje nową sesję.
-* Wcześniejsze konwersacje wyświetlane są pod tematem wyprowadzonym z ich pierwszych wiadomości.
-* Wybranie konwersacji otwiera ją z pełnym zapisem — bloki rozumowania, plakietki narzędzi i cytowania są rekonstruowane.
-* Ikona kosza przy pozycji trwale usuwa konwersację wraz z historią.
+* **Nowa rozmowa** — czyści przestrzeń roboczą i rozpoczyna nową sesję.
+* **Szukaj w rozmowach** — lupa obok przycisku **Nowa rozmowa** otwiera pole wyszukiwania; krzyżyk lub klawisz Escape zamyka je i czyści zapytanie.
+* **Pokaż więcej** — wczytuje starsze rozmowy na końcu listy.
+* Wybranie rozmowy otwiera ją z pełnym zapisem — przebieg pracy, cytowania i karty są odtwarzane. Adres strony wskazuje otwartą rozmowę, więc po odświeżeniu pozostaje ona otwarta.
+* **Usuń rozmowę** — ikona kosza przy pozycji trwale usuwa rozmowę. Usunięcie nie wymaga potwierdzenia.
 
-Na wąskich ekranach kolumna historii jest dostępna przez przycisk **Historia** w prawym górnym rogu.
+Rozmowa bez tytułu figuruje na liście jako **Nowa rozmowa**. Sesje z panelu Advisora w Redaktorze nie pojawiają się na tej liście.
+
+Komunikaty:
+
+* *„Brak historii”* — konto nie ma jeszcze rozmów.
+* *„Nie znaleziono rozmów”* — żadna rozmowa nie pasuje do wyszukiwania; warto spróbować innego hasła.
+* *„Nie udało się wczytać rozmów”* — listy nie udało się pobrać; należy odświeżyć stronę.
+
+## Długie rozmowy
+
+Starsze wiadomości wczytują się po przewinięciu rozmowy do początku. Od drugiego pytania po lewej stronie rozmowy widoczna jest wąska listwa znaczników, po jednym na każde pytanie. Najechanie na znacznik pokazuje pytanie i początek odpowiedzi, a kliknięcie przewija rozmowę do tego miejsca.
 
 ## Odświeżenie i wznowienie
 
-Aktywna tura nie zostaje utracona po opuszczeniu widoku, odświeżeniu przeglądarki lub chwilowej utracie połączenia. Asystent realizuje turę jako odłączone zadanie i transmituje zdarzenia do klientów podłączonych w momencie ich wyzwolenia. Ponowne otwarcie konwersacji podłącza do strumienia na żywo i odtwarza dotychczasowy postęp.
+Trwające zadanie nie zostaje utracone po opuszczeniu widoku, odświeżeniu przeglądarki ani chwilowej utracie połączenia — Advisor kontynuuje pracę w tle. Ponowne otwarcie rozmowy w tej samej przeglądarce przywraca połączenie z zadaniem i dotychczasowy postęp.
 
-## Stany pustego widoku i błędu
+Jeżeli rozmowa zostanie opuszczona w trakcie pracy Advisora, po zakończeniu zadania pojawia się powiadomienie, o ile w **Ustawienia → Powiadomienia** włączone są **Powiadomienia Advisora**. Powrót do rozmowy przed zakończeniem zadania wycofuje tę prośbę.
 
-* *„No conversation selected”* — przestrzeń robocza jest pusta, należy wybrać istniejącą sesję lub utworzyć nową.
-* Blok błędu z kodem — pojawia się pod częściową odpowiedzią, gdy tura zakończy się niepowodzeniem. Ponowne uruchomienie tury jest zalecaną pierwszą reakcją.
+Zatrzymane zadania, odpowiedzi częściowe i problemy z połączeniem opisuje strona [Śledzenie pracy Advisora](/pl/advisor/activity).

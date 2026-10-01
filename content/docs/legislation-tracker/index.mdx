@@ -1,51 +1,44 @@
 ---
-title: Legislation Tracker
-description: Tracking the legislative process — published acts, RCL drafts, and parliamentary interpellations and questions.
+title: Legislation
+description: Follow government drafts, parliamentary questions, published acts, and institution publications in one module.
 ---
 
-**Legislation Tracker** provides access to the legislative process: published legal acts, drafts handled by the Government Legislation Centre, and parliamentary interpellations and questions.
-
-Open the module from **PUBLIC → Legislation** in the sidebar.
+The **Legislation** module covers the legislative process from a government draft to its publication, together with parliamentary questions and official publications. Open **PUBLIC → Legislation** in the sidebar when the module is enabled for the organization. It opens on the **Process** tab.
 
 ## Tabs
 
-Three tabs are available in the top bar of the view:
+* **Process** — government legislative projects (RCL) and their legislative journeys, from drafting through the Sejm, the Senate, and the President to publication. See [Process and legislative journeys](/legislation-tracker/process).
+* **Interpellations** — Sejm interpellations and written questions, with their official replies. See [Interpellations and questions](/legislation-tracker/interpellations).
+* **Published acts** — official journals and, when included in the organization's plan, publications of ministries and offices. See [Published acts and publications](/legislation-tracker/published-acts).
 
-* **Published acts** — a browser of published acts organized by source (publication journals).
-* **Process** — legislative drafts handled in the RCL.
-* **Interpellations** — parliamentary interpellations and questions.
+Sejm committees and their members are presented in [Stakeholders](/stakeholders). Sejm and Senate votes, presidential decisions, and Constitutional Tribunal cases are presented in [Votes](/voting-ledger).
 
-## Published acts
+## Lists and filters
 
-The view presents the publication sources in a tile layout. The sidebar provides a **Search sources** field to find a specific journal. Selecting a tile opens the list of documents for that source, and selecting a document opens its detailed view.
+Each tab keeps its filters in the sidebar. Text filters apply after a short pause in typing; the other filters apply immediately. Further entries load as the list is scrolled.
 
-## Ministries and offices
+* **Short titles** shows the short name of a project or question instead of the official title. The official title appears when hovering over a shortened row. The choice is remembered and applies to every list that offers it, including the President and CT tabs in **Votes**.
+* **Clear filters** on the **Process** and **Interpellations** tabs resets the search and filters. Display switches such as **Short titles** and the pinning switches stay as they are. Source pages under **Published acts** use **Reset filters** instead.
 
-The source picker also includes a **Ministries and offices** group. Selecting an institution opens its publications, with filters for text, category and publication date. Recruitment and procurement notices are hidden by default; **Show all categories** makes them available.
+## Tracking projects and questions
 
-Selecting a publication opens its text and attached files. Select a file to read it, or use **Open the source page** to visit the publisher's page. Institution profiles also show **Latest publications**, linking to the same reader. Source content retains its original language.
+Projects and questions can be monitored directly from the lists or from their pages. Tracking creates an alert in the **Tracker**.
 
-Availability is being expanded gradually. The picker shows institutions currently available; alerts for these publications are still in pilot. When enabled, they omit recruitment and procurement unless the alert explicitly requests those categories. For example: *Recruitment notices published by this institution*.
+1. On a wider screen, select one or more rows with their checkboxes. A bar with the number of selected items appears at the bottom of the screen.
+2. Select **Track selected**. The **Alert creation** dialog asks who can see the alert and how sensitive it should be.
+3. Confirm with **Start tracking**.
 
-## Process
+On a project or question page, the same dialog opens from **Track this project** or **Track this question** in **Actions**. Once the item is tracked, the button changes to **See alert** and opens the alert.
 
-The **Process** tab presents RCL legislative drafts as a table. Filters are available in the sidebar, including:
+Tracked rows are highlighted. With **Pin tracked projects** or **Pin tracked questions** switched on, they stay at the top of the list, whatever the filters. With the switch off, tracked rows returned by the current filters keep their place in the list, and the other tracked rows stay at the top. A tracked item paused in the Tracker is marked **Paused**. When tracked rows are selected, the bar also offers **Resume selected alerts**, **Pause selected alerts**, and **Delete selected alerts**. For alert settings and matches, see [Tracker](/alerts).
 
-* **Search** — search by draft title.
-* **Work register number** — the number in the work register.
-* **Document type** and **Applicant** — the document type and the applicant.
-* **Progress** — the stage of the process.
-* **Created from / to** — the creation date range.
-* additional toggles (including drafts implementing EU law).
+## Opening legislation from other modules
 
-The list loads further entries as it is scrolled.
+* **Advisor** — source chips for government projects, project documents, interpellations, Sejm prints, and acts open the corresponding page here. A cited passage opens the document reader and highlights the cited fragment. If a cited Sejm print contains several documents, **Print documents** lists them; select the one to read. If the document cannot be opened, **Document unavailable** is shown.
+* **Search** — results in the **Legislation** and **Ministries and offices** categories open the same pages.
+* **Votes** — acts awaiting a presidential decision, presidential decisions, and the related items of Sejm and Senate votes link to legislative journeys.
+* **Stakeholders** — institution profiles show **Latest publications** with links to the institution's publications, and question pages link authors and recipients to their profiles.
 
-## Interpellations
+## Source content
 
-The **Interpellations** tab presents parliamentary interpellations and questions as a table. The sidebar provides filters, including search by title, term (**Term**), kind (**Kind**), status, ministry (**Ministry**), and an **answered** shortcut.
-
-## Empty view and error states
-
-* *"No matching sources"* — no source matches the search.
-* *"No projects found"* / *"No questions found"* — no entry matches the current filters. Change the search or filters.
-* *"Couldn't load projects"* / *"Couldn't load questions"* — a connection error with the service. Retrying is recommended.
+Titles, documents, and official texts retain their original language when the interface language changes. Automated summaries support reading but do not replace the official text; verify important details in the linked source.

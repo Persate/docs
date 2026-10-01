@@ -1,49 +1,101 @@
 ---
 title: Browse and manage files
-description: Find, preview, share, download, and delete files in Repository.
+description: Finding files in Repository, opening the file panel, changing access, downloading, selecting several files and deleting them.
 ---
 
-Open **WORKSPACE → Repository** to work with files that you own or that a group has shared with you.
+**WORKSPACE → Repository** combines the file list with a sidebar for search, filters and Smart Folders. The list starts with the most recently added files.
 
 ## Find a file
 
-Use the controls above the file list to:
+The sidebar offers:
 
-* switch between list and tile view;
-* search the visible Repository by file name;
-* filter and sort the current result set;
-* select one or more files for batch actions.
+* **Search files** — searching starts from two characters. Short queries match file names; longer queries also search the content of processed files.
+* **Access** — **Any access**, **Only me** or **Shared**. With **Shared**, the **Groups** field narrows the list to selected groups (**Any group** by default).
+* **File type** — .pdf, .docx, .xlsx or .csv.
+* **Sort** — opens the sort panel. **Add sort** offers **Name**, **Time of upload** and **File size**. One rule applies at a time and starts in descending order; selecting the rule switches the direction. **Change sort** replaces the rule, and **Remove sorting** restores the default order, newest first.
+* **Filter** — opens the filter panel. **Add Filter** offers:
+  * **Name** — **Is**, **Is not**, **Contains**, **Does not contain**, **Starts with** or **Ends with** a text;
+  * **Date modified** — **Between**, **Before**, **After** or **Is on** a date;
+  * **File size** — equal to, greater than or less than a size in KB, MB or GB;
+  * **Analysis status** — **Completed**, **Processing** or **Failed**.
 
-If **No files found** appears, clear the search and filters before concluding that the Repository is empty. Access is tenant- and group-aware, so another user can see a different result set.
+Filters combine with each other and with search. **Remove filtering** clears them. Selecting **Sort** or **Filter** again closes the panel and removes its rules.
 
-## Preview and inspect
+A very large Repository is not listed in full; search, filters and sorting bring the remaining files into view. Access depends on group membership, so two users can see different files.
 
-Select a file to open its preview and metadata. The panel can show the original file, processing information, detected language, summary, and access audience when those values are available.
+## Apply a smart folder
 
-Immediately after upload, processing-dependent fields may still be unavailable. Wait for processing to finish and reopen the file. If the browser cannot preview the format, download the original instead.
+The **Smart Folders** section at the bottom of the sidebar lists the first ten folders and has its own search field. Selecting a folder limits the list to its files; when the folder has content criteria, the sidebar shows them under **Semantic match**. **Clear smart folder filters** returns to the full list, and changing the search or a filter also leaves the folder. When there are more than ten folders, **Manage all** opens the Smart Folders page. See [Smart Folders](/repository/smart-folders).
+
+## List and tile views
+
+**List view** and **Tile view** switch above the list, on the right; the browser remembers the choice.
+
+In list view, the columns are **Type**, **Name**, **Description** (the file summary), **Last Modified** (the date the file was added), **File size**, **Groups** (**Private** or the groups with access), **Owner** and **Analysis**. On a phone, the list shows the type, the name, the **Uploaded** date and the analysis icon. Tiles show a preview image, the name, the access, the size and the date.
+
+## Open a file
+
+Selecting a row or a tile opens the **File details** panel, which combines a preview with the file's details.
+
+* PDF files open in a full document viewer. When the file is opened from an Advisor citation, the viewer starts at the cited page and the details show the **Cited passage** with **From page** and the page number.
+* Other formats show an image of the first page and the link **Open preview in new tab**. This image is created during analysis.
+* **Preview Unavailable** means no preview can be shown; download the file instead.
+* On a phone, **Full screen** enlarges the preview and **Show details** brings the details back.
+
+The details contain:
+
+* **Summary** — the generated summary; **Show more** expands a long one.
+* **Information** — **Extension**, **Last modification**, **Status** (**Processing**, **Analyzed** or **Failed**), **Size** and **Language**.
+* **Tags** — shown when the file has tags.
+* **Access** — **Only me**, **Selected groups** with the group names, or, for a file shared by someone else, **Shared via** with the groups. An administrator looking at another person's private file sees **Owner only**.
+
+Advisor citations and Tracker matches that point to a Repository file open this panel directly.
 
 ## Change access
 
-The file owner or an authorized administrator can change the audience between:
+Only the owner can change a file's access, and only after processing has finished.
 
-* **Only me**;
-* one or more groups in the same organization.
+1. Open the file and find **Access** in the details.
+2. Select **Change**.
+3. Choose **Only me** or **Selected groups**. For groups, pick one or more in **Groups**; groups marked **Read only** cannot be chosen.
+4. Select **Update**.
 
-Removing a group removes that group's access; it does not delete the file. A user who belongs to multiple selected groups still keeps access through any remaining group.
+Before a shared file is switched to **Only me**, the panel states how many groups will lose access. **Cancel** leaves the access unchanged.
 
-## Download
+Messages under **Access** explain why **Change** is missing:
 
-Use **Download** from a file's actions to retrieve the original. To download several files, select them and use the batch download action. Keep the browser tab open until the download starts.
+* **Access can be changed after processing finishes.** — analysis is still running.
+* **Only the owner can change access.** — the file belongs to someone else.
+* **Manage access for this file from tenant administration.** — shown to administrators for files they do not own. They share such files with groups from **Settings → Groups & permissions**; see [Users and groups](/administration/users-and-groups).
 
-## Delete
+Removing a group ends access through that group but does not delete the file. A member of several groups keeps access through any group that remains selected.
 
-Use the file action menu to delete one file, or select multiple files and use the batch delete action. Confirm the dialog carefully: deletion removes the file and its processed data and is not a move to a recycle bin.
+## Download files
 
-Only the owner or an authorized administrator can delete a file. If a shared file must remain available, change its audience instead of deleting it.
+* One file: open it and select **Download** in the panel header. Notifications follow the download until **Download complete** appears with the file name.
+* Several files: select them in the list and choose **Download** in the selection bar. Persate delivers them as one ZIP archive.
+
+## Select several files
+
+In list view, a checkbox appears when the pointer is over a row; on touch screens it is always visible. The checkbox in the header selects every file in the list. A bar at the bottom of the screen shows how many files are selected and offers:
+
+* **Create smart folder** — opens the smart folder creator with the selected files attached as examples;
+* **Download** — downloads the selection as a ZIP archive;
+* **Delete** — deletes the selected files;
+* the cross icon (**Clear selection**) — clears the selection.
+
+Switching to tile view clears the selection.
+
+## Delete files
+
+**Delete** is available in the file panel header and in the selection bar. Deletion starts immediately, without a confirmation step, and Repository has no recycle bin, so a deleted file cannot be restored from the interface. A notification confirms the result; files that could not be deleted are counted in an error notification and stay in the list.
+
+To stop sharing a file with a group while keeping it, change its access instead of deleting it.
 
 ## Troubleshooting
 
-* **Preview unavailable** — download the original and confirm that processing has completed.
-* **Summary unavailable** — text extraction or summary generation is still running or failed for this file.
-* **Action unavailable** — the file is shared with you, but you are not its owner or an authorized administrator.
-* **Download failed** — retry after refreshing; if the failure persists, record the file name and contact your administrator.
+* **No files found** — clear the search, the filters and any applied smart folder.
+* **Error loading files** — refresh the page.
+* **Preview Unavailable** — download the original; for formats other than PDF, wait until analysis has finished.
+* **Change** is missing under **Access** — the message below the access summary gives the reason.
+* A file seems to be missing from a long list — search for it by name or narrow the list with filters.

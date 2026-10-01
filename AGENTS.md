@@ -60,10 +60,11 @@ Every page exists as a pair: `<page>.mdx` (English) and `<page>.pl.mdx` (Polish)
 Match the house voice — exemplar: [`content/docs/advisor/best-practices.mdx`](content/docs/advisor/best-practices.mdx) and its `.pl.mdx` sibling.
 
 - **Impersonal, factual, instructional.** Describe what the product does and how to use it. No marketing, no hype, no exclamation.
-- **Polish:** bezosobowy, rzeczowy, polski techniczny. Unikać form „Ty/Twój" i kalek z angielskiego; spójna terminologia (np. konsekwentnie „asystent", „alert", „interesariusz").
-- **English:** plain, direct, present tense. Prefer the active product as subject ("The advisor returns…", "Entering `@` opens…").
+- **Polish:** bezosobowy, rzeczowy, polski techniczny. Unikać form „Ty/Twój" i kalek z angielskiego. Terminologia jak w polskim interfejsie (`FE/packages/ui/src/i18n/messages/pl.json`): **Advisor** jako odmieniana nazwa własna (Advisora, Advisorem), „alert", „interesariusz", moduły pod nazwami z nawigacji (Kokpit, Monitorowanie, Repozytorium, Inteligentne foldery, Redaktor, Legislacja, Nagrania, Głosowania, Interesariusze, Media, Laboratoria).
+- **English:** plain, direct, present tense. Prefer the active product as subject ("Advisor returns…", "Entering `@` opens…").
 - Tables for option/comparison matrices; short paragraphs; bold for the key term, italics for example phrasings.
-- Use real UI labels and steps — verify them against FE, don't invent.
+- Use real UI labels and steps — verify them against FE, don't invent. Section titles and the root sidebar groups mirror the app's sidebar (`FE/src/components/platform/sidebar/navigation.ts`).
+- Quote labels exactly as the interface shows them, and don't add remarks that a label "is shown in English" in the Polish interface. That is an FE translation gap: report it, or describe the element in plain Polish.
 
 ---
 

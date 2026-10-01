@@ -1,46 +1,50 @@
 ---
 title: Repository
-description: A tenant-aware document library for storing, sharing, searching, previewing, and downloading files.
+description: The organization's document library — upload files, decide who can open them, find and preview them, and use them in Advisor, Tracker and Smart Folders.
 ---
 
-**WORKSPACE → Repository** contains files owned by the current user and files shared through the user's groups. Repository access must be enabled for the organization.
+**WORKSPACE → Repository** lists the files the signed-in user owns and the files shared with the groups that user belongs to. The page is available when Repository is enabled for the organization; otherwise it shows **This feature is not included in your plan**.
 
-## What Repository provides
+## What Repository is for
 
-* Local upload for PDF, DOCX, XLSX, and CSV files.
-* Private or selected-group access for each file.
-* List and tile views with search, filters, sorting, preview, and metadata.
-* Single and batch download.
-* Single and batch deletion.
-* Source material for the main Advisor and other entitled workflows.
-* [Google Drive and Microsoft OneDrive connections](/repository/cloud-integrations).
-* [Smart Folders](/repository/smart-folders) that collect files by semantic and technical criteria.
+* Keeping working documents — PDF, DOCX, XLSX and CSV files — in one place.
+* Deciding, file by file, who can open a document: only its owner, or members of selected groups.
+* Finding files by name or content, previewing them, and downloading one file or a ZIP archive of several.
+* Analyzing documents: processed files are summarized, indexed for search and used by Advisor, Tracker and Smart Folders.
 
-Repository is not a traditional folder tree. File audience controls access; Smart Folders are saved matching rules and do not move or duplicate the underlying files.
+Repository is not a folder tree. All files sit in one list, and access is set on each file. Smart Folders are saved collections that point to Repository files without moving or copying them.
 
-## Access model
+## Access to files
 
-Every Repository file has one audience:
+Every file has an owner and one audience:
 
-* **Only me** — the owner only;
-* selected groups — current members of those groups.
+* **Only me** — only the owner sees the file;
+* **Selected groups** — members of the chosen groups see it as well. When the organization has an organization-wide group, it appears in the list as **Everyone at** followed by the organization name.
 
-The owner or an authorized administrator can update the audience later. Removing a group from a file stops access through that group but does not delete the file.
+The owner changes a file's audience in the file panel. Organization administrators share files with groups from **Settings → Groups & permissions**, as described in [Users and groups](/administration/users-and-groups). Removing a group from a file ends access through that group; the file itself stays in Repository.
 
-## Processing status
+## Analysis after upload
 
-Files appear in the list after a successful upload. Content extraction, summary generation, language detection, and search indexing continue in the background. Features that depend on extracted text remain unavailable until processing reaches the required state.
+A file appears in the list as soon as its upload succeeds. Persate then analyzes it in the background: it extracts the text, writes a summary, detects the language, prepares a preview and indexes the content for search.
 
-## Empty and access states
+The **Analysis** column shows a spinning icon while this runs, a tick when the file is ready and an error icon when analysis failed. While any file is being processed, the list refreshes on its own. Content search, the summary in **Description**, previews of non-PDF files and Advisor answers based on the file all depend on completed analysis.
 
-* **No files found** — the Repository is empty or current search and filters exclude every visible file.
-* Processing or summary not ready — the upload succeeded but analysis has not completed.
-* Preview unavailable — download the original and confirm that the browser supports the format.
-* Feature locked — Repository is not enabled for the organization.
+## Repository in other modules
+
+* **Advisor** — searches processed files and accepts them as attachments. Typing `@` in the question field opens a search across Repository and the public corpus; see the [Advisor interface guide](/advisor/conversations). When an answer cites a Repository file, the citation opens the file here with the **Cited passage**.
+* **Tracker** — alerts can include company files among their sources. A match found in a file opens that file in Repository.
+* **Smart Folders** — saved collections of Repository files, also listed in the Repository sidebar; see [Smart Folders](/repository/smart-folders).
+* **Editor** — an imported document can be saved to Repository as a normal file; see [Import and draft](/editor/import-and-draft).
+
+## Common states
+
+* **No files found** — Repository is empty, or the current search, filters or smart folder exclude every file.
+* **Error loading files** — the list could not be loaded; refresh the page.
+* **This feature is not included in your plan** — Repository is not enabled for the organization, and the **Upload** button is hidden as well.
 
 ## Pages in this section
 
-* **[Uploading files](/repository/upload)** — formats, batch limits, access, retries, and processing.
-* **[Browsing and organizing files](/repository/view-and-organize)** — views, search, preview, access, download, and deletion.
-* **[Cloud integrations](/repository/cloud-integrations)** — connect and import from Google Drive or Microsoft OneDrive.
-* **[Smart Folders](/repository/smart-folders)** — create reusable semantic collections.
+* **[Uploading files](/repository/upload)** — the upload panel, supported formats, batch access and retries.
+* **[Browse and manage files](/repository/view-and-organize)** — search, filters, the file panel, access changes, downloads, selection and deletion.
+* **[Cloud integrations](/repository/cloud-integrations)** — connecting Google Drive or Microsoft OneDrive and importing files for analysis.
+* **[Smart Folders](/repository/smart-folders)** — saved collections of files that update themselves.

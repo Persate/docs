@@ -1,27 +1,43 @@
 ---
 title: Account and settings
-description: Manage your Persate profile, security, notifications, and personal preferences.
+description: Where Persate settings are and how they are organized — personal pages, the Sources catalogue and organization settings.
 ---
 
-Open the profile menu in the top navigation and select **Settings**. Settings opens as a separate area. Select **Back to app** to return to the platform.
+Settings have their own pages. To open them, select the avatar in the top-right corner and choose **Account settings** or **Preferences**; on a phone, select **Profile** in the dock at the bottom of the screen.
 
-## Settings sections
+While Settings is open, the sidebar shows the settings navigation instead of the main navigation. **Back to app** at the top of it returns to the page that was open before Settings. On narrow screens, the bar at the top of the screen shows **Back to app**, the name of the current page and **Sections**, which opens the settings navigation.
 
-* **Account** — profile photo, display name, email, workspace role, and group memberships.
-* **Security & Privacy** — password, two-step verification, sessions, trusted browsers, and login history.
-* **Notifications** — email, alert-match, daily-report, and Advisor notification preferences.
-* **Preferences** — interface language, theme, Advisor output style, feature banners, procedural votes, and Editor import defaults when available.
+## Settings pages
 
-Settings are personal unless the row explicitly describes a workspace-managed value. Role, group membership, feature access, and organization policy are controlled by an administrator.
+The settings navigation is divided into three groups.
 
-**Organization** contains the organization profile, members, groups, usage, external-provider permissions and experiments. See **[Administration](/administration)** for administrator controls and their effects.
+| Group | Page | Contents |
+| :--- | :--- | :--- |
+| **PERSONAL** | **Account** | Profile photo, display name, email, role and groups. |
+| | **Security & Privacy** | Password, two-step verification, sessions and trusted devices, connected AI apps, login history, analytics cookies and personal data export. |
+| | **Notifications** | Email, in-app and phone notifications. |
+| | **Preferences** | Language, theme, Advisor output style and other personal preferences. |
+| **PLATFORM** | **Sources** | The catalogue of sources monitored by Persate, open to every member. See **[Sources](/sources)**. |
+| **ORGANIZATION** | **General** | The organization name and settings that apply to the whole organization. |
+| | **Members** | Organization members and invitations. |
+| | **Groups & permissions** | Groups and the Repository files shared with them. |
+| | **Usage & plan** | The organization's plan and usage. |
+| | **External providers** | Permissions for external services that process the organization's data. |
+| | **Experimental features** | Optional experimental functions. |
 
-## Save and error behavior
+**Members**, **Groups & permissions** and **Usage & plan** are shown only to organization administrators. Other members can open **General**, **External providers** and **Experimental features** to read the organization's settings; these pages state that **Only organization administrators can change these settings.**
 
-Most personal toggles save immediately. Organization changes require **Save changes**; a failed save keeps the draft visible. Display-name and form changes require their visible confirmation button. If a save fails, Persate restores the previous value and shows an error; retry once after checking the connection.
+Personal settings apply only to the signed-in user. Role, group membership, the organization's functions and its processing permissions are managed by an organization administrator — see **[Administration](/administration)** and **[Users and groups](/administration/users-and-groups)**.
+
+## Saving and errors
+
+* Switches on personal pages save as soon as they change. If saving fails, Persate restores the previous value and shows an error; check the connection and try again.
+* The display name is saved with **Save**; a new email address is entered in its own dialog.
+* Organization pages collect changes until **Save changes** is selected. While changes are pending, the page shows **Unsaved changes** and **Discard changes**. Changes with wider consequences, such as disabling a provider or granting consent to one, first open **Review organization changes**, confirmed with **Confirm and save**.
+* If saving organization changes fails, the edits stay on screen with an error. **Reload latest settings and discard edits** loads the current values, for example when another administrator has changed the same setting.
 
 ## Pages in this section
 
-* **[Account](/account-and-settings/account)** — identity, email, role, and groups.
-* **[Security and privacy](/account-and-settings/security)** — password, authenticator, sessions, and trusted browsers.
+* **[Account](/account-and-settings/account)** — profile photo, display name, email, role and groups.
+* **[Security and privacy](/account-and-settings/security)** — password, two-step verification, sessions, trusted devices, connected AI apps, cookies and data export.
 * **[Preferences and notifications](/account-and-settings/preferences)** — notification delivery and personal preferences.

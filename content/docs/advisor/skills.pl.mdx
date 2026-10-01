@@ -1,90 +1,177 @@
 ---
-title: Umiejętności asystenta
-description: Opis umiejętności asystenta, zakres działania, typowe pytania oraz zwracane zasoby.
+title: Umiejętności Advisora
+description: Rodziny umiejętności Advisora w warstwie MCP, ich zakres, typowe pytania oraz identyfikatory URI zasobów zwracanych jako cytowania.
 ---
 
-Możliwości **Asystenta AI** podzielone są na sześć **rodzin umiejętności**, z których każda eksponuje zestaw narzędzi analitycznych. Każde wywołanie narzędzia pojawia się w osi czasu wiadomości, identyfikując wykonaną akcję.
+**Advisor** sięga do danych platformy przez warstwę MCP. Jego narzędzia są pogrupowane w **rodziny umiejętności**; każda rodzina to przestrzeń nazw narzędzi dla jednego obszaru platformy, a każde wywołanie narzędzia pojawia się w zapisie pracy jako znacznik z ikoną rodziny. Dostępne narzędzia zależą od modułów włączonych dla organizacji.
 
-## Legislation - legislacja
+## Rodziny umiejętności
 
-Analiza rejestru aktywności sejmowej: głosowań, wniosków, rozstrzygnięć oraz powiązanych danych.
+| Rodzina | Zakres |
+| :--- | :--- |
+| `legislation` | Głosowania Sejmu i Senatu oraz sposób głosowania poszczególnych posłów, decyzje Prezydenta, sprawy przed Trybunałem Konstytucyjnym, rejestr osób i organizacji życia publicznego oraz wyszukiwanie aktów i publikacji instytucji publicznych. |
+| `civic` | Szczegółowa praca z aktami prawnymi — treść, struktura, nowelizacje, teksty jednolite i akty wykonawcze; druki sejmowe i procesy legislacyjne; projekty RCL; interpelacje i zapytania poselskie; komisje i ich posiedzenia; analizy głosowań w danym temacie. |
+| `stakeholders` | Profile polityków i organizacji, wyszukiwanie posłów według klubu lub okręgu, dane kontaktowe i aktywność. |
+| `public_pulse` | Media: archiwum wpisów obserwowanych kont w serwisie X, wydarzenia, wątki, tematy, trendy i usunięte wpisy. |
+| `recordings` | Przeanalizowane nagrania: katalog, podsumowania, transkrypcje, wystąpienia i oficjalny stenogram. |
+| `documents`, `files` | Pliki z Repozytorium i publiczny korpus Persate: wyszukiwanie po treści, nazwie i sekwencji, metadane, streszczenia, liczba plików i odczyt całego pliku. |
+| `events` | Zmiany w danym okresie: nowości w źródłach publicznych oraz nowe informacje w plikach organizacji. |
+| `alerts` | Alerty użytkownika i ich dopasowania; na prośbę szkice alertów, zmiany i usuwanie. |
+| `smartfolders` | Przygotowanie inteligentnego folderu dla kreatora inteligentnych folderów. |
+| `web_research` | Wyszukiwanie w internecie i odczyt publicznych stron. |
+| `chat_context` | Wcześniejsze rozmowy użytkownika z Advisorem. |
+| `workspace`, `team`, `notifications` | Podsumowanie przestrzeni roboczej i preferencje osobiste, katalog zespołu oraz skrzynka powiadomień. |
+| `labs` | Zweryfikowane wydania laboratoriów, gdy Laboratoria są włączone dla organizacji. |
+| `agent` | Własne kroki Advisora: aktualizacja planu, pytania uściślające, agenci badawczy, wyszukiwanie narzędzi i przygotowywanie szkiców w innych modułach. |
 
-**Typowe pytania:**
-* *„Jaki był wynik ostatniego głosowania nad ustawą energetyczną?"*
-* *„Jak komisja budżetowa rozstrzygnęła poprawkę nr 17?"*
-* *„Wymień głosowania z ostatniego posiedzenia Sejmu, które przeszły większością mniejszą niż pięć głosów."*
+## Głosowania i rejestr parlamentarny (`legislation`)
 
-**Zwracane zasoby:**
-* Odnośnik do głosowania, otwierany w **Rejestrze głosowań**.
-
-## Stakeholders - interesariusze
-
-Przeszukiwanie katalogu posłów: biografii, klubów, okręgów, frekwencji w głosowaniach, identyfikatorów społecznościowych, zidentyfikowanych fragmentów wystąpień.
-
-**Typowe pytania:**
-* *„Kto przewodniczy Komisji Finansów Publicznych i jaki jest jego rejestr głosowań w sprawach podatkowych?"*
-* *„Znajdź każdego posła z województwa wielkopolskiego, który głosował przeciwko ustawie klimatycznej."*
-* *„Co poseł Nowak powiedział w plenum o reformie mieszkaniowej?"*
-
-**Zwracane zasoby:**
-* Odnośnik do profilu interesariusza.
-
-## Public pulse - aktywność w mediach społecznościowych
-
-Przeszukiwanie zagregowanego strumienia z X (Twitter) obejmującego wszystkich monitorowanych interesariuszy.
+Ustrukturyzowany zapis działalności parlamentarnej i konstytucyjnej: głosowania Sejmu i Senatu, ich wyniki i sposób głosowania poszczególnych posłów, decyzje Prezydenta oraz sprawy przed Trybunałem Konstytucyjnym, a także rejestr osób i organizacji życia publicznego.
 
 **Typowe pytania:**
-* *„Co opozycja powiedziała publicznie o najnowszej poprawce do kodeksu pracy?"*
-* *„Czy któryś z ministrów napisał o głosowaniu nad budżetem od czasu jego przyjęcia?"*
-* *„Wyeksponuj trendujące hashtagi z wpisów posłów z ostatnich 48 godzin."*
+* *„Jaki był wynik ostatniego głosowania nad ustawą energetyczną?”*
+* *„Jak Senat głosował nad ostatnią nowelizacją prawa energetycznego?”*
+* *„Wymień głosowania z ostatniego posiedzenia Sejmu, które przeszły różnicą mniejszą niż pięć głosów.”*
+* *„Które sprawy przed Trybunałem Konstytucyjnym dotyczą ustawy o Krajowej Radzie Sądownictwa?”*
 
-**Zwracane zasoby:**
-* Odnośnik do oryginalnego wpisu w X.
+**Cytowania otwierają:** głosowanie Sejmu lub Senatu w module **Głosowania**.
 
-## Alerts - alerty
+## Akty prawne i dokumenty legislacyjne (`civic`)
 
-Istniejące alerty, modyfikacja ich oraz tworzenie nowych.
-
-**Typowe pytania:**
-* *„Które alerty wyzwoliły się najczęściej w tym tygodniu?"*
-* *„Skonfiguruj alert na każdą wzmiankę o nowej ustawie farmaceutycznej."*
-* *„Wstrzymaj mój alert dotyczący odniesień do Brexitu — temat już nieaktualny."*
-
-**Zwracane zasoby:**
-* Odnośnik do szczegółowego widoku alertu.
-
-## Documents - repozytorium
-
-Wyszukiwanie i operacje na plikach z **Repozytorium**. 
+Opublikowane akty prawne (Dziennik Ustaw, Monitor Polski) wraz ze strukturą, nowelizacjami, tekstami jednolitymi i aktami wykonawczymi; druki sejmowe i przebieg procesów legislacyjnych; projekty RCL; interpelacje i zapytania poselskie wraz z odpowiedziami rządu; komisje i ich posiedzenia; analizy głosowań klubów i posłów w danym temacie.
 
 **Typowe pytania:**
-* *„Co mówi nasz wewnętrzny briefing o mechanizmie cenowym gazu?"*
-* *„Przeszukaj każdą rządową białą księgę pod kątem odniesień do dotacji przemysłowych."*
-* *„Znajdź fragment, w którym ustawa o zamówieniach publicznych definiuje 'infrastrukturę krytyczną'."*
-* *„Ile dokumentów wgraliśmy od początku roku?"*
+* *„Co stanowi art. 5 ustawy Prawo zamówień publicznych i kiedy ostatnio go zmieniono?”*
+* *„Na jakim etapie jest projekt z druku sejmowego nr 1234 i co przyniosło ostatnie głosowanie?”*
+* *„Które interpelacje w sprawie zadłużenia szpitali wciąż czekają na odpowiedź Ministerstwa Zdrowia?”*
 
-**Zwracane zasoby:**
-*  Odnośnik do konkretnego pliku lub jego fragmentu.
+**Cytowania otwierają:** akt prawny lub dokładny cytowany fragment w czytniku modułu **Legislacja**, dokument druku, projekt RCL, interpelację lub zapytanie albo stronę komisji.
 
-## Chat context - kontekst czatów
+## Interesariusze (`stakeholders`)
 
-Wyszukiwanie w obrębie wcześniejszych konwersacji z asystentem.
+Profile polityków i organizacji: biografia, klub, okręg, frekwencja w głosowaniach, dane kontaktowe, konta w mediach społecznościowych i aktywność.
 
 **Typowe pytania:**
-* *„Wcześniej dzisiaj rozmawialiśmy o ustawie energetycznej — wróć do tego wątku."*
-* *„Co powiedziałeś mi w zeszłym tygodniu o reformie zamówień publicznych?"*
+* *„Kto przewodniczy Komisji Finansów Publicznych i jak głosował w sprawach podatkowych?”*
+* *„Znajdź wszystkich posłów z województwa wielkopolskiego, którzy głosowali przeciwko ustawie klimatycznej.”*
+* *„Przygotuj krótką notatkę o pośle Nowaku przed spotkaniem: klub, komisje, ostatnia aktywność.”*
 
-**Zwracane zasoby:**
-* Odnośnik do archiwalnej wiadomości lub konwersacji
+**Cytowania otwierają:** profil interesariusza.
 
-## Jak asystent dobiera narzędzia
+## Media (`public_pulse`)
 
-Asystent wybiera narzędzia na podstawie formy pytania. Ich wybór jest automatyczny i nie wymaga jawnego wskazania przez użytkownika. Typowe wzorce:
+Archiwum wpisów w serwisie X publikowanych przez konta obserwowane w Persate, pogrupowanych w module Media w wydarzenia, wątki i tematy.
 
-* Pytanie wymieniające konkretnego posła — niemal zawsze `Stakeholders`.
-* Pytanie o *publiczne wypowiedzi* — `Public pulse`.
-* Pytanie o *sposób głosowania* — `Legislation`.
-* Pytanie o dokument — `Documents`.
-* Pytania wieloczęściowe — łączenie wielu narzędzi.
+**Typowe pytania:**
+* *„Co opozycja mówiła publicznie o ostatniej nowelizacji kodeksu pracy?”*
+* *„Czy któryś z ministrów pisał o głosowaniu nad budżetem od czasu jego przyjęcia?”*
+* *„Pokaż najpopularniejsze hashtagi we wpisach obserwowanych kont z ostatnich 48 godzin.”*
 
-Gdy pytanie wykracza poza dostępne narzędzia, asystent odpowiada na to, do czego ma narzędzia, a część pozostawioną bez odpowiedzi odnotowuje.
+**Cytowania otwierają:** oryginalny wpis w serwisie X albo wydarzenie lub wątek w module Media.
+
+## Nagrania (`recordings`)
+
+Przeanalizowane nagrania posiedzeń Sejmu, komisji i innych wydarzeń: podsumowania, transkrypcje, rozpoznane wystąpienia oraz oficjalny stenogram.
+
+**Typowe pytania:**
+* *„Co poseł Nowak mówił na sali plenarnej o reformie mieszkaniowej?”*
+* *„Podsumuj ostatnie posiedzenie Komisji Zdrowia.”*
+* *„Które z najnowszych nagrań zostały już przeanalizowane?”*
+
+**Cytowania otwierają:** nagranie w module **Nagrania** w cytowanym momencie albo dokładny fragment transkrypcji.
+
+## Dokumenty (`documents`, `files`)
+
+Wyszukiwanie i operacje na plikach z **Repozytorium** oraz na publicznym korpusie Persate: wyszukiwanie po treści, nazwie i sekwencji, metadane i streszczenia plików, liczba plików oraz odczyt całego pliku.
+
+**Typowe pytania:**
+* *„Co mówi nasz wewnętrzny briefing o mechanizmie cenowym gazu?”*
+* *„Znajdź fragment, w którym nasz projekt stanowiska definiuje »infrastrukturę krytyczną«.”*
+* *„Ile dokumentów wgraliśmy od początku roku?”*
+
+**Cytowania otwierają:** plik w przeglądarce plików, w miejscu cytowanego fragmentu, jeżeli został wskazany.
+
+## Alerty (`alerts`)
+
+Alerty użytkownika i ich dopasowania, przygotowywanie nowych alertów i zmiany istniejących. Nowy alert powstaje jako nieaktywny szkic, który otwiera się do przejrzenia w kreatorze alertów modułu Monitorowanie; zaczyna działać dopiero po zapisaniu. Zmiana, wstrzymanie lub usunięcie istniejącego alertu następuje wyłącznie na wyraźną prośbę, a usunięcie wymaga potwierdzenia w rozmowie.
+
+**Typowe pytania:**
+* *„Które z moich alertów miały najwięcej dopasowań w tym tygodniu?”*
+* *„Przygotuj alert na każdą wzmiankę o nowej ustawie farmaceutycznej.”*
+* *„Wstrzymaj mój alert dotyczący brexitu — temat jest już nieaktualny.”*
+
+**Cytowania otwierają:** szczegóły alertu w module **Monitorowanie**.
+
+## Historia rozmów (`chat_context`)
+
+Wyszukiwanie i odczyt wcześniejszych rozmów użytkownika z Advisorem.
+
+**Typowe pytania:**
+* *„Rozmawialiśmy dziś o ustawie energetycznej — wróćmy do tego wątku.”*
+* *„Co mówiłeś w zeszłym tygodniu o reformie zamówień publicznych?”*
+
+**Cytowania otwierają:** wcześniejszą rozmowę.
+
+## Wyszukiwanie w internecie (`web_research`)
+
+Wyszukiwanie w internecie i odczyt publicznych stron, gdy wymaga tego pytanie lub potrzebny jest kontekst publiczny, którego platforma nie przechowuje. Znalezione lub odczytane strony pojawiają się w zapisie pracy jako znaczniki źródeł internetowych; wyniki z internetu nie są zapisywane w platformie.
+
+**Typowe pytania:**
+* *„Przeczytaj ten komunikat ministerstwa i streść proponowane zmiany: (odnośnik)”*
+* *„Wyszukaj w internecie najnowsze oficjalne stanowisko w sprawie maksymalnych cen energii.”*
+
+**Cytowania otwierają:** stronę internetową w nowej karcie.
+
+## Pozostałe rodziny
+
+* **`events`** — co zmieniło się w danym okresie w źródłach publicznych platformy lub jakie nowe informacje pojawiły się w plikach organizacji. Przykład: *„Co zmieniło się w tym tygodniu w polityce energetycznej w legislacji i na nagraniach?”*
+* **`smartfolders`** — przygotowuje inteligentny folder na podstawie opisu i otwiera kreator inteligentnych folderów z uzupełnionym zapytaniem. Przykład: *„Utwórz inteligentny folder ze wszystkimi naszymi dokumentami o transformacji energetycznej.”*
+* **`workspace`**, **`team`**, **`notifications`** — podsumowanie przestrzeni roboczej i preferencje osobiste, katalog zespołu oraz skrzynka powiadomień. Przykład: *„Których powiadomień jeszcze nie przeczytałem?”*
+* **`labs`** — zweryfikowane wydania laboratoriów, gdy Laboratoria są włączone dla organizacji. Zob. [Laboratoria](/pl/labs).
+* **`agent`** — własne kroki Advisora: aktualizacja planu, pytanie uściślające, uruchamianie agentów badawczych, wyszukiwanie narzędzia oraz przygotowanie szkicu dla modułu Monitorowanie lub Redaktora.
+
+## Identyfikatory URI cytowań
+
+Każde cytowanie w odpowiedzi to identyfikator URI zasobu, który interfejs zamienia w znacznik. Tabela zawiera schematy URI i miejsca, które otwierają odpowiadające im znaczniki.
+
+| URI | Otwiera |
+| :--- | :--- |
+| `legislation://voting/{sitting}/{vote}` | Głosowanie Sejmu w module **Głosowania** |
+| `legislation://senate-voting/{vote_id}` | Głosowanie Senatu w module **Głosowania** |
+| `legislation://act/{ELI}` | Opublikowany akt w czytniku modułu **Legislacja**, np. `legislation://act/DU/2017/59` |
+| `legislation://chunk/{chunk_id}/{offset}` | Cytowany fragment tekstu prawnego, w czytniku w tym miejscu |
+| `legislation://print/{term}/{number}` | Dokument druku sejmowego; przy druku z kilkoma dokumentami lista pozwala wybrać jeden z nich |
+| `legislation://document/{ELI}` | Załącznik druku lub inny dokument legislacyjny w czytniku |
+| `legislation://rcl_project/{project_id}` | Projekt RCL w module **Legislacja** |
+| `legislation://rcl_document/{project_id}/{document_id}` | Projekt RCL z otwartym podglądem danego dokumentu |
+| `legislation://question/{term}/{type}/{number}` | Interpelacja lub zapytanie poselskie, przy cytowanej odpowiedzi — w miejscu odpowiedzi |
+| `legislation://committee/{code}` | Strona komisji sejmowej w module **Interesariusze** |
+| `feature://stakeholder/{stakeholder_id}` | Profil interesariusza |
+| `feature://public_pulse/tweet/{tweet_id}` | Oryginalny wpis w serwisie X (nowa karta) |
+| `feature://public_pulse/event/{event_id}` | Wydarzenie w module Media |
+| `feature://public_pulse/story/{story_id}` | Wątek w module Media |
+| `feature://alert/{alert_id}` | Szczegóły alertu w module **Monitorowanie** |
+| `feature://recording-transcript/{recording}/{segment}/{start}/{end}` | Dokładny fragment transkrypcji na osobnej stronie |
+| `recordings://speech/{recording}/{seconds}` | Nagranie w module **Nagrania** w cytowanym momencie |
+| `recordings://official/{source}/{file}` | Oficjalny stenogram Sejmu (nowa karta) |
+| `documents://file/{file_id}` | Plik w przeglądarce plików |
+| `documents://chunk/{file_id}/{chunk_id}` | Plik w miejscu cytowanego fragmentu, z panelem **Cytowany fragment** |
+| `documents://chunk-page/{file_id}/{chunk_id}/{start}/{end}` | Plik w dokładnym zakresie znaków fragmentu |
+| `web://fetch/{evidence_id}` | Strona internetowa (nowa karta) |
+| `chatcontext://session/{session_id}` | Wcześniejsza rozmowa z Advisorem |
+
+Cytowanie, którego nie da się rozwiązać, pozostaje w odpowiedzi jako zwykły tekst.
+
+## Jak Advisor dobiera narzędzia
+
+Advisor wybiera narzędzia na podstawie formy pytania; wybór jest automatyczny i nie wymaga wskazówek ze strony użytkownika. Przy zadaniach specjalistycznych znaczniki wyszukiwania narzędzia lub wczytywania umiejętności pokazują, że Advisor najpierw dobiera właściwe narzędzia. Typowe wzorce:
+
+* Pytanie wymieniające konkretnego posła — `stakeholders`, często razem z `legislation`.
+* Pytanie o *publiczne wypowiedzi* — `public_pulse`.
+* Pytanie o *sposób głosowania* — `legislation`.
+* Pytanie o brzmienie lub historię przepisu — `civic`.
+* Pytanie o to, *co padło* na posiedzeniu — `recordings`.
+* Pytanie o dokument — `documents`.
+* Pytania wieloczęściowe — połączenie kilku rodzin.
+
+Gdy pytanie wykracza poza dostępne narzędzia, Advisor odpowiada na tę część, do której ma narzędzia, i odnotowuje część pozostawioną bez odpowiedzi.

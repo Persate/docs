@@ -1,59 +1,89 @@
 ---
 title: Użytkownicy i grupy
-description: Zapraszanie użytkowników, przypisywanie ról i kontrolowanie grupowego dostępu do plików.
+description: Zapraszanie członków, zmiana ról, usuwanie członków oraz zarządzanie grupami i ich dostępem do plików w Ustawieniach.
 ---
 
-## Zapraszanie użytkownika
+Administratorzy organizacji zarządzają członkami i grupami w **Ustawieniach**, w grupie **ORGANIZACJA → Członkowie** oraz **ORGANIZACJA → Grupy i uprawnienia**. Obie strony są widoczne wyłącznie dla administratorów. Starsze odnośniki do panelu administracyjnego otwierają te same strony.
 
-1. Otworzyć **Ustawienia → Organizacja → Członkowie**.
-2. Wybrać **Zaproś członka** w panelu filtrów.
-3. Wprowadzić adres e-mail i wybrać **Administracja** albo **Członek**.
-4. Wybrać **Wyślij zaproszenie**.
+## Członkowie
 
-Standardowy proces wysyła odnośnik, za pomocą którego odbiorca ustawia hasło. Jeżeli istniejące konto nie jest jeszcze powiązane z organizacją, Persate prosi o potwierdzenie przed wysłaniem zaproszenia do dołączenia.
+Strona **Członkowie** zawiera listę aktywnych członków organizacji. Nad tabelą znajdują się:
 
-Opcjonalny tryb ręcznego hasła tworzy użytkownika natychmiast i wymaga co najmniej 12 znaków. Należy go stosować tylko wtedy, gdy wymaga tego zatwierdzona procedura tożsamości organizacji; administrator odpowiada wtedy za bezpieczne przekazanie początkowego hasła.
+* pole wyszukiwania (**Imię, nazwisko lub e-mail…**), które odnajduje członków po nazwie lub adresie e-mail;
+* przycisk **Filtry**, który zawęża listę według pól **Rola**, **Grupa** i **Ostatnia aktywność** (**Dowolny okres**, **Ostatnie 7 dni**, **Ostatnie 30 dni** lub **Niedostępne**); przycisk pokazuje liczbę aktywnych filtrów;
+* przycisk **Zaproś członka**, który otwiera okno zaproszenia.
 
-## Oczekujące zaproszenia
+Tabela przedstawia każdego członka wraz z adresem e-mail, kolumnami **Rola**, **Grupy**, **Tokeny w tym cyklu**, **Ostatnia aktywność** i **Data dołączenia**. Wiersz zalogowanego administratora ma oznaczenie **Ty**. Gdy okno jest zbyt wąskie dla wszystkich kolumn, brakujące wartości pojawiają się pod nazwą członka. Wybranie nazwy lub wiersza otwiera profil członka.
 
-Oczekujące i wygasłe zaproszenia znajdują się w oddzielnej tabeli pod aktywnymi członkami. Każda tabela ma własne przyciski zmiany strony. Wyszukiwanie i filtry obejmują całą listę, również wpisy poza pierwszą stroną.
+**Ostatnia aktywność** to ostatnie użycie sesji z potwierdzoną weryfikacją dwuetapową od dołączenia członka do organizacji. **Niedostępne** oznacza brak zapisanego znacznika czasu; nie oznacza, że członek nigdy nie korzystał z Persate.
 
-Dla oczekującego zaproszenia administrator może wybrać:
+## Zapraszanie członka
 
-* **Wyślij ponownie zaproszenie** — wysyła kolejne zaproszenie dla tego samego oczekującego członka;
-* **Wycofaj zaproszenie** — unieważnia oczekujące zaproszenie.
+1. Wybrać **Zaproś członka**. Otworzy się okno **Dodaj użytkownika**.
+2. Wpisać adres w polu **E-mail**, a w polu **Rola** wybrać **Administrator** lub **Członek**.
+3. Wybrać **Wyślij zaproszenie**. Persate wysyła e-mailem zaproszenie z linkiem do ustawienia hasła.
 
-Unieważnienie zaproszenia nie usuwa niezależnego istniejącego konta. Odbiorca z wygasłym odnośnikiem musi poprosić administratora o nowe zaproszenie.
+Jeśli konto o tym adresie już istnieje, ale nie należy do żadnej organizacji, okno pyta, czy wysłać zaproszenie do dołączenia; potwierdza się je przyciskiem **Wyślij zaproszenie**.
 
-## Zmiana roli lub usunięcie użytkownika
+Opcja **Ustaw hasło ręcznie (bez wysyłania zaproszenia)** od razu tworzy konto, bez wiadomości z zaproszeniem. Hasło musi mieć co najmniej 12 znaków, a przycisk zmienia się na **Utwórz użytkownika**. Z tej opcji należy korzystać tylko wtedy, gdy wymaga tego zatwierdzona w organizacji procedura nadawania tożsamości; administrator odpowiada wtedy za bezpieczne przekazanie początkowego hasła.
 
-Pole **Rola** w wierszu członka pozwala zmienić rolę między **Administracja** i **Członek**. Pole własnej roli bieżącego administratora jest wyłączone. **Usuń użytkownika** usuwa użytkownika z organizacji po potwierdzeniu.
+## Zaproszenia
 
-Panel filtrów umożliwia wyszukiwanie nazw i adresów e-mail oraz filtrowanie według roli, grupy i niedawnej aktywności. Na wąskim ekranie otwiera go przycisk **Filtry**. Tabela przedstawia członkostwa w grupach, wykorzystanie tokenów, datę dołączenia i **Ostatnią aktywność**. Aktywność oznacza przybliżony czas użycia sesji przeglądarkowej, aktualizowany nie częściej niż co pięć minut. **Niedostępne** oznacza brak znacznika czasu; nie oznacza, że członek nigdy nie korzystał z produktu.
+Oczekujące i wygasłe zaproszenia znajdują się w osobnej tabeli **Zaproszenia** pod listą członków, z kolumnami **E-mail**, **Rola** i **Status** (**Oczekujące** lub **Wygasło**). Wyszukiwanie i filtry obejmują obie tabele, a każda z nich ma własne strony.
 
-Wybranie nazwy członka otwiera szczegóły wykorzystania. Panel profilu pokazuje również rolę w organizacji, status i członkostwa w grupach. **Dodaj do grupy** dodaje członkostwo; odnośnik do grupy otwiera zarządzanie jej członkami.
+* **Wyślij ponownie zaproszenie** ponownie wysyła zaproszenie.
+* **Wycofaj zaproszenie** anuluje zaproszenie.
 
-Usunięcie jest destrukcyjnym działaniem administracyjnym i wymaga potwierdzenia. Wcześniej należy przekazać własność lub wyeksportować pracę, która musi zostać zachowana, oraz sprawdzić dostęp grupowy użytkownika. Usunięcie roli nie zastępuje unieważnienia aktywnej sesji, gdy wymagane jest natychmiastowe wylogowanie.
+## Zmiana roli
 
-## Tworzenie i obsługa grupy
+Pole **Rola** w wierszu członka lub w jego profilu przełącza między rolami **Administrator** i **Członek**; zmiana zapisuje się od razu. Administrator nie może zmienić własnej roli ani usunąć siebie z organizacji — w jego wierszu te kontrolki są nieaktywne, a zmianę musi wprowadzić inny administrator. Organizacja zawsze zachowuje co najmniej jednego aktywnego administratora: zmiana, która pozostawiłaby ją bez administratora, zostaje odrzucona z komunikatem **Organizacja musi mieć co najmniej jednego aktywnego administratora.** Jeżeli po zmianie strona nadal pokazuje dawną rolę, należy ją odświeżyć albo zalogować się ponownie.
 
-1. Otworzyć **Grupy i uprawnienia**.
-2. Wybrać **Utwórz grupę** i podać nazwę oraz opis.
-3. Otworzyć stronę szczegółową grupy.
-4. Wybrać **Dodaj członka**, aby wskazać członka organizacji i jego rolę w grupie.
-5. Otworzyć **Pliki** i wybrać **Udostępnij plik**, aby udostępnić grupie plik Repozytorium.
+## Profil członka
 
-Lista grup przedstawia podgląd członków, osoby zarządzające, datę utworzenia i liczbę przypisanych plików bez plików zarchiwizowanych. Można wyszukiwać po nazwie lub opisie, filtrować według osoby zarządzającej i przeglądać kolejne strony wyników.
+Profil pokazuje wykorzystanie zasobów przez członka w wybranym okresie — **7 dni**, **30 dni**, **90 dni** lub **Okres rozliczeniowy** — m.in. wydarzenia, pliki, tokeny i ostatnią aktywność, najczęściej używane funkcje oraz trend użycia tokenów. Aktywność jest ograniczona do metadanych zdarzeń.
 
-Strona grupy ma oddzielne zakładki **Członkowie** i **Pliki**. Wiersze członków rozróżniają **Rolę w grupie** i **Rolę w organizacji**. Zmiana roli w grupie zapisuje przypisanie od razu. **Edytuj** pozwala zmienić nazwę lub opis grupy. Grupa obejmująca całą organizację ma stałe członkostwo i nie można jej tutaj edytować ani usunąć.
+Panel boczny zawiera pola **Rola**, **Status**, **Ostatnia aktywność**, **Data dołączenia** i **Prywatne miejsce na pliki** oraz listę **Grupy**. **Dodaj do grupy** dodaje członka do kolejnej grupy z rolą **Członek**; wybranie grupy otwiera jej stronę.
 
-**Usuń członka** usuwa członkostwo. **Odbierz dostęp do pliku** aktualizuje zakres dostępu pliku, przez co grupa przestaje uzyskiwać dostęp przez to przypisanie.
+## Usuwanie członka
 
-Usunięcie grupy wymaga potwierdzenia i jest nieodwracalne. Wcześniej należy sprawdzić przypisania plików i laboratoriów. Usunięcie grupy nie oznacza usunięcia wszystkich plików źródłowych.
+Należy wybrać ikonę kosza w wierszu członka albo **Usuń z organizacji** w jego profilu i potwierdzić. Usunięcie kasuje konto i prywatne pliki członka i jest nieodwracalne. Przed usunięciem należy przekazać lub wyeksportować pracę, którą trzeba zachować, oraz sprawdzić grupy i pliki udostępniane przez członka.
+
+## Grupy
+
+Strona **Grupy i uprawnienia** zawiera grupy organizacji wraz z opisem oraz kolumnami **Członkowie**, **Zarządzający**, **Utworzono** i **Pliki** (liczba udostępnionych plików). Pole wyszukiwania odnajduje grupy po nazwie lub opisie, a filtr **Menedżer** (w menu **Filtry**) ogranicza listę do grup zarządzanych przez wybraną osobę.
+
+Grupa obejmująca całą organizację, **Wszyscy w** z nazwą organizacji, zawiera każdego członka. Zarządzają nią administratorzy organizacji: jej skład jest stały i nie można jej edytować ani usunąć. Nadal można jej udostępniać pliki.
+
+### Tworzenie grupy
+
+1. Wybrać **Utwórz grupę**. Otworzy się okno **Utwórz nową grupę**.
+2. Wypełnić pole **Nazwa** i opcjonalnie pole **Opis**.
+3. Wybrać **Utwórz grupę**.
+
+### Zarządzanie grupą
+
+Wybranie grupy albo ikony ołówka (**Zarządzaj grupą**) otwiera jej stronę z kartami **Członkowie** i **Pliki**. **Edytuj** zmienia nazwę i opis, a **Usuń grupę** usuwa grupę.
+
+Karta **Członkowie**:
+
+* **Dodaj członka** otwiera okno **Dodaj członka do grupy**: w polach **Użytkownik** i **Rola** należy wskazać osobę i jej rolę w grupie, a następnie wybrać **Dodaj do grupy**.
+* Każdy wiersz zawiera kolumny **Rola w grupie**, **Rola w organizacji**, **Ostatnia aktywność** i **Dodano**. Zmiana w kolumnie **Rola w grupie** zapisuje się od razu.
+* Ikona kosza usuwa członka z grupy.
+
+Role w grupie to **Członek**, **Menedżer** i **Przeglądający**. Członkowie i menedżerowie mogą udostępniać grupie treści; osoba przeglądająca widzi to, co udostępniono grupie, ale nie może jej niczego udostępniać — w ustawieniach udostępniania grupa ma wtedy oznaczenie **Tylko do odczytu**.
+
+Karta **Pliki**:
+
+* **Udostępnij plik** otwiera okno wyboru pliku z Repozytorium, który ma zostać udostępniony grupie.
+* **Odbierz dostęp do pliku** kończy udostępnianie pliku grupie. Sam plik nie zostaje usunięty.
+
+### Usuwanie grupy
+
+Grupę można usunąć dopiero wtedy, gdy nie są jej udostępniane żadne pliki: najpierw należy odebrać grupie dostęp do plików, a następnie wybrać **Usuń grupę** i potwierdzić. Usunięcie grupy jest nieodwracalne i nie usuwa plików.
 
 ## Rozwiązywanie problemów z dostępem
 
-* Użytkownik nie widzi udostępnionego pliku — należy sprawdzić aktywne członkostwo w organizacji, członkostwo w grupie, zakres pliku i dostęp do Repozytorium.
-* Użytkownik nie widzi laboratorium — należy sprawdzić włączone przypisanie laboratorium do grupy i wszystkie wymagane funkcje.
-* Użytkownik nadal widzi starą rolę — należy odświeżyć sesję albo zalogować się ponownie.
-* Zmiana nie powiodła się — przed ponowieniem należy odświeżyć listę, aby działać na najnowszym stanie członkostwa.
+* Członek nie widzi udostępnionego pliku — należy sprawdzić jego członkostwo w grupie, udostępnienie pliku tej grupie oraz to, czy Repozytorium jest włączone dla organizacji.
+* Członek nie widzi laboratorium — laboratoria są przypisywane grupom; należy sprawdzić grupy członka, a w sprawie przypisania zwrócić się do administratora organizacji lub do Persate.
+* Członek nadal widzi dawną rolę — powinien odświeżyć stronę albo zalogować się ponownie.
+* Czynność nie powiodła się — przed ponowną próbą należy odświeżyć listę, aby czynność dotyczyła aktualnego stanu.

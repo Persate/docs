@@ -1,0 +1,67 @@
+---
+title: Telecom Lab
+description: Laboratorium oparte na mapie, porównujące polskie gminy pod względem rozwoju sieci, popytu, infrastruktury, gotowości instytucji i pokrycia danymi.
+---
+
+**Telecom Lab** to laboratorium oparte na mapie. Przedstawia wersjonowany obraz rozwoju sieci, dostępności usług, popytu, wykonalności infrastruktury, gotowości instytucjonalnej i pokrycia danymi w każdej gminie w Polsce. Każda gmina jest osobną jednostką analizy, a wszystkie wyniki pochodzą z jednego przejrzanego wydania danych.
+
+Telecom Lab jest dostępny wyłącznie dla organizacji i grup, którym go przypisano. Po przypisaniu pojawia się z nazwy w sekcji **Laboratoria** w panelu bocznym.
+
+## Karty i widoki
+
+Pasek kart zawiera dwie karty:
+
+* **Podsumowanie** — zakres laboratorium, wymiary analizy, źródła i ich pokrycie, sposób interpretacji wyników oraz datę danych;
+* **Mapa gmin** — interaktywna mapa.
+
+Na prawym końcu paska przełącznik zmienia widok mapy między **Widok analityczny** a **Widok ogólny**, a przycisk Advisora otwiera główny moduł **Advisor**.
+
+## Widok analityczny
+
+Widok analityczny udostępnia sześć trybów wybieranych w panelu bocznym:
+
+| Tryb | Przeznaczenie |
+| :--- | :--- |
+| **Ranking** | Porównanie gmin w pięciu obszarach wyników. |
+| **Materiały źródłowe** | Wyświetlenie na mapie jednego wskaźnika źródłowego. |
+| **Połącz** | Zbudowanie widoku ważonego z dwóch do sześciu wskaźników. |
+| **Zakres danych** | Przeglądanie modelowanego zasięgu radiowego na zewnątrz budynków (w polskiej wersji interfejsu tryb zasięgu nosi obecnie tę nazwę). |
+| **Lokalizacje** | Sprawdzenie obszarów pod kątem potencjalnej infrastruktury. |
+| **Aktywność** | Przegląd aktywności instytucji i mieszkańców. |
+
+Tryb **Ranking** koloruje mapę według wymiaru wybranego w polu **Porównaj gminy według**: **Rozwój sieci**, **Popyt**, **Infrastruktura**, **Instytucje** lub **Dane**. Ikona informacji obok wymiaru wyjaśnia dane wejściowe oraz sekcję **Jak obliczamy wynik**. Wyniki mieszczą się w przedziale od 0 do 100 i są względne wobec wszystkich gmin w wydaniu; nie są wartościami procentowymi. Gmina bez wystarczających danych ma oznaczenie **Niewystarczające dane źródłowe**.
+
+Tryb **Materiały źródłowe** wyświetla na mapie jeden wskaźnik źródłowy; ikona informacji przy każdym wskaźniku go opisuje. Tryb **Połącz** buduje w sekcji **Kompozycja warstw** widok z dwóch do sześciu wskaźników: dla każdej warstwy wybiera się wskaźnik, kierunek (**Wyżej** lub **Niżej** — które wartości działają na korzyść gminy) i wagę. **Dodaj warstwę** dodaje kolejny wskaźnik, aż do osiągnięcia limitu **Maksymalnie 6 warstw**.
+
+Tryb zasięgu przedstawia modelowany zasięg radiowy na zewnątrz budynków. Pole **Porównanie ogólnopolskie** przełącza między wariantami **Łącznie**, **Zakres danych** i **Redundancja**, a **Zakres podsumowania zasięgu** zestawia wyniki według poziomu **Gmina**, **Powiat** lub **Województwo**. Przy włączonym przełączniku **Zasięg wybranej stacji** wybranie stacji na mapie nakłada jej modelowany obszar zasięgu.
+
+## Widok ogólny
+
+Widok ogólny służy do wyszukiwania miejsc i przeglądania warstw mapy:
+
+* **Znajdź gminę** — po wpisaniu co najmniej dwóch znaków i wybraniu wyniku mapa przybliża gminę i otwiera jej szczegóły;
+* **Warstwy mapy** — pokazanie lub ukrycie warstw **Gminy i indeksy** oraz **Lokalizacje stacji**;
+* **Oś czasu** — używana migawka danych, opisana jako **Dane na dzień** z datą wydania;
+* **Filtry stacji** — ograniczenie widocznych stacji do jednego operatora lub jednej technologii.
+
+## Szczegóły gminy lub stacji
+
+Wybranie gminy otwiera po prawej stronie jej szczegóły: **Indeksy** wraz z **Pokrycie i jakość danych**, **Szczegóły**, **Dane źródłowe** oraz, gdy są dostępne, **Sygnały inwestycyjne i zamówienia**. Wybranie stacji zaznacza ją na mapie; przycisk **Otwórz charakterystykę stacji** pokazuje wtedy **Szczegóły stacji**, m.in. operatora, technologie i — gdy jest dostępny — modelowany obszar zasięgu. Po zamknięciu szczegółów przycisk **Otwórz szczegóły gminy** otwiera je ponownie.
+
+## Interpretacja wyników
+
+* Wyniki są względnymi indeksami badawczymi w obrębie jednego wydania danych. Nie są mapą rzeczywistego zasięgu operatora, pomiarem jakości sygnału ani prognozą decyzji inwestycyjnej.
+* Nie istnieje jeden ogólny ranking gmin; każdy wymiar odpowiada na inne pytanie.
+* Brak danych nie oznacza zera, braku infrastruktury ani niechęci gminy.
+* Przezroczystość warstwy odzwierciedla jakość i pokrycie danych źródłowych.
+* Modelowany zasięg jest narzędziem planistycznym, a nie pomiarem terenowym ani gwarancją usługi pod konkretnym adresem.
+
+Dane odzwierciedlają stan dostępny we wskazanym dniu. Kolejne aktualizacje są publikowane jako osobne wydania, dzięki czemu wcześniejsze wyniki pozostają porównywalne.
+
+## Komunikaty
+
+| Komunikat | Znaczenie |
+| :--- | :--- |
+| **Nie przypisano Telecom Lab** | Laboratorium nie jest przypisane organizacji ani grupom użytkownika. **Wróć do Labs** otwiera katalog. |
+| **Nie udało się sprawdzić dostępu** | Katalog laboratoriów jest chwilowo niedostępny. Należy wybrać **Spróbuj ponownie**. |
+| **Brak pasujących gmin.** | Wyszukiwanie nie znalazło gminy; należy sprawdzić pisownię nazwy. |

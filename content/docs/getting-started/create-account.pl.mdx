@@ -1,31 +1,45 @@
 ---
 title: Zakładanie konta
-description: Metody rejestracji na platformie — tradycyjny formularz oraz logowanie jednokrotne (SSO).
+description: Aktywowanie konta z zaproszenia, dołączanie do organizacji z istniejącym kontem i rejestracja ze strony logowania.
 ---
 
-Rejestrację można rozpocząć na stronie głównej [persate.com](https://persate.com) po wybraniu opcji **Zarejestruj się**. Dostępne są dwie ścieżki rejestracji.
+Większość kont w Persate powstaje z zaproszenia wysłanego przez administratora organizacji. Konto można również utworzyć odnośnikiem **Zarejestruj się** na stronie logowania, jednak platforma otwiera się tylko dla kont należących do organizacji.
 
-## Formularz e-mail i hasło
+## Przyjęcie zaproszenia
 
-Rejestracja tradycyjna wymaga uzupełnienia następujących pól:
+1. Otworzyć link z wiadomości z zaproszeniem. Otwiera się strona **Ustaw hasło do Persate**; jej język można przełączyć między English i Polski.
+2. Wybrać **Przejdź do Persate**. Link jest wykorzystywany dopiero na tym etapie, dlatego skaner poczty, który otwiera linki z wyprzedzeniem, nie unieważnia go.
+3. Na stronie **Ustaw hasło** wpisać **Nowe hasło** i powtórzyć je w polu **Powtórz hasło**. Hasło musi mieć co najmniej 8 znaków i zawierać cyfrę oraz znak specjalny.
+4. Wybrać **Aktywuj konto**. Dopóki link jest weryfikowany, przycisk wyświetla **Oczekiwanie na sesję…**.
+5. Po komunikacie **Konto aktywowane! Przekierowywanie…** przejść do [pierwszego logowania](/pl/getting-started/first-login) i konfiguracji [weryfikacji dwuetapowej](/pl/getting-started/set-up-two-factor).
+
+## Dołączenie do organizacji z istniejącym kontem
+
+Gdy administrator zaprasza adres, który ma już konto w Persate poza jakąkolwiek organizacją, wiadomość prowadzi do strony **Dołącz do organizacji**. Należy wybrać **Przyjmij zaproszenie i dołącz**. Po komunikacie **Dołączono do organizacji! Zaloguj się, aby kontynuować.** można zalogować się dotychczasowym hasłem.
+
+## Konto założone przez administratora
+
+Administrator może też utworzyć konto z hasłem zamiast wysyłać zaproszenie. Wiadomość nie jest wtedy wysyłana: logowanie odbywa się adresem e-mail i hasłem przekazanymi przez administratora, a następnie należy skonfigurować [weryfikację dwuetapową](/pl/getting-started/set-up-two-factor).
+
+## Rejestracja
+
+Strona główna persate.com zawiera przyciski **Zaloguj się** i **Umów prezentację**. Aby się zarejestrować, należy wybrać **Zaloguj się**, następnie **Zarejestruj się** pod formularzem logowania i wypełnić formularz **Utwórz konto**:
 
 * **Adres e-mail** — adres konta.
-* **Hasło** — minimum osiem znaków, w tym co najmniej jedna cyfra i co najmniej jeden znak specjalny. W trakcie wpisywania hasła pod polem pojawia się lista wymagań, a spełnione kryteria są oznaczane na bieżąco.
-* **Powtórzenie hasła** — aby upewnić się, że wpisano je bez literówek.
-* **Zgody** — dwa osobne pola wyboru: akceptacja **Polityka prywatności** (Polityki prywatności) oraz **Regulamin** (Regulaminu). Przycisk rejestracji pozostaje nieaktywny, dopóki oba pola nie zostaną zaznaczone.
+* **Hasło** — co najmniej 8 znaków, w tym co najmniej 1 cyfra i co najmniej 1 znak specjalny. Podczas wpisywania hasła lista **Twoje hasło musi zawierać:** pokazuje wymagania i oznacza spełnione.
+* **Potwierdź hasło** — to samo hasło wpisane ponownie.
+* dwa pola wyboru **Akceptuję** — przy odnośnikach **Polityka prywatności** i **Regulamin**; przycisk **Zarejestruj się** staje się dostępny dopiero po zaznaczeniu obu pól.
 
-Po przesłaniu formularza interfejs wyświetla ogólny komunikat potwierdzający przyjęcie zgłoszenia — *„Request received”* wraz z informacją, że jeśli adres wymaga weryfikacji, link nadejdzie wkrótce, a jeśli konto już istnieje, należy się zalogować lub zresetować hasło. Komunikat jest celowo neutralny i nie ujawnia, czy dany adres jest już zarejestrowany.
+Po wybraniu **Zarejestruj się** Persate wyświetla komunikat **Otrzymaliśmy zgłoszenie**: jeśli adres wymaga weryfikacji, link przychodzi e-mailem; jeśli adres ma już konto, należy się zalogować lub zresetować hasło. Komunikat jest taki sam w obu przypadkach, więc nie ujawnia, czy adres jest zarejestrowany. Link weryfikacyjny otwiera stronę **Potwierdź adres e-mail w Persate**; wybranie **Przejdź do Persate** potwierdza adres.
 
-**Uwaga:** Jeśli adres wymaga weryfikacji, wiadomość z linkiem może trafić do folderu spam. Gdy link nie dotrze w ciągu kilku minut, zaleca się sprawdzenie poprawności wpisanego adresu.
+Konto utworzone przez rejestrację otwiera platformę dopiero po dodaniu go do organizacji przez administratora. Do tego czasu logowanie zostaje odrzucone albo kończy się stroną **Brak dostępu**.
 
-## Logowanie jednokrotne (SSO)
-
-Konto można również utworzyć, wybierając opcję **Kontynuuj z kontem Google** lub **Kontynuuj z kontem Microsoft**. Po zalogowaniu konto zostanie utworzone automatycznie. Metoda ta pozwala pominąć krok weryfikacji adresu e-mail.
+Strony logowania i rejestracji mają u góry przełącznik języka **EN** / **PL**, a pod formularzem odnośniki **Polityka prywatności**, **Regulamin** i **Ustawienia plików cookie**. Opcje logowania kontem Google i Microsoft opisuje strona [Pierwsze logowanie](/pl/getting-started/first-login).
 
 ## Stany błędu
 
-* *„Passwords do not match”* — wartości w polach hasła i jego powtórzenia są różne.
-* *„Sign-up Failed”* z opisem *„Password must be at least 8 characters long”* — hasło jest zbyt krótkie.
-* *„Sign-up Failed”* z opisem *„Password must include at least 1 number”* — hasło nie zawiera cyfry.
-* *„Sign-up Failed”* z opisem *„Password must include at least 1 special character”* — hasło nie zawiera znaku specjalnego.
-* *„Sign-up Failed”* z opisem o nieoczekiwanym błędzie — zgłoszenia nie udało się przetworzyć; należy spróbować ponownie.
+* **Hasła nie są takie same.** — hasło i jego potwierdzenie się różnią.
+* **Rejestracja nie powiodła się** z opisem **Hasło musi mieć co najmniej 8 znaków.**, **Hasło musi zawierać co najmniej 1 cyfrę.** lub **Hasło musi zawierać co najmniej 1 znak specjalny.** — hasło nie spełnia wymagań.
+* **Rejestracja nie powiodła się** z opisem **Wystąpił nieoczekiwany błąd. Spróbuj ponownie.** — nie udało się przetworzyć zgłoszenia; należy spróbować ponownie.
+* **Hasła nie są identyczne.** lub **Powtórz hasło.** na stronie **Ustaw hasło** — drugie pole różni się od pierwszego lub jest puste.
+* **Link logowania wygasł** lub **Nie udało się zalogować** — link z wiadomości został już wykorzystany lub stracił ważność; należy poprosić o nowe zaproszenie i użyć tylko najnowszej wiadomości.

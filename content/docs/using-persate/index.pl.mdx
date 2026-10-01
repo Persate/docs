@@ -1,43 +1,80 @@
 ---
 title: Korzystanie z Persate
-description: Nawigacja, dostęp zależny od organizacji, obsługa mobilna i działania ogólnoplatformowe.
+description: Panel boczny, górny pasek, ustawienia, obsługa na telefonie i komunikaty o dostępie wspólne dla całej platformy.
 ---
 
-Persate organizuje pracę w stałym układzie nawigacyjnym. Pozycje widoczne dla użytkownika zależą od funkcji włączonych dla organizacji, roli użytkownika oraz przypisania do grup.
+Każdy moduł Persate działa w tym samym układzie: panel boczny po lewej stronie, górny pasek z pomocą i kontem oraz moduł w części głównej. Na telefonie oba elementy zastępuje pasek u dołu ekranu. Widoczne pozycje zależą od funkcji włączonych dla organizacji, roli użytkownika i przypisanych mu laboratoriów.
 
-## Obszary nawigacji
+## Panel boczny
 
-Panel boczny na komputerze zawiera następujące sekcje:
+Na górze panelu bocznego znajdują się dwa działania:
 
-* **Kokpit** — pulpit startowy.
-* **GŁÓWNE** — **Advisor** i **Monitorowanie**.
-* **PRZESTRZEŃ ROBOCZA** — **Repozytorium**, **Inteligentne foldery**, **Raporty** oraz oznaczony jako beta **Redaktor**.
-* **LABS** — narzędzia przypisane do grup użytkownika. Sekcja jest ukryta, jeżeli nie przypisano zgodnego laboratorium.
-* **PUBLICZNE** — **Legislacja**, **Nagrania**, **Głosowania**, **Interesariusze**, **Media** oraz **Źródła**.
-* **ZARZĄDZANIE** — strony administracyjne. Sekcja jest widoczna wyłącznie dla administratorów obszaru roboczego, gdy panel operacyjny jest włączony.
+* **Prześlij** — otwiera panel przesyłania plików do Repozytorium. Jest widoczne, gdy Repozytorium jest włączone dla organizacji.
+* **Wyszukiwanie** — otwiera wyszukiwanie globalne. Opis na stronie [Wyszukiwanie i powiadomienia](/pl/using-persate/search-and-notifications).
 
-Pozycja może być ukryta albo wyświetlać ekran blokady, jeżeli organizacja nie ma dostępu. Sama widoczność pozycji nie zastępuje kontroli uprawnień wykonywanej przez serwer podczas otwierania strony.
+Poniżej nawigacja jest podzielona na grupy:
 
-## Górny pasek na komputerze
+| Grupa | Pozycje |
+|---|---|
+| — | **[Kokpit](/pl/cockpit)** — ekran startowy |
+| **GŁÓWNE** | **[Advisor](/pl/advisor)**, **[Monitorowanie](/pl/alerts)** |
+| **PRZESTRZEŃ ROBOCZA** | **[Repozytorium](/pl/repository)**, **[Inteligentne foldery](/pl/repository/smart-folders)**, **[Redaktor](/pl/editor)** |
+| **PUBLICZNE** | **[Legislacja](/pl/legislation-tracker)**, **[Nagrania](/pl/live-proceedings)**, **[Głosowania](/pl/voting-ledger)**, **[Interesariusze](/pl/stakeholders)**, **[Media](/pl/public-pulse)** |
+| **Laboratoria** | [laboratoria](/pl/labs) przypisane do użytkownika |
 
-Górny pasek zapewnia:
+Pozycja jest widoczna tylko wtedy, gdy jej funkcja jest włączona dla organizacji, a grupa bez pozycji jest ukrywana. **Laboratoria** to zwijana sekcja na dole panelu; pojawia się tylko wtedy, gdy przypisano co najmniej jedno laboratorium, i zapamiętuje, czy pozostawiono ją rozwiniętą. Strona otwarta bezpośrednio, gdy pakiet organizacji jej nie obejmuje, wyświetla komunikat **Ta funkcja nie jest częścią Twojego pakietu**. Ukrywanie pozycji jedynie porządkuje nawigację: dostęp jest sprawdzany ponownie przy każdym wczytywaniu danych.
 
-* przełącznik jasnego i ciemnego motywu;
-* przycisk **Opinia**;
-* odnośnik do niniejszej dokumentacji;
-* osobne kanały **Ogłoszenia** i **Wiadomości**;
-* menu profilu z pozycjami **Profil**, **Preferencje**, **Ustawienia** oraz **Wyloguj się**.
+Przycisk na lewym końcu górnego paska zwija panel boczny do kolumny ikon i ponownie go rozwija; to samo robi skrót Ctrl+B (⌘B na Macu). Wewnątrz modułu pasek nad stroną pokazuje grupę i moduł, a na stronie szczegółów także ścieżkę do otwartego rekordu; nazwa modułu prowadzi wtedy z powrotem do jego strony głównej.
 
-## Nawigacja mobilna
+W przeglądarce na Windows lub macOS przycisk **Pobierz** na dole panelu bocznego pobiera aplikację desktopową Persate. W aplikacji desktopowej dla Windows w tym miejscu pojawia się **Aktualizacja gotowa**, gdy nowa wersja jest gotowa; wybranie przycisku uruchamia Persate ponownie i instaluje aktualizację.
 
-Na wąskich ekranach dolny pasek zawiera główną nawigację oraz działania **Wyszukiwanie**, **Prześlij** i **Profil**. Filtry, które zwykle zajmują panel strony, otwierają się jako nakładka lub wysuwany panel. Na stronach szczegółowych panel metadanych może zostać przeniesiony do szuflady.
+## Górny pasek
 
-## Komunikaty o funkcjach i dostępie
+Lewa strona górnego paska zawiera przycisk panelu bocznego, przycisk **Otwórz dokumentację**, który otwiera tę dokumentację w nowej karcie w języku interfejsu, strzałki **Wstecz** i **Dalej** oraz logotyp Persate.
 
-* **Feature locked** — funkcja nie jest włączona dla bieżącej organizacji lub konta. Należy skontaktować się z administratorem obszaru roboczego.
-* **Access denied** — zalogowane konto nie należy do organizacji z dostępem do platformy albo bieżąca rola nie pozwala wykonać działania.
-* **Sprawdzenie logowania jest niedostępne** — Persate nie mógł zweryfikować dostępu do organizacji. Przed działaniem zmieniającym dane należy wybrać **Ponów**.
+Prawa strona zawiera:
+
+* przełącznik motywu, który zmienia motyw jasny na ciemny i odwrotnie oraz zapisuje wybór na koncie; w **Ustawienia → Preferencje → Wygląd** można też wybrać motyw zgodny z ustawieniami systemu;
+* **Opinia**;
+* **Ogłoszenia** i **Wiadomości** — dwa kanały z licznikami nieprzeczytanych pozycji, opisane na stronie [Wyszukiwanie i powiadomienia](/pl/using-persate/search-and-notifications);
+* menu konta (awatar) z nazwą wyświetlaną i adresem e-mail oraz pozycjami **Ustawienia konta**, **Preferencje** i **Wyloguj się**.
+
+Nad górnym paskiem mogą pojawiać się komunikaty zespołu Persate, a także pasek informujący o utracie połączenia lub nietypowo wolnym wczytywaniu danych. Opis na stronie [Wyszukiwanie i powiadomienia](/pl/using-persate/search-and-notifications).
+
+## Wysyłanie opinii
+
+**Opinia** przekazuje zespołowi Persate ocenę, komentarz i zrzuty ekranu.
+
+1. Wybrać **Opinia** na górnym pasku.
+2. Opcjonalnie dodać zrzuty ekranu w sekcji **Prześlij obrazy**: przeciągnąć je, wybrać pliki lub wkleić skrótem Ctrl+V. Akceptowane są obrazy PNG i JPG, maksymalnie dziesięć.
+3. Wybrać ocenę od 0 do 5 w sekcji **Jak oceniasz korzystanie z aplikacji?** Ocena jest wymagana.
+4. Opisać doświadczenia w polu **Twoja opinia** i wybrać **Wyślij opinię**.
+
+## Ustawienia
+
+Menu konta otwiera bezpośrednio **Ustawienia konta** lub **Preferencje**. Gdy ustawienia są otwarte, panel boczny zamiast modułów zawiera strony ustawień:
+
+* **OSOBISTE** — **Konto**, **Bezpieczeństwo i prywatność**, **Powiadomienia**, **Preferencje**;
+* **PLATFORMA** — **Źródła**;
+* **ORGANIZACJA** — **Ogólne**, **Członkowie**, **Grupy i uprawnienia**, **Wykorzystanie i plan**, **Dostawcy zewnętrzni**, **Funkcje eksperymentalne**. Strony **Członkowie**, **Grupy i uprawnienia** oraz **Wykorzystanie i plan** są widoczne tylko dla administratorów organizacji.
+
+**Wróć do aplikacji** na górze panelu ustawień prowadzi do ostatnio odwiedzonej strony albo do Kokpitu. Szczegóły na stronach [Konto i ustawienia](/pl/account-and-settings), [Źródła](/pl/sources) i [Administracja](/pl/administration).
+
+## Na telefonie
+
+Na telefonie panel boczny i górny pasek zastępuje pasek u dołu ekranu. Zawiera przyciski Kokpitu, wyszukiwania, przesyłania plików (gdy Repozytorium jest włączone) i profilu, który otwiera Ustawienia, a także przycisk menu z listą wszystkich dostępnych modułów. Na ekranach rozmowy, takich jak Advisor, pasek zmniejsza się do jednego przycisku menu, aby nie zasłaniać pola wiadomości.
+
+* Filtry strony otwierają się przyciskiem filtrów jako panel nad stroną.
+* W Ustawieniach górny pasek zawiera **Wróć do aplikacji**, nazwę strony i przycisk **Sekcje**, który otwiera listę stron ustawień.
+* Ogłoszenia, Wiadomości i Opinia znajdują się na górnym pasku, widocznym na większych ekranach.
+* Na telefonie Persate działa w orientacji pionowej. W orientacji poziomej wyświetla komunikat **Tylko tryb pionowy**, dopóki telefon nie zostanie obrócony.
+
+## Komunikaty o dostępie
+
+* **Ta funkcja nie jest częścią Twojego pakietu** — pakiet organizacji nie obejmuje modułu. Rozszerzenie pakietu wymaga kontaktu z administratorem organizacji.
+* **Brak dostępu** — konto nie jest przypisane do organizacji w Persate albo konto bez roli administratora otworzyło strony zarządzania organizacją. Zaproszona osoba powinna otworzyć link z wiadomości z zaproszeniem; w pozostałych przypadkach należy poprosić administratora organizacji o zaproszenie lub zmianę roli.
+* **Sprawdzenie logowania jest niedostępne** — Persate nie mógł potwierdzić sesji i nie wczytał żadnych danych. Po chwili należy wybrać **Spróbuj ponownie**.
 
 ## Strony w tej sekcji
 
-* **[Wyszukiwanie i powiadomienia](/pl/using-persate/search-and-notifications)** — wyszukiwanie globalne, ogłoszenia, wiadomości i preferencje powiadomień.
+* **[Wyszukiwanie i powiadomienia](/pl/using-persate/search-and-notifications)** — wyszukiwanie globalne z podglądem źródeł, ogłoszenia, wiadomości, komunikaty i ustawienia powiadomień.
