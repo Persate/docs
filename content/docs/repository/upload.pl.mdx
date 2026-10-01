@@ -23,7 +23,7 @@ Strefa upuszczania podaje zasady: **Obsługiwane formaty: PDF, DOCX, XLSX, CSV. 
 3. Sprawdzić pole **Dostęp do plików: …** nad listą. Nowa partia zaczyna się od ustawienia **Tylko ja**. Aby udostępnić pliki, wybrać **Zmień**, następnie **Wybrane grupy**, wskazać co najmniej jedną grupę i wybrać **Zaktualizuj dostęp**.
 4. Wybrać **Dodaj pliki**.
 
-Persate wysyła pliki kolejno. W tym czasie przycisk pokazuje **Przesyłanie…**, a **Anuluj** jest niedostępne. Kolumna **Status** pokazuje kolejno stan każdego pliku: oczekiwanie, przesyłanie, a na końcu powodzenie albo błąd. Każdy przesłany plik potwierdza powiadomienie. Gdy wszystkie pliki zostaną przesłane, panel się zamyka, a lista Repozytorium odświeża.
+Persate wysyła pliki kolejno. W tym czasie przycisk pokazuje **Przesyłanie…**, a **Anuluj** jest niedostępne. Stan w kolumnie **Status** zmienia się z **Oczekuje** na **Przesyłanie**, a następnie na **Przesłano** albo **Błąd**. Każdy przesłany plik potwierdza powiadomienie. Gdy wszystkie pliki zostaną przesłane, panel się zamyka, a lista Repozytorium odświeża.
 
 ## Dostęp dla partii
 
@@ -36,16 +36,16 @@ Dostęp zostaje zablokowany w chwili rozpoczęcia przesyłania, a pole pokazuje 
 
 ## Ponowne przesyłanie nieudanych plików
 
-Po częściowym niepowodzeniu wiersze ze stanem Error pozostają na liście. Należy usunąć przyczynę — na przykład nadmiarowy plik ponad pięć albo plik przekraczający limit rozmiaru — i ponownie wybrać **Dodaj pliki**. Persate wysyła wyłącznie wiersze ze stanem Pending lub Error; wiersze ze stanem Success nie są przesyłane drugi raz.
+Po częściowym niepowodzeniu wiersze ze stanem **Błąd** pozostają na liście. Należy usunąć przyczynę — na przykład nadmiarowy plik ponad pięć albo plik przekraczający limit rozmiaru — i ponownie wybrać **Dodaj pliki**. Persate wysyła wyłącznie wiersze ze stanem **Oczekuje** lub **Błąd**; wiersze ze stanem **Przesłano** nie są przesyłane drugi raz.
 
 ## Po przesłaniu
 
-Stan Success oznacza, że Persate przyjęło i zapisało oryginalny plik. Analiza trwa dalej w tle: jej postęp pokazuje kolumna **Analiza** w Repozytorium, a podsumowanie pojawia się w kolumnie **Opis**, gdy będzie gotowe. Brak podsumowania nie jest powodem do ponownego przesyłania tego samego pliku.
+Stan **Przesłano** oznacza, że Persate przyjęło i zapisało oryginalny plik. Analiza trwa dalej w tle: jej postęp pokazuje kolumna **Analiza** w Repozytorium, a podsumowanie pojawia się w kolumnie **Opis**, gdy będzie gotowe. Brak podsumowania nie jest powodem do ponownego przesyłania tego samego pliku.
 
 ## Rozwiązywanie problemów
 
 * **Jednocześnie można przesłać maksymalnie 5 plików.** — należy usuwać wiersze, aż zostanie najwyżej pięć, a następnie wybrać **Dodaj pliki**.
 * Komunikat o konieczności wybrania grupy — należy wskazać co najmniej jedną grupę albo przełączyć dostęp na **Tylko ja**.
 * Plik nie pojawia się na liście — nie jest plikiem PDF, DOCX, XLSX ani CSV.
-* Wiersz pokazuje stan Error — powiadomienie podaje przyczynę zgłoszoną dla tego pliku. Należy sprawdzić, czy plik ma mniej niż 50 MB i czy jego treść rzeczywiście odpowiada formatowi wskazanemu przez rozszerzenie, a następnie ponowić próbę.
+* Wiersz pokazuje stan **Błąd** — powiadomienie podaje przyczynę zgłoszoną dla tego pliku. Należy sprawdzić, czy plik ma mniej niż 50 MB i czy jego treść rzeczywiście odpowiada formatowi wskazanemu przez rozszerzenie, a następnie ponowić próbę.
 * Brak przycisku **Prześlij** — Repozytorium nie jest włączone dla organizacji.
