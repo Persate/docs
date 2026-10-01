@@ -34,11 +34,27 @@ Oceny mogą być niepełne lub błędne. Przed wykorzystaniem informacji należy
 
 ## Podsumowania
 
-Kolumna zawsze zawiera te same trzy podsumowania. Każde z nich wczytuje się, pozostaje puste lub zgłasza błąd niezależnie od reszty strony.
+Kolumna zawiera trzy podsumowania; gdy brak stanowisk z konsultacji, miejsce trzeciego może zająć **W nagraniach** (zob. [Karta nagrania](#karta-nagrania)). Każde z nich wczytuje się, pozostaje puste lub zgłasza błąd niezależnie od reszty strony.
 
 * **Od ostatniej wizyty** — nowe pozycje pogrupowane według alertów. Wiersz zawiera nazwę alertu, główny nagłówek i liczbę nowych pozycji; wybranie wiersza otwiera alert, a **Zobacz wszystkie** otwiera moduł Monitorowanie. Wizyta jest liczona dopiero wtedy, gdy podsumowanie rzeczywiście pojawiło się na ekranie. Gdy nie ma nic nowego, podsumowanie wyświetla **Nic nowego od ostatniej wizyty.**
 * **Twoje projekty w procesie** — rządowe projekty (RCL) powiązane z aktywnością alertów z ostatnich siedmiu dni. Wiersz zawiera tytuł projektu, oś etapów, bieżący etap z datą oraz następny krok (**Następnie:**). Na osi pełne segmenty oznaczają etapy z dokumentami, przygaszone — wcześniejsze etapy bez dokumentów, większy segment — etap bieżący, a obrysowane — etapy przyszłe; po wskazaniu segmentu widać nazwę etapu i daty. W projekcie ustawy oś zarysowuje również późniejsze kroki parlamentarne; pokazują one dalszą ścieżkę, a nie faktyczny stan prac w parlamencie. Bieżący etap jest ustalany na podstawie opublikowanych dokumentów i może nie nadążać za oficjalnym procesem. **Wszystkie projekty** otwiera listę projektów rządowych. Bez powiązanych projektów podsumowanie wyświetla **W tym tygodniu Twoje alerty nie trafiły na projekty rządowe.** oraz przycisk **Przejrzyj swoje alerty**.
 * **Kto zabiera głos** — stanowiska konsultacyjne dotyczące powiązanych projektów. Przy każdym projekcie widać liczbę stanowisk, pasek podzielony według stanowisk i etykiety organizacji oznaczone kolorem stanowiska: **Sprzeciw**, **Prośba o zmiany** lub **Bez uwag**. Etykieta **Pisma od** wskazuje początek dostępnego zakresu danych. Stanowiska są automatycznym odczytaniem pism, a nie zweryfikowanymi wnioskami prawnymi; organizacja nieobecna w podsumowaniu mogła mimo to złożyć stanowisko. Na szerszym ekranie projekt z karty wiodącej nie jest tu powtarzany, a jeśli jest jedynym projektem z pismami, podsumowanie wyświetla **W głównym kaflu**; na telefonie, gdzie karta wiodąca nie pokazuje kafelków pism, projekt jest wymieniony. Bez pism podsumowanie wyświetla **Brak pism z konsultacji Twoich projektów.** oraz przycisk **Przeglądaj projekty**.
+
+## Teraz na X
+
+Gdy sekcja **Od ostatniej wizyty** nie zawiera aktualizacji, a konto ma dostęp do Mediów, **Teraz na X** pokazuje jedną wyróżnioną historię z ostatnich siedmiu dni. Karta zawiera duży tytuł, krótki opis najnowszego wydarzenia, zdjęcia profilowe autorów z X, liczbę dostępnych wpisów i czas ostatniej aktywności. Gdy zdjęcie profilowe jest niedostępne, karta pokazuje zdjęcie autora z kartoteki lub inicjały.
+
+Karta przełącza do dziesięciu dostępnych historii co osiem sekund, z płynnym przejściem między ich treścią. Najechanie na kartę lub ustawienie fokusu na jej kontrolce wstrzymuje cykl. Wybranie segmentu lub strzałki wyłącza automatyczne przełączanie i pozostawia nawigację ręczną. Wybrana historia pozostaje aktywna podczas odświeżania danych. Preferencja ograniczenia ruchu wyłącza automatyczne przełączanie i animacje przejść. Wybranie tytułu otwiera pełną historię, a **Zobacz wszystkie** otwiera Media.
+
+Pierwszeństwo ma najnowszy dzień według czasu w Polsce. W obrębie tego dnia kolejność uwzględnia dostępne oceny Importance wpisów stanowiących bezpośrednie źródło informacji, a następnie czas aktywności. Etykiety tematów i oznaczenie **Potencjalnie istotne** pojawiają się wyłącznie na podstawie istniejącej oceny. Na kontach bez dostępu do Mediów pozostaje lista zdarzeń publicznych.
+
+## Karta nagrania
+
+Gdy brak stanowisk konsultacyjnych, a konto ma dostęp do nagrań, **W nagraniach** zajmuje jedną wyższą kartę podsumowania. Pokazuje maksymalnie trzy nagrania możliwe do odtworzenia, z gotowym transkryptem lub częściowym transkryptem trwającej transmisji. Najpierw pojawiają się nagrania z najnowszego dnia według czasu w Polsce. W obrębie tego samego dnia posiedzenia Sejmu mają pierwszeństwo przed innymi sesjami, komisjami i pozostałymi wydarzeniami; wśród nagrań tego samego typu najpierw są transmisje na żywo, a następnie najpóźniej rozpoczęte nagrania. Nagrania z pustym lub niedostępnym transkryptem są pomijane. Każdy wiersz ma miniaturę po lewej oraz większy tytuł wyrównany do góry po prawej, a pod nim początek opisu wygenerowanego przez AI. Wszystkie trzy wiersze mieszczą się bez przewijania wewnątrz karty.
+
+Każda trwająca transmisja uruchamia się automatycznie jako wyciszony podgląd we własnym wierszu. Wybranie dowolnego miejsca w wierszu nagrania, w tym miniatury, tytułu lub opisu, otwiera pełny widok nagrania z przyciskami odtwarzania i dźwięku. **Zobacz wszystkie** otwiera katalog nagrań.
+
+Cockpit generuje brakujący krótki opis na podstawie dostępnego transkryptu i zapisuje go na kolejne wizyty. Może też wykorzystać istniejący opis z opracowania transkryptu. Długie nagrania są opisywane na podstawie fragmentów z całego transkryptu; opisy transmisji na żywo dotyczą już przepisanej części i odświeżają się w miarę postępu obrad. Podczas przygotowywania opisu można odtwarzać nagranie. Nieudane żądanie można ponowić.
 
 ## Zalecany sposób pracy
 

@@ -1,4 +1,4 @@
 {
   "title": "Konto i ustawienia",
-  "pages": ["account", "security", "preferences", "mcp"]
+  "pages": ["account", "security", "preferences", "tutorials", "mcp"]
 }

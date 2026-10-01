@@ -34,11 +34,27 @@ Assessments can be incomplete or wrong. Check the source before relying on them.
 
 ## Summaries
 
-The rail always shows the same three summaries. Each one loads, stays empty or fails on its own, without changing the rest of the page.
+The rail shows three summaries; without consultation positions, **In recordings** can take the place of the third (see [Recording card](#recording-card)). Each one loads, stays empty or fails on its own, without changing the rest of the page.
 
 * **Since your last visit** — new items grouped by alert. Each row shows the alert name, the leading headline and the number of new items; selecting a row opens that alert, and **See all** opens Tracker. A visit counts only once the summary has actually been visible on screen. With nothing new, the summary reads **Nothing new since your last visit.**
 * **Your projects in the process** — government (RCL) draft projects linked to alert activity in the last seven days. Each row shows the project title, a stage track, the current stage with its date and the next step (**Next:**). On the track, solid segments are stages with documents, dimmed segments are earlier stages without documents, the larger segment is the current stage and outlined segments lie ahead; hovering over a segment shows the stage name and dates. For a draft bill, the track also outlines the later parliamentary steps; they show the path ahead, not the bill's actual parliamentary status. The current stage is inferred from published documents and can lag behind the official process. **All projects** opens the list of government projects. With no linked project, the summary reads **No government drafts from your alerts this week.** and offers **Review your alerts**.
 * **Who's weighing in** — consultation positions on the linked projects. Each project shows the number of positions, a bar divided by stance and chips for the organizations, coloured by stance: **Objects**, **Asks for changes** or **No objections**. The **Letters since** label gives the start of the available coverage. Stances are automated readings of the letters, not verified legal conclusions, and an organization missing from the summary may still have filed a position. On a wider screen the leading card's project is not repeated here, and when it is the only project with letters, the summary reads **On the featured card**; on a phone, where the leading card has no letter tiles, the project is listed. With no letters, the summary reads **No consultation letters on your drafts yet.** and offers **Browse projects**.
+
+## Now on X
+
+When **Since your last visit** has no updates and the account has access to Media, **Now on X** shows one featured story from the last seven days. The card contains a large title, a short description of its latest event, authors' profile pictures from X, the number of available posts and the last activity time. When a profile picture is unavailable, the card uses the author's directory photo or initials.
+
+The card cycles through up to ten available stories every eight seconds, with a smooth transition between their content. Hovering over the card or focusing a control pauses the cycle. Selecting a segment or arrow stops automatic switching and keeps navigation manual. Selection stays in place when the data refreshes. Reduced-motion preferences disable automatic switching and transition animations. Selecting the title opens the full story; **See all** opens Media.
+
+The newest day in Poland comes first. Within that day, available Importance assessments of direct source posts inform the order, followed by recency. Topic labels and **Potentially major** appear only when supported by an existing assessment. Accounts without Media access retain the public-development list.
+
+## Recording card
+
+When no consultation positions are available and the account has access to recordings, **In recordings** occupies one taller summary card. It shows up to three playable recordings with a ready transcript, or a partial transcript for an ongoing broadcast. The newest calendar day in Poland comes first. Within the same day, Sejm sittings precede other sessions, committees and remaining events; recordings of the same type show live broadcasts first, then the latest start time. Recordings with an empty or unavailable transcript are omitted. Each row has a thumbnail on the left and a larger title aligned to the top on the right, followed by the beginning of its AI-generated overview. All three rows fit without scrolling inside the card.
+
+Every ongoing broadcast starts automatically as a muted preview in its own row. Selecting anywhere on a recording row, including the thumbnail, title or description, opens the full recording view with playback and sound controls. **See all** opens the recordings catalogue.
+
+The Cockpit generates a missing short overview from the available transcript and saves it for subsequent visits. It can reuse an existing enhanced-transcript overview. Long recordings use excerpts distributed throughout the transcript; live descriptions cover the portion already transcribed and refresh as the broadcast progresses. Playback remains available while an overview is being prepared. A failed request can be retried.
 
 ## Recommended workflow
 
