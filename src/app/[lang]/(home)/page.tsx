@@ -118,7 +118,7 @@ const sections: Record<Lang, Tile[]> = {
       icon: '/docs/persate/icons/data.svg',
     },
     {
-      title: 'AI assistants (MCP)',
+      title: 'AI apps (MCP)',
       description: 'Connect ChatGPT, Claude and other MCP clients to Persate with a Persate account.',
       href: '/mcp',
       icon: '/docs/persate/icons/chat.svg',

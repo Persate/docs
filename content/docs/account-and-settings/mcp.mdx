@@ -1,0 +1,60 @@
+---
+title: MCP and AI apps
+description: Connect AI apps such as ChatGPT and Claude to Persate, manage connected apps and set the organization's MCP access.
+---
+
+Open **Settings**, then select **MCP & AI apps** under **PLATFORM**. The page shows the MCP server address, short setup guides for ChatGPT and Claude, the access the organization allows and the AI apps connected to the account. Organization administrators set the organization's policy on **MCP access** under **ORGANIZATION**. Connection steps for every supported app, the consent screen and troubleshooting are described in **[AI apps (MCP)](/mcp)**.
+
+## Connect an app
+
+**MCP server address** shows the address to add in an AI app, with **Copy address**. **ChatGPT** and **Claude** open a short setup guide for that app: **Setup guide** opens the app's own instructions, and **Copy address and open ChatGPT** or **Copy address and open Claude** copies the address and opens the app's connection settings in a new tab. If copying fails, select the address in the guide and copy it manually.
+
+The connection is created in the AI app's settings; sending a chat message does not create it. The app then opens a Persate page in the browser: sign in, review the consent screen and select **Allow**. Passwords, authenticator codes and access tokens are never pasted into a chat.
+
+## Your access
+
+**Your access** shows whether the organization allows the account to connect AI apps. When it does not, the row gives the reason: external MCP is disabled for the organization, no toolsets are available to the organization or selected by its administrator, or the account's groups are not allowed to connect. Organization administrators also see **Manage MCP access**, which opens **MCP access**.
+
+The next row shows the organization's access mode, **Read-only access** or **Read and write access**.
+
+## What a connection can do
+
+A connection works with the signed-in user's own account and permissions. It reaches only the toolsets that the organization enabled and the user approved on the consent screen — legislation, media, alerts, workspace, Labs and administration, described in **[AI apps (MCP)](/mcp)**. Administration tools work only for administrators. A connection never gives access to another user's private files or to another organization.
+
+With **Read and write access**, a connected app can also make the changes the user asks for: alerts, personal preferences, notifications and, for administrators, selected organization and team settings. Write access requires both the organization's **Read and write access** and the user's approval of a consent screen that shows **Read and write access**. Account-security changes, file deletion and paid enrichment are not available through MCP. Ask the app for a specific change and review any confirmation it shows before approving it.
+
+A connection keeps the access approved on its consent screen. An existing read-only connection does not gain write access when the organization allows it, and a toolset enabled later is not added to existing connections. To review the new access, disconnect the app and connect it again.
+
+Company files require two-factor authentication. A connection approved from an account without two-factor authentication cannot reach company files; the other toolsets work as approved. Setting up two-factor authentication ends the account's existing connections; connect the app again afterwards.
+
+The AI app receives the data returned by the tools it uses and processes it under its provider's terms. Disconnecting stops further access; it does not delete data that the app has already received.
+
+## Connected AI apps
+
+**Connected AI apps** lists the apps the user has allowed to use Persate, with the dates each was connected, last used and when the connection expires; apps that registered themselves are marked **Unverified**. Select **Disconnect** next to an app, or **Disconnect all** when more than one is connected, and confirm. The app loses access within 30 seconds; to use it again, connect it from the app and approve a new consent screen. **No AI apps are connected.** means there are no connections.
+
+## Organization MCP access
+
+Organization administrators open **MCP access** under **ORGANIZATION** in Settings, or select **Manage MCP access** on **MCP & AI apps**. Other members do not see this page.
+
+### Organization access
+
+* **Enable external MCP** — allows eligible AI apps to request access. Turning it off disconnects every connected app; after it is turned on again, members connect their apps again.
+* **Access mode** — **Read-only access** or **Read and write access**. Write access also requires each user's consent; existing read-only connections must reconnect to request it.
+* **Available toolsets** — **Legislation**, **Media and people**, **Alerts**, **Workspace**, **Labs** and **Administration**. Only toolsets included in the organization's package can be selected; the others are marked **Not enabled for this organization**. Selecting a toolset adds no permissions or data sources: tools use the signed-in user's permissions, and **Administration** tools require an administrator account. At least one toolset must be selected while external MCP is enabled.
+* **Who can connect** — **Everyone in the organization** or **Selected groups**. With selected groups, choose at least one group in the list; the group must exist first.
+
+### Allowed AI apps
+
+* **Client policy** — **Any eligible client** admits every app that Persate has verified and, when allowed, unverified apps. **Selected clients only** admits only the listed apps: enter their client IDs in **Registered client IDs (one per line)** or select apps already known to the organization.
+* **Allow unverified clients** — admits apps that registered themselves and whose identity Persate has not verified. Apps added as custom connectors in ChatGPT or Claude usually register themselves, so unless Persate has verified them, they can connect only while this option is on. A displayed app name does not prove the app's identity. Selected-client restrictions still apply.
+
+### Saving changes
+
+Select **Save changes** to apply the policy. Persate then reports how many apps were disconnected; changes take effect within 30 seconds. **Discard draft and reload** removes unsaved edits and loads the current policy. If another administrator changed the policy in the meantime, saving is refused and the draft stays on screen; select **Discard draft and reload** to load the latest policy, then make the changes again.
+
+Saving disconnects every app connected in the organization when external MCP is turned off, a toolset is removed or the access mode changes from read and write to read-only. Restricting **Who can connect**, **Client policy** or **Allow unverified clients** disconnects the apps that no longer qualify. Adding a toolset or allowing write access disconnects nothing, but existing connections keep the access they were approved with until they reconnect.
+
+### Organization AI connections
+
+**Organization AI connections** lists the AI apps connected by members of the organization, each with a link to the member, its dates and **Disconnect**; when more than one is listed, **Disconnect all** disconnects every listed app. Access ends within 30 seconds, and reconnecting requires new consent.

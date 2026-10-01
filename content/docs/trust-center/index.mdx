@@ -40,7 +40,7 @@ The diagram shows how data moves between users, the Persate platform, and the ma
 
 ### Authentication and sessions
 
-* Sign-in uses a password or single sign-on, followed by mandatory two-factor authentication (TOTP) before protected areas open.
+* Sign-in uses a password or single sign-on. Initial two-factor authentication (TOTP) setup can be postponed for ordinary accounts; company-file information and uploads require 2FA. Enrolled accounts continue to verify sign-in, with trusted-browser support. Sensitive actions require fresh verification, and system administrators must configure 2FA before entering the platform.
 * Sessions are carried in Secure, SameSite cookies scoped to the application domain and are validated server-side on every protected request.
 * Roles and organisation membership are resolved from the server-side session. The administration area requires an administrator role.
 * If the authentication service is unavailable, access fails closed rather than granting access.

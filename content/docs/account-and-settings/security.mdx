@@ -1,9 +1,9 @@
 ---
 title: Security and privacy
-description: Password, two-step verification, sessions, trusted devices, connected AI apps, login history, analytics cookies and personal data export.
+description: Password, two-step verification, sessions, trusted devices, login history, analytics cookies and personal data export.
 ---
 
-Open **Settings → Security & Privacy**. Treat an unfamiliar device, sign-in or connected app as a security incident: remove its access on this page and report it to the organization's administrator.
+Open **Settings → Security & Privacy**. Treat an unfamiliar device, sign-in or connected AI app as a security incident: remove its access — sessions and devices on this page, AI apps under **MCP & AI apps** — and report it to the organization's administrator.
 
 ## Password
 
@@ -13,11 +13,11 @@ Accounts that sign in with a Google or Microsoft account show **Managed by provi
 
 ## Two-step verification
 
-Two-step verification is required for all Persate accounts. The row names the authenticator that protects the account and shows the status **Active**.
+Two-step verification adds a code from an authenticator app to sign-in. It is optional for most accounts, but company files require it: viewing file information, uploading files, and file tools in Advisor and in connected AI apps. System administrator accounts must use it. See **[Two-factor authentication](/getting-started/set-up-two-factor)**.
+
+An account without an authenticator shows **Set up**, which starts the setup. Once an authenticator is set up, the row names it and shows the status **Active**, and sign-in requires a code unless the browser is trusted.
 
 To move to a new device, select **Replace authenticator**. The current authenticator stays active until the new one is set up, so keep the new device at hand before confirming. Select **Yes, replace**; Persate asks to confirm the user's identity and then opens the setup of the new authenticator. **Cancel** keeps the current one.
-
-An account without an authenticator shows **Set up**, which starts the setup.
 
 ## Active sessions
 
@@ -37,11 +37,9 @@ Managing trusted devices can require a current code: **Verify before managing tr
 
 Each action asks for confirmation. Revocation takes effect immediately, and sessions established through that trust are ended too.
 
-## Connected AI apps
+## MCP and AI apps
 
-**Connected AI apps** lists the AI apps allowed to use Persate on the user's behalf through an external connection, such as ChatGPT or Claude. Each entry shows when the app was connected, when it was last used and when the connection expires; apps that registered themselves are marked **Unverified**.
-
-Select **Disconnect** next to an app, or **Disconnect all** when more than one is connected, and confirm. The app loses access to Persate at once; to use it again, connect it from the app. **No AI apps are connected.** means there are no connections. See **[AI assistants (MCP)](/mcp)** for how connections are made.
+The **MCP & AI apps** row refers to AI apps, such as ChatGPT or Claude, allowed to use Persate on the user's behalf through an external connection. Select **Manage AI connections** to open **Settings → MCP & AI apps**, where the connected apps are listed and can be disconnected. See **[MCP and AI apps](/account-and-settings/mcp)**.
 
 ## Login history
 
@@ -69,4 +67,4 @@ File contents are not part of the export; download them from the Repository. For
 
 * Authenticator code rejected — use the current six-digit code and check that the device clock is accurate.
 * **Trusted devices** asks for a code again — managing trusted devices requires a fresh authenticator code; a remembered browser is not enough.
-* Unknown session, sign-in or connected app — sign it out or disconnect it, change the password if the account has one, and report it.
+* Unknown session, sign-in or connected AI app — sign the session out or disconnect the app under **MCP & AI apps**, change the password if the account has one, and report it.

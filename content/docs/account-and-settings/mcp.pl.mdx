@@ -1,0 +1,60 @@
+---
+title: MCP i aplikacje AI
+description: Łączenie aplikacji AI, takich jak ChatGPT i Claude, z Persate, zarządzanie połączonymi aplikacjami i ustawienia dostępu MCP organizacji.
+---
+
+Stronę otwiera się przez **Ustawienia** → **PLATFORMA** → **MCP i aplikacje AI**. Strona pokazuje adres serwera MCP, krótkie instrukcje dla ChatGPT i Claude, dostęp dopuszczony przez organizację oraz aplikacje AI połączone z kontem. Administratorzy organizacji ustalają zasady organizacji na stronie **Dostęp MCP** w grupie **ORGANIZACJA**. Kroki łączenia wszystkich obsługiwanych aplikacji, ekran zgody i rozwiązywanie problemów opisuje strona **[Aplikacje AI (MCP)](/pl/mcp)**.
+
+## Łączenie aplikacji
+
+Wiersz **Adres serwera MCP** pokazuje adres, który należy dodać w aplikacji AI, wraz z przyciskiem **Kopiuj adres**. Przyciski **ChatGPT** i **Claude** otwierają krótką instrukcję dla danej aplikacji: **Instrukcja konfiguracji** otwiera instrukcję przygotowaną przez dostawcę aplikacji, a **Skopiuj adres i otwórz ChatGPT** lub **Skopiuj adres i otwórz Claude** kopiuje adres i otwiera ustawienia połączeń aplikacji w nowej karcie. Jeśli kopiowanie się nie powiedzie, należy zaznaczyć adres w instrukcji i skopiować go ręcznie.
+
+Połączenie tworzy się w ustawieniach aplikacji AI; wysłanie wiadomości na czacie go nie tworzy. Aplikacja otwiera następnie stronę Persate w przeglądarce: należy się zalogować, sprawdzić ekran zgody i wybrać **Zezwól**. Haseł, kodów uwierzytelniających ani tokenów dostępu nie wkleja się do czatu.
+
+## Twój dostęp
+
+Wiersz **Twój dostęp** informuje, czy organizacja pozwala łączyć aplikacje AI z kontem. Jeśli nie, podaje przyczynę: zewnętrzny dostęp MCP jest wyłączony w organizacji, organizacja nie ma dostępnych zestawów narzędzi lub administrator żadnego nie wybrał albo grupy konta nie mogą łączyć aplikacji. Administratorzy organizacji widzą też odnośnik **Zarządzaj dostępem MCP**, który otwiera stronę **Dostęp MCP**.
+
+Kolejny wiersz pokazuje tryb dostępu organizacji: **Dostęp tylko do odczytu** albo **Dostęp do odczytu i zapisu**.
+
+## Możliwości połączenia
+
+Połączenie działa w ramach konta i uprawnień zalogowanego użytkownika. Obejmuje wyłącznie zestawy narzędzi włączone przez organizację i zatwierdzone przez użytkownika na ekranie zgody — legislację, media, alerty, przestrzeń roboczą, laboratoria i administrację, opisane na stronie **[Aplikacje AI (MCP)](/pl/mcp)**. Narzędzia administracyjne działają wyłącznie dla administratorów. Połączenie nigdy nie daje dostępu do prywatnych plików innych osób ani do innej organizacji.
+
+W trybie **Dostęp do odczytu i zapisu** połączona aplikacja może też wprowadzać zmiany, o które prosi użytkownik: w alertach, osobistych preferencjach, powiadomieniach oraz — w przypadku administratorów — w wybranych ustawieniach organizacji i zespołu. Dostęp do zapisu wymaga zarówno trybu **Dostęp do odczytu i zapisu** w organizacji, jak i zatwierdzenia przez użytkownika ekranu zgody z informacją **Dostęp do odczytu i zapisu**. Zmiany zabezpieczeń konta, usuwanie plików i płatne wzbogacanie danych nie są dostępne przez MCP. Należy zlecać aplikacji konkretne zmiany i sprawdzać wyświetlane przez nią potwierdzenia przed ich zatwierdzeniem.
+
+Połączenie zachowuje dostęp zatwierdzony na ekranie zgody. Istniejące połączenie tylko do odczytu nie uzyskuje prawa do zapisu, gdy organizacja na nie zezwoli, a zestaw narzędzi włączony później nie jest dodawany do istniejących połączeń. Aby przejrzeć nowy zakres dostępu, należy odłączyć aplikację i połączyć ją ponownie.
+
+Dostęp do plików firmowych wymaga weryfikacji dwuetapowej. Połączenie zatwierdzone z konta bez weryfikacji dwuetapowej nie ma dostępu do plików firmowych; pozostałe zestawy narzędzi działają zgodnie ze zgodą. Skonfigurowanie weryfikacji dwuetapowej kończy dotychczasowe połączenia konta; następnie należy ponownie połączyć aplikację.
+
+Aplikacja AI otrzymuje dane zwracane przez używane narzędzia i przetwarza je na warunkach swojego dostawcy. Odłączenie blokuje dalszy dostęp; nie usuwa danych, które aplikacja już otrzymała.
+
+## Połączone aplikacje AI
+
+Sekcja **Połączone aplikacje AI** zawiera aplikacje, którym użytkownik pozwolił korzystać z Persate, wraz z datą połączenia, ostatniego użycia i wygaśnięcia połączenia; aplikacje zarejestrowane samodzielnie mają oznaczenie **Niezweryfikowane**. Należy wybrać **Odłącz** przy aplikacji albo — gdy połączonych jest kilka — **Odłącz wszystkie**, a następnie potwierdzić. Aplikacja traci dostęp w ciągu 30 sekund; aby znów z niej korzystać, trzeba połączyć ją z poziomu aplikacji i zatwierdzić nowy ekran zgody. Komunikat **Brak połączonych aplikacji AI.** oznacza, że nie ma żadnych połączeń.
+
+## Dostęp MCP organizacji
+
+Administratorzy organizacji otwierają stronę **Dostęp MCP** w grupie **ORGANIZACJA** ustawień albo wybierają **Zarządzaj dostępem MCP** na stronie **MCP i aplikacje AI**. Pozostali członkowie nie widzą tej strony.
+
+### Dostęp organizacji
+
+* **Włącz zewnętrzny dostęp MCP** — pozwala dozwolonym aplikacjom AI prosić o dostęp. Wyłączenie odłącza wszystkie połączone aplikacje; po ponownym włączeniu członkowie łączą je od nowa.
+* **Tryb dostępu** — **Dostęp tylko do odczytu** albo **Dostęp do odczytu i zapisu**. Dostęp do zapisu wymaga również zgody każdego użytkownika; istniejące połączenia tylko do odczytu trzeba połączyć ponownie, aby o niego poprosić.
+* **Dostępne zestawy narzędzi** — **Legislacja**, **Media i osoby**, **Alerty**, **Przestrzeń robocza**, **Laboratoria** i **Administracja**. Można wybrać tylko zestawy objęte pakietem organizacji; pozostałe mają oznaczenie **Nieudostępnione tej organizacji**. Wybór zestawu nie nadaje uprawnień ani źródeł danych: narzędzia korzystają z uprawnień zalogowanego użytkownika, a narzędzia z zestawu **Administracja** wymagają konta administratora. Gdy zewnętrzny dostęp MCP jest włączony, trzeba wybrać co najmniej jeden zestaw.
+* **Kto może łączyć aplikacje** — **Wszyscy w organizacji** albo **Wybrane grupy**. Przy wybranych grupach należy wskazać na liście co najmniej jedną grupę; grupa musi już istnieć.
+
+### Dozwolone aplikacje AI
+
+* **Zasady dotyczące klientów** — **Dowolny dozwolony klient** dopuszcza każdą aplikację zweryfikowaną przez Persate oraz, jeśli są dozwolone, aplikacje niezweryfikowane. **Tylko wybrani klienci** dopuszcza wyłącznie wskazane aplikacje: ich identyfikatory klienta wpisuje się w polu **Zarejestrowane identyfikatory klientów (jeden w wierszu)** albo zaznacza się aplikacje znane już organizacji.
+* **Zezwalaj na niezweryfikowanych klientów** — dopuszcza aplikacje, które zarejestrowały się samodzielnie i których tożsamości Persate nie zweryfikowało. Aplikacje dodane jako własne łączniki w ChatGPT lub Claude zwykle rejestrują się samodzielnie, więc jeśli Persate ich nie zweryfikowało, mogą się połączyć tylko przy włączonej opcji. Sama wyświetlana nazwa aplikacji nie potwierdza jej tożsamości. Ograniczenie do wybranych klientów nadal obowiązuje.
+
+### Zapisywanie zmian
+
+Zasady stosuje się przyciskiem **Zapisz zmiany**. Persate podaje wtedy liczbę odłączonych aplikacji; zmiany zaczynają obowiązywać w ciągu 30 sekund. **Odrzuć zmiany i wczytaj ponownie** usuwa niezapisane zmiany i wczytuje aktualne zasady. Jeśli inny administrator zmienił w tym czasie zasady, zapis zostaje odrzucony, a zmiany robocze pozostają na ekranie; należy wybrać **Odrzuć zmiany i wczytaj ponownie**, aby wczytać aktualne zasady, a następnie ponownie wprowadzić zmiany.
+
+Zapis odłącza wszystkie aplikacje połączone w organizacji, gdy zewnętrzny dostęp MCP zostaje wyłączony, zestaw narzędzi zostaje usunięty albo tryb dostępu zmienia się z odczytu i zapisu na sam odczyt. Zawężenie opcji **Kto może łączyć aplikacje**, **Zasady dotyczące klientów** lub **Zezwalaj na niezweryfikowanych klientów** odłącza aplikacje, które przestały spełniać zasady. Dodanie zestawu narzędzi lub zezwolenie na zapis nie odłącza aplikacji, ale istniejące połączenia zachowują zatwierdzony zakres dostępu do czasu ponownego połączenia.
+
+### Połączenia AI organizacji
+
+Sekcja **Połączenia AI organizacji** zawiera aplikacje AI połączone przez członków organizacji — każdą z odnośnikiem do członka, datami i przyciskiem **Odłącz**; gdy połączonych jest kilka, **Odłącz wszystkie** odłącza wszystkie wymienione aplikacje. Dostęp wygasa w ciągu 30 sekund, a ponowne połączenie wymaga nowej zgody.
