@@ -1,13 +1,13 @@
 ---
 title: Otwieranie posiedzenia
-description: Widok nagrania — odtwarzacz, transkrypcja zsynchronizowana z odtwarzaniem, widoki Surowa, Opracowana, Oś czasu i Stenogram, Podsumowanie Doradcy oraz analiza na żywo.
+description: Widok nagrania — odtwarzacz, transkrypcja zsynchronizowana z odtwarzaniem, widoki Surowa, Opracowana, Oś czasu i Stenogram, Podsumowanie Advisora oraz analiza na żywo.
 ---
 
 Wybranie nagrania na liście otwiera widok nagrania. Łączy on odtwarzacz wideo z panelem analizy, a oba elementy działają synchronicznie: transkrypcja podąża za odtwarzaniem, a wybranie jej fragmentu przenosi wideo do odpowiadającego momentu. Odnośniki wskazujące konkretny moment — z wyszukiwania, cytowań Advisora lub dopasowań alertów — otwierają widok od tego momentu; transkrypcja ustawia się na nim nawet wtedy, gdy samego wideo nie da się odtworzyć.
 
 ## Układ widoku
 
-* **Po lewej** — odtwarzacz, a pod nim tytuł, data, typ, sala i opis posiedzenia oraz karta **Podsumowanie Doradcy**, jeśli jest dostępna.
+* **Po lewej** — odtwarzacz, a pod nim tytuł, data, typ, sala i opis posiedzenia oraz karta **Podsumowanie Advisora**, jeśli jest dostępna.
 * **Po prawej** — panel analizy z transkrypcją. Przeciągnięcie separatora między kolumnami zmienia szerokość panelu; przeglądarka ją zapamiętuje.
 * **Przy prawej krawędzi** — pasek widoków: **Surowa**, **Opracowana**, **Oś czasu** oraz — jeśli Sejm opublikował stenogram tego posiedzenia — **Stenogram**. Widoki, które nie są jeszcze dostępne, są wyszarzone.
 
@@ -50,9 +50,9 @@ Gdy Sejm opublikował oficjalny stenogram posiedzenia plenarnego lub posiedzenia
 * Wypowiedź, której nie udało się dopasować, ma podany powód: **Lista obecności** (zwinięta), **Złożone na piśmie, niewygłoszone**, **Dotyczy całego dnia posiedzenia** lub **Niedopasowane do nagrania**.
 * Nazwiska mówców i treść są wyświetlane dokładnie w opublikowanej postaci, bez tłumaczenia.
 
-## Podsumowanie Doradcy
+## Podsumowanie Advisora
 
-Pod odtwarzaczem karta **Podsumowanie Doradcy** zawiera tytuł redakcyjny i omówienie przebiegu posiedzenia — główne wątki, punkty sporne i rozstrzygnięcia. Należy do analizy zakończonego nagrania i pojawia się tylko wtedy, gdy podsumowanie zostało przygotowane. Na wąskich ekranach karta nie jest wyświetlana.
+Pod odtwarzaczem karta **Podsumowanie Advisora** zawiera tytuł redakcyjny i omówienie przebiegu posiedzenia — główne wątki, punkty sporne i rozstrzygnięcia. Należy do analizy zakończonego nagrania i pojawia się tylko wtedy, gdy podsumowanie zostało przygotowane. Na wąskich ekranach karta nie jest wyświetlana.
 
 ## Nagrania na żywo i zakończone
 
@@ -61,7 +61,7 @@ Persate analizuje nagranie na jednym z dwóch poziomów. Widok sam dobiera pozio
 | Poziom | Kiedy | Co zapewnia |
 |---|---|---|
 | **Record Analysis** | W trakcie transmisji (lista **W toku**; posiedzenie oznaczone jako **Posiedzenie na żywo**) | Transkrypcję narastającą w miarę przebiegu posiedzenia, z rozpoznanymi mówcami. |
-| **Enhanced Record** | Po zakończeniu posiedzenia (lista **Poprzednie**) | Pełną transkrypcję z mówcami oraz — jeśli zostały przygotowane — widoki **Opracowana** i **Oś czasu** oraz **Podsumowanie Doradcy**; oficjalny stenogram Sejmu, jeśli został opublikowany. |
+| **Enhanced Record** | Po zakończeniu posiedzenia (lista **Poprzednie**) | Pełną transkrypcję z mówcami oraz — jeśli zostały przygotowane — widoki **Opracowana** i **Oś czasu** oraz **Podsumowanie Advisora**; oficjalny stenogram Sejmu, jeśli został opublikowany. |
 
 W interfejsie oba poziomy występują pod nazwą **Analiza nagrania**. Po otwarciu trwającego posiedzenia Persate łączy się z transmisją i automatycznie uruchamia analizę na żywo. Wskaźnik na końcu transkrypcji sygnalizuje, że analizowana jest kolejna część, a po najechaniu kursorem na odtwarzacz widać, do którego momentu sięga analiza (**Analiza**). Dopóki pełna analiza zakończonego nagrania nie zostanie opublikowana, widok pokazuje ostatnią zapisaną transkrypcję z transmisji.
 
