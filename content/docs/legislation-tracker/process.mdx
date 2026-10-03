@@ -7,17 +7,31 @@ The **Process** tab lists government legislative projects (RCL) and opens the le
 
 ## Project list
 
-The table shows **Title**, **Type**, **Status**, **Applicant**, and **Updated**; on narrow screens some columns are hidden and the identifier and date appear under the title. The status is the project's progress in the government register: **In progress**, **Accepted**, or **Archived**. Select a row to open the project's journey.
+The table shows **Title**, **Type**, **Status**, **Applicant**, and **Updated**; on narrow screens some columns are hidden and the identifier and date appear under the title. Select a row to open the project's journey.
+
+The status says where the project's process stands. When the project has a Sejm print, the print's record decides it; otherwise the government register does. The register rarely closes a project once it goes to the Sejm, so a project the register still lists as open can read **Withdrawn** or **Enacted**. Hover over a status to see what it rests on and the date of the last RCL document.
+
+| Status | Meaning |
+|---|---|
+| **Government drafting** | The government is working on the draft: a new document reached RCL in the last 12 months. |
+| **Referred to the Sejm** | RCL records the referral to the Sejm, but no Sejm print is linked yet. |
+| **In the Sejm**, **In the Senate**, **With the President**, **At the Tribunal** | The bill is at that stage. |
+| **Vetoed** | The President vetoed the act; it becomes law only if the Sejm overrides the veto. |
+| **Enacted** | The act was signed or published in the Journal of Laws. |
+| **Adopted** | Closed in RCL: a regulation signed and sent for publication, or a bill or assumptions adopted by the government. |
+| **Inactive** | RCL still lists the project as open, but no document has been added for over 12 months. |
+| **Withdrawn**, **Rejected**, **Lapsed**, **Veto upheld** | The process ended without the act becoming law. |
+| **Archived** | RCL moved the project to its archive. |
 
 ## Filters
 
-* **Current stage** — the institution where the process currently is: **Government drafting**, **Sejm**, **Senate**, **President**, or **Constitutional Tribunal**. Several stages can be selected.
+* **Current stage** — the institution where a process still in progress currently is: **Government drafting**, **Sejm**, **Senate**, **President**, or **Constitutional Tribunal**. A withdrawn, lapsed, or enacted project has no current stage. Several stages can be selected.
 * **Search projects** — text search across projects.
 * **Project type** — for example **Act** or **Regulation**, with the number of projects of each type.
 * **Applicant** — the authority that submitted the project, with the number of its projects.
 * **Created** — the creation date range.
 * **Work register no.** — the number in the government's work register, for example `RD456`.
-* **Progress** — **In progress** or **Accepted**.
+* **Status** — one or more of the statuses above.
 * **Attributes** — **Implements EU law**, **Executes Constitutional Tribunal ruling**, **Based on draft-act assumptions**, **Separate legislative mode**, **Announced in the Journal of Laws**, and **Referred to the Sejm**. Selecting attributes narrows the list to projects that have them.
 
 The **Short titles** and **Pin tracked projects** switches and the **Clear filters** action are described in [Legislation](/legislation-tracker). If no project matches, **No projects found** is shown; change the search or the filters. **Couldn't load projects** means the list could not be retrieved; reload the page.
@@ -44,7 +58,7 @@ The badge above the title states where the process stands:
 | **Abandoned** | The process closed without the bill becoming law, for another reason. |
 | **Status unknown** | The available records do not establish the status. |
 
-When only the government register data is available for a project, the badge shows its register progress instead: **In progress**, **Accepted**, or **Archived**.
+For a government project without a Sejm print, the badge shows the project's own status from the list above, for example **Government drafting**, **Adopted**, or **Inactive**.
 
 ### Summary
 
@@ -75,7 +89,7 @@ For government projects, **Change log** lists the official register events and P
 ### Side panel
 
 * **Actions** — **Track this project** (or **See alert** once tracked), **Open in RCL**, and, for a published act, the link to the official publication.
-* **Details** — the status, the legal force of a published act (for example **In force** or **Repealed**), the print and bill numbers, the publication identifier, the RCL identifier, the work register entry, type, submission type, applicant, key dates, and flags such as **EU-related** or **Public consultation**. Only values present in the records are shown.
+* **Details** — the status, the legal force of a published act (for example **In force** or **Repealed**), the print and bill numbers, the publication identifier, the RCL identifier, the work register entry, type, submission type, applicant, key dates including the last RCL document, and flags such as **EU-related** or **Public consultation**. Only values present in the records are shown.
 * **Legal basis** and **Comment** — the legal basis and the register comment of a government project, when published.
 
 **Legislative journey not found** means the link no longer resolves; return to the project list. **No process stages** means no timeline events are available for the project yet.
