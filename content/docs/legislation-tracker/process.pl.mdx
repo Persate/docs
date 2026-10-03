@@ -7,17 +7,31 @@ Zakładka **Proces** zawiera listę rządowych projektów legislacyjnych (RCL) i
 
 ## Lista projektów
 
-Tabela zawiera kolumny **Tytuł**, **Typ**, **Status**, **Wnioskodawca** i **Zaktualizowano**; na wąskim ekranie część kolumn jest ukryta, a identyfikator i data pojawiają się pod tytułem. Status oznacza postęp projektu w rządowym wykazie: projekt w toku, przyjęty albo zarchiwizowany. Wybranie wiersza otwiera przebieg procesu projektu.
+Tabela zawiera kolumny **Tytuł**, **Typ**, **Status**, **Wnioskodawca** i **Zaktualizowano**; na wąskim ekranie część kolumn jest ukryta, a identyfikator i data pojawiają się pod tytułem. Wybranie wiersza otwiera przebieg procesu projektu.
+
+Status mówi, na jakim etapie jest proces projektu. Gdy projekt ma druk sejmowy, decyduje zapis Sejmu, a w pozostałych przypadkach rządowy wykaz. Wykaz rzadko zamyka projekt, który trafił do Sejmu, dlatego projekt nadal otwarty w RCL może mieć status **Wycofane** albo **Uchwalone**. Po wskazaniu statusu kursorem widać, na czym się opiera, oraz datę ostatniego dokumentu w RCL.
+
+| Status | Znaczenie |
+|---|---|
+| **Prace rządowe** | Rząd pracuje nad projektem: w ciągu ostatnich 12 miesięcy w RCL pojawił się nowy dokument. |
+| **Skierowane do Sejmu** | RCL odnotowuje skierowanie do Sejmu, ale nie ma jeszcze powiązanego druku sejmowego. |
+| **W Sejmie**, **W Senacie**, **U Prezydenta**, **W Trybunale** | Ustawa jest na tym etapie. |
+| **Zawetowane** | Prezydent zawetował ustawę; wejdzie ona w życie tylko wtedy, gdy Sejm odrzuci weto. |
+| **Uchwalone** | Akt został podpisany albo opublikowany w Dzienniku Ustaw. |
+| **Przyjęte** | Projekt zamknięty w RCL: rozporządzenie podpisano i skierowano do ogłoszenia albo rząd przyjął projekt ustawy lub założeń. |
+| **Nieaktywne** | RCL nadal pokazuje projekt jako otwarty, ale od ponad 12 miesięcy nie dodano do niego żadnego dokumentu. |
+| **Wycofane**, **Odrzucone**, **Wygasło**, **Weto podtrzymane** | Proces zakończył się, zanim akt wszedł w życie. |
+| **Zarchiwizowane** | RCL przeniosło projekt do archiwum. |
 
 ## Filtry
 
-* **Bieżący etap** — instytucja, w której proces znajduje się obecnie: **Prace rządowe**, **Sejm**, **Senat**, **Prezydent** albo **Trybunał Konstytucyjny**. Można wybrać kilka etapów.
+* **Bieżący etap** — instytucja, w której znajduje się obecnie proces w toku: **Prace rządowe**, **Sejm**, **Senat**, **Prezydent** albo **Trybunał Konstytucyjny**. Projekt wycofany, wygasły albo uchwalony nie ma bieżącego etapu. Można wybrać kilka etapów.
 * **Szukaj projektów** — wyszukiwanie tekstowe w projektach.
 * **Typ projektu** — na przykład **Akt prawny** lub **Rozporządzenie**, wraz z liczbą projektów danego typu.
 * **Wnioskodawca** — organ, który zgłosił projekt, wraz z liczbą jego projektów.
 * **Utworzono** — zakres dat utworzenia.
 * **Nr wykazu prac** — numer w rządowym wykazie prac, na przykład `RD456`.
-* **Postęp** — **W toku** albo **Przyjęte**.
+* **Status** — jeden lub kilka statusów z tabeli powyżej.
 * **Atrybuty** — **Wdraża prawo UE**, **Wykonuje orzeczenie Trybunału Konstytucyjnego**, **Oparte na założeniach projektu ustawy**, **Odrębny tryb legislacyjny**, **Ogłoszone w Dzienniku Ustaw** i **Skierowane do Sejmu**. Wybranie atrybutów zawęża listę do projektów, które je mają.
 
 Przełączniki **Krótkie tytuły** i **Przypnij śledzone projekty** oraz przycisk **Wyczyść filtry** opisuje strona [Legislacja](/pl/legislation-tracker). Gdy żaden projekt nie spełnia kryteriów, pojawia się komunikat **Nie znaleziono projektów**; należy zmienić wyszukiwanie lub filtry. Komunikat **Nie udało się wczytać projektów** oznacza, że listy nie udało się pobrać; należy odświeżyć stronę.
@@ -44,7 +58,7 @@ Oznaczenie nad tytułem wskazuje stan procesu:
 | **Porzucone** | Proces zakończył się bez uchwalenia ustawy z innego powodu. |
 | **Status nieznany** | Dostępne dane nie pozwalają ustalić stanu procesu. |
 
-Gdy dla projektu dostępne są tylko dane z rządowego wykazu, oznaczenie pokazuje postęp w wykazie: **W toku**, **Przyjęte** albo **Zarchiwizowane**.
+W projekcie rządowym bez druku sejmowego oznaczenie pokazuje status samego projektu z tabeli powyżej, na przykład **Prace rządowe**, **Przyjęte** albo **Nieaktywne**.
 
 ### Podsumowanie
 
@@ -75,7 +89,7 @@ W przypadku projektów rządowych sekcja **Historia zmian** zestawia oficjalne z
 ### Panel boczny
 
 * **Działania** — **Śledź ten projekt** (po rozpoczęciu monitorowania **Zobacz alert**), **Otwórz w RCL**, a w przypadku opublikowanego aktu — odnośnik do oficjalnej publikacji.
-* **Szczegóły** — status, moc prawna opublikowanego aktu (na przykład **Obowiązujące** lub **Uchylone**), numery druku i projektu, identyfikator publikacji, identyfikator RCL, pozycja w wykazie prac, typ, rodzaj zgłoszenia, wnioskodawca, najważniejsze daty oraz oznaczenia, takie jak **Związane z UE** lub **Konsultacje publiczne**. Wyświetlane są tylko wartości obecne w danych.
+* **Szczegóły** — status, moc prawna opublikowanego aktu (na przykład **Obowiązujące** lub **Uchylone**), numery druku i projektu, identyfikator publikacji, identyfikator RCL, pozycja w wykazie prac, typ, rodzaj zgłoszenia, wnioskodawca, najważniejsze daty, w tym data ostatniego dokumentu w RCL, oraz oznaczenia, takie jak **Związane z UE** lub **Konsultacje publiczne**. Wyświetlane są tylko wartości obecne w danych.
 * **Podstawa prawna** i **Komentarz** — podstawa prawna i komentarz z wykazu dla projektu rządowego, jeśli zostały opublikowane.
 
 Komunikat **Nie znaleziono przebiegu procesu legislacyjnego** oznacza, że odnośnik nie prowadzi już do procesu; należy wrócić do listy projektów. Komunikat **Brak etapów procesu** oznacza, że dla projektu nie ma jeszcze zdarzeń na osi czasu.
