@@ -1,76 +1,95 @@
 ---
 title: Otwieranie posiedzenia
-description: Widok nagrania — odtwarzacz, transkrypcja zsynchronizowana z odtwarzaniem, widoki Surowa, Opracowana, Oś czasu i Stenogram, Podsumowanie Advisora oraz analiza na żywo.
+description: Wideo, pełne wypowiedzi, tekst stenogramu i nagrania oraz oś czasu posiedzenia.
 ---
 
-Wybranie nagrania na liście otwiera widok nagrania. Łączy on odtwarzacz wideo z panelem analizy, a oba elementy działają synchronicznie: transkrypcja podąża za odtwarzaniem, a wybranie jej fragmentu przenosi wideo do odpowiadającego momentu. Odnośniki wskazujące konkretny moment — z wyszukiwania, cytowań Advisora lub dopasowań alertów — otwierają widok od tego momentu; transkrypcja ustawia się na nim nawet wtedy, gdy samego wideo nie da się odtworzyć.
+**Widok szczegółowy** integruje odtwarzacz wideo z panelami analizy treści. Wybranie karty na liście głównej otwiera widok szczegółowy. Przewinięcie nagrania synchronizuje wyświetlany fragment transkrypcji, który jest aktualnie mówiony, a wybranie tekstu przesuwa wideo do odpowiadającego momentu.
 
 ## Układ widoku
 
-* **Po lewej** — odtwarzacz, a pod nim tytuł, data, typ, sala i opis posiedzenia oraz karta **Podsumowanie Advisora**, jeśli jest dostępna.
-* **Po prawej** — panel analizy z transkrypcją. Przeciągnięcie separatora między kolumnami zmienia szerokość panelu; przeglądarka ją zapamiętuje.
-* **Przy prawej krawędzi** — pasek widoków: **Surowa**, **Opracowana**, **Oś czasu** oraz — jeśli Sejm opublikował stenogram tego posiedzenia — **Stenogram**. Widoki, które nie są jeszcze dostępne, są wyszarzone.
+Ekran dzieli się na dwie kolumny:
 
-Na wąskim ekranie transkrypcja znajduje się pod odtwarzaczem. Przycisk **Szczegóły** na odtwarzaczu pokazuje typ, datę, salę, opis i rozdziały osi czasu, a przełącznik nad transkrypcją pozwala wybrać wersję **Opracowana** (opracowaną transkrypcję) lub **Surowa**.
+* **Kolumna lewa** — odtwarzacz wideo, a pod nim karta **Podsumowanie Doradcy** (podsumowanie posiedzenia).
+* **Kolumna prawa** — panel **transkrypcji** z dostępem do **Osi czasu** i wersji **Opracowana**, gdy są dostępne.
 
-## Odtwarzacz
+W wąskim panelu transkrypcja znajduje się pod odtwarzaczem. Odtwarzanie podświetla dopasowany tekst; przycisk odtwarzania przy wypowiedzi lub punkt osi czasu otwiera odpowiadający moment. Wypowiedzi bez potwierdzonego dopasowania do nagrania nie mają przycisku odtwarzania.
 
-* Pasek u dołu wideo służy do odtwarzania i wstrzymywania, przewijania nagrania, wyciszania dźwięku i przełączania na pełny ekran.
-* Przycisk **Twarze** w lewym górnym rogu włącza i wyłącza oznaczenia twarzy (**Twarze wyłączone**). Oznaczenia podpisują osoby rozpoznane w kadrze; przeglądarka zapamiętuje ustawienie.
-* Podczas transmisji oznaczenie **Na żywo** w prawym górnym rogu wskazuje bieżący moment transmisji. Po cofnięciu nagrania zmienia się ono w przycisk **Przejdź do transmisji na żywo**, który wraca do bieżącego momentu.
-* Gdy nagranie zaczyna się przed rozpoczęciem obrad, pod odtwarzaczem pojawia się przycisk **Przejdź do początku** ze wskazaniem czasu w nawiasie; przenosi on do chwili, w której zaczyna się właściwa treść.
-* Zaplanowane posiedzenie pokazuje komunikat **Posiedzenie zaplanowane** z datą, od której nagranie będzie dostępne.
-* Gdy oryginalne wideo nie jest już dostępne u źródła, informuje o tym oznaczenie nad odtwarzaczem — zob. [Status analizy](/pl/live-proceedings/status).
+## Odtwarzacz wideo
 
-## Transkrypcja
+Interfejs automatycznie dostosowuje się do stanu sesji:
 
-Widok **Surowa** pokazuje pełną transkrypcję nagrania:
+* **Sesje bieżące** — strumień na żywo pobierany z oficjalnego kanału Sejmu.
+* **Sesje minione** — nagranie archiwalne z możliwością swobodnego przewijania.
+* **Sesje zaplanowane** — transmisja rozpocznie się w momencie jej startu na oficjalnym kanale Sejmu, wyświetlany jest komunikat *„Scheduled — analysis will be available once the session begins”*.
 
-* Wypowiedzi są pogrupowane według mówców i opatrzone przedziałem czasu. Znacznik wyboru przy nazwisku oznacza zweryfikowaną tożsamość; nazwisko i zdjęcie prowadzą do profilu interesariusza, który otwiera się w nowej karcie.
-* Mówca, który się przedstawił, ale nie został zweryfikowany, ma oznaczenie z podaną przez siebie funkcją (*Osoba przedstawiła się — tożsamość niezweryfikowana*). Tam, gdzie przypisanie wypowiedzi przez Persate nie jest zweryfikowane, oznaczenie może wskazywać mówcę według oficjalnego stenogramu Sejmu; również ono nie oznacza zweryfikowanej tożsamości.
-* Mówcy nierozpoznani są oznaczani jako nieznani albo otrzymują tymczasową etykietę, np. *Speaker 1*.
-* Aktualnie wypowiadany fragment jest wyróżniony. Wybranie fragmentu — lub pojedynczego słowa — przenosi wideo do tego momentu.
-* Po wypowiedzi w języku obcym wyświetla się jej tłumaczenie na polski (*Tłumaczenie w przygotowaniu*, dopóki tłumaczenie nie jest gotowe).
-* Przycisk u dołu panelu steruje automatycznym przewijaniem. **Śledzenie** utrzymuje bieżący fragment w polu widzenia; wybranie go wyłącza automatyczne przewijanie (**Automatyczne przewijanie wyłączone**), a ponowne wybranie włącza je z powrotem. Po ręcznym przewinięciu przycisk **Przejdź do najnowszego** wraca do bieżącego fragmentu.
+W lewym górnym rogu odtwarzacza znajduje się przycisk pozwalający włączyć **nakładki twarzy**, które oznaczają mówców rozpoznanych w kadrze.
 
-## Opracowana transkrypcja
+## Advisor summary — podsumowanie posiedzenia
 
-Widok **Opracowana** pokazuje zredagowaną wersję transkrypcji, uporządkowaną w czytelne fragmenty według mówców. Czyta się ją wygodniej i nadaje się do cytowania oraz dalszej pracy analitycznej. Widok staje się dostępny po przygotowaniu opracowanej wersji dla danego nagrania (*Opracowywanie transkrypcji…* w trakcie przygotowania); do tego czasu jest wyszarzony, a panel pokazuje wersję **Surowa**.
+Pod odtwarzaczem, w lewej kolumnie, wyświetla się karta **Podsumowanie Doradcy** (podsumowanie). Powstaje na podstawie pełnej, pogłębionej analizy nagrania i służy jako szybki przegląd treści całego posiedzenia bez potrzeby czytania transkrypcji od początku. Karta zawiera:
 
-## Oś czasu
+* **Tytuł redakcyjny** — zwięzłe ujęcie głównego tematu posiedzenia.
+* **Opis przebiegu** — narracyjne streszczenie najważniejszych wątków, punktów spornych i rozstrzygnięć.
 
-Widok **Oś czasu** dzieli posiedzenie na kolejne tematy. Każdy punkt zawiera czas rozpoczęcia, czas trwania, tytuł, krótkie streszczenie i słowa kluczowe; wybranie punktu przenosi wideo i transkrypcję do początku danego tematu. Oś czasu jest dostępna po jej utworzeniu (*Tworzenie osi czasu…*); wcześniej widok pokazuje komunikat **Nie ma jeszcze osi czasu**.
+Karta pojawia się dopiero po wygenerowaniu pogłębionej analizy (**Opracowanie nagrania**); w jej trakcie widoczny jest wskaźnik postępu, a dla samej transmisji na żywo (**Analiza nagrania**) podsumowanie nie jest dostępne.
 
-## Oficjalny stenogram Sejmu
+## Panel transkrypcji
 
-Gdy Sejm opublikował oficjalny stenogram posiedzenia plenarnego lub posiedzenia komisji, pasek nad transkrypcją wskazuje posiedzenie (*Oficjalny stenogram Sejmu: …*), a przycisk **Otwórz stenogram** go otwiera. Stenogram otwiera również widok **Stenogram** na pasku widoków.
+Panel pokazuje dostępny tekst posiedzenia. Podczas transmisji na żywo lub przed dołączeniem stenogramu wyświetla transkrypcję nagrania z oznaczeniami mówców. Rozpoznani interesariusze mają profil, a nierozpoznani mówcy tymczasowy identyfikator, np. **Speaker 3**.
 
-* Nagłówek pokazuje posiedzenie, odnośnik **Źródło** do opublikowanego oryginału oraz liczbę wypowiedzi stenogramu dopasowanych do nagrania.
-* Dopasowana wypowiedź ma podany czas; wybranie go odtwarza nagranie od tej wypowiedzi. Aktualnie odtwarzana wypowiedź jest wyróżniona.
-* Wypowiedź, której nie udało się dopasować, ma podany powód: **Lista obecności** (zwinięta), **Złożone na piśmie, niewygłoszone**, **Dotyczy całego dnia posiedzenia** lub **Niedopasowane do nagrania**.
-* Nazwiska mówców i treść są wyświetlane dokładnie w opublikowanej postaci, bez tłumaczenia.
+### Wypowiedzi i nagranie
 
-## Podsumowanie Advisora
+Gdy stenogram jest dostępny dla nagrania archiwalnego, **Transkrypcja** otwiera widok **Wypowiedzi i nagranie**. Każda pozycja zawiera pełną wypowiedź urzędową, mówcę i jego funkcję oraz punkt porządku obrad, jeśli podaje go źródło.
 
-Pod odtwarzaczem karta **Podsumowanie Advisora** zawiera tytuł redakcyjny i omówienie przebiegu posiedzenia — główne wątki, punkty sporne i rozstrzygnięcia. Należy do analizy zakończonego nagrania i pojawia się tylko wtedy, gdy podsumowanie zostało przygotowane. Na wąskich ekranach karta nie jest wyświetlana.
+Przyciski **Stenogram / Z nagrania** zmieniają tekst w obrębie tej samej wypowiedzi, zachowując miejsce czytania. Domyślnie wyświetlany jest tekst urzędowy. Wersja z nagrania zachowuje oryginalną transkrypcję, również fragmenty bez dopasowania do stenogramu. Odnośnik do źródła otwiera opublikowaną wypowiedź, jeśli jest dostępny.
 
-## Nagrania na żywo i zakończone
+Przycisk odtwarzania pojawia się tylko przy potwierdzonym dopasowaniu do nagrania. Nagłówek podaje liczbę dopasowanych wypowiedzi ustnych. Wypowiedzi złożone na piśmie i zapisy obejmujące wiele wystąpień pozostają dostępne bez przypisywania im niepotwierdzonego czasu odtwarzania. Tekst urzędowy może różnić się od słów w nagraniu i nie jest podświetlany słowo po słowie.
 
-Persate analizuje nagranie na jednym z dwóch poziomów. Widok sam dobiera poziom; nie ma ręcznego przełącznika:
+Pole **Szukaj wypowiedzi, mówców lub punktów obrad** przeszukuje obie wersje tekstu i ich oznaczenia źródłowe. **Śledź odtwarzanie** przewija do aktualnej wypowiedzi. Ręczne przewijanie wstrzymuje tę funkcję, a przycisk ją wznawia.
 
-| Poziom | Kiedy | Co zapewnia |
-|---|---|---|
-| **Record Analysis** | W trakcie transmisji (lista **W toku**; posiedzenie oznaczone jako **Posiedzenie na żywo**) | Transkrypcję narastającą w miarę przebiegu posiedzenia, z rozpoznanymi mówcami. |
-| **Enhanced Record** | Po zakończeniu posiedzenia (lista **Poprzednie**) | Pełną transkrypcję z mówcami oraz — jeśli zostały przygotowane — widoki **Opracowana** i **Oś czasu** oraz **Podsumowanie Advisora**; oficjalny stenogram Sejmu, jeśli został opublikowany. |
+Historyczny stenogram może być dostępny jeszcze przed analizą audio, również dla nagrań sprzed czerwca 2026 r. Można wtedy czytać tekst i otworzyć jego opublikowane źródło. Pozycja odtwarzania pojawia się dopiero po potwierdzeniu dopasowania.
 
-W interfejsie oba poziomy występują pod nazwą **Analiza nagrania**. Po otwarciu trwającego posiedzenia Persate łączy się z transmisją i automatycznie uruchamia analizę na żywo. Wskaźnik na końcu transkrypcji sygnalizuje, że analizowana jest kolejna część, a po najechaniu kursorem na odtwarzacz widać, do którego momentu sięga analiza (**Analiza**). Dopóki pełna analiza zakończonego nagrania nie zostanie opublikowana, widok pokazuje ostatnią zapisaną transkrypcję z transmisji.
+Advisor może przeszukiwać zaimportowane stenogramy posiedzeń plenarnych, komisji i podkomisji według dat i źródeł. Pokrycie jest podawane osobno dla tych zbiorów. Trwający import, brak opublikowanego stenogramu i brak analizy audio to różne stany; brak wyniku wyszukiwania nie dowodzi, że nikt nie poruszył tematu. Posiedzenia zamknięte mogą nie mieć publicznego stenogramu.
+
+### Timeline — oś czasu
+
+Przycisk **Oś czasu** otwiera boczny panel z osią czasu posiedzenia podzieloną na kolejne tematy. Każdy punkt zawiera znacznik czasu, tytuł wątku, krótkie streszczenie oraz słowa kluczowe. Służy do szybkiej nawigacji po dłuższym posiedzeniu — wybranie punktu przesuwa wideo i transkrypcję do początku danego tematu. Oś czasu powstaje wraz z pogłębioną analizą.
+
+### Wersje transkrypcji
+
+Nagranie udostępnia następujące widoki tekstu:
+
+* **Surowa**, lub **Transkrypcja** po dołączeniu stenogramu — transkrypcja nagrania albo opisany wyżej wspólny widok wypowiedzi.
+* **Opracowana** — tekst oczyszczony i uporządkowany w ramach analizy nagrania. Jest to wersja odrębna od urzędowego stenogramu. Cytaty należy sprawdzać w opublikowanym źródle lub nagraniu.
+
+Wersja **Opracowana** dostępna jest dopiero po jej wygenerowaniu w ramach pogłębionej analizy — do tego czasu (oraz dla transmisji na żywo) panel pokazuje zapis **Surowa**.
+
+## Tryby analizy
+
+Platforma oferuje dwa podejścia do przetwarzania treści, dobierane automatycznie do stanu posiedzenia. Sesje bieżące pokazują analizę w czasie rzeczywistym (**Analiza nagrania**), a sesje minione otwierają się bezpośrednio w pogłębionym wyniku (**Opracowanie nagrania**) — nie ma już ręcznego przełącznika między trybami.
+
+### Record Analysis
+
+Tryb zorientowany na szybkość, dostępny dla transmisji na żywo (**Posiedzenie na żywo**) oraz jako przyspieszony przegląd archiwalny.
+
+* **Transkrypcja** — tekst pojawia się w dolnej części panelu w miarę wypowiadania słów.
+* **Profile mówców** — system rozpoznaje twarze znane z katalogu interesariuszy. Mówcy nierozpoznani otrzymują tymczasowe identyfikatory (np. **Speaker 3**).
+
+Jeśli analiza nie jest aktywna, dostępny jest przycisk **Start Record Analysis**.
+
+### Enhanced Record
+
+Tryb pogłębiony, dostarczający transkrypcję o najwyższej wierności, podział na tematy, analizę towarzyszącą oraz ustrukturyzowaną oś czasu. To właśnie ten tryb zasila kartę **Podsumowanie Doradcy**, dopracowaną wersję **Opracowana** transkrypcji oraz oś czasu **Oś czasu** opisane powyżej. Praca w tym trybie trwa dłużej i jest dostępna wyłącznie dla zakończonych nagrań. Proces uruchamia się przyciskiem **Start Enhanced Record**, a postęp raportowany jest etapami wraz z procentem ukończenia.
 
 ## Zalecany sposób pracy
 
-1. Sprawdzić listę **W toku**, aby zobaczyć transmitowane posiedzenia, oraz listę **Zaplanowane**, aby zobaczyć nadchodzące.
-2. Otworzyć trwające posiedzenie, aby śledzić wypowiedzi i mówców na bieżąco.
-3. Po zakończeniu posiedzenia otworzyć je z listy **Poprzednie** i odnaleźć interesującą część za pomocą widoku **Oś czasu** lub **Stenogram**.
-4. Wybrać fragment transkrypcji, aby odtworzyć dokładnie tę wypowiedź.
-5. Aby odnaleźć wypowiedzi w wielu nagraniach, skorzystać z **Wyszukiwania** lub zapytać **Advisora** — ich odnośniki otwierają nagranie od właściwego momentu.
+1. Sprawdzić bieżące transmisje w widoku **W toku** oraz nadchodzące w **Zaplanowane**.
+2. Uruchomić **Posiedzenie na żywo** dla sesji w toku, aby uzyskać natychmiastowy wgląd w wypowiedzi.
+3. Zlecić **Opracowanie nagrania** dla kluczowych posiedzeń po ich zakończeniu, aby zyskać materiał referencyjny.
+4. Wykorzystać funkcję skoku z transkryptu do wideo, aby precyzyjnie odszukać konkretne wypowiedzi.
 
-Gdy panel zamiast transkrypcji pokazuje status, jego znaczenie i możliwe działania opisuje strona [Status analizy](/pl/live-proceedings/status).
+## Stany pustego widoku i błędu
+
+* *„Playback unavailable”* — błąd zestawiania strumienia wideo. Zaleca się odświeżenie strony.
+* *„Scheduled — analysis will be available...”* — próba otwarcia sesji przed jej rozpoczęciem.
+* *„Analysis failed”* — błąd serwera.

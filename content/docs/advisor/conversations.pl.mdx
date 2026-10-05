@@ -1,130 +1,193 @@
 ---
-title: Interfejs i praca z Advisorem
-description: Rozpoczynanie rozmowy, tworzenie wiadomości, odpowiedzi i cytowania, szkice w innych modułach oraz historia konwersacji.
+title: Interfejs i praca z asystentem
+description: Kompozycja wiadomości, oznaczanie plików, oś czasu, cytowania oraz historia konwersacji.
 ---
 
-## Układ ekranu
+Skorzystaj z [interaktywnych lekcji](/pl/advisor/tutorials), aby przećwiczyć pytania i kontekst, projekty i udostępnianie oraz plan i badania.
 
-Środek ekranu zajmuje rozmowa, a pole wiadomości znajduje się na dole. Przy prawej krawędzi ekranu umieszczone są kontrolki Advisora:
 
-* **Rozmowy** — pokazuje lub ukrywa listę rozmów. Przeglądarka zapamiętuje ten wybór.
-* **Plan** — pojawia się, gdy bieżąca odpowiedź ma plan; otwiera go w miejscu listy rozmów. Zob. [Śledzenie pracy Advisora](/pl/advisor/activity).
-* **Agenci badawczy** — po jednej ikonie na każdego agenta badawczego w rozmowie; każda otwiera sesję danego agenta obok czatu.
+## Strefa kompozycji zapytania
 
-Na wąskich ekranach przyciski **Nowa rozmowa** i **Historia** znajdują się w prawym górnym rogu i po rozpoczęciu rozmowy zwijają się do ikon. Historia otwiera się jako panel wysuwany od dołu ekranu; jeżeli istnieje plan, otwiera go przycisk z ikoną listy.
+Panel wprowadzania wiadomości znajduje się w dolnej części ekranu:
 
-## Rozpoczynanie rozmowy
+* **Żarówka sugestii** — w nowej konwersacji otwiera listę aktualnych tematów. Kliknięcie pustego pola tekstowego również pokazuje listę. Jeżeli dostępne jest zdarzenie powiązane z alertem, pojawia się na początku z niebieską nazwą alertu. Wybranie tematu uzupełnia szkic pytania i dodaje znacznik źródła; przed wysłaniem można sprawdzić lub zmienić treść.
+* **Pole tekstowe** — obsługuje wprowadzanie wielu linii tekstu (`Shift + Enter`). Klawisz `Enter` wysyła zapytanie.
+* **Menu +** — pojawia się po rozwinięciu pola. **Repozytorium** otwiera wyszukiwarkę Repozytorium i korpusu publicznego; `@` otwiera tę samą wyszukiwarkę. **Prześlij pliki** otwiera okno przesyłania z wyborem dostępu, a pomyślnie przesłane pliki dołącza do szkicu. **Głębokość analizy** ustawia poziom Podstawowo, Zrównoważony lub Dogłębnie dla następnej wiadomości. **Preferencje** otwierają główną stronę **Ustawienia → Preferencje**, w sekcji **Advisor**.
+* **Wybór przestrzeni** — obok **+** umożliwia przypisanie rozmowy do prywatnego lub współdzielonego projektu albo utworzenie projektu. Projekt grupuje rozmowy bez automatycznego dodawania pozostałych rozmów do kontekstu pytania.
+* **Przycisk wysyłania** — wysyła pytanie. Gdy Advisor pracuje, strzałka przekazuje wpisany tekst jako uwagę, a kwadratowy przycisk zatrzymuje generowanie.
 
-Pusta rozmowa wyświetla powitanie i pytanie *„W czym mogę pomóc?”*. Dostępne są gotowe punkty wyjścia:
+## Dokument analizy i plan
 
-* **Podpowiedzi tematów** — przycisk z żarówką (**Pokaż podpowiedzi tematów**) na początku pola lub kliknięcie pustego pola otwiera listę najnowszych zdarzeń ze źródeł platformy, oznaczonych ikoną dziedziny. Przycisk jest widoczny tylko w nowej rozmowie, gdy dostępne są podpowiedzi.
-* **Podpowiedź alertu** — jeżeli alert niedawno znalazł dopasowanie, pojawia się na początku listy z nazwą alertu w kolorze niebieskim i odnośnikiem **Otwórz alert** prowadzącym do szczegółów alertu.
+Advisor sam dobiera badania i wizualizacje do pytania. Przy rozbudowanej analizie tworzy obok rozmowy **Dokument analizy**, a w odpowiedzi przedstawia najważniejsze wnioski i odnośnik **Otwórz dokument analizy**. Krótkie pytania mogą otrzymać samą odpowiedź.
 
-Wybranie podpowiedzi wstawia do pola szkic pytania — *Zbadaj „…”. Co potwierdzają źródła i dlaczego to istotne?*, a w przypadku podpowiedzi alertu z przedrostkiem *W kontekście alertu „…”:* — oraz dołącza źródło jako znacznik kontekstu. Szkic można zmienić przed wysłaniem.
+Dokument łączy formatowany tekst, tabele, wyróżnione wnioski, źródła, wykresy i wyniki badań. Uzupełnia się podczas pracy. Kolejne polecenie, np. „dodaj porównanie z poprzednim rokiem”, aktualizuje ten sam dokument. Wykresy słupkowe i liniowe, grafy relacji oraz galerie źródłowych zdjęć są dostępne w jego treści. **Pokaż dane** rozwija wartości wykresu, a **Źródła** — odnośniki do materiałów.
 
-Pytanie można też wysłać z wyszukiwania platformy: zapytanie sformułowane jak pytanie udostępnia polecenie **Zapytaj Advisora**, które otwiera nową rozmowę i wysyła pytanie.
+Źródła wykresu mogą prowadzić do badania wykorzystanego w obliczeniach, materiału wewnątrz Persate lub strony zewnętrznej. Odnośnik do badania otwiera zapisane wyniki w dokumencie analizy. Prośba o wykres oznacza graficzną wizualizację; kod źródłowy nie zastępuje niedostępnego wykresu.
 
-## Tworzenie wiadomości
+Źródła wykresu mogą prowadzić do badania wykorzystanego w obliczeniach, materiału wewnątrz Persate lub strony zewnętrznej. Odnośnik do badania otwiera zapisane wyniki w dokumencie analizy. Prośba o wykres oznacza graficzną wizualizację; kod źródłowy nie zastępuje niedostępnego wykresu.
 
-Pole (*Napisz wiadomość…*) rozwija się po kliknięciu i pokazuje narzędzia wiadomości:
+Dokument zaczyna się od tytułu analizy i, gdy jest przydatny, krótkiego opisu. Jego treść aktualizuje się w trakcie pracy. Etykieta widoku, wybór wersji, status i data nie zajmują miejsca w samym dokumencie. Karta i skróty **Dokumentu analizy** używają ikony dokumentu.
 
-* **Enter** wysyła wiadomość; **Shift + Enter** rozpoczyna nowy wiersz.
-* **Głębokość analizy** — przełącznik (**Podstawowo**, **Zrównoważony**, **Dogłębnie**) dotyczy tylko tej wiadomości. Zob. sekcję *Głębokość analizy* na stronie [Advisor](/pl/advisor).
-* **Dodaj kontekst z wyszukiwania globalnego** — przycisk z ikoną Repozytorium otwiera wyszukiwanie platformy. Wpisanie `@` otwiera to samo wyszukiwanie; znak nie trafia do treści.
-* **Wyślij wiadomość** — nieaktywny, gdy pole jest puste lub gdy Advisor pracuje nad poprzednim pytaniem.
+Zapisany dokument i badania są dostępne po ponownym otwarciu rozmowy, niezależnie od wczytanej części czatu. **Wczytaj wcześniejsze badania** otwiera dalszą historię badań. Odnośnik do starszego wykresu pokazuje ten wykres, zachowując bieżącą treść dokumentu. Po zatrzymaniu pracy dotychczasowa treść pozostaje dostępna; ograniczenia analizy są opisane w jej treści.
 
-Podczas pracy Advisora obok przycisku wysyłania pojawia się przycisk zatrzymania (**Zatrzymaj analizę**), a tekst wpisany w pole trafia jako uwaga do trwającego zadania, a nie jako nowe pytanie. Zob. [Śledzenie pracy Advisora](/pl/advisor/activity).
+W menu **+** pozostaje **Plan**: przygotowuje sposób działania i czeka na **Wykonaj plan** w karcie Planu. Ponowne wybranie trybu lub zamknięcie jego etykiety przywraca zwykłą rozmowę. Zwykła rozmowa także może mieć plan roboczy, który Advisor realizuje bez osobnego zatwierdzania. **Plan** i **Dokument analizy** są dostępne w sekcji **Widoki** dodatkowego okna Advisora.
 
-## Dołączanie kontekstu
+## Badania w dokumencie
 
-Wyszukiwanie platformy otwierane z pola wiadomości obejmuje te same obszary co wyszukiwanie globalne. Wyniki wybiera się kolejno i pozostają one wyróżnione; ponowne wybranie wyróżnionego wyniku usuwa go.
+Kolory kategorii odpowiadają ich znaczeniu: pozytywne są zielone, negatywne czerwone, neutralne szaroniebieskie, mieszane żółte, niejednoznaczne fioletowe, a niezwiązane z tematem lub „nie dotyczy” — szare. Advisor przypisuje te znaczenia przy ustalaniu własnych kategorii. Legenda, kafelki i porównania używają tych samych kolorów; kolejność kategorii nie wyznacza koloru stanowiska.
 
-* **Pliki** z Repozytorium pojawiają się nad polem jako miniatury.
-* **Pozostałe wyniki** — np. głosowanie, druk sejmowy, profil lub nagranie — pojawiają się jako znaczniki kontekstu z ikoną źródła. Znacznik źródła dodany z podpowiedzi tematu otwiera dany materiał w nowej karcie.
-* **×** na miniaturze lub znaczniku usuwa element z wiadomości.
+Kolory kategorii odpowiadają ich znaczeniu: pozytywne są zielone, negatywne czerwone, neutralne szaroniebieskie, mieszane żółte, niejednoznaczne fioletowe, a niezwiązane z tematem lub „nie dotyczy” — szare. Advisor przypisuje te znaczenia przy ustalaniu własnych kategorii. Legenda, kafelki i porównania używają tych samych kolorów; kolejność kategorii nie wyznacza koloru stanowiska.
 
-Do jednej wiadomości można dołączyć kilka elementów, a wiadomość może składać się wyłącznie z załączników. Materiał warto dołączyć, gdy zawiera odpowiedź; jeżeli położenie informacji jest nieznane, lepiej pozwolić Advisorowi samodzielnie przeszukać zasoby.
+Dla dużego zbioru, np. wypowiedzi jednej osoby lub porównania grup, Advisor może utworzyć **mapę kafelków** w dokumencie analizy. Domyślnie widać tytuł badania, krótkie wprowadzenie opisujące przedmiot analizy i siatkę wyników. Tekst ma taką samą wielkość jak treść głównego czatu. Legenda kolorów tworzy pionową listę pod wprowadzeniem, opisaną aktualnym tematem lub kryterium oceny. Wszystkie etykiety legendy mają jednakową wielkość czcionki. Oznaczenia **Bez oceny** i **Ocena niedostępna** pozostają na swoich miejscach podczas napływania wyników. Liczebności są dostępne po najechaniu lub w **Opcjach badania**. Jasnoszare kafelki nie mają jeszcze oceny, a bordowe oznaczają brak dostępnej oceny. Bordowy kolor nie oznacza negatywnego stanowiska. Wybranie kafelka od razu otwiera jego szczegóły. Mapa uzupełnia się wraz z wynikami i pozostaje dostępna po przeładowaniu rozmowy. Informacja o niepełnym zakresie pozostaje widoczna; dokument pomija ogólny komunikat o zbieraniu materiału i podpis wyjaśniający jednostkę kafelka. Same odnośniki do źródeł nie tworzą pustej sekcji badania.
 
-## Czytanie odpowiedzi
+Ikona obok tytułu otwiera **Opcje badania**: filtry, **Listę**, **Porównanie** oraz **Metodę i zakres**. Selektor pojawia się, gdy dostępnych jest kilka badań. Dokument może również zawierać osobne sekcje z konkretnymi badaniami. Zmiana widoku korzysta z tych samych zapisanych wyników; wybranie kategorii legendy filtruje je także przy zamkniętych opcjach.
 
-Odpowiedź pojawia się pod podsumowaniem pracy (*Czas pracy: …*), które można rozwinąć, aby zobaczyć przebieg pracy. Odniesienia w odpowiedzi mają postać **znaczników cytowań** — ikony źródła z tytułem. Wybranie znacznika otwiera źródło:
+Analiza zbiorcza może obejmować również zarchiwizowane wpisy z Mediów oraz dostępne teksty dokumentów projektów legislacyjnych. W poleceniu warto podać okres, osoby lub organizacje oraz kryterium, np. znaczenie dla działalności wskazanego klienta. Materiały są pobierane kolejno i oceniane według wspólnych kryteriów, bez ręcznego dołączania każdego rekordu. Przy wpisach uwzględniany jest dostępny kontekst odpowiedzi i cytowań. Po wybraniu kafelka przycisk **Kontekst źródła** pokazuje wykorzystane informacje towarzyszące.
 
-* Głosowania, akty prawne, druki, projekty RCL, interpelacje i zapytania, profile, komisje, alerty, wydarzenia i wątki z Mediów, nagrania oraz wcześniejsze rozmowy otwierają się w platformie.
-* Wpisy w serwisie X, strony internetowe i oficjalny stenogram Sejmu otwierają się w nowej karcie.
-* Znaczniki legislacyjne pokazują dodatkowo krótki wyimek cytowanego fragmentu, a znaczniki wydarzeń z Mediów — konto i treść wpisu.
+Mapa obejmuje materiały dostępne w archiwum i dozwolone dla tej analizy. Brak dokumentu, fragmentu lub kontekstu nie oznacza braku wzmianki ani negatywnej oceny. Niepełny zakres jest oznaczany w badaniu. Obecnie mapy ocen obsługują materiały publiczne. Sam dostęp do plików prywatnych w repozytorium nie udostępnia ich w tej analizie.
 
-Cytowania prowadzą do dokładnego fragmentu, jeżeli jest dostępny:
+W przypadku nagrań Advisor zbiera i ocenia kolejne strony transkrypcji w ramach jednego badania. W poleceniu można wskazać mówców i tematy do porównania. Nazwy mówców pochodzą ze źródła; nierozpoznane nazwy i brak przypisania są raportowane. Ocena tematu odróżnia stanowiska pozytywne, negatywne, neutralne, mieszane i niejednoznaczne od fragmentów niezwiązanych z tematem.
 
-* Cytowany plik otwiera się w przeglądarce plików z panelem **Cytowany fragment** obok dokumentu.
-* Cytowany fragment tekstu prawnego otwiera czytnik dokumentu w tym miejscu.
-* Cytowany druk sejmowy otwiera swój dokument; gdy druk zawiera kilka dokumentów, lista pozwala wybrać dokument do przeczytania.
-* Cytowany fragment transkrypcji otwiera się na osobnej stronie jako **Oryginalny fragment źródła**.
+Jeżeli badanie obejmuje kilka kryteriów lub tematów, można wybrać jeden z nich. Filtry mówców, roku, grupy i statusu zawężają widoczne fragmenty, gdy odpowiednie dane są dostępne. Wyszukiwanie tekstu znajduje pasujące słowa w zapisanych fragmentach; nie uruchamia nowej analizy semantycznej. **Porównanie** pokazuje rozkład ocen dla każdego wybranego mówcy lub grupy. Wybranie kafelka lub wiersza w **Liście** pokazuje oryginalny fragment, jego oceny i przycisk **Otwórz źródło**. Zmiana tych ustawień korzysta z zapisanych wyników, bez ponawiania oceny. Starsze badania bez oznaczeń mówców wymagają ponownej analizy, aby umożliwić porównanie osób.
 
-Jeżeli dokładnego fragmentu nie da się otworzyć, wyświetla się stosowny komunikat; w przeglądarce plików sam dokument pozostaje otwarty. Pełną listę rodzajów cytowań zawiera strona [Umiejętności Advisora](/pl/advisor/skills).
+Liczniki opisują zebrane fragmenty, niekoniecznie wszystkie wypowiedzi lub osoby z badanego zbioru. Brak oceny lub błąd pozostaje oddzielony od negatywnego wyniku. Advisor wskazuje niepełne pokrycie źródeł. Ocenianie zależy od ustawień organizacji i jest niedostępne w rozmowie zawierającej poufny kontekst; w takim przypadku potrzebna jest osobna rozmowa korzystająca ze źródeł publicznych.
 
-## Przyciski pod odpowiedzią
+**Dokument analizy** pojawia się na prawym pasku, gdy rozmowa zawiera wyniki. Pierwszy wynik może otworzyć dokument automatycznie; otwarta karta źródła pozostaje wybrana. Kolejne aktualizacje nie otwierają ponownie ukrytego okna. Ikona dokumentu otwiera jego kartę, a ponowne wybranie aktywnej ikony ukrywa dodatkowe okno.
 
-Pod każdą ukończoną odpowiedzią dostępne są ikony:
+Przycisk podziału widoku otwiera dodatkową przestrzeń roboczą obok rozmowy. Sekcja **Podstrony Persate** zawiera strony dostępne w pakiecie organizacji, zgodnie z tymi samymi zasadami dostępu co główna nawigacja. Obejmuje również **Redaktor**, jeżeli jest włączony. Wybranie strony otwiera ją w karcie, a rozmowa pozostaje obok. Po odebraniu dostępu do strony jej otwarte karty znikają z przestrzeni roboczej. Widoki Planu i Dokumentu analizy wymagają dostępu do Advisora.
 
-* **Tarcza** — pojawia się, gdy odpowiedź ma wynik weryfikacji źródeł. Najechanie kursorem pokazuje wynik, a kliknięcie tarczy otwiera szczegóły. Opis poniżej.
-* **Kopiuj odpowiedź** — kopiuje tekst odpowiedzi do schowka.
-* **Wygeneruj odpowiedź ponownie** — ponownie uruchamia to samo pytanie i zastępuje bieżącą odpowiedź.
+Pole wyszukiwania w **Nowej karcie** filtruje widoki, agentów i podstrony Persate. Wybranie podstrony lub widoku zastępuje tę pustą kartę. Przycisk **+** otwiera kolejną nową kartę. Wybranie już otwartej podstrony przełącza do jej istniejącej karty bez tworzenia duplikatu.
 
-Kolor tarczy jest tym intensywniejszy, im więcej kluczowych informacji zostało potwierdzonych; czerwony oznacza, że sprawdzenia nie udało się dokończyć. Możliwe wyniki:
+W tych kartach panele boczne są domyślnie schowane, żeby zostawić miejsce na treść strony. Przycisk **Filtry**, **Szczegóły** lub odpowiadający mu przycisk danej strony w prawym dolnym rogu otwiera wysuwany panel wewnątrz karty. Zamknij go, żeby ponownie widzieć całą treść.
 
-| Wynik | Znaczenie |
-| :--- | :--- |
-| **Źródła potwierdzają kluczowe informacje** | Kluczowe informacje odpowiadają zebranym źródłom. |
-| **Część kluczowych informacji wymaga ostrożności** | Szczegóły wymieniają tylko punkty wymagające doprecyzowania. |
-| **Odpowiedź po recenzji** | Odpowiedź oceniono w kontekście pytania i dostępnych źródeł. |
-| **Odpowiedź po recenzji, z ograniczeniami** | Jak wyżej, a ograniczenia ustaleń wymieniono w szczegółach. |
-| **Potwierdzone odczytem na żywo** | Odpowiedź pochodzi wprost z bieżących danych przestrzeni roboczej, odczytanych w tej turze. |
-| **Odpowiedź niezweryfikowana** | Odpowiedź nie została sprawdzona względem źródeł. |
-| **Weryfikacja niedostępna** | Niezależnego sprawdzenia źródeł nie udało się dokończyć. |
+Wybranie agenta badawczego otwiera jego sesję w osobnej karcie przestrzeni roboczej. Sesja pokazuje zadanie, notatki z pracy, użyte narzędzia oraz odpowiedź z odnośnikami do źródeł w takim samym układzie jak główna rozmowa. Zakończony przebieg pracy jest zwinięty i można go rozwinąć nad odpowiedzią.
 
-Szczegóły zawierają sekcję **Istotne zastrzeżenia** — kilka fragmentów niepotwierdzonych w źródłach, każdy z podaną przyczyną — a po nieudanym sprawdzeniu wskazówkę, aby ponowić lub zawęzić pytanie.
+## Strony internetowe i wyszukiwanie
 
-## Szkice w innych modułach
+W zaktualizowanej aplikacji desktopowej otwarcie zewnętrznego źródła z odpowiedzi wyświetla stronę w prawym oknie Advisora obok rozmowy. Pasek adresu obsługuje adresy stron i zapytania oraz zawiera przyciski wstecz, dalej i odświeżania. Dopiero wybranie **Otwórz w przeglądarce** przenosi bieżącą stronę do przeglądarki systemowej.
 
-Na prośbę Advisor przygotowuje pracę, którą kończy się w innym module. Karta pod odpowiedzią otwiera szkic:
+We własnej rozmowie przycisk **Dodaj do rozmowy** pod paskiem adresu lub przeciągnięcie tytułu strony do rozmowy dołącza jej link i tytuł do szkicu. Następnie należy wpisać pytanie i wysłać wiadomość.
 
-| Karta | Moduł docelowy | Statusy |
-| :--- | :--- | :--- |
-| **Konfiguracja monitorowania** (lub nazwa alertu) | Monitorowanie | **Wymaga konfiguracji · Monitorowanie jest nieaktywne** |
-| **Szkic artykułu** (lub tytuł artykułu) | Redaktor | **Przygotowywanie szkicu**, **Szkic zapisany**, **Wymaga przeglądu · Twoje zmiany zostały zachowane**, **Przygotowywanie przerwane** |
+W wersji WWW zewnętrzne źródła otwierają się w osobnej karcie przeglądarki. Jeśli źródła nie można otworzyć wewnątrz aplikacji desktopowej, pojawia się komunikat — bez automatycznego uruchamiania przeglądarki systemowej. Przeglądanie stron wewnątrz panelu wymaga zaktualizowanej aplikacji desktopowej. Zamknięcie dodatkowego okna kończy jego sesje stron internetowych.
 
-Jeżeli rozmowa jest nadal otwarta, gdy szkic alertu lub artykułu jest gotowy, Persate samodzielnie otwiera moduł docelowy; karta pozwala wrócić do szkicu później. Szkic alertu pozostaje nieaktywny do czasu przejrzenia i zapisania go w Monitorowaniu, a Advisor nigdy nie publikuje szkiców artykułów. Moduł docelowy pokazuje materiały, na których oparto szkic, oraz odnośnik do pierwotnej rozmowy.
+### Co widzi Advisor
 
-Prośba o utworzenie inteligentnego folderu lub o zbadanie powiązań między osobami i organizacjami kończy się kartą, która otwiera kreator inteligentnych folderów albo zakładkę **Powiązania** w module Interesariusze z uzupełnionym zapytaniem.
+Przy wysyłaniu wiadomości lub dopisku podczas pracy Advisor otrzymuje kontekst aktywnej karty: adres i tytuł, ograniczony fragment widocznego tekstu, zaznaczenie i filtry. Obsługiwane przeglądarki materiałów przekazują też identyfikator otwartego pliku, załącznika legislacyjnego, nagrania i pozycję odtwarzania, stronę PDF lub szkic Redaktora. Można więc napisać „Podsumuj dokument, który mam otwarty”, bez ponownego dołączania go. Odczyt pełnego źródła nadal wymaga uprawnień konta. Piksele PDF i obrazów oraz niedostępne zagnieżdżone ramki nie są automatycznie odczytywane.
 
-Redaktor jest dostępny, gdy funkcja jest włączona dla organizacji. Zob. [Tworzenie i edycja alertów](/pl/alerts/creating-alerts), [Redaktor](/pl/editor), [Inteligentne foldery](/pl/repository/smart-folders) i [Powiązania](/pl/stakeholders/connections).
+Advisor zna również nazwy i adresy pozostałych kart. Narzędzie przestrzeni roboczej pozwala mu odświeżyć tę listę, wybrać odpowiednią kartę albo otworzyć nową podstronę Persate, widok lub stronę internetową w aplikacji desktopowej. Świeży kontekst otrzymuje po potwierdzeniu działania przez interfejs. Treść karty w tle jest odczytywana dopiero po jej wybraniu. Nawigacja respektuje pakiet organizacji; narzędzie nie klika przycisków strony ani nie wysyła formularzy. Kontekst nie zawiera haseł, ekranów logowania, zwykłych szkiców formularzy, ciasteczek ani pamięci przeglądarki.
+
+## Oznaczanie plików (`@`)
+
+Wpisanie symbolu `@` w polu tekstowym otwiera wyszukiwarkę dokumentów z Repozytorium oraz korpusu publicznego:
+
+* **Wyszukiwanie po nazwie** — szybki tryb dla plików o znanych tytułach.
+* **Wyszukiwanie hybrydowe** — przełącznik w prawej części pola wyszukiwania umożliwia szukanie dokumentów na podstawie ich treści.
+* **Znaczniki kontekstu** — pojawiają się nad polem tekstowym dla wybranych plików i źródeł. Można dołączyć kilka elementów jednocześnie; znacznik źródła prowadzi do materiału, jeżeli dostępny jest bezpośredni odnośnik.
+
+Plik warto załączyć bezpośrednio, gdy zawiera on szukaną odpowiedź. Jeśli lokalizacja informacji jest nieznana, lepiej pozwolić asystentowi samodzielnie przeszukać zasoby.
+
+## Przeciąganie materiałów do rozmowy
+
+Otwórz podstronę Persate w dodatkowym oknie i przeciągnij materiał na rozmowę: jej wiadomości, puste miejsce lub pole wpisywania. Obszar upuszczania zostanie podświetlony. Obsługują to pliki Repozytorium, projekty i dokumenty legislacyjne, nagrania, wiersze osób i komisji oraz historie i wydarzenia z Mediów. W Mediach przeciągnij tytuł historii albo tytuł lub pasek pojedynczego wydarzenia na osi czasu, żeby dołączyć to konkretne źródło. Z podstron Persate można też przeciągać odnośniki do załączników i innych materiałów.
+
+Materiał pojawia się jako chip z tytułem. Upuszczenie go nie wysyła wiadomości: dopisz pytanie, np. „Podsumuj te materiały”, i wyślij szkic. Każdy chip wskazuje konkretne źródło, które Advisor odczytuje zgodnie z uprawnieniami konta. Kontekst aktywnej karty jest dodawany osobno przy wysyłaniu wiadomości.
+
+Po odświeżeniu lub ponownym otwarciu rozmowy pytanie i chipy jego źródeł pozostają rozdzielone. Ponowne wygenerowanie odpowiedzi korzysta z tych samych załączonych materiałów.
+
+Materiały upuszczone podczas pracy Advisora pozostają w szkicu do następnej wiadomości. Nie są dołączane do trwającej tury przez wiadomość uzupełniającą. Rozmowy współdzielone dostępne tylko do odczytu nie przyjmują upuszczanych materiałów.
+
+## Oś czasu wiadomości
+
+Każda tura generuje **oś czasu wiadomości**, wyświetlaną strumieniowo przed treścią odpowiedzi. Stanowi ona widoczny zapis działań asystenta w trakcie pracy.
+
+### Bloki rozumowania
+
+Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *„Thinking…”* (w trakcie pracy) lub *„Working through the request”* (po zakończeniu). Po zakończeniu tury bloki są automatycznie zwijane — dowolny z nich można ponownie otworzyć, aby go sprawdzić.
+
+Bloki rozumowania stanowią robocze notatki modelu, nie część ostatecznej odpowiedzi. Są przydatne do zrozumienia, *dlaczego* asystent doszedł do danego wniosku.
+
+### Znaczniki wywołań narzędzi
+
+Każde zewnętrzne wyszukiwanie wykonywane przez asystenta staje się znacznikiem w osi czasu. Zawiera on:
+
+* **Ikonę** identyfikującą rodzinę umiejętności (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
+* **Nazwę narzędzia**.
+* **Status** — ikony odpowiadające kolejnym etapom pracy. Zakończone wywołania prezentują czas wykonania (np. `1.2s`).
+
+Sąsiednie wywołania narzędzi są składane w zwijaną grupę (*„Using N tools…”* w trakcie, *„N tools used”* po zakończeniu).
+
+### Formularze elicytacji
+
+Niektóre narzędzia wymagają strukturalnego wkładu w trakcie tury — np. wyboru kadencji Sejmu lub wskazania posła przy kolizji nazwisk. Narzędzie emituje wówczas **żądanie elicytacji**: proces pozostaje w stanie *running*, a pod nim pojawia się formularz.
+
+Formularz należy zatwierdzić lub pominąć (pominięte żądania korzystają z domyślnej wartości narzędzia). Po rozstrzygnięciu wywołanie narzędzia wznawia się.
+
+## Odnośniki w odpowiedziach
+
+W treści odpowiedzi mogą znaleźć się chipy źródeł, które prowadzą bezpośrednio do konkretnych materiałów:
+   * Głosowania w Rejestrze głosowań.
+   * Profile interesariuszy oraz szczegóły alertów.
+   * Oryginalne wpisy w serwisie X.
+   * Konkretne pliki lub ich fragmenty w Repozytorium.
+   * Nagrania lub wskazane momenty nagrań, opisane nazwą materiału.
+
+Jeśli zapisane cytowanie nie ma dostępnego odnośnika do źródła, w jego miejscu pojawia się mały **?**. Najedź na niego lub zaznacz go klawiaturą, aby przeczytać wyjaśnienie. Takie samo oznaczenie pojawia się w dokumencie analizy.
+
+W **+ → Preferencje → Advisor** opcja **Otwieranie źródeł Advisora** jest domyślnie ustawiona na **Prawe okno Advisora**. W aplikacji desktopowej druga opcja to **Przejdź w platformie**: przenosi do wybranej podstrony Persate w tym samym oknie aplikacji. Strony zewnętrzne pozostają w prawym oknie Advisora przy obu ustawieniach. W wersji WWW **Nowa karta przeglądarki** otwiera źródło w osobnej karcie. Ustawienie dotyczy chipów źródeł, odnośników w dokumencie, źródeł badań i dołączonych materiałów. Odnośnik do nagrania zachowuje wskazany moment, a odnośnik do pliku — wskazanie dokumentu.
+
+## Przyciski per wiadomość
+
+Pod każdą ukończoną wiadomością asystenta dostępne są ikony:
+
+* **Kopiowanie** — kopiuje treść odpowiedzi do schowka. Znaczniki cytowań zastępowane są ich tekstową reprezentacją.
+* **Strzałka restartu** — ponownie wysyła poprzednie zapytanie i zastępuje bieżącą odpowiedź nową.
+
+## Plan obok rozmowy
+
+Przycisk **Otwórz widok Advisora** w prawym górnym rogu rozmowy otwiera dodatkową przestrzeń roboczą. Wybranie **Planu** w sekcji **Widoki** otwiera w karcie kroki bieżącej odpowiedzi. Kroki i ich status aktualizują się podczas pracy Advisora. Zanim plan będzie dostępny, karta pokazuje pusty stan.
+
+Skrót **Plan** przy prawej krawędzi otwiera tę samą kartę, gdy bieżąca odpowiedź ma już plan. Na telefonie służy do tego okrągły przycisk z listą. Zamknięcie karty planu wraca do innej otwartej karty; widoczność historii rozmów pozostaje bez zmian. Przycisk **+** ponownie otwiera wybór widoku.
+
+## Wyniki badania i kolejne pytania
+
+Jednostka wyniku wynika z pytania: może nią być projekt, źródło takie jak wpis lub plik, osoba, grupa albo wskazany wprost fragment. W badaniu projektów jeden kafelek odpowiada jednemu projektowi. Po wybraniu wyniku jego dokumenty i ocenione fragmenty są dostępne pod przyciskiem **Dowody**.
+
+**Metoda i zakres** opisuje zbadany materiał oraz sposób łączenia ocen fragmentów. Istotność wynika z najsilniejszego popartego związku; niepełny zbiór nie pozwala stwierdzić braku związku. Inne sprzeczne kategorie pozostają różne, a wyniki liczbowe są średnimi z fragmentów. Oceny dotyczą zebranego materiału, nie dokumentów, których nie odczytano.
+
+Wyniki projektów pojawiają się niezależnie, gdy zakończy się odczyt ich dokumentów i ocena zebranego materiału. Pozostałe projekty mogą być nadal przetwarzane. **Niepełny materiał** oznacza brak wystarczającego zakresu do wykluczenia związku; **Niejednoznaczne** oznacza niejednoznaczną ocenę samej treści. Oczekiwanie na dokumenty nie jest taką oceną.
+
+W szczegółach wyniku przycisk **Dlaczego materiał jest niepełny?** rozróżnia niedostępny tekst, błędy lub częściowy odczyt, limity zbierania, skrócony kontekst i brakujące oceny. Liczba źródeł nie jest mnożona przez liczbę fragmentów. Potwierdzony związek może być pokazany również wtedy, gdy innych dokumentów brakuje. Starsze analizy mogą nie mieć zapisanych szczegółowych przyczyn braków.
+
+Po zakończeniu badania można zastosować filtry i wybrać **Zapytaj o te wyniki**. Następnie należy wpisać kolejne pytanie i nacisnąć **Zapytaj Advisora**. Nowe badanie korzysta z zapisanego materiału dla tych wyników, w tym ze wszystkich zebranych fragmentów wybranego projektu. Poprzednie badanie pozostaje dostępne, a nowy wynik wskazuje badanie źródłowe. Ta operacja nie odświeża źródeł. Zmieniający się lub niedostępny wybór wymaga odświeżenia albo wyjaśnienia przed kontynuacją.
 
 ## Historia konwersacji
 
-Lista rozmów pokazuje rozmowy przypisane do konta, od najnowszej:
+Prawa kolumna interfejsu zawiera listę wszystkich konwersacji na koncie:
 
-* **Nowa rozmowa** — czyści przestrzeń roboczą i rozpoczyna nową sesję.
-* **Szukaj w rozmowach** — lupa obok przycisku **Nowa rozmowa** otwiera pole wyszukiwania; krzyżyk lub klawisz Escape zamyka je i czyści zapytanie.
-* **Pokaż więcej** — wczytuje starsze rozmowy na końcu listy.
-* Wybranie rozmowy otwiera ją z pełnym zapisem — przebieg pracy, cytowania i karty są odtwarzane. Adres strony wskazuje otwartą rozmowę, więc po odświeżeniu pozostaje ona otwarta.
-* **Usuń rozmowę** — ikona kosza przy pozycji otwiera okno potwierdzenia z tytułem rozmowy. Przycisk **Usuń** trwale usuwa rozmowę; tej operacji nie można cofnąć.
+* **Nowa rozmowa** — czyści przestrzeń roboczą i inicjuje nową sesję.
+* Nowa rozmowa otrzymuje tymczasową nazwę, a następnie automatycznie krótki tytuł, niezależnie od zakończenia badania. Starsze nazwy oparte na treści polecenia aktualizują się po otwarciu rozmowy. Nazwa nadana ręcznie pozostaje bez zmian. Menu **…** zawiera opcje **Zmień nazwę rozmowy** i **Przenieś do projektu**.
+* Wybranie konwersacji otwiera ją z pełnym zapisem — bloki rozumowania, plakietki narzędzi i cytowania są rekonstruowane.
+* **Usuń rozmowę** w menu **…** wymaga potwierdzenia przed trwałym usunięciem rozmowy wraz z historią.
 
-Rozmowa bez tytułu figuruje na liście jako **Nowa rozmowa**. Sesje z panelu Advisora w Redaktorze nie pojawiają się na tej liście.
+Sekcja **Projekty** zawiera rozwijane foldery, a **Najnowsze** — rozmowy bez projektu. Po najechaniu na nagłówek Projekty pojawia się **+** do tworzenia projektu. Sekcję oraz poszczególne foldery można zwijać. Rozmowę można przeciągnąć na folder lub użyć **… → Przenieś do projektu**; jej wiersz pojawia się wtedy z wcięciem.
 
-Komunikaty:
+Kolejność rozmów można zmienić, przeciągając rozmowę nad lub pod inną rozmowę w tej samej sekcji. Menu **…** zawiera również opcje **Przenieś wyżej** i **Przenieś niżej**; gdy rozmowa ma fokus klawiatury, ten sam efekt daje **Alt + strzałka w górę/w dół**. Kolejność zapisuje się dla bieżącego konta, również przy rozmowach współdzielonych, i pozostaje zachowana po odświeżeniu oraz wczytaniu dalszej historii. Nowe rozmowy pojawiają się na początku. Po ręcznym uporządkowaniu nagłówek **Najnowsze** zmienia się na **Rozmowy**.
 
-* *„Brak historii”* — konto nie ma jeszcze rozmów.
-* *„Nie znaleziono rozmów”* — żadna rozmowa nie pasuje do wyszukiwania; warto spróbować innego hasła.
-* *„Nie udało się wczytać rozmów”* — listy nie udało się pobrać; należy odświeżyć stronę.
+Przeniesienie rozmowy do projektu współdzielonego wymaga potwierdzenia w oknie z nazwą rozmowy i projektu. Wszyscy członkowie tego projektu będą mogli przeczytać całą rozmowę. Przycisk **Udostępnij i przenieś** zatwierdza zmianę, a **Anuluj** pozostawia dotychczasowe położenie i dostęp. Potwierdzenie obowiązuje również przy wyborze projektu współdzielonego obok pola wiadomości. Projekty prywatne nie wymagają takiego potwierdzenia.
 
-## Długie rozmowy
+Projekt może być prywatny lub współdzielony z grupą. Członkostwo zapewnia stałe projekty grup oraz projekt całej organizacji, których nie można usunąć. Rozmowy pozostają prywatne, dopóki autor nie przeniesie ich do projektu współdzielonego. Przy wspólnych rozmowach widoczne jest zdjęcie profilowe autora, a gdy jest niedostępne — jego inicjały.
 
-Starsze wiadomości wczytują się po przewinięciu rozmowy do początku. Od drugiego pytania po lewej stronie rozmowy widoczna jest wąska listwa znaczników, po jednym na każde pytanie. Najechanie na znacznik pokazuje pytanie i początek odpowiedzi, a kliknięcie przewija rozmowę do tego miejsca.
+Pozostali członkowie mają dostęp **tylko do odczytu**. Jeśli dostępna jest zapisana analiza, otwiera się automatycznie obok rozmowy. **Pokaż rozmowę** zamyka panel analizy i wraca do zapisanego czatu. Rozmowy bez analizy otwierają się bezpośrednio w czacie. Czytelnicy mogą przeglądać dokument, wykresy, zapisane badania i źródła oraz kopiować odpowiedzi. Tylko autor może wysyłać wiadomości, zadawać pytania uzupełniające, ponownie generować odpowiedzi, aktualizować analizę, zmieniać nazwę rozmowy, przenosić ją lub usuwać. Dostęp do materiałów źródłowych jest sprawdzany osobno. Bieżące sesje agentów pozostają dostępne dla właściciela.
+
+Na wąskich ekranach kolumna historii jest dostępna przez przycisk **Historia** w prawym górnym rogu.
 
 ## Odświeżenie i wznowienie
 
-Trwające zadanie nie zostaje utracone po opuszczeniu widoku, odświeżeniu przeglądarki ani chwilowej utracie połączenia — Advisor kontynuuje pracę w tle. Ponowne otwarcie rozmowy w tej samej przeglądarce przywraca połączenie z zadaniem i dotychczasowy postęp.
+Aktywna tura nie zostaje utracona po opuszczeniu widoku, odświeżeniu przeglądarki lub chwilowej utracie połączenia. Asystent realizuje turę jako odłączone zadanie i transmituje zdarzenia do klientów podłączonych w momencie ich wyzwolenia. Gdy autor ponownie otwiera rozmowę, łączy się ze strumieniem i widzi dotychczasowy postęp. Pozostali członkowie mogą czytać zapisane wyniki.
 
-Jeżeli rozmowa zostanie opuszczona w trakcie pracy Advisora, po zakończeniu zadania pojawia się powiadomienie, o ile w **Ustawienia → Powiadomienia** włączone są **Powiadomienia Advisora**. Powrót do rozmowy przed zakończeniem zadania wycofuje tę prośbę.
+## Stany pustego widoku i błędu
 
-Zatrzymane zadania, odpowiedzi częściowe i problemy z połączeniem opisuje strona [Śledzenie pracy Advisora](/pl/advisor/activity).
+Zatrzymanie odpowiedzi wyświetla w jej treści zwykły komunikat **Generowanie odpowiedzi zostało zatrzymane.** Wcześniej wygenerowany tekst pozostaje nad nim.
+
+* *„No conversation selected”* — przestrzeń robocza jest pusta, należy wybrać istniejącą sesję lub utworzyć nową.
+* Blok błędu z kodem — pojawia się pod częściową odpowiedzią, gdy tura zakończy się niepowodzeniem. Ponowne uruchomienie tury jest zalecaną pierwszą reakcją.

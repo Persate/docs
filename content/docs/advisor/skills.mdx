@@ -1,177 +1,39 @@
 ---
 title: Advisor skills
-description: The Advisor's skill families in the MCP layer, their scope, typical questions, and the resource URIs returned as citations.
+description: How to request tasks, understand tool selection and check the sources used.
 ---
 
-The **Advisor** reaches the platform's data through the MCP layer. Its tools are grouped into **skill families**; each family is a namespace of tools for one area of the platform, and every tool call appears in the activity as a chip with the family's icon. The tools available depend on the modules enabled for the organization.
+**Skills** are the Advisor's ways of carrying out tasks. You do not need to know tool names or select them from a list. Describe your goal, sources and expected result; the Advisor chooses available capabilities for the question and your access.
 
-## Skill families
+## What you can ask
 
-| Family | Scope |
-| :--- | :--- |
-| `legislation` | Sejm and Senate votes and how individual MPs voted, presidential decisions, Constitutional Tribunal cases, the civic register of people and organizations, and searches across acts and publications of public institutions. |
-| `civic` | Legal acts in depth — text, structure, amendments, consolidated texts and implementing acts; Sejm prints and legislative processes; RCL projects; interpellations and written questions; committees and sittings; voting analyses by topic. |
-| `stakeholders` | Profiles of politicians and organizations, MP search by club or constituency, contact details and activity. |
-| `public_pulse` | Media: archived X posts of tracked accounts, events, stories, topics, trends and deleted posts. |
-| `recordings` | Analyzed recordings: catalog, summaries, transcripts, speeches and the official stenogram. |
-| `documents`, `files` | Repository files and the public Persate corpus: content, filename and sequence search, metadata, summaries, counts and full-file reading. |
-| `events` | Developments over a period: changes across public sources and new developments in the organization's files. |
-| `alerts` | The user's alerts and their matches; alert drafts, changes and deletion on request. |
-| `smartfolders` | Preparing a Smart Folder for the Smart Folders creator. |
-| `web_research` | Web search and reading public web pages. |
-| `chat_context` | The user's earlier Advisor conversations. |
-| `workspace`, `team`, `notifications` | Workspace summary and personal preferences, the team directory, and the notification inbox. |
-| `labs` | Reviewed lab releases, when Labs are enabled for the organization. |
-| `agent` | The Advisor's own steps: plan updates, clarifying questions, research agents, tool lookup and preparing drafts in other modules. |
+| Area | Example question |
+| --- | --- |
+| Legislation | “Compare the current stages of these two draft laws and identify the next steps.” |
+| Votes | “How did each club vote on this amendment? Show the results in a table.” |
+| Recordings and transcripts | “Find this person's statements about energy in this sitting. Include quotations and recording timestamps.” |
+| People and organizations | “Summarize this person's documented activity during the specified period and cite the sources.” |
+| Media | “Compare these politicians' arguments about this topic in posts from the last month.” |
+| Repository | “Find passages about this obligation in the documents we can access.” |
+| Alerts and Smart Folders | “Summarize this alert's latest matches and identify those concerning the specified project.” |
+| Earlier conversations | “Find the earlier conversation about this project and recall its findings.” |
 
-## Votes and parliamentary records (`legislation`)
+A question can combine several areas. Naming the document, person, sitting or period helps distinguish relevant material from similar results. **@** and **+ → Repository** let you attach an exact source.
 
-The structured record of parliamentary and constitutional activity: Sejm and Senate votes, their results and how individual MPs voted, presidential decisions and Constitutional Tribunal cases, together with the civic register of people and organizations.
+## Research and visualizations
 
-**Typical questions:**
-* *"What was the result of the last vote on the energy bill?"*
-* *"How did the Senate vote on the latest amendment to the energy law?"*
-* *"List the votes from the last Sejm sitting that passed by fewer than five votes."*
-* *"Which Constitutional Tribunal cases concern the act on the National Council of the Judiciary?"*
+To examine a collection, define its scope and a common assessment criterion. For example:
 
-**Citations open:** the Sejm or Senate vote in **Votes**.
+> Analyze a named club's statements from a specified Sejm sitting about Ukraine. Distinguish positive, negative, neutral and ambiguous tone. Include quotations and a comparison of speakers.
 
-## Legal acts and legislative documents (`civic`)
+The Advisor can present the results in an **Analysis document**, with text, a table, chart or research map. You do not need to activate a separate Research or Visualization mode. **Plan** lets you review the approach first and later requires **Execute plan**.
 
-Published acts (Dziennik Ustaw, Monitor Polski) with their structure, amendments, consolidated texts and implementing acts; Sejm prints and the course of legislative processes; RCL projects; interpellations and written questions with government replies; committees and their sittings; analyses of how clubs and MPs voted on a topic.
+Study filters and views use existing results. A follow-up question starts new work. Learn to read these results in the [Plans and research lesson](/en/advisor/tutorials).
 
-**Typical questions:**
-* *"What does Article 5 of the public procurement act say, and when was it last amended?"*
-* *"At what stage is the bill in Sejm print 1234, and what happened at the last vote?"*
-* *"Which interpellations about hospital debt are still awaiting a reply from the Ministry of Health?"*
+## Check how the answer was produced
 
-**Citations open:** the act or the exact cited passage in the **Legislation** reader, a print document, an RCL project, a parliamentary question or a committee page.
+Expand **Worked for** above an answer to see its searches and tools. A tool entry shows details of the operation. Citations in the answer lead to the material used.
 
-## Stakeholders (`stakeholders`)
+Before relying on a finding, inspect the original passage and its context. An empty search does not prove that an event did not happen, and an unavailable assessment is not a negative result. For collection-wide research, also check **Method and coverage**.
 
-Profiles of politicians and organizations: biography, club, constituency, voting attendance, contact details, social media accounts and activity.
-
-**Typical questions:**
-* *"Who chairs the Public Finances Committee, and what is their voting record on tax matters?"*
-* *"Find every MP from the Greater Poland voivodeship who voted against the climate bill."*
-* *"Prepare a short brief on MP Nowak before a meeting: club, committees, recent activity."*
-
-**Citations open:** the stakeholder profile.
-
-## Media (`public_pulse`)
-
-The archive of X posts published by the accounts tracked in Persate, grouped in the Media module into events, stories and topics.
-
-**Typical questions:**
-* *"What has the opposition said publicly about the latest amendment to the labor code?"*
-* *"Has any minister posted about the budget vote since it passed?"*
-* *"Show the trending hashtags in posts by tracked accounts over the last 48 hours."*
-
-**Citations open:** the original post on X, or a Media event or story.
-
-## Recordings (`recordings`)
-
-Analyzed recordings of Sejm sittings, committees and other proceedings: summaries, transcripts, identified speeches and the official stenogram.
-
-**Typical questions:**
-* *"What did MP Nowak say in the plenary about the housing reform?"*
-* *"Summarize the latest sitting of the Health Committee."*
-* *"Which of the latest recordings have already been analyzed?"*
-
-**Citations open:** the recording in **Recordings** at the cited moment, or the exact transcript passage.
-
-## Documents (`documents`, `files`)
-
-Search and operations on files from the **Repository** and on the public Persate corpus: content, filename and sequence search, file metadata and summaries, counts, and reading a whole file.
-
-**Typical questions:**
-* *"What does our internal briefing say about the gas pricing mechanism?"*
-* *"Find the passage where our draft position defines 'critical infrastructure'."*
-* *"How many documents have we uploaded since the beginning of the year?"*
-
-**Citations open:** the file in the file viewer, at the cited passage when there is one.
-
-## Alerts (`alerts`)
-
-The user's alerts and their matches, preparing new alerts and changing existing ones. A new alert is prepared as an inactive draft that opens in the Tracker's alert creator for review; it starts working only after it is saved there. Changing, pausing or deleting an existing alert happens only on an explicit request, and deletion asks for confirmation in the conversation.
-
-**Typical questions:**
-* *"Which of my alerts matched most often this week?"*
-* *"Prepare an alert for any mention of the new pharmaceutical bill."*
-* *"Pause my alert about Brexit references — the topic is no longer relevant."*
-
-**Citations open:** the alert detail in the **Tracker**.
-
-## Conversation history (`chat_context`)
-
-Searching and reading the user's earlier conversations with the Advisor.
-
-**Typical questions:**
-* *"We discussed the energy bill earlier today — pick that thread up again."*
-* *"What did you tell me last week about the public procurement reform?"*
-
-**Citations open:** the earlier conversation.
-
-## Web research (`web_research`)
-
-Searching the web and reading public pages, when a question asks for it or needs public context the platform does not hold. Pages found or read appear as web source chips in the activity; web results are not stored in the platform.
-
-**Typical questions:**
-* *"Read this ministry announcement and summarize the changes it proposes: (link)"*
-* *"Search the web for the latest official statement on the energy price cap."*
-
-**Citations open:** the web page in a new tab.
-
-## Other families
-
-* **`events`** — what changed in a period across the platform's public sources, or what new developments were found in the organization's files. Example: *"What changed this week on energy policy across legislation and recordings?"*
-* **`smartfolders`** — prepares a Smart Folder from a description and opens the Smart Folders creator with the request filled in. Example: *"Create a Smart Folder with all our documents on the energy transition."*
-* **`workspace`**, **`team`**, **`notifications`** — the workspace summary and personal preferences, the team directory and the notification inbox. Example: *"Which notifications have I not read yet?"*
-* **`labs`** — reviewed lab releases, when Labs are enabled for the organization. See [Labs](/labs).
-* **`agent`** — the Advisor's own steps: updating the plan, asking a clarifying question, starting research agents, looking up a tool, and preparing a draft for the Tracker or the Editor.
-
-## Citation URIs
-
-Every citation in an answer is a resource URI that the interface turns into a chip. The table lists the URI schemes and what each chip opens.
-
-| URI | Opens |
-| :--- | :--- |
-| `legislation://voting/{sitting}/{vote}` | Sejm vote in **Votes** |
-| `legislation://senate-voting/{vote_id}` | Senate vote in **Votes** |
-| `legislation://act/{ELI}` | Published act in the **Legislation** reader, e.g. `legislation://act/DU/2017/59` |
-| `legislation://chunk/{chunk_id}/{offset}` | Cited passage of a legal text, in the reader at that passage |
-| `legislation://print/{term}/{number}` | Sejm print document; a print with several documents shows a list to choose from |
-| `legislation://document/{ELI}` | Print attachment or other legislative document in the reader |
-| `legislation://rcl_project/{project_id}` | RCL project in **Legislation** |
-| `legislation://rcl_document/{project_id}/{document_id}` | RCL project with that document's preview open |
-| `legislation://question/{term}/{type}/{number}` | Interpellation or written question, at the reply when one is cited |
-| `legislation://committee/{code}` | Sejm committee page in **Stakeholders** |
-| `feature://stakeholder/{stakeholder_id}` | Stakeholder profile |
-| `feature://public_pulse/tweet/{tweet_id}` | Original post on X (new tab) |
-| `feature://public_pulse/event/{event_id}` | Media event |
-| `feature://public_pulse/story/{story_id}` | Media story |
-| `feature://alert/{alert_id}` | Alert detail in the **Tracker** |
-| `feature://recording-transcript/{recording}/{segment}/{start}/{end}` | Exact transcript passage on a separate page |
-| `recordings://speech/{recording}/{seconds}` | Recording in **Recordings** at the cited moment |
-| `recordings://official/{source}/{file}` | Official Sejm stenogram (new tab) |
-| `documents://file/{file_id}` | File in the file viewer |
-| `documents://chunk/{file_id}/{chunk_id}` | File at the cited passage, with **Cited passage** shown |
-| `documents://chunk-page/{file_id}/{chunk_id}/{start}/{end}` | File at an exact character range of a passage |
-| `web://fetch/{evidence_id}` | Web page (new tab) |
-| `chatcontext://session/{session_id}` | Earlier Advisor conversation |
-
-A citation that cannot be resolved stays in the answer as plain text.
-
-## How the Advisor selects tools
-
-The Advisor selects tools based on the form of the question; the selection is automatic and requires no indication by the user. For specialized tasks, chips such as `Looking up a tool` or `Loading a skill` show the Advisor finding the right tools first. Typical patterns:
-
-* A question naming a specific MP — `stakeholders`, often together with `legislation`.
-* A question about *public statements* — `public_pulse`.
-* A question about *how someone voted* — `legislation`.
-* A question about the wording or history of a law — `civic`.
-* A question about *what was said* at a sitting — `recordings`.
-* A question about a document — `documents`.
-* Multi-part questions — several families combined.
-
-When a question extends beyond the available tools, the Advisor answers the part it has tools for and notes the part left unanswered.
+If the answer misses your intent, refine the sources, period or criterion in the same conversation. Start a new conversation for an unrelated topic. Projects organize conversations but do not automatically attach every chat to each question.
