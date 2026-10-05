@@ -1,11 +1,11 @@
 ---
 title: Preferencje i powiadomienia
-description: Konfigurowanie dostarczania powiadomień i osobistych preferencji.
+description: Konfigurowanie aktywnych preferencji i odróżnianie ich od pozycji Wkrótce.
 ---
 
 ## Powiadomienia
 
-Otwórz **Ustawienia → Powiadomienia**. Poniższe preferencje zapisują się od razu:
+Otwórz **Ustawienia → Powiadomienia**. Poniższe preferencje są aktywne i zapisują się od razu:
 
 * **Aktualności o produkcie** — okazjonalne wiadomości o produkcie i wydaniach.
 * **Alerty e-mail** — e-mail, gdy włączony alert potwierdzi dopasowanie.
@@ -15,19 +15,34 @@ Otwórz **Ustawienia → Powiadomienia**. Poniższe preferencje zapisują się o
 
 Dopasowania alertów znajdują się w **GŁÓWNE → Monitorowanie**. Skrzynka na górnym pasku służy ogłoszeniom produktowym i wiadomościom bezpośrednim.
 
+**Alerty bezpieczeństwa** i **Podsumowanie tygodnia** są oznaczone jako **Wkrótce**; ich nieaktywne przełączniki nie zmieniają dostarczania wiadomości.
+
 ## Preferencje
 
 Otwórz **Ustawienia → Preferencje**, aby skonfigurować:
 
 * **Wygląd** — Dzienny (domyślny), Nocny albo Zgodnie z systemem. Wcześniej zapisany motyw pozostaje aktywny; zmiana wyglądu działa od razu i zapisuje wybór na kolejne sesje.
 * **Język** — English albo Polski. Interfejs zmienia się od razu, a wybór zapisuje się na koncie i obowiązuje w kolejnych sesjach. Daty i liczby są formatowane zgodnie z wybranym językiem; dokumenty źródłowe i tworzone treści zachowują oryginalny język.
-* **Sposób prezentacji pracy Advisora** — Szczegółowy, Zwięzły albo Ukryty podczas pracy Advisora. Zakończona aktywność pozostaje zwinięta.
+* **Banery informacyjne** — przywracanie ukrytych banerów wprowadzających.
 * **Głosowania proceduralne w rejestrze** — pokazywanie domyślnie ukrytych głosowań, np. zmian porządku obrad, przerw i kontroli kworum.
 * **Przesyłanie dokumentów do Redaktora** — gdy Editor jest dostępny, zdecyduj, czy Persate ma pytać przy każdym imporcie, zapisywać importy w Repozytorium, czy używać ich tylko w danym dokumencie. Opcja Repozytorium pojawia się tylko wtedy, gdy ono także jest włączone.
 
 Język można zmienić w **Ustawienia → Preferencje**. Przeglądarka zapamiętuje wybór i stosuje go na kolejnych ekranach logowania. Bez zapisanego wyboru Persate używa języka polskiego dla połączeń z Polski i angielskiego dla połączeń z pozostałych krajów. Kraj jest szacowany na podstawie adresu IP połączenia; VPN może zmienić wynik. Jeśli nie można ustalić kraju, stosowany jest obsługiwany język przeglądarki, a w pozostałych przypadkach angielski. Po zalogowaniu stosowana jest preferencja konta. Zmiana języka zachowuje otwartą stronę i niezapisane dane formularzy.
 
-Interaktywne samouczki są dostępne w **Ustawienia → Interaktywne samouczki**. Zobacz [Interaktywne samouczki](./tutorials).
+**Strefa czasowa** jest oznaczona jako **Wkrótce**. Pokazana wartość jest informacyjna i obecnie nie można jej zmienić.
+
+### Advisor
+
+Jeżeli Advisor jest dostępny, jego preferencje są zgrupowane w sekcji **Advisor**. Można ją też otworzyć przez **+ → Preferencje** w rozmowie, bez opuszczania szkicu.
+
+* **Sposób prezentacji pracy Advisora** — Szczegółowy, Zwięzły albo Ukryty podczas pracy Advisora. Zakończona aktywność pozostaje zwinięta.
+W **+ → Preferencje → Advisor** opcja **Otwieranie źródeł Advisora** jest domyślnie ustawiona na **Prawe okno Advisora**. W aplikacji desktopowej druga opcja to **Przejdź w platformie**: przenosi do wybranej podstrony Persate w tym samym oknie aplikacji. Strony zewnętrzne pozostają w prawym oknie Advisora przy obu ustawieniach. W wersji WWW **Nowa karta przeglądarki** otwiera źródło w osobnej karcie. Ustawienie dotyczy chipów źródeł, odnośników w dokumencie, źródeł badań i dołączonych materiałów. Odnośnik do nagrania zachowuje wskazany moment, a odnośnik do pliku — wskazanie dokumentu.
+
+Zmiany działają od razu, również gdy Preferencje są otwarte w sąsiednim oknie, i zapisują się na koncie na kolejne sesje.
+
+## Analiza
+
+Zarówno **Częstotliwość synchronizacji**, jak i **Inteligentne sugestie** w **Ustawienia → Analiza** są oznaczone jako **Wkrótce**. Zmiana widocznych wartości zastępczych nie uruchamia synchronizacji chmurowej ani automatycznych sugestii.
 
 ## Rozwiązywanie problemów
 
@@ -35,3 +50,4 @@ Interaktywne samouczki są dostępne w **Ustawienia → Interaktywne samouczki**
 * Błąd zapisu języka — interfejs zachowuje wybrany język w tej przeglądarce, ale preferencja konta nie została zapisana. Należy sprawdzić połączenie i ponownie wybrać język.
 * Brak preferencji Editora — Editor nie jest włączony dla organizacji.
 * Brak opcji Repozytorium — Repozytorium nie jest włączone.
+* **Brak ukrytych banerów** — nie ma ukrytych banerów do przywrócenia.

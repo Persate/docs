@@ -1,25 +1,27 @@
 ---
-title: Sejm and committees
-description: The Sejm page with its committees and members, and committee pages with members, sittings, discussed prints and recordings.
+title: Parliament — Sejm and Senate
+description: Sejm and Senate members and committees, with committee profiles, recent sittings and source materials.
 ---
 
-Open **PUBLIC → Stakeholders** and select the **Sejm** tile on the **Organizations** tab. The Sejm page lists the committees of the Sejm and its members.
+Open **PUBLIC → Stakeholders → Parliament**. Choose **Chamber → Sejm** or **Senate** in the sidebar. The narrow icon rail beside it, shared with Recordings, switches between **People** and **Committees**. Only the selected list is displayed, with its own sidebar filters. On a phone, the view buttons appear above the list and **Filters** opens the sidebar. The chamber and view are preserved in the URL.
+
+**People** shows members of the selected chamber. **Committees** opens that chamber's committee directory, with profiles available inside Persate for both the Sejm and Senate.
 
 ## Find a committee
 
-The **Committees** section is a table with **Name**, **Code**, **Type**, **Members** and **Sittings**. A committee's type is **Standing**, **Extraordinary** or **Investigative**.
+The **Committees** section is a table with **Name**, **Code** and **Members**. **Type** and **Sittings** appear when the source provides those fields. Sejm committee types are **Standing**, **Extraordinary** or **Investigative**. Senate rows use the official committee identifier as their code.
+
+Checkboxes on the left appear on hover or keyboard focus and remain visible for selected rows; on touch screens they are always visible. The header checkbox selects all loaded committees. A small floating toolbar at the bottom of the screen shows the selection count and icons to **Ask the Advisor**, **Search the platform**, **Find related files** or **Clear selection**. Hover or focus an icon to see its label. Changing the filters, view or chamber clears the selection. Clicking the committee name opens its profile.
 
 Narrow the list in the right-hand panel (on a phone, the **Filters** button):
 
 * **Committees** — search committees.
-* **Committee type** — limit the table to one type; **All types** shows every committee.
+* **Committee type** — where available, limit the table to one type; **All types** shows every committee.
 * **Clear committee filters** — appears when a filter is active and resets both.
-
-On a phone, the arrow next to the **Committees** heading folds the list so the members are quicker to reach.
 
 ## Find a member
 
-The **Members** section lists the members of the Sejm with **Name**, **Role**, **Party Group** and **Voivodeship**. The **Search people** field in the right-hand panel filters the list by name. Further members load while scrolling; selecting a row opens the person's [profile](/stakeholders/profile).
+The **People** view lists members of the selected chamber with **Name**, **Role**, **Party Group** and **Voivodeship**. The **Search people** field in the right-hand panel filters the list by name. Further members load while scrolling; selecting a row opens the person's [profile](/stakeholders/profile).
 
 ## Committee page
 
@@ -30,7 +32,13 @@ Selecting a committee opens its page. The header shows the committee type, the n
   * **Discussed prints:** — each **Print** chip opens the print in [Legislation](/legislation-tracker);
   * **Recording:** — **Open recording** opens the sitting recording in [Recordings](/live-proceedings); a sitting with several recordings lists them by number.
 
-The right-hand panel (on a phone, the **Details** button) shows **Details** — **Type**, **Code**, **Members**, **Prints**, **Sittings** and **Latest sitting** — and **Contents** with links to both sections.
+The right-hand panel (on a phone, the **Details** button) shows the available committee details and **Contents** with links to both sections.
+
+Senate committee profiles show the current membership and source notes about roles, plus recent sittings with agendas. Senate documents and recordings open their official source in a new tab. **All sittings on the Senate website** opens the complete history; the **Recent sittings** count covers the displayed subset. **Official committee page** opens the source profile. Members open their Persate profile when an exact identity is available, or their official Senate profile otherwise. Unavailable fields are not inferred from Sejm data.
+
+Published Senate committee reports, meeting notes, transcripts and attachments enter Persate's document collection as they are processed. Documents with a verified reference to a legislative process also appear with that process in [Legislation](/legislation-tracker). Committee work that does not concern a bill stays associated with the committee. Availability depends on the published source and completion of text extraction.
+
+These documents can be included in an [alert](/alerts/creating-alerts). Name the Senate committee and the topic to monitor; committees from different chambers remain separate identities.
 
 Committee pages also open from Advisor citations and from links to committees elsewhere in Persate.
 
@@ -38,6 +46,6 @@ Committee pages also open from Advisor citations and from links to committees el
 
 * *No committees found* — no committee matches the search or the type; change the search or the filters.
 * *Couldn't load committees* — the committee list failed to load.
-* *Could not load Sejm members.* — the members list failed to load.
+* *Could not load members.* — the members list failed to load.
 * *No sittings recorded* — no sittings of the committee have been registered yet.
 * *Committee not found* — the committee could not be loaded; it may have been removed or the link may be outdated.

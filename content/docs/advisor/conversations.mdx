@@ -1,130 +1,193 @@
 ---
-title: Interface and Advisor workflow
-description: Starting a conversation, composing messages, reading answers and citations, drafts in other modules, and conversation history.
+title: Interface and advisor workflow
+description: Message composition, file tagging, timeline, citations, and conversation history.
 ---
 
-## Screen layout
+Follow the [interactive lessons](/en/advisor/tutorials) to practice questions and context, projects and sharing, and plans and research.
 
-The conversation fills the center of the screen and the message composer sits at the bottom. The right edge of the screen holds the Advisor controls:
 
-* **Conversations** — shows or hides the list of conversations. The browser remembers the choice.
-* **Plan** — appears when the current answer has a plan; opens it in place of the conversation list. See [Following the Advisor's work](/advisor/activity).
-* **Research agents** — one icon per research agent of the conversation; each opens that agent's session beside the chat.
+## Query composition area
 
-On narrow screens, **New conversation** and **History** buttons sit in the top right corner and shrink to icons once a conversation has started. History opens as a panel from the bottom of the screen; a list button opens the plan when one exists.
+The message input panel is located at the bottom of the screen:
 
-## Starting a conversation
+* **Suggestion lightbulb** — in a new conversation, opens a list of recent topics. Focusing the empty text field also shows the list. An alert-related event appears first with the alert name in blue when one is available. Selecting a topic fills the draft and adds a source chip; review the draft before sending it.
+* **Text field** — supports multi-line text input (`Shift + Enter`). The `Enter` key submits the query.
+* **+ menu** — appears in the expanded input controls. **Repository** opens the Repository and public corpus; `@` opens the same search. **Upload files** opens the file upload window with an access selector and attaches successful uploads to the draft. **Thinking depth** sets Surface, Balanced or Deep for the next message. **Preferences** opens the main **Settings → Preferences** page at the **Advisor** section.
+* **Space selector** — next to **+**, selects a private or shared project for the conversation or creates one. A project groups conversations without automatically adding other conversations to the question's context.
+* **Send button** — sends your question. While the Advisor works, the arrow sends your text as a note; the square button stops generation.
 
-An empty conversation shows a greeting and the question *"Can I help you with anything?"*. Ready-made starting points are available:
+## Analysis document and plan
 
-* **Topic suggestions** — the lightbulb button (**Show topic suggestions**) at the start of the field, or selecting the empty field, opens a list of recent developments from the platform's sources, each marked with an icon of its subject area. The button is shown only in a new conversation when suggestions are available.
-* **Alert tip** — when an alert has recently found a match, it appears first in the list, with the alert name in blue and an **Open alert** link to the alert detail.
+The Advisor chooses research and visualizations to suit the question. For substantial analysis, it creates an **Analysis document** beside the conversation. The answer presents the main findings and an **Open analysis document** link. Short questions may receive an answer alone.
 
-Selecting a suggestion fills the field with a draft question — *Investigate “…”. What do the sources confirm, and why does it matter?*, prefixed with *For alert “…”:* for an alert tip — and attaches the source as a context tag. The draft can be edited before sending.
+The document combines formatted text, tables, highlighted findings, sources, charts and research results. It develops while the Advisor works. A follow-up such as “add a comparison with last year” updates the same document. Bar and line charts, relationship graphs and sourced image galleries appear within its content. **View data** expands chart values; **Sources** expands links to the underlying material.
 
-A question can also be sent from the platform search: a query phrased as a question offers **Ask the Advisor**, which opens a new conversation and sends the question.
+Chart sources can open the study used for the calculation, a source inside Persate, or an external page. Research links open the saved results in the analysis document. A request for a chart produces a rendered visualization; source code is not a substitute for an unavailable chart.
 
-## Composing a message
+Chart sources can open the study used for the calculation, a source inside Persate, or an external page. Research links open the saved results in the analysis document. A request for a chart produces a rendered visualization; source code is not a substitute for an unavailable chart.
 
-The field (*Type a message...*) expands when selected and shows the message tools:
+The document starts with the analysis title and, when useful, a short description. Its content updates as work continues. The view label, version selector, status and date are omitted from the document itself. The **Analysis document** tab and shortcuts use a document icon.
 
-* **Enter** sends the message; **Shift + Enter** starts a new line.
-* **Thinking depth** — the depth control (**Surface**, **Balanced**, **Deep**) applies to this message only. See [Thinking depth](/advisor#thinking-depth).
-* **Add context from global search** — the button with the Repository icon opens the platform search. Typing `@` opens the same search; the character is not inserted into the text.
-* **Send message** — inactive when the field is empty or while the Advisor is working on the previous question.
+The saved document and research remain available after reopening the conversation, independently of the loaded chat messages. **Load earlier research** retrieves more studies. A link to an older chart reveals that chart while retaining the current document content. Stopping work preserves the content already produced; analysis limitations are described within the text.
 
-While the Advisor works, the send button is joined by a stop button (**Stop research**), and text typed in the field is sent as a note to the running task rather than as a new question. See [Following the Advisor's work](/advisor/activity).
+The **+** menu retains **Plan**: it prepares an approach and waits for **Execute plan** in the Plan tab. Selecting the mode again or dismissing its label returns to an ordinary conversation. An ordinary conversation can also have a working plan, which the Advisor carries out without this separate approval step. **Plan** and **Analysis document** are available under **Views** in the additional Advisor workspace.
 
-## Attaching context
+## Research in the document
 
-The platform search opened from the composer covers the same areas as the global search. Results are picked one after another and stay highlighted; selecting a highlighted result again removes it.
+Category colors follow their meaning: positive is green, negative red, neutral blue-grey, mixed amber, unclear purple, and off topic or not applicable grey. The Advisor assigns these meanings when defining custom categories. The legend, tiles and comparisons use the same colors; the order of categories does not determine a sentiment color.
 
-* **Files** from the Repository appear above the field as previews.
-* **Other results** — for example a vote, a Sejm print, a profile or a recording — appear as context tags with their source icon. The source tag added by a topic suggestion opens that material in a new tab.
-* The **×** on a preview or tag removes it from the message.
+Category colors follow their meaning: positive is green, negative red, neutral blue-grey, mixed amber, unclear purple, and off topic or not applicable grey. The Advisor assigns these meanings when defining custom categories. The legend, tiles and comparisons use the same colors; the order of categories does not determine a sentiment color.
 
-Several items can be attached to one message, and a message may consist of attachments alone. Attach material when it contains the answer; when the location of the information is unknown, let the Advisor search on its own.
+For a large collection, such as statements by a person or comparisons between groups, the Advisor can create a **tile map** in the analysis document. The default view shows the study title, a short introduction identifying what is being analyzed, and the grid. The text uses the same body size as the main chat. The color legend is a vertical list beneath the introduction, labeled with the current topic or criterion. All legend labels use the same font size. The **Not assessed** and **Assessment unavailable** color keys stay in place as results arrive. Counts are available on hover or in **Study options**. Light grey tiles have no assessment yet; burgundy tiles have no available assessment. Burgundy does not indicate a negative stance. Selecting a tile opens its details directly. The map updates as results arrive and remains available after reloading the conversation. Partial coverage remains identified, while generic collection-status and tile-unit captions are omitted from the document. Source links alone do not create an empty research section.
 
-## Reading the answer
+The icon beside the study title opens **Study options**, including filters, **List**, **Comparison**, and **Method and coverage**. A selector appears when several studies are available. The document can also contain separate sections for specific studies. Changing the view uses the same saved results; selecting a legend category filters them even while options are closed.
 
-The answer appears under the activity summary (*Worked for …*), which can be expanded to show the work behind it. References in the answer are **citation chips** — a source icon with a title. Selecting a chip opens the source:
+Bulk analysis can also cover archived Media posts and available original documents attached to legislative projects. Specify the period, people or organizations and the criterion, such as relevance to a named client's activities. Materials are collected progressively and assessed under the same criteria without attaching each record manually. Posts include available reply and quotation context. After selecting a tile, **Source context** shows the accompanying information used in its assessment.
 
-* Votes, acts, prints, RCL projects, parliamentary questions, profiles, committees, alerts, Media events and stories, recordings and earlier conversations open in the platform.
-* Posts on X, web pages and the official Sejm stenogram open in a new tab.
-* Legislative chips also show a short excerpt of the cited passage; Media event chips show the account and the post text.
+The map covers archived materials available and permitted for that analysis. A missing document, passage or context does not establish the absence of a mention or a negative assessment. Incomplete coverage is identified in the study. Assessment maps currently support public materials. Access to private repository files alone does not make them available for this analysis.
 
-Citations point to the exact passage where one is available:
+For recordings, the Advisor collects and assesses successive transcript pages as one study. A request can name speakers and topics to compare. Speaker names come from the source; unrecognized names and missing attribution are reported. Topic assessments distinguish positive, negative, neutral, mixed and unclear positions from passages that are unrelated to the topic.
 
-* A cited file opens in the file viewer with the **Cited passage** shown alongside the document.
-* A cited passage of a legal text opens the document reader at that passage.
-* A cited Sejm print opens its document; when the print contains several documents, a list asks which one to read.
-* A cited transcript passage opens on a separate page with the **Original source passage**.
+Choose an assessment criterion or topic when the study includes several. Speaker, year, group and status filters narrow the displayed passages when those fields are available. Text search finds matching words in the saved passages; it does not run a new semantic analysis. **Comparison** shows the distribution of assessments for each selected speaker or group. Select a tile or a row in **List** to read the original excerpt, inspect its scores and use **Open source**. Changing these controls uses the saved results without repeating the assessment. Older studies without speaker labels need a new analysis before speakers can be compared.
 
-If the exact passage cannot be opened, a message says so; in the file viewer the document itself stays open. The complete list of citation types is in [Advisor skills](/advisor/skills#citation-uris).
+Counts describe collected passages, not necessarily every statement or person in the requested population. Missing or failed assessments remain separate from negative judgments. The Advisor reports incomplete source coverage. Assessments depend on organization settings and are unavailable in a conversation containing confidential context; a separate conversation using public sources is required in that case.
 
-## Answer controls
+**Analysis document** appears on the right-hand rail when the conversation has results. The first result can open the document automatically; an open source tab stays selected. Later updates do not reopen a hidden workspace. Select the document icon to open its tab; select the active icon again to hide the additional workspace.
 
-Icons below every completed answer:
+The split-view button opens an additional workspace beside the conversation. **Persate pages** lists pages available in the organization's package, using the same access rules as the main navigation. This includes **Editor** when it is enabled. Selecting a page opens it in a tab; the conversation stays open beside it. If access to a page is withdrawn, its open tabs are removed from the workspace. The Plan and Analysis document views require Advisor access.
 
-* **Shield** — appears when the answer has a source check. Hovering shows the result; selecting the shield opens the details. See below.
-* **Copy response** — copies the answer text to the clipboard.
-* **Regenerate response** — runs the same question again and replaces this answer.
+The search field in **New tab** filters views, agents and Persate pages. Choosing a page or view replaces that empty tab. Use **+** to open another new tab. Choosing an already open page switches to its existing tab without creating a duplicate.
 
-The shield's color deepens as more of the key points are confirmed; it is red when the check could not be completed. Possible results:
+In these tabs, contextual sidebars start closed to leave room for the page content. Use **Filters**, **Details** or the page's corresponding button in the lower-right corner to open a sliding panel within the tab. Close it to return to the full content area.
 
-| Result | Meaning |
-| :--- | :--- |
-| **Key points supported by sources** | The key answer points match the collected sources. |
-| **Some key points need caution** | Only the points that need clarification are listed in the details. |
-| **Answer reviewed** | The answer was reviewed in the context of the question and the available sources. |
-| **Answer reviewed with limitations** | As above, with limitations listed in the details. |
-| **Confirmed by live workspace read** | The answer comes directly from the workspace's live data, read during this turn. |
-| **Answer not verified** | The answer was not checked against sources. |
-| **Verification unavailable** | The independent source check could not be completed. |
+Selecting a research agent opens its session in a separate workspace tab. The session shows the assignment, working notes, tool activity and the answer with source links, using the same presentation as the main conversation. Completed activity is collapsed and can be expanded above the answer.
 
-The details list **Relevant cautions** — a few passages not confirmed by the sources, each with a reason — and, after a failed check, a hint to repeat or narrow the question.
+## Websites and web search
 
-## Drafts in other modules
+In the updated desktop app, opening an external source from an answer displays the website in the Advisor pane beside the conversation. Its address bar accepts website addresses and search queries and provides back, forward and reload controls. **Open in browser** explicitly opens the current page in the system browser.
 
-On request, the Advisor prepares work that is finished in another module. A card below the answer opens the draft:
+When working in an owned conversation, select **Add to conversation** below the address bar, or drag the page title into the conversation, to attach its link and title to the draft. Then enter a question and send the message.
 
-| Card | Destination | Statuses |
-| :--- | :--- | :--- |
-| **Monitoring setup** (or the alert name) | Tracker | **Setup required · Monitoring is not active** |
-| **Article draft** (or the article title) | Editor | **Preparing draft**, **Draft saved**, **Needs review · Your edits are preserved**, **Preparation interrupted** |
+In the web version, external sources open in a separate browser tab. In the desktop app, a source that cannot open inside the app shows a message; it does not automatically launch the system browser. Embedded website browsing requires an updated desktop app. Closing the additional workspace ends its website sessions.
 
-If the conversation is still open when an alert draft or an article draft is ready, Persate opens the destination automatically; the card opens it again later. Alert drafts stay inactive until they are reviewed and saved in the Tracker, and article drafts are never published by the Advisor. The destination shows the research behind the draft and a link back to the original conversation.
+### What the Advisor sees
 
-A request to create a Smart Folder or to explore connections between people and organizations produces a card that opens the Smart Folders creator or the **Connections** tab of Stakeholders with the request filled in.
+When you send a message or a note during a task, the Advisor receives context from the active workspace tab: its address and title, a bounded excerpt of visible text, selection and filters. For supported viewers this also identifies the open file, legislative attachment, recording and playback position, PDF page or Editor draft. You can ask “Summarize the document I have open” without attaching it again. Full source reads still use your account's permissions. PDF/image pixels and inaccessible embedded frames are not transcribed automatically.
 
-The Editor is available when it is enabled for the organization. See [Creating and editing alerts](/alerts/creating-alerts), [Editor](/editor), [Smart Folders](/repository/smart-folders) and [Connections](/stakeholders/connections).
+The Advisor also receives the names and addresses of the other open tabs. It can refresh this list, select a relevant tab or open a new Persate page, view or desktop website using its workspace tool. It receives fresh context after the interface confirms the action. Background page contents are read only after selecting that tab. Tab navigation respects the organization's package; the tool does not click page controls or submit forms. Password fields, authentication screens, ordinary form drafts, cookies and browser storage are not included.
+
+## File tagging (`@`)
+
+Entering the `@` symbol in the text field opens the document search engine covering the Repository and the public corpus:
+
+* **Search by name** — a quick mode for files with known titles.
+* **Hybrid search** — a toggle on the right side of the search field enables searching documents based on their content.
+* **Context chips** — appear above the text field for selected files and sources. Multiple items can be attached simultaneously; a source chip links to its material when a direct link is available.
+
+Attach a file directly when it contains the sought answer. If the information location is unknown, allow the advisor to search the resources independently.
+
+## Dragging materials into a conversation
+
+Open a Persate page in the additional workspace and drag a material onto the conversation: its messages, empty space or message field. The conversation highlights the drop area. Repository files, legislative projects and documents, recordings, people, committee rows, and Media stories and events support this action. In Media, drag a story's title or an individual event's title or timeline bar to attach that specific source. Links to attachments and other materials can also be dragged from Persate pages.
+
+The material appears as a chip with its title. Dropping it does not send a message: add a question, such as “Summarize these materials”, and send the draft. Each chip identifies a specific source for the Advisor to read using the account's access permissions. Active-tab context is added separately when sending the message.
+
+After refreshing or reopening the conversation, the question and its source chips remain separate. Regenerating the answer uses the same attached sources.
+
+Materials dropped while the Advisor is working stay in the draft for the next message. They are not added to a running turn through a text note. Read-only shared conversations do not accept drops.
+
+## Message timeline
+
+Every turn produces a **message timeline** streamed before the response content. It constitutes a visible record of the advisor's actions during operation.
+
+### Reasoning blocks
+
+Fragments of the model's chain of thought appear as collapsible rows labeled *"Thinking…"* (in progress) or *"Working through the request"* (completed). Upon turn completion, blocks are automatically collapsed — any of them can be reopened for inspection.
+
+Reasoning blocks represent the model's working notes, not part of the final response. They are useful for understanding *why* the advisor reached a given conclusion.
+
+### Tool call badges
+
+Every external search executed by the advisor becomes a badge in the timeline. It contains:
+
+* **Icon** identifying the skill family (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
+* **Tool name**.
+* **Status** — icons corresponding to successive stages of operation. Completed calls display the execution time (e.g., `1.2s`).
+
+Adjacent tool calls are grouped into a collapsible set (*"Using N tools…"* in progress, *"N tools used"* completed).
+
+### Elicitation forms
+
+Certain tools require structural input during the turn — e.g., selecting a Sejm term or indicating a stakeholder in case of a name collision. The tool then emits an **elicitation request**: the process remains in the *running* state, and a form appears below it.
+
+Confirm or skip the form (skipped requests use the tool's default value). Upon resolution, the tool call resumes.
+
+## Links in responses
+
+Response content may include source chips providing quick access to specific materials:
+   * Votes in the Voting ledger.
+   * Stakeholder profiles and alert details.
+   * Original posts on X.
+   * Specific files or their fragments in the Repository.
+   * Recordings or specific moments, labeled with the recording title.
+
+If a saved citation has no available source link, a small **?** appears in its place. Hover over it or focus it with the keyboard to read the explanation. The same indication appears in the analysis document.
+
+Under **+ → Preferences → Advisor**, **Open Advisor sources** defaults to **Advisor right pane**. In the desktop app, the other choice is **Open in platform**: it navigates to the selected Persate page in the same app window. External websites stay in the Advisor pane under either choice. In the web version, **New browser tab** opens the source in a separate browser tab. The setting applies to source chips, document links, research sources and attached references. A recording link keeps its selected moment, and a file link keeps its document target.
+
+## Per-message buttons
+
+Icons are available below every completed advisor message:
+
+* **Copy** — copies the response content to the clipboard. Citation badges are replaced by their textual representation.
+* **Restart arrow** — resubmits the previous query and replaces the current response with a new one.
+
+## Plan beside the conversation
+
+The **Open Advisor view** button in the upper-right corner of the conversation opens an additional workspace. Choose **Plan** under **Views** to open the current answer's steps in a tab. The steps and their status update while the Advisor works. Before a plan is available, the tab shows an empty state.
+
+The **Plan** shortcut on the right edge opens the same tab once the current answer has a plan. On a phone, use the round list button. Closing the plan tab returns to another open tab; the conversation history keeps its current visibility. The **+** button opens the view selector again.
+
+## Research results and follow-up questions
+
+The result unit follows the question: a project, a source such as a post or file, a person, a group, or an explicitly requested passage. For project research, one tile represents one project. Its documents and assessed passages remain available under **Evidence** after selecting the result.
+
+**Method and coverage** explains the assessed scope and how passage judgments are combined. Relevance uses the strongest supported relationship; an incomplete collection cannot establish that no relationship exists. Other conflicting categories remain mixed, and numerical results are passage means. These judgments describe collected material, not unread documents.
+
+Project results appear independently once their documents have been read and the collected material assessed. Other projects can still be processing. **Incomplete material** means coverage is insufficient to rule out a relationship; **Unclear** means the content itself received an ambiguous assessment. Waiting for documents is not an unclear assessment.
+
+In a result's details, **Why is the material incomplete?** distinguishes unavailable text, failed or partial reads, collection limits, shortened context and missing assessments. Source counts are not multiplied by the number of passages. A supported relationship can still be shown when other documents are missing. Older analyses may not have recorded the detailed reasons for their gaps.
+
+After the study finishes, apply filters and choose **Ask about these results**. Enter a further question and choose **Ask Advisor**. The new study uses the saved source material for those results, including all collected passages belonging to a selected project. The earlier study remains available and the new result identifies its parent. This does not refresh the sources. A changing or unavailable selection must be refreshed or resolved before continuing.
 
 ## Conversation history
 
-The conversation list shows the account's conversations, newest first:
+The right interface column contains a list of all conversations on the account:
 
-* **New conversation** — clears the workspace and starts a new session.
-* **Search conversations** — the magnifier beside **New conversation** opens a search field; the cross or Escape closes it and clears the query.
-* **Show more** — loads older conversations at the end of the list.
-* Selecting a conversation opens it with the full record — activity, citations and cards are reconstructed. The page address identifies the open conversation, so a refresh keeps it open.
-* **Delete conversation** — the trash icon next to an entry opens a confirmation dialog with the conversation's title. **Delete** deletes the conversation permanently; this cannot be undone.
+* **New conversation** — clears the workspace and initiates a new session.
+* A new conversation starts with a temporary title and automatically receives a short subject title, independently of whether research finishes. Older prompt-based titles are updated when the conversation opens. A manually chosen title is preserved. The **…** menu offers **Rename conversation** and **Move to project**.
+* Selecting a conversation opens it with the full record — reasoning blocks, tool badges, and citations are reconstructed.
+* **Delete conversation** in the **…** menu asks for confirmation before permanently deleting the conversation and its history.
 
-A conversation without a title is listed as **New conversation**. Sessions held in the Editor's Advisor panel do not appear in this list.
+**Projects** contains expandable folders; **Recent** lists conversations without a project. Hover over the Projects heading to reveal **+** for creating a project. The heading and each folder can be collapsed. Drag a conversation onto a folder or use **… → Move to project**; its row is then indented underneath.
 
-Messages:
+Drag a conversation above or below another conversation in the same section to change their order. The **…** menu also offers **Move conversation up** and **Move conversation down**; when a conversation has keyboard focus, **Alt + Up/Down** performs the same action. The order is saved for the current account, including shared conversations, and is retained after refresh and when loading more history. New conversations appear first. After a manual reorder, the **Recent** heading becomes **Conversations**.
 
-* *"No history yet"* — the account has no conversations.
-* *"No conversations found"* — nothing matches the search; try a different term.
-* *"Could not load conversations"* — the list could not be loaded; refresh the page.
+Moving a conversation into a shared project opens a confirmation showing the conversation and project names. All members of that project will be able to read the entire conversation. Choose **Share and move** to continue or **Cancel** to keep its current location and access. This also applies when choosing a shared project beside the message field. Private projects do not require this confirmation.
 
-## Long conversations
+Projects may be private or shared with a group. Membership provides permanent group projects and an organization-wide project, which cannot be deleted. Conversations stay private until their author places them in a shared project. Shared rows show the author's profile picture, with initials when the picture is unavailable.
 
-Older messages load when the conversation is scrolled to the top. From the second question onwards, a thin rail of markers appears at the left of the conversation, one marker per question. Hovering a marker shows the question and the start of its answer; selecting it scrolls to that point.
+Other members have **view-only** access. When a saved analysis is available, it opens automatically beside the conversation. **Show conversation** closes the analysis pane and returns to the saved chat. Conversations without an analysis open directly in the chat. Readers can inspect the document, charts, saved research and sources, and copy answers. Only the author can send messages, ask follow-up questions, regenerate answers, update the analysis, rename, move or delete the conversation. Access to linked source materials is checked separately. Live agent sessions remain available to their owner.
+
+On narrow screens, the history column is accessible via the **History** button in the top right corner.
 
 ## Refresh and resume
 
-A running task is not lost when the view is closed, the browser is refreshed or the connection drops for a moment — the Advisor continues in the background. Reopening the conversation in the same browser reconnects to the task and restores the progress so far.
+An active turn is not lost upon leaving the view, refreshing the browser, or experiencing a temporary connection loss. The advisor executes the turn as a detached task and transmits events to clients connected at the time of their triggering. When the author reopens the conversation, it reconnects to the live stream and restores the progress to date. Other members can read the saved results.
 
-When a conversation is left while the Advisor is still working, a notification arrives once the task finishes, provided **Advisor notifications** are enabled in **Settings → Notifications**. Returning to the conversation before the task finishes withdraws that request.
+## Empty view and error states
 
-Stopped tasks, partial answers and connection problems are described in [Following the Advisor's work](/advisor/activity#interruptions-and-partial-answers).
+Stopping a response displays **Response generation was stopped.** as plain text in the answer. Any text already generated remains above it.
+
+* *"No conversation selected"* — the workspace is empty; select an existing session or create a new one.
+* Error block with a code — appears below a partial response when a turn fails. Restarting the turn is the recommended first action.

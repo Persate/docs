@@ -5,28 +5,31 @@ description: Wyszukiwanie osób i organizacji, profile oparte na źródłach ora
 
 Moduł **Interesariusze** gromadzi osoby, instytucje i ugrupowania polityczne. Otwiera się go przez **PUBLICZNE → Interesariusze** w panelu bocznym. Moduł wymaga dostępu w pakiecie organizacji.
 
-## Zakładki
-
-- **Katalog** — lista z wyszukiwarką, domyślnie otwierająca **Osoby**. Z listy otwierają się profile osób i strony organizacji.
-- **Powiązania** — badanie osób, organizacji i aktów prawnych związanych z tematem. Opis w sekcji [Powiązania](/pl/stakeholders/connections).
-
 ## Przeglądanie osób i organizacji
 
-Wybór **Osoby**, **Instytucje publiczne** lub **Kluby parlamentarne** zmienia wyświetlaną listę. Wiersz pokazuje nazwę oraz dostępną rolę lub przynależność. Wybranie wiersza osoby lub instytucji otwiera profil. Wybranie klubu parlamentarnego otwiera odfiltrowaną listę członków.
+Zakładki u góry — **Osoby**, **Instytucje publiczne**, **Kluby parlamentarne** i **Parlament** — zmieniają wyświetlaną listę. Moduł Interesariusze domyślnie otwiera **Osoby**.
 
-**Sejm i komisje** otwiera osobną [stronę Sejmu](/pl/stakeholders/sejm).
+Tabela ma taki sam układ jak w Repozytorium. Lista osób pokazuje imię i nazwisko, rolę, klub parlamentarny, okręg wyborczy i województwo, a na szerszych ekranach także adres e-mail. Instytucje publiczne pokazują pełną nazwę, typ i oficjalną stronę oraz adres, jeśli jest dostępny. Kluby parlamentarne pokazują pełną nazwę, liczbę członków i publiczne dane kontaktowe. Wiersze rozpoznaje się po portretach, logotypach i oficjalnych godłach. Brakujące dane źródłowe pozostają puste.
+
+Katalog instytucji obejmuje m.in. Sejm, Senat, Kancelarię Prezydenta, Trybunał Konstytucyjny i Sąd Najwyższy, obok ministerstw i urzędów. Znaki klubów korzystają z kompaktowych oficjalnych wariantów w jednakowym rozmiarze. W tabeli osób okręg i województwo mieszczą się w jednej linii; pełną treść dłuższych wartości można odczytać po najechaniu.
+
+Pola wyboru pojawiają się po najechaniu na wiersz i pozostają widoczne po zaznaczeniu. Pole w nagłówku zaznacza wczytane wiersze. Na ekranach dotykowych pola wyboru są stale widoczne. Zaznaczenie pozostaje przy doładowywaniu wyników, a zmiana wyszukiwania, filtrów lub kategorii je czyści. Kliknięcie nazwy lub wiersza osoby albo instytucji otwiera profil; kliknięcie klubu parlamentarnego otwiera odfiltrowaną listę członków.
+
+Po zaznaczeniu profili u dołu ekranu pojawia się mała, pływająca wysepka z licznikiem zaznaczeń i ikonami: **Zapytaj Advisora**, **Przeszukaj platformę**, **Znajdź powiązane pliki** i **Wyczyść zaznaczenie**. Najedź na ikonę lub ustaw na niej fokus klawiaturą, aby zobaczyć jej podpis. Advisor otwiera pole pytania i dołącza wszystkie zaznaczone profile dopiero po wysłaniu pytania. W wyszukiwaniu można przełączać się między zaznaczonymi osobami lub organizacjami; wyszukiwanie plików ogranicza wyniki do Repozytorium.
+
+Zakładka **Parlament** otwiera [Sejm i Senat](/pl/stakeholders/sejm). Wybór izby znajduje się w sidebarze, a wąski pasek ikon obok niego przełącza **Osoby** i **Komisje**. Wiersze Sejmu i Senatu w katalogu instytucji prowadzą do odpowiedniej izby.
 
 ## Wyszukiwanie i filtry
 
-Pole **Wyszukiwanie** znajduje się nad listą, również na telefonie. Należy wpisać co najmniej dwa znaki imienia, nazwiska lub nazwy. Wyszukiwanie obejmuje całą wybraną kategorię.
+Prawy panel zawiera **Wyszukiwanie**, dostępne filtry i sortowanie. Na telefonie przycisk **Filtry** otwiera ten panel. Należy wpisać co najmniej dwa znaki imienia, nazwiska lub nazwy. Wyszukiwanie obejmuje całą wybraną kategorię.
 
-Lista osób ma także filtr **Klub parlamentarny**. Przy przeglądaniu osób bez zapytania **Sortuj według** zmienia kolejność alfabetyczną. Wyniki wyszukiwania są uporządkowane według trafności. **Wyczyść filtry** usuwa zapytanie i wybrany klub. Zmiana kategorii czyści filtr klubu.
+Lista osób ma także filtr **Klub parlamentarny**. Przy przeglądaniu osób bez zapytania **Sortuj według** zmienia kolejność alfabetyczną. Wyniki wyszukiwania są uporządkowane według trafności. **Wyczyść filtry** usuwa zapytanie i wybrany klub oraz przywraca sortowanie **Nazwa: A–Z**. Zmiana kategorii czyści filtr klubu.
 
-**Wczytaj kolejne profile** dodaje następne wyniki. Licznik nad listą wskazuje liczbę wczytanych profili, a nie całkowitą wielkość katalogu. **Wróć do katalogu** na stronie profilu przywraca wyszukiwanie, kategorię i filtry, z których otwarto profil. Ustawienia są także zapisane w adresie katalogu.
+Kolejne profile wczytują się automatycznie podczas przewijania w pobliże końca tabeli. Licznik pod tabelą wskazuje liczbę wczytanych profili, a nie całkowitą wielkość katalogu. **Wróć do katalogu** na stronie profilu osoby przywraca wyszukiwanie, kategorię i filtry, z których otwarto profil. Ustawienia są także zapisane w adresie katalogu.
 
 ## Strony organizacji
 
-Strona organizacji zaczyna się od banera z nazwą, a w przypadku jednostki podrzędnej także z nazwą organizacji nadrzędnej (*„Część organizacji: …”*). Pod banerem znajdują się:
+Strona organizacji zaczyna się od banera bezpośrednio pod zakładkami kategorii. Baner pokazuje nazwę, a w przypadku jednostki podrzędnej także nazwę organizacji nadrzędnej (*„Część organizacji: …”*). Pod banerem znajdują się:
 
 * **Najnowsze publikacje** — najnowsze publikacje instytucji z kategorią i datą. Wybranie pozycji otwiera publikację, a **Zobacz wszystkie** — pełną listę publikacji instytucji w module [Legislacja](/pl/legislation-tracker). Lista pojawia się tylko wtedy, gdy instytucja ma publikacje w Persate, a ta część modułu Legislacja jest włączona dla organizacji.
 * Tabela członków — **Nazwa**, **Rola**, **Klub parlamentarny** i **Województwo**. Na telefonie tabela pokazuje nazwisko i rolę. Kolejni członkowie wczytują się podczas przewijania; wybranie wiersza otwiera profil osoby.
@@ -51,5 +54,4 @@ Gdy odpowiedź Advisora cytuje osobę lub komisję sejmową, odnośnik otwiera p
 ## Strony w tej sekcji
 
 * **[Wgląd w profil interesariusza](/pl/stakeholders/profile)** — profil osoby, szczegóły, aktywność w głosowaniach, oświadczenia oraz śledzenie osoby alertem.
-* **[Sejm i komisje](/pl/stakeholders/sejm)** — komisje i posłowie Sejmu oraz strony komisji z posiedzeniami.
-* **[Powiązania](/pl/stakeholders/connections)** — badanie mapujące powiązania między osobami, organizacjami i aktami prawnymi.
+* **[Parlament](/pl/stakeholders/sejm)** — osoby i komisje Sejmu oraz Senatu, profile komisji i ostatnie posiedzenia.
