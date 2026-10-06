@@ -7,7 +7,7 @@ description: The activity record, the plan, research agents, notes added while t
 
 While the Advisor works, its activity appears above the answer and grows as the work progresses. It is a visible record of what the Advisor does during the turn:
 
-* **Reasoning** — rows with a short heading taken from the Advisor's reasoning. Selecting a row expands its text. Reasoning is a working note, not part of the answer, but it shows *why* the Advisor reached a conclusion.
+* **Progress notes** — collapsible rows summarizing the work in progress. Selecting a row expands its text. These notes describe progress; the final answer and its sources are what to check before using a finding.
 * **Tool chips** — every search or action appears as a chip with the icon of its skill family and a label such as `Searching Polish legal acts` or `Searching tenant corpus`. A spinner marks a running call and `!` a failed one. Consecutive calls are grouped under *Using N tools…* while they run and *N tools used* afterwards, with the number of failed calls when there are any.
 * **Web searches** — while a web search runs, a chip shows the query. Pages that were found or read appear as chips with the site icon and title; they open in a new tab.
 * **Working notes** — short progress notes written by the Advisor, in ordinary text and with citation chips where sources are cited.
@@ -29,7 +29,7 @@ Completed work stays collapsed in every style. See [Preferences and notification
 
 ## Plan
 
-For tasks with several steps, the Advisor publishes a plan. The **Plan** control appears at the right edge of the screen (on narrow screens, a button with a list icon); a dot on it pulses while a step is in progress. The plan opens in place of the conversation list and shows:
+For tasks with several steps, the Advisor publishes a plan. The **Plan** control appears at the right edge of the screen (on narrow screens, a button with a list icon); a dot on it pulses while a step is in progress. The plan opens in a tab beside the conversation and shows:
 
 * the question the plan answers;
 * a status — **In progress**, **Paused**, **Stopped** or **Not finished**;
@@ -71,7 +71,7 @@ Once a note is sent, the work done before it folds into **Work before your updat
 
 ## Clarifying questions
 
-When a question is ambiguous — two bills with similar names, two MPs with the same surname, an unspecified Sejm term — the Advisor may ask before it continues. The activity shows **Asking clarifying question**, and the question appears in the conversation with its options: choice cards, checkboxes, a confirmation pair or a text field. In MCP terms, this is an elicitation request.
+When a question is ambiguous — two bills with similar names, two MPs with the same surname, an unspecified Sejm term — the Advisor may ask before it continues. The activity shows **Asking clarifying question**, and the question appears in the conversation with its options: choice cards, checkboxes, a confirmation pair or a text field.
 
 * **Continue** sends the answer, which then appears in the conversation as a reply.
 * **Skip** declines the question; the conversation records *You skipped this question*.

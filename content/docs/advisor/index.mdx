@@ -3,7 +3,7 @@ title: Advisor
 description: Persate's analytical assistant for research across legislation, votes, recordings, Media, stakeholders and the organization's documents, with answers linked to their sources.
 ---
 
-The **Advisor** is Persate's analytical assistant for research across the platform's public data and the organization's own documents. It is not a free-form chatbot: it answers by running searches through the platform's MCP layer, and every reference in an answer is a citation that opens the source.
+The **Advisor** is Persate's analytical assistant for research across the platform's public data and the organization's own documents. It searches material available to the account and links its findings to sources that can be inspected.
 
 Open the Advisor from **CORE → Advisor** in the sidebar. The entry is shown when the Advisor is enabled for the organization.
 
@@ -14,21 +14,21 @@ The Advisor automates research that would otherwise require searching several mo
 * **Correlational search** — linking records kept in different modules. Example: *"Which committee handled the latest energy prices bill, and how did each club vote on it?"*
 * **Multi-source synthesis** — setting statements against records. Example: *"Compare the club's public statements on phasing out coal with its voting record over the last six months."*
 * **Work with the organization's files** — reading, summarizing and comparing Repository documents and checking them against public records.
-* **Preparing work in other modules** — on request, an alert draft for the Tracker, a Smart Folder, or an article draft for the Editor. The Advisor never activates or publishes anything; drafts are reviewed and completed in the destination module.
+* **Preparing work in other modules** — on request, an alert draft for the Tracker, a Smart Folder, or an article draft for the Editor. Review and complete these drafts in the destination module; a prepared alert draft does not start monitoring until it is saved there.
 
 **Note:** The Advisor is not intended for general conversation, creative writing, code or forecasts unrelated to the platform's data.
 
 ## Key system features
 
-* **Grounded answers** — every answer is based on searches run during the turn; the work is visible above the answer.
+* **Answers with sources** — research findings link to the material used; open the citations to check the claims and any gaps in coverage.
 * **Interactive citations** — claims carry source chips that open the vote, profile, document passage, recording moment or post.
-* **Visible work** — reasoning, tool calls, the plan and research agents appear while the Advisor works and fold into a single line when it finishes.
+* **Visible work** — progress summaries, actions, the plan and research agents appear while the Advisor works and fold into a single line when it finishes.
 * **Source check** — many answers carry a shield icon that summarizes whether the key points are supported by sources.
 * **Collaboration while it works** — a note can be added to a running task, and the task can be stopped at any time.
 
 ## Areas of competence
 
-The Advisor's tools are grouped into **skill families**, each a namespace of the MCP layer (for example `legislation`, `civic`, `stakeholders`, `public_pulse`, `recordings`, `documents`, `alerts`, `chat_context`). The tools available depend on the modules enabled for the organization.
+The Advisor selects capabilities for the question from the modules enabled for the organization and the material the account can access. Tool names do not need to be specified in a question.
 
 | Area | Analysis scope |
 | :--- | :--- |
@@ -41,7 +41,7 @@ The Advisor's tools are grouped into **skill families**, each a namespace of the
 | **Web** | Public web pages, when a question calls for them. |
 | **Conversations** | The user's earlier Advisor conversations. |
 
-The families, typical questions and citation types are described in [Advisor skills](/advisor/skills).
+Typical questions and ways to check the resulting sources are described in [Advisor skills](/advisor/skills).
 
 ## Thinking depth
 
@@ -55,14 +55,14 @@ The choice applies to one message. After sending, the control returns to the def
 
 ## Conversation history
 
-The list of conversations sits on the right; the **Conversations** control on the right edge shows or hides it. Each conversation is listed under a title derived from its opening question.
+The list of conversations sits on the right; the **Conversations** control on the right edge shows or hides it. New conversations receive an automatic title, which their author can rename. Projects group related conversations.
 
 * **New conversation** — clears the workspace.
 * **Search conversations** — filters the list.
 * **Resuming** — selecting an entry restores the full record, including the activity and citations.
-* **Deleting** — the trash icon asks for confirmation, then permanently deletes the conversation.
+* **Deleting** — **… → Delete conversation** asks the author for confirmation before permanently deleting the conversation.
 
-Conversation history belongs to the individual account and is not shared within the organization.
+Conversations are private by default. Their author can move them into a shared project after confirming the change. Project members can then read the entire conversation and its saved analysis; only the author can continue or change it. Access to cited source material is checked separately. See [Projects and sharing](/advisor/conversations#conversation-history).
 
 ## Workflow continuity
 
@@ -82,6 +82,6 @@ A running task is not interrupted when the view is closed or the browser is refr
 
 * **[Interface and Advisor workflow](/advisor/conversations)** — starting a conversation, the composer, answers and citations, drafts in other modules, and history.
 * **[Following the Advisor's work](/advisor/activity)** — the activity record, plan, research agents, notes added during work, clarifying questions and stopping.
-* **[Advisor skills](/advisor/skills)** — skill families, typical questions and citation URIs.
+* **[Advisor skills](/advisor/skills)** — available capabilities, typical questions and checking sources.
 * **[Working examples](/advisor/examples)** — ready-made queries with a description of the expected behavior.
 * **[Best practices](/advisor/best-practices)** — formulating questions, choosing a depth, attaching context, reading citations, and handling partial answers.

@@ -29,11 +29,11 @@ Permissions apply to the processing purpose shown in each row. Multiple rows can
 
 **Services in use** lists purposes available to the organization's enabled features. **Automatic fallbacks** lists services that can receive data when the primary path is unavailable. **Inactive services and permissions** is collapsed initially; expand it to review or withdraw stored permissions. Allowing a provider does not by itself activate an experiment or an unused service. **Availability unverified** appears when service availability cannot be confirmed.
 
-Disabling external alert judging stops new AI alert matching and delivery. AI judging in smart folders also stops, while structural filters and manually selected content may remain available. Local processing of supported private-file formats does not replace the complete alert pipeline. Disabling the Advisor provider prevents new Advisor work. Disabling report generation prevents new reports. Existing conversations, reports and stored content are retained.
+Disabling external alert judging stops new AI alert matching and delivery. AI judging in smart folders also stops, while structural filters and manually selected content may remain available. Disabling the Advisor provider prevents new Advisor work. Disabling report generation prevents new reports. Existing conversations, reports and stored content are retained.
 
-**External document analysis** covers external extraction, summaries and document recognition used after local extraction. Disabling it leaves local text extraction and supported local document processing available; uploads that require external preprocessing can fail. Document embeddings processed locally appear under inactive external services even when the external permission is allowed.
+**External document analysis** controls the external processing described in its permission row. When disabled, supported file processing remains available, but uploads or analysis that require that provider can fail. Check the listed consequences before changing the permission.
 
-Disabling cloud image assessment stops licensed-image selection because there is no local assessor. Generated banners have a separate provider permission and experiment. Other permissions describe their own fallback or unavailable function in the table; disabling one purpose does not disable every external service.
+Disabling cloud image assessment stops licensed-image selection. Generated banners have a separate provider permission and experiment. Other permissions describe their own fallback or unavailable function in the table; disabling one purpose does not disable every external service.
 
 Changes apply within 60 seconds. New Advisor and optional assessment requests check the latest permission. Requests already processing may finish.
 

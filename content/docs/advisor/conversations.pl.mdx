@@ -24,8 +24,6 @@ Dokument łączy formatowany tekst, tabele, wyróżnione wnioski, źródła, wyk
 
 Źródła wykresu mogą prowadzić do badania wykorzystanego w obliczeniach, materiału wewnątrz Persate lub strony zewnętrznej. Odnośnik do badania otwiera zapisane wyniki w dokumencie analizy. Prośba o wykres oznacza graficzną wizualizację; kod źródłowy nie zastępuje niedostępnego wykresu.
 
-Źródła wykresu mogą prowadzić do badania wykorzystanego w obliczeniach, materiału wewnątrz Persate lub strony zewnętrznej. Odnośnik do badania otwiera zapisane wyniki w dokumencie analizy. Prośba o wykres oznacza graficzną wizualizację; kod źródłowy nie zastępuje niedostępnego wykresu.
-
 Dokument zaczyna się od tytułu analizy i, gdy jest przydatny, krótkiego opisu. Jego treść aktualizuje się w trakcie pracy. Etykieta widoku, wybór wersji, status i data nie zajmują miejsca w samym dokumencie. Karta i skróty **Dokumentu analizy** używają ikony dokumentu.
 
 Zapisany dokument i badania są dostępne po ponownym otwarciu rozmowy, niezależnie od wczytanej części czatu. **Wczytaj wcześniejsze badania** otwiera dalszą historię badań. Odnośnik do starszego wykresu pokazuje ten wykres, zachowując bieżącą treść dokumentu. Po zatrzymaniu pracy dotychczasowa treść pozostaje dostępna; ograniczenia analizy są opisane w jej treści.
@@ -104,27 +102,19 @@ Materiały upuszczone podczas pracy Advisora pozostają w szkicu do następnej w
 
 Każda tura generuje **oś czasu wiadomości**, wyświetlaną strumieniowo przed treścią odpowiedzi. Stanowi ona widoczny zapis działań asystenta w trakcie pracy.
 
-### Bloki rozumowania
+### Informacje o postępie
 
-Fragmenty łańcucha myślowego modelu pojawiają się jako zwijane wiersze opatrzone nagłówkiem *„Thinking…”* (w trakcie pracy) lub *„Working through the request”* (po zakończeniu). Po zakończeniu tury bloki są automatycznie zwijane — dowolny z nich można ponownie otworzyć, aby go sprawdzić.
+Zwijane wiersze podsumowują pracę Advisora podczas przygotowywania odpowiedzi. Wybranie wiersza rozwija jego treść. Po zakończeniu pracy zapis zwija się automatycznie i można go ponownie otworzyć.
 
-Bloki rozumowania stanowią robocze notatki modelu, nie część ostatecznej odpowiedzi. Są przydatne do zrozumienia, *dlaczego* asystent doszedł do danego wniosku.
+Informacje te opisują postęp. Przed wykorzystaniem wniosku należy sprawdzić końcową odpowiedź oraz cytowane źródła.
 
-### Znaczniki wywołań narzędzi
+### Znaczniki działań
 
-Każde zewnętrzne wyszukiwanie wykonywane przez asystenta staje się znacznikiem w osi czasu. Zawiera on:
+Wyszukiwania i inne działania pojawiają się jako znaczniki z ikoną, opisem operacji i statusem. Zakończone działania mogą pokazywać czas wykonania. Kolejne działania tworzą zwijaną grupę z liczbą użytych narzędzi.
 
-* **Ikonę** identyfikującą rodzinę umiejętności (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
-* **Nazwę narzędzia**.
-* **Status** — ikony odpowiadające kolejnym etapom pracy. Zakończone wywołania prezentują czas wykonania (np. `1.2s`).
+### Pytania uściślające
 
-Sąsiednie wywołania narzędzi są składane w zwijaną grupę (*„Using N tools…”* w trakcie, *„N tools used”* po zakończeniu).
-
-### Formularze elicytacji
-
-Niektóre narzędzia wymagają strukturalnego wkładu w trakcie tury — np. wyboru kadencji Sejmu lub wskazania posła przy kolizji nazwisk. Narzędzie emituje wówczas **żądanie elicytacji**: proces pozostaje w stanie *running*, a pod nim pojawia się formularz.
-
-Formularz należy zatwierdzić lub pominąć (pominięte żądania korzystają z domyślnej wartości narzędzia). Po rozstrzygnięciu wywołanie narzędzia wznawia się.
+Gdy Advisor potrzebuje dodatkowych informacji, w rozmowie pojawia się pytanie i kontrolki odpowiedzi. Należy wybrać odpowiedź i **Kontynuuj** albo wybrać **Pomiń**. Służą do tego kontrolki samego pytania; tekst wysłany przez pole wiadomości podczas pracy jest uwagą do trwającego zadania.
 
 ## Odnośniki w odpowiedziach
 
@@ -170,7 +160,7 @@ Prawa kolumna interfejsu zawiera listę wszystkich konwersacji na koncie:
 
 * **Nowa rozmowa** — czyści przestrzeń roboczą i inicjuje nową sesję.
 * Nowa rozmowa otrzymuje tymczasową nazwę, a następnie automatycznie krótki tytuł, niezależnie od zakończenia badania. Starsze nazwy oparte na treści polecenia aktualizują się po otwarciu rozmowy. Nazwa nadana ręcznie pozostaje bez zmian. Menu **…** zawiera opcje **Zmień nazwę rozmowy** i **Przenieś do projektu**.
-* Wybranie konwersacji otwiera ją z pełnym zapisem — bloki rozumowania, plakietki narzędzi i cytowania są rekonstruowane.
+* Wybranie konwersacji otwiera ją z pełnym zapisem — informacje o postępie, plakietki narzędzi i cytowania są rekonstruowane.
 * **Usuń rozmowę** w menu **…** wymaga potwierdzenia przed trwałym usunięciem rozmowy wraz z historią.
 
 Sekcja **Projekty** zawiera rozwijane foldery, a **Najnowsze** — rozmowy bez projektu. Po najechaniu na nagłówek Projekty pojawia się **+** do tworzenia projektu. Sekcję oraz poszczególne foldery można zwijać. Rozmowę można przeciągnąć na folder lub użyć **… → Przenieś do projektu**; jej wiersz pojawia się wtedy z wcięciem.

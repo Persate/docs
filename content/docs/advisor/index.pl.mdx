@@ -3,7 +3,7 @@ title: Advisor
 description: Narzędzie analityczne Persate do pracy z legislacją, głosowaniami, nagraniami, Mediami, interesariuszami i dokumentami organizacji, z odpowiedziami powiązanymi ze źródłami.
 ---
 
-**Advisor** to narzędzie analityczne Persate do pracy badawczej na danych publicznych platformy oraz na dokumentach organizacji. Nie jest to swobodny chatbot: odpowiada na podstawie wyszukiwań wykonywanych przez warstwę MCP platformy, a każde odniesienie w odpowiedzi jest cytowaniem otwierającym źródło.
+**Advisor** to narzędzie analityczne Persate do pracy badawczej na danych publicznych platformy oraz na dokumentach organizacji. Przeszukuje materiały dostępne dla konta i wiąże wnioski ze źródłami, które można sprawdzić.
 
 Advisora otwiera się przez **GŁÓWNE → Advisor** w panelu bocznym. Pozycja jest widoczna, gdy funkcja jest włączona dla organizacji.
 
@@ -14,21 +14,21 @@ Advisor automatyzuje prace badawcze, które w innym wypadku wymagałyby ręczneg
 * **Wyszukiwanie korelacyjne** — łączenie rekordów z różnych modułów. Przykład: *„Która komisja zajmowała się ostatnim projektem ustawy o cenach energii i jak głosowały nad nim poszczególne kluby?”*
 * **Synteza wieloźródłowa** — zestawianie deklaracji z faktami. Przykład: *„Porównaj publiczne wypowiedzi klubu na temat odejścia od węgla z jego głosowaniami z ostatniego półrocza.”*
 * **Praca z plikami organizacji** — odczyt, streszczanie i porównywanie dokumentów z Repozytorium oraz konfrontowanie ich z rekordami publicznymi.
-* **Przygotowanie pracy w innych modułach** — na prośbę: szkic alertu w Monitorowaniu, inteligentny folder albo szkic artykułu w Redaktorze. Advisor niczego nie aktywuje ani nie publikuje; szkice przegląda się i kończy w module docelowym.
+* **Przygotowanie pracy w innych modułach** — na prośbę: szkic alertu w Monitorowaniu, inteligentny folder albo szkic artykułu w Redaktorze. Szkice należy przejrzeć i dokończyć w module docelowym; przygotowany szkic alertu nie uruchamia monitorowania, dopóki nie zostanie tam zapisany.
 
 **Uwaga:** Advisor nie jest przeznaczony do swobodnej rozmowy, twórczego pisania, pisania kodu ani prognoz niezwiązanych z danymi platformy.
 
 ## Kluczowe cechy systemu
 
-* **Ugruntowane odpowiedzi** — każda odpowiedź opiera się na wyszukiwaniach wykonanych w danej turze; przebieg pracy jest widoczny nad odpowiedzią.
+* **Odpowiedzi ze źródłami** — ustalenia badania są powiązane z wykorzystanymi materiałami; cytowania pozwalają sprawdzić twierdzenia i ewentualne braki w zakresie badania.
 * **Interaktywne cytowania** — twierdzenia mają znaczniki źródeł otwierające głosowanie, profil, fragment dokumentu, moment nagrania lub wpis.
-* **Widoczny przebieg pracy** — rozumowanie, wywołania narzędzi, plan i agenci badawczy są widoczni podczas pracy, a po jej zakończeniu zwijają się do jednego wiersza.
+* **Widoczny przebieg pracy** — podsumowania postępu, działania, plan i agenci badawczy są widoczni podczas pracy, a po jej zakończeniu zwijają się do jednego wiersza.
 * **Weryfikacja źródeł** — wiele odpowiedzi ma ikonę tarczy, która podsumowuje, czy kluczowe informacje znajdują potwierdzenie w źródłach.
 * **Współpraca w trakcie pracy** — do trwającego zadania można dodać uwagę, a samo zadanie można w każdej chwili zatrzymać.
 
 ## Obszary kompetencji
 
-Narzędzia Advisora są pogrupowane w **rodziny umiejętności**; każda z nich to przestrzeń nazw w warstwie MCP (np. `legislation`, `civic`, `stakeholders`, `public_pulse`, `recordings`, `documents`, `alerts`, `chat_context`). Dostępne narzędzia zależą od modułów włączonych dla organizacji.
+Advisor dobiera możliwości do pytania spośród modułów włączonych dla organizacji oraz materiałów dostępnych dla konta. W pytaniu nie trzeba podawać nazw narzędzi.
 
 | Obszar | Zakres analizy |
 | :--- | :--- |
@@ -41,7 +41,7 @@ Narzędzia Advisora są pogrupowane w **rodziny umiejętności**; każda z nich 
 | **Internet** | Publiczne strony internetowe, gdy wymaga tego pytanie. |
 | **Rozmowy** | Wcześniejsze rozmowy użytkownika z Advisorem. |
 
-Rodziny, typowe pytania i rodzaje cytowań opisuje sekcja [Umiejętności Advisora](/pl/advisor/skills).
+Typowe pytania i sposoby sprawdzania wykorzystanych źródeł opisuje sekcja [Umiejętności Advisora](/pl/advisor/skills).
 
 ## Głębokość analizy
 
@@ -55,14 +55,14 @@ Wybór dotyczy jednej wiadomości. Po jej wysłaniu przełącznik wraca do ustaw
 
 ## Historia konwersacji
 
-Lista rozmów znajduje się po prawej stronie; kontrolka **Rozmowy** przy prawej krawędzi ekranu pokazuje ją lub ukrywa. Każda rozmowa ma tytuł wyprowadzony z pierwszego pytania.
+Lista rozmów znajduje się po prawej stronie; kontrolka **Rozmowy** przy prawej krawędzi ekranu pokazuje ją lub ukrywa. Nowa rozmowa otrzymuje automatyczny tytuł, który autor może zmienić. Projekty grupują powiązane rozmowy.
 
 * **Nowa rozmowa** — czyści przestrzeń roboczą.
 * **Szukaj w rozmowach** — filtruje listę.
 * **Wznawianie** — wybranie pozycji przywraca pełny zapis, łącznie z przebiegiem pracy i cytowaniami.
-* **Usuwanie** — ikona kosza po potwierdzeniu trwale usuwa rozmowę.
+* **Usuwanie** — **… → Usuń rozmowę** prosi autora o potwierdzenie przed trwałym usunięciem rozmowy.
 
-Historia konwersacji jest przypisana do indywidualnego konta i nie jest współdzielona wewnątrz organizacji.
+Rozmowy są domyślnie prywatne. Autor może przenieść rozmowę do projektu współdzielonego po potwierdzeniu zmiany. Członkowie projektu mogą wtedy przeczytać całą rozmowę i zapisaną analizę; tylko autor może ją kontynuować lub zmieniać. Dostęp do cytowanych materiałów jest sprawdzany osobno. Zob. [Projekty i udostępnianie](/pl/advisor/conversations#historia-konwersacji).
 
 ## Ciągłość pracy
 
@@ -82,6 +82,6 @@ Trwające zadanie nie zostaje przerwane po opuszczeniu widoku ani po odświeżen
 
 * **[Interfejs i praca z Advisorem](/pl/advisor/conversations)** — rozpoczynanie rozmowy, pole wiadomości, odpowiedzi i cytowania, szkice w innych modułach oraz historia.
 * **[Śledzenie pracy Advisora](/pl/advisor/activity)** — zapis przebiegu pracy, plan, agenci badawczy, uwagi dodawane w trakcie pracy, pytania uściślające i zatrzymywanie.
-* **[Umiejętności Advisora](/pl/advisor/skills)** — rodziny umiejętności, typowe pytania i identyfikatory URI cytowań.
-* **[Przykłady robocze](/pl/advisor/examples)** — gotowe zapytania z opisem oczekiwanego zachowania.
+* **[Umiejętności Advisora](/pl/advisor/skills)** — dostępne możliwości, typowe pytania i sprawdzanie źródeł.
+* **[Przykłady pracy](/pl/advisor/examples)** — gotowe zapytania z opisem oczekiwanego zachowania.
 * **[Dobre praktyki](/pl/advisor/best-practices)** — formułowanie pytań, dobór głębokości, załączanie kontekstu, czytanie cytowań i obsługa odpowiedzi częściowych.

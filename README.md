@@ -1,45 +1,34 @@
-# persate-docs-tmp
+# Persate documentation
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Bilingual user documentation, published at [persate.com/docs/](https://persate.com/docs/). Content describes product tasks and controls; internal engineering material belongs in the separate internal documentation repository.
 
-Run development server:
+Read [AGENTS.md](AGENTS.md) before editing, especially the language-pairing and public-disclosure rules.
+
+## Content and routes
+
+- `content/docs/`: paired English `.mdx` and Polish `.pl.mdx` pages, with section ordering in `meta.json` and `meta.pl.json`.
+- `src/lib/source.ts`: Fumadocs content loader.
+- `src/app/[lang]/(docs)/[...slug]/page.tsx`: documentation pages.
+- `src/app/api/search/route.ts`: documentation search.
+- `src/app/[lang]/llms.txt/`, `llms-full.txt/` and `llms.mdx/`: text views generated from the same public content.
+- `public/persate/`: publicly served assets. Do not place internal diagrams or private screenshots here.
+
+The site uses the `/docs` base path. English is at `/docs/`; Polish is at `/docs/pl/`.
+
+## Local verification
+
+Use Node.js 20 or newer and the checked-in lockfile:
+
+```bash
+npm ci
+npm run lint -- --max-warnings=0
+npm run build
+```
+
+For a local content preview:
 
 ```bash
 npm run dev
-# or
-pnpm dev
-# or
-yarn dev
 ```
 
-Open http://localhost:3000 with your browser to see the result.
-
-## Explore
-
-In the project, you can see:
-
-- `lib/source.ts`: Code for content source adapter, [`loader()`](https://fumadocs.dev/docs/headless/source-api) provides the interface to access your content.
-- `lib/layout.shared.tsx`: Shared options for layouts, optional but preferred to keep.
-
-| Route                     | Description                                            |
-| ------------------------- | ------------------------------------------------------ |
-| `app/(home)`              | The route group for your landing page and other pages. |
-| `app/docs`                | The documentation layout and pages.                    |
-| `app/api/search/route.ts` | The Route Handler for search.                          |
-
-### Fumadocs MDX
-
-A `source.config.ts` config file has been included, you can customise different options like frontmatter schema.
-
-Read the [Introduction](https://fumadocs.dev/docs/mdx) for further details.
-
-## Learn More
-
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.dev) - learn about Fumadocs
+Open [the English preview](http://localhost:3000/docs/) or [the Polish preview](http://localhost:3000/docs/pl/). A successful build does not publish changes. Review both languages, links and served assets before release.

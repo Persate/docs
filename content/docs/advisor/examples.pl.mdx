@@ -1,148 +1,89 @@
 ---
-title: Przykłady robocze
-description: Reprezentatywne zapytania z opisem oczekiwanego zachowania Advisora.
+title: Przykłady pracy
+description: Przykładowe pytania i sposoby sprawdzania odpowiedzi Advisora.
 ---
 
-Każdy przykład zawiera:
-
-* **Zapytanie** — treść wpisywanej wiadomości.
-* **Co robi Advisor** — rodziny umiejętności i działania widoczne w zapisie pracy.
-* **Jak wygląda odpowiedź** — struktura odpowiedzi i jej cytowania.
-
-Faktyczna treść każdej odpowiedzi może się różnić, a etykiety znaczników narzędzi mogą się zmieniać wraz z aktualizacją narzędzi. Są to jedynie przykłady, jednak ogólny kształt odpowiedzi i wykorzystywane narzędzia pozostają przeważnie zbliżone. W przykładowych odpowiedziach identyfikator URI zasobu w nawiasie kwadratowym oznacza znacznik cytowania — w produkcie znacznik pokazuje tytuł źródła i otwiera je.
+Poniższe przykłady pokazują, jak sformułować pytanie i co sprawdzić w odpowiedzi. Są propozycjami zadań, a nie opisami rzeczywistych zdarzeń. Wyniki zależą od dostępnych źródeł, wybranego okresu i uprawnień dostępu.
 
 ## Przykład 1 — Głosowania
 
-**Zapytanie:**
+**Pytanie:**
 
-> Którzy posłowie Koalicji Obywatelskiej głosowali przeciwko proponowanej poprawce do ustawy energetycznej na ostatnim posiedzeniu Sejmu? Pokaż wynik i odeślij do głosowania.
+> Którzy posłowie Koalicji Obywatelskiej głosowali przeciwko proponowanej poprawce do ustawy energetycznej na ostatnim posiedzeniu Sejmu? Pokaż wynik i podaj odnośnik do głosowania.
 
-**Co robi Advisor:**
+**Oczekiwany wynik:**
 
-1. **`legislation`** — wyszukuje głosowania z ostatniego posiedzenia i wybiera te dotyczące ustawy energetycznej i poprawki.
-2. **`legislation`** — odczytuje wybrane głosowanie: wynik i sposób głosowania każdego posła.
-3. **`stakeholders`** — dopasowuje nazwiska do profili posłów.
+Advisor ustala właściwe posiedzenie i poprawkę, a następnie sprawdza wynik głosowania i głosy poszczególnych posłów. Jeżeli pasuje kilka poprawek, może poprosić o wskazanie właściwej.
 
-**Jak wygląda odpowiedź:**
+Odpowiedź powinna wskazać posiedzenie, datę i głosowanie, podać wynik oraz wymienić odpowiadających pytaniu posłów wraz ze źródłami. Otwarcie cytowanego głosowania pozwala sprawdzić zarówno wynik, jak i poszczególne głosy.
 
-> Poprawka została **odrzucona** w głosowaniu nr 47 na posiedzeniu nr 12 dnia 28 marca 2026 r., stosunkiem głosów 198 za do 232 przeciw — zob. [legislation://voting/12/47]. Przeciw głosowali następujący posłowie Koalicji Obywatelskiej: [feature://stakeholder/abc-123], [feature://stakeholder/def-456], [feature://stakeholder/ghi-789] (3 spośród 134 członków klubu).
+## Przykład 2 — Publiczne stanowisko a głosowania
 
-## Przykład 2 — Stanowisko publiczne a sposób głosowania
+**Pytanie:**
 
-**Zapytanie:**
+> Porównaj publiczne wypowiedzi wybranego klubu parlamentarnego o odchodzeniu od węgla z jego głosowaniami nad powiązanymi poprawkami w ostatnim miesiącu. Wskaż różnice i przytocz źródła dla obu stron porównania.
 
-> Koalicja Klimatyczna była ostatnio głośna w sprawie odejścia od węgla. Jak jej członkowie faktycznie głosowali nad poprawkami dotyczącymi węgla w ostatnim miesiącu? Czy występują rozbieżności?
+**Oczekiwany wynik:**
 
-**Co robi Advisor:**
+Advisor porównuje wypowiedzi i głosowania z podanego okresu. Odpowiedź powinna odróżniać stanowisko klubu od wypowiedzi i głosów jego członków oraz rozróżniać głosy przeciw, wstrzymanie się i nieobecność.
 
-1. **`stakeholders`** — wyszukuje posłów klubu.
-2. **`public_pulse`** — przeszukuje wpisy klubu z ostatniego miesiąca na temat odejścia od węgla.
-3. **`civic`** — wyszukuje głosowania dotyczące węgla z tego samego okresu.
-4. **`legislation`** — odczytuje każde z tych głosowań.
-5. **`legislation`** — weryfikuje krzyżowo głosy poszczególnych posłów.
-
-**Jak wygląda odpowiedź:**
-
-> Spośród dziewięciu głosowań nad poprawkami węglowymi w ostatnich 30 dniach Koalicja głosowała jednomyślnie w sześciu. Trzy rozbieżności:
->
-> * **Posłanka Kowalska** ([feature://stakeholder/...]) publicznie popierała proponowany fundusz transformacyjny ([feature://public_pulse/tweet/...]), lecz w głosowaniu nad poprawką o jego finansowaniu **wstrzymała się** od głosu ([legislation://voting/12/52]).
-> * W głosowaniu nad poprawką o harmonogramie zamykania kopalń Koalicja podzieliła się w stosunku 7–2 ([legislation://voting/12/61]).
-> * **Poseł Nowak** ([feature://stakeholder/...]) był nieobecny w trzech z dziewięciu głosowań.
+Każde porównanie powinno prowadzić do wypowiedzi i głosowania. Różnica w sformułowaniu lub nieobecność same w sobie nie dowodzą sprzeczności; należy sprawdzić, czy oba źródła dotyczą tej samej propozycji.
 
 ## Przykład 3 — Analiza załączonego pliku
 
-**Zapytanie:**
+**Pytanie:**
 
-> Streść rekomendacje regulacyjne z tego briefingu i sprawdź, czy którakolwiek z nich posunęła się naprzód w parlamencie. *(z plikiem `Q1-2026-renewables-briefing.pdf` dołączonym przez `@`)*
+> Podsumuj zalecenia regulacyjne z tego opracowania i sprawdź, czy któreś z nich znalazły odzwierciedlenie w pracach parlamentu.
 
-**Co robi Advisor:**
+Przed wysłaniem wiadomości należy dołączyć opracowanie przez `@`.
 
-1. **`documents`** — odczytuje załączony plik bezpośrednio; wyszukiwanie nie jest potrzebne, bo plik jest wskazany w wiadomości.
-2. **`civic`** — wyszukuje projekty ustaw i druki odpowiadające poszczególnym rekomendacjom.
-3. **`legislation`** — odczytuje powiązane głosowania.
+**Oczekiwany wynik:**
 
-**Jak wygląda odpowiedź:**
+Advisor odczytuje załączony materiał i porównuje zalecenia z dostępnymi materiałami legislacyjnymi. Odpowiedź powinna oddzielać rekomendacje opracowania od rzeczywistych działań parlamentu.
 
-> Briefing zawiera pięć rekomendacji [documents://chunk/.../...]. Spośród nich:
->
-> * **Rekomendacja 2** (uproszczenie procedury wydawania warunków przyłączenia do sieci) odpowiada poprawce 14 do ustawy energetycznej, *przyjętej* 22 marca — zob. [legislation://voting/12/41].
-> * **Rekomendacja 4** (podniesienie limitu kontraktów różnicowych) została zgłoszona, lecz *wycofana* przed głosowaniem [documents://chunk/.../...].
-> * Pozostałe trzy rekomendacje nie pojawiły się dotąd w żadnym projekcie ustawy.
-
-Znaczniki plików otwierają briefing w przeglądarce plików w miejscu cytowanego fragmentu.
+Cytowania pozwalają sprawdzić odpowiednie fragmenty i etapy prac. Brak znalezionego projektu oznacza ograniczenie wyniku wyszukiwania, a nie dowód, że taki projekt nie istnieje.
 
 ## Przykład 4 — Przygotowanie alertu z pytaniem uściślającym
 
-**Zapytanie:**
+**Pytanie:**
 
-> Przygotuj alert na nowe informacje o projekcie reformy farmaceutycznej.
+> Przygotuj alert o nowych wydarzeniach dotyczących projektu reformy prawa farmaceutycznego.
 
-**Co robi Advisor:**
+**Oczekiwany wynik:**
 
-1. **`civic`** — wyszukuje projekt ustawy, którego dotyczy prośba.
-2. Opisowi odpowiadają dwa projekty, więc Advisor pyta, o który chodzi (**Zadawanie pytania uściślającego**); kandydaci pojawiają się w rozmowie jako opcje.
-3. *(wybór jednej opcji i potwierdzenie przyciskiem **Dalej**)*
-4. **`alerts`** — sprawdza, czy istniejący alert nie obejmuje już tego projektu.
-5. **`agent`** — zapisuje nieaktywny szkic alertu dla modułu Monitorowanie.
+Jeżeli pasuje kilka projektów ustaw, Advisor może zadać pytanie uściślające. Należy wybrać właściwy projekt i użyć przycisku **Kontynuuj** w tym pytaniu.
 
-**Jak wygląda odpowiedź:**
+Przygotowany alert pojawia się jako karta **Konfiguracja monitorowania** ze stanem **Wymaga konfiguracji · Monitorowanie jest nieaktywne**. Karta otwiera kreator w module Monitorowanie, gdzie należy sprawdzić zakres i źródła, a następnie zapisać alert, aby uruchomić monitorowanie. Jeżeli rozmowa pozostaje otwarta w chwili przygotowania wersji roboczej, Persate automatycznie otwiera kreator.
 
-> Przygotowałem szkic alertu **Reforma farmaceutyczna** dla wybranego powyżej projektu. Monitorowanie nie zostało uruchomione: zakres i źródła należy przejrzeć w module Monitorowanie, a następnie zapisać alert, aby go aktywować.
+Końcowe kroki konfiguracji opisano w [Tworzeniu alertów](/pl/alerts/creating-alerts).
 
-Pod odpowiedzią karta **Konfiguracja monitorowania** ze statusem **Wymaga konfiguracji · Monitorowanie jest nieaktywne** otwiera kreator alertów ze szkicem. Jeżeli rozmowa jest nadal otwarta, gdy szkic jest gotowy, Persate samodzielnie otwiera kreator.
+## Przykład 5 — Wypowiedź z posiedzenia
 
-## Przykład 5 — Co padło na posiedzeniu
+**Pytanie:**
 
-**Zapytanie:**
+> W którym momencie ostatniego posiedzenia Komisji Sprawiedliwości przewodniczący ogłosił harmonogram prac nad nowelizacją prawa zamówień publicznych? Przytocz dokładne słowa.
 
-> W którym miejscu ostatniego posiedzenia Komisji Sprawiedliwości przewodniczący ogłosił harmonogram prac nad nowelizacją prawa zamówień publicznych? Przytocz dokładne słowa.
+**Oczekiwany wynik:**
 
-**Co robi Advisor:**
+Advisor szuka właściwego nagrania i wypowiedzi. Odpowiedź oparta na źródle zawiera cytat oraz odnośnik otwierający nagranie we wskazanym momencie.
 
-1. **`recordings`** — wyszukuje najnowsze przeanalizowane nagranie posiedzenia komisji.
-2. **`recordings`** — przeszukuje wystąpienia dotyczące nowelizacji prawa zamówień publicznych.
-3. **`recordings`** — odczytuje transkrypcję w otoczeniu pasującej wypowiedzi.
+Przed wykorzystaniem cytatu należy odsłuchać fragment wraz z kontekstem. Jeżeli nagranie lub transkrypcja są niedostępne, odpowiedź powinna wskazać brak materiału zamiast podawać niepotwierdzony cytat.
 
-**Jak wygląda odpowiedź:**
+## Przykład 6 — Przegląd legislacyjny z wielu źródeł
 
-> Przewodniczący ogłosił harmonogram pod koniec posiedzenia [recordings://speech/.../...]. Cytowany fragment:
->
-> *„Nowelizacja prawa zamówień publicznych zostanie rozpatrzona w drugim czytaniu na najbliższym posiedzeniu, 5 kwietnia.”*
+**Pytanie:**
 
-Znacznik otwiera nagranie w module **Nagrania** w cytowanym momencie.
+> Potrzebuję jednostronicowego opracowania o projekcie ustawy o energii odnawialnej: status prac, ostatnie działania komisji, dotychczasowe głosowania klubów i ich publiczne stanowiska.
 
-## Przykład 6 — Wieloźródłowy briefing legislacyjny
+**Oczekiwany wynik:**
 
-**Zapytanie:**
+Przy szerokim pytaniu Advisor może przedstawić plan i podzielić badanie na części. Postęp można śledzić w [zapisie pracy](/pl/advisor/activity).
 
-> Potrzebuję jednostronicowego briefu o projekcie ustawy o odnawialnych źródłach energii: status legislacyjny, ostatnie prace komisji, dotychczasowe głosowania klubów oraz ich publiczne stanowiska.
+Przydatne opracowanie rozdziela status legislacyjny, prace komisji, głosowania i publiczne wypowiedzi, podając źródła dla każdej części. Należy sprawdzić daty i kompletność odpowiedzi. Jeżeli część zadania pozostaje nierozstrzygnięta, pytanie uzupełniające można zawęzić do tego tematu lub okresu.
 
-**Co robi Advisor:**
+## Sprawdzanie wyniku
 
-1. **`agent`** — publikuje plan; jego kroki pojawiają się w panelu **Plan**.
-2. **`agent`** — uruchamia agentów badawczych do poszczególnych części briefu (**Agenci badawczy**); każdy agent ma znacznik otwierający jego sesję.
-3. **`civic`** — etapy projektu i jego druki (**Proces legislacyjny**).
-4. **`recordings`** — dyskusje nad projektem na posiedzeniach komisji.
-5. **`legislation`** — sposób głosowania klubów na wcześniejszych etapach.
-6. **`public_pulse`** — publiczne stanowiska głównych klubów.
-7. **`alerts`** — sprawdzenie, czy projekt jest już objęty alertem.
-
-**Jak wygląda odpowiedź:**
-
-> *Status.* Projekt jest w drugim czytaniu; sprawozdanie komisji jest dostępne jako druk sejmowy ([legislation://print/10/1234]).
->
-> *Ostatnie prace komisji.* Na ostatnim posiedzeniu komisji przewodniczący wyznaczył termin kolejnego czytania ([recordings://speech/.../...]).
->
-> *Dotychczasowe głosowania.* Głosowania nad poprawkami na wcześniejszych etapach w podziale na kluby ([legislation://voting/12/38]).
->
-> *Stanowiska publiczne.* Stanowisko każdego z głównych klubów wraz z jego wpisami ([feature://public_pulse/tweet/...]).
->
-> Projekt nie jest jeszcze objęty żadnym alertem — na prośbę można go przygotować.
-
-## Wzorce powracające w przykładach
-
-W powyższych przykładach powtarzają się trzy wzorce:
-
-* **Advisor zaczyna od rekordów strukturalnych.** Głosowania, procesy legislacyjne i tożsamość posłów stanowią punkt zaczepienia — wyszukiwanie tekstowe jest zawężane na podstawie tego, co znalazły narzędzia strukturalne.
-* **Cytowania wieloźródłowe są normą.** Nawet proste pytania dają kilka znaczników cytowań, co pozwala zweryfikować każde twierdzenie.
-* **Duże pytania są planowane i dzielone.** Szerokie zadanie otrzymuje plan i może zostać podzielone między agentów badawczych; jeżeli całego pytania nie da się objąć w jednej turze, odpowiedź wskazuje pozostałą część i podpowiada węższe pytanie uzupełniające.
+* Otwierać cytowane źródła i porównywać je z twierdzeniami, które mają potwierdzać.
+* Sprawdzać okres, kadencję oraz tożsamość osób i projektów.
+* Odróżniać fakty ze źródeł, interpretację Advisora i brakujące informacje.
+* Zawężać pytanie uzupełniające, gdy odpowiedź jest częściowa lub materiał nie pozwala na jednoznaczny wniosek.
