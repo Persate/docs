@@ -1,6 +1,6 @@
 # docs/ — Public Docs Conventions
 
-Per-repo addendum for `docs/` — the public user-facing documentation (Fumadocs) deployed to **docs.persate.com**. Read this before editing any `.mdx` or `meta.json` here. Workspace-wide rules live in [`../internal-docs/AGENTS.md`](../internal-docs/AGENTS.md); the operational traps live in the [`mdx-docs-gotchas`](../internal-docs/skills/mdx-docs-gotchas/SKILL.md) skill — this file is the conventions layer (audience, voice, EN/PL, redaction) that the skill links back to.
+Per-repo addendum for `docs/` — the public user-facing documentation (Fumadocs) deployed to **persate.com/docs/**. Read this before editing any `.mdx` or `meta.json` here. Workspace-wide rules live in [`../internal-docs/AGENTS.md`](../internal-docs/AGENTS.md); the operational traps live in the [`mdx-docs-gotchas`](../internal-docs/skills/mdx-docs-gotchas/SKILL.md) skill — this file is the conventions layer (audience, voice, EN/PL, redaction) that the skill links back to.
 
 ---
 
@@ -8,7 +8,7 @@ Per-repo addendum for `docs/` — the public user-facing documentation (Fumadocs
 
 - Fumadocs (Next.js App Router) site. Content is MDX under `content/docs/`, organized into sections (`alerts/`, `advisor/`, `repository/`, …).
 - Audience: **Persate end users** (analysts, public-affairs professionals) — not engineers. They want to accomplish tasks in the product, not understand its internals.
-- Source of truth for *behavior* is the **frontend code** (`../FE/src`). When docs and FE disagree, FE wins; update the docs.
+- Verify interface behavior and labels against the **frontend code** (`../FE/src`) and access/processing behavior against the corresponding backend contract. Record the source revision and distinguish it from deployed behavior; branch tips alone are not release evidence.
 
 ---
 
@@ -70,24 +70,25 @@ Match the house voice — exemplar: [`content/docs/advisor/best-practices.mdx`](
 
 ## 6. Redaction policy
 
-User docs **never** mention:
+Public documentation explains user tasks, visible controls and verified access rules. Include only the information needed to understand or use those features.
 
-- Vendor names (cloud provider, model/transcription vendors, etc.)
-- Budgets, pricing, contract terms
-- Roadmap dates
-- Enumerated data sources (endpoint URLs, scraping intervals)
-- Internal microservice names (`transcription_service`, `feature_worker`, …)
-- Internal architecture that exposes service topology
+Keep these details in internal documentation:
 
-User docs **may** mention: MCP and public namespaces (e.g. `persate.alerts`), tier names, capabilities in plain English, public UI behavior.
+- Infrastructure and model vendors, model pins, budgets and private contract terms.
+- Internal service names, producer/tool inventories, storage engines, database layouts and resource URI formats.
+- Hostnames or endpoints used only by operators, private IPs, ports, keys, configuration variables and release procedures.
+- Infrastructure diagrams or descriptions that reveal service topology, even after vendor names are removed.
+- Scraping intervals, internal source endpoint inventories and roadmap dates.
 
-When in doubt: *would this leak to a competitor's eyes?* Redact. Internal engineering knowledge belongs in `internal-docs/`, not here.
+Names of sign-in providers or applications the user explicitly connects may remain where needed to complete that action. The public MCP server URL, OAuth scopes and connection steps are also a user-facing contract. This exception does not permit a backend/provider inventory or unnecessary internal namespaces in task examples.
+
+Apply the same boundary to MDX, screenshots, downloadable assets, scripts that generate public assets, and generated search/LLM feeds. Removing an image from a page is insufficient if it remains served under `public/`. Organization-specific technical assurance belongs in the agreed private review channel. Do not replace technical detail with unsupported promises about encryption, retention or compliance.
 
 ---
 
 ## 7. Don't
 
-- Don't ship internal architecture, vendors, budgets, dates, or service names in user copy.
+- Don't ship internal architecture, implementation inventories, budgets or operational details in user copy or public assets; apply the functional-connection exception in §6 narrowly.
 - Don't break EN/PL pairing or section ordering.
 - Don't use bare curly braces in MDX prose. Ever.
 - Don't list `"index"` in `meta.json` `pages`.

@@ -1,51 +1,38 @@
 ---
 title: Trust Center
-description: Security architecture of the Persate platform for security, compliance, and procurement reviewers — data flow, hosting regions, and encryption in transit and at rest.
+description: Account protection, access to organization data and privacy controls in Persate.
 ---
 
-This page is intended for security, compliance, and procurement teams evaluating Persate. Account-level protections available to every user (passwords, two-step verification, sessions, trusted browsers, login history) are described in [Security and privacy](/account-and-settings/security).
+This page summarizes the protections and privacy controls available when using Persate. Detailed security information for an organization's assessment should be requested through its agreed support channel.
 
-## Security architecture
+## Account protection
 
-The diagram shows how data moves between users, the Persate platform, and the managed services it depends on, and where that data is encrypted.
+Sign-in uses a password or an identity provider available on the sign-in page. Two-step verification adds a code from an authenticator app. It is required for company-file information and uploads; enrolled accounts continue to verify sign-in, with support for trusted browsers. System administrators must configure two-step verification before entering the platform.
 
-<img src="/docs/persate/trust-center/security-architecture.svg" alt="Security architecture diagram. Users (web browser, mobile app, operators) connect over TLS to the Persate platform hosted in the EU: a web application tier and an API tier with a gateway, application services, background workers, and self-hosted AI inference. Cache and queues, full-text index, vector index, and the public legal corpus sit on a private data network with no internet exposure. The platform connects over TLS to managed services in the EU: managed PostgreSQL encrypted at rest with tenant isolation, an identity provider with two-factor authentication, object storage in Poland, and AI and email providers." />
+**Settings → Security & Privacy** provides active sessions, trusted browsers and login history. An unfamiliar session can be ended, and trust in a browser can be revoked. Sensitive actions may require fresh verification. See [Security and privacy](/account-and-settings/security).
 
-### Hosting and data location
+## Access to organization data
 
-* All platform components run in the European Union. Application services, background workers, and the self-hosted search, vector, and cache stores run in Poland. The managed PostgreSQL database and the identity provider run in the EU (Germany).
-* Object storage for uploaded documents, previews, and backups is located in Poland.
-* Self-hosted datastores (cache and task queues, full-text index, vector index, public legal corpus) sit on a private network with no public exposure. They are reachable only from application services and background workers.
-* Administrative tools are reachable only through a VPN tunnel and are not exposed to the internet.
+Access depends on the signed-in account, organization membership, role, groups and permissions for the particular resource. An organization role does not automatically grant access to every file or conversation.
 
-### Encryption in transit
+Advisor conversations are private by default. Moving one into a shared project requires the author's confirmation and makes the entire conversation and saved analysis readable by the project's members. Access to cited materials is checked separately. See [Conversation history and sharing](/advisor/conversations#conversation-history).
 
-| Path | Protection |
-|---|---|
-| Browser or mobile app → web application and API | TLS 1.2 or newer; HSTS enforced on the application domain |
-| Web application server → API | TLS; server-to-server hop authenticated with a dedicated internal key |
-| Application services → managed PostgreSQL and identity provider | TLS |
-| Application services and workers → object storage | TLS |
-| Application services → AI and email providers | TLS, per request |
-| Operator access to administrative tools | VPN tunnel plus TLS 1.2/1.3, restricted to the VPN address range |
-| Deployments | SSH with key-based authentication and host key verification |
+Review the selected audience before sharing files, alerts or conversations. Content copied or exported outside Persate must be handled according to the organization's own rules.
 
-### Encryption at rest
+## Connections and connected applications
 
-| Store | Protection |
-|---|---|
-| Managed PostgreSQL (tenant data, accounts) | Encrypted at rest by the provider (AES-256); daily backups |
-| Object storage (uploaded documents, previews, backups) | Located in the EU; provider-side encryption at rest is being confirmed and will be stated here once verified |
-| Self-hosted indexes and queues | Protected by network isolation and access controls; encryption at rest is not currently applied at the application layer |
+Connections to the public Persate application use HTTPS. Account sessions and connected AI applications can be reviewed and managed in Settings.
 
-### Authentication and sessions
+An external AI application receives only the access allowed by the organization and approved by the user. Disconnect an application when it is no longer needed or its access is not recognized. See [MCP and AI apps](/account-and-settings/mcp).
 
-* Sign-in uses a password or single sign-on. Initial two-factor authentication (TOTP) setup can be postponed for ordinary accounts; company-file information and uploads require 2FA. Enrolled accounts continue to verify sign-in, with trusted-browser support. Sensitive actions require fresh verification, and system administrators must configure 2FA before entering the platform.
-* Sessions are carried in Secure, SameSite cookies scoped to the application domain and are validated server-side on every protected request.
-* Roles and organisation membership are resolved from the server-side session. The administration area requires an administrator role.
-* If the authentication service is unavailable, access fails closed rather than granting access.
-* API traffic is rate-limited at the gateway and additionally per account for sign-in endpoints.
+## External processing and privacy
 
-### Tenant isolation
+Some functions use external processing. **Settings → Organization → External providers** describes the purpose, data shared and consequences of changing each permission. Administrators control these permissions; members can review them. See [Administration](/administration).
 
-Each organisation's data is stored in its own database schema with row-level security policies, and search and vector indexes are partitioned per organisation. Requests carry the organisation context from the verified session, not from client input.
+Before submitting confidential material, check the organization's permissions and applicable data-handling rules. Disabling a permission can prevent new work that depends on it; work already processing may finish.
+
+## Personal data and security questions
+
+**Settings → Security & Privacy** offers an export of personal account data and browser-specific analytics controls. File contents are downloaded through the Repository. Requests outside the available controls, including account deletion, should use the organization's agreed support channel.
+
+For a security or procurement review, request the current information on data location, processing terms, retention and relevant security measures through that channel. This overview does not replace the documentation agreed for the organization.

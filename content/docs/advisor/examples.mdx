@@ -1,15 +1,9 @@
 ---
 title: Working examples
-description: Representative queries with a description of the expected Advisor behavior.
+description: Sample questions and ways to check the Advisor's answers.
 ---
 
-Every example contains:
-
-* **Query** — the content of the entered message.
-* **What the Advisor does** — the skill families and tool chips that appear in the activity.
-* **What the response looks like** — the structure of the answer and its citations.
-
-The actual content of every response varies, and chip labels can change as tools are updated. These are only examples; the general shape of the response and the tools used generally remain similar. In the sample responses, a resource URI in square brackets stands for a citation chip — in the product, the chip shows the source's title and opens the source.
+The examples below show how to phrase a question and what to check in the answer. They are task suggestions, not reports of actual events. Results depend on the available sources, the selected period and access permissions.
 
 ## Example 1 — Votes
 
@@ -17,59 +11,37 @@ The actual content of every response varies, and chip labels can change as tools
 
 > Which Civic Coalition MPs voted against the proposed amendment to the energy bill at the last Sejm sitting? Show the result and link the vote.
 
-**What the Advisor does:**
+**What to expect:**
 
-1. **`legislation`** — lists the votes of the last sitting and selects those on the energy bill and the amendment (`Listing votings`).
-2. **`legislation`** — reads the selected vote: its result and how each MP voted (`Reading voting`).
-3. **`stakeholders`** — matches the names to MP profiles (`Searching legislators`).
+The Advisor identifies the relevant sitting and amendment, then checks the vote and individual MPs' choices. If several amendments match, it may ask which one is meant.
 
-**What the response looks like:**
-
-> The amendment was **rejected** in vote 47 at sitting 12 on 28 March 2026, by 198 for and 232 against — see [legislation://voting/12/47]. The following Civic Coalition MPs voted against: [feature://stakeholder/abc-123], [feature://stakeholder/def-456], [feature://stakeholder/ghi-789] (3 of the club's 134 members).
+The answer should identify the sitting, date and vote, state the result and list the matching MPs with source links. Open the cited vote to verify both the result and the individual choices.
 
 ## Example 2 — Public stance versus voting record
 
 **Query:**
 
-> The Climate Coalition has recently been vocal about phasing out coal. How did its members actually vote on coal-related amendments in the last month? Are there any discrepancies?
+> Compare a selected parliamentary club's public statements on phasing out coal with its votes on related amendments in the last month. Identify any differences and cite both sides.
 
-**What the Advisor does:**
+**What to expect:**
 
-1. **`stakeholders`** — finds the club's MPs (`Searching legislators`).
-2. **`public_pulse`** — searches the club's posts from the last month on the coal phase-out (`Searching tweets`).
-3. **`civic`** — finds coal-related votes in the same period (`Searching votings by topic`).
-4. **`legislation`** — reads each candidate vote (`Reading voting`).
-5. **`legislation`** — cross-checks the individual MPs' votes (`Votes by legislator`).
+The Advisor compares statements and votes from the requested period. The answer should distinguish a club's position from the statements and votes of individual members, and distinguish votes against, abstentions and absences.
 
-**What the response looks like:**
-
-> Out of nine votes on coal amendments in the last 30 days, the Coalition voted together in six. Three discrepancies:
->
-> * **MP Kowalska** ([feature://stakeholder/...]) wrote publicly in favor of the proposed transformation fund ([feature://public_pulse/tweet/...]), but **abstained** on the funding amendment ([legislation://voting/12/52]).
-> * The Coalition split 7–2 on the mine closure schedule amendment ([legislation://voting/12/61]).
-> * **MP Nowak** ([feature://stakeholder/...]) was absent for three of the nine votes.
+Each comparison should link to the statement and the vote. A difference in wording or an absence does not by itself establish a contradiction; check whether both sources concern the same proposal.
 
 ## Example 3 — Analysis of an attached file
 
 **Query:**
 
-> Summarize the regulatory recommendations in this briefing and check whether any of them has progressed in Parliament. *(with `Q1-2026-renewables-briefing.pdf` attached through `@`)*
+> Summarize the regulatory recommendations in this briefing and check whether any have progressed in Parliament.
 
-**What the Advisor does:**
+Attach the briefing through `@` before sending the message.
 
-1. **`documents`** — reads the attached file directly; no search is needed because the file is identified in the message (`Reading file`).
-2. **`civic`** — looks for bills and prints that match each recommendation (`Search processes`, `Searching parliamentary prints`).
-3. **`legislation`** — reads the related votes (`Reading voting`).
+**What to expect:**
 
-**What the response looks like:**
+The Advisor reads the attached material and compares its recommendations with available legislative records. The answer should separate what the briefing recommends from what Parliament has actually done.
 
-> The briefing contains five recommendations [documents://chunk/.../...]. Among them:
->
-> * **Recommendation 2** (simplifying the grid connection permit process) corresponds to amendment 14 to the energy bill, *passed* on 22 March — see [legislation://voting/12/41].
-> * **Recommendation 4** (raising the contract-for-difference limit) was tabled but *withdrawn* before the vote [documents://chunk/.../...].
-> * The remaining three recommendations have not appeared in any bill so far.
-
-The file chips open the briefing in the file viewer at the cited passage.
+Open citations to check the relevant passages and legislative stages. If no matching proposal is found, treat that as a limit of the search, not proof that no proposal exists.
 
 ## Example 4 — Preparing an alert with a clarifying question
 
@@ -77,19 +49,13 @@ The file chips open the briefing in the file viewer at the cited passage.
 
 > Prepare an alert for new developments on the pharmaceutical reform bill.
 
-**What the Advisor does:**
+**What to expect:**
 
-1. **`civic`** — looks for the bill the request refers to (`Search processes`).
-2. Two bills match the description, so the Advisor asks which one is meant (`Asking clarifying question`); the candidates appear in the conversation as options.
-3. *(one option is chosen and confirmed with **Continue**)*
-4. **`alerts`** — checks whether an existing alert already covers the bill (`Listing alerts`).
-5. **`agent`** — saves an inactive alert draft for the Tracker (`Prepare workspace`).
+If several bills match, the Advisor can present a clarifying question. Select the intended bill and use **Continue** in that question.
 
-**What the response looks like:**
+A prepared alert appears as a **Monitoring setup** card with **Setup required · Monitoring is not active**. Open it to review the scope and sources in the Tracker, then save the alert to activate monitoring. If the conversation is still open when the draft is ready, Persate opens the creator automatically.
 
-> I prepared an alert draft, **Pharmaceutical reform**, for the bill selected above. Monitoring has not started: review the scope and sources in the Tracker and save the alert to activate it.
-
-Below the answer, a **Monitoring setup** card with the status **Setup required · Monitoring is not active** opens the alert creator with the draft. If the conversation is still open when the draft is ready, Persate opens the creator automatically.
+See [Creating alerts](/alerts/creating-alerts) for the final configuration steps.
 
 ## Example 5 — What was said at a sitting
 
@@ -97,19 +63,11 @@ Below the answer, a **Monitoring setup** card with the status **Setup required �
 
 > At the latest Justice Committee sitting, where did the chair announce the schedule for the public procurement amendment? Quote the exact words.
 
-**What the Advisor does:**
+**What to expect:**
 
-1. **`recordings`** — finds the latest analyzed recording of the committee (`Searching recordings catalog`).
-2. **`recordings`** — searches the statements about the procurement amendment (`Searching speeches in recordings`).
-3. **`recordings`** — reads the transcript around the matching statement (`Reading recording transcript`).
+The Advisor looks for the relevant recording and statement. A supported answer includes the quoted passage and a citation that opens the recording at the relevant moment.
 
-**What the response looks like:**
-
-> The chair announced the schedule towards the end of the sitting [recordings://speech/.../...]. Quoted passage:
->
-> *"The procurement-law amendment will be considered in second reading at the next sitting on 5 April."*
-
-The chip opens the recording in **Recordings** at the cited moment.
+Listen to that passage and its context before reusing a quotation. If the recording or transcript is unavailable, the answer should identify the gap instead of supplying an unsupported quotation.
 
 ## Example 6 — Multi-source legislative briefing
 
@@ -117,32 +75,15 @@ The chip opens the recording in **Recordings** at the cited moment.
 
 > I need a one-page brief on the renewable energy bill: legislative status, recent committee work, how the clubs have voted on it so far, and what they say publicly.
 
-**What the Advisor does:**
+**What to expect:**
 
-1. **`agent`** — publishes a plan; its steps appear in the **Plan** panel (`Updating plan`).
-2. **`agent`** — starts research agents for parts of the brief; each appears as a chip that opens its own session (`Research agents`).
-3. **`civic`** — the bill's stages and prints (`Legislative process`, `Print history`).
-4. **`recordings`** — committee discussions of the bill (`Searching speeches in recordings`).
-5. **`legislation`** — how each club voted at earlier stages (`Reading voting`, `Votes by legislator`).
-6. **`public_pulse`** — the public positions of the main clubs (`Searching tweets`).
-7. **`alerts`** — whether an alert already covers the bill (`Listing alerts`).
+For a broad request, the Advisor can show a plan and divide the research into parts. Follow progress in the [activity view](/advisor/activity).
 
-**What the response looks like:**
+A useful briefing separates legislative status, committee work, votes and public statements, with sources for each section. Check the dates and whether the answer covers the whole request. If part remains unresolved, narrow the follow-up to that topic or period.
 
-> *Status.* The bill is in second reading; the committee report is available as a Sejm print ([legislation://print/10/1234]).
->
-> *Recent committee work.* At the last committee sitting, the chair set the date of the next reading ([recordings://speech/.../...]).
->
-> *Votes so far.* Votes on the amendments at earlier stages, broken down by club ([legislation://voting/12/38]).
->
-> *Public positioning.* The position of each main club, with its posts ([feature://public_pulse/tweet/...]).
->
-> No alert covers this bill yet — one can be prepared on request.
+## Checking the result
 
-## Recurring patterns in the examples
-
-Three patterns recur in the examples above:
-
-* **The Advisor starts with structured records.** Votes, legislative processes and MP identities provide an anchor — text searches are narrowed by what the structured tools found.
-* **Multi-source citations are the norm.** Even simple queries produce several citation chips, so every claim can be verified.
-* **Large questions are planned and divided.** A broad request gets a plan and may be split among research agents; if the whole question cannot be covered in one turn, the answer says which part remains and suggests a narrower follow-up.
+* Open source citations and compare them with the claim they support.
+* Check the period, legislative term and identity of the people or proposals involved.
+* Distinguish source facts, the Advisor's interpretation and missing information.
+* Use a narrower follow-up when the answer is partial or the available evidence is inconclusive.

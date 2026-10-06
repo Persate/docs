@@ -24,8 +24,6 @@ The document combines formatted text, tables, highlighted findings, sources, cha
 
 Chart sources can open the study used for the calculation, a source inside Persate, or an external page. Research links open the saved results in the analysis document. A request for a chart produces a rendered visualization; source code is not a substitute for an unavailable chart.
 
-Chart sources can open the study used for the calculation, a source inside Persate, or an external page. Research links open the saved results in the analysis document. A request for a chart produces a rendered visualization; source code is not a substitute for an unavailable chart.
-
 The document starts with the analysis title and, when useful, a short description. Its content updates as work continues. The view label, version selector, status and date are omitted from the document itself. The **Analysis document** tab and shortcuts use a document icon.
 
 The saved document and research remain available after reopening the conversation, independently of the loaded chat messages. **Load earlier research** retrieves more studies. A link to an older chart reveals that chart while retaining the current document content. Stopping work preserves the content already produced; analysis limitations are described within the text.
@@ -104,27 +102,19 @@ Materials dropped while the Advisor is working stay in the draft for the next me
 
 Every turn produces a **message timeline** streamed before the response content. It constitutes a visible record of the advisor's actions during operation.
 
-### Reasoning blocks
+### Progress notes
 
-Fragments of the model's chain of thought appear as collapsible rows labeled *"Thinking…"* (in progress) or *"Working through the request"* (completed). Upon turn completion, blocks are automatically collapsed — any of them can be reopened for inspection.
+Collapsible rows summarize the Advisor's work while the answer is being prepared. Expand a row to read it. Completed work folds automatically; the record can be reopened later.
 
-Reasoning blocks represent the model's working notes, not part of the final response. They are useful for understanding *why* the advisor reached a given conclusion.
+These notes describe progress. Check the final answer and its cited sources before relying on a conclusion.
 
 ### Tool call badges
 
-Every external search executed by the advisor becomes a badge in the timeline. It contains:
+Searches and other actions appear as badges with an icon, an operation label and a status. Completed actions can show their duration. Consecutive actions form a collapsible group with the number of tools used.
 
-* **Icon** identifying the skill family (legislation, stakeholders, public_pulse, alerts, documents, chat_context).
-* **Tool name**.
-* **Status** — icons corresponding to successive stages of operation. Completed calls display the execution time (e.g., `1.2s`).
+### Clarifying questions
 
-Adjacent tool calls are grouped into a collapsible set (*"Using N tools…"* in progress, *"N tools used"* completed).
-
-### Elicitation forms
-
-Certain tools require structural input during the turn — e.g., selecting a Sejm term or indicating a stakeholder in case of a name collision. The tool then emits an **elicitation request**: the process remains in the *running* state, and a form appears below it.
-
-Confirm or skip the form (skipped requests use the tool's default value). Upon resolution, the tool call resumes.
+When the Advisor needs more information, a question and its answer controls appear in the conversation. Select an answer and choose **Continue**, or choose **Skip**. Use the question's own controls; text sent through the composer during work is a note to the running task.
 
 ## Links in responses
 
@@ -170,7 +160,7 @@ The right interface column contains a list of all conversations on the account:
 
 * **New conversation** — clears the workspace and initiates a new session.
 * A new conversation starts with a temporary title and automatically receives a short subject title, independently of whether research finishes. Older prompt-based titles are updated when the conversation opens. A manually chosen title is preserved. The **…** menu offers **Rename conversation** and **Move to project**.
-* Selecting a conversation opens it with the full record — reasoning blocks, tool badges, and citations are reconstructed.
+* Selecting a conversation opens it with the full record — progress notes, action badges, and citations are restored.
 * **Delete conversation** in the **…** menu asks for confirmation before permanently deleting the conversation and its history.
 
 **Projects** contains expandable folders; **Recent** lists conversations without a project. Hover over the Projects heading to reveal **+** for creating a project. The heading and each folder can be collapsed. Drag a conversation onto a folder or use **… → Move to project**; its row is then indented underneath.
