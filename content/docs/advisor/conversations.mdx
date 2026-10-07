@@ -171,19 +171,23 @@ The right interface column contains a list of all conversations on the account:
 
 **Projects** contains expandable folders; **Recent** lists conversations without a project. Hover over the Projects heading to reveal **+** for creating a project. The heading and each folder can be collapsed. Drag a conversation onto a folder or use **… → Move to project**; its row is then indented underneath.
 
+Each project loads its conversations independently of the recent conversation list. **Load more conversations** inside a folder shows more of its history. The list refreshes as other members share conversations.
+
 Drag a conversation above or below another conversation in the same section to change their order. The **…** menu also offers **Move conversation up** and **Move conversation down**; when a conversation has keyboard focus, **Alt + Up/Down** performs the same action. The order is saved for the current account, including shared conversations, and is retained after refresh and when loading more history. New conversations appear first. After a manual reorder, the **Recent** heading becomes **Conversations**.
 
 Moving a conversation into a shared project opens a confirmation showing the conversation and project names. All members of that project will be able to read the entire conversation. Choose **Share and move** to continue or **Cancel** to keep its current location and access. This also applies when choosing a shared project beside the message field. Private projects do not require this confirmation.
 
 Projects may be private or shared with a group. Membership provides permanent group projects and an organization-wide project, which cannot be deleted. Conversations stay private until their author places them in a shared project. Shared rows show the author's profile picture, with initials when the picture is unavailable.
 
-Other members have **view-only** access. When a saved analysis is available, it opens automatically beside the conversation. **Show conversation** closes the analysis pane and returns to the saved chat. Conversations without an analysis open directly in the chat. Readers can inspect the document, charts, saved research and sources, and copy answers. Only the author can send messages, ask follow-up questions, regenerate answers, update the analysis, rename, move or delete the conversation. Access to linked source materials is checked separately. Live agent sessions remain available to their owner.
+The author can withdraw sharing with **… → Make private**. The conversation returns to the unfiled list, and other members lose access, including an open live view. **Move to project → No project** or moving to a private project has the same effect.
+
+Other members have **view-only** access. They also see the answer and progress as they arrive, along with later messages from the author. They cannot send messages or stop the author’s work. When a saved analysis is available, it opens automatically beside the conversation. **Show conversation** closes the analysis pane and returns to the saved chat. Conversations without an analysis open directly in the chat. Readers can inspect the document, charts, saved research and sources, and copy answers. Only the author can send messages, ask follow-up questions, regenerate answers, update the analysis, rename, move or delete the conversation. Access to linked source materials is checked separately. Live agent sessions remain available to their owner.
 
 On narrow screens, the history column is accessible via the **History** button in the top right corner.
 
 ## Refresh and resume
 
-An active turn is not lost upon leaving the view, refreshing the browser, or experiencing a temporary connection loss. The advisor executes the turn as a detached task and transmits events to clients connected at the time of their triggering. When the author reopens the conversation, it reconnects to the live stream and restores the progress to date. Other members can read the saved results.
+An active turn is not lost upon leaving the view, refreshing the browser, or experiencing a temporary connection loss. The advisor executes the turn as a detached task and transmits events to clients connected at the time of their triggering. When the author reopens the conversation, it reconnects to the live stream and restores the progress to date. Other members can read saved results and watch the current answer arrive in view-only mode.
 
 ## Empty view and error states
 
