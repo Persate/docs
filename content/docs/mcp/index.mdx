@@ -29,6 +29,7 @@ A toolset is a group of related tools that is enabled as a whole.
 | **Workspace** | Files and documents the user can open, with search, reading, and the events found in them; the source catalogue, the team directory, personal preferences, and notifications; with write access, changing preferences and marking notifications as read or archiving them |
 | **Labs** | The research Labs available to the organization |
 | **Administration** | Members, groups, and invitations; with write access, changing member roles, groups, and group membership, inviting members, revoking invitations, and renaming the organization. Requires an administrator account |
+| **Research** | Cohort studies of public sources assessed by Persate's assessment model, with their counts and original passages, and reading many resources returned by other tools in one call; with write access, starting and cancelling studies. See [Cohort studies and bulk reads](#cohort-studies-and-bulk-reads) |
 
 Every tool works with the signed-in user's permissions: a toolset does not open data that the user cannot see in Persate.
 
@@ -37,11 +38,32 @@ Every tool works with the signed-in user's permissions: a toolset does not open 
 The administrator sets the organization's **Access mode**:
 
 * **Read-only access** — AI apps search and read data but cannot change anything in Persate.
-* **Read and write access** — AI apps can also make the changes the user asks for in the **Alerts**, **Workspace**, and **Administration** toolsets listed above.
+* **Read and write access** — AI apps can also make the changes the user asks for in the **Alerts**, **Workspace**, **Administration**, and **Research** toolsets listed above.
 
-A connection receives write access only when the organization allows it and the user approved a consent screen that showed **Read and write access**. Otherwise, the connection is read-only. Changes use the user's own permissions, so an AI app cannot do more than the user can do in Persate. Account-security changes, file deletion, and paid enrichment are not available through MCP. Ask for specific changes and review any confirmation the AI app shows before approving a change.
+A connection receives write access only when the organization allows it and the user approved a consent screen that showed **Read and write access**. Otherwise, the connection is read-only. Changes use the user's own permissions, so an AI app cannot do more than the user can do in Persate. Account-security changes and file deletion are not available through MCP. Paid enrichment is available only as **Research** studies, whose assessments are recorded against the organization. Ask for specific changes and review any confirmation the AI app shows before approving a change.
 
 A connection keeps the access approved on its consent screen. When the organization later allows write access or enables another toolset, existing connections do not receive it; disconnect the AI app and connect it again. Narrower settings apply to existing connections within 30 seconds, and some changes disconnect AI apps, as described in **[MCP and AI apps](/account-and-settings/mcp)**.
+
+## Cohort studies and bulk reads
+
+With the **Research** toolset, an AI app can have Persate assess a whole set of public passages instead of reading them one at a time. Ask the app for a study and name the source and the questions, for example *all MP statements from the last Sejm sitting: does the speaker support the bill, and what is their main argument?* A study can draw on:
+
+* posts on X from a date range;
+* all spoken MP statements of a Sejm sitting;
+* recent RCL projects and their documents;
+* whole Sejm recordings.
+
+Persate's assessment model answers the same one to four questions for every passage, or rates the stance on named topics. The study runs in the background: the app starts it (`analysis_start`), checks its status (`analysis_status`), and then reads the counts (`analysis_results`) and the original passages with their assessments (`analysis_read`). `analysis_cancel` stops a study and keeps the passages already assessed. The questions and topics written for a study are processed by Persate's assessment model together with the passages.
+
+Results describe only the passages collected for the study. A count is not proof that the source was covered in full; cite it together with the coverage and gaps the study reports.
+
+* A study covers up to 10,000 passages and uses public sources only; company files cannot be studied.
+* Starting and cancelling a study are changes: they require **Read and write access** and the user's approval of write access. Reading studies requires only the **Research** toolset.
+* A user can have at most two queued or running studies per connection, and an organization at most four.
+* Studies are kept for 90 days, and each user sees only their own studies.
+* Every assessment is recorded against the organization.
+
+`resources_read` reads up to 100 resources returned by other Persate tools in one call, for example the documents found by a search. Each resource must belong to a toolset the connection includes; otherwise that item reports that its toolset is not enabled for the connection, and the other items are read as usual. Company files additionally require two-factor authentication.
 
 ## Connect an AI app
 

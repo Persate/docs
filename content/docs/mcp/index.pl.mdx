@@ -29,6 +29,7 @@ Zestaw narzędzi to grupa powiązanych narzędzi, która jest włączana w cało
 | **Przestrzeń robocza** | Pliki i dokumenty, które użytkownik może otworzyć — wyszukiwanie, odczyt i wykryte w nich zdarzenia; katalog źródeł, lista członków zespołu, osobiste preferencje i powiadomienia; przy dostępie do zapisu — zmiana preferencji oraz oznaczanie powiadomień jako przeczytanych i ich archiwizowanie |
 | **Laboratoria** | Laboratoria badawcze dostępne dla organizacji |
 | **Administracja** | Członkowie, grupy i zaproszenia; przy dostępie do zapisu — zmiana ról członków, grup i członkostwa w grupach, zapraszanie członków, cofanie zaproszeń i zmiana nazwy organizacji. Wymaga konta administratora |
+| **Badania** | Badania kohortowe źródeł publicznych oceniane przez model oceny Persate, wraz z liczebnościami i oryginalnymi fragmentami, oraz odczyt wielu zasobów zwróconych przez inne narzędzia w jednym wywołaniu; przy dostępie do zapisu — rozpoczynanie i anulowanie badań. Zob. [Badania kohortowe i odczyt zbiorczy](#badania-kohortowe-i-odczyt-zbiorczy) |
 
 Każde narzędzie działa z uprawnieniami zalogowanego użytkownika: zestaw narzędzi nie otwiera danych, których użytkownik nie widzi w Persate.
 
@@ -37,11 +38,32 @@ Każde narzędzie działa z uprawnieniami zalogowanego użytkownika: zestaw narz
 Administrator ustawia **Tryb dostępu** organizacji:
 
 * **Dostęp tylko do odczytu** — aplikacje AI wyszukują i odczytują dane, ale nie mogą niczego zmieniać w Persate.
-* **Dostęp do odczytu i zapisu** — aplikacje AI mogą też wprowadzać zmiany, o które prosi użytkownik, w zestawach **Alerty**, **Przestrzeń robocza** i **Administracja** opisanych powyżej.
+* **Dostęp do odczytu i zapisu** — aplikacje AI mogą też wprowadzać zmiany, o które prosi użytkownik, w zestawach **Alerty**, **Przestrzeń robocza**, **Administracja** i **Badania** opisanych powyżej.
 
-Połączenie otrzymuje dostęp do zapisu tylko wtedy, gdy organizacja na to pozwala, a użytkownik zatwierdził ekran zgody z informacją **Dostęp do odczytu i zapisu**. W przeciwnym razie połączenie działa tylko do odczytu. Zmiany są wprowadzane z uprawnieniami użytkownika, dlatego aplikacja AI nie może zrobić więcej, niż użytkownik może zrobić w Persate. Zmiany zabezpieczeń konta, usuwanie plików i płatne wzbogacanie danych nie są dostępne przez MCP. Należy zlecać konkretne zmiany i sprawdzać potwierdzenia wyświetlane przez aplikację AI przed ich zatwierdzeniem.
+Połączenie otrzymuje dostęp do zapisu tylko wtedy, gdy organizacja na to pozwala, a użytkownik zatwierdził ekran zgody z informacją **Dostęp do odczytu i zapisu**. W przeciwnym razie połączenie działa tylko do odczytu. Zmiany są wprowadzane z uprawnieniami użytkownika, dlatego aplikacja AI nie może zrobić więcej, niż użytkownik może zrobić w Persate. Zmiany zabezpieczeń konta i usuwanie plików nie są dostępne przez MCP. Płatne wzbogacanie danych jest dostępne wyłącznie w postaci badań z zestawu **Badania**, których oceny są rejestrowane na koncie organizacji. Należy zlecać konkretne zmiany i sprawdzać potwierdzenia wyświetlane przez aplikację AI przed ich zatwierdzeniem.
 
 Połączenie zachowuje dostęp zatwierdzony na ekranie zgody. Gdy organizacja później zezwoli na zapis lub włączy kolejny zestaw narzędzi, istniejące połączenia go nie otrzymują; należy odłączyć aplikację AI i połączyć ją ponownie. Węższe ustawienia obowiązują istniejące połączenia w ciągu 30 sekund, a niektóre zmiany odłączają aplikacje AI — zob. **[MCP i aplikacje AI](/pl/account-and-settings/mcp)**.
+
+## Badania kohortowe i odczyt zbiorczy
+
+Zestaw **Badania** pozwala aplikacji AI zlecić Persate ocenę całego zbioru publicznych fragmentów zamiast odczytywania ich pojedynczo. Należy poprosić aplikację o badanie i wskazać źródło oraz pytania, np. *wszystkie wypowiedzi posłów z ostatniego posiedzenia Sejmu: czy mówca popiera projekt i jaki jest jego główny argument?* Badanie może obejmować:
+
+* wpisy w serwisie X z wybranego okresu;
+* wszystkie wypowiedzi posłów wygłoszone na posiedzeniu Sejmu;
+* najnowsze projekty RCL wraz z ich dokumentami;
+* całe nagrania posiedzeń Sejmu.
+
+Model oceny Persate odpowiada na te same pytania, od jednego do czterech, dla każdego fragmentu albo ocenia stanowisko wobec wskazanych tematów. Badanie działa w tle: aplikacja je rozpoczyna (`analysis_start`), sprawdza jego stan (`analysis_status`), a następnie odczytuje liczebności (`analysis_results`) oraz oryginalne fragmenty wraz z ocenami (`analysis_read`). `analysis_cancel` zatrzymuje badanie i zachowuje fragmenty już ocenione. Pytania i tematy sformułowane dla badania są przetwarzane przez model oceny Persate razem z fragmentami.
+
+Wyniki opisują wyłącznie fragmenty zebrane na potrzeby badania. Liczebność nie dowodzi, że źródło zostało objęte w całości; należy ją przytaczać razem z zakresem i lukami zgłoszonymi przez badanie.
+
+* Badanie obejmuje do 10 000 fragmentów i korzysta wyłącznie ze źródeł publicznych; plików firmowych nie można badać.
+* Rozpoczęcie i anulowanie badania są zmianami: wymagają trybu **Dostęp do odczytu i zapisu** oraz zatwierdzenia przez użytkownika dostępu do zapisu. Odczyt badań wymaga jedynie zestawu **Badania**.
+* Użytkownik może mieć najwyżej dwa oczekujące lub trwające badania w ramach jednego połączenia, a organizacja — najwyżej cztery.
+* Badania są przechowywane przez 90 dni; każdy użytkownik widzi wyłącznie własne badania.
+* Każda ocena jest rejestrowana na koncie organizacji.
+
+`resources_read` odczytuje w jednym wywołaniu do 100 zasobów zwróconych przez inne narzędzia Persate, np. dokumentów znalezionych w wyszukiwaniu. Każdy zasób musi należeć do zestawu narzędzi objętego połączeniem; w przeciwnym razie dany element informuje, że jego zestaw narzędzi nie jest włączony dla połączenia, a pozostałe elementy są odczytywane normalnie. Pliki firmowe wymagają dodatkowo uwierzytelniania dwuskładnikowego.
 
 ## Połączenie aplikacji AI
 
