@@ -134,7 +134,7 @@ Accounts with two-step verification confirm every new connection with a fresh au
 
 Accounts without two-step verification approve without a code. Such a connection cannot reach company files: tools that search or read them are refused, while the other toolsets work as approved. To include company files, set up two-factor authentication under **Settings → Security & Privacy**, then connect the AI app again. Setting up two-factor authentication ends the account's existing AI app connections.
 
-Apps added as custom connectors usually register themselves, so the warning can appear for them. Allow access only when the name matches the app being connected. Do not allow a request that was not started intentionally, for example one opened from a link sent by someone else.
+ChatGPT and Claude are verified automatically. Other apps added as custom connectors usually register themselves, so the warning can appear for them. Allow access only when the name matches the app being connected. Do not allow a request that was not started intentionally, for example one opened from a link sent by someone else.
 
 Select **Deny** to refuse access; the browser returns to the app without granting it. If the account is not eligible to connect, the page shows **Connection not available** with the reason, and **Return to app** returns to the displayed host without granting access. An invalid or expired request must be started again from the AI app.
 
@@ -142,7 +142,7 @@ Select **Deny** to refuse access; the browser returns to the app without grantin
 
 Access tokens refresh automatically, so a connected AI app does not ask for sign-in on every use.
 
-To revoke access, open **Settings → MCP & AI apps** in Persate. **Connected AI apps** lists the AI apps allowed to use Persate on the user's behalf, with the dates they were connected, last used, and when the connection expires; self-registered apps carry an **Unverified** label. Select **Disconnect** next to an app, or **Disconnect all** when more than one is connected, and confirm. The app loses access to Persate within 30 seconds. **Manage AI connections** under **Settings → Security & Privacy** opens the same page.
+To revoke access, open **Settings → MCP & AI apps** in Persate. **Connected AI apps** lists the AI apps allowed to use Persate on the user's behalf, with the dates they were connected, last used, and when the connection expires; self-registered apps that Persate has not verified carry an **Unverified** label. Select **Disconnect** next to an app, or **Disconnect all** when more than one is connected, and confirm. The app loses access to Persate within 30 seconds. **Manage AI connections** under **Settings → Security & Privacy** opens the same page.
 
 Removing the connector in the AI app (in Claude Code: `claude mcp remove persate`) stops using it there, but does not necessarily revoke the access already granted; disconnect it in **Connected AI apps** as well. Organization administrators can also disconnect members' AI apps under **Organization AI connections** on the **MCP access** page.
 
@@ -160,7 +160,7 @@ To connect again, repeat the steps for the app.
 
 ## Troubleshooting
 
-* **Connection not available** — the page states the reason: external AI access is not enabled for the organization, the organization has not made any Persate data available to external AI apps, the organization does not allow this account to connect, or it does not allow this AI app. Ask the organization's administrator. Apps added as custom connectors usually register themselves and can connect only when the administrator turns on **Allow unverified clients**.
+* **Connection not available** — the page states the reason: external AI access is not enabled for the organization, the organization has not made any Persate data available to external AI apps, the organization does not allow this account to connect, or it does not allow this AI app. Ask the organization's administrator. ChatGPT and Claude are verified automatically. Other apps that register themselves, such as Codex or Claude Code, can connect only when the administrator turns on **Allow unverified clients**.
 * **Connection request unavailable** — the request has expired or is invalid. A connection request is valid for a limited time. Close the page and start the connection again from the AI app. Do not reuse an old sign-in page or bookmark.
 * The page says the app's return address is not allowed — Persate refused to send the browser back to an address it could not verify. Start the connection again from the AI app; if the message repeats, that app cannot be connected.
 * The sign-in page keeps returning — complete the sign-in on persate.com, including the authenticator code for accounts with two-step verification; the connection continues only after it. If the loop continues, sign in to persate.com in the same browser first, then start the connection again from the AI app.
