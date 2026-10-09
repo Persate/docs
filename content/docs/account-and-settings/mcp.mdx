@@ -31,7 +31,7 @@ The AI app receives the data returned by the tools it uses and processes it unde
 
 ## Connected AI apps
 
-**Connected AI apps** lists the apps the user has allowed to use Persate, with the dates each was connected, last used and when the connection expires; apps that registered themselves are marked **Unverified**. Select **Disconnect** next to an app, or **Disconnect all** when more than one is connected, and confirm. The app loses access within 30 seconds; to use it again, connect it from the app and approve a new consent screen. **No AI apps are connected.** means there are no connections.
+**Connected AI apps** lists the apps the user has allowed to use Persate, with the dates each was connected, last used and when the connection expires; apps that registered themselves and that Persate has not verified are marked **Unverified**. Select **Disconnect** next to an app, or **Disconnect all** when more than one is connected, and confirm. The app loses access within 30 seconds; to use it again, connect it from the app and approve a new consent screen. **No AI apps are connected.** means there are no connections.
 
 ## Organization MCP access
 
@@ -47,7 +47,7 @@ Organization administrators open **MCP access** under **ORGANIZATION** in Settin
 ### Allowed AI apps
 
 * **Client policy** — **Any eligible client** admits every app that Persate has verified and, when allowed, unverified apps. **Selected clients only** admits only the listed apps: enter their client IDs in **Registered client IDs (one per line)** or select apps already known to the organization.
-* **Allow unverified clients** — admits apps that registered themselves and whose identity Persate has not verified. Apps added as custom connectors in ChatGPT or Claude usually register themselves, so unless Persate has verified them, they can connect only while this option is on. A displayed app name does not prove the app's identity. Selected-client restrictions still apply.
+* **Allow unverified clients** — admits apps that registered themselves and whose identity Persate has not verified. ChatGPT and Claude are verified automatically. Other apps that register themselves, such as Codex, Claude Code or your own integrations, can connect only while this option is on, unless Persate has verified them. A displayed app name does not prove the app's identity. Selected-client restrictions still apply.
 
 ### Saving changes
 
