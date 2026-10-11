@@ -100,7 +100,7 @@ Apply the same boundary to MDX, screenshots, downloadable assets, scripts that g
 ## 8. Tooling
 
 - Install with `npm ci`, not `npm install`, so `node_modules` matches `package-lock.json`.
-- ESLint stays on 9.x: `eslint-config-next@16.2.4` bundles `eslint-plugin-react` 7.x, which crashes on ESLint 10 (`scopeManager.addGlobals is not a function`, `contextOrFilename.getFilename is not a function`). If `npm run lint` crashes with either error, `node_modules` has drifted from the lockfile — run `npm ci`.
+- ESLint stays on 9.x: `eslint-config-next@16.4.0` bundles `eslint-plugin-react` 7.x, which crashes on ESLint 10 (`scopeManager.addGlobals is not a function`, `contextOrFilename.getFilename is not a function`). If `npm run lint` crashes with either error, `node_modules` has drifted from the lockfile — run `npm ci`.
 - `npm run lint` must exit 0 with no warnings and `npm run build` must pass before declaring done.
 
 
