@@ -21,7 +21,7 @@ The table shows each **Member** with their email, **Role**, **Groups**, **Tokens
 
 1. Select **Invite member**. The **Add user** dialog opens.
 2. Enter the **Email** and choose the **Role**: **Admin** or **Member**.
-3. Select **Send invite**. Persate emails an invitation with a link for setting a password.
+3. Select **Send invite**. Persate emails one invitation with a link for setting a password. If the email cannot be sent, a message says so; the invitation is kept, and **Resend invite** on the **Invites** tab sends it again.
 
 If an account with that address already exists but does not belong to any organization, the dialog asks whether to send it an invitation to join; **Send invite** confirms.
 
@@ -33,10 +33,20 @@ The **Period** selector in the sidebar switches the activity charts between 7, 3
 
 ## Invitations
 
-Pending and expired invitations appear in a separate **Invites** table below the members, with **Email**, **Role** and **Status** (**Pending** or **Expired**). Search and filters apply to both tables, and each table has its own pages.
+The **Invites** tab next to **Members** lists every invitation the organization has sent, newest first. The number on the tab counts the pending and expired ones. For each invitation it shows:
 
-* **Resend invite** sends the invitation again.
-* **Revoke invite** cancels the invitation.
+* the **Email**, marked **Existing account** when the address already had a Persate account;
+* the **Status** (**Pending**, **Expired**, **Accepted** or **Revoked**) with its date: when a pending invitation expires, or when it expired, was accepted or was revoked;
+* **Sent**, the date of the last email, with the number of sends when it was sent more than once;
+* **Invited by**, the administrator who sent it, or **Persate team**;
+* the **Role** the person receives.
+
+The search field (**Email…**) finds invitations by address, and **Filters** narrows them by **Status** and **Role**. Selecting an accepted invitation opens the member's profile.
+
+* **Resend invite** sends the invitation again with a new link. A link from an earlier email stops working.
+* **Revoke invite** asks for confirmation, then cancels the invitation so its link stops working. An account that already existed is not affected; an account created for the invitation and never activated is removed.
+
+Removing a member also revokes their open invitations.
 
 ## Change a role
 
