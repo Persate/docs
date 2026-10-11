@@ -2,6 +2,7 @@ import '../global.css';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import { RootProvider } from 'fumadocs-ui/provider/next';
+import { Analytics } from '@/components/Analytics';
 import { i18n } from '@/lib/i18n';
 
 const montserrat = Montserrat({
@@ -91,6 +92,7 @@ export default async function Layout({ children, params }: LayoutProps<'/[lang]'
         >
           {children}
         </RootProvider>
+        <Analytics />
       </body>
     </html>
   );
