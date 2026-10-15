@@ -9,7 +9,7 @@ Większość kont w Persate powstaje z zaproszenia wysłanego przez administrato
 
 1. Otworzyć link z wiadomości z zaproszeniem. Otwiera się strona **Ustaw hasło do Persate**; jej język można przełączyć między English i Polski.
 2. Wybrać **Przejdź do Persate**. Link jest wykorzystywany dopiero na tym etapie, dlatego skaner poczty, który otwiera linki z wyprzedzeniem, nie unieważnia go.
-3. Na stronie **Ustaw hasło** wpisać **Nowe hasło** i powtórzyć je w polu **Powtórz hasło**. Hasło musi mieć co najmniej 8 znaków i zawierać cyfrę oraz znak specjalny.
+3. Na stronie **Ustaw hasło** wpisać **Nowe hasło** i powtórzyć je w polu **Powtórz hasło**. Hasło musi mieć co najmniej 8 znaków, w tym małą literę, wielką literę, cyfrę i znak specjalny, np. ! ? # lub @. Hasła, które wystąpiły w znanych wyciekach danych, są odrzucane. Lista **Twoje hasło musi zawierać:** pokazuje wszystkie wymagania przed wpisaniem hasła i oznacza spełnione; przycisk z okiem pokazuje wpisane hasło.
 4. Wybrać **Aktywuj konto**. Dopóki link jest weryfikowany, przycisk wyświetla **Oczekiwanie na sesję…**.
 5. Po komunikacie **Konto aktywowane! Przekierowywanie…** przejść do [pierwszego logowania](/pl/getting-started/first-login) i konfiguracji [weryfikacji dwuetapowej](/pl/getting-started/set-up-two-factor).
 
@@ -26,7 +26,7 @@ Administrator może też utworzyć konto z hasłem zamiast wysyłać zaproszenie
 Strona główna persate.com zawiera przyciski **Zaloguj się** i **Umów prezentację**. Aby się zarejestrować, należy wybrać **Zaloguj się**, następnie **Zarejestruj się** pod formularzem logowania i wypełnić formularz **Utwórz konto**:
 
 * **Adres e-mail** — adres konta.
-* **Hasło** — co najmniej 8 znaków, w tym co najmniej 1 cyfra i co najmniej 1 znak specjalny. Podczas wpisywania hasła lista **Twoje hasło musi zawierać:** pokazuje wymagania i oznacza spełnione.
+* **Hasło** — co najmniej 8 znaków, w tym małą literę, wielką literę, cyfrę i znak specjalny, np. ! ? # lub @. Hasła, które wystąpiły w znanych wyciekach danych, są odrzucane. Lista **Twoje hasło musi zawierać:** pod polami pokazuje wymagania i oznacza spełnione.
 * **Potwierdź hasło** — to samo hasło wpisane ponownie.
 * **Akceptuję Politykę prywatności** i **Akceptuję Regulamin** — przycisk **Zarejestruj się** staje się dostępny dopiero po zaznaczeniu obu pól.
 
@@ -39,7 +39,8 @@ Strony logowania i rejestracji mają u góry przełącznik języka **EN** / **PL
 ## Stany błędu
 
 * **Hasła nie są takie same.** — hasło i jego potwierdzenie się różnią.
-* **Rejestracja nie powiodła się** z opisem **Hasło musi mieć co najmniej 8 znaków.**, **Hasło musi zawierać co najmniej 1 cyfrę.** lub **Hasło musi zawierać co najmniej 1 znak specjalny.** — hasło nie spełnia wymagań.
+* **Rejestracja nie powiodła się** z opisem takim jak **Hasło musi zawierać co najmniej jedną wielką literę.** — hasło nie spełnia wskazanego wymagania.
+* **To hasło występuje w znanym wycieku danych. Wybierz inne hasło.** — hasło spełnia wymagania, ale jest znane z wycieku danych; należy wybrać inne.
 * **Rejestracja nie powiodła się** z opisem **Wystąpił nieoczekiwany błąd. Spróbuj ponownie.** — nie udało się przetworzyć zgłoszenia; należy spróbować ponownie.
 * **Hasła nie są identyczne.** lub **Powtórz hasło.** na stronie **Ustaw hasło** — drugie pole różni się od pierwszego lub jest puste.
 * **Link logowania wygasł** lub **Nie udało się zalogować** — link z wiadomości został już wykorzystany lub stracił ważność; należy poprosić o nowe zaproszenie i użyć tylko najnowszej wiadomości.
