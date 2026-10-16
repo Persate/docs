@@ -9,7 +9,7 @@ Most Persate accounts start with an invitation from an organization administrato
 
 1. Open the link in the invitation email. A page titled **Set your Persate password** opens; its language can be switched between English and Polski.
 2. Select **Continue to Persate**. The link is used only at this step, so an email security scanner that opens links in advance does not use it up.
-3. On **Set your password**, enter a **New password** and type it again in **Repeat password**. The password needs at least 8 characters, including a number and a special character.
+3. On **Set your password**, enter a **New password** and type it again in **Repeat password**. The password needs at least 8 characters with a lowercase letter, an uppercase letter, a number and a special character such as ! ? # or @. Passwords that appear in known data breaches are refused. The list under **Your password must include:** shows every rule before typing and ticks each one that is met; the eye button shows the typed password.
 4. Select **Activate account**. While the link is still being verified, the button reads **Waiting for session…**.
 5. After **Account activated! Redirecting…**, continue with the [first sign-in](/getting-started/first-login) and the [two-factor authentication](/getting-started/set-up-two-factor) setup.
 
@@ -26,7 +26,7 @@ An administrator can also create the account with a password instead of sending 
 The persate.com homepage offers **Log in** and **Book a demo**. To sign up, select **Log in**, then **Sign up** under the sign-in form, and complete **Create your Account**:
 
 * **Email address** — the address of the account.
-* **Password** — at least 8 characters, including at least 1 number and at least 1 special character. While the password is being entered, **Your password must include:** lists the rules and ticks each one that is met.
+* **Password** — at least 8 characters with a lowercase letter, an uppercase letter, a number and a special character such as ! ? # or @. Passwords that appear in known data breaches are refused. **Your password must include:** lists the rules under the fields and ticks each one that is met.
 * **Confirm Password** — the same password again.
 * **I agree to the Privacy Policy** and **I agree to the Terms of Service** — **Sign Up** becomes available only when both boxes are ticked.
 
@@ -39,7 +39,8 @@ The sign-in and sign-up pages have an **EN** / **PL** language switch at the top
 ## Error states
 
 * **Passwords do not match.** — the password and its confirmation differ.
-* **Sign-up Failed** with **Password must be at least 8 characters long.**, **Password must include at least 1 number.** or **Password must include at least 1 special character.** — the password does not meet the rules.
+* **Sign-up Failed** with a message such as **Password must contain at least one uppercase letter.** — the password does not meet the named rule.
+* **This password appears in a known data breach. Choose a different password.** — the password meets the rules but is known from a data breach; choose another one.
 * **Sign-up Failed** with **An unexpected error occurred. Please try again.** — the request could not be processed; try again.
 * **The passwords do not match.** or **Please repeat the password.** on **Set your password** — the second field differs from the first or is empty.
 * **This sign-in link expired** or **We couldn't sign you in** — the email link has already been used or is no longer valid; ask for a new invitation and use only the newest email.
