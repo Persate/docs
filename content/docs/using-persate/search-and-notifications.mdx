@@ -1,57 +1,56 @@
 ---
 title: Search and notifications
-description: Global search with source previews, the Announcements and Messages feeds, notices above the header and notification settings.
+description: The search page with type tabs and source previews, the Announcements and Messages feeds, notices above the header and notification settings.
 ---
 
 ## Global search
 
-Open search with **Search** at the top of the sidebar, or with the search button in the dock on a phone, and type in **Search the platform...**. Results start to appear from two characters and update while typing. Some sources need a longer query, so a short query can miss results that a fuller one finds.
+Search has its own page. Open it with **Search** at the top of the sidebar, with the search button in the dock on a phone, or with Ctrl+K (⌘K on a Mac) from any page, and type in **Search the platform...**. Results start to appear from two characters and update while typing. Some sources need a longer query, so a short query can miss results that a fuller one finds.
 
-Search covers the modules enabled for the organization, and every result respects access to the individual record. Results are grouped into categories:
+Search covers the modules enabled for the organization, and every result respects access to the individual record. Results are grouped by type:
 
-| Category | What it finds |
+| Type | What it finds |
 |---|---|
-| **Go** | Platform sections, for example *votes* or *open recordings* |
-| **Files** | Repository files by name; longer queries also match file content |
-| **Folders** | Smart Folders |
-| **People** | Stakeholders — people and organizations |
-| **Related** | Records connected to matching people, institutions and keywords |
+| **Repository** | Repository files by name; longer queries also match file content |
+| **Smart Folders** | Smart Folders |
+| **Stakeholders** | People and organizations |
+| **Related records** | Records connected to matching people, institutions and keywords |
 | **Alerts** | Tracker alerts |
-| **Acts** | Government projects, Sejm prints, legal acts and documents, parliamentary questions, committees and legislative processes |
-| **Ministries** | Publications of ministries and other public offices |
-| **Live** | Recordings and transcript passages |
+| **Legislation** | Government projects, Sejm prints, legal acts and documents, parliamentary questions, committees and legislative processes |
+| **Ministries and offices** | Publications of ministries and other public offices |
+| **Recordings** | Recordings and transcript passages |
 | **Votes** | Sejm and Senate votes, decisions of the President and Constitutional Tribunal cases |
 | **Media** | Media topics, stories and posts |
 
-An identifier — an ELI, a Sejm print number, an RCL project number, a Constitutional Tribunal case signature or a voting reference — is matched directly and placed at the top of the results. Results can also come from Persate's automated analysis of a source; they appear in the category of the source itself, not in a separate category.
+Platform sections, for example *votes* or *open recordings*, are listed among all results too. An identifier — an ELI, a Sejm print number, an RCL project number, a Constitutional Tribunal case signature or a voting reference — is matched directly and placed at the top of the results. Results can also come from Persate's automated analysis of a source; they appear under the type of the source itself, not as a separate type.
 
 ### Reading the results
 
-On a large screen, results form a cloud around the search field, with the category buttons underneath. Cards already shown stay in place while further results arrive. When there are more results than fit, **Previous results** and **Next results** page through them. On a smaller screen or with enlarged text, results are listed above the search field, and **Close search** (the arrow next to the field) closes search.
+Results are listed one per row. Each row shows the title with its source or key details, the type and the date in aligned columns, and below the title the passage that matches the query, with the matching words in bold. On a phone, the type and date appear under the title. Repository files and alerts also show who can see them.
 
-The line next to the category buttons reports the state: **Searching**, the number of results shown out of those found, **No matches** or **Search incomplete**. **Some sources unavailable** means that at least one source did not answer; hovering over it lists them.
+While sources are answering, placeholder rows stand in for the results, and the line above the list reports the state: **Searching**, how many results have arrived so far, then, once every source has answered, that the results are being ordered by relevance. The order can change at that moment. When it is done, the line shows the number of results, or that nothing was found. **Not answering** lists the sources that did not answer in time; results from the other sources are shown as usual.
 
-Each result shows its source or key details. Repository files and alerts also show who can see them.
+### Filtering by type
 
-### Filtering by category
-
-Each category button shows how many results the category returned. Select one or more buttons to show only those categories, and select a button again to remove it. A category without matches is greyed out on a large screen and hidden on a smaller one. Changing the query clears the selection.
+The tabs above the list show one type at a time, each with its number of results; **All** shows every result. A type without matches is greyed out and moved to the end. The selected tab is kept when the query changes.
 
 ### Previewing a source
 
-**Preview source**, the information icon on a result, opens a preview without leaving search. It shows the source type, the title, the details and the source excerpt and, when available, a separate **Source analysis** section, labelled **Automated analysis of this source**, with topics and an explanation. An ordinary search shows no importance assessment. When the query itself asks about importance, for example with *important*, *significant*, *ważne* or *istotne*, the preview can add a qualified label such as **Potentially significant — automated assessment**.
+**Preview source**, the information icon at the end of a row, opens a preview without leaving search. It shows the source type, the title, the date and details, the source excerpt and, when available, a separate **Source analysis** section, labelled **Automated analysis of this source**, with topics and an explanation. An ordinary search shows no importance assessment. When the query itself asks about importance, for example with *important*, *significant*, *ważne* or *istotne*, the preview can add a qualified label such as **Potentially significant — automated assessment**.
 
 **Back to search** or Escape closes the preview, and **Open source** opens the result. Interface labels follow the selected language; source text keeps its original language.
 
-### Opening a result
+### Opening a result and coming back
 
-Select a result to open its page. A Repository file opens in the file preview over the current page, and a result that points outside Persate opens in a new tab.
+Select a row to open its page. A Repository file opens in the file preview over the results, and a result that points outside Persate opens in a new tab.
 
-From the keyboard, the down arrow moves from the search field to the first result, the arrow keys move between results and Enter opens the highlighted one; Enter in the search field opens the first result. Escape or a click outside the results closes search. On a phone, Enter only hides the keyboard; tap a result to open it.
+The page address keeps the query and the selected tab. After opening a result, the browser's Back button returns to the same results, at the same place in the list, without searching again. After ten minutes, returning searches the sources again. The address can also be bookmarked or shared; it opens the same search for anyone with access to the results.
+
+From the keyboard, the down arrow moves from the search field to the first result, the arrow keys move between results and Enter opens the highlighted one. Escape in the search field clears it. On a phone, Enter hides the keyboard; tap a result to open it.
 
 ### Asking the Advisor
 
-When the query reads like a question or an instruction, **Ask the Advisor** appears next to the search field. It starts a new Advisor conversation with the query as the first message. Ctrl+Enter (⌘+Enter on a Mac) does the same, and Enter also asks the Advisor when the query has no results.
+When the query reads like a question or an instruction, **Ask the Advisor** appears next to the search field. It starts a new Advisor conversation with the query as the first message. Ctrl+Enter (⌘+Enter on a Mac) in the search field does the same.
 
 ## Announcements
 

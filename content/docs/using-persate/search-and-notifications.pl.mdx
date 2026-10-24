@@ -1,57 +1,56 @@
 ---
 title: Wyszukiwanie i powiadomienia
-description: Wyszukiwanie globalne z podglądem źródeł, kanały Ogłoszenia i Wiadomości, komunikaty nad górnym paskiem oraz ustawienia powiadomień.
+description: Strona wyszukiwania z kartami typów i podglądem źródeł, kanały Ogłoszenia i Wiadomości, komunikaty nad górnym paskiem oraz ustawienia powiadomień.
 ---
 
 ## Wyszukiwanie globalne
 
-Wyszukiwanie otwiera przycisk **Wyszukiwanie** na górze panelu bocznego lub przycisk wyszukiwania w dolnym pasku na telefonie. Zapytanie wpisuje się w polu **Przeszukaj platformę…**. Wyniki pojawiają się od dwóch znaków i aktualizują w trakcie pisania. Niektóre źródła wymagają dłuższego zapytania, więc krótka fraza może pominąć wyniki, które znajdzie pełniejsza.
+Wyszukiwanie ma własną stronę. Otwiera ją przycisk **Wyszukiwanie** na górze panelu bocznego, przycisk wyszukiwania w dolnym pasku na telefonie albo skrót Ctrl+K (⌘K na Macu) z dowolnej strony. Zapytanie wpisuje się w polu **Przeszukaj platformę…**. Wyniki pojawiają się od dwóch znaków i aktualizują w trakcie pisania. Niektóre źródła wymagają dłuższego zapytania, więc krótka fraza może pominąć wyniki, które znajdzie pełniejsza.
 
-Wyszukiwanie obejmuje moduły włączone dla organizacji, a każdy wynik uwzględnia dostęp do konkretnego rekordu. Wyniki są pogrupowane w kategorie:
+Wyszukiwanie obejmuje moduły włączone dla organizacji, a każdy wynik uwzględnia dostęp do konkretnego rekordu. Wyniki są pogrupowane według typu:
 
-| Kategoria | Co obejmuje |
+| Typ | Co obejmuje |
 |---|---|
-| **Przejdź** | Sekcje platformy, np. *głosowania* lub *otwórz nagrania* |
-| **Pliki** | Pliki Repozytorium według nazwy; dłuższe zapytania obejmują także treść plików |
-| **Foldery** | Inteligentne foldery |
-| **Osoby** | Interesariusze — osoby i organizacje |
+| **Repozytorium** | Pliki Repozytorium według nazwy; dłuższe zapytania obejmują także treść plików |
+| **Inteligentne foldery** | Inteligentne foldery |
+| **Interesariusze** | Osoby i organizacje |
 | **Powiązania** | Rekordy powiązane z pasującymi osobami, instytucjami i słowami kluczowymi |
 | **Alerty** | Alerty z modułu Monitorowanie |
-| **Akty** | Projekty rządowe, druki sejmowe, akty prawne i dokumenty, interpelacje i zapytania, komisje oraz procesy legislacyjne |
-| **Ministerstwa** | Publikacje ministerstw i innych urzędów |
-| **Na żywo** | Nagrania i fragmenty transkrypcji |
+| **Legislacja** | Projekty rządowe, druki sejmowe, akty prawne i dokumenty, interpelacje i zapytania, komisje oraz procesy legislacyjne |
+| **Ministerstwa i urzędy** | Publikacje ministerstw i innych urzędów |
+| **Nagrania** | Nagrania i fragmenty transkrypcji |
 | **Głosowania** | Głosowania w Sejmie i Senacie, decyzje Prezydenta oraz sprawy Trybunału Konstytucyjnego |
 | **Media** | Tematy, historie i wpisy z modułu Media |
 
-Identyfikator — ELI, numer druku sejmowego, numer projektu RCL, sygnatura sprawy Trybunału Konstytucyjnego lub odwołanie do głosowania — jest rozpoznawany bezpośrednio i umieszczany na początku wyników. Wyniki mogą też pochodzić z automatycznej analizy źródła prowadzonej przez Persate; trafiają wtedy do kategorii samego źródła, a nie do osobnej kategorii.
+Sekcje platformy, np. *głosowania* lub *otwórz nagrania*, również pojawiają się wśród wszystkich wyników. Identyfikator — ELI, numer druku sejmowego, numer projektu RCL, sygnatura sprawy Trybunału Konstytucyjnego lub odwołanie do głosowania — jest rozpoznawany bezpośrednio i umieszczany na początku wyników. Wyniki mogą też pochodzić z automatycznej analizy źródła prowadzonej przez Persate; trafiają wtedy do typu samego źródła, a nie do osobnego typu.
 
 ### Odczytywanie wyników
 
-Na dużym ekranie wyniki tworzą chmurę wokół pola wyszukiwania, a przyciski kategorii znajdują się pod nim. Wyświetlone karty pozostają na miejscu, gdy pojawiają się kolejne wyniki. Jeśli wyników jest więcej, niż mieści ekran, strzałki **Poprzednie wyniki** i **Następne wyniki** przełączają kolejne strony. Na mniejszym ekranie lub przy powiększonym tekście wyniki tworzą listę nad polem wyszukiwania, a **Zamknij wyszukiwanie** (strzałka obok pola) zamyka wyszukiwanie.
+Wyniki tworzą listę, po jednym w wierszu. Każdy wiersz pokazuje tytuł ze źródłem lub najważniejszymi szczegółami, typ i datę w wyrównanych kolumnach, a pod tytułem fragment pasujący do zapytania, z pogrubionymi słowami z zapytania. Na telefonie typ i data są widoczne pod tytułem. Przy plikach Repozytorium i alertach widać również, kto ma do nich dostęp.
 
-Wiersz przy przyciskach kategorii pokazuje stan: **Wyszukiwanie**, liczbę wyświetlonych wyników spośród znalezionych, **Brak dopasowań** lub **Wyszukiwanie niepełne**. **Niektóre źródła są niedostępne** oznacza, że co najmniej jedno źródło nie odpowiedziało; po wskazaniu komunikatu widać ich listę.
+Gdy źródła jeszcze odpowiadają, w miejscu wyników widać wiersze zastępcze, a wiersz nad listą pokazuje stan: **Trwa wyszukiwanie…**, liczbę wyników, które już nadeszły, a gdy odpowiedzą wszystkie źródła — że wyniki są porządkowane według trafności. Kolejność może się wtedy zmienić. Na koniec wiersz pokazuje liczbę wyników albo informację, że nic nie znaleziono. **Nie odpowiada** wymienia źródła, które nie odpowiedziały na czas; wyniki z pozostałych źródeł są widoczne jak zwykle.
 
-Każdy wynik pokazuje źródło lub najważniejsze szczegóły. Przy plikach Repozytorium i alertach widać również, kto ma do nich dostęp.
+### Filtrowanie według typu
 
-### Filtrowanie według kategorii
-
-Przycisk kategorii pokazuje liczbę jej wyników. Wybranie jednego lub kilku przycisków pozostawia tylko te kategorie, a ponowne wybranie przycisku usuwa go z wyboru. Kategoria bez dopasowań jest wyszarzona na dużym ekranie i ukryta na mniejszym. Zmiana zapytania czyści wybór.
+Karty nad listą pokazują jeden typ naraz, każda z liczbą wyników; karta **Wszystkie** pokazuje każdy wynik. Typ bez dopasowań jest wyszarzony i przesunięty na koniec. Wybrana karta zostaje po zmianie zapytania.
 
 ### Podgląd źródła
 
-**Podgląd źródła**, czyli ikona informacji przy wyniku, otwiera podgląd bez opuszczania wyszukiwania. Podgląd zawiera typ źródła, tytuł, szczegóły i fragment źródła, a jeśli jest dostępna — osobną sekcję **Analiza źródła** z adnotacją **Automatyczna analiza tego źródła**, tematami i wyjaśnieniem. Zwykłe wyszukiwanie nie pokazuje oceny istotności. Gdy samo zapytanie dotyczy znaczenia, np. zawiera słowa *ważne*, *istotne*, *important* lub *significant*, podgląd może dodać etykietę z zastrzeżeniem, taką jak **Potencjalnie istotne — ocena automatyczna**.
+**Podgląd źródła**, czyli ikona informacji na końcu wiersza, otwiera podgląd bez opuszczania wyszukiwania. Podgląd zawiera typ źródła, tytuł, datę i szczegóły, fragment źródła, a jeśli jest dostępna — osobną sekcję **Analiza źródła** z adnotacją **Automatyczna analiza tego źródła**, tematami i wyjaśnieniem. Zwykłe wyszukiwanie nie pokazuje oceny istotności. Gdy samo zapytanie dotyczy znaczenia, np. zawiera słowa *ważne*, *istotne*, *important* lub *significant*, podgląd może dodać etykietę z zastrzeżeniem, taką jak **Potencjalnie istotne — ocena automatyczna**.
 
 **Powrót do wyszukiwania** lub klawisz Escape zamyka podgląd, a **Otwórz źródło** otwiera wynik. Etykiety interfejsu odpowiadają wybranemu językowi; treść źródła zachowuje język oryginału.
 
-### Otwieranie wyniku
+### Otwieranie wyniku i powrót
 
-Wybranie wyniku otwiera jego stronę. Plik Repozytorium otwiera się w podglądzie pliku nad bieżącą stroną, a wynik prowadzący poza Persate — w nowej karcie.
+Wybranie wiersza otwiera stronę wyniku. Plik Repozytorium otwiera się w podglądzie pliku nad wynikami, a wynik prowadzący poza Persate — w nowej karcie.
 
-Z klawiatury strzałka w dół przenosi z pola wyszukiwania do pierwszego wyniku, strzałki przełączają wyniki, a Enter otwiera zaznaczony; Enter w polu wyszukiwania otwiera pierwszy wynik. Escape lub kliknięcie poza wynikami zamyka wyszukiwanie. Na telefonie Enter jedynie chowa klawiaturę; wynik otwiera się dotknięciem.
+Adres strony zapamiętuje zapytanie i wybraną kartę. Po otwarciu wyniku przycisk „Wstecz” w przeglądarce wraca do tych samych wyników, w to samo miejsce listy, bez ponownego wyszukiwania. Po dziesięciu minutach powrót odpyta źródła ponownie. Adres można też zapisać w zakładkach lub udostępnić; otwiera to samo wyszukiwanie każdemu, kto ma dostęp do wyników.
+
+Z klawiatury strzałka w dół przenosi z pola wyszukiwania do pierwszego wyniku, strzałki przełączają wyniki, a Enter otwiera zaznaczony. Escape w polu wyszukiwania czyści je. Na telefonie Enter chowa klawiaturę; wynik otwiera się dotknięciem.
 
 ### Pytanie do Advisora
 
-Gdy zapytanie ma postać pytania lub polecenia, obok pola wyszukiwania pojawia się przycisk **Zapytaj Advisora**. Rozpoczyna on nową rozmowę z Advisorem, w której zapytanie jest pierwszą wiadomością. To samo robi skrót Ctrl+Enter (⌘+Enter na Macu), a Enter również przekazuje zapytanie Advisorowi, jeśli nie ma wyników.
+Gdy zapytanie ma postać pytania lub polecenia, obok pola wyszukiwania pojawia się przycisk **Zapytaj Advisora**. Rozpoczyna on nową rozmowę z Advisorem, w której zapytanie jest pierwszą wiadomością. To samo robi skrót Ctrl+Enter (⌘+Enter na Macu) w polu wyszukiwania.
 
 ## Ogłoszenia
 
