@@ -73,13 +73,13 @@ The steps follow the English interface of each app. These menus change from time
 
 ### ChatGPT
 
-Custom MCP apps require ChatGPT's developer mode. OpenAI decides which plans offer it; in business workspaces, an administrator may need to allow it first. Create the app in ChatGPT on the web.
+Create the connection in ChatGPT on the web. OpenAI decides which plans and workspaces can add a custom MCP server; if the **Add** menu has no **Add custom MCP server** option, the plan or the ChatGPT workspace administrator does not offer it.
 
-1. Open **Settings → Security and login** and turn on **Developer mode**.
-2. Open **Plugins**, select the plus button, and choose **Create MCP App**.
-3. Enter a name, for example *Persate*, and enter `https://api.persate.com/mcp` as the server URL under **Connection**. Choose **OAuth** as the authentication method.
-4. Create the app and complete the Persate sign-in and consent.
-5. Start a new conversation and add Persate from the tools menu of the message composer.
+1. Open the **Plugins** page (the @ icon in the left sidebar, or `chatgpt.com/plugins`) and select **Add → Add custom MCP server**.
+2. Enter a name, for example *Persate*. Under **Connection**, keep **Server URL** selected and enter `https://api.persate.com/mcp`. Keep **OAuth** as the authentication method. The icon, the description and **Advanced OAuth settings** can stay empty.
+3. At the bottom of the dialog, check **I understand and want to continue**, then select **Create as a plugin**.
+4. Complete the Persate sign-in and consent.
+5. In a new conversation, type `@Persate` and choose the plugin from the suggestions.
 
 ### Claude
 
@@ -189,7 +189,7 @@ To connect again, repeat the steps for the app.
 * **Verify it’s you** opens after **Allow** — accounts with two-step verification confirm each new connection with a fresh authenticator code. Enter the current code, then select **Allow** again.
 * Company-file tools are refused with a message that two-factor authentication is required — the connection was approved from an account without two-step verification. Set up two-factor authentication, then connect the app again.
 * Changes are refused — the organization allows only reading, or the connection was approved as read-only before the organization allowed changes. Disconnect the app and connect it again; the consent screen must show **Read and write access**.
-* Expected tools are missing — the toolset is not selected for the organization, it was enabled after the connection was approved, or the function or data source is not part of the organization's package. Ask the organization's administrator, or disconnect the app and connect it again to approve newly enabled toolsets. In ChatGPT and Claude, also check that Persate is turned on for the current conversation.
+* Expected tools are missing — the toolset is not selected for the organization, it was enabled after the connection was approved, or the function or data source is not part of the organization's package. Ask the organization's administrator, or disconnect the app and connect it again to approve newly enabled toolsets. In ChatGPT, also check that Persate is selected in the conversation (`@Persate`); in Claude, that Persate is turned on for the current conversation.
 
 ## For AI agents
 
