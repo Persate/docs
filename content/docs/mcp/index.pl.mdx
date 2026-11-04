@@ -73,13 +73,13 @@ Kroki opisują angielską wersję interfejsu każdej aplikacji. Nazwy menu co pe
 
 ### ChatGPT
 
-Własne aplikacje MCP wymagają trybu dewelopera w ChatGPT. O tym, w których planach jest on dostępny, decyduje OpenAI; w firmowych obszarach roboczych może być potrzebna wcześniejsza zgoda administratora. Aplikację tworzy się w ChatGPT w przeglądarce.
+Połączenie tworzy się w ChatGPT w przeglądarce. O tym, w których planach i obszarach roboczych można dodać własny serwer MCP, decyduje OpenAI; jeśli menu **Add** nie zawiera opcji **Add custom MCP server**, plan lub administrator obszaru roboczego ChatGPT jej nie udostępnia.
 
-1. Otworzyć **Settings → Security and login** i włączyć **Developer mode**.
-2. Otworzyć **Plugins**, wybrać przycisk z plusem, a następnie **Create MCP App**.
-3. Wpisać nazwę, np. *Persate*, a w sekcji **Connection** podać adres serwera `https://api.persate.com/mcp`. Jako metodę uwierzytelniania wybrać **OAuth**.
-4. Utworzyć aplikację, zalogować się do Persate i zatwierdzić zgodę.
-5. Rozpocząć nową rozmowę i dodać Persate z menu narzędzi w polu wiadomości.
+1. Otworzyć stronę **Plugins** (ikona @ na lewym pasku albo `chatgpt.com/plugins`) i wybrać **Add → Add custom MCP server**.
+2. Wpisać nazwę, np. *Persate*. W sekcji **Connection** pozostawić wybraną opcję **Server URL** i podać adres `https://api.persate.com/mcp`. Jako metodę uwierzytelniania pozostawić **OAuth**. Ikonę, opis i **Advanced OAuth settings** można pozostawić puste.
+3. Na dole okna zaznaczyć **I understand and want to continue**, a następnie wybrać **Create as a plugin**.
+4. Zalogować się do Persate i zatwierdzić zgodę.
+5. W nowej rozmowie wpisać `@Persate` i wybrać wtyczkę z podpowiedzi.
 
 ### Claude
 
@@ -189,7 +189,7 @@ Aby połączyć się ponownie, należy powtórzyć kroki właściwe dla danej ap
 * Po wybraniu **Zezwól** otwiera się ekran **Potwierdź swoją tożsamość** — konta z weryfikacją dwuetapową potwierdzają każde nowe połączenie świeżym kodem z aplikacji uwierzytelniającej. Należy wpisać bieżący kod, a następnie ponownie wybrać **Zezwól**.
 * Narzędzia do plików firmowych są odrzucane z informacją o wymaganym uwierzytelnianiu dwuskładnikowym — połączenie zatwierdzono z konta bez weryfikacji dwuetapowej. Należy skonfigurować weryfikację dwuetapową, a następnie ponownie połączyć aplikację.
 * Zmiany są odrzucane — organizacja pozwala tylko na odczyt albo połączenie zatwierdzono jako tylko do odczytu, zanim organizacja zezwoliła na zmiany. Należy odłączyć aplikację i połączyć ją ponownie; ekran zgody musi pokazywać **Dostęp do odczytu i zapisu**.
-* Brak oczekiwanych narzędzi — zestaw narzędzi nie został wybrany dla organizacji, włączono go po zatwierdzeniu połączenia albo funkcja lub źródło danych nie należy do pakietu organizacji. Należy zwrócić się do administratora organizacji albo odłączyć aplikację i połączyć ją ponownie, aby zatwierdzić nowo włączone zestawy narzędzi. W ChatGPT i Claude warto też sprawdzić, czy Persate jest włączone w bieżącej rozmowie.
+* Brak oczekiwanych narzędzi — zestaw narzędzi nie został wybrany dla organizacji, włączono go po zatwierdzeniu połączenia albo funkcja lub źródło danych nie należy do pakietu organizacji. Należy zwrócić się do administratora organizacji albo odłączyć aplikację i połączyć ją ponownie, aby zatwierdzić nowo włączone zestawy narzędzi. W ChatGPT warto też sprawdzić, czy Persate wybrano w rozmowie (`@Persate`), a w Claude — czy Persate jest włączone w bieżącej rozmowie.
 
 ## Dla agentów AI
 
