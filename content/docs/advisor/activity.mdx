@@ -94,3 +94,4 @@ Plan steps that were still open are marked **Stopped**. If the stop request does
 * **Dropped connection** — *"The connection to this task dropped."* The Advisor may still be working, and nothing above is lost. Stop and notes stay available, but a new question cannot be sent until the turn is resolved. **Reconnect** reattaches to the task; **Stop managing this turn** releases the conversation for new questions without stopping the task.
 * *"Hit a temporary snag — retrying…"* — a temporary problem that the Advisor retries on its own.
 * *"The Advisor hit a problem while finishing this answer. Please try again."* — use **Regenerate response** below the answer or ask again.
+* *"The answer was interrupted by an error or timeout on the model provider's side…"* — the Advisor has already retried the request once. When the cause was a temporary connection problem, **Send again** below the answer sends the same question again, with the same attachments and sources.
